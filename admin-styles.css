@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato&family=Libre+Franklin&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&family=Rubik&display=swap');
+a {
+    color: #6562ac;
+}
+a:hover {
+    color: #524784;
+}
+input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
+    border-color: #6562ac;
+    box-shadow: 0 0 0 1px #6562ac;
+}
+.wp-core-ui select:focus,.wp-core-ui select:hover  {
+  border-color: #6562ac;
+  box-shadow: 0 0 0 1px #6562ac;
+  color: #6562ac;
+}
+.wp-core-ui .button-primary, .wp-core-ui .button, .wp-core-ui .button-secondary {
+    background: #6562ac;
+    border-color: #6562ac;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 0px;
+    border:none;
+}
+.wp-core-ui .button-primary:hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:active {
+  background: #524784;
+}
+#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover>a, #wpadminbar .quicklinks .menupop ul li a:focus, #wpadminbar .quicklinks .menupop ul li a:focus strong, #wpadminbar .quicklinks .menupop ul li a:hover, #wpadminbar .quicklinks .menupop ul li a:hover strong, #wpadminbar .quicklinks .menupop.hover ul li a:focus, #wpadminbar .quicklinks .menupop.hover ul li a:hover, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:focus, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:hover, #wpadminbar li #adminbarsearch.adminbar-focused:before, #wpadminbar li .ab-item:focus .ab-icon:before, #wpadminbar li .ab-item:focus:before, #wpadminbar li a:focus .ab-icon:before, #wpadminbar li.hover .ab-icon:before, #wpadminbar li.hover .ab-item:before, #wpadminbar li:hover #adminbarsearch:before, #wpadminbar li:hover .ab-icon:before, #wpadminbar li:hover .ab-item:before, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover {
+    color: #6562ac;
+}
+#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus,#wpadminbar:not(.mobile)>#wp-toolbar a:focus span.ab-label, #wpadminbar:not(.mobile)>#wp-toolbar li:hover span.ab-label, #wpadminbar>#wp-toolbar li.hover span.ab-label, #wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus{
+    color: #fff;
+}
+#wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item {
+  color: #fff!important;
+}
+#wpadminbar .quicklinks .menupop ul li a:focus, #wpadminbar .quicklinks .menupop ul li a:focus strong, #wpadminbar .quicklinks .menupop ul li a:hover, #wpadminbar .quicklinks .menupop ul li a:hover strong, #wpadminbar .quicklinks .menupop.hover ul li a:focus, #wpadminbar .quicklinks .menupop.hover ul li a:hover, #wpadminbar .quicklinks .menupop.hover ul li {
+  color: #fff;
+}
+#adminmenu .wp-has-current-submenu .wp-submenu .wp-submenu-head, #adminmenu .wp-menu-arrow, #adminmenu .wp-menu-arrow div, #adminmenu li.current a.menu-top, #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu, .folded #adminmenu li.current.menu-top, .folded #adminmenu li.wp-has-current-submenu, .acf-field-object.open>.handle {
+    background: #6562ac!important;
+    color: #fff;
+    border: none!important;
+    text-shadow: 0;
+}
+#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top, #adminmenu li>a.menu-top:focus {
+    background-color: #191e23;
+    color: #fff;
+}
+#adminmenu .wp-submenu a:focus, #adminmenu .wp-submenu a:hover, #adminmenu a:hover, #adminmenu li.menu-top>a:focus {
+    color: #fff;
+}
+#adminmenu li a:focus div.wp-menu-image:before, #adminmenu li.opensub div.wp-menu-image:before, #adminmenu li:hover div.wp-menu-image:before  {
+    color: #6562ac;
+}
+#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus {
+    background: #32373c;
+    color: #00b9eb;
+}
+.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active {
+    border: 1px solid #6562ac;
+    color: #6562ac;
+    background: #f3f5f6;
+}
+.wrap .add-new-h2:hover, .wrap .page-title-action:hover {
+    border-color: #6562ac;
+    color: #524784;
+}
+.acf-switch .acf-switch-on {
+    color: #fff;
+    text-shadow: #6562ac 0 1px 0!important;
+}
+.acf-switch.-on {
+    background:#6562ac!important;
+    border-color:#6562ac!important;
+}
+.acf-switch.-on .acf-switch-slider, .acf-switch:hover .acf-switch-slider, .acf-switch.-focus .acf-switch-slider {
+    border-color: #6562ac!important;
+}
+.acf-switch:hover, .acf-switch.-focus {
+    border-color: #6562ac!important;
+    color: #6562ac!important;
+}
+.acf-admin-toolbar .acf-tab.is-active {
+    border-bottom: #6562ac solid 3px;
+}
+p.josefinsans {
+  font-family: 'Josefin Sans', sans-serif;
+}
+p.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+p.roboto {
+  font-family: 'Roboto', serif;
+}
+p.rubik {
+  font-family: 'Rubik', sans-serif;
+}
+p.lato {
+  font-family: 'Lato', sans-serif;
+}
+p.librefranklin {
+  font-family: 'Libre Franklin', sans-serif;
+}
+p.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+p.opensans {
+  font-family: 'Open Sans', sans-serif;
+}
+p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserrat, p.opensans {
+  font-size: 20px;
+  margin:0px;
+}
+.font_choices h3 {
+  margin:15px 0 0 0;
+}
+#adminmenu #menu-posts div.wp-menu-image::before {
+  content: '\f116';
+}
+#adminmenu #menu-posts-adultlearning div.wp-menu-image::before {
+  content: '\f118';
+}
+#menu-comments {
+  display: none;
+}
+
+#vacancy_fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+#vacancy_fields input {
+  width: 100%;
+}
+#vacancy_fields .acf-field {
+  padding:20px
+}
+#vacancy_fields h2 {
+  padding:10px 0;
+}

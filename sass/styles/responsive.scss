@@ -1,0 +1,250 @@
+@media all and (max-width: 1024px) {
+
+}
+
+@media all and (max-width: 770px) {
+    body {
+        padding-top:0;
+    }
+    body .line {
+        display:none;
+    }
+    .currenthover {
+        display:none !important;
+    }
+    .searchtopbuttonholder {
+        display:none;
+    }
+    .navbar {
+        width:20%;
+        height:93px;
+        .container {
+            float:right;
+            margin-right:20px;
+            display:block;
+        }
+    }
+    header {
+        animation:none;
+        position:fixed;
+        background-color:#fff;
+        width:80%;
+        top:0;
+        padding:10px 0 10px 10px;
+    }
+    .navbar.fixed-top {
+        left:auto;
+    }
+    .navbar-toggler-icon {
+        width:2em;
+        height:1.8em;
+    }
+    body .front-page-header, body .partners .carousel-slide {
+        margin-top:97px;
+    }
+    .front-page-header {
+        height:auto;
+        .left {
+            width:100%;
+            .siteicon {
+                background-image:none !important;
+                margin-left:0;
+                height:auto;
+                padding-bottom:60px;
+                width:100%;
+                .content_left {
+                    margin-left:0;
+                    width:100%;
+                    .social {
+                        text-align:center;
+                        a:last-child {
+                            padding-right:0;
+                        }
+                    }
+                    .intro {
+                        margin-top:10px;
+                        text-align:center;
+                        h1 {
+                            font-size:2.2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .slick-list {
+            width:100%;
+            height:250px;
+            margin-top:0;
+            float:none;
+            .image-slider {
+                height:250px;
+                svg {
+                    display:none;
+                }
+            }
+        }
+        .slick-dots {
+            display:none !important;
+        }
+        .header-images-slick-slider {
+
+        }
+    }
+    .homepage-tabs-nav {
+        margin-top:-50px;
+        z-index:999999 !important;
+        .row {
+            margin:0 auto;
+        }
+        .tab_button {
+            padding:10px 15px;
+            font-size:0.9rem;
+        }
+    }
+    .tabcontent {
+        height:auto !important;
+        padding:50px 0 0 0 !important;
+        .container {
+            .row {
+                width:100%;
+                --bs-gutter-x:0 !important;
+            }
+            .image {
+                max-width:100% !important;
+                text-align:center;
+                margin:0 0 40px 0 !important;
+                img {
+                    max-width:70%;
+                    height:auto;
+                }
+            }
+            .content {
+                max-width:100% !important;
+                text-align:center;
+                h2 {
+                    text-align:center;
+                }
+                .tab-text {
+                    text-align:left;
+                }
+            }
+        }
+    }
+    .container-white-laurel {
+        background:none !important;
+    }
+    .schooliconholder {
+        display:none;
+    }
+    .video-section {
+        iframe {
+            height:200px !important;
+        }
+    }
+    .information-section {
+        padding:50px 0 !important;
+        .informationitem {
+            text-align:center;
+            margin-bottom:75px;
+            h2 {
+                text-align:center;
+            }
+            .information-panel-body-text {
+                text-align:left;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .partners {
+        display:none;
+    }
+    footer {
+        .footer-base {
+            padding:0 15px;
+        }
+    }
+    .offcanvas-collapse {
+        top:97px;
+    }
+    .featured-top-image {
+        margin-bottom:97px;
+    }
+    .slick-initialized .slick-slide {
+        width:34%;
+    }
+    .newsholder {
+        width:100%;
+    }
+    .twittercontainer {
+        width:50%;
+    }
+    .navbar-expand-md .navbar-toggler {
+        display:block;
+        float:right;
+    }
+    .featured-top-image {
+        margin-bottom:0;
+        margin-top:91px;
+        padding:100px 0;
+    }
+    #sidebar-menu {
+        margin-left:-15px;
+        margin-right:-15px;
+        display:flex;
+        flex-flow: wrap;
+        li {
+            border:1px solid #fff;
+            background:$primarycolour;
+            font-size:0.85rem;
+            flex:0 0 50%;
+            max-width:50%;
+        }
+    }
+}
+
+@media all and (max-width: 560px) {
+    .navbar {
+        height:116px;
+    }
+    .twittercontainer {
+        width:100%;
+    }
+    body.home .latestnews .col-12 .newsitem {
+        width: 100%;
+    }
+    .video-section iframe {
+        height:290px !important;
+    }
+}
+
+@media all and (max-width: 420px) {
+    .navbar {
+        height:96px;
+    }
+}
+
+@media all and (max-width: 375px) {
+    .navbar {
+        height:91px;
+    }
+    .front-page-header {
+        margin-top:91px !important;
+    }
+}
+
+@media all and (max-width: 330px) {
+    .navbar {
+        height:82px;
+    }
+    .front-page-header {
+        margin-top:82px !important;
+    }
+
+    .homepage-tabs-nav .col {
+        width:100px;
+        font-size:10px;
+        padding:10px;
+    }
+}

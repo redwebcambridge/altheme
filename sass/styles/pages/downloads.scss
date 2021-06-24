@@ -1,0 +1,35 @@
+.pdf-viewer{
+
+  .icon-pdf{
+    border: 1px solid $medium-grey;
+    padding: 18px 30px;
+    margin-bottom: 30px;
+    height: 80px;
+
+    p{
+      font-size: 1rem;
+      color: $darkgrey;
+      margin-bottom: 0;
+      align-self: center;
+    }
+  }
+  .icon-pdf:hover{
+    background-color: $primarycolour;
+    .fa-download{
+      color: white;
+    }
+    p{
+      color: white;
+    }
+  }
+  .fa-download{
+    color: $secondarycolour;
+    font-size: 28px;
+    padding-right: 25px;
+    align-self: center;
+  }
+
+  .pdf-list{
+    margin-bottom: 55px;
+  }
+}

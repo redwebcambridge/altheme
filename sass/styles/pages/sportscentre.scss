@@ -1,0 +1,85 @@
+.sport-centre-page{
+    .course{
+      margin-bottom: 15px;
+
+      .course-thumbnail{
+        height: 260px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+      }
+      .course-name {
+          background: $sportprimarycolour;
+          padding: 10px 22px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #ffffff;
+          font-weight: $normal-weight;
+      }
+      .course-name:hover {
+        background: $sportsecondarycolour;
+      }
+    }
+    .contact-box{
+      border: 1px solid grey;
+      padding: 20px;
+
+      p{
+        margin-bottom: 0;
+      }
+      strong{
+        color: $sportprimarycolour;
+        font-weight: $normal-weight;
+      }
+      .email{
+        background: $sportsecondarycolour;
+        padding: 10px 30px;
+        margin: 0 10px;
+        color: #ffffff;
+        a{
+          color: #ffffff;
+        }
+      }
+      .number{
+        background: $sportprimarycolour;
+        padding: 10px 30px;
+        margin: 0 10px;
+        color: #ffffff;
+      }
+
+    }
+
+    #sidebar-menu {
+        li {
+            background: $sportprimarycolour;
+            &:hover {
+                background: $sportsecondarycolour;
+            }
+            .current_page_item {
+                background: $sportsecondarycolour;
+            }
+            a {
+                background:$sportprimarycolour;
+                &:hover {
+                    background: $sportsecondarycolour;
+                }
+            }
+        }
+    }
+
+    .heading-two {
+        color:$sportprimarycolour;
+    }
+    .gradline {
+        background-image: linear-gradient(to right, $sportprimarycolour, $sportsecondarycolour);
+    }
+
+    .btn {
+        background:$sportprimarycolour;
+        &:hover {
+            background: $sportsecondarycolour;
+        }
+    }
+
+}

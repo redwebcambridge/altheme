@@ -1,0 +1,64 @@
+button {
+  font-size: 1.2px;
+}
+
+.btn, #sb_instagram .sbi_follow_btn a{
+  padding: 10px 20px;
+  background:$primarycolour;
+  border:none;
+  border-radius: 0;
+  &:hover {
+    background-color: $secondarycolour;
+    box-shadow: none;
+  }
+  &:focus {
+    outline: none!important;
+    background-color: $secondarycolour;
+    box-shadow: none!important;
+  }
+  &.btn-secondary {
+    background-color: $darkgrey;
+  }
+  &.btn-sm {
+    font-size: 0.75rem;
+    padding:7px 10px;
+    margin:15px 0;
+    &:hover {
+      background-color: $primarycolour;
+    }
+  }
+}
+.read-more-button {
+  color: $primarycolour;
+}
+
+
+  #searchform {
+    button {
+      background-color: $primarycolour;
+      color: #fff;
+      @extend %fa-icon;
+      @extend .fas;
+      &:before {
+        content: fa-content($fa-var-search);
+      }
+      &:hover {
+        background-color: $secondarycolour;
+      }
+    }
+  }
+.close {
+  background: white;
+      color: $primarycolour;
+      @extend %fa-icon;
+      @extend .fas;
+      border: none;
+      outline: none;
+      &:before {
+        content: fa-content($fa-var-window-close);
+        font-size: 1.5rem;
+      }
+      &:hover {
+        color: $secondarycolour;
+      }
+}

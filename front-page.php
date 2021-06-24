@@ -1,0 +1,213 @@
+<?php get_header(); ?>
+
+<div class="tabcontent container">
+<?php
+    $index = 0;
+    if( have_rows('tab_content') ):
+        while( have_rows('tab_content') ) : the_row();
+            $image = get_sub_field('image');
+            $index++;
+?>
+    <div class="container <?php if ($index==1){echo 'active';} ?>" id="<?php echo 'tab' . '-' . $index;?>">
+        <div class="row">
+            <div class="col-12 col-md-4 image">
+                <img class="img-fluid img-<?php echo $image["id"];?> al-border-bottom" src="<?php echo $image["url"];?>" alt="<?php echo $image["alt"];?>">
+            </div>
+            <div class="col-12 col-md-8 content">
+                <h2><?php echo get_sub_field('heading'); ?></h2>
+                <div class="gradline"></div>
+                <div class="tab-text">
+                <?php
+                if (strlen(get_sub_field('content')) <= 450) {
+                    echo get_sub_field('content');
+                } else {
+                   $shortened = substr(get_sub_field('content'), 0, strpos(wordwrap(get_sub_field('content'), 450), "\n"));
+                   echo $shortened.'...';
+                }
+                ?>
+                </div>
+                <a target="_blank" href="<?php echo get_sub_field('button_url'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
+            </div>
+            <?php $logos = get_field('logo_and_icons','option'); ?>
+        </div>
+    </div>
+<?php
+        endwhile;
+    endif; ?>
+</div><!-- .tabcontent -->
+
+<!-- School icon -->
+<div class="container schooliconholder">
+    <div class="d-flex flex-row-reverse">
+        <div class="p-2">
+            <div class="schoolicon"> <img src="<?php echo $logos['icon']['url']; ?>" alt="<?php echo $logos['icon']['alt']; ?>"></div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+          <div class="line"></div>
+      </div>
+    </div>
+</div>
+
+
+
+<!-- Latest news and twitter -->
+<div class="latestnews">
+    <?php
+    if(get_field('display_twitter_feed')){
+        query_posts(array(
+            'showposts' => 2,
+        ) );
+        $newscol = 8;
+        $newsitem = 6;
+    } else {
+        query_posts(array(
+            'showposts' => 3,
+        ) );
+        $newscol = 12;
+        $newsitem = 4;
+    }
+    ?>
+    <!-- Titles (Latest news and twitter if applicable) -->
+    <div class="container">
+        <div class="row">
+
+                <!-- News posts -->
+                <div class="col-12 col-md-<?php echo $newscol; ?> newsholder">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2><?php the_field('title_left'); ?></h2>
+                            <div class="gradline"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <?php while (have_posts()) : the_post(); ?>
+                            <div class="col-md-<?php echo $newsitem; ?> newsitem">
+                                <div class="thumbnail al-border-bottom" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>')"></div>
+                                <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+                                <p class="post-date"><?php echo get_the_date('jS F Y'); ?> </p>
+                                <p><?php echo get_the_excerpt(); ?></p>
+                                <a class="btn btn-primary rounded-0" href="<?php the_permalink() ?>">READ MORE</a>
+                            </div>
+                        <?php endwhile;  wp_reset_query(); ?>
+                    </div>
+                </div>
+
+                <!-- Twitter column -->
+                <div class="col-12 col-md-4 twittercontainer">
+                    <?php if(get_field('display_twitter_feed')) : ?>
+                        <h2>Latest Tweets</h2>
+                        <div class="gradline"></div>
+                    <?php endif; //end twitter feed ?>
+
+                    <?php $tweets = twitterwp(); ?>
+                    <div class="twitter-box">
+                        <div class="twitter-header">
+                            <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">@<?php echo $tweets[0]->user->screen_name; ?></a>
+                        </div>
+
+                        <div class="slick-controls">
+                            <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
+                            <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+
+                        <ul class="slick-twitter">
+                           <?php
+                           //Twitter loop
+                            foreach ($tweets as $tweet) {
+                                $tweet_img = $tweet->entities->media[0]->media_url;
+                                $tweet_date = $tweet->created_at;
+                                $tweet_date= date_create($tweet_date);
+                                $tweet_date = date_format($tweet_date,"jS F Y");
+                                if ($tweet_img){
+                                    echo '<li><p class="post-date">'.$tweet_date.'</p>';
+                                    echo '<img class="twitter-tweet-image" src="'.$tweet_img.'" alt="Twitter Image">';
+                                    $last_space_position = strrpos($tweet->full_text, ' ');
+                                    $text_without_last_word = substr($tweet->full_text, 0, $last_space_position);
+                                    echo $text_without_last_word.'</li>';
+                                } else {
+                                    echo '<li><p class="post-date">'.$tweet_date.'</p>'.$tweet->full_text.'</li>';
+                                }
+                            } //end foreach
+                            ?>
+                        </ul>
+
+                        <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div><!-- .latestnews -->
+<script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
+<div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>; background-image:url(<?php echo get_field('background_image');  ?>) ">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+              <div class="col-md-6">
+                <h2><?php the_field('text_with_file_title'); ?></h2>
+                <div class="gradline-secondwhite"></div>
+                <?php the_field('text_with_file_body'); ?>
+              </div>
+
+              <div class="col-md-6">
+
+              <?php
+
+
+                    // Load value.
+                    $iframe = get_field('file');
+                    $primarycolour = str_replace('#', '', get_field('colours','option')['primary_colour']);
+                    // Use preg_match to find iframe src.
+                    preg_match('/src="(.+?)"/', $iframe, $matches);
+                    $src = $matches[1];
+
+                    // Add extra parameters to src and replcae HTML.
+                    $params = array(
+                        'title' => 0,
+                        'showinfo' => 0,
+                        'modestbranding' => 0,
+                        'controls'  => 1,
+                        'badge' => 0,
+                        'byline' => 0,
+                        'buttons' => 0,
+                        'autoplay'  => get_field('autoplay_video'),
+                        'setVolume' => 0,
+                        'color' => $primarycolour,
+                        'portrait' => 0,
+
+                    );
+                    $new_src = add_query_arg($params, $src);
+                    $iframe = str_replace($src, $new_src, $iframe);
+
+                    // Add extra attributes to iframe HTML.
+                    $attributes = 'frameborder="0"';
+                    $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+
+                    // Display customized HTML.
+                    echo $iframe;
+                    ?>
+
+              </div>
+      </div>
+    </div>
+</div>
+<div class="container">
+    <div class="information-section">
+        <div class="row">
+
+        <?php if( have_rows('information_panel') ):  while( have_rows('information_panel') ) : the_row();  ?>
+            <div class="informationitem col-12 col-md-6">
+                <h2><?php the_sub_field('title'); ?></h2>
+                <div class="gradline"></div>
+                <img class="w-100 my-4" src="<?php the_sub_field('image'); ?>">
+                <span class="information-panel-body-text"><?php the_sub_field('body_text'); ?></span>
+                <button class="btn btn-primary rounded-0">READ MORE</button>
+            </div>
+        <?php endwhile; endif; ?>
+
+        </div>
+    </div>
+</div>
+<?php get_footer(); ?>

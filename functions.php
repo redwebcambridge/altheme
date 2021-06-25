@@ -21,6 +21,13 @@ if ( ! function_exists( 'anglian_learning_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'anglian_learning_setup' );
 
+//updater
+require 'theme-updates/theme-update-checker.php';
+$example_update_checker = new ThemeUpdateChecker(
+    'altheme',
+    'https://anglianlearning.org/al-theme-version.json'
+);
+
 //School Settings
 add_action('acf/init', 'school_settings');
 function school_settings() {
@@ -171,9 +178,11 @@ endif;
 
 //Set Favicon
 function favicon() {
+  if (class_exists('ACF')) {
   $logos = get_field('logo_and_icons','option');
   $fav_url = $logos['icon']['url'];
   echo '<link rel="shortcut icon" href="'.$fav_url.'" >';
+  }
 }
 add_action('wp_head', 'favicon');
 

@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php 
+//TESTING UPDATE SCRIPT
+get_header(); ?>
 
 <div class="tabcontent container">
 <?php

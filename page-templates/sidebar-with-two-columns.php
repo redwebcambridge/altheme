@@ -10,37 +10,28 @@ get_header(); ?>
 
       <div class="container">
         <div class="row">
-          <!---Body section left--->
           <div class="col-md-2 text-section">
-            <?php
-            $menu_choice = get_field('menu_select');
-            wp_nav_menu(
-              array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
-            );
-            ?>
+            <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
-          <!---Body section left - End--->
 
-
-          <!---Body section centre--->
-          <div class="col-md-5 text-section">
-            <?php if (the_field('sub_heading')) : ?>
-              <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+          <div class="col-md-5 text-section"> 
+            <?php if (get_field('sub_heading')) : ?>
+              <h2 class="heading-two"><?php the_field('sub_heading'); ?></h2>
               <div class="gradline"></div>
             <?php endif; ?>
-            <p class="body-text"><?php the_field('body_text') ?></p>
+            <?php if (get_field('body_text')) : ?>
+              <p class="body-text"><?php the_field('body_text') ?></p>
+            <?php endif; ?>
           </div>
-          <!---Body section Centre - End--->
 
-
-          <!---Body section right--->
           <div class="col-md-5 text-section">
+          <?php if (get_field('body_text_right')) : ?>
             <p class="body-text"><?php the_field('body_text_right') ?></p>
+          <?php endif; ?>
           </div>
-          <!---Body section right - End--->
         </div>
 
-        <?php get_template_part('downloads'); ?>
+        <?php get_template_part('template-parts/downloads'); ?>
       </div>
 
 

@@ -10,31 +10,21 @@ get_header(); ?>
       <div class="container">
         <div class="row">
 
-          <!---Body section centre--->
           <div class="col-md-2 text-section">
-            <!-- sidebar to go here -->
-            <?php
-            $menu_choice = get_field('menu_select');
-            wp_nav_menu(
-              array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
-            );
-            ?>
+            <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
 
-          <!---Body section Centre - End--->
-
-          <!---Body section centre--->
           <div class="col-md-10 text-section">
-            <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
-            <div class="gradline"></div>
+            <?php if (get_field('sub_heading')) : ?>
+              <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+              <div class="gradline"></div>
+            <?php endif; ?>  
             <p class="body-text"><?php the_field('body_text') ?></p>
           </div>
 
-          <!---Body section Centre - End--->
-
         </div>
 
-        <?php get_template_part('downloads'); ?>
+        <?php get_template_part('template-parts/downloads'); ?>
       </div>
 
 </section>

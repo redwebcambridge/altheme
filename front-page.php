@@ -1,6 +1,4 @@
-<?php 
-//TESTING UPDATE SCRIPT
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="tabcontent container">
 <?php
@@ -28,7 +26,7 @@ get_header(); ?>
                 }
                 ?>
                 </div>
-                <a target="_blank" href="<?php echo get_sub_field('button_url'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
+                <a href="<?php echo get_sub_field('button_url'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
             </div>
             <?php $logos = get_field('logo_and_icons','option'); ?>
         </div>
@@ -98,11 +96,11 @@ get_header(); ?>
                 </div>
 
                 <!-- Twitter column -->
+                <?php if(get_field('display_twitter_feed')) : ?>
+
                 <div class="col-12 col-md-4 twittercontainer">
-                    <?php if(get_field('display_twitter_feed')) : ?>
                         <h2>Latest Tweets</h2>
                         <div class="gradline"></div>
-                    <?php endif; //end twitter feed ?>
 
                     <?php $tweets = twitterwp(); ?>
                     <div class="twitter-box">
@@ -119,7 +117,11 @@ get_header(); ?>
                            <?php
                            //Twitter loop
                             foreach ($tweets as $tweet) {
-                                $tweet_img = $tweet->entities->media[0]->media_url;
+                                if(isset($tweet->entities->media[0]->media_url)){
+                                    $tweet_img = $tweet->entities->media[0]->media_url;
+                                } else {
+                                    $tweet_img = null;
+                                }
                                 $tweet_date = $tweet->created_at;
                                 $tweet_date= date_create($tweet_date);
                                 $tweet_date = date_format($tweet_date,"jS F Y");
@@ -139,6 +141,8 @@ get_header(); ?>
                         <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
                     </div>
                 </div>
+                <?php endif; //end twitter feed ?>
+
 
         </div>
     </div>
@@ -205,7 +209,7 @@ get_header(); ?>
                 <div class="gradline"></div>
                 <img class="w-100 my-4" src="<?php the_sub_field('image'); ?>">
                 <span class="information-panel-body-text"><?php the_sub_field('body_text'); ?></span>
-                <button class="btn btn-primary rounded-0">READ MORE</button>
+                <a href="<?php echo get_sub_field('button_link'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
             </div>
         <?php endwhile; endif; ?>
 

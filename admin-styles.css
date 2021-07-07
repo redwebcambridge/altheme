@@ -139,3 +139,7 @@ p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserr
 #vacancy_fields h2 {
   padding:10px 0;
 }
+
+.menu-item-depth-1 .acf-menu-item-fields {
+  display: none;
+}

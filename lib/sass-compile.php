@@ -5,7 +5,7 @@ $source_scss = get_stylesheet_directory() . '/sass/style.scss';
 $scssContents = file_get_contents($source_scss);
 $import_path = get_stylesheet_directory() . '/sass';
 $compiler->addImportPath($import_path);
-$target_css = get_stylesheet_directory() . '/style.css';
+$target_css = get_stylesheet_directory() . '/styles.css';
 
 //Main colours
 $logos = get_field('logo_and_icons','option');
@@ -29,7 +29,7 @@ $variables = [
   //colours
   '$primarycolour' => $colours['primary_colour'],
   '$secondarycolour' =>  $colours['second_colour'],
-  '$thirdcolour' =>  $colours['third_colour'],
+  //'$thirdcolour' =>  $colours['third_colour'],
   '$bordercolour' =>  $colours['border_colour'],
   '$footerbgcolour' => get_field('footer_background_colour','option'),
   '$footer_icon_colour' => $all_colours['footer_icon_colour'],

@@ -1,33 +1,3 @@
-/*!
-Theme Name: Anglian Learning
-Theme URI: http://underscores.me/
-Author: Red Graphic
-Author URI: https://www.redgraphic.co.uk
-Description: Red Graphic Anglian Learning Theme
-Version: 1.0.0
-Tested up to: 5.4
-Requires PHP: 5.6
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: anglian-learning
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-Anglian Learning is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
-
-
-
-//The below will need depend on what they choose in the site settings
-//@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
-//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600;700&display=swap');
-
 //Layouts and variables
 @import "./styles/bootstrap/bootstrap";
 @import "./styles/variables";
@@ -56,9 +26,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 //Indv Pages
 @import "./styles/pages/gallery";
-//@import "./styles/pages/courses";
 @import "./styles/pages/calendar";
-@import "./styles/pages/downloads";
 @import "./styles/pages/meetthestaff";
 @import "./styles/pages/contact";
 @import "./styles/pages/about";

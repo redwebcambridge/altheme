@@ -12,7 +12,7 @@ get_header();
 
 <div class="container newsevents">
 
-		<?php if ( have_posts() ) : ?>
+		<?php if ( have_posts() && $_GET['s']!=='') : ?>
 
 		<div class="row row-flex">	
 			<?php

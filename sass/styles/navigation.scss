@@ -1,3 +1,4 @@
+
 header {
   #top_buttons{
     width:100%;
@@ -5,32 +6,116 @@ header {
     .col-12 {
       padding: 0;
     }
+    nav {
+      padding:0;
+    }
     ul:first-child {
       display: inline-table;
       list-style: none;
       font-size: 0.75rem;
+      i {
+        display: none;
+      }
       li {
         margin-left:10px;
         background-color: $lightgrey;
         text-transform: uppercase;
+        &:last-child {
+          a{
+            padding:8px 3px 8px 16px;
+          }
+        }
+        &.hasdropdown{ 
+          @extend .d-flex;
+          @extend .justify-content-end;
+          align-items: middle;
+        }
+        i {
+          display: inline-block;
+          font-size: 1rem;
+          position: relative;
+          padding: 0 10px 0 0;
+          top:5px;
+          color: $medium-grey;
+        }
         &:hover {
           background-color: $primarycolour;
-          a {
+          a,i {
             color: #fff;
+          }
+          .dropdown-menu {
+            transition: opacity 1s ease-in-out;
           }
         }
         a {
           color: $darkgrey;
+          display: inline-block;
+          padding:8px 20px;
         }
+      }
+    }
+    ul.dropdown-menu {
+      background-color:$primarycolour;
+      margin-top: -17px;
+      border-radius: 0px;
+      border: none;
+      padding: 0;
+      font-size: 0.85rem;
+      border-left: 1px solid darken($primarycolour,3%);
+      border-bottom: 1px solid darken($primarycolour,3%);
+      .double-sub {
+        display: flex;
+        .submenu-left {
+          text-transform: none;
+          margin: 20px 0 20px 20px;
+          border-right: 2px solid darken($primarycolour,3%);
+          padding-right: 20px;
+          color: white;
+          min-width: 150px;
+          max-width: 400px;
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+          .btn {
+            outline: 1px solid white;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+          }
+        }
+        .submenu-right {
+          margin: 20px 0 20px 0;
+        }
+        li {
+          background-color:$primarycolour;
+          text-transform: none;
+          transition: all 1s ease-in-out;
+          margin:0;
+          a {
+            color: white;
+            display: inline-block;
+            padding:10px 20px;
+            min-width: 150px;
+            max-width: 250px;
+          }
+          &:hover {
+            background-color: darken($primarycolour,10%);
+            cursor: pointer;
+          }
+        }        
       }
     }
   }
 }
-
+#menu-adult-learning-menu {
+    padding-bottom:35px
+}
 #mainnav ul{
   width: 100%;
   font-weight: 500;
-  border-top: 2px solid $primarycolour;
+  border-top: 2px solid transparent;
+  border-image: linear-gradient(to right, $primarycolour, $secondarycolour);
+  border-image-slice: 1;
   justify-content: space-between;
   font-size: 1rem;
   margin-bottom: -30px;

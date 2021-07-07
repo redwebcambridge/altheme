@@ -10,20 +10,17 @@ get_header(); ?>
         <div class="row">
           <!---sidebar--->
           <div class="col-md-2">
-            <?php
-            $menu_choice = get_field('menu_select');
-            wp_nav_menu( array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu') );
-            ?>
+            <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
           <!---Sidebar - End--->
 
 
           <!---Body section--->
-
           <div class="col-md-10 text-section">
+          <?php if (get_field('sub_heading')) : ?>
             <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
             <div class="gradline"></div>
-
+          <?php endif; ?>
 
             <!---Table--->
             <table class="table">
@@ -88,7 +85,7 @@ get_header(); ?>
 
 
         </div>
-        <?php get_template_part('downloads'); ?>
+        <?php get_template_part('template-parts/downloads'); ?>
 
       </div>
 

@@ -71,7 +71,10 @@ jQuery( document ).ready(function() {
     event.preventDefault();
     jQuery(this).ekkoLightbox({
       loadingMessage: '<div class="spinner-grow" role="status"> <span class="sr-only">Loading...</span></div>',
-      alwaysShowClose	: true
+      alwaysShowClose	: true,
+      showArrows : true,
+      leftArrow: '<i class="fas fa-chevron-circle-left left"></i>',
+      rightArrow: '<i class="fas fa-chevron-circle-right right"></i>',
     });
   }); 
   //Menu hover
@@ -87,6 +90,9 @@ jQuery( document ).ready(function() {
       hovericon(this);
     }
   });
+  //add class if has submenu for top buttons
+  jQuery('#menu-top-buttons li').has("i").addClass('hasdropdown');
+
   //Homepage Tabs
   jQuery('.homepage-tabs-nav .tab_button').on("click", function () {
     jQuery('.homepage-tabs-nav .tab_button').removeClass('active');

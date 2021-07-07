@@ -21,7 +21,7 @@ get_header(); ?>
 
                 <div class="col-12 col-md-4 contact-details">
                   <h5>Phone</h5>
-                  <p><?php the_field('phone') ?></p>
+                  <a href="tel:<?php the_field('phone'); ?>"><p><?php the_field('phone'); ?></p></a>
 
                   <h5>Email</h5>
                   <a href="mailto:<?php the_field('email') ?>"><p><?php the_field('email') ?></p></a>
@@ -50,8 +50,8 @@ get_header(); ?>
 
               <!--map-->
 
-              <div class="map-contact"><iframe width="100%" height="366px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=0.15746176242828372%2C52.125307954907605%2C0.16454279422760013%2C52.12821265010046&amp;layer=mapnik"></iframe>
-
+              <div class="map-contact">
+              <iframe width="100%" height="366px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=0.15682876110076907%2C52.125350769250126%2C0.16520798206329348%2C52.12819947730703&amp;layer=mapnik&amp;marker=52.12677514604294%2C0.16101837158203125"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=52.12678&amp;mlon=0.16102#map=18/52.12678/0.16102"></a></small>
               </div>
 
           </div>
@@ -73,7 +73,7 @@ get_header(); ?>
           <!---Body section right - End--->
 
         </div>
-        <?php get_template_part('downloads'); ?>
+        <?php get_template_part('template-parts/downloads'); ?>
 
       </div>
 

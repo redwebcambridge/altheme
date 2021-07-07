@@ -9,6 +9,13 @@
 
 <body <?php body_class(); ?> <?php if ( is_adult_ed_page() ) { echo 'id="adult_ed"'; } ?>>
 
+<?php
+//ACF must be installed
+if (!class_exists('ACF')) {
+  echo 'The Anglian Learning theme requires ACF to be installed'; die;
+}
+?>
+
 <?php if ( isset($_GET['sass']) ): sass_compile(); endif; ?>
 <div id="page" class="site">
 <div class="line col fixed-top"></div>
@@ -44,7 +51,7 @@
               </div>
               <div class="row" id="top_buttons">
               <?php
-              if ( is_adult_ed_page() ) { 
+              if ( is_adult_ed_page() ) {
                 wp_nav_menu( array(
                   'menu'              =>  get_field('grey_tabs_menu','option'),
                   'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
@@ -53,13 +60,78 @@
                   'container_class'   => 'col-12',
                 ));
               } else {
-                wp_nav_menu( array(
-                  'theme_location'    => 'top-buttons',
-                  'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                  'walker'            => new WP_Bootstrap_Navwalker(),
-                  'menu_class'        => 'd-md-flex justify-content-end',
-                  'container_class'   => 'col-12',
-                ));
+                // wp_nav_menu( array(
+                //   'theme_location'    => 'top-buttons',
+                //   'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                //   'walker'            => new WP_Bootstrap_Navwalker(),
+                //   'menu_class'        => 'd-md-flex justify-content-end',
+                //   'container_class'   => 'col-12',
+                // ));
+                //$greybuttons = wp_get_nav_menu_items('top-buttons');
+                $menu_name = 'top-buttons';
+                $locations = get_nav_menu_locations();
+                $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+                $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+                ?>  
+                <nav>
+                <ul class="d-md-flex justify-content-end" id="menu-top-buttons" itemscope>
+                <?php   
+                foreach ($menuitems as $item) :
+      
+                  $title = $item->title;
+                  $link = $item->url;
+                 // item does not have a parent so menu_item_parent equals 0 (false)
+                  if ( !$item->menu_item_parent ):
+                  $parent_id = $item->ID;
+                  ?>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
+                    <a itemprop="url" href="<?php echo $link; ?>" class="nav-link"><span itemprop="name"><?php echo $title; ?></span></a>
+                  <?php endif; 
+                  
+                  if ( $parent_id == $item->menu_item_parent ): 
+                    if ( !$submenu ): echo '<i class="fas fa-sort-down"></i>'; $submenu = true; ?>
+
+                    <ul class="dropdown-menu">
+                     
+                    <div class="double-sub">
+
+                    <?php 
+                    if (get_field('include_left_column',$parent_id)) : ?>
+                      <div class="submenu-left">
+                        <?php 
+                          echo the_field('content',$parent_id); 
+                          if (get_field('show_button',$parent_id)){
+                            echo '<a class="btn" href="'.get_field('button_url',$parent_id).'">'.get_field('button_text',$parent_id).'</a>';
+                          }
+                        ?>
+                      </div>
+                      <?php endif; ?>
+
+                      <div class="submenu-right">
+                      <?php endif; ?>
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
+                            <a href="<?php echo $link; ?>" class="title"><span itemprop="name"><?php echo $title; ?></span></a>
+                        </li>
+                      <?php if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
+                      </div>
+                    </div>  
+                    </ul>
+                    <?php $submenu = false; endif; 
+                  endif; 
+
+                  if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id ): 
+                    echo '</li>'; 
+                    $submenu = false; 
+                  endif;
+
+                $count++; 
+                endforeach; 
+                ?>
+
+                  </ul>
+                </nav>
+              <?php
+              //top grey buttons
               }
               ?>
               </div>
@@ -82,6 +154,11 @@
         </button>
         <?php
               if ( is_adult_ed_page() ) { 
+                $header_text = get_the_archive_title();
+                if(empty($header_text) || $header_text == 'Archives' ){
+                  $header_text = get_the_title();
+
+                }
                 wp_nav_menu( array(
                   'menu'              =>  get_field('top_navigation_menu','option'),
                   'depth'				=> 2,
@@ -93,6 +170,11 @@
                   'walker'			=> new WP_Bootstrap_Navwalker()
                 ));
               } else {
+                if (is_home()){
+                  $header_text = 'News and Events';
+                } else {
+                  $header_text = get_the_title();
+                }
                 wp_nav_menu( array(
                   'theme_location'    => 'main-navigation',
                   'depth'				=> 2,
@@ -103,7 +185,7 @@
                   'fallback_cb'		=> 'WP_Bootstrap_Navwalker::fallback',
                   'walker'			=> new WP_Bootstrap_Navwalker()
                 ));
-              }
+              }              
         ?>
     </div>
     <div id="currenthover" class="currenthover"></div>
@@ -120,7 +202,7 @@
           <div class="content_left">
               <div class="social">
                   <?php if( have_rows('platforms','option') ):  while( have_rows('platforms','option') ) : the_row(); ?>
-                        <a href="<?php echo get_sub_field('profile_url'); ?>">
+                        <a href="<?php echo get_sub_field('profile_url'); ?>" target="_blank">
                           <i class="fab fa-<?php echo get_sub_field('platform'); ?><?php if(get_sub_field('platform')=='facebook'){echo "-f";} ?> top-social-icon"></i>
                         </a>
                   <?php endwhile; endif; ?>
@@ -167,7 +249,17 @@
   <?php else : //Internal header?>
 
 <section class="page-content">
-    <?php $featuredimg = get_the_post_thumbnail_url(); if (empty($featuredimg)){$featuredimg = get_field('logo_and_icons','option')['default_header_image']; } ?>
+    <?php 
+    if (!is_adult_ed_page()) {
+      $featuredimg = get_the_post_thumbnail_url(); 
+    }
+    if (is_home()) {
+      $featuredimg = get_the_post_thumbnail_url(get_option( 'page_for_posts' )); 
+    }
+    if (!isset($featuredimg) || empty($featuredimg)){
+      $featuredimg = get_field('logo_and_icons','option')['default_header_image']; 
+    } 
+    ?>
     <div class="featured-top-image" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">
         <div class="row main-heading">
@@ -175,7 +267,7 @@
         if (is_search()) :
         printf( esc_html__( 'Search Results for: %s', 'anglian-learning' ), '<span>' . get_search_query() . '</span>' );
         else :
-          the_title();
+          echo $header_text;
         endif; ?></h1>
         </div>
       </div>

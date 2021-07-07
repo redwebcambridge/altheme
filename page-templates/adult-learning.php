@@ -36,10 +36,8 @@ get_header(); ?>
                 'hide_empty' => false,
              ]);
 
-            //var_dump($categories);
             if( get_the_ID() == get_field('adult_learning_homepage','option')  && !empty($categories) ):
                 foreach ($categories as $category) { 
-                     //echo $category->term_id; 
                      echo '<div class="col-md-4 course"><a href="'.esc_url( get_term_link( $category->term_id ) ).'">';
                      echo '<div class="course-thumbnail" style="background-image:url('.get_field('image',$category).')"></div><p class="course-name">'.$category->name.'</p>';
                      echo '</a></div>';
@@ -47,28 +45,7 @@ get_header(); ?>
             ?> 
             </div>                    
             <?php endif; ?>
-
-            <div class="contact-box row">
-                <div class="name-position col-md-6">
-                      <p><strong><?php the_field('contact_name') ?></strong><br>
-                          <?php the_field('position') ?></p>
-                </div>
-
-                <div class="contact-details d-flex col-md-6">
-                    <p class="email"><a href="mailto:<?php the_field('email') ?>"><?php the_field('email') ?></a></p>
-                    <p class="number"><?php the_field('phone_number') ?></p>
-                </div>
-            </div>    
-
-        </div>
-
-          <!---Body section Centre - End--->
-
-
-            
-
-
-          <!---Body section - End--->
+            <?php get_template_part('template-parts/adult-learning-contact'); ?>
         </div>
     </div>
 </div>

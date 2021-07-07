@@ -27,7 +27,50 @@ $example_update_checker = new ThemeUpdateChecker(
     'altheme',
     'https://anglianlearning.org/al-theme-version.json'
 );
+//plugin dependancies
+require_once get_template_directory() . '/lib/class-tgm-plugin-activation.php';
+add_action( 'tgmpa_register', 'anglianlearning_register_required_plugins' );
+function anglianlearning_register_required_plugins() {
 
+	$plugins = array(
+		array(
+			'name'         => 'Advanced Custom Fields', // The plugin name.
+			'slug'         => 'advanced-custom-fields-pro', // The plugin slug (typically the folder name).
+			'source'       => 'https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9OTg0ODh8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE3LTAxLTMwIDEwOjEzOjE3', // The plugin source.
+			'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+		),
+		array(
+			'name'      => 'contact-form-7',
+			'slug'      => 'contact-form-7',
+			'required'  => true,
+		),
+    array(
+			'name'      => 'instagram-feed',
+			'slug'      => 'instagram-feed',
+			'required'  => true,
+		),
+    array(
+			'name'      => 'tinymce-advanced',
+			'slug'      => 'tinymce-advanced',
+			'required'  => true,
+		),
+	);
+
+	$config = array(
+		'id'           => 'anglianlearning',       // Unique ID for hashing notices for multiple instances of TGMPA.
+		'default_path' => '',                      // Default absolute path to bundled plugins.
+		'menu'         => 'tgmpa-install-plugins', // Menu slug.
+		'parent_slug'  => 'themes.php',            // Parent menu slug.
+		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+		'has_notices'  => true,                    // Show admin notices or not.
+		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+		'message'      => '',                      // Message to output right before the plugins table.
+	);
+
+	tgmpa( $plugins, $config );
+}
 //School Settings
 add_action('acf/init', 'school_settings');
 function school_settings() {
@@ -63,6 +106,7 @@ function anglian_learning_scripts() {
   wp_enqueue_script( 'fullcalendar', get_template_directory_uri().'/js/calendar.min.js');
   //Styles
   wp_enqueue_style( 'anglian-learning-style', get_stylesheet_uri(), array(), _S_VERSION );
+  wp_enqueue_style( 'anglian-learning-styles', get_template_directory_uri().'/styles.css' );
   //bootstrap
   wp_enqueue_script( 'popper', get_template_directory_uri().'/js/popper.min.js');
   wp_enqueue_script( 'al-bootstrap', get_template_directory_uri().'/js/bootstrap.js');
@@ -142,10 +186,10 @@ add_action( 'init', 'register_news_post_type', 0 );
 function twitterwp() {
   require_once( 'lib/TwitterWP.php' );
   $app = array(
-    'consumer_key'        => '3i3FaOxBLWKbVFHBjHCRoM2wl',
-    'consumer_secret'     => 'd8UAsFMHXgbS0qUyxWDfAUda8htAxoluJZeF4qZRWnqYlJs3TZ',
-    'access_token'        => '1366708527566385153-6FgFgNAMeCYRP39lOZ7CldWDlz6QRB',
-    'access_token_secret' => '5IlRYw6R2zXeK5l0T4eywgo1f2W4AgzhCFNyPGB3pmFZK',
+    'consumer_key'        => TW_consumer_key,
+    'consumer_secret'     => TW_consumer_secret,
+    'access_token'        => TW_access_token,
+    'access_token_secret' => TW_access_token_secret,
     );
   // initiate your app
   $tw = TwitterWP::start( $app );
@@ -166,6 +210,20 @@ function twitterwp() {
   }
   return $tweets;
 }
+
+//School Settings
+function action_sass_compile() {
+  $screen = get_current_screen();
+ // wp_mail('lewis@redgraphic.co.uk', 'settings saved',$screen->id);
+    if ($screen->id=="toplevel_page_school-settings") {
+      function sass_compile() {
+        require_once get_template_directory() . '/lib/scssphp/scss.inc.php';
+        require_once get_template_directory() . '/lib/sass-compile.php';
+      }
+      sass_compile();
+  }
+}
+add_action('acf/save_post', 'action_sass_compile', 20);
 
 //WILL HAVE TO HAVE A DEVELOPMENT OPTION SO THIS DOESNT RUN EACH TIME
 //SASS CSS COMPILER
@@ -197,6 +255,7 @@ function calendar_xml_init() {
     die();
 }
 
+if (class_exists('ACF')) {
 if (get_field('activate_adult_learning','option')) {
     // Register Adult Learning Custom Post Type
     function register_adult_learning() {
@@ -209,6 +268,8 @@ if (get_field('activate_adult_learning','option')) {
         'label' => __( 'Adult Learning', 'text_domain' ),
         'supports'  => array( 'title', 'editor', 'thumbnail' ),
         'show_ui' => true,
+        'public' => true,
+
         'labels' => $labels
       );
       register_post_type( 'adultlearning', $args );
@@ -229,11 +290,13 @@ if (get_field('activate_adult_learning','option')) {
                 'labels' => $labels,
                 'show_ui' => true,
                 'query_var' => true,
+                'public' => true,
                 'rewrite' => array('slug' => 'adult-learning/courses', 'hierarchical' => true)
             )
         );
     }
     add_action( 'init', 'build_taxonomies_adult_learning', 0 );
+}
 }
 
 add_action('admin_menu', 'vacanciesmenu');
@@ -268,7 +331,7 @@ add_filter('acf/load_field/name=grey_tabs_menu', 'acf_load_color_field_choices')
 add_filter('acf/load_field/name=top_navigation_menu', 'acf_load_color_field_choices');
 
 function is_adult_ed_page() {
-  if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) ) :
+  if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') ) :
     return true;
   endif;
 }

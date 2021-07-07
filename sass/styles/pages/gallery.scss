@@ -16,3 +16,16 @@
     }
   }
 }
+.ekko-lightbox-nav-overlay {
+  a {
+    color: #fff;
+    i {
+      margin:5px;
+      color: #fff;
+      &.right {
+          text-align: right;
+      }
+    }
+  }
+  
+}

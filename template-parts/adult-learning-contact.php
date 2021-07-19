@@ -4,8 +4,8 @@
         <p><strong><?php echo $adlearning_contact['contact_name']; ?></strong><br>
         <?php echo $adlearning_contact['position']; ?></p>
     </div>
-    <div class="contact-details d-flex col-md-8 justify-content-end align-items-center">
+    <div class="d-flex col-md-8 justify-content-end align-items-center contact-details">
         <p class="email"><a href="mailto:<?php echo $adlearning_contact['email_address']; ?>"><?php echo $adlearning_contact['email_address']; ?></a></p>
         <p class="number"><?php echo $adlearning_contact['telephone_number']; ?></p>
     </div>
-</div>  
+</div>

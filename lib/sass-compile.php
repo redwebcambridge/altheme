@@ -1,11 +1,4 @@
 <?php
-$compiler = new ScssPhp\ScssPhp\Compiler();
-$compiler->setSourceMap(ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE);
-$source_scss = get_stylesheet_directory() . '/sass/style.scss';
-$scssContents = file_get_contents($source_scss);
-$import_path = get_stylesheet_directory() . '/sass';
-$compiler->addImportPath($import_path);
-$target_css = get_stylesheet_directory() . '/styles.css';
 
 //Main colours
 $logos = get_field('logo_and_icons','option');
@@ -19,11 +12,20 @@ $adultcolours = get_field('adult_colours','option');
 $adultfonts = get_field('adult_fonts','option');
 $adult_all_colours = get_field('adult_colours','option');
 
+$compiler = new ScssPhp\ScssPhp\Compiler();
+$compiler->setSourceMap(ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE);
+$source_scss = get_stylesheet_directory() . '/sass/style.scss';
+$scssContents = file_get_contents($source_scss);
+$import_path = get_stylesheet_directory() . '/sass';
+$compiler->addImportPath($import_path);
+$target_css = get_stylesheet_directory() . '/styles.css';
+
+
 //Sports centre colours
-$sportlogos = get_field('sportcentre_logo_and_icons','option');
-$sportcolours = get_field('sportcentre_colours','option');
-$sportfonts = get_field('sportcentre_fonts','option');
-$sport_all_colours = get_field('sportcentre_colours','option');
+// $sportlogos = get_field('sportcentre_logo_and_icons','option');
+// $sportcolours = get_field('sportcentre_colours','option');
+// $sportfonts = get_field('sportcentre_fonts','option');
+// $sport_all_colours = get_field('sportcentre_colours','option');
 
 $variables = [
   //colours
@@ -63,18 +65,18 @@ $variables = [
   '$adultbodyfontweight' => $adultfonts['adult_body_font_weight'],
 
   //Sport centre colours
-  '$sportprimarycolour' => $sportcolours['adult_primary_colour'],
-  '$sportsecondarycolour' =>  $sportcolours['adult_second_colour'],
-  '$sportthirdcolour' =>  $sportcolours['adult_third_colour'],
-  '$sportbordercolour' =>  $sportcolours['adult_border_colour'],
-  '$sportfooterbgcolour' => get_field('sportcentre_footer_background_colour','option'),
-  '$sportfooter_icon_colour' => $sport_all_colours['adult_footer_icon_colour'],
-  '$sportfooter_title_colour' => $sport_all_colours['adult_footer_title_colour'],
+  // '$sportprimarycolour' => $sportcolours['adult_primary_colour'],
+  // '$sportsecondarycolour' =>  $sportcolours['adult_second_colour'],
+  // '$sportthirdcolour' =>  $sportcolours['adult_third_colour'],
+  // '$sportbordercolour' =>  $sportcolours['adult_border_colour'],
+  // '$sportfooterbgcolour' => get_field('sportcentre_footer_background_colour','option'),
+  // '$sportfooter_icon_colour' => $sport_all_colours['adult_footer_icon_colour'],
+  // '$sportfooter_title_colour' => $sport_all_colours['adult_footer_title_colour'],
   //Sport centre fonts
-  '$sportheadingsfont' => $adultfonts['adult_heading_font'],
-  '$sportheadingsfontweight' => $adultfonts['adult_heading_font_weight'],
-  '$sportbodyfont' => $adultfonts['adult_body_font'],
-  '$sportbodyfontweight' => $adultfonts['adult_body_font_weight'],
+  // '$sportheadingsfont' => $adultfonts['adult_heading_font'],
+  // '$sportheadingsfontweight' => $adultfonts['adult_heading_font_weight'],
+  // '$sportbodyfont' => $adultfonts['adult_body_font'],
+  // '$sportbodyfontweight' => $adultfonts['adult_body_font_weight'],
 ];
 
 $compiler->setVariables($variables);

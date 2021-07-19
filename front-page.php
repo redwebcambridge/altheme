@@ -104,10 +104,12 @@
 
                     <?php $tweets = twitterwp(); ?>
                     <div class="twitter-box">
+                        <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
                         <div class="twitter-header">
-                            <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">@<?php echo $tweets[0]->user->screen_name; ?></a>
+                            @<?php echo $tweets[0]->user->screen_name; ?>
                         </div>
-
+                        
+                        </a>
                         <div class="slick-controls">
                             <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
                             <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>

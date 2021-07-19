@@ -89,11 +89,7 @@
                                     $latitude = get_field('latitude','option');
                                     ?>
 
-                                    <div id ="map"></div>
-
-
-
-
+                                    <div id="map"></div>
 
                                     <?php
                                         echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>";
@@ -103,13 +99,12 @@
                                         // add the OpenStreetMap tiles
                                         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                           maxZoom: 19,
-                                          attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
                                         }).addTo(map);
                                         // show the scale bar on the lower left corner
                                         L.control.scale().addTo(map);
                                     </script>
 
-                                    <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).bindPopup('The center of the world').addTo(map); </script>"; ?>
+                                    <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
 
                                 <?php } ?>
 

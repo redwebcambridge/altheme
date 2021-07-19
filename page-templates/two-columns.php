@@ -12,8 +12,8 @@ get_header(); ?>
 
           <!---Body section left--->
           <div class="col-md-6 text-section">
-          <?php if (get_field('sub_heading')) : ?>
-            <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+          <?php if (get_field('sub_heading_left')) : ?>
+            <h2 class="heading-two"><?php the_field('sub_heading_left') ?></h2>
             <div class="gradline"></div>
           <?php endif; ?>
           <?php if (get_field('body_text')) : ?>
@@ -24,6 +24,10 @@ get_header(); ?>
 
           <!---Body section right--->
           <div class="col-md-6 text-section">
+          <?php if (get_field('sub_heading_right')) : ?>
+            <h2 class="heading-two"><?php the_field('sub_heading_right') ?></h2>
+            <div class="gradline"></div>
+          <?php endif; ?>
           <?php if (get_field('body_text_right')) : ?>
             <p class="body-text"><?php the_field('body_text_right') ?></p>
           <?php endif; ?>

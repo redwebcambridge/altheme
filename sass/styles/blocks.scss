@@ -13,9 +13,7 @@ body{
     top:45vh;
     left:50vw;
   }
-  .homepage-tabs-nav .tab_button {
-    box-shadow: none !important;
-  }
+
   .line {
     height: 8px;
     width: 100%;
@@ -117,7 +115,9 @@ body{
           line-height: 3.5rem;
           font-weight: $bold-weight;
           display: flex;
+          justify-content: space-between;
           padding:0 20px;
+          color: #fff;
           &:after {
             @extend %fa-icon;
             @extend .fab;
@@ -201,7 +201,19 @@ body{
   }
 
   .page-content{
-
+    .wp-caption-text {
+      background-color:#dee2e671;
+      color: $darkgrey;
+      font-size: 0.8rem;
+      padding:5px 10px;
+      margin-top:3px
+    }
+    .wp-caption {
+      img {
+        width: 100%;
+      }
+      
+    }
     .text-section{
         margin-bottom: 70px;
         @media (max-width: 768px) {
@@ -209,7 +221,7 @@ body{
         }
     }
     img{
-        width: 100%;
+        max-width: 100%;
         height: auto;
     }
 

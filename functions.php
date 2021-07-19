@@ -104,17 +104,18 @@ function anglian_learning_scripts() {
   wp_enqueue_style( 'leafletcss', get_template_directory_uri().'/sass/styles/leaflet.css');
   //Calendar
   wp_enqueue_script( 'fullcalendar', get_template_directory_uri().'/js/calendar.min.js');
-  //Styles
-  wp_enqueue_style( 'anglian-learning-style', get_stylesheet_uri(), array(), _S_VERSION );
-  wp_enqueue_style( 'anglian-learning-styles', get_template_directory_uri().'/styles.css' );
   //bootstrap
   wp_enqueue_script( 'popper', get_template_directory_uri().'/js/popper.min.js');
   wp_enqueue_script( 'al-bootstrap', get_template_directory_uri().'/js/bootstrap.js');
+  wp_enqueue_style( 'al-bootstrap-css', get_template_directory_uri().'/lib/bootstrap.min.css');
+  //Styles
+  wp_enqueue_style( 'anglian-learning-style', get_stylesheet_uri(), array(), _S_VERSION );
+  wp_enqueue_style( 'anglian-learning-styles', get_template_directory_uri().'/styles.css' );
   //sliders
   wp_enqueue_script( 'al-slick', get_template_directory_uri().'/js/slick/slick.min.js');
-   //Lightbox
-   wp_enqueue_script( 'al-gallery-js', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');
-   wp_enqueue_style( 'al-gallery-style', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css');
+  //Lightbox
+  wp_enqueue_script( 'al-gallery-js', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');
+  wp_enqueue_style( 'al-gallery-style', get_template_directory_uri().'/lib/ekko-lightbox.css');
   //Custom scripts
   wp_enqueue_script( 'al-scripts', get_template_directory_uri().'/js/scripts.js');
  
@@ -153,8 +154,6 @@ function register_mega_navwalker(){
   require_once get_template_directory() . '/lib/class-wp-bootstrap-mega-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_mega_navwalker' );
-
-
 
 
 //Disable Gutenburg
@@ -203,7 +202,6 @@ function twitterwp() {
     return;
   }
   $tweets = $tw->get_tweets( $user, 5 );
-  // Now let's check our app's rate limit status
   $rate_status = $tw->rate_limit_status();
   if ( is_wp_error( $rate_status ) ) {
     $tw->show_wp_error( $rate_status );
@@ -214,7 +212,6 @@ function twitterwp() {
 //School Settings
 function action_sass_compile() {
   $screen = get_current_screen();
- // wp_mail('lewis@redgraphic.co.uk', 'settings saved',$screen->id);
     if ($screen->id=="toplevel_page_school-settings") {
       function sass_compile() {
         require_once get_template_directory() . '/lib/scssphp/scss.inc.php';
@@ -244,10 +241,21 @@ function favicon() {
 }
 add_action('wp_head', 'favicon');
 
+//Calendar function
 add_action( 'wp_ajax_calendar_xml', 'calendar_xml_init' );
 add_action( 'wp_ajax_nopriv_calendar_xml', 'calendar_xml_init' );
+
+function get_content($URL){
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_URL, $URL);
+  $data = curl_exec($ch);
+  curl_close($ch);
+  return $data;
+}
+
 function calendar_xml_init() {
-    $xmlstr = file_get_contents(get_home_url().'/wp-content/themes/anglian-learning/calendar-xml.php');
+    $xmlstr = get_content('https://anglianlearning.org/cal/calendar-xml.php');
     $xml = new SimpleXMLElement($xmlstr);
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);
@@ -344,3 +352,29 @@ if( !function_exists( 'tz_excerpt_length' ) ) {
     add_filter('excerpt_length', 'tz_excerpt_length');
 }
 
+function wpse196289_default_page_template() {
+  global $post;
+  if ( 'page' == $post->post_type 
+      && 0 != count( get_page_templates( $post ) ) 
+      && get_option( 'page_for_posts' ) != $post->ID // Not the page for listing posts
+      && '' == $post->page_template // Only when page_template is not set
+  ) {
+      $post->page_template = "page-templates/one-column.php";
+  }
+}
+add_action('add_meta_boxes', 'wpse196289_default_page_template', 1);
+
+/**
+ * Change PDF icon to Thumbnail File
+ */
+function acf_change_icon_on_files ( $icon, $mime, $attachment_id ){ // Display thumbnail instead of document.png
+
+  if ( strpos( $_SERVER[ 'REQUEST_URI' ], '/wp-admin/upload.php' ) === false && $mime === 'application/pdf' ){
+    $get_image = wp_get_attachment_image_src ( $attachment_id, 'full' );
+    if ( $get_image ) {
+      $icon = $get_image[0];
+    }
+  }
+  return $icon;
+}
+add_filter( 'wp_mime_type_icon', 'acf_change_icon_on_files', 10, 3 );

@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * News Category
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -13,22 +13,22 @@
  */
 
 get_header();
+$category = get_queried_object();
 ?>
+
 <div class="container newsevents mb-5">
 	<div class="row row-flex">
 		<?php 
-		$newsletters = get_category_by_slug('newsletter');
-		$newsletters = '-'.$newsletters->term_id;
-
-		$the_query = new WP_Query( array(    'post_type'  => 'post','posts_per_page' => -1,'cat' => $newsletters)  );
+		$the_query = new WP_Query( array('post_type'  => 'post','posts_per_page' => -1,'cat' => $category->term_id )  );
 		if ($the_query->have_posts()) : while ($the_query->have_posts() ) : $the_query->the_post(); 
-			 get_template_part('template-parts/content-post');
-			endwhile; else : echo '<div class="alert alert-secondary text-center" role="alert"><em>Sorry! There are no posts found</em></div>'; endif;
+		get_template_part('template-parts/content-newsletters');
+		endwhile; else : echo '<div class="alert alert-secondary text-center" role="alert"><em>Sorry! There are no posts found</em></div>'; endif;
 		?>
 	</div>
-	<?php if ($the_query->post_count >= 6) : ?>
+	<?php if ($the_query->post_count > 4) : ?>
 		<?php get_template_part('template-parts/loadmore'); ?>
-	<?php endif; ?></div>
-	
+	<?php endif; ?>
+</div>
+
 <?php
 get_footer();

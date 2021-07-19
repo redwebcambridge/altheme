@@ -44,7 +44,7 @@ if (!class_exists('ACF')) {
             <?php } ?>
         </div>
         <!-- grey buttons -->
-        <div class="hidden-sm-down col-md-7 pt-4 searchtopbuttonholder">
+        <div class="col-12 col-md-7 pt-4 searchtopbuttonholder">
               <div class="row justify-content-end google_search">
                 <div class="col-4 px-0"><div id="google_translate_el"></div></div>
                 <div class="col-4 pl-0"><?php get_search_form(); ?></div>
@@ -60,24 +60,16 @@ if (!class_exists('ACF')) {
                   'container_class'   => 'col-12',
                 ));
               } else {
-                // wp_nav_menu( array(
-                //   'theme_location'    => 'top-buttons',
-                //   'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                //   'walker'            => new WP_Bootstrap_Navwalker(),
-                //   'menu_class'        => 'd-md-flex justify-content-end',
-                //   'container_class'   => 'col-12',
-                // ));
-                //$greybuttons = wp_get_nav_menu_items('top-buttons');
                 $menu_name = 'top-buttons';
                 $locations = get_nav_menu_locations();
                 $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
                 $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
-                ?>  
+                ?>
                 <nav>
                 <ul class="d-md-flex justify-content-end" id="menu-top-buttons" itemscope>
-                <?php   
+                <?php
                 foreach ($menuitems as $item) :
-      
+
                   $title = $item->title;
                   $link = $item->url;
                  // item does not have a parent so menu_item_parent equals 0 (false)
@@ -86,20 +78,20 @@ if (!class_exists('ACF')) {
                   ?>
                   <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
                     <a itemprop="url" href="<?php echo $link; ?>" class="nav-link"><span itemprop="name"><?php echo $title; ?></span></a>
-                  <?php endif; 
-                  
-                  if ( $parent_id == $item->menu_item_parent ): 
+                  <?php endif;
+
+                  if ( $parent_id == $item->menu_item_parent ):
                     if ( !$submenu ): echo '<i class="fas fa-sort-down"></i>'; $submenu = true; ?>
 
                     <ul class="dropdown-menu">
-                     
+
                     <div class="double-sub">
 
-                    <?php 
+                    <?php
                     if (get_field('include_left_column',$parent_id)) : ?>
                       <div class="submenu-left">
-                        <?php 
-                          echo the_field('content',$parent_id); 
+                        <?php
+                          echo the_field('content',$parent_id);
                           if (get_field('show_button',$parent_id)){
                             echo '<a class="btn" href="'.get_field('button_url',$parent_id).'">'.get_field('button_text',$parent_id).'</a>';
                           }
@@ -114,18 +106,18 @@ if (!class_exists('ACF')) {
                         </li>
                       <?php if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
                       </div>
-                    </div>  
+                    </div>
                     </ul>
-                    <?php $submenu = false; endif; 
-                  endif; 
-
-                  if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id ): 
-                    echo '</li>'; 
-                    $submenu = false; 
+                    <?php $submenu = false; endif;
                   endif;
 
-                $count++; 
-                endforeach; 
+                  if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id ):
+                    echo '</li>';
+                    $submenu = false;
+                  endif;
+
+                $count++;
+                endforeach;
                 ?>
 
                   </ul>
@@ -153,7 +145,7 @@ if (!class_exists('ACF')) {
           <span class="navbar-toggler-icon"></span>
         </button>
         <?php
-              if ( is_adult_ed_page() ) { 
+              if ( is_adult_ed_page() ) {
                 $header_text = get_the_archive_title();
                 if(empty($header_text) || $header_text == 'Archives' ){
                   $header_text = get_the_title();
@@ -185,7 +177,7 @@ if (!class_exists('ACF')) {
                   'fallback_cb'		=> 'WP_Bootstrap_Navwalker::fallback',
                   'walker'			=> new WP_Bootstrap_Navwalker()
                 ));
-              }              
+              }
         ?>
     </div>
     <div id="currenthover" class="currenthover"></div>
@@ -233,7 +225,7 @@ if (!class_exists('ACF')) {
 
   </div><!-- front-page-header -->
   <div class="container homepage-tabs-nav">
-      <div class="row">
+      <div class="row ">
       <?php
         $i=0;
         if( have_rows('tab_content') ):
@@ -244,26 +236,35 @@ if (!class_exists('ACF')) {
           endwhile;
         endif;
         ?>
+        <div id="slider_nav" class="col"></div>
       </div>
     </div><!-- homepage-tabs-nav-->
   <?php else : //Internal header?>
 
 <section class="page-content">
-    <?php 
+    <?php
     if (!is_adult_ed_page()) {
-      $featuredimg = get_the_post_thumbnail_url(); 
+      $featuredimg = get_the_post_thumbnail_url();
     }
     if (is_home()) {
-      $featuredimg = get_the_post_thumbnail_url(get_option( 'page_for_posts' )); 
+      $featuredimg = get_the_post_thumbnail_url(get_option( 'page_for_posts' ));
     }
     if (!isset($featuredimg) || empty($featuredimg)){
-      $featuredimg = get_field('logo_and_icons','option')['default_header_image']; 
-    } 
+      $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
+    }
+    if (is_category()){
+      $category = get_queried_object();
+      $header_text = $category->name;
+      $featuredimg = get_field('header_image',$category);
+      if(empty($featuredimg)){
+        $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
+      }
+    }
     ?>
     <div class="featured-top-image" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">
         <div class="row main-heading">
-        <h1><?php 
+        <h1><?php
         if (is_search()) :
         printf( esc_html__( 'Search Results for: %s', 'anglian-learning' ), '<span>' . get_search_query() . '</span>' );
         else :

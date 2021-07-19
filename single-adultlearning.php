@@ -41,37 +41,37 @@ get_header();
 
               <h3>Course Details</h3>
               <div class="row course_details">
-                  <div class="col-1">
+                  <div class="col-6 col-md-1">
                       <strong>Day</strong><br />
                       <?php if(get_field('day')) { ?>
                           <?php the_field('day'); ?>
                       <?php } ?>
                   </div>
-                  <div class="col-2">
+                  <div class="col-6 col-md-2">
                       <strong>Time</strong><br />
                       <?php if(get_field('time')) { ?>
                         <?php the_field('time'); ?>
                       <?php } ?>
                   </div>
-                  <div class="col-2">
+                  <div class="col-6 col-md-2">
                       <strong>Weeks/Term</strong><br />
                       <?php if(get_field('weeksterm')) { ?>
                         <?php the_field('weeksterm'); ?>
                       <?php } ?>
                   </div>
-                  <div class="col-3">
+                  <div class="col-6 col-md-3">
                       <strong>Start Date</strong><br />
                       <?php if(get_field('start_date')) { ?>
                         <?php the_field('start_date'); ?>
                       <?php } ?>
                   </div>
-                  <div class="col-2">
+                  <div class="col-6 col-md-2">
                       <strong>Cost</strong><br />
                       <?php if(get_field('course_cost')) { ?>
                         <?php the_field('course_cost'); ?>
                       <?php } ?>
                   </div>
-                  <div class="col-2">
+                  <div class="col-12 col-md-2">
                         <a class="btn btn-primary rounded-0" href="<?php the_field('wisepay_url'); ?>">Book now</a>
                   </div>
               </div>

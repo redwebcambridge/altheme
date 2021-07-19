@@ -20,22 +20,24 @@ if($_POST) :
     if ($_POST['publish']) :
 
       $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
+      $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
 
       try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
         $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
-        $sql = $conn->prepare(" INSERT INTO live (vac_title,vac_sub_title,vac_salary,vac_closing_date,vac_description,school,live,school_name,application_form) VALUES (:vac_title,:vac_sub_title,:vac_salary,:vac_closing_date,:vac_description,:school,:live,:schoolname,:application_form)");
+        $sql = $conn->prepare(" INSERT INTO live (vac_title,vac_sub_title,vac_salary,vac_closing_date,vac_description,school,live,school_name,application_form) VALUES (:vac_title,:vac_sub_title,:vac_salary,:vac_closing_date,:vac_description,:school,:live,:schoolname,:application_form,:recruitment_pack)");
 
         $sql->execute([
           'vac_title' =>  $_POST['post_title'],
           'vac_sub_title' => $_POST['subtitle'],
           'vac_salary' => $_POST['salary'],
           'vac_closing_date' => $_POST['closing'],
-          'vac_description' => $_POST['jobdesc'],
+          'vac_description' => wpautop( $_POST['jobdesc'] ),
           'school' => $school,
           'live' => 1,
           'schoolname' => $schoolname,
           'application_form' => $_FILES['application']['name'],
+          'recruitment_pack' => $_FILES['recruitment']['name'],
       ]);  
 
         $update_id = $conn->lastInsertId();
@@ -56,14 +58,16 @@ if($_POST) :
           'vac_sub_title' => $_POST['subtitle'],
           'vac_salary' => $_POST['salary'],
           'vac_closing_date' => $_POST['closing'],
-          'vac_description' => $_POST['jobdesc'],
+          'vac_description' => wpautop( $_POST['jobdesc'] ),
           'live' => 1,
           'id' => $_POST['updateid'],
           'application_form' => $_FILES['application']['name'],
+          'recruitment_pack' => $_FILES['recruitment']['name'],
         ];
         $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
+        $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
 
-        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form, live=:live WHERE id=:id");
+        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form,recruitment_pack=:recruitment_pack, live=:live WHERE id=:id");
       
         $sql->execute($update_data);  
 
@@ -95,6 +99,12 @@ endif;
 if (isset($_GET['downloadapplication'])){
   $my_space->downloadFile( $school.'/'.$vacancy['application_form'],'../application/'.$vacancy['application_form']); 
   $downloadurl = '../application/'.$vacancy['application_form'];
+  echo "<script>location.href='$downloadurl'</script>";
+  die;
+}
+if (isset($_GET['downloadrecruitmentpack'])){
+  $my_space->downloadFile( $school.'/'.$vacancy['recruitment_pack'],'../application/'.$vacancy['recruitment_pack']); 
+  $downloadurl = '../application/'.$vacancy['recruitment_pack'];
   echo "<script>location.href='$downloadurl'</script>";
   die;
 }
@@ -191,7 +201,22 @@ if ($_GET['action']=='addvacancy'){
         </div>
       </div>
 
-      <div id="acf_after_title-sortables" >        
+      <?php 
+      //get vacancy page
+        $pages = get_pages( array(
+          'post_type' => 'page',
+          'meta_key' => '_wp_page_template',
+          'meta_value' => 'page-templates/vacancies.php',
+          'hierarchical' => 0
+          ) );
+         $vacancies_url = get_permalink($pages[0]->ID);
+
+      ?>
+
+      <div id="acf_after_title-sortables" >               
+        
+      <p><a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>" target="_blank"><?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?></a></p>
+   
         <div id="vacancy_fields" class="postbox acf-postbox">
 
           <div class="acf-field" style="flex-grow:2" >
@@ -206,7 +231,7 @@ if ($_GET['action']=='addvacancy'){
 
           <div class="acf-field">
             <h2>Closing Date</h2>
-            <input type="text" name="closing" required value="<?php if($vacancy){echo $vacancy['vac_closing_date'];} ?>" >
+            <input type="date" name="closing" required value="<?php if($vacancy){echo $vacancy['vac_closing_date'];} ?>" >
           </div>
 
           <div class="acf-field" style="width:100%">
@@ -217,8 +242,8 @@ if ($_GET['action']=='addvacancy'){
                 $jobdesc,
                 'jobdesc',
                 array(
-                  'media_buttons' => false,
-                  'textarea_rows' => 8,
+                  'media_buttons' => true,
+                  'textarea_rows' => 40,
                   'tabindex' => 4,
                   'tinymce' => array(
                     'theme_advanced_buttons1' => 'bold, italic, ul, pH, temp',
@@ -236,6 +261,17 @@ if ($_GET['action']=='addvacancy'){
              ?>
              <h4>Upload Application Form</h4>
              <input type="file" id="application" name="application" >
+             
+          </div>
+          <div class="acf-field">             
+            <h2>Recruitment Pack</h2>
+          <?php 
+             if($vacancy){
+              echo '<a href="'.$_SERVER['REQUEST_URI'].'&downloadrecruitmentpack" target="_blank">'.$vacancy['recruitment_pack'].'</a>';
+             }
+             ?>
+             <h4>Upload Recruitment Pack</h4>
+             <input type="file" id="recruitment" name="recruitment" >
              
           </div>
 
@@ -335,6 +371,13 @@ else : //Not updating or adding so show list of vanancies and get trash
      } else {
       $status = 'Draft';
     }
+    $date = new DateTime($vacancy['vac_closing_date']);
+    $now = new DateTime();
+
+    if($date < $now) {
+      $status = '<strong>Passed closing date</strong>';
+    }
+   
       echo '<tr><td><a href="?page=vacancyadmin&action=update&updateid='.$vacancy['id'].'">'.$vacancy['vac_title'].'</a></td>';
       echo '<td>'.$vacancy['vac_sub_title'].'</td>';
       echo '<td>'.$status.'</td>';

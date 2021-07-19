@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<!-- Latest compiled and minified JavaScript -->
+
 <div class="container">
 
     <div class="row">
@@ -16,7 +16,6 @@
 
 </section>
 
-<?php //below will need moving to scripts once all working ?>
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
     let events = [];
@@ -49,6 +48,12 @@
       height: '950px',
       allDayText: 'All Day',
       locale: 'en',
+      eventClick: function(event) {
+        if (event.event.url) {
+          event.jsEvent.preventDefault()
+          window.open(event.event.url, "_blank");
+        }
+      }
     });
     //settings for list view
     var listview = new FullCalendar.Calendar(listviewEl,
@@ -78,7 +83,7 @@
     jQuery.ajax({
         type : "get",
         dataType : "json",
-        url : '<?php echo admin_url('admin-ajax.php');?>',
+        url : '/wp-admin/admin-ajax.php',
         data : {
             action: "calendar_xml",
         },

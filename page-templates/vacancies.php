@@ -3,11 +3,11 @@
 Template Name: Vacancies
 */
 
-if(isset($_GET['downloadapplication'])) :
-
+if(isset($_GET['download'])) :
   $dbname = VAC_DB_NAME;
   $servername = VAC_DB_SERVER;
-  $vacancy = $_GET['downloadapplication'];
+  $vacancy = $_GET['download'];
+  $type = $_GET['type'];
 
   require_once(dirname( __FILE__ )."/../lib/spaces/spaces.php");
   $spaces = Spaces("U4W5DLNFLZSNZRRPJWK2", "aoipt2I/bUwfhot1UzA3rWnQOI7nSDUk2F6viP0FCJ8");
@@ -16,26 +16,28 @@ if(isset($_GET['downloadapplication'])) :
   try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
     $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
-    $sql = $conn->prepare("SELECT school, application_form FROM live WHERE id=$vacancy");
+    $sql = $conn->prepare("SELECT school, $type FROM live WHERE id=$vacancy");
     $sql->execute();
     $vacancies = $sql->fetch();
   } catch(PDOException $e) {
     echo $e->getMessage();
   }
+ // if ($type == )
+  $my_space->downloadFile( $vacancies['school'].'/'.$vacancies[$type], $_SERVER['DOCUMENT_ROOT'].'/application/'.$vacancies[$type]);
+  $downloadurl = get_site_url().'/application/'.$vacancies[$type];
 
-  $my_space->downloadFile( $vacancies['school'].'/'.$vacancies['application_form'], $_SERVER['DOCUMENT_ROOT'].'/application/'.$vacancies['application_form']);
-  $downloadurl = get_site_url().'/application/'.$vacancies['application_form'];
+
   echo '<h3 style="text-align:center;padding:100px 0; color:#ccc; font-family: sans-serif">Downloading Application...</h3>';
   echo "<script>location.href='$downloadurl'</script>";
   die;
-endif;
 
+endif;
 
 get_header(); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-      <div class="container contact-page">
+      <div class="container">
         <div class="row">
           <div class="col-lg-8 text-section">
             <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
@@ -55,7 +57,7 @@ get_header(); ?>
             try {
               $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
               $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
-              $sql = $conn->prepare("SELECT * FROM live WHERE school=:school AND live=1");
+              $sql = $conn->prepare("SELECT * FROM live WHERE school=:school AND live=1 ORDER by id DESC");
               $sql->execute([
                 'school' => $school,
               ]);
@@ -67,12 +69,22 @@ get_header(); ?>
             $i=0;
             foreach ($vacancies as $vacancy){
               $i++;
-               echo '<div class="vacancy"><h3>'.$vacancy['vac_title'].'</h3>';
+             
+              $closingdate = new DateTime($vacancy['vac_closing_date']);
+              $now = new DateTime();
+              if($closingdate < $now) {
+                continue;
+              }
+              
+               echo '<div class="vacancy" id="vacancy_'.$vacancy['id'].'"><h3>'.$vacancy['vac_title'].'</h3>';
                echo '<h4>'.$vacancy['vac_sub_title'].'</h4>';
-               echo '<p class="closingdate">'.$vacancy['vac_closing_date'].'</p>';
-               echo '<a class="btn btn-primary" data-toggle="collapse" href="#content'.$i.'" role="button" aria-expanded="false" aria-controls="content'.$i.'">Show description</a>';
+               echo '<p class="closingdate">Closing Date: '.$closingdate->format('d/m/Y').'</p>';
+               echo '<a class="btn btn-primary" data-toggle="collapse" href="#content'.$i.'" role="button" aria-expanded="false" aria-controls="content'.$i.'">View details</a>';
                echo '<div class="content collapse multi-collapse" id="content'.$i.'">'.$vacancy['vac_description'];
-               if ($vacancy['application_form']){echo '<p><a class="btn btn-secondary btn-sm" target="_blank" href="?downloadapplication='.$vacancy['id'].'" >Download Application</a></p>';}
+               //application form
+               if ($vacancy['application_form']){echo '<p><a class="btn btn-secondary btn-sm" target="_blank" href="?download='.$vacancy['id'].'&type=application_form" >Download Application</a>&nbsp;';}
+               //Recruitment Pack
+               if ($vacancy['recruitment_pack']){echo '<a class="btn btn-secondary btn-sm" target="_blank" href="?download='.$vacancy['id'].'&type=recruitment_pack" >Download Recruitment Pack</a></p>';}
                echo '</div></div>';
             }
             if ($i==0){
@@ -104,6 +116,11 @@ get_header(); ?>
       var file = '<p style="font-weight:700;">'+e.target.files[0].name+'</p>';
       $('.cv_upload small').append(file)
     });
+    $('.vacancy .btn-primary').click(function(){ //you can give id or class name here for $('button')
+    $(this).text(function(i,old){
+        return old=='View details' ?  'Hide details' : 'View details';
+    });
+});
 </script>
 
 

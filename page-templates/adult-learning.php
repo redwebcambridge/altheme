@@ -13,15 +13,9 @@ get_header(); ?>
 
           <!---Sidebar--->
           <div class="col-md-2 text-section">
-          <?php
-            $menu_choice = get_field('menu_select');
-            wp_nav_menu(
-              array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
-            );
-            ?>
+            <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
           <!---Sidebar - End--->
-
 
           <!---Body section--->
         <div class="col-md-10 text-section">

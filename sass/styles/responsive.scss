@@ -1,6 +1,3 @@
-@media all and (max-width: 1024px) {
-
-}
 
 @media all and (max-width: 770px) {
     body {
@@ -17,11 +14,25 @@
     }
     .navbar {
         width:20%;
-        height:93px;
+        height:90px;
+        z-index:3000;
         .container {
             float:right;
             margin-right:20px;
             display:block;
+            .navbar-collapse {
+                display:block !important;
+                .navbar-nav {
+                    flex-direction: column !important;
+                    li {
+                        .dropdown-menu {
+                            width:95vw !important;
+                            position:relative !important;
+                            top:10px !important;
+                        }
+                    }
+                }
+            }
         }
     }
     header {
@@ -31,6 +42,7 @@
         width:80%;
         top:0;
         padding:10px 0 10px 10px;
+        height:90px;
     }
     .navbar.fixed-top {
         left:auto;
@@ -40,7 +52,7 @@
         height:1.8em;
     }
     body .front-page-header, body .partners .carousel-slide {
-        margin-top:97px;
+        margin-top:90px;
     }
     .front-page-header {
         height:auto;
@@ -91,7 +103,7 @@
         }
     }
     .homepage-tabs-nav {
-        margin-top:-50px;
+        margin-top:-49px;
         z-index:999999 !important;
         .row {
             margin:0 auto;
@@ -104,6 +116,7 @@
     .tabcontent {
         height:auto !important;
         padding:50px 0 0 0 !important;
+        border-top:0 !important;
         .container {
             .row {
                 width:100%;
@@ -158,7 +171,7 @@
         }
     }
     .partners {
-        display:none;
+
     }
     footer {
         .footer-base {
@@ -166,7 +179,7 @@
         }
     }
     .offcanvas-collapse {
-        top:97px;
+        top:90px;
     }
     .featured-top-image {
         margin-bottom:97px;
@@ -185,8 +198,8 @@
         float:right;
     }
     .featured-top-image {
-        margin-bottom:0;
-        margin-top:91px;
+        margin-bottom:20px;
+        margin-top:90px;
         padding:100px 0;
     }
     #sidebar-menu {
@@ -202,12 +215,55 @@
             max-width:50%;
         }
     }
+    .course_details {
+        div {
+            margin-bottom:20px;
+        }
+    }
+    .slick-controls-lower {
+        display:none !important;
+    }
+    .contact-box {
+        width:95vw;
+        margin:30px 10px 0 !important;
+        .name-position {
+            margin-bottom:20px;
+        }
+        .contact-details {
+            justify-content:inherit !important;
+            display:block !important;
+            p {
+                margin:0 0 10px 0;
+                float: left;
+            }
+        }
+    }
+    .adult-learning-page {
+        .contact-box {
+            width:95vw;
+            margin:30px 10px 0 !important;
+            .name-position {
+                margin-bottom:20px;
+            }
+            .contact-details {
+                justify-content:inherit !important;
+                display:block !important;
+                p {
+                    margin:0 0 10px 0;
+                    float: left;
+                }
+            }
+        }
+    }
+    .insta-gallery {
+        .sbi_item {
+            width:50% !important;
+            height:150px !important;
+        }
+    }
 }
 
 @media all and (max-width: 560px) {
-    .navbar {
-        height:116px;
-    }
     .twittercontainer {
         width:100%;
     }
@@ -220,31 +276,26 @@
 }
 
 @media all and (max-width: 420px) {
-    .navbar {
-        height:96px;
-    }
+
 }
 
 @media all and (max-width: 375px) {
-    .navbar {
-        height:91px;
-    }
     .front-page-header {
-        margin-top:91px !important;
+        margin-top:90px !important;
     }
 }
 
 @media all and (max-width: 330px) {
-    .navbar {
-        height:82px;
-    }
     .front-page-header {
-        margin-top:82px !important;
+        margin-top:90px !important;
     }
 
-    .homepage-tabs-nav .col {
-        width:100px;
-        font-size:10px;
-        padding:10px;
+    .homepage-tabs-nav {
+        margin-top:-43px;
+        .col {
+            width:100px;
+            font-size:10px;
+            padding:10px;
+        }
     }
 }

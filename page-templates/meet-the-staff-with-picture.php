@@ -10,11 +10,8 @@ get_header(); ?>
     <div class="container">
       <div class="row">
           <!---sidebar--->
-          <div class="col-md-2">
-            <?php
-            $menu_choice = get_field('menu_select');
-            wp_nav_menu( array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu') );
-            ?>
+          <div class="col-md-2 text-section">
+            <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
           <!---Sidebar - End--->
 

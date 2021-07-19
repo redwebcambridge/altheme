@@ -13,18 +13,7 @@ get_header(); ?>
           <!---Body section left--->
 
           <div class="col-md-2 text-section">
-            <?php
-
-            $menu_choice = get_field('menu');
-
-            wp_nav_menu(
-
-              array('menu'=>$menu_choice,'menu_id'=>'sidebar-menu')
-
-            );
-
-
-            ?>
+            <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
 
           <!---Body section left - End--->
@@ -47,9 +36,19 @@ get_header(); ?>
           <!---Body section right--->
 
           <div class="col-md-3 text-section">
-
-              <img src="<?php the_field('image_one'); ?>" class="about-image-one" />
-              <img src="<?php the_field('image_two'); ?>" />
+              <?php 
+              if (get_field('image_one')):
+                  $image1 = get_field('image_one');
+                  echo '<img src="'.$image1['url'].'" class="about-image-one" alt="'.$image1['alt'].'" />';
+                  if ($image1['caption']) : echo '<div class="wp-caption-text">'.$image1['caption'].'</div>'; endif;
+              endif; ?>
+              <?php 
+              if (get_field('image_two')):
+                  $image2 = get_field('image_two');
+                  echo '<img src="'.$image2['url'].'" class="about-image-two" alt="'.$image2['alt'].'" />';
+                  if ($image2['caption']) : echo '<div class="wp-caption-text">'.$image2['caption'].'</div>'; endif;
+              endif; ?>
+              
 
           </div>
 

@@ -12,12 +12,11 @@
     em{
       color: $primarycolour;
       font-weight: $normal-weight;
-        }
+    }
     .fab{
-      font-size: 20px;
-      padding-top: 6px;
-      padding-right: 16px;
+      font-size: 25px;
       color: $primarycolour;
+      line-height: 30px;
     }
     .socials{
       padding-top: 10px;
@@ -32,7 +31,7 @@
       padding: 10px 40px;
       color: #ffffff;
     }
-    .map-contact{
+    #contactmap{
       height: 366px;
       margin-top: 47px;
       border-top: 8px solid $primarycolour;

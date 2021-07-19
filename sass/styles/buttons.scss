@@ -1,12 +1,15 @@
 button {
   font-size: 1.2px;
 }
-
 .btn, #sb_instagram .sbi_follow_btn a{
   padding: 10px 20px;
   background:$primarycolour;
   border:none;
   border-radius: 0;
+  &.disabled {
+    background-color: $darkgrey;
+    opacity: 0.4;
+  }
   &:hover {
     background-color: $secondarycolour;
     box-shadow: none;

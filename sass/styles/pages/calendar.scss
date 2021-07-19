@@ -975,13 +975,11 @@
             margin-right: 3px;
             background-color: $primarycolour;
         }
-        
         &.btn-primary{
-            background-color: $secondarycolour;
-        }
-
-        &.btn-primary.active {
             background-color: $primarycolour;
+        }
+        &.btn-primary.active {
+            background-color: $secondarycolour;
         }
         &.fc-next-button{
             margin-left: 2px;

@@ -43,6 +43,14 @@ jQuery( document ).ready(function() {
     nextArrow: '.next-slide-lower',
     prevArrow: '.prev-slide-lower',
     autoplay: true,
+    responsive: [
+      {
+        breakpoint: 780, 
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+    ]  
   });
   jQuery('.partners').fadeIn();
   //Homepage SLider
@@ -51,7 +59,8 @@ jQuery( document ).ready(function() {
     speed: 1000,
     fade: true,
     autoplay: true,
-    arrows: false
+    arrows: false,
+    appendDots: '#slider_nav'
   });
   //Twitter
   jQuery('.slick-twitter').slick({
@@ -82,6 +91,11 @@ jQuery( document ).ready(function() {
   var leftpadding = jQuery(".navbar #menu-main-menu li.active").width()/2-18;
   jQuery(".navbar .currenthover").css("left",onloadleft+leftpadding);
   jQuery(".navbar .currenthover").css("display","block");
+  if(jQuery('.navbar #menu-main-menu li.active').is('#menu-main-menu li:last-child')) {
+    jQuery(".navbar .currenthover").hide();
+    var lasthover = jQuery('.navbar #menu-main-menu li.active').prev('li');
+    hovericon(lasthover);
+  }
   jQuery("#menu-main-menu li").on("mouseover", function () {
     if(jQuery(this).is(':last-child')) {
       var lasthover = jQuery(this).prev('li');
@@ -101,7 +115,35 @@ jQuery( document ).ready(function() {
     jQuery('.tabcontent .container').removeClass('active');
     jQuery('.tabcontent #tab-'+num).addClass('active');
   });
- 
+
+  //Newspage Pagnation
+  jQuery(".newseventcontainer").slice(0, 6).show();
+  jQuery("#loadMore").on("click", function(e){
+    e.preventDefault();
+    jQuery(".newseventcontainer:hidden").slice(0, 3).slideDown();
+    if(jQuery(".newseventcontainer:hidden").length == 0) {
+      jQuery("#loadMore").text("No More Posts").addClass("disabled");
+    }
+  });
+
+  //Newspage Newsletter Pagnation
+  jQuery(".newslettercontainer").slice(0, 4).show();
+  jQuery("#loadMore").on("click", function(e){
+    e.preventDefault();
+    jQuery(".newslettercontainer:hidden").slice(0, 4).slideDown();
+    if(jQuery(".newslettercontainer:hidden").length == 0) {
+      jQuery("#loadMore").text("No More Posts").addClass("disabled");
+    }
+  });
+
+  //Remove top pixels when anchor link present
+  function offsetAnchor() {
+    if (location.hash.length !== 0) {
+      jQuery('body').scrollTop(jQuery(location.hash).position().top-200);
+      jQuery(location.hash).find('a.btn-primary').click();
+    }
+  }
+  window.setTimeout(offsetAnchor, 0);
         
 });  
     

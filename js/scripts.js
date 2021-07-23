@@ -3,20 +3,6 @@ jQuery( document ).ready(function() {
   jQuery('body').scroll(function(){
     var windowtop = jQuery('body').scrollTop();
     jQuery('.container-white-laurel').css('background-position-y',950-(windowtop/5));
-    if (jQuery('body').scrollTop()  > 195) {
-        jQuery( "body #stickynav" ).css('opacity','0');
-    } else {
-        jQuery( "body #stickynav" ).css('opacity','1');
-    };
-    if (jQuery('body').scrollTop()  > 200) {
-       jQuery( "body #stickynav" ).css('opacity','1');
-        jQuery('body #stickynav').addClass('fixed-top');
-        navbar_height = jQuery('body .navbar').offsetHeight;
-        jQuery('body').css('paddingTop',navbar_height);
-    } else {
-        jQuery('body #stickynav').removeClass('fixed-top');
-        jQuery('body').css('paddingTop','0px');
-      }
   });
   //WINDOW RESIZE
   jQuery(window).resize(function(){
@@ -35,7 +21,7 @@ jQuery( document ).ready(function() {
       }, 500);
   });
   //Partners
-  jQuery('.partner-slider').slick({
+  $('.partner-slider').slick({
     speed: 1000,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -54,7 +40,7 @@ jQuery( document ).ready(function() {
   });
   jQuery('.partners').fadeIn();
   //Homepage SLider
-  jQuery('.header-images-slick-slider').slick({
+  $('.header-images-slick-slider').slick({
     dots: true,
     speed: 1000,
     fade: true,
@@ -63,7 +49,7 @@ jQuery( document ).ready(function() {
     appendDots: '#slider_nav'
   });
   //Twitter
-  jQuery('.slick-twitter').slick({
+  $('.slick-twitter').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: '.next-tweet',

@@ -1,13 +1,37 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+<?php
+    if (!is_adult_ed_page() || !is_sports_page()) {
+      $featuredimg = get_the_post_thumbnail_url();
+    }
+    if (is_home()) {
+      $featuredimg = get_the_post_thumbnail_url(get_option( 'page_for_posts' ));
+    }
+    if (!isset($featuredimg) || empty($featuredimg)){
+      $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
+    }
+    if (is_category()){
+      $category = get_queried_object();
+      $header_text = $category->name;
+      $featuredimg = get_field('header_image',$category);
+      if(empty($featuredimg)){
+        $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
+      }
+    }
+    ?>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
+  <meta property="og:url"                content="<?php echo the_permalink(); ?>" />
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="<?php echo the_title(); ?>" />
+  <meta property="og:description"        content="<?php echo the_excerpt(); ?>" />
+  <meta property="og:image"              content="<?php echo $featuredimg; ?>" />
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php if ( is_adult_ed_page() ) { echo 'id="adult_ed"'; } ?>>
+<body <?php body_class(); ?> <?php if ( is_adult_ed_page() ) { echo 'id="adult_ed"'; } ?><?php if ( is_sports_page() ) { echo 'id="sports"'; } ?>>
 
 <?php
 //ACF must be installed
@@ -34,12 +58,17 @@ if (!class_exists('ACF')) {
             <?php if ( is_adult_ed_page() ) {  ?>
                 <?php $adultlogos = get_field('adultlearning_logo_and_icons','option'); ?>
                 <a href="<?php echo the_permalink(get_field('adult_learning_homepage','option')); ?>">
-                  <img class="img-fluid py-2 pr-5" src="<?php echo $adultlogos['adult_logo']['url']; ?>" alt="<?php echo $adultlogos['adult_logo']['alt']; ?>">
+                  <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $adultlogos['adult_logo']['url']; ?>" alt="<?php echo $adultlogos['adult_icon']['alt']; ?>">
                 </a>
-            <?php } else { ?>
-                <?php $logos = get_field('logo_and_icons','option');?>
+            <?php } elseif (is_sports_page()) { ?>
+                <?php $sportlogos = get_field('sports_logo_and_icons','option'); ?>
+                <a href="<?php echo the_permalink(get_field('sports_homepage','option')); ?>">
+                  <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $sportlogos['sports_logo']['url']; ?>" alt="<?php echo $sportlogos['sports_logo']['alt']; ?>">
+                </a>
+            <?php } else { ?> 
+              <?php $logos = get_field('logo_and_icons','option'); ?>
                 <a href="/">
-                  <img class="img-fluid py-2 pr-5" src="<?php echo $logos['logo']['url']; ?>" alt="<?php echo $logos['logo']['alt']; ?>">
+                  <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $logos['logo']['url']; ?>" alt="<?php echo $logos['logo']['alt']; ?>">
                 </a>
             <?php } ?>
         </div>
@@ -51,7 +80,16 @@ if (!class_exists('ACF')) {
               </div>
               <div class="row" id="top_buttons">
               <?php
-              if ( is_adult_ed_page() ) {
+              if ( is_sports_page()) {
+                wp_nav_menu( array(
+                  'menu'              =>  get_field('sports_grey_tabs_menu','option'),
+                  'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                  'walker'            => new WP_Bootstrap_Navwalker(),
+                  'menu_class'        => 'd-md-flex justify-content-end',
+                  'container_class'   => 'col-12',
+                ));
+              }
+              elseif ( is_adult_ed_page() ) {
                 wp_nav_menu( array(
                   'menu'              =>  get_field('grey_tabs_menu','option'),
                   'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
@@ -139,13 +177,30 @@ if (!class_exists('ACF')) {
   </div> <!-- container -->
 </header><!-- #masthead -->
 
-<div class="navbar navbar-expand-md navbar-light bg-light sticky-nav" id="stickynav">
+<div class="navbar navbar-expand-md navbar-light bg-light sticky-nav sticky-top" id="stickynav">
     <div class="container">
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <?php
-              if ( is_adult_ed_page() ) {
+              if ( is_sports_page() ) {
+                $header_text = get_the_archive_title();
+                if(empty($header_text) || $header_text == 'Archives' ){
+                  $header_text = get_the_title();
+
+                }
+                wp_nav_menu( array(
+                  'menu'              =>  get_field('sports_top_navigation_menu','option'),
+                  'depth'				=> 2,
+                  'container'			=> 'div',
+                  'container_class'	=> 'navbar-collapse offcanvas-collapse',
+                  'container_id'		=> 'mainnav',
+                  'menu_class'        => 'navbar-nav mr-auto',
+                  'fallback_cb'		=> 'WP_Bootstrap_Navwalker::fallback',
+                  'walker'			=> new WP_Bootstrap_Navwalker()
+                ));
+              }
+              elseif ( is_adult_ed_page() ) {
                 $header_text = get_the_archive_title();
                 if(empty($header_text) || $header_text == 'Archives' ){
                   $header_text = get_the_title();
@@ -242,25 +297,7 @@ if (!class_exists('ACF')) {
   <?php else : //Internal header?>
 
 <section class="page-content">
-    <?php
-    if (!is_adult_ed_page()) {
-      $featuredimg = get_the_post_thumbnail_url();
-    }
-    if (is_home()) {
-      $featuredimg = get_the_post_thumbnail_url(get_option( 'page_for_posts' ));
-    }
-    if (!isset($featuredimg) || empty($featuredimg)){
-      $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
-    }
-    if (is_category()){
-      $category = get_queried_object();
-      $header_text = $category->name;
-      $featuredimg = get_field('header_image',$category);
-      if(empty($featuredimg)){
-        $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
-      }
-    }
-    ?>
+    
     <div class="featured-top-image" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">
         <div class="row main-heading">

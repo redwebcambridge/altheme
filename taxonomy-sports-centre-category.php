@@ -1,77 +1,70 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying courses
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package Anglian_Learning
  */
 
-get_header();
+get_header();  
 ?>
+<div class="page-template-sports-centre">
+	<div class="container">
+	    <div class="row">
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	   <!---Sidebar--->
+	   <div class="col-md-2 text-section">
+         	<?php
+				$menu_choice = get_field('top_navigation_menu','option');
+				wp_nav_menu(
+					array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
+				);
+			?>
+        </div>
 
-	<div class="sport-centre-page">
-	      <div class="container">
-	        <div class="row">
+		<div class="col-md-10 text-section">
+	        <h2 class="heading-two d-flex justify-content-between"><?php  echo single_term_title(); ?></h2>
+	        <div class="gradline"></div>
+	        <p class="body-text"><?php echo term_description(); ?></p>
 
-	          <!---Sidebar--->
+			<?php 
+			$tax_ID = get_queried_object()->term_id;
+			$courses = get_posts(
+				array(
+					'posts_per_page' => -1,
+					'post_type' => 'sportscentre',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'sports-centre-category',
+							'field' => 'term_id',
+							'terms' => $tax_ID,
+						)
+					)
+				)
+			);
+			?>
+			<div class="row">
+			<?php
+			foreach ($courses as $course) : 
+				$imageurl = get_the_post_thumbnail_url($course->ID);
+				echo '<div class="col-md-4 course"><a href="'.esc_url( get_permalink( $course->ID) ).'">';
+                echo '<div class="course-thumbnail" style="background-image:url('.$imageurl.')"></div><p class="course-name">'.$course->post_title.'</p>';
+                echo '</a></div>';
+			?>
+			<?php endforeach; 
+			if (!$courses) : 
+				echo '<div class="alert alert-secondary" role="alert"><em>Sorry, there are currently no classes available</em></div>'; 
+			endif; ?>
+			</div>
+			<?php get_template_part('template-parts/adult-learning-contact'); ?>
 
-	          <div class="col-md-2 text-section">
-				  <?php
-   	           wp_nav_menu(
-   	             array('menu'=>'sports-centre-menu', 'menu_id' => 'sidebar-menu')
-   	           );
-   	           ?>
-	          </div>
+		</div>
+    </div>
+</div>
 
-	          <!---Sidebar - End--->
-
-
-	          <!---Body section--->
-
-	          <div class="col-md-10 text-section">
-	              <h2 class="heading-two"><?php the_archive_title(); ?></h2>
-
-	              <div class="gradline"></div>
-
-	              <p class="body-text"><?php the_archive_description(); ?></p>
-
-	              <div class="row">
-	                  <?php
-
-	  				/*
-	  				 * Include the Post-Type-specific template for the content.
-	  				 * If you want to override this in a child theme, then include a file
-	  				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-	  				 */
-	  				get_template_part( 'template-parts/content', get_post_type() ); ?>
-	              </div>
-
-	            <div class="contact-box row">
-	                <div class="name-position col-md-6">
-	                      <p><strong><?php the_field('contact_name', 526) ?></strong><br>
-	                          <?php the_field('position', 526) ?></p>
-	                </div>
-
-	                <div class="contact-details d-flex col-md-6">
-	                    <p class="email"><a href="mailto:<?php the_field('email', 526) ?>"><?php the_field('email', 526) ?></a></p>
-	                    <p class="number"><?php the_field('phone_number', 526) ?></p>
-	                </div>
-	            </div>
-
-
-	          <!---Body section - End--->
-	        </div>
-	    </div>
-	</div>
-	</section>
-
-
-	<?php endwhile; endif; ?>
-
+</div>
+</section>
 
 <?php
-// get_sidebar();
 get_footer();

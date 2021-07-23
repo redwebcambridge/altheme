@@ -7,7 +7,8 @@
  * @package Anglian_Learning
  */
 
-get_header(); ?>
+get_header();
+$thumbnail= get_field('thumbnail'); ?>
 
 	<div class="container newsevents">
 	  	<div class="row">
@@ -23,11 +24,8 @@ get_header(); ?>
 		        </div>
 
 				<div class="col-12 col-md-4">
-					<?php
-					$imageurl = get_the_post_thumbnail_url();
-					?>
-			    	<img src="<?php echo $imageurl; ?>">
-
+			    	<img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" title="<?php echo $thumbnail['title']; ?>">
+					<?php if ($thumbnail['caption']) : echo '<div class="wp-caption-text">'.$thumbnail['caption'].'</div>'; endif; ?>
 			        <h3 class="section-header ceo-right-header special-underine"><strong>SHARE</strong></h3>
 
 					<div class="socialcontainer">
@@ -38,10 +36,8 @@ get_header(); ?>
 
 				            <?php $post = get_post(); ?>
 
-				            <?php $featured_img_url = get_the_post_thumbnail_url($post->ID, 'full');  ?>
-
 			                <div class="col-4 social-share" id ="facebook">
-			                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>&t=<?php the_title(); ?>&picture=<?php echo $featured_img_url ?>" target="_blank"></a>
+			                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank"></a>
 			                </div>
 
 			                <div class="col-4 social-share" id ="linkedin">

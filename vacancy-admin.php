@@ -19,26 +19,32 @@
 if($_POST) : 
     if ($_POST['publish']) :
 
+      echo 'starting publish';
+
       $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
       $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
 
       try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
         $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
-        $sql = $conn->prepare(" INSERT INTO live (vac_title,vac_sub_title,vac_salary,vac_closing_date,vac_description,school,live,school_name,application_form) VALUES (:vac_title,:vac_sub_title,:vac_salary,:vac_closing_date,:vac_description,:school,:live,:schoolname,:application_form,:recruitment_pack)");
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
+
+        $sql = $conn->prepare(" INSERT INTO live (vac_title,vac_sub_title,vac_salary,vac_closing_date,vac_description,school,live,school_name,recruitment_pack,application_form) VALUES (:vac_title,:vac_sub_title,:vac_salary,:vac_closing_date,:vac_description,:school,:live,:schoolname,:recruitment_pack,:application_form)");
 
         $sql->execute([
           'vac_title' =>  $_POST['post_title'],
           'vac_sub_title' => $_POST['subtitle'],
           'vac_salary' => $_POST['salary'],
           'vac_closing_date' => $_POST['closing'],
-          'vac_description' => wpautop( $_POST['jobdesc'] ),
+          'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
           'school' => $school,
           'live' => 1,
           'schoolname' => $schoolname,
-          'application_form' => $_FILES['application']['name'],
           'recruitment_pack' => $_FILES['recruitment']['name'],
+          'application_form' => $_FILES['application']['name'],
       ]);  
+
+      print_r($sql->errorInfo());
 
         $update_id = $conn->lastInsertId();
         $redirecturl = '?page=vacancyadmin&added&action=update&updateid='.$update_id;
@@ -58,7 +64,7 @@ if($_POST) :
           'vac_sub_title' => $_POST['subtitle'],
           'vac_salary' => $_POST['salary'],
           'vac_closing_date' => $_POST['closing'],
-          'vac_description' => wpautop( $_POST['jobdesc'] ),
+          'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
           'live' => 1,
           'id' => $_POST['updateid'],
           'application_form' => $_FILES['application']['name'],
@@ -113,7 +119,7 @@ if (isset($_GET['downloadrecruitmentpack'])){
 
 <?php
 //move to trash
-if ( $_GET['action']=='trash' ) :
+if ( isset($_GET['action']) && $_GET['action']=='trash' ) :
   try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
     $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
@@ -133,7 +139,7 @@ if ( $_GET['action']=='trash' ) :
 endif;
 
 //move from trash to restore
-if ( $_GET['action']=='restore' ) :
+if ( isset($_GET['action']) && $_GET['action']=='restore' ) :
   try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
     $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
@@ -152,7 +158,7 @@ if ( $_GET['action']=='restore' ) :
 endif;
 
 //delete from trash
-if ( $_GET['action']=='permdelete' ) :
+if ( isset($_GET['action']) && $_GET['action']=='permdelete' ) :
   try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
     $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
@@ -178,10 +184,11 @@ endif;
 
 <?php 
 //Add Vacancy
-if ( $_GET['action']=='addvacancy'|| $_GET['action']=='update' ) :
+if ( isset($_GET['action']) && $_GET['action']=='addvacancy'||  isset($_GET['action']) && $_GET['action']=='update' ) :
 
-if ($_GET['action']=='addvacancy'){
+if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
   $action = 'addvacancy';
+  unset($vacancy);
 } else {
   $action = 'update';
 }  
@@ -197,7 +204,7 @@ if ($_GET['action']=='addvacancy'){
 
       <div id="titlediv">
         <div id="titlewrap">
-          <input type="text" name="post_title" required size="30" value="<?php if($vacancy){echo $vacancy['vac_title'];} ?>" id="title" spellcheck="true" autocomplete="off" placeholder="Vacancy Title">
+          <input type="text" name="post_title" required size="30" value="<?php if(isset($vacancy)){echo $vacancy['vac_title'];} ?>" id="title" spellcheck="true" autocomplete="off" placeholder="Vacancy Title">
         </div>
       </div>
 
@@ -215,29 +222,29 @@ if ($_GET['action']=='addvacancy'){
 
       <div id="acf_after_title-sortables" >               
         
-      <p><a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>" target="_blank"><?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?></a></p>
+      <p><a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>" target="_blank"><?php if(isset($vacancy)){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?></a></p>
    
         <div id="vacancy_fields" class="postbox acf-postbox">
 
           <div class="acf-field" style="flex-grow:2" >
             <h2>Sub-Title</h2>
-            <input type="text" name="subtitle" required value="<?php if($vacancy){echo $vacancy['vac_sub_title'];} ?>">
+            <input type="text" name="subtitle" required value="<?php if(isset($vacancy)){echo $vacancy['vac_sub_title'];} ?>">
           </div>
 
           <div class="acf-field">
             <h2>Salary</h2>
-            <input type="text" name="salary" required value="<?php if($vacancy){echo $vacancy['vac_salary'];} ?>" >
+            <input type="text" name="salary" required value="<?php if(isset($vacancy)){echo $vacancy['vac_salary'];} ?>" >
           </div>
 
           <div class="acf-field">
             <h2>Closing Date</h2>
-            <input type="date" name="closing" required value="<?php if($vacancy){echo $vacancy['vac_closing_date'];} ?>" >
+            <input type="date" name="closing" required value="<?php if(isset($vacancy)){echo $vacancy['vac_closing_date'];} ?>" >
           </div>
 
           <div class="acf-field" style="width:100%">
            <h2>Job Description</h2>
 
-           <?php if($vacancy){$jobdesc = $vacancy['vac_description'];} ?>
+           <?php if(isset($vacancy)){$jobdesc = $vacancy['vac_description'];} ?>
               <?php wp_editor(
                 $jobdesc,
                 'jobdesc',
@@ -255,7 +262,7 @@ if ($_GET['action']=='addvacancy'){
           <div class="acf-field">             
             <h2>Application Form</h2>
           <?php 
-             if($vacancy){
+             if(isset($vacancy)){
               echo '<a href="'.$_SERVER['REQUEST_URI'].'&downloadapplication" target="_blank">'.$vacancy['application_form'].'</a>';
              }
              ?>
@@ -266,7 +273,7 @@ if ($_GET['action']=='addvacancy'){
           <div class="acf-field">             
             <h2>Recruitment Pack</h2>
           <?php 
-             if($vacancy){
+             if(isset($vacancy)){
               echo '<a href="'.$_SERVER['REQUEST_URI'].'&downloadrecruitmentpack" target="_blank">'.$vacancy['recruitment_pack'].'</a>';
              }
              ?>
@@ -301,7 +308,7 @@ if ($_GET['action']=='addvacancy'){
             </div>
 
             <div id="publishing-action">
-              <?php if ($update_id) : ?>
+              <?php if (isset($update_id)) : ?>
                 <input type="hidden" value="<?php echo $update_id ?>" name="updateid">
                 <input type="submit" name="update" id="update" class="button button-primary button-large" value="Update">
               <?php else : ?>

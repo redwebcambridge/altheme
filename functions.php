@@ -262,7 +262,7 @@ function calendar_xml_init() {
     wp_send_json_success($array);
     die();
 }
-
+//ADULT LEARNING
 if (class_exists('ACF')) {
 if (get_field('activate_adult_learning','option')) {
     // Register Adult Learning Custom Post Type
@@ -277,7 +277,6 @@ if (get_field('activate_adult_learning','option')) {
         'supports'  => array( 'title', 'editor', 'thumbnail' ),
         'show_ui' => true,
         'public' => true,
-
         'labels' => $labels
       );
       register_post_type( 'adultlearning', $args );
@@ -306,6 +305,50 @@ if (get_field('activate_adult_learning','option')) {
     add_action( 'init', 'build_taxonomies_adult_learning', 0 );
 }
 }
+
+//Sports Center
+if (class_exists('ACF')) {
+  if (get_field('activate_sport_centre','option')) {
+      // Register Sports Centre Custom Post Type
+      function register_sports_centre() {
+        $labels = array(
+          'name' => __( 'Sport Centre Activities' ),
+          'singular_name' => __( 'Activity' ),
+          'add_new_item' => __( 'Add Activity' ),
+      );
+        $args = array(
+          'label' => __( 'Sport Centre', 'text_domain' ),
+          'supports'  => array( 'title', 'editor', 'thumbnail' ),
+          'show_ui' => true,
+          'public' => true,
+          'labels' => $labels
+        );
+        register_post_type( 'sportscentre', $args );
+      }
+      add_action( 'init', 'register_sports_centre', 0 );
+  
+      /* Create the Sports Centre Taxonomy --------------------------------------------*/
+      function build_taxonomies_sports_centre(){
+          $labels = array(
+              'name' => __( 'Sports Centre Categories' ),
+              'singular_name' => __( 'Sports Centre Category' ),
+          );
+          register_taxonomy(
+              'sports-centre-category',
+              array( __( 'sportscentre' )),
+              array(
+                  'hierarchical' => true,
+                  'labels' => $labels,
+                  'show_ui' => true,
+                  'query_var' => true,
+                  'public' => true,
+                  'rewrite' => array('slug' => 'sports-centre/activities', 'hierarchical' => true)
+              )
+          );
+      }
+      add_action( 'init', 'build_taxonomies_sports_centre', 0 );
+  }
+  }
 
 add_action('admin_menu', 'vacanciesmenu');
 function vacanciesmenu() {
@@ -337,13 +380,19 @@ function acf_load_color_field_choices( $field ) {
 add_filter('acf/load_field/name=menu_select', 'acf_load_color_field_choices');
 add_filter('acf/load_field/name=grey_tabs_menu', 'acf_load_color_field_choices');
 add_filter('acf/load_field/name=top_navigation_menu', 'acf_load_color_field_choices');
+add_filter('acf/load_field/name=sports_grey_tabs_menu', 'acf_load_color_field_choices');
+add_filter('acf/load_field/name=sports_top_navigation_menu', 'acf_load_color_field_choices');
 
 function is_adult_ed_page() {
   if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') ) :
     return true;
   endif;
 }
-
+function is_sports_page() {
+  if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') ) :
+    return true;
+  endif;
+}
 
 if( !function_exists( 'tz_excerpt_length' ) ) {
     function tz_excerpt_length($length) {
@@ -378,3 +427,6 @@ function acf_change_icon_on_files ( $icon, $mime, $attachment_id ){ // Display t
   return $icon;
 }
 add_filter( 'wp_mime_type_icon', 'acf_change_icon_on_files', 10, 3 );
+
+//User Roles
+require_once get_template_directory() . '/user-roles.php';

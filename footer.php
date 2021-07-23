@@ -23,6 +23,7 @@
             <div class="footer-buffer-one"></div>
 
             <footer>
+               
                 <div class="inner-footer">
 
                     <?php $logos = get_field('logo_and_icons','option'); ?>
@@ -30,42 +31,142 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
-
+                            <?php if (is_adult_ed_page()) : ?>
+                                <!-- Adult Learning Footer -->
+                                <?php $adult_footer = get_field('footer_options','option'); ?>
+                                <h5><?php echo $adult_footer['column_1_title']; ?></h5>
+                                <div class="footer-line"></div>
+                                <p><?php echo $adult_footer['col1_content']; ?></p>
+                                <?php $socialmedia = $adult_footer['social_media']; ?>
+                                <?php foreach ($socialmedia as $platform) : ?>
+                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                <?php endforeach; ?>
+                            <?php elseif (is_sports_page()) : ?>
+                                <!-- Sports Footer -->
+                                <?php $sports_footer = get_field('sports_footer_options','option'); ?>
+                                <h5><?php echo $sports_footer['column_1_title']; ?></h5>
+                                <div class="footer-line"></div>
+                                <p><?php echo $sports_footer['col1_content']; ?></p>
+                                <?php $socialmedia = $sports_footer['social_media']; ?>
+                                <?php foreach ($socialmedia as $platform) : ?>
+                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                <?php endforeach; ?>
+                            <?php else : ?>    
+                                <!-- School Footer -->
                                 <h5><?php the_field('left_footer_title','option') ?></h5>
                                 <div class="footer-line"></div>
-
                                 <?php the_field('footer_left_side_text','option'); ?>
-
                                 <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
                                     <a href="<?php echo get_sub_field('profile_url'); ?>" target="_blank"><i class="social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endwhile; endif; ?>
-
+                            <?php endif; ?>
                             </div>
 
                             <div class="col-md-4 contact-info">
-
+                            <?php if (is_adult_ed_page()) : ?>
+                                <h5><?php echo $adult_footer['column_2_header']; ?></h5>
+                                <div class="footer-line"></div>
+                                <div class="row">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a class="text-white" href="tel:<?php echo $adult_footer['telephone']; ?>"><?php echo $adult_footer['telephone']; ?></a>
+                                </div>
+                                <div class="row">
+                                    <i class="fas fa-envelope"></i>
+                                    <a class="text-white" href="mailto:<?php echo $adult_footer['email_address']; ?>"><?php echo $adult_footer['email_address']; ?></a>
+                                </div>
+                                <div class="row">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <?php $address = $adult_footer['address']; 
+                                    if(!empty($address['address_line_1'])) : echo $address['address_line_1'].'<br>'; endif; 
+                                    if(!empty($address['street'])) : echo $address['street'].'<br>'; endif; 
+                                    if(!empty($address['town'])) : echo $address['town'].'<br>'; endif; 
+                                    if(!empty($address['city'])) : echo $address['city'].'<br>'; endif; 
+                                    if(!empty($address['county'])) : echo $address['county'].'<br>'; endif; 
+                                    if(!empty($address['postal_code'])) : echo $address['postal_code'].'<br>'; endif;                                     
+                                    ?>
+                                </div>
+                            <?php elseif (is_sports_page()) : ?>
+                                <h5><?php echo $sports_footer['column_2_header']; ?></h5>
+                                <div class="footer-line"></div>
+                                <div class="row">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <a class="text-white" href="tel:<?php echo $sports_footer['telephone']; ?>"><?php echo $sports_footer['telephone']; ?></a>
+                                </div>
+                                <div class="row">
+                                    <i class="fas fa-envelope"></i>
+                                    <a class="text-white" href="mailto:<?php echo $sports_footer['email_address']; ?>"><?php echo $sports_footer['email_address']; ?></a>
+                                </div>
+                                <div class="row">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <?php $address = $sports_footer['address']; 
+                                    if(!empty($address['address_line_1'])) : echo $address['address_line_1'].'<br>'; endif; 
+                                    if(!empty($address['street'])) : echo $address['street'].'<br>'; endif; 
+                                    if(!empty($address['town'])) : echo $address['town'].'<br>'; endif; 
+                                    if(!empty($address['city'])) : echo $address['city'].'<br>'; endif; 
+                                    if(!empty($address['county'])) : echo $address['county'].'<br>'; endif; 
+                                    if(!empty($address['postal_code'])) : echo $address['postal_code'].'<br>'; endif;                                     
+                                    ?>
+                                </div>
+                            <?php else : ?>
                                 <?php the_field('footer_icon_title','option'); ?>
-
                                 <h5><?php the_field('middle_footer_title','option') ?></h5>
                                 <div class="footer-line"></div>
-
                                 <div class="row">
                                     <i class="fas fa-phone-alt"></i>
                                     <a class="text-white" href="tel:<?php the_field('telephone','option'); ?>"><?php the_field('telephone','option'); ?></a>
                                 </div>
-
                                 <div class="row">
                                     <i class="fas fa-envelope"></i>
                                     <a class="text-white" href="mailto:<?php the_field('email_address','option'); ?>"><?php the_field('email_address','option'); ?></a>
                                 </div>
-
                                 <div class="row">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    <?php the_field('address','option'); ?>
+                                    <?php $address = get_field('address','option'); 
+                                    if(!empty($address['address_line_1'])) : echo $address['address_line_1'].'<br>'; endif; 
+                                    if(!empty($address['street'])) : echo $address['street'].'<br>'; endif; 
+                                    if(!empty($address['town'])) : echo $address['town'].'<br>'; endif; 
+                                    if(!empty($address['city'])) : echo $address['city'].'<br>'; endif; 
+                                    if(!empty($address['county'])) : echo $address['county'].'<br>'; endif; 
+                                    if(!empty($address['postal_code'])) : echo $address['postal_code'].'<br>'; endif;                                     
+                                    ?>
                                 </div>
+                            <?php endif; ?>
                             </div>
 
                             <div class="col-md-4">
+                            <?php if (is_sports_page()) : ?>
+                                    <h5><?php echo $sports_footer['column_3_title']; ?></h5>
+                                    <div class="footer-line"></div>
+                                    <?php
+                                    $longitude = $sports_footer['longatude']; 
+                                    $latitude = $sports_footer['latitude']; 
+                                    ?>
+                                    <div id="map"></div>
+                                    <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
+                                    <script>
+                                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                          maxZoom: 19,
+                                        }).addTo(map);
+                                        L.control.scale().addTo(map);
+                                    </script>
+                                    <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                               <?php elseif (is_adult_ed_page()) : ?>
+                                    <h5><?php echo $adult_footer['column_3_title']; ?></h5>
+                                    <div class="footer-line"></div>
+                                    <?php
+                                    $longitude = $adult_footer['longatude']; 
+                                    $latitude = $adult_footer['latitude']; 
+                                    ?>
+                                    <div id="map"></div>
+                                    <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
+                                    <script>
+                                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                          maxZoom: 19,
+                                        }).addTo(map);
+                                        L.control.scale().addTo(map);
+                                    </script>
+                                    <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                               <?php else : ?>
 
                                 <?php
                                 $selection = get_field('instagram_map','option');
@@ -76,38 +177,26 @@
                                 }; ?>
                                 <div class="footer-line"></div>
 
-                                <?php if( get_field('instagram_map','option') == 'Instagram' ) { ?>
-
-                                    <div class="insta-gallery">
-                                      <?php echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]'); ?>
-                                    </div>
-
-                                <?php } else { ?>
-
-                                    <?php
-                                    $longitude = get_field('longitude','option');
-                                    $latitude = get_field('latitude','option');
-                                    ?>
-
-                                    <div id="map"></div>
-
-                                    <?php
-                                        echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>";
-                                    ?>
-
-                                    <script>
-                                        // add the OpenStreetMap tiles
-                                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                          maxZoom: 19,
-                                        }).addTo(map);
-                                        // show the scale bar on the lower left corner
-                                        L.control.scale().addTo(map);
-                                    </script>
-
-                                    <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
-
-                                <?php } ?>
-
+                                    <?php if( get_field('instagram_map','option') == 'Instagram' ) { ?>
+                                        <div class="insta-gallery">
+                                        <?php echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]'); ?>
+                                        </div>
+                                    <?php } else { ?>
+                                        <?php
+                                        $longitude = get_field('longitude','option');
+                                        $latitude = get_field('latitude','option');
+                                        ?>
+                                        <div id="map"></div>
+                                        <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
+                                        <script>
+                                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                            maxZoom: 19,
+                                            }).addTo(map);
+                                            L.control.scale().addTo(map);
+                                        </script>
+                                        <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                                    <?php } ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

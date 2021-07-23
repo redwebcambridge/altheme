@@ -122,6 +122,9 @@ p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserr
 #adminmenu #menu-posts-adultlearning div.wp-menu-image::before {
   content: '\f118';
 }
+#adminmenu #menu-posts-sportscentre div.wp-menu-image::before {
+  content: '\f483';
+}
 #menu-comments {
   display: none;
 }

@@ -2,6 +2,7 @@ jQuery( document ).ready(function() {
   //Cookie consent
   (function() {
     if (!localStorage.getItem('cookie-consent')) {
+      console.log('no cookie consent set');
       document.querySelector('.cookie-consent').style.display = 'flex';
       document.querySelector('.allow-button').onclick = function(e) {
         e.preventDefault();

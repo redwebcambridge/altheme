@@ -1,13 +1,13 @@
 jQuery( document ).ready(function() {
   //Cookie consent
   (function() {
-    if (!localStorage.getItem('cookie-consent')) {
+    if (!localStorage.getItem('cookieconsent')) {
       console.log('no cookie consent set');
-      jQuery('.cookie-consent').css('display','flex!important');
+      document.querySelector('.cookieconsent_msg').style.display = 'flex';
       document.querySelector('.allow-button').onclick = function(e) {
         e.preventDefault();
-        document.querySelector('.cookie-consent').style.display = 'none';
-        localStorage.setItem('cookie-consent', true);
+        document.querySelector('.cookieconsent_msg').style.display = 'none';
+        localStorage.setItem('cookieconsent', true);
       };
     } 
   })();

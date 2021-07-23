@@ -1,0 +1,36 @@
+
+  body {
+    font-family: $bodyfont;
+    font-size: $bodyfontsize;
+    font-weight: $bodyfontweight;
+    color: $darkgrey;
+
+    a {
+      text-decoration: none;
+      color: $primarycolour;
+      &:hover {
+        color: darken($primarycolour,10%);
+        text-decoration: none;
+      }
+    }
+    h1, h2, h3, h4, strong {
+      font-weight:$headingsfontweight;
+    }
+    h2 {
+      text-transform: uppercase;
+      color: $primarycolour;
+      font-family: $bodyfont;
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: $bodyfontsize;
+      line-height: $bodylineheight;
+    }
+    ::selection {
+      background: $primarycolour;
+      color: #fff;
+    }
+  }

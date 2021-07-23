@@ -1,0 +1,91 @@
+.meet-the-staff2{
+  .staff-section {
+    border: 1px solid #9c9c9c; 
+    border-right: 8px solid $secondarycolour;
+    max-width: 48%;
+    margin-top:20px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: top;
+    .thumbnail {
+      display: inline-block;
+      height:265px;
+      z-index:10;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      vertical-align: top;
+      min-width: 160px;
+    }
+   
+    .top-info {
+      color: $primarycolour;
+    }
+    .staff-text {
+      padding: 20px;
+      display: inline-block;
+      font-size: 0.8rem;
+      .read-more-button {
+        font-weight: $bold-weight;
+        cursor: pointer;
+      }
+      .desc {
+        max-height: 100px;
+        overflow: hidden;
+        display: block;
+        position: relative;
+        transition: all 0.1s linear;
+        &.increaseheight {
+          max-height: 1000px;
+        }      
+       .whitegrad {
+         width: 100%;
+         height: 100px;
+         background-image: linear-gradient(transparent,white);
+        position: absolute;
+        display: block;
+        top: 0;
+        left:0;
+       }
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+
+  }
+}
+
+.meet-the-staff1{
+  table{
+        margin-top: 30px;
+        p{
+          margin-bottom: 0;
+        }
+        thead {
+          border-bottom: none;
+        }
+    .table-head {
+      background: $primarycolour;
+      color:#fff;
+      tr {
+        border-bottom: none;
+      }
+      p{
+        text-transform: uppercase;
+        color: white;
+      }
+    }
+    tbody{
+      td{
+        border-bottom: 1px dashed #dee2e6;
+        border-top: none;
+      }
+      th{
+        color: $primarycolour;
+        border: none;
+      }
+    }
+  }
+}

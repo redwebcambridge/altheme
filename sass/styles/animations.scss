@@ -1,0 +1,20 @@
+@keyframes gradanimate {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ } 
+@keyframes slideup-headertabs {
+    0% {top:65px; opacity: 0;}
+    50% {top:65px; opacity: 0;}
+    80% {top:65px; opacity: 0;}
+    100% {top:0px; opacity: 1;}
+}
+
+@keyframes slideup-tabcontent {
+    0% {margin-top:20px; opacity: 0;}
+    100% {margin-top:0px; opacity: 1;}
+}

@@ -1,4 +1,17 @@
 jQuery( document ).ready(function() {
+  //Cookie consent
+  (function() {
+    if (!localStorage.getItem('cookie-consent')) {
+      document.querySelector('.cookie-consent').style.display = 'flex';
+      document.querySelector('.allow-button').onclick = function(e) {
+        e.preventDefault();
+        document.querySelector('.cookie-consent').style.display = 'none';
+        localStorage.setItem('cookie-consent', true);
+      };
+    } else {
+      document.querySelector('.cookie-consent').style.display = 'none';
+    }
+  })();
   //SCROLLING
   jQuery('body').scroll(function(){
     var windowtop = jQuery('body').scrollTop();
@@ -147,3 +160,4 @@ function googleTranslateElementInit() {
     'google_translate_el'
   );
 }
+

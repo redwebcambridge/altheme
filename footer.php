@@ -1,3 +1,11 @@
+<div class="cookie-consent"> 
+    <span><?php the_field('cookie_notice_message','option'); ?> See <a href="<?php get_field('cookie_policy_page','option'); ?>" class="ml-1 text-decoration-none">Cookie policy</a> </span>
+    <div class=" ml-2 d-flex align-items-center justify-content-center g-2 mx-2">
+         <button class="allow-button mr-1">Allow cookies</button>
+    </div>
+</div>
+
+                
                 <?php if ( is_front_page() && have_rows('information_panel') || !is_front_page() ): ?>
                     <div class="container">
                         <div class="line"></div>
@@ -215,9 +223,13 @@
                     </div>
                 </div>
 
+                
+
             </footer>
 
         </div><!-- #page -->
+
+        
 
         <?php wp_footer(); ?>
 

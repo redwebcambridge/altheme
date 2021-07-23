@@ -212,6 +212,7 @@ footer {
 }
 
 .cookie-consent {
+  display: none;
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -225,7 +226,6 @@ footer {
   z-index: 120;
   cursor: pointer;
   border-radius: 0px;
-  display: none;
   align-items: center;
   justify-content: center;
   border-top: 2px solid darken($primarycolour,10%);

@@ -5642,7 +5642,7 @@ footer #map {
   z-index: 120;
   cursor: pointer;
   border-radius: 0px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border-top: 2px solid #640f3a;

@@ -8,9 +8,7 @@ jQuery( document ).ready(function() {
         document.querySelector('.cookie-consent').style.display = 'none';
         localStorage.setItem('cookie-consent', true);
       };
-    } else {
-      document.querySelector('.cookie-consent').style.display = 'none';
-    }
+    } 
   })();
   //SCROLLING
   jQuery('body').scroll(function(){

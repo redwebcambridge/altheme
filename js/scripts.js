@@ -3,7 +3,7 @@ jQuery( document ).ready(function() {
   (function() {
     if (!localStorage.getItem('cookie-consent')) {
       console.log('no cookie consent set');
-      document.querySelector('.cookie-consent').style.display = 'flex';
+      jQuery('html').css('display','flex!important');
       document.querySelector('.allow-button').onclick = function(e) {
         e.preventDefault();
         document.querySelector('.cookie-consent').style.display = 'none';

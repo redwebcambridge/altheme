@@ -2,7 +2,6 @@ jQuery( document ).ready(function() {
   //Cookie consent
   (function() {
     if (!localStorage.getItem('cookieconsent')) {
-      console.log('no cookie consent set');
       document.querySelector('.cookieconsent_msg').style.display = 'flex';
       document.querySelector('.allow-button').onclick = function(e) {
         e.preventDefault();
@@ -33,7 +32,7 @@ jQuery( document ).ready(function() {
       }, 500);
   });
   //Partners
-  $('.partner-slider').slick({
+  jQuery('.partner-slider').slick({
     speed: 1000,
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -52,7 +51,7 @@ jQuery( document ).ready(function() {
   });
   jQuery('.partners').fadeIn();
   //Homepage SLider
-  $('.header-images-slick-slider').slick({
+  jQuery('.header-images-slick-slider').slick({
     dots: true,
     speed: 1000,
     fade: true,
@@ -61,7 +60,7 @@ jQuery( document ).ready(function() {
     appendDots: '#slider_nav'
   });
   //Twitter
-  $('.slick-twitter').slick({
+  jQuery('.slick-twitter').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     nextArrow: '.next-tweet',

@@ -98,7 +98,8 @@ function anglian_learning_scripts() {
   //Google Translate
   wp_enqueue_script( 'google-translate', 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
   //jQuery
-  wp_enqueue_script( 'al-jquery', get_template_directory_uri().'/js/jquery.js');
+  wp_register_script('jqueryscript', get_template_directory_uri() . '/js/jquery.js', array('jquery'), '4.0.0', true);
+  wp_enqueue_script('jqueryscript');
   //Leaflet for maps
   wp_enqueue_script( 'leafletjs', get_template_directory_uri().'/js/leaflet.js');
   wp_enqueue_style( 'leafletcss', get_template_directory_uri().'/sass/styles/leaflet.css');

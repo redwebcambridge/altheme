@@ -17,7 +17,7 @@ jQuery( document ).ready(function() {
   });
   //WINDOW RESIZE
   jQuery(window).resize(function(){
-    var current = jQuery("#menu-main-menu li.active");
+    var current = jQuery(".navbar-nav  li.active");
     hovericon(current);
     jQuery('html').css('opacity','0');
   });
@@ -84,16 +84,16 @@ jQuery( document ).ready(function() {
     });
   }); 
   //Menu hover
-  var onloadleft = jQuery(".navbar #menu-main-menu li.active").offset().left;
-  var leftpadding = jQuery(".navbar #menu-main-menu li.active").width()/2-18;
+  var onloadleft = jQuery(".navbar .navbar-nav li.active").offset().left;
+  var leftpadding = jQuery(".navbar .navbar-nav li.active").width()/2-18;
   jQuery(".navbar .currenthover").css("left",onloadleft+leftpadding);
   jQuery(".navbar .currenthover").css("display","block");
-  if(jQuery('.navbar #menu-main-menu li.active').is('#menu-main-menu li:last-child')) {
+  if(jQuery('.navbar .navbar-nav li.active').is('.navbar-nav li:last-child')) {
     jQuery(".navbar .currenthover").hide();
-    var lasthover = jQuery('.navbar #menu-main-menu li.active').prev('li');
+    var lasthover = jQuery('.navbar .navbar-nav li.active').prev('li');
     hovericon(lasthover);
   }
-  jQuery("#menu-main-menu li").on("mouseover", function () {
+  jQuery(".navbar-nav li").on("mouseover", function () {
     if(jQuery(this).is(':last-child')) {
       var lasthover = jQuery(this).prev('li');
       hovericon(lasthover);

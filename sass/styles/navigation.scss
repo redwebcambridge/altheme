@@ -111,9 +111,7 @@ header {
     }
   }
 }
-#menu-adult-learning-menu,#menu-sports-centre  {
-    padding-bottom:35px
-}
+
 #mainnav ul{
   width: 100%;
   font-weight: 500;
@@ -289,8 +287,8 @@ header {
     height:68px;
     background:#fff;
     padding:0 0 12px 0;
-    #menu-main-menu {
-        margin-bottom:0;
+    .navbar-nav {
+        padding-bottom:30px;
     }
     &.fixed-top {
         z-index:99999999;

@@ -16,7 +16,7 @@ get_header();
 $category = get_queried_object();
 ?>
 
-<div class="container newsevents mb-5">
+<div class="container newsevents mb-5 newsletters">
 	<div class="row row-flex">
 		<?php 
 		$the_query = new WP_Query( array('post_type'  => 'post','posts_per_page' => -1,'cat' => $category->term_id )  );
@@ -25,7 +25,7 @@ $category = get_queried_object();
 		endwhile; else : echo '<div class="alert alert-secondary text-center" role="alert"><em>Sorry! There are no posts found</em></div>'; endif;
 		?>
 	</div>
-	<?php if ($the_query->post_count > 4) : ?>
+	<?php if ($the_query->post_count > 6) : ?>
 		<?php get_template_part('template-parts/loadmore'); ?>
 	<?php endif; ?>
 </div>

@@ -83,14 +83,25 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php while (have_posts()) : the_post(); ?>
-                            <div class="col-md-<?php echo $newsitem; ?> newsitem">
-                                <div onclick="window.location.href = '<?php the_permalink(); ?>' "class="thumbnail al-border-bottom" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>')"></div>
-                                <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+                        <?php while (have_posts()) : the_post(); 
+                        $thumbnail= get_field('thumbnail'); 
+                        $thumbnail = $thumbnail['url'];
+                        $url = get_permalink(); 
+                        if (in_category('newsletter')){
+                            $download = get_field('pdf_upload'); 
+                            $thumbnail =  $download['icon'];
+                            $url = $download['url']; 
+                        }
+                        ?>
+
+                            <div class="col-md-<?php echo $newsitem; ?> newsitem <?php  if (in_category('newsletter')){echo 'newsletter';} ?>">
+                                <div onclick="window.location.href = '<?php echo $url; ?>' " class="thumbnail al-border-bottom" style="background-image:url('<?php echo $thumbnail; ?>')"></div>
+                                <h3><a href="<?php echo $url; ?>"><?php the_title(); ?></a></h3>
                                 <p class="post-date"><?php echo get_the_date('jS F Y'); ?> </p>
                                 <p><?php echo get_the_excerpt(); ?></p>
-                                <a class="btn btn-primary rounded-0" href="<?php the_permalink() ?>">READ MORE</a>
+                                <a class="btn btn-primary rounded-0" href="<?php echo $url; ?>">READ MORE</a>
                             </div>
+
                         <?php endwhile;  wp_reset_query(); ?>
                     </div>
                 </div>
@@ -162,8 +173,6 @@
               <div class="col-md-6">
 
               <?php
-
-
                     // Load value.
                     $iframe = get_field('file');
                     $primarycolour = str_replace('#', '', get_field('colours','option')['primary_colour']);

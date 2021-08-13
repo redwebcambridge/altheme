@@ -17,6 +17,7 @@ get_header();
 <div class="container newsevents mb-5">
 	<div class="row row-flex">
 		<?php 
+		//exclude newsletters
 		$newsletters = get_category_by_slug('newsletter');
 		$newsletters = '-'.$newsletters->term_id;
 

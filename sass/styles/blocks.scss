@@ -104,6 +104,13 @@ body{
         margin: 35px 0 20px 0;
         cursor: pointer;
       }
+      .newsletter {
+        .thumbnail {
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+      }
       .twitter-box {
         border: 1px solid $lightgrey;
         margin: 35px 0 0 0;

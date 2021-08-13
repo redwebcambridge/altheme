@@ -23,6 +23,12 @@
                 &:hover {
                     transform: scale(1.2);
                 }
+                &.newsletter {
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-color: $lightgrey;
+                    border: 10px solid $lightgrey;
+                }
             }
         }
         .newseventtext {
@@ -55,6 +61,16 @@
                 }
             }
         }
+        
+    }
+    .newslettercontainer {
+        .newseventtext {
+            padding:15px 20px 10px 20px;
+            min-height: 71px;
+            h4 {
+                line-height: 15px;
+            }
+        }
     }
    
     .newseventspagination, .newslettercontainer {
@@ -70,6 +86,7 @@
             color:#fff;
         }
     }
+   
     .newslettercontainer .newseventtext {
         a{
             font-size: 1rem;

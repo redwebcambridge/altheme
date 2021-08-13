@@ -91,6 +91,9 @@ function school_settings() {
 };
 add_theme_support( 'post-thumbnails' );
 
+//get fonts
+require_once get_template_directory() . '/lib/fonts/fontsetting.php';
+
 /**
  * Enqueue scripts and styles.
  */
@@ -105,6 +108,13 @@ function anglian_learning_scripts() {
   wp_enqueue_style( 'leafletcss', get_template_directory_uri().'/sass/styles/leaflet.css');
   //Calendar
   wp_enqueue_script( 'fullcalendar', get_template_directory_uri().'/js/calendar.min.js');
+  //Fonts
+  wp_enqueue_style( 'headingfont', getheadingfont(), array(), '1.0' );
+  wp_enqueue_style( 'bodyfont', getbodyfont(), array(), '1.0' );
+  wp_enqueue_style( 'adultlearningheadingfont', getheadingfont_adultlearning(), array(), '1.0' );
+  wp_enqueue_style( 'adultlearningbodyfont', getbodyfont_adultlearning(), array(), '1.0' );
+  wp_enqueue_style( 'sportsheadingfont', getheadingfont_sports(), array(), '1.0' );
+  wp_enqueue_style( 'sportsbodyfont', getbodyfont_sports(), array(), '1.0' );
   //bootstrap
   wp_enqueue_script( 'popper', get_template_directory_uri().'/js/popper.min.js');
   wp_enqueue_script( 'al-bootstrap', get_template_directory_uri().'/js/bootstrap.js');

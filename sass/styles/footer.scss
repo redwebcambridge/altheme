@@ -187,9 +187,8 @@ footer {
 }
 #adult_ed {
   footer {
-    background-color: $adultprimarycolour;
-    background-image: none;
-
+    background-color: $adultfooter_footer_bg_colour;
+    background-image: url($adultfooter_footer_bg_img);
   }
   .footer-base {
     background: $adultsecondarycolour;

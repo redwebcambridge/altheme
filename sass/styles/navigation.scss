@@ -115,12 +115,13 @@ header {
 #mainnav ul{
   width: 100%;
   font-weight: 500;
-  border-top: 2px solid transparent;
-  border-image: linear-gradient(to right, $primarycolour, $secondarycolour);
-  border-image-slice: 1;
+  border-top-width: 2px;
+  border-top: 2px solid $primarycolour,;
+  border-radius: 0;
   justify-content: space-between;
   font-size: 1rem;
   margin-bottom: -30px;
+
   li {
     margin-top:10px;
     position: relative;

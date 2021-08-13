@@ -46,6 +46,12 @@
 
 
 .adult-learning-page{
+    font-family: $adultbodyfont;
+    font-weight: $adultbodyfontweight;
+    h1, h2, h3, h4 {
+      font-family: $adultheadingsfont;
+      font-weight: $adultheadingsfontweight;
+    }
     .course{
       margin-bottom: 15px;
 

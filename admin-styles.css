@@ -146,3 +146,7 @@ p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserr
 .menu-item-depth-1 .acf-menu-item-fields {
   display: none;
 }
+
+.mce-container-body .mce-widget[aria-label="Font Family"] {
+  display: none;
+}

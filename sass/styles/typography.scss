@@ -4,7 +4,6 @@
     font-size: $bodyfontsize;
     font-weight: $bodyfontweight;
     color: $darkgrey;
-
     a {
       text-decoration: none;
       color: $primarycolour;
@@ -13,13 +12,16 @@
         text-decoration: none;
       }
     }
-    h1, h2, h3, h4, strong {
+    h1, h2, h3, h4 {
+      font-family:$headingsfont;
       font-weight:$headingsfontweight;
+    }
+    strong {
+      font-weight: bolder;
     }
     h2 {
       text-transform: uppercase;
       color: $primarycolour;
-      font-family: $bodyfont;
       font-size: 1.75rem;
     }
     h3 {

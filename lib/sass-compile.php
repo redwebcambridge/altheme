@@ -51,9 +51,10 @@ $variables = [
   '$adultprimarycolour' => $adultcolours['adult_primary_colour'],
   '$adultsecondarycolour' =>  $adultcolours['adult_second_colour'],
   '$adultbordercolour' =>  $adultcolours['adult_border_colour'],
-  '$adultfooterbgcolour' => get_field('adult_footer_background_colour','option'),
   '$adultfooter_icon_colour' => $adult_all_colours['adult_footer_icon_colour'],
   '$adultfooter_title_colour' => $adult_all_colours['adult_footer_title_colour'],
+  '$adultfooter_footer_bg_colour' => get_field('footer_options','option')['footer_background_colour'],
+  '$adultfooter_footer_bg_img'=> '"'.get_field('footer_options', 'option')['footer_background_image'].'"',
   //Adult fonts
   '$adultheadingsfont' => $adultfonts['adult_heading_font'],
   '$adultheadingsfontweight' => $adultfonts['adult_heading_font_weight'],
@@ -69,11 +70,10 @@ $variables = [
   '$sportfooter_title_colour' => $sportcolours['sports_footer_title_colour'],
 
   //Sport fonts
-  // '$sportheadingsfont' => $sportfonts['adult_heading_font'],
-  // '$sportheadingsfontweight' => $sportfonts['adult_heading_font_weight'],
-  // '$sportbodyfont' => $sportfonts['adult_body_font'],
-  // '$sportbodyfontweight' => $sportfonts['adult_body_font_weight'],
-  
+  '$sportheadingsfont' => $sportfonts['sports_heading_font'],
+  '$sportheadingsfontweight' => $sportfonts['sports_heading_font_weight'],
+  '$sportbodyfont' => $sportfonts['sports_body_font'],
+  '$sportbodyfontweight' => $sportfonts['sports_body_font_weight'],
 ];
 
 $compiler->setVariables($variables);

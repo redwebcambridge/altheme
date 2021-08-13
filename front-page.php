@@ -85,7 +85,7 @@
                     <div class="row">
                         <?php while (have_posts()) : the_post(); ?>
                             <div class="col-md-<?php echo $newsitem; ?> newsitem">
-                                <div class="thumbnail al-border-bottom" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>')"></div>
+                                <div onclick="window.location.href = '<?php the_permalink(); ?>' "class="thumbnail al-border-bottom" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()); ?>')"></div>
                                 <h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
                                 <p class="post-date"><?php echo get_the_date('jS F Y'); ?> </p>
                                 <p><?php echo get_the_excerpt(); ?></p>

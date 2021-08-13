@@ -1,4 +1,10 @@
 #sports {
+    font-family: $sportbodyfont;
+    font-weight: $sportbodyfontweight;
+    h1, h2, h3, h4 {
+      font-family: $sportheadingsfont;
+      font-weight: $sportheadingsfontweight;
+    }
   header {
     #searchform {
       button {

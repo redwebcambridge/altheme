@@ -1,0 +1,185 @@
+#sports {
+    font-family: $sportbodyfont;
+    font-weight: $sportbodyfontweight;
+    h1, h2, h3, h4 {
+      font-family: $sportheadingsfont;
+      font-weight: $sportheadingsfontweight;
+      color: $sportprimarycolour;
+    }
+  header {
+    #searchform {
+      button {
+        background-color: $sportprimarycolour;
+        &:hover {
+          background-color: $sportsecondarycolour;
+        }
+      }
+    }
+    #top_buttons{
+      li {
+        &:hover {
+          background-color: $sportprimarycolour;
+        }
+      }
+    }
+  }
+  .featured-top-image{
+    h1 {
+      background: $sportprimarycolour;
+      color: #fff;
+    }
+  }
+  .navbar {
+    ul {
+      border-top-color: $sportprimarycolour;
+      li {
+        a {
+          color: $sportprimarycolour;
+       }
+       &:last-child {
+        a {
+          background-color: $sportprimarycolour;
+          color: #ffffff;
+          &:hover {
+            background-color: $sportsecondarycolour;
+          }
+        }
+      }
+    }
+    }
+  }
+  &.page-template-vacancies .log_interest {
+    background: $sportsecondarycolour;
+  }  
+
+    .course{
+      margin-bottom: 15px;
+
+      .course-thumbnail{
+        height: 260px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+      }
+      .course-name {
+      background: $sportprimarycolour;
+      padding: 10px 22px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: $normal-weight;
+      }
+      .course-name:hover {
+        background: $sportsecondarycolour;
+      }
+    }
+    .contact-box{
+      border: 1px solid grey;
+      padding: 20px;
+
+      p{
+        margin-bottom: 0;
+      }
+      strong{
+        color: $sportprimarycolour;
+        font-weight: $normal-weight;
+      }
+      .email{
+        background: $sportsecondarycolour;
+        padding: 10px 30px;
+        margin: 0 10px;
+        color: #ffffff;
+        a{
+          color: #ffffff;
+        }
+      }
+      .number{
+        background: $sportprimarycolour;
+        padding: 10px 30px;
+        margin: 0 10px;
+        color: #ffffff;
+      }
+
+    }
+
+    #sidebar-menu {
+        li {
+            background: $sportprimarycolour;
+            &:hover {
+                background: $sportsecondarycolour;
+                transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+            }
+
+            a {
+                background:$sportprimarycolour;
+                &:hover {
+                    background: $sportsecondarycolour;
+                    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+                }
+            }
+            &.current_page_item {
+                background: $sportsecondarycolour;
+                transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+                a {
+                    background: $sportsecondarycolour;
+                    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+                }
+            }
+
+            .sub-menu {
+                display:none;
+                transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+                li {
+                    display:none;
+                    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+                }
+            }
+            &:hover {
+                .sub-menu {
+                    display:block;
+                    padding:0;
+                    width:100%;
+                    transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+                    li {
+                        display:block;
+                        width:100%;
+                        transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
+                        a {
+                            margin:0;
+                            background:#d6d7d9;
+                            color:#000;
+                            border-bottom:2px solid $sportprimarycolour;
+                            &:hover {
+                                color:$sportprimarycolour;
+                                border-bottom:2px solid $sportsecondarycolour;
+                            }
+                        }
+                        &.current_page_item {
+                            a {
+                                color:$sportprimarycolour;
+                                border-bottom:2px solid $sportsecondarycolour;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    
+    .heading-two {
+        color:$sportprimarycolour;
+    }
+    .gradline {
+        background-image: linear-gradient(to right, $sportprimarycolour, $sportsecondarycolour);
+    }
+
+    .btn {
+        background:$sportprimarycolour;
+        &:hover {
+            background: $sportsecondarycolour;
+        }
+    }
+
+}

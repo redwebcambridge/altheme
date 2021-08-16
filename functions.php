@@ -220,14 +220,11 @@ function twitterwp() {
 
 //School Settings
 function action_sass_compile() {
-  $screen = get_current_screen();
-    if ($screen->id=="toplevel_page_school-settings") {
       function sass_compile() {
         require_once get_template_directory() . '/lib/scssphp/scss.inc.php';
         require_once get_template_directory() . '/lib/sass-compile.php';
       }
       sass_compile();
-  }
 }
 add_action('acf/save_post', 'action_sass_compile', 20);
 add_action('upgrader_process_complete', 'action_sass_compile', 20);

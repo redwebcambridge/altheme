@@ -395,12 +395,14 @@ add_filter('acf/load_field/name=sports_grey_tabs_menu', 'acf_load_color_field_ch
 add_filter('acf/load_field/name=sports_top_navigation_menu', 'acf_load_color_field_choices');
 
 function is_adult_ed_page() {
-  if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') ) :
+  global $post;
+  if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') || $post->post_parent == get_field('adult_learning_homepage','option')  ) :
     return true;
   endif;
 }
 function is_sports_page() {
-  if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') ) :
+  global $post;
+  if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') || $post->post_parent == get_field('sports_homepage','option')->ID ) :
     return true;
   endif;
 }
@@ -412,7 +414,7 @@ if( !function_exists( 'tz_excerpt_length' ) ) {
     add_filter('excerpt_length', 'tz_excerpt_length');
 }
 
-function wpse196289_default_page_template() {
+function default_page_template() {
   global $post;
   if ( 'page' == $post->post_type 
       && 0 != count( get_page_templates( $post ) ) 
@@ -422,7 +424,7 @@ function wpse196289_default_page_template() {
       $post->page_template = "page-templates/one-column.php";
   }
 }
-add_action('add_meta_boxes', 'wpse196289_default_page_template', 1);
+add_action('add_meta_boxes', 'default_page_template', 1);
 
 /**
  * Change PDF icon to Thumbnail File

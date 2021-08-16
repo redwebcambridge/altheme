@@ -29,7 +29,7 @@ if($_POST) :
         $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
 
-        $sql = $conn->prepare(" INSERT INTO live (vac_title,vac_sub_title,vac_salary,vac_closing_date,vac_description,school,live,school_name,recruitment_pack,application_form) VALUES (:vac_title,:vac_sub_title,:vac_salary,:vac_closing_date,:vac_description,:school,:live,:schoolname,:recruitment_pack,:application_form)");
+        $sql = $conn->prepare(" INSERT INTO live (vac_title,vac_sub_title,vac_salary,vac_closing_date,vac_description,school,live,school_name,recruitment_pack,application_form,listing_type) VALUES (:vac_title,:vac_sub_title,:vac_salary,:vac_closing_date,:vac_description,:school,:live,:schoolname,:recruitment_pack,:application_form,:listing_type)");
 
         $sql->execute([
           'vac_title' =>  $_POST['post_title'],
@@ -42,6 +42,7 @@ if($_POST) :
           'schoolname' => $schoolname,
           'recruitment_pack' => $_FILES['recruitment']['name'],
           'application_form' => $_FILES['application']['name'],
+          'listing_type' => $_POST['listing_type']
       ]);  
 
       print_r($sql->errorInfo());
@@ -69,11 +70,12 @@ if($_POST) :
           'id' => $_POST['updateid'],
           'application_form' => $_FILES['application']['name'],
           'recruitment_pack' => $_FILES['recruitment']['name'],
+          'listing_type' => $_POST['listing_type']
         ];
         $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
         $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
 
-        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form,recruitment_pack=:recruitment_pack, live=:live WHERE id=:id");
+        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form,recruitment_pack=:recruitment_pack, live=:live,listing_type=:listing_type WHERE id=:id");
       
         $sql->execute($update_data);  
 
@@ -240,7 +242,17 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
             <h2>Closing Date</h2>
             <input type="date" name="closing" required value="<?php if(isset($vacancy)){echo $vacancy['vac_closing_date'];} ?>" >
           </div>
+          <div class="acf-field listing_type" style="width:100%">
+            <h2>Listing Type</h2>
 
+            <select name="listing_type">
+              <option value="school" <?php if(isset($vacancy) && $vacancy['listing_type'] == "school"){echo 'selected';} ?>>School Listing</option>
+              <option value="adult_learning" <?php if(isset($vacancy) && $vacancy['listing_type'] == "adult_learning"){echo 'selected';} ?>>Adult Learning Listing</option>
+              <option value="sports_center" <?php if(isset($vacancy) && $vacancy['listing_type'] == "sports_center"){echo 'selected';} ?>>Sports Center Listing</option>
+            </select>
+
+
+          </div>
           <div class="acf-field" style="width:100%">
            <h2>Job Description</h2>
 
@@ -369,7 +381,6 @@ else : //Not updating or adding so show list of vanancies and get trash
 	<tbody id="the-list">
 
   <?php
-  // var_dump($vacancies);
   $i=0;
    foreach ($vacancies as $vacancy){
      $i++;
@@ -412,7 +423,6 @@ else : //Not updating or adding so show list of vanancies and get trash
 	<tbody id="the-list">
 
   <?php
-  // var_dump($vacancies);
   $i=0;
    foreach ($vacancies_trashed as $vacancy){
      $i++;

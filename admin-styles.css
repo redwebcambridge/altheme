@@ -150,3 +150,9 @@ p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserr
 .mce-container-body .mce-widget[aria-label="Font Family"] {
   display: none;
 }
+#vacancy_fields .acf-field.listing_type {
+  padding:0px 20px;
+}
+.listing_type label{
+  padding-right: 20px;
+}

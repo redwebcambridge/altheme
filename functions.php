@@ -7,7 +7,6 @@ if ( ! defined( '_S_VERSION' ) ) {
   define( '_S_VERSION', '1.0.0' );
 }
 if ( ! function_exists( 'anglian_learning_setup' ) ) :
-
   function anglian_learning_setup() {
     add_theme_support( 'title-tag' );
     register_nav_menus(
@@ -17,12 +16,8 @@ if ( ! function_exists( 'anglian_learning_setup' ) ) :
       )
     );
   }
-
 endif;
 add_action( 'after_setup_theme', 'anglian_learning_setup' );
-
-//disable admin bar
-show_admin_bar(false);
 
 //updater
 require 'theme-updates/theme-update-checker.php';
@@ -235,6 +230,7 @@ function action_sass_compile() {
   }
 }
 add_action('acf/save_post', 'action_sass_compile', 20);
+add_action('upgrader_process_complete', 'action_sass_compile', 20);
 
 //WILL HAVE TO HAVE A DEVELOPMENT OPTION SO THIS DOESNT RUN EACH TIME
 //SASS CSS COMPILER

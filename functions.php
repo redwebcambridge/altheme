@@ -399,13 +399,13 @@ add_filter('acf/load_field/name=sports_top_navigation_menu', 'acf_load_color_fie
 
 function is_adult_ed_page() {
   global $post;
-  if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') || $post->post_parent == get_field('adult_learning_homepage','option')  ) :
+  if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category')  ) :
     return true;
   endif;
 }
 function is_sports_page() {
   global $post;
-  if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') || $post->post_parent == get_field('sports_homepage','option')->ID ) :
+  if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') ) :
     return true;
   endif;
 }

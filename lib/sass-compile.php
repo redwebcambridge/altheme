@@ -20,9 +20,9 @@ $compiler = new ScssPhp\ScssPhp\Compiler();
 $compiler->setSourceMap(ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE);
 $source_scss = get_template_directory() . '/sass/style.scss';
 $scssContents = file_get_contents($source_scss);
-$import_path = get_stylesheet_directory() . '/sass';
+$import_path = get_template_directory() . '/sass';
 $compiler->addImportPath($import_path);
-$target_css = get_stylesheet_directory() . '/styles.css';
+$target_css = get_template_directory() . '/styles.css';
 
 $variables = [
   //colours

@@ -106,6 +106,7 @@ if (!class_exists('ACF')) {
                 <nav>
                 <ul class="d-md-flex justify-content-end" id="menu-top-buttons" itemscope>
                 <?php
+                $count = 0;
                 foreach ($menuitems as $item) :
 
                   $title = $item->title;

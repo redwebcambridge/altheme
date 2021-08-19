@@ -1,4 +1,7 @@
 <?php
+ ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /**
  * Anglian Learning functions and definitions
  */
@@ -372,7 +375,11 @@ function acf_load_color_field_choices( $field ) {
   $field['choices'] = array();
   $menus = get_terms('nav_menu');
   foreach($menus as $menu){
-    $choices .= $menu->name . "\n";
+    if(!isset($choices)) {
+      $choices = $menu->name . "\n";
+    } else {
+      $choices .= $menu->name . "\n";
+    } 
   }
   $choices = explode("\n", $choices);
   $choices = array_map('trim', $choices);

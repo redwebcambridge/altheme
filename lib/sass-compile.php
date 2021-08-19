@@ -18,7 +18,7 @@ $sportfonts = get_field('sports_fonts','option');
 
 $compiler = new ScssPhp\ScssPhp\Compiler();
 $compiler->setSourceMap(ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE);
-$source_scss = get_stylesheet_directory() . '/sass/style.scss';
+$source_scss = get_template_directory() . '/sass/style.scss';
 $scssContents = file_get_contents($source_scss);
 $import_path = get_stylesheet_directory() . '/sass';
 $compiler->addImportPath($import_path);

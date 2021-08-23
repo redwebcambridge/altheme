@@ -218,25 +218,24 @@ function twitterwp() {
   return $tweets;
 }
 
-//School Settings
-function action_sass_compile() {
-      function sass_compile() {
-        require_once get_template_directory() . '/lib/scssphp/scss.inc.php';
-        require_once get_template_directory() . '/lib/sass-compile.php';
-      }
-      sass_compile();
+//SASS COMPILE
+function sass_compile() {
+  require_once get_template_directory() . '/lib/scssphp/scss.inc.php';
+  require_once get_template_directory() . '/lib/sass-compile.php';
 }
-add_action('acf/save_post', 'action_sass_compile', 20);
-add_action('upgrader_process_complete', 'action_sass_compile', 20);
-
-//WILL HAVE TO HAVE A DEVELOPMENT OPTION SO THIS DOESNT RUN EACH TIME
-//SASS CSS COMPILER
-if ( isset($_GET['sass']) ):
-  function sass_compile() {
-    require_once get_template_directory() . '/lib/scssphp/scss.inc.php';
-    require_once get_template_directory() . '/lib/sass-compile.php';
+//Updating theme
+function action_sass_compile_update() {
+  sass_compile();
+}
+add_action('upgrader_process_complete', 'action_sass_compile_update', 20);
+//Updating school settings
+function action_sass_compile_schoolsettings() {
+  $screen = get_current_screen();
+  if ($screen->id=="toplevel_page_school-settings") {
+    sass_compile();
   }
-endif;
+}
+add_action('acf/save_post', 'action_sass_compile_schoolsettings', 20); 
 
 //Set Favicon
 function favicon() {

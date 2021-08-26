@@ -38,6 +38,9 @@ body{
       border-top:solid 90px white;
       position: relative;
       height: 380px;
+      @media screen and (max-width:760px) {
+        height: unset;
+      }
      .container {
         &.active {
           animation:  slideup-tabcontent 0.75s linear 1;
@@ -76,7 +79,9 @@ body{
       margin: 75px 0;
       .col-12 {
         .newsitem{
-          //width: 31%;
+          @media all and (max-width: 560px) {
+            width: 100%;
+          }
         }
       }
       .col-8 {
@@ -111,7 +116,14 @@ body{
           background-position: center;
         }
       }
+      .twittercontainer {
+        @media all and (max-width: 770px) {
+          width:100%;
+        }
+      }
+
       .twitter-box {
+        
         border: 1px solid $lightgrey;
         margin: 35px 0 0 0;
         background-color: white;
@@ -190,6 +202,9 @@ body{
           }
           iframe {
             max-width:100%;
+            @media all and (max-width: 770px) {
+              height:290px !important;
+            }
           }
           p {
             margin-top:20px;
@@ -265,7 +280,14 @@ body{
   margin-bottom: 60px;
 }
 
-
+.course_details {
+  word-wrap: normal;
+  .table_head {
+    background: $lightgrey;
+    display: block;
+    padding:10px
+  }
+}
 
 .menu-item:hover .dropdown-menu {
   display: block;

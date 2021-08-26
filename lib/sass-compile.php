@@ -1,5 +1,4 @@
 <?php
-
 //Main colours
 $logos = get_field('logo_and_icons','option');
 $colours = get_field('colours','option');
@@ -10,11 +9,14 @@ $all_colours = get_field('colours','option');
 $adultlogos = get_field('adultlearning_logo_and_icons','option');
 $adultcolours = get_field('adult_colours','option');
 $adultfonts = get_field('adult_fonts','option');
+$ad_logos = get_field('adultlearning_logo_and_icons','option');
 
 //Sport colours
 $sportlogos = get_field('sports_logo_and_icons','option');
 $sportcolours = get_field('sports_colours','option');
 $sportfonts = get_field('sports_fonts','option');
+$sport_logos = get_field('sports_logo_and_icons','option');
+
 
 $compiler = new ScssPhp\ScssPhp\Compiler();
 $compiler->setSourceMap(ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE);
@@ -60,6 +62,8 @@ $variables = [
   '$adultheadingsfontweight' => $adultfonts['adult_heading_font_weight'],
   '$adultbodyfont' => $adultfonts['adult_body_font'],
   '$adultbodyfontweight' => $adultfonts['adult_body_font_weight'],
+  //Adult site Icon
+  '$adultsiteicon' => '"'.$ad_logos['adult_icon']['url'].'"',
 
   //Sports colours
   '$sportprimarycolour' => $sportcolours['sports_primary_colour'],
@@ -74,6 +78,8 @@ $variables = [
   '$sportheadingsfontweight' => $sportfonts['sports_heading_font_weight'],
   '$sportbodyfont' => $sportfonts['sports_body_font'],
   '$sportbodyfontweight' => $sportfonts['sports_body_font_weight'],
+   //Sport site Icon
+   '$sportiteicon' => '"'.$sport_logos['sports_icon']['url'].'"',
 ];
 
 $compiler->setVariables($variables);

@@ -1,6 +1,19 @@
 #adult_ed {
     font-family: $adultbodyfont;
     font-weight: $adultbodyfontweight;
+  .currenthover {
+    background-image: url($adultsiteicon);
+  }  
+  .heading-two {
+      color:$adultprimarycolour;
+  }
+  .btn {
+      background:$adultprimarycolour;
+      color: #fff;
+      &:hover {
+          background: $adultsecondarycolour;
+      }
+  }
   h1, h2, h3, h4 {
     font-family: $adultheadingsfont;
     font-weight: $adultheadingsfontweight;
@@ -173,17 +186,4 @@
 
     }
 
-    .heading-two {
-        color:$adultprimarycolour;
-    }
-    
-
-    .btn {
-        background:$adultprimarycolour;
-        color: #fff;
-        &:hover {
-            background: $adultsecondarycolour;
-        }
-    }
-
-
+  

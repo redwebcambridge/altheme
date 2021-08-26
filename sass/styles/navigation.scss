@@ -1,8 +1,10 @@
 
 header {
+  
   #top_buttons{
     width:100%;
     margin:0;
+    word-wrap: normal;
     .col-12 {
       padding: 0;
     }
@@ -10,16 +12,19 @@ header {
       padding:0;
     }
     ul:first-child {
-      display: inline-table;
+      display: flex;
       list-style: none;
       font-size: 0.75rem;
+      padding-left: 0px;
+      flex-wrap: wrap;
       i {
         display: none;
       }
       li {
-        margin-left:10px;
+        margin:10px 0px 0px 10px;
         background-color: $lightgrey;
         text-transform: uppercase;
+        word-wrap: normal;
         &.hasdropdown{ 
           display: flex;
           justify-content:flex-end;
@@ -52,7 +57,7 @@ header {
         a {
           color: $darkgrey;
           display: inline-block;
-          padding:8px 20px;
+          padding:8px 15px;
         }
       }
     }
@@ -191,6 +196,31 @@ header {
       }
   }
   }
+  @media all and (max-width: 770px) {
+    .navbar {
+      width:20%;
+      height:90px;
+      z-index:3000;
+      .container {
+          float:right;
+          margin-right:20px;
+          display:block;
+          .navbar-collapse {
+              display:block !important;
+              .navbar-nav {
+                  flex-direction: column !important;
+                  li {
+                      .dropdown-menu {
+                          width:95vw !important;
+                          position:relative !important;
+                          top:10px !important;
+                      }
+                  }
+              }
+          }
+      }
+  }
+  }
 }
 
 #page {
@@ -282,6 +312,9 @@ header {
   top:55px;
   transition: all 0.5s ease;
   position: absolute;
+  @media all and (max-width: 770px) {
+    display: none;
+  }
 }
 
 .navbar {

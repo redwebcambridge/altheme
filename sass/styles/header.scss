@@ -3,6 +3,17 @@ header {
   margin:0;
   z-index:999999;
   position:relative;
+  @media all and (max-width: 770px) {
+    header {
+      animation:none;
+      position:fixed;
+      background-color:#fff;
+      width:80%;
+      top:0;
+      padding:10px 0 10px 10px;
+      height:90px;
+    }
+  }
   img#logo {
     max-height: 120px;
   }
@@ -14,16 +25,28 @@ header {
   input[type='text'] {
     font-weight: $normal-weight;
   }
-  .google_search {
-    min-height: 55px;
-  }
-
 }
 .front-page-header {
   height: $headerheight;
   background-color: $primarycolour;
   width: 100%;
   overflow: hidden;
+  @media all and (max-width: 420px) {
+    margin-top:90px !important;
+  }
+  @media all and (max-width: 330px) {
+    margin-top:90px !important;
+    .homepage-tabs-nav {
+      margin-top:-43px;
+      .col {
+          width:100px;
+          font-size:10px;
+          padding:10px;
+      }
+    }
+  }
+
+  
   a {
     i {
       color: $header_social_icon_colour;
@@ -106,9 +129,13 @@ header {
           margin-top:20px;
           font-family: $headingsfont;
           font-size: 2rem;
+          
           h1 {
             font-weight: $bold-weight+100;
             font-size: 3.6rem;
+            @media screen and (max-width: 1020px) {
+              font-size:3rem;
+            }
           }
         } //intro
       } //content_left
@@ -118,6 +145,47 @@ header {
 .homepage-tabs-nav {
   width: 100%;
   margin-top:-66px;
+  @media all and (max-width: 770px) {
+    margin-top:-49px;
+        z-index:999999 !important;
+        .row {
+            margin:0 auto;
+        }
+        .tab_button {
+            padding:10px 15px;
+            font-size:0.9rem;
+        }
+    }
+    .tabcontent {
+        height:auto !important;
+        padding:50px 0 0 0 !important;
+        border-top:0 !important;
+        .container {
+            .row {
+                width:100%;
+                --bs-gutter-x:0 !important;
+            }
+            .image {
+                max-width:100% !important;
+                text-align:center;
+                margin:0 0 40px 0 !important;
+                img {
+                    max-width:70%;
+                    height:auto;
+                }
+            }
+            .content {
+                max-width:100% !important;
+                text-align:center;
+                h2 {
+                    text-align:center;
+                }
+                .tab-text {
+                    text-align:left;
+                }
+            }
+        }
+  }
   #slider_nav{
     padding-top: 25px;
     ul {
@@ -160,6 +228,11 @@ header {
     box-shadow: 12px 17px 16px -3px rgba(0,0,0,0.5);
     -webkit-box-shadow: 12px 17px 16px -3px rgba(0,0,0,0.5);
     -moz-box-shadow: 12px 17px 16px -3px rgba(0,0,0,0.5);
+    @media screen and (max-width: 1020px) {
+      font-size:1rem;
+      padding:15px 20px;
+
+    }
     &:nth-child(1) {
       animation: slideup-headertabs 1s forwards 1;
       animation-delay: 0s;

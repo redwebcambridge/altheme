@@ -84,8 +84,14 @@ jQuery( document ).ready(function() {
     });
   }); 
   //Menu hover
-  var onloadleft = jQuery(".navbar .navbar-nav li.active").offset().left;
-  var leftpadding = jQuery(".navbar .navbar-nav li.active").width()/2-18;
+  //set to under current item
+  if( jQuery(".navbar .navbar-nav li.active").length ){
+    var onloadleft = jQuery(".navbar .navbar-nav li.active").offset().left;
+    var leftpadding = jQuery(".navbar .navbar-nav li.active").width()/2-18;
+  } else {
+    var onloadleft = jQuery(".navbar .navbar-nav li:first-child").offset().left;
+    var leftpadding = jQuery(".navbar .navbar-nav li:first-child").width()/2-18;
+  }
   jQuery(".navbar .currenthover").css("left",onloadleft+leftpadding);
   jQuery(".navbar .currenthover").css("display","block");
   if(jQuery('.navbar .navbar-nav li.active').is('.navbar-nav li:last-child')) {

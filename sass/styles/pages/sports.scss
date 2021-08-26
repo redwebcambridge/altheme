@@ -1,6 +1,9 @@
 #sports {
     font-family: $sportbodyfont;
     font-weight: $sportbodyfontweight;
+  .currenthover {
+    background-image: url($sportiteicon);
+  }  
     h1, h2, h3, h4 {
       font-family: $sportheadingsfont;
       font-weight: $sportheadingsfontweight;

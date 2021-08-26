@@ -125,7 +125,6 @@ if (!class_exists('ACF')) {
                     <ul class="dropdown-menu">
 
                     <div class="double-sub">
-
                     <?php
                     if (get_field('include_left_column',$parent_id)) : ?>
                       <div class="submenu-left">
@@ -188,7 +187,6 @@ if (!class_exists('ACF')) {
                 $header_text = get_the_archive_title();
                 if(empty($header_text) || $header_text == 'Archives' ){
                   $header_text = get_the_title();
-
                 }
                 wp_nav_menu( array(
                   'menu'              =>  get_field('sports_top_navigation_menu','option'),
@@ -205,7 +203,6 @@ if (!class_exists('ACF')) {
                 $header_text = get_the_archive_title();
                 if(empty($header_text) || $header_text == 'Archives' ){
                   $header_text = get_the_title();
-
                 }
                 wp_nav_menu( array(
                   'menu'              =>  get_field('top_navigation_menu','option'),

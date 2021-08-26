@@ -6,44 +6,12 @@
     body .line {
         display:none;
     }
-    .currenthover {
-        display:none !important;
-    }
+    
     .searchtopbuttonholder {
         display:none;
     }
-    .navbar {
-        width:20%;
-        height:90px;
-        z-index:3000;
-        .container {
-            float:right;
-            margin-right:20px;
-            display:block;
-            .navbar-collapse {
-                display:block !important;
-                .navbar-nav {
-                    flex-direction: column !important;
-                    li {
-                        .dropdown-menu {
-                            width:95vw !important;
-                            position:relative !important;
-                            top:10px !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    header {
-        animation:none;
-        position:fixed;
-        background-color:#fff;
-        width:80%;
-        top:0;
-        padding:10px 0 10px 10px;
-        height:90px;
-    }
+    
+    
     .navbar.fixed-top {
         left:auto;
     }
@@ -102,47 +70,7 @@
 
         }
     }
-    .homepage-tabs-nav {
-        margin-top:-49px;
-        z-index:999999 !important;
-        .row {
-            margin:0 auto;
-        }
-        .tab_button {
-            padding:10px 15px;
-            font-size:0.9rem;
-        }
-    }
-    .tabcontent {
-        height:auto !important;
-        padding:50px 0 0 0 !important;
-        border-top:0 !important;
-        .container {
-            .row {
-                width:100%;
-                --bs-gutter-x:0 !important;
-            }
-            .image {
-                max-width:100% !important;
-                text-align:center;
-                margin:0 0 40px 0 !important;
-                img {
-                    max-width:70%;
-                    height:auto;
-                }
-            }
-            .content {
-                max-width:100% !important;
-                text-align:center;
-                h2 {
-                    text-align:center;
-                }
-                .tab-text {
-                    text-align:left;
-                }
-            }
-        }
-    }
+
     .container-white-laurel {
         background:none !important;
     }
@@ -170,9 +98,7 @@
             }
         }
     }
-    .partners {
 
-    }
     footer {
         .footer-base {
             padding:0 15px;
@@ -259,43 +185,6 @@
         .sbi_item {
             width:50% !important;
             height:150px !important;
-        }
-    }
-}
-
-@media all and (max-width: 560px) {
-    .twittercontainer {
-        width:100%;
-    }
-    body.home .latestnews .col-12 .newsitem {
-        width: 100%;
-    }
-    .video-section iframe {
-        height:290px !important;
-    }
-}
-
-@media all and (max-width: 420px) {
-
-}
-
-@media all and (max-width: 375px) {
-    .front-page-header {
-        margin-top:90px !important;
-    }
-}
-
-@media all and (max-width: 330px) {
-    .front-page-header {
-        margin-top:90px !important;
-    }
-
-    .homepage-tabs-nav {
-        margin-top:-43px;
-        .col {
-            width:100px;
-            font-size:10px;
-            padding:10px;
         }
     }
 }

@@ -210,11 +210,11 @@
       </div>
     </div>
 </div>
+<?php if( have_rows('information_panel') ):   ?>
 <div class="container">
     <div class="information-section">
         <div class="row">
-
-        <?php if( have_rows('information_panel') ):  while( have_rows('information_panel') ) : the_row();  ?>
+        <?php while( have_rows('information_panel') ) : the_row(); ?>
             <div class="informationitem col-12 col-md-6">
                 <h2><?php the_sub_field('title'); ?></h2>
                 <div class="gradline"></div>
@@ -222,9 +222,9 @@
                 <span class="information-panel-body-text"><?php the_sub_field('body_text'); ?></span>
                 <a href="<?php echo get_sub_field('button_link'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
             </div>
-        <?php endwhile; endif; ?>
-
+        <?php endwhile; ?>
         </div>
     </div>
 </div>
+<?php  endif; ?>
 <?php get_footer(); ?>

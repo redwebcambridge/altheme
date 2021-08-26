@@ -22,7 +22,7 @@ if(isset($_GET['download'])) :
   } catch(PDOException $e) {
     echo $e->getMessage();
   }
- // if ($type == )
+
   $my_space->downloadFile( $vacancies['school'].'/'.$vacancies[$type], $_SERVER['DOCUMENT_ROOT'].'/application/'.$vacancies[$type]);
   $downloadurl = get_site_url().'/application/'.$vacancies[$type];
 

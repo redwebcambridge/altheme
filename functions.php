@@ -127,7 +127,6 @@ function anglian_learning_scripts() {
   wp_enqueue_style( 'al-gallery-style', get_template_directory_uri().'/lib/ekko-lightbox.css');
   //Custom scripts
   wp_enqueue_script( 'al-scripts', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ), '1.0.0', true );
- 
 }
 add_action( 'wp_enqueue_scripts', 'anglian_learning_scripts' );
 
@@ -394,16 +393,23 @@ add_filter('acf/load_field/name=sports_grey_tabs_menu', 'acf_load_color_field_ch
 add_filter('acf/load_field/name=sports_top_navigation_menu', 'acf_load_color_field_choices');
 
 function is_adult_ed_page() {
-  global $post;
-  if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category')  ) :
-    return true;
-  endif;
+  if(get_field('activate_adult_learning','option')) {
+    global $post;
+    if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') || $post->post_parent == get_field('adult_learning_homepage','option')  ) :
+      return true;
+    endif;
+  } else {
+    return false;
+  }
+  
 }
 function is_sports_page() {
-  global $post;
-  if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') ) :
-    return true;
-  endif;
+  if(get_field('activate_sport_centre','option')) {
+    global $post;
+    if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') || $post->post_parent == get_field('sports_homepage','option') ) :
+      return true;
+    endif;
+  }
 }
 
 if( !function_exists( 'tz_excerpt_length' ) ) {

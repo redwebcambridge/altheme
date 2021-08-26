@@ -22,7 +22,7 @@ add_action( 'after_setup_theme', 'anglian_learning_setup' );
 //updater
 require 'theme-updates/theme-update-checker.php';
 $example_update_checker = new ThemeUpdateChecker(
-    'altheme',
+    'altheme-main',
     'https://anglianlearning.org/al-theme-version.json'
 );
 //plugin dependancies

@@ -4,8 +4,11 @@
     padding:20px;
     h3 {
       text-transform: uppercase;
-      color: $primarycolour;
       font-weight: $light-weight;
+      color:#fff;
+    }
+    p {
+      color:#fff;
     }
     input {
       margin-top: 5px;
@@ -13,6 +16,14 @@
     .wpcf7-response-output {
       text-align: center;
       background: white;
+    }
+    .wpcf7-submit {
+      @extend .btn;
+      color:#fff;
+      transition: all 1s ease;
+      &:hover {
+        background-color: darken($primarycolour,10%);
+      }
     }
     .cv_upload {
       display: flex;

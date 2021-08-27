@@ -28,7 +28,7 @@ body{
     height:2px;
     width: 100%;
     background-image: linear-gradient(to right, $primarycolour , $secondarycolour);
-    margin-top: 10px;
+    margin: 10px 0;
   }
   .gradline-secondwhite {
     background-image: linear-gradient(to right, $secondarycolour , white);

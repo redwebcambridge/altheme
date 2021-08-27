@@ -159,10 +159,13 @@
 
         </div>
     </div>
-</div><!-- .latestnews -->
+</div><!-- . end latestnews -->
+<!-- .video section-->
 <script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
-<div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>; background-image:url(<?php echo get_field('background_image');  ?>) ">
+<div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>;) ">
     <div class="container">
+    <div class="siteicon" style="background-image:url(<?php echo get_field('background_image');  ?>)">
+
       <div class="row d-flex align-items-center">
               <div class="col-md-6">
                 <h2><?php the_field('text_with_file_title'); ?></h2>
@@ -208,7 +211,8 @@
 
               </div>
       </div>
-    </div>
+      </div>
+      </div>
 </div>
 <?php if( have_rows('information_panel') ):   ?>
 <div class="container">

@@ -192,11 +192,18 @@ body{
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position: left -20% top 5px;
-      padding:60px 0;
       .container {
+        .siteicon {
+          display: inline-block;
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin-left:-400px;
+        }
         .row {
           vertical-align: middle;
           color: #fff;
+          margin-left: 400px;
+          padding:60px 0;
           h2 {
             color: #fff;
           }

@@ -26,7 +26,7 @@
                 }
                 ?>
                 </div>
-                <a href="<?php echo get_sub_field('button_url'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
+                <a href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
             </div>
             <?php $logos = get_field('logo_and_icons','option'); ?>
         </div>

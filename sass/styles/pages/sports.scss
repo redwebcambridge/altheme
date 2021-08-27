@@ -23,6 +23,22 @@
         &:hover {
           background-color: $sportprimarycolour;
         }
+        .dropdown-menu {
+          margin-top:0;
+          background-color: $sportprimarycolour;
+          border: none;
+          li {
+            background-color: transparent;
+            margin: 0;
+            a {
+              &:hover {
+                background-color: $sportsecondarycolour;
+              }
+            }
+            
+          }
+        }
+
       }
     }
   }
@@ -32,25 +48,36 @@
       color: #fff;
     }
   }
-  .navbar {
-    ul {
-      border-top-color: $sportprimarycolour;
-      li {
-        a {
-          color: $sportprimarycolour;
-       }
-       &:last-child {
+  #mainnav {
+    border-top-color: $sportprimarycolour;
+    li {
+      &:last-child {
         a {
           background-color: $sportprimarycolour;
           color: #ffffff;
           &:hover {
             background-color: $sportsecondarycolour;
+            color: #fff;
+          }
+        }
+      }
+      a {
+        color: $sportprimarycolour;
+        &:hover {
+          color: $sportsecondarycolour;
+        }
+        &.dropdown-item {
+          color: $sportprimarycolour;
+          background-color: #fff;
+          &:hover {
+            color: $sportsecondarycolour;
+            background-color: #fff;
           }
         }
       }
     }
-    }
-  }
+}
+
   &.page-template-vacancies .log_interest {
     background: $sportsecondarycolour;
   }  

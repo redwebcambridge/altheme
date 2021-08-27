@@ -24,7 +24,7 @@
   }
   .gradline {
     background-image: linear-gradient(to right, $adultprimarycolour, $adultsecondarycolour);
-} 
+  } 
   header {
     #searchform {
       button {
@@ -39,6 +39,22 @@
         &:hover {
           background-color: $adultprimarycolour;
         }
+        .dropdown-menu {
+          margin-top:0;
+          background-color: $adultprimarycolour;
+          border: none;
+          li {
+            background-color: transparent;
+            margin: 0;
+            a {
+              &:hover {
+                background-color: $adultsecondarycolour;
+              }
+            }
+            
+          }
+        }
+
       }
     }
   }
@@ -48,26 +64,35 @@
       color: #fff;
     }
   }
-  .navbar {
-    ul {
+  #mainnav {
       border-top-color: $adultprimarycolour;
       li {
+        &:last-child {
+          a {
+            background-color: $adultprimarycolour;
+            color: #ffffff;
+            &:hover {
+              background-color: $adultsecondarycolour;
+              color: #fff;
+            }
+          }
+        }
         a {
           color: $adultprimarycolour;
-       }
-       &:last-child {
-        a {
-          background-color: $adultprimarycolour;
-          color: #ffffff;
           &:hover {
-            background-color: $adultsecondarycolour;
+            color: $adultsecondarycolour;
+          }
+          &.dropdown-item {
+            color: $adultprimarycolour;
+            background-color: #fff;
+            &:hover {
+              color: $adultsecondarycolour;
+              background-color: #fff;
+            }
           }
         }
       }
-    }
-    }
   }
-
 }
     
     .course{

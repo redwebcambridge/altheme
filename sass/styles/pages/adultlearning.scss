@@ -163,7 +163,7 @@
     border-top: 2px solid darken($adultprimarycolour,10%);
     .allow-button {
       background-color: $adultsecondarycolour;
-      border-color:$adultsecondarycolour;
+      border-color: $adultsecondarycolour;
     }
   }
   .log_interest {
@@ -183,8 +183,7 @@
     }
   }
   footer {
-    background-color: $adultfooter_footer_bg_colour;
-    background-image: url($adultfooter_footer_bg_img);
+    background-color: $primarycolour;
     i {
       color: #fff;
     }
@@ -200,7 +199,6 @@
   }
 
 }
-    
     .course{
       margin-bottom: 15px;
 

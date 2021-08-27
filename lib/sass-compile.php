@@ -4,19 +4,30 @@ $logos = get_field('logo_and_icons','option');
 $colours = get_field('colours','option');
 $fonts = get_field('fonts','option');
 $all_colours = get_field('colours','option');
-
-//Adult colours
-$adultlogos = get_field('adultlearning_logo_and_icons','option');
-$adultcolours = get_field('adult_colours','option');
-$adultfonts = get_field('adult_fonts','option');
-$ad_logos = get_field('adultlearning_logo_and_icons','option');
-
-//Sport colours
-$sportlogos = get_field('sports_logo_and_icons','option');
-$sportcolours = get_field('sports_colours','option');
-$sportfonts = get_field('sports_fonts','option');
-$sport_logos = get_field('sports_logo_and_icons','option');
-
+//Adult learning
+if (get_field('activate_adult_learning','option')) {
+  $adultlogos = get_field('adultlearning_logo_and_icons','option');
+  $adultcolours = get_field('adult_colours','option');
+  $adultfonts = get_field('adult_fonts','option');
+  $ad_logos = get_field('adultlearning_logo_and_icons','option');
+} else {
+  $adultlogos = get_field('logo_and_icons','option');
+  $adultcolours = get_field('colours','option');
+  $adultfonts = get_field('fonts','option');
+  $ad_logos = get_field('logo_and_icons','option');
+}
+//Sports
+if (get_field('activate_sport_centre','option')) {
+  $sportlogos = get_field('sports_logo_and_icons','option');
+  $sportcolours = get_field('sports_colours','option');
+  $sportfonts = get_field('sports_fonts','option');
+  $sport_logos = get_field('sports_logo_and_icons','option');
+} else {
+  $sportlogos = get_field('logo_and_icons','option');
+  $sportcolours = get_field('colours','option');
+  $sportfonts = get_field('fonts','option');
+  $sport_logos = get_field('logo_and_icons','option');
+}
 
 $compiler = new ScssPhp\ScssPhp\Compiler();
 $compiler->setSourceMap(ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE);
@@ -50,36 +61,34 @@ $variables = [
   '$bodylineheight'=> '1.6em',
 
   //Adult colours
-  '$adultprimarycolour' => $adultcolours['adult_primary_colour'],
-  '$adultsecondarycolour' =>  $adultcolours['adult_second_colour'],
-  '$adultbordercolour' =>  $adultcolours['adult_border_colour'],
-  '$adultfooter_icon_colour' => $adultcolours['adult_footer_icon_colour'],
-  '$adultfooter_title_colour' => $adultcolours['adult_footer_title_colour'],
-  '$adultfooter_footer_bg_colour' => get_field('footer_options','option')['footer_background_colour'],
-  '$adultfooter_footer_bg_img'=> '"'.get_field('footer_options', 'option')['footer_background_image'].'"',
+  '$adultprimarycolour' => $adultcolours['primary_colour'],
+  '$adultsecondarycolour' =>  $adultcolours['second_colour'],
+  '$adultbordercolour' =>  $adultcolours['border_colour'],
+  '$adultfooter_icon_colour' => $adultcolours['footer_icon_colour'],
+  '$adultfooter_title_colour' => $adultcolours['footer_title_colour'],
+
   //Adult fonts
-  '$adultheadingsfont' => $adultfonts['adult_heading_font'],
-  '$adultheadingsfontweight' => $adultfonts['adult_heading_font_weight'],
-  '$adultbodyfont' => $adultfonts['adult_body_font'],
-  '$adultbodyfontweight' => $adultfonts['adult_body_font_weight'],
+  '$adultheadingsfont' => $adultfonts['heading_font'],
+  '$adultheadingsfontweight' => $adultfonts['heading_font_weight'],
+  '$adultbodyfont' => $adultfonts['body_font'],
+  '$adultbodyfontweight' => $adultfonts['body_font_weight'],
   //Adult site Icon
-  '$adultsiteicon' => '"'.$ad_logos['adult_icon']['url'].'"',
+  '$adultsiteicon' => '"'.$ad_logos['icon']['url'].'"',
 
   //Sports colours
-  '$sportprimarycolour' => $sportcolours['sports_primary_colour'],
-  '$sportsecondarycolour' =>  $sportcolours['sports_second_colour'],
-  '$sportbordercolour' =>  $sportcolours['sports_border_colour'],
-  '$sportfooterbgcolour' => $sportcolours['footer_background_colour'],
-  '$sportfooter_icon_colour' => $sportcolours['sports_footer_icon_colour'],
-  '$sportfooter_title_colour' => $sportcolours['sports_footer_title_colour'],
+  '$sportprimarycolour' => $sportcolours['primary_colour'],
+  '$sportsecondarycolour' =>  $sportcolours['second_colour'],
+  '$sportbordercolour' =>  $sportcolours['border_colour'],
+  '$sportfooter_icon_colour' => $sportcolours['footer_icon_colour'],
+  '$sportfooter_title_colour' => $sportcolours['footer_title_colour'],
 
   //Sport fonts
-  '$sportheadingsfont' => $sportfonts['sports_heading_font'],
-  '$sportheadingsfontweight' => $sportfonts['sports_heading_font_weight'],
-  '$sportbodyfont' => $sportfonts['sports_body_font'],
-  '$sportbodyfontweight' => $sportfonts['sports_body_font_weight'],
+  '$sportheadingsfont' => $sportfonts['heading_font'],
+  '$sportheadingsfontweight' => $sportfonts['heading_font_weight'],
+  '$sportbodyfont' => $sportfonts['body_font'],
+  '$sportbodyfontweight' => $sportfonts['body_font_weight'],
    //Sport site Icon
-   '$sportiteicon' => '"'.$sport_logos['sports_icon']['url'].'"',
+   '$sportiteicon' => '"'.$sport_logos['icon']['url'].'"',
 ];
 
 $compiler->setVariables($variables);

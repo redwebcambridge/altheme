@@ -19,7 +19,7 @@ get_header(); ?>
           <div class="col-md-10 text-section">
           <?php if (get_field('sub_heading')) : ?>
             <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
-            <div class="gradline"></div>
+            <div class="gradline mb-3"></div>
           <?php endif; ?>
 
             <!---Table--->

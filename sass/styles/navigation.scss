@@ -144,7 +144,7 @@ header {
         color: white;
         background-color: $primarycolour;
         padding: 10px 20px;
-        text-transform: none;
+        text-transform: uppercase;
         &:hover {
           background-color: $secondarycolour;
         }

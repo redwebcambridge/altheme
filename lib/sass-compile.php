@@ -27,7 +27,7 @@ $compiler->addImportPath($import_path);
 $target_css = get_template_directory() . '/styles.css';
 
 $variables = [
-  //colours
+  //colours 
   '$primarycolour' => $colours['primary_colour'],
   '$secondarycolour' =>  $colours['second_colour'],
   //'$thirdcolour' =>  $colours['third_colour'],
@@ -53,8 +53,8 @@ $variables = [
   '$adultprimarycolour' => $adultcolours['adult_primary_colour'],
   '$adultsecondarycolour' =>  $adultcolours['adult_second_colour'],
   '$adultbordercolour' =>  $adultcolours['adult_border_colour'],
-  '$adultfooter_icon_colour' => $adult_all_colours['adult_footer_icon_colour'],
-  '$adultfooter_title_colour' => $adult_all_colours['adult_footer_title_colour'],
+  '$adultfooter_icon_colour' => $adultcolours['adult_footer_icon_colour'],
+  '$adultfooter_title_colour' => $adultcolours['adult_footer_title_colour'],
   '$adultfooter_footer_bg_colour' => get_field('footer_options','option')['footer_background_colour'],
   '$adultfooter_footer_bg_img'=> '"'.get_field('footer_options', 'option')['footer_background_image'].'"',
   //Adult fonts

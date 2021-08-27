@@ -37,8 +37,8 @@ get_header(); ?>
                      echo '</a></div>';
                 } 
             ?> 
+            <?php endif; ?>      
             </div>                    
-            <?php endif; ?>
             <?php get_template_part('template-parts/adult-learning-contact'); ?>
         </div>
     </div>

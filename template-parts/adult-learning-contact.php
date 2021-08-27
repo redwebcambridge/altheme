@@ -1,5 +1,5 @@
 <?php $adlearning_contact = get_field('adult_learning_contact','option'); ?>
-<div class="contact-box row mx-0">
+<div class="contact-box row mx-auto">
     <div class="name-position col-md-4">
         <p><strong><?php echo $adlearning_contact['contact_name']; ?></strong><br>
         <?php echo $adlearning_contact['position']; ?></p>

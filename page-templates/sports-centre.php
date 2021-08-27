@@ -30,17 +30,17 @@ get_header(); ?>
                 'hide_empty' => false,
              ]);
 
-            if( !empty($categories) ):
+            if( get_the_ID() == get_field('sports_homepage','option')  && !empty($categories) ):
                 foreach ($categories as $category) { 
                      echo '<div class="col-md-4 course"><a href="'.esc_url( get_term_link( $category->term_id ) ).'">';
                      echo '<div class="course-thumbnail" style="background-image:url('.get_field('image',$category).')"></div><p class="course-name">'.$category->name.'</p>';
                      echo '</a></div>';
                 } 
             ?> 
-            </div>                    
             <?php endif; ?>
+            </div>                    
             <?php get_template_part('template-parts/sports-contact'); ?>
-        </div>
+        
     </div>
 </div>
 

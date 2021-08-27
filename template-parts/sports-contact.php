@@ -1,5 +1,5 @@
 <?php $sports_contact = get_field('sports_contact','option'); ?>
-<div class="contact-box row mx-0">
+<div class="contact-box row  mx-auto">
     <div class="name-position col-md-4">
         <p><strong><?php echo $sports_contact['contact_name']; ?></strong><br>
         <?php echo $sports_contact['position']; ?></p>

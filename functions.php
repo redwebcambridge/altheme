@@ -235,7 +235,10 @@ function action_sass_compile_schoolsettings() {
   }
 }
 add_action('acf/save_post', 'action_sass_compile_schoolsettings', 20); 
-
+//DELETE IN PRODUCTION
+if (isset($_GET['sass'])) {
+  sass_compile();
+}
 //Set Favicon
 function favicon() {
   if (class_exists('ACF')) {

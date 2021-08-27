@@ -51,8 +51,10 @@ get_header();
 				echo '<div class="col-md-4 course"><a href="'.esc_url( get_permalink( $course->ID) ).'">';
                 echo '<div class="course-thumbnail" style="background-image:url('.$imageurl.')"></div><p class="course-name">'.$course->post_title.'</p>';
                 echo '</a></div>';
+			endforeach; 
 			?>
-			<?php endforeach; 
+			</div>
+			<?php 
 			if (!$courses) : 
 				echo '<div class="alert alert-secondary" role="alert"><em>Sorry, there are currently no classes available</em></div>'; 
 			endif; ?>

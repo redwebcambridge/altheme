@@ -166,6 +166,22 @@
       border-color:$adultsecondarycolour;
     }
   }
+  .log_interest {
+    background:$adultsecondarycolour ;
+    h2,h3,h4,h5 {
+      color: #fff;
+    }
+    a {
+      color: #fff;
+      font-weight: bolder;
+    }
+    .wpcf7-submit, .upload {
+      background-color: $adultprimarycolour;
+      &:hover {
+        background-color: darken($adultprimarycolour,10%);
+      }
+    }
+  }
   footer {
     background-color: $adultfooter_footer_bg_colour;
     background-image: url($adultfooter_footer_bg_img);

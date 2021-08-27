@@ -223,6 +223,22 @@
         border-color:$sportsecondarycolour;
       }
     }
+    .log_interest {
+      background: $sportsecondarycolour;
+      h2,h3,h4,h5 {
+        color: #fff;
+      }
+      a {
+        color: #fff;
+        font-weight: bolder;
+      }
+      .wpcf7-submit, .upload {
+        background-color: $sportprimarycolour;
+        &:hover {
+          background-color: darken($sportprimarycolour,10%);
+        }
+      }
+    }
     footer {
       background-color: $sportprimarycolour;
       background-image: none;

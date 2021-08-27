@@ -33,7 +33,7 @@
       line-height: $bodylineheight;
     }
     ::selection {
-      background: $primarycolour;
+      background: darken($primarycolour,10%);
       color: #fff;
     }
   }

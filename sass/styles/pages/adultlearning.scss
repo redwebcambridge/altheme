@@ -1,4 +1,8 @@
 #adult_ed {
+  ::selection {
+    background: darken($adultprimarycolour,10%);
+    color: #fff;
+  }
   #sidebar-menu {
     li {
       background: $adultprimarycolour;
@@ -154,6 +158,31 @@
         }
       }
   }
+  .cookieconsent_msg{
+    background:$adultprimarycolour;
+    border-top: 2px solid darken($adultprimarycolour,10%);
+    .allow-button {
+      background-color: $adultsecondarycolour;
+      border-color:$adultsecondarycolour;
+    }
+  }
+  footer {
+    background-color: $adultfooter_footer_bg_colour;
+    background-image: url($adultfooter_footer_bg_img);
+    i {
+      color: #fff;
+    }
+    h5 {
+      color: #fff;
+    }
+  }
+  .footer-base {
+    background: $adultsecondarycolour;
+  }
+  .footer-line {
+    background-image: linear-gradient(to right, $adultsecondarycolour,#fff);
+  }
+
 }
     
     .course{
@@ -204,6 +233,7 @@
         margin: 0 10px;
         color: #ffffff;
       }
+      
 
     }
 

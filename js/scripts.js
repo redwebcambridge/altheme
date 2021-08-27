@@ -49,6 +49,10 @@ jQuery( document ).ready(function() {
       },
     ]  
   });
+  //Hide partner arrows if less than 6 slides
+  if (!(jQuery('.slick-track .slick-slide').length > 6)) {
+    jQuery('.slick-controls-lower').hide();
+  }
   jQuery('.partners').fadeIn();
   //Homepage SLider
   jQuery('.header-images-slick-slider').slick({

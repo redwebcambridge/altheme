@@ -185,30 +185,7 @@ footer {
         margin:45px 0;
     }
 }
-#adult_ed {
-  footer {
-    background-color: $adultfooter_footer_bg_colour;
-    background-image: url($adultfooter_footer_bg_img);
-  }
-  .footer-base {
-    background: $adultsecondarycolour;
-  }
-  .footer-line {
-    background-image: linear-gradient(to right, $adultsecondarycolour,$adultprimarycolour);
-  }
-}
-#sports {
-  footer {
-    background-color: $sportprimarycolour;
-    background-image: none;
-  }
-  .footer-base {
-    background: $sportsecondarycolour;
-  }
-  .footer-line {
-    background-image: linear-gradient(to right, $sportsecondarycolour,$sportprimarycolour);
-  }
-}
+
 
 .cookieconsent_msg{
   display: none;

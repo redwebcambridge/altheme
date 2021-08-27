@@ -1,4 +1,8 @@
 #sports {
+  ::selection {
+    background: darken($sportprimarycolour,10%);
+    color: #fff;
+  }
     font-family: $sportbodyfont;
     font-weight: $sportbodyfontweight;
   .currenthover {
@@ -210,6 +214,30 @@
         &:hover {
             background: $sportsecondarycolour;
         }
+    }
+    .cookieconsent_msg{
+      background:$sportprimarycolour;
+      border-top: 2px solid darken($sportprimarycolour,10%);
+      .allow-button {
+        background-color: $sportsecondarycolour;
+        border-color:$sportsecondarycolour;
+      }
+    }
+    footer {
+      background-color: $sportprimarycolour;
+      background-image: none;
+      i {
+        color: #fff;
+      }
+      h5 {
+        color: #fff;
+      }
+    }
+    .footer-base {
+      background: $sportsecondarycolour;
+    }
+    .footer-line {
+      background-image: linear-gradient(to right, $sportsecondarycolour,#fff);
     }
 
 }

@@ -108,15 +108,12 @@ if (!class_exists('ACF')) {
                 <?php
                 $count = 0;
                 foreach ($menuitems as $item) :
-
-                  $title = $item->title;
-                  $link = $item->url;
                  // item does not have a parent so menu_item_parent equals 0 (false)
                   if ( !$item->menu_item_parent ):
                   $parent_id = $item->ID;
                   ?>
                   <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
-                    <a itemprop="url" href="<?php echo $link; ?>" class="nav-link"><span itemprop="name"><?php echo $title; ?></span></a>
+                    <a itemprop="url" href="<?php echo $item->url ?>" class="nav-link" alt="<?php echo $item->title; ?>" target="<?php echo $item->target; ?>"><span itemprop="name"><?php echo $item->title; ?></span></a>
                   <?php endif;
 
                   if ( $parent_id == $item->menu_item_parent ):
@@ -140,7 +137,7 @@ if (!class_exists('ACF')) {
                       <div class="submenu-right">
                       <?php endif; ?>
                         <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
-                            <a href="<?php echo $link; ?>" class="title"><span itemprop="name"><?php echo $title; ?></span></a>
+                            <a href="<?php echo $item->url ?>" class="title" alt="<?php echo $item->title; ?>" target="<?php echo $item->target; ?>"><span itemprop="name"><?php echo $item->title; ?></span></a>
                         </li>
                       <?php if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
                       </div>

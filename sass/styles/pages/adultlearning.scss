@@ -79,7 +79,7 @@
           background: $adultsecondarycolour;
       }
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5 {
     font-family: $adultheadingsfont;
     font-weight: $adultheadingsfontweight;
     color: $adultprimarycolour;
@@ -183,19 +183,25 @@
     }
   }
   footer {
-    background-color: $primarycolour;
+    background-color: $adultfooter_bg_colour;
+    font-family: $adultheadingsfont;
+    font-weight: $adultheadingsfontweight;
+    background-image: url($adultfooterbg_img);
+
     i {
       color: #fff;
     }
     h5 {
       color: #fff;
+      font-family: $adultheadingsfont;
+      font-weight: $adultheadingsfontweight;
     }
   }
   .footer-base {
     background: $adultsecondarycolour;
   }
   .footer-line {
-    background-image: linear-gradient(to right, $adultsecondarycolour,#fff);
+    background-image: linear-gradient(to right, $adultfooter_icon_colour,#fff);
   }
 
 }

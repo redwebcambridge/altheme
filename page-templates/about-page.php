@@ -11,12 +11,12 @@ get_header(); ?>
         <div class="row">
           <!---Body section left--->
 
-          <div class="col-md-2 text-section">
+          <div class="col-md-3 text-section">
             <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
 
           <!---Body section left - End--->
-        <div class="col-md-10 text-section">
+        <div class="col-md-9 text-section">
 
 
           <!---Body section centre--->

@@ -23,6 +23,7 @@
     }
     label {
         margin-bottom: 0;
+        width: 100%;
     }
     input[type='submit'] {
       border: none;
@@ -36,5 +37,6 @@
       margin-top: 47px;
       border-top: 8px solid $primarycolour;
     }
+
 
 }

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato&family=Libre+Franklin&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap');
+
 a {
     color: #6562ac;
 }
@@ -94,6 +96,9 @@ p.raleway {
 p.roboto {
   font-family: 'Roboto', serif;
 }
+p.robotoslab {
+  font-family: 'Roboto Slab', serif;
+}
 p.rubik {
   font-family: 'Rubik', sans-serif;
 }
@@ -109,7 +114,7 @@ p.montserrat {
 p.opensans {
   font-family: 'Open Sans', sans-serif;
 }
-p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserrat, p.opensans {
+p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserrat, p.opensans, p.robotoslab {
   font-size: 20px;
   margin:0px;
 }

@@ -8,11 +8,11 @@
   .currenthover {
     background-image: url($sportiteicon);
   }  
-    h1, h2, h3, h4 {
-      font-family: $sportheadingsfont;
-      font-weight: $sportheadingsfontweight;
-      color: $sportprimarycolour;
-    }
+  h1, h2, h3, h4, h5 {
+    font-family: $sportheadingsfont;
+    font-weight: $sportheadingsfontweight;
+    color: $sportprimarycolour;
+  }
   header {
     #searchform {
       button {
@@ -240,20 +240,24 @@
       }
     }
     footer {
-      background-color: $sportprimarycolour;
-      background-image: none;
+      background-color: $sportfooter_bg_colour;
+      background-image: url($sportsfooterbg_img);
+      font-family: $sportbodyfont;
+      font-weight: $sportbodyfontweight;
       i {
-        color: #fff;
+        color: $sportfooter_bg_colour;
       }
       h5 {
-        color: #fff;
+        font-family: $sportheadingsfont; 
+        font-weight: $sportheadingsfontweight;
+        color: $sportfooter_title_colour;
       }
     }
     .footer-base {
       background: $sportsecondarycolour;
     }
     .footer-line {
-      background-image: linear-gradient(to right, $sportsecondarycolour,#fff);
+      background-image: linear-gradient(to right, $sportfooter_icon_colour,#fff);
     }
 
 }

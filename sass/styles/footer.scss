@@ -25,7 +25,7 @@ footer {
   width: 100%;
   bottom: 0;
   line-height: $bodylineheight;
-
+  font-weight: $bodyfontweight;
 
   #sb_instagram {
    
@@ -47,10 +47,11 @@ footer {
     font-size: 20px;
     color: $footer_title_colour;
     text-transform: uppercase;
+    font-weight: $headingsfontweight;
   }
   .footer-line {
     margin-bottom: 20px;
-    background-image: linear-gradient(to right, $primarycolour , #fff);
+    background-image: linear-gradient(to right, $footer_icon_colour , #fff);
     height: 2px;
   }
   a {

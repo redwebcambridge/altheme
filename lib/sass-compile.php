@@ -1,9 +1,9 @@
 <?php
 //Main colours
-$logos = get_field('logo_and_icons','option');
-$colours = get_field('colours','option');
-$fonts = get_field('fonts','option');
-$all_colours = get_field('colours','option');
+  $logos = get_field('logo_and_icons','option');
+  $colours = get_field('colours','option');
+  $fonts = get_field('fonts','option');
+  $all_colours = get_field('colours','option');
 //Adult learning
 if (get_field('activate_adult_learning','option')) {
   $adultlogos = get_field('adultlearning_logo_and_icons','option');
@@ -66,7 +66,7 @@ $variables = [
   '$adultbordercolour' =>  $adultcolours['border_colour'],
   '$adultfooter_icon_colour' => $adultcolours['footer_icon_colour'],
   '$adultfooter_title_colour' => $adultcolours['footer_title_colour'],
-
+  '$adultfooter_bg_colour' => $adultcolours['footer_background_colour'],
   //Adult fonts
   '$adultheadingsfont' => $adultfonts['heading_font'],
   '$adultheadingsfontweight' => $adultfonts['heading_font_weight'],
@@ -74,14 +74,15 @@ $variables = [
   '$adultbodyfontweight' => $adultfonts['body_font_weight'],
   //Adult site Icon
   '$adultsiteicon' => '"'.$ad_logos['icon']['url'].'"',
+  '$adultfooterbg_img' => '"'.get_field('adult_footer_background_image', 'option').'"',
 
   //Sports colours
   '$sportprimarycolour' => $sportcolours['primary_colour'],
   '$sportsecondarycolour' =>  $sportcolours['second_colour'],
   '$sportbordercolour' =>  $sportcolours['border_colour'],
+  '$sportfooter_bg_colour' => $sportcolours['footer_background_colour'],
   '$sportfooter_icon_colour' => $sportcolours['footer_icon_colour'],
   '$sportfooter_title_colour' => $sportcolours['footer_title_colour'],
-
   //Sport fonts
   '$sportheadingsfont' => $sportfonts['heading_font'],
   '$sportheadingsfontweight' => $sportfonts['heading_font_weight'],
@@ -89,6 +90,8 @@ $variables = [
   '$sportbodyfontweight' => $sportfonts['body_font_weight'],
    //Sport site Icon
    '$sportiteicon' => '"'.$sport_logos['icon']['url'].'"',
+   '$sportsfooterbg_img' => '"'.get_field('sports_footer_background_image', 'option').'"',
+
 ];
 
 $compiler->setVariables($variables);

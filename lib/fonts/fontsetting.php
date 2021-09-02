@@ -6,6 +6,12 @@ function getheadingfont() {
     case "'Raleway', sans-serif":
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap';
       break;
+    case "'Roboto Slab', sans-serif":
+      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap';
+      break;
+    case "'Roboto', sans-serif":
+      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      break;        
     case "'Open Sans', sans-serif":
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap';
       break;
@@ -32,6 +38,9 @@ function getbodyfont() {
     case "'Raleway', sans-serif":
       $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap';
       break;
+    case "'Roboto', sans-serif":
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      break;   
     case "'Open Sans', sans-serif":
       $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap';
       break;
@@ -58,6 +67,12 @@ function getheadingfont_adultlearning() {
     case "'Raleway', sans-serif":
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap';
       break;
+    case "'Roboto Slab', sans-serif":
+      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap';
+      break;
+    case "'Roboto', sans-serif":
+      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      break;   
     case "'Open Sans', sans-serif":
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap';
       break;
@@ -80,10 +95,13 @@ function getheadingfont_adultlearning() {
 //Adult Learning Body Font
 function getbodyfont_adultlearning() {
   $fonts = get_field('adult_fonts','option');
-  switch ($fonts['adult_body_font']) {
+  switch ($fonts['body_font']) {
     case "'Raleway', sans-serif":
       $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap';
       break;
+    case "'Roboto', sans-serif":
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      break;   
     case "'Open Sans', sans-serif":
       $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap';
       break;
@@ -123,7 +141,13 @@ function getheadingfont_sports() {
       break; 
     case "'Montserrat ', sans-serif":
       $headingsportsfonturl = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap';
-      break;  
+      break; 
+    case "'Roboto Slab', sans-serif":
+      $headingsportsfonturl = 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap';
+      break;
+    case "'Roboto', sans-serif":
+      $headingsportsfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      break;    
   }
   return $headingsportsfonturl;
 }
@@ -149,7 +173,10 @@ function getbodyfont_sports() {
       break; 
     case "'Montserrat ', sans-serif":
       $bodysportsfonturl = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap';
-      break;     
+      break;    
+    case "'Roboto', sans-serif":
+      $bodysportsfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      break;    
   }
   return $bodysportsfonturl;
 }

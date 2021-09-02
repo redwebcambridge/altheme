@@ -10,7 +10,7 @@ get_header(); ?>
 
       <div class="container">
         <div class="row">
-          <div class="col-md-2 text-section">
+          <div class="col-md-3 text-section">
             <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
 
@@ -24,7 +24,7 @@ get_header(); ?>
             <?php endif; ?>
           </div>
 
-          <div class="col-md-5 text-section">
+          <div class="col-md-4 text-section">
           <?php if (get_field('body_text_right')) : ?>
             <p class="body-text"><?php the_field('body_text_right') ?></p>
           <?php endif; ?>

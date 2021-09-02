@@ -9,14 +9,14 @@ get_header(); ?>
       <div class="container meet-the-staff1">
         <div class="row">
           <!---sidebar--->
-          <div class="col-md-2">
+          <div class="col-md-3">
             <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
           <!---Sidebar - End--->
 
 
           <!---Body section--->
-          <div class="col-md-10 text-section">
+          <div class="col-md-9 text-section">
           <?php if (get_field('sub_heading')) : ?>
             <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
             <div class="gradline mb-3"></div>

@@ -10,13 +10,13 @@ get_header(); ?>
     <div class="container">
       <div class="row">
           <!---sidebar--->
-          <div class="col-md-2 text-section">
+          <div class="col-md-3 text-section">
             <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
           <!---Sidebar - End--->
 
           <!---Body section--->
-          <div class="col-md-10">
+          <div class="col-md-9">
             
               <div class="row">
                 <div class="col">

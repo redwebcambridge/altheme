@@ -187,12 +187,11 @@
     font-family: $adultheadingsfont;
     font-weight: $adultheadingsfontweight;
     background-image: url($adultfooterbg_img);
-
     i {
-      color: #fff;
+      color: $adultfooter_icon_colour;
     }
     h5 {
-      color: #fff;
+      color: $adultfooter_title_colour;
       font-family: $adultheadingsfont;
       font-weight: $adultheadingsfontweight;
     }

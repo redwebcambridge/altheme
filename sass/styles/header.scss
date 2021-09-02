@@ -39,9 +39,9 @@ header {
     .homepage-tabs-nav {
       margin-top:-43px;
       .col {
-          width:100px;
-          font-size:10px;
-          padding:10px;
+        width:100px;
+        font-size:10px;
+        padding:10px;
       }
     }
   }
@@ -129,7 +129,7 @@ header {
           margin-top:20px;
           font-family: $headingsfont;
           font-size: 2rem;
-          
+          width: 300px;
           h1 {
             font-weight: $bold-weight+100;
             font-size: 3.1rem;
@@ -263,11 +263,9 @@ header {
 .featured-top-image{
   width: 100%;
   margin:0px 0 60px 0;
-  padding:150px 0;
   background-size: cover;
   background-position: center;
   .main-heading {
-    align-items: center;
     h1{
       background: $primarycolour;
       padding: 10px 20px;
@@ -278,7 +276,14 @@ header {
       margin: 0 auto;
       width: auto;
     }
-
-}
-
+  }
+  &.bottomleft {
+    padding:300px 0 0 0;
+    .main-heading h1 {
+      margin: 0 0 0 20px;
+    }
+  }
+  &.center {
+    padding:150px 0;
+  }
 }

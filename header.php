@@ -293,7 +293,7 @@ if (!class_exists('ACF')) {
 
 <section class="page-content">
     
-    <div class="featured-top-image" style="background-image: url( <?php echo $featuredimg; ?> )">
+    <div class="featured-top-image  <?php echo get_field('header_title_location','option'); ?>" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">
         <div class="row main-heading">
         <h1><?php

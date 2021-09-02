@@ -91,7 +91,6 @@ $variables = [
    //Sport site Icon
    '$sportiteicon' => '"'.$sport_logos['icon']['url'].'"',
    '$sportsfooterbg_img' => '"'.get_field('sports_footer_background_image', 'option').'"',
-
 ];
 
 $compiler->setVariables($variables);

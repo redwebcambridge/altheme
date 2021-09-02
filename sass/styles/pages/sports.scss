@@ -85,7 +85,9 @@
   &.page-template-vacancies .log_interest {
     background: $sportsecondarycolour;
   }  
-
+    .text-section a {
+      color:$sportprimarycolour;
+    }
     .course{
       margin-bottom: 15px;
 
@@ -147,6 +149,7 @@
 
             a {
                 background:$sportprimarycolour;
+                color: #fff;
                 &:hover {
                     background: $sportsecondarycolour;
                     transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -254,7 +257,7 @@
       }
     }
     .footer-base {
-      background: $sportsecondarycolour;
+      background: $sportprimarycolour;
     }
     .footer-line {
       background-image: linear-gradient(to right, $sportfooter_icon_colour,#fff);

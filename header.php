@@ -215,7 +215,11 @@ if (!class_exists('ACF')) {
                 if (is_home()){
                   $header_text = 'News and Events';
                 } else {
-                  $header_text = get_the_title();
+                  if (is_category('newsletter')) {
+                    $header_text = 'Newsletter';
+                  } else {
+                    $header_text = get_the_title();
+                  }
                 }
                 wp_nav_menu( array(
                   'theme_location'    => 'main-navigation',

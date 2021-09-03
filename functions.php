@@ -80,7 +80,7 @@ function school_settings() {
         'page_title'    => __('School Settings'),
         'menu_title'    => __('School Settings'),
         'menu_slug'     => 'school-settings',
-        'capability'    => 'edit_posts',
+        'capability'    => 'activate_plugins',
         'redirect'      => false,
         'position' => '1'
           )
@@ -360,8 +360,8 @@ if (class_exists('ACF')) {
 
 add_action('admin_menu', 'vacanciesmenu');
 function vacanciesmenu() {
-    add_menu_page( 'Vacancies Admin', 'Vacancies', 'manage_options', 'vacancyadmin', 'vacancies_admin','dashicons-format-aside',5);
-    add_submenu_page( 'vacancyadmin', 'Vacancies Admin', 'Add New', 'manage_options', '?page=vacancyadmin&action=addvacancy');
+  add_menu_page( 'Vacancies Admin', 'Vacancies', 'edit_vacancy', 'vacancyadmin', 'vacancies_admin','dashicons-format-aside',5);
+  add_submenu_page( 'vacancyadmin', 'Vacancies Admin', 'Add New', 'edit_vacancy', '?page=vacancyadmin&action=addvacancy');
 }
 
 function vacancies_admin() {
@@ -450,4 +450,4 @@ function acf_change_icon_on_files ( $icon, $mime, $attachment_id ){ // Display t
 add_filter( 'wp_mime_type_icon', 'acf_change_icon_on_files', 10, 3 );
 
 //User Roles
-require_once get_template_directory() . '/user-roles.php';
+require_once get_template_directory() . '/lib/user_roles.php';

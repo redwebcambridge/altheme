@@ -65,7 +65,7 @@ if (!class_exists('ACF')) {
                 <a href="<?php echo the_permalink(get_field('sports_homepage','option')); ?>">
                   <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $sportlogos['sports_logo']['url']; ?>" alt="<?php echo $sportlogos['sports_logo']['alt']; ?>">
                 </a>
-            <?php } else { ?> 
+            <?php } else { ?>
               <?php $logos = get_field('logo_and_icons','option'); ?>
                 <a href="/">
                   <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $logos['logo']['url']; ?>" alt="<?php echo $logos['logo']['alt']; ?>">
@@ -296,7 +296,6 @@ if (!class_exists('ACF')) {
   <?php else : //Internal header?>
 
 <section class="page-content">
-    
     <div class="featured-top-image  <?php echo get_field('header_title_location','option'); ?>" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">
         <div class="row main-heading">

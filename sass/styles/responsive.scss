@@ -6,12 +6,12 @@
     body .line {
         display:none;
     }
-    
+
     .searchtopbuttonholder {
         display:none;
     }
-    
-    
+
+
     .navbar.fixed-top {
         left:auto;
     }
@@ -20,7 +20,7 @@
         height:1.8em;
     }
     body .front-page-header, body .partners .carousel-slide {
-        margin-top:90px;
+        margin-top:0 !important;
     }
     .front-page-header {
         height:auto;
@@ -105,7 +105,8 @@
         }
     }
     .offcanvas-collapse {
-        top:90px;
+        top:50px;
+        z-index:999999;
     }
     .featured-top-image {
         margin-bottom:97px;
@@ -185,6 +186,74 @@
         .sbi_item {
             width:50% !important;
             height:150px !important;
+        }
+    }
+
+
+
+    header {
+        margin-top:50px;
+        z-index:1;
+    }
+
+    body.home {
+        .tabcontent {
+            border-top:solid 20px white;
+            .container {
+                .content {
+                    max-width:100%;
+                }
+            }
+        }
+    }
+
+    #mainnav {
+        ul {
+            li {
+                .dropdown-menu {
+                    width:90vw;
+                }
+            }
+        }
+    }
+
+    .homepage-tabs-nav {
+        .col {
+            width: 49%;
+            max-width: 49%;
+            flex: auto;
+            margin-bottom:5px;
+        }
+        #slider_nav {
+            ul {
+                justify-content:left;
+            }
+        } 
+    }
+
+    .contact-info {
+        margin:0;
+    }
+}
+
+@media all and (max-width: 426px) {
+    .homepage-tabs-nav {
+        .col {
+            margin:0 3px 3px 0;
+        }
+    }
+    .contact-info {
+        margin:45px 0;
+    }
+}
+
+@media all and (max-width: 321px) {
+    .homepage-tabs-nav {
+        .col {
+            width: 48%;
+            max-width: 48%;
+            margin:0 3px 3px 0;
+            font-size:0.9em;
         }
     }
 }

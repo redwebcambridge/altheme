@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="tabcontent container">
+<div class="tabcontent">
 <?php
     $index = 0;
     if( have_rows('tab_content') ):
@@ -83,14 +83,14 @@
                         </div>
                     </div>
                     <div class="row">
-                        <?php while (have_posts()) : the_post(); 
-                        $thumbnail= get_field('thumbnail'); 
+                        <?php while (have_posts()) : the_post();
+                        $thumbnail= get_field('thumbnail');
                         $thumbnail = $thumbnail['url'];
-                        $url = get_permalink(); 
+                        $url = get_permalink();
                         if (in_category('newsletter')){
-                            $download = get_field('pdf_upload'); 
+                            $download = get_field('pdf_upload');
                             $thumbnail =  $download['icon'];
-                            $url = $download['url']; 
+                            $url = $download['url'];
                         }
                         ?>
 
@@ -119,7 +119,7 @@
                         <div class="twitter-header">
                             @<?php echo $tweets[0]->user->screen_name; ?>
                         </div>
-                        
+
                         </a>
                         <div class="slick-controls">
                             <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>

@@ -59,52 +59,6 @@ add_role(
   )
 );
 
-//Adult Learning Manager
-remove_role('adult_learning');
-add_role(
-  'adult_learning',
-  __( 'Adult Learning Manager', 'anglianlearning' ),
-  array(
-    'read' => true,
-    'adult_learning' => true
-  )
-);
-function psp_add_project_management_role() {
-  add_role('psp_project_manager',
-             'Project Manager',
-             array(
-                 'read' => true,
-                 'edit_posts' => false,
-                 'delete_posts' => false,
-                 'publish_posts' => false,
-                 'upload_files' => true,
-             )
-         );
-    }
-    register_activation_hook( __FILE__, 'psp_add_project_management_role' );
-
-
-
-add_action('admin_init','anglianlearning_role_caps',999);
-function anglianlearning_role_caps() {
-  // Add the roles you'd like to administer the custom post types
-  $roles = array('adult_learning');
-  // Loop through each role and assign capabilities
-  foreach($roles as $the_role) { 
-      $role = get_role($the_role);
-      $role->add_cap( 'read' );
-      $role->add_cap( 'read_adult_learning');
-      $role->add_cap( 'read_private_adult_learnings' );
-      $role->add_cap( 'edit_adult_learning' );
-      $role->add_cap( 'edit_adult_learnings' );
-      $role->add_cap( 'edit_others_adult_learnings' );
-      $role->add_cap( 'edit_published_adult_learnings' );
-      $role->add_cap( 'publish_adult_learnings' );
-      $role->add_cap( 'delete_others_adult_learnings' );
-      $role->add_cap( 'delete_private_adult_learnings' );
-      $role->add_cap( 'delete_published_adult_learnings' );
-  }
-}
 
 //Remove Admin Sections depending on user role
 add_action( 'admin_enqueue_scripts', 'custom_prevent_admin_access' );

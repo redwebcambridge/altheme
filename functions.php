@@ -285,22 +285,11 @@ if (get_field('activate_adult_learning','option')) {
         'supports'  => array( 'title', 'editor', 'thumbnail' ),
         'show_ui' => true,
         'public' => true,
-        'labels' => $labels,
-        'capability_type' => array('adult_learning','adult_learnings'),
-        'map_meta_cap' => true,
+        'labels' => $labels
       );
       register_post_type( 'adultlearning', $args );
     }
     add_action( 'init', 'register_adult_learning', 0 );
-
-    
-
-
-
-
-
-
-    
 
     /* Create the Adult Learning Category Taxonomy --------------------------------------------*/
     function build_taxonomies_adult_learning(){

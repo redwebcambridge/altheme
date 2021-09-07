@@ -17,10 +17,8 @@ function add_new_admin_caps() {
 }
 add_action( 'admin_init', 'add_new_admin_caps');
 
-
-
 //Webmaster
-//remove_role('webmaster');
+remove_role('webmaster');
 add_role(
     'webmaster',
     __( 'Webmaster', 'anglianlearning' ),
@@ -54,6 +52,12 @@ add_role(
       'read_private_posts' => true,
       'unfiltered_html' => false,
       'upload_files' => true,
+      'list_users' => true,
+      'create_users' => true,
+      'add_users' => true,
+      'delete_users' => true,
+      'edit_users' => true,
+      'promote_users' => true,
       'edit_vacancy' => true,
     )
 );

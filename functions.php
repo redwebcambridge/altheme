@@ -451,3 +451,25 @@ add_filter( 'wp_mime_type_icon', 'acf_change_icon_on_files', 10, 3 );
 
 //User Roles
 require_once get_template_directory() . '/lib/user_roles.php';
+
+//Dashboard widget
+add_action( 'wp_dashboard_setup', 'register_dash_widgets' );
+function register_dash_widgets() {
+	wp_add_dashboard_widget(
+		'anglian_learning_wiki',
+		'Anglian Learning Wiki',
+		'dashboard_wiki_display'
+	);
+  wp_add_dashboard_widget(
+		'anglian_learning_support',
+		'Anglian Learning Website Support',
+		'dashboard_support_display'
+	);
+}
+function dashboard_wiki_display() {
+    echo '<p><strong>Instructions on how to edit different aspects of this website can be found on the Anglian Learning Wiki</strong></p><p><a class="button" href="http://alwiki.redgraphic.co.uk/">Anglian Learning Wiki</a></p>';
+}
+
+function dashboard_support_display() {
+  echo '<p>Need Support? Contact <a href="https://redgraphic.co.uk">Red Graphic</a> using the button below</p><p><a class="button" href="mailto:lewis@redgraphic.co.uk?cc=lorraine@redgraphic.co.uk,david@redgraphic.co.uk&subject=Website%20Support%20'.site_url().'">Email Red Graphic</a></p>';
+}

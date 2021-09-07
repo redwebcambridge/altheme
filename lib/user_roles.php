@@ -10,6 +10,15 @@ $roles_to_remove = array('author', 'editor', 'contributor', 'subscriber' );
 		}
 	}
 }
+//Super Admin
+function add_new_admin_caps() {
+  $role = get_role( 'administrator' );
+  $role->add_cap( 'edit_vacancy' ); 
+}
+add_action( 'admin_init', 'add_new_admin_caps');
+
+
+
 //Webmaster
 //remove_role('webmaster');
 add_role(

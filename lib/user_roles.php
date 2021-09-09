@@ -59,6 +59,7 @@ add_role(
       'edit_users' => true,
       'promote_users' => true,
       'edit_vacancy' => true,
+      'edit_theme_options' => true,
     )
 );
 //Vacancy Manager

@@ -46,9 +46,11 @@
                                 <div class="footer-line"></div>
                                 <p><?php echo $adult_footer['col1_content']; ?></p>
                                 <?php $socialmedia = $adult_footer['social_media']; ?>
-                                <?php foreach ($socialmedia as $platform) : ?>
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
-                                <?php endforeach; ?>
+                                    <div class="social">
+                                    <?php foreach ($socialmedia as $platform) : ?>
+                                        <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <?php endforeach; ?>
+                                    </div>
                             <?php elseif (is_sports_page()) : ?>
                                 <!-- Sports Footer -->
                                 <?php $sports_footer = get_field('sports_footer_options','option'); ?>
@@ -56,17 +58,21 @@
                                 <div class="footer-line"></div>
                                 <p><?php echo $sports_footer['col1_content']; ?></p>
                                 <?php $socialmedia = $sports_footer['social_media']; ?>
-                                <?php foreach ($socialmedia as $platform) : ?>
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
-                                <?php endforeach; ?>
+                                    <div class="social">
+                                    <?php foreach ($socialmedia as $platform) : ?>
+                                        <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <?php endforeach; ?>
+                                    </div>
                             <?php else : ?>    
                                 <!-- School Footer -->
                                 <h5><?php the_field('left_footer_title','option') ?></h5>
                                 <div class="footer-line"></div>
                                 <?php the_field('footer_left_side_text','option'); ?>
-                                <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
+                                   <div class="social">
+                                    <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
                                     <a href="<?php echo get_sub_field('profile_url'); ?>" target="_blank"><i class="social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
-                                <?php endwhile; endif; ?>
+                                     <?php endwhile; endif; ?>
+                                    </div>
                             <?php endif; ?>
                             </div>
 

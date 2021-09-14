@@ -473,3 +473,18 @@ function dashboard_wiki_display() {
 function dashboard_support_display() {
   echo '<p>Need Support? Contact <a href="https://redgraphic.co.uk">Red Graphic</a> using the button below</p><p><a class="button" href="mailto:lewis@redgraphic.co.uk?cc=lorraine@redgraphic.co.uk,david@redgraphic.co.uk&subject=Website%20Support%20'.site_url().'">Email Red Graphic</a></p>';
 }
+
+//Featured image change to header image
+function change_featured_image_title() {
+  remove_meta_box( 'postimagediv', 'post', 'side' );
+  add_meta_box( 'postimagediv', __( 'Header Image', 'km' ), 'post_thumbnail_meta_box', 'post', 'side' );
+}
+function km_change_featured_image_text( $content ) {
+  if ( 'post' === get_post_type() ) {
+      $content = str_replace( 'Set featured image', __( 'Set Header Image', 'km' ), $content );
+      $content = str_replace( 'Remove featured image', __( 'Remove Header Image', 'km' ), $content );
+  }
+  return $content;
+}
+add_action('do_meta_boxes', 'change_featured_image_title' );
+add_filter( 'admin_post_thumbnail_html', 'km_change_featured_image_text' );

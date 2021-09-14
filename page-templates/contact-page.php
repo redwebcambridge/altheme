@@ -73,7 +73,7 @@ get_header(); ?>
                     if(!empty($address['town'])) : echo $address['town'].', '; endif; 
                     if(!empty($address['city'])) : echo $address['city'].', '; endif; 
                     if(!empty($address['county'])) : echo $address['county'].', '; endif; 
-                    if(!empty($address['postal_code'])) : echo $address['postal_code'].','; endif;                                     
+                    if(!empty($address['postal_code'])) : echo $address['postal_code']; endif;                                     
                     ?>  
                 </p>
                <?php endif; ?>

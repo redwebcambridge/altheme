@@ -9,37 +9,56 @@ get_header(); ?>
 
       <div class="container contact-page">
         <div class="row">
-
           <div class="col-md-8 text-section">
             <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
             <div class="gradline"></div>
               <div class="row">
-
-                <?php $display_options = get_field('display_options'); ?>
-
+              <?php
+              if (is_sports_page()) {
+                $sports_fields = get_field('sports_footer_options','option');
+                $phone_number = $sports_fields['telephone'];
+                $email = $sports_fields['email_address'];
+                $address = $sports_fields['address'];
+                $social = $sports_fields['social_media'];
+              } elseif (is_adult_ed_page()) {
+                $adult_fields = get_field('footer_options','option');
+                $phone_number = $adult_fields['telephone'];
+                $email = $adult_fields['email_address'];
+                $address = $adult_fields['address'];
+                $social = $adult_fields['social_media'];
+              } else {
+                $phone_number = get_field('telephone','option');
+                $email = get_field('email_address','option');
+                $address = get_field('address','option');
+                $social = get_field('platforms' , 'option');
+              }
+              $display_options = get_field('display_options'); 
+              ?>
                 <div class="col-12 col-md-4 contact-details">
                   <?php if ($display_options['phone_number']) : ?>
                      <h5>Phone</h5>
-                     <a href="tel:<?php the_field('telephone','option'); ?>"><p><?php the_field('telephone','option'); ?></p></a>
+                     <a href="tel:<?php echo $phone_number; ?>"><p><?php echo $phone_number; ?></p></a>
                   <?php endif; ?>
                   <?php if ($display_options['show_email_address']) : ?>
                     <h5>Email</h5>
-                    <a href="mailto:<<?php the_field('email_address','option'); ?>"><p><?php the_field('email_address','option'); ?></p></a>
+                    <a href="mailto:<?php echo $email; ?>"><p><?php echo $email; ?></p></a>
                   <?php endif; ?>
                 </div>
 
                 <div class="col-12 col-md-8 contact-details">
                 <?php if ($display_options['social_media_accounts']) : ?>
 
-                  <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
+                  <?php if( $social ):
+                      foreach ($social as $social_platform) :
+                    ?>
                     <div class="d-flex socials row">
-                      <a href="<?php echo get_sub_field('profile_url'); ?>" target="_blank">
-                        <i class="col-1 social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i>
-                        <?php if ($display_options['display_full_social_media_url']) : echo get_sub_field('profile_url'); endif; ?>
-                        <?php echo '<em>'.get_sub_field('username').'</em>'; ?>
+                      <a href="<?php echo $social_platform['profile_url']; ?>" target="_blank">
+                        <i class="col-1 social fab fa-<?php echo $social_platform['platform']; if($social_platform['platform']=='facebook'){echo '-f';} ;?>"></i>
+                        <?php if ($display_options['display_full_social_media_url']) : echo $social_platform['profile_url']; endif; ?>
+                        <?php echo '<em>'.$social_platform['username'].'</em>'; ?>
                       </a>
                     </div>         
-                   <?php endwhile; endif; ?>
+                   <?php endforeach; endif; ?>
 
                  <?php endif; ?>
                 </div>
@@ -47,15 +66,15 @@ get_header(); ?>
               </div>
               <?php if ($display_options['address']) : ?>
                   <h5>Address</h5>
-                  <p>
-                  <?php $address = $adult_footer['address']; 
-                                    if(!empty($address['address_line_1'])) : echo $address['address_line_1'].'<br>'; endif; 
-                                    if(!empty($address['street'])) : echo $address['street'].'<br>'; endif; 
-                                    if(!empty($address['town'])) : echo $address['town'].'<br>'; endif; 
-                                    if(!empty($address['city'])) : echo $address['city'].'<br>'; endif; 
-                                    if(!empty($address['county'])) : echo $address['county'].'<br>'; endif; 
-                                    if(!empty($address['postal_code'])) : echo $address['postal_code'].'<br>'; endif;                                     
-                                    ?>  
+                <p>
+                  <?php 
+                    if(!empty($address['address_line_1'])) : echo $address['address_line_1'].', '; endif; 
+                    if(!empty($address['street'])) : echo $address['street'].', '; endif; 
+                    if(!empty($address['town'])) : echo $address['town'].', '; endif; 
+                    if(!empty($address['city'])) : echo $address['city'].', '; endif; 
+                    if(!empty($address['county'])) : echo $address['county'].', '; endif; 
+                    if(!empty($address['postal_code'])) : echo $address['postal_code'].','; endif;                                     
+                    ?>  
                 </p>
                <?php endif; ?>
               <!--map-->

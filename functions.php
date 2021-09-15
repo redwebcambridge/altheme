@@ -407,6 +407,17 @@ function is_adult_ed_page() {
         return true;
       };
     }
+    if( is_single() ) {
+      $categories = get_categories();
+      foreach($categories as $category) {
+        if (get_field('category_type',$category)=='adultlearning') {
+          $adultcat = $category;
+        }
+      }
+      if ( has_category( $adultcat,get_the_ID()) ) {
+        return true;
+      }
+    }
   } else {
     return false;
   }
@@ -422,6 +433,17 @@ function is_sports_page() {
       if (get_field('category_type',$term)=='sportscentre'){
         return true;
       };
+    }
+    if( is_single() ) {
+      $categories = get_categories();
+      foreach($categories as $category) {
+        if (get_field('category_type',$category)=='sportscentre') {
+          $sportscat = $category;
+        }
+      }
+      if ( has_category( $sportscat,get_the_ID()) ) {
+        return true;
+      }
     }
   } else {
     return false;
@@ -489,14 +511,12 @@ function dashboard_support_display() {
 
 //Featured image change to header image
 function change_featured_image_title() {
-  remove_meta_box( 'postimagediv', 'post', 'side' );
-  add_meta_box( 'postimagediv', __( 'Header Image', 'km' ), 'post_thumbnail_meta_box', 'post', 'side' );
+  remove_meta_box( 'postimagediv', array('post','page','adultlearning','sportscentre'), 'side' );
+  add_meta_box( 'postimagediv', __( 'Header Image', 'km' ), 'post_thumbnail_meta_box', array('post','page','adultlearning','sportscentre'), 'side' );
 }
 function km_change_featured_image_text( $content ) {
-  if ( 'post' === get_post_type() ) {
-      $content = str_replace( 'Set featured image', __( 'Set Header Image', 'km' ), $content );
-      $content = str_replace( 'Remove featured image', __( 'Remove Header Image', 'km' ), $content );
-  }
+  $content = str_replace( 'Set featured image', __( 'Set Header Image', 'km' ), $content );
+  $content = str_replace( 'Remove featured image', __( 'Remove Header Image', 'km' ), $content );
   return $content;
 }
 add_action('do_meta_boxes', 'change_featured_image_title' );

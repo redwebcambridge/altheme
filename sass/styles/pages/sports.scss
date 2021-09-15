@@ -88,7 +88,9 @@
   } 
   
     .text-section a {
-      color:$sportprimarycolour;
+      &:not(.btn) {
+        color: $sportprimarycolour;
+      }
     }
     .course{
       margin-bottom: 15px;

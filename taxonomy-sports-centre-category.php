@@ -28,7 +28,6 @@ get_header();
 	        <h2 class="heading-two d-flex justify-content-between"><?php  echo single_term_title(); ?></h2>
 	        <div class="gradline"></div>
 	        <p class="body-text"><?php echo term_description(); ?></p>
-
 			<?php 
 			$tax_ID = get_queried_object()->term_id;
 			$courses = get_posts(
@@ -59,7 +58,7 @@ get_header();
 			if (!$courses) : 
 				echo '<div class="alert alert-secondary mx-auto" role="alert"><em>Sorry, there are currently no classes available</em></div>'; 
 			endif; ?>
-			<?php get_template_part('template-parts/adult-learning-contact'); ?>
+			<?php get_template_part('template-parts/sports-contact'); ?>
 
 		</div>
     </div>

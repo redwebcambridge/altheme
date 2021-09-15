@@ -401,10 +401,15 @@ function is_adult_ed_page() {
     if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') || $post->post_parent == get_field('adult_learning_homepage','option')  ) :
       return true;
     endif;
+    if (is_archive()) {
+      $term = get_queried_object();
+      if (get_field('category_type',$term)=='adultlearning'){
+        return true;
+      };
+    }
   } else {
     return false;
   }
-  
 }
 function is_sports_page() {
   if(get_field('activate_sport_centre','option')) {
@@ -412,6 +417,14 @@ function is_sports_page() {
     if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') || $post->post_parent == get_field('sports_homepage','option') ) :
       return true;
     endif;
+    if (is_archive()) {
+      $term = get_queried_object();
+      if (get_field('category_type',$term)=='sportscentre'){
+        return true;
+      };
+    }
+  } else {
+    return false;
   }
 }
 

@@ -90,6 +90,9 @@
   .gradline {
     background-image: linear-gradient(to right, $adultprimarycolour, $adultsecondarycolour);
   } 
+  .newseventtext {
+    background-color: $adultprimarycolour;
+  }
   header {
     #searchform {
       button {

@@ -14,16 +14,17 @@ get_header();
 	    <div class="row">
 
 	   <!---Sidebar--->
-	   <div class="col-md-2 text-section">
+	   <div class="col-md-3 text-section">
          	<?php
-				$menu_choice = get_field('top_navigation_menu','option');
+			 	$main_adultlearning_page = get_field('adult_learning_homepage','option');
+				$adult_menu = get_field('menu_select',$main_adultlearning_page);
 				wp_nav_menu(
-					array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
+					array('menu'=>$adult_menu, 'menu_id' => 'sidebar-menu')
 				);
 			?>
         </div>
 
-		<div class="col-md-10 text-section">
+		<div class="col-md-9 text-section">
 	        <h2 class="heading-two d-flex justify-content-between"><?php  echo single_term_title(); ?></h2>
 	        <div class="gradline"></div>
 	        <p class="body-text"><?php echo term_description(); ?></p>

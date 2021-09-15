@@ -19,9 +19,18 @@ get_header();
 		<?php 
 		//exclude newsletters
 		$newsletters = get_category_by_slug('newsletter');
-		$newsletters = '-'.$newsletters->term_id;
-
-		$the_query = new WP_Query( array(    'post_type'  => 'post','posts_per_page' => -1,'cat' => $newsletters)  );
+		$exclude = '-'.$newsletters->term_id;
+		//exclude sports and adult ed categories
+		$categories = get_categories();
+		foreach($categories as $category) {
+			if (get_field('category_type',$category)=='sportscentre') {
+				$exclude .= ', -'.$category->term_id;
+			}
+			if (get_field('category_type',$category)=='adultlearning') {
+				$exclude .= ', -'.$category->term_id;
+			}
+		}
+		$the_query = new WP_Query( array(    'post_type'  => 'post','posts_per_page' => -1,'cat' => $exclude)  );
 		if ($the_query->have_posts()) : while ($the_query->have_posts() ) : $the_query->the_post(); 
 			 get_template_part('template-parts/content-post');
 			endwhile; else : echo '<div class="alert alert-secondary text-center" role="alert"><em>Sorry! There are no posts found</em></div>'; endif;

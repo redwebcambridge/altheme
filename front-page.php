@@ -56,15 +56,30 @@
 <!-- Latest news and twitter -->
 <div class="latestnews">
     <?php
+    //exclude newsletters
+	$newsletters = get_category_by_slug('newsletter');
+	$exclude = '-'.$newsletters->term_id;
+	//exclude sports and adult ed categories
+	$categories = get_categories();
+	foreach($categories as $category) {
+		if (get_field('category_type',$category)=='sportscentre') {
+			$exclude .= ', -'.$category->term_id;
+		}
+		if (get_field('category_type',$category)=='adultlearning') {
+			$exclude .= ', -'.$category->term_id;
+		}
+	}
     if(get_field('display_twitter_feed')){
         query_posts(array(
             'showposts' => 2,
+            'cat' => $exclude
         ) );
         $newscol = 8;
         $newsitem = 6;
     } else {
         query_posts(array(
             'showposts' => 3,
+            'cat' => $exclude
         ) );
         $newscol = 12;
         $newsitem = 4;

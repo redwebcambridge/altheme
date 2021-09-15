@@ -1,6 +1,9 @@
 .newsevents, .search{
    @media only screen and (max-width: 768px){
     margin:50px 0;
+   }
+   .standard-content {
+       padding-right: 20px;
    } 
     .row-flex {
       display: flex;
@@ -96,7 +99,7 @@
     .ceo-right-header{
       color: $primarycolour;
       font-size:1em;
-      margin:2em 0 1em 0;
+      margin:1.2em 0 1em 0;
 
       strong{
         font-size: 400;
@@ -143,8 +146,7 @@
     }
 
     .newsevents-contact{
-      display: block;
-      padding:0 0 0 2em;
+      display: flex;
       background-repeat: no-repeat!important;
       background-position: 0% 0.1em!important;
       background-size: 1em auto!important;
@@ -152,20 +154,16 @@
         color: inherit;
         &:hover{color: $primarycolour;}
       }
+      i {
+        color: $primarycolour;
+        min-width: 30px;
+      }
     }
     .newsevents-phone {
-        background: url('img/call-header.png');
+        margin-top:30px;
     }
-    .newsevents-email {
-        background: url('img/email-header.png');
-    }
-    .newsevents-address {
-        background: url('img/footer-address-icon.png');
-    }
-
     .special-underine{
       position: relative;
-
       &:after{
           display: block;
           height:2px;

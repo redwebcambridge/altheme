@@ -247,8 +247,8 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
 
             <select name="listing_type">
               <option value="school" <?php if(isset($vacancy) && $vacancy['listing_type'] == "school"){echo 'selected';} ?>>School Listing</option>
-              <option value="adult_learning" <?php if(isset($vacancy) && $vacancy['listing_type'] == "adult_learning"){echo 'selected';} ?>>Adult Learning Listing</option>
-              <option value="sports_center" <?php if(isset($vacancy) && $vacancy['listing_type'] == "sports_center"){echo 'selected';} ?>>Sports Center Listing</option>
+              <?php if (get_field('activate_adult_learning','option')) : ?><option value="adult_learning" <?php if(isset($vacancy) && $vacancy['listing_type'] == "adult_learning"){echo 'selected';} ?>>Adult Learning Listing</option><?php endif; ?>
+              <?php if (get_field('activate_sport_centre','option')) : ?><option value="sports_center" <?php if(isset($vacancy) && $vacancy['listing_type'] == "sports_center"){echo 'selected';} ?>>Sports Center Listing</option><?php endif; ?>
             </select>
 
 

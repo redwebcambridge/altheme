@@ -71,6 +71,7 @@
       color:#fff;
       tr {
         border-bottom: none;
+        vertical-align: top;
       }
       p{
         text-transform: uppercase;
@@ -81,6 +82,7 @@
       td{
         border-bottom: 1px dashed #dee2e6;
         border-top: none;
+        vertical-align: center;
       }
       th{
         color: $primarycolour;

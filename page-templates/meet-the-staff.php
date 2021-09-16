@@ -28,7 +28,6 @@ get_header(); ?>
                 <tr>
                   <th scope="col"><p>Name</p></th>
                   <th scope="col"><p>Role</p></th>
-                  <th scope="col"><p>Email</p></th>
                   <th scope="col"><p>Form / Mentor Group</p></th>
                 </tr>
               </thead>
@@ -51,20 +50,14 @@ get_header(); ?>
                 </tr>
             <?php   } ; ?>
 
-
-
                 <tr>
                   <td scope="row">
-                    <p><?php the_sub_field('name'); ?></p>
+                    <p><?php the_sub_field('name'); ?><br><a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a></p>
                   </td>
 
                   <td>
                     <p><?php the_sub_field('role'); ?></p>
                 </td>
-
-                  <td>
-                    <p><a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a></p>
-                  </td>
 
                   <td>
                     <p><?php the_sub_field('form__mentor_group'); ?><p>

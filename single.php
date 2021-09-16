@@ -19,8 +19,8 @@ $thumbnail= get_field('thumbnail'); ?>
 					<h2 class="heading-two"><?php the_title(); ?></h2>
 					<div class="gradline"></div>
 					<p class="body-text"></p>
-
 		          	<?php the_content(); ?>
+					<?php if (has_category('newsletter')) : get_template_part('template-parts/content-newsletters'); endif; ?>
 		        </div>
 
 				<div class="col-12 col-md-4 mb-5">

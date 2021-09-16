@@ -22,6 +22,9 @@ get_header();
 				<div class="col-12 newseventimage">
 					<?php
 					$imageurl = get_the_post_thumbnail_url();
+					if (!$imageurl) {
+						$imageurl = get_field('logo_and_icons','option')['default_header_image'];
+					}
 					?>
 					<a href="<?php the_permalink(); ?>">
 						<div class="newseventimagecontainer" style="background-image:url(<?php echo $imageurl; ?>);"></div>
@@ -33,8 +36,6 @@ get_header();
 					<a class="readmore" href="<?php the_permalink(); ?>">READ MORE</a>
 				</div>
 			</div>
-
-	
 
 			<?php endwhile;	?>
 			</div>

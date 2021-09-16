@@ -369,7 +369,7 @@ function vacancies_admin() {
 }
 
 //Display Menu options in menu dropdown on relevant pages
-function acf_load_color_field_choices( $field ) {
+function get_menus_for_acf( $field ) {
   $field['choices'] = array();
   $menus = get_terms('nav_menu');
   foreach($menus as $menu){
@@ -389,11 +389,11 @@ function acf_load_color_field_choices( $field ) {
   }
   return $field;
 }
-add_filter('acf/load_field/name=menu_select', 'acf_load_color_field_choices');
-add_filter('acf/load_field/name=grey_tabs_menu', 'acf_load_color_field_choices');
-add_filter('acf/load_field/name=top_navigation_menu', 'acf_load_color_field_choices');
-add_filter('acf/load_field/name=sports_grey_tabs_menu', 'acf_load_color_field_choices');
-add_filter('acf/load_field/name=sports_top_navigation_menu', 'acf_load_color_field_choices');
+add_filter('acf/load_field/name=menu_select', 'get_menus_for_acf');
+add_filter('acf/load_field/name=grey_tabs_menu', 'get_menus_for_acf');
+add_filter('acf/load_field/name=top_navigation_menu', 'get_menus_for_acf');
+add_filter('acf/load_field/name=sports_grey_tabs_menu', 'get_menus_for_acf');
+add_filter('acf/load_field/name=sports_top_navigation_menu', 'get_menus_for_acf');
 
 function is_adult_ed_page() {
   if(get_field('activate_adult_learning','option')) {
@@ -521,3 +521,15 @@ function km_change_featured_image_text( $content ) {
 }
 add_action('do_meta_boxes', 'change_featured_image_title' );
 add_filter( 'admin_post_thumbnail_html', 'km_change_featured_image_text' );
+
+function login_logo() { 
+  $logos = get_field('logo_and_icons','option');
+  ?> 
+  <style type="text/css"> 
+  body.login div#login h1 a {
+    background-image: url(<?php echo $logos['icon']['url']; ?>);  //Add your own logo image in this url 
+    padding-bottom: 30px; 
+  } 
+  </style>
+   <?php 
+  } add_action( 'login_enqueue_scripts', 'login_logo' );

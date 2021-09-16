@@ -40,6 +40,7 @@
             height:100%;
             cursor: pointer;
             transition: all 1s ease;
+            min-height: 232px;
             &:hover {
                 background-color:darken($primarycolour,10);
             }
@@ -171,5 +172,18 @@
           left:0;
           margin-top:4px;
       }
+    }
+}
+.single {
+    .newslettercontainer {
+        width: 100%;
+        .newseventtext {
+            height: unset;
+        }
+    }
+}
+.search {
+    .newseventtext {
+        height: 232px;
     }
 }

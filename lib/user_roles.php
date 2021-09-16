@@ -78,9 +78,23 @@ add_role(
 add_action( 'admin_enqueue_scripts', 'custom_prevent_admin_access' );
 function custom_prevent_admin_access() {
   if ( !current_user_can( 'unfiltered_html' ) ) {
-    remove_menu_page('tools.php');  
+    remove_menu_page('tools.php');
+    
   }
   if ( !current_user_can( 'edit_posts' ) ) {
     remove_menu_page('edit.php');  
   }
 }
+
+//Remove administrator role as an options for all but main admin
+function wdm_user_role_dropdown($all_roles) {
+  global $pagenow;
+  if( $pagenow == 'user-new.php' ) {
+    echo 'Function run';
+      // if current user is editor AND current page is edit user page
+      unset($all_roles['administrator']);
+      unset($all_roles['editor']);
+  }
+  return $all_roles;
+}
+add_filter('editable_roles','wdm_user_role_dropdown');

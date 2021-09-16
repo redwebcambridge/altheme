@@ -353,6 +353,9 @@ body{
     &:hover {
         background-color:$primarycolour;
         border-color: $primarycolour;
+        .fas {
+          color:#fff;
+        }
         p {
             color:#fff;
             transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);

@@ -16,13 +16,13 @@ get_header();
 
           <!---Sidebar--->
 
-          <div class="col-md-2 text-section">
+          <div class="col-md-3 text-section">
           <?php
-				$menu_choice = get_field('top_navigation_menu','option');
-				wp_nav_menu(
-					array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
-				);
-			?>
+            $menu_choice = get_field('top_navigation_menu','option');
+            wp_nav_menu(
+              array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
+            );
+          ?>
           </div>
 
           <!---Sidebar - End--->
@@ -30,7 +30,7 @@ get_header();
 
           <!---Body section--->
 
-          <div class="col-md-10 text-section">
+          <div class="col-md-9 text-section">
               <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
 
               <div class="gradline"></div>
@@ -41,34 +41,35 @@ get_header();
 
               <h3>Course Details</h3>
               <div class="row course_details">
-                  <?php if(get_field('day')) { ?>
+                  <?php 
+                  if(get_field('day') !== '--Please Select--') { ?>
                   <div class="col">
-                   <strong class="table_head">Day</strong><br />
-                          <?php the_field('day'); ?>
+                   <strong class="table_head">Day</strong>
+                   <span><?php the_field('day'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('time')) { ?>
                   <div class="col">
-                    <strong class="table_head">Time</strong><br />
-                        <?php the_field('time'); ?>
+                    <strong class="table_head">Time</strong>
+                    <span><?php the_field('time'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('weeksterm')) { ?>
                   <div class="col">
-                    <strong class="table_head">Weeks/Term</strong><br />
-                        <?php the_field('weeksterm'); ?>
+                    <strong class="table_head">Weeks/Term</strong>
+                    <span><?php the_field('weeksterm'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('start_date')) { ?>
                   <div class="col">
-                    <strong class="table_head">Start Date</strong><br />
-                        <?php the_field('start_date'); ?>
+                    <strong class="table_head">Start Date</strong>
+                    <span><?php the_field('start_date'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('course_cost')) { ?>
                   <div class="col">
-                    <strong class="table_head">Cost</strong><br />
-                        <?php the_field('course_cost'); ?>
+                    <strong class="table_head">Cost</strong>
+                    <span><?php the_field('course_cost'); ?></span>
                   </div>
                   <?php } ?>
                   <div class="col-12 col-md-2">

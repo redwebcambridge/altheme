@@ -56,15 +56,6 @@ get_header(); ?>
 </div>
 </section>
 
-<script>
-$('.read-more-button').on( "click", function() {
-  $(this).parent('.staff-text').find('.whitegrad').toggle();
-  $(this).parent('.staff-text').find('.desc').toggleClass('increaseheight');
-  $(this).text($(this).text() == 'More' ? 'Less' : 'More'); 
-  
-});
-</script>
-
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

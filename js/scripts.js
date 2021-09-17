@@ -151,6 +151,14 @@ jQuery( document ).ready(function() {
     }
   }
   window.setTimeout(offsetAnchor, 0);
+
+  //Staff With pics page read more
+  jQuery('.read-more-button').on( "click", function() {
+    jQuery(this).parent('.staff-text').find('.whitegrad').toggle();
+    jQuery(this).parent('.staff-text').find('.desc').toggleClass('increaseheight');
+    jQuery(this).text(jQuery(this).text() == 'More' ? 'Less' : 'More'); 
+    
+  });
         
 });  
     

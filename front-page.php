@@ -18,12 +18,8 @@
                 <div class="gradline"></div>
                 <div class="tab-text">
                 <?php
-                if (strlen(get_sub_field('content')) <= 450) {
-                    echo get_sub_field('content');
-                } else {
                    $shortened = substr(get_sub_field('content'), 0, strpos(wordwrap(get_sub_field('content'), 450), "\n"));
                    echo $shortened.'...';
-                }
                 ?>
                 </div>
                 <a href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>

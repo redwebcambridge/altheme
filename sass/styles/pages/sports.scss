@@ -3,8 +3,13 @@
     background: darken($sportprimarycolour,10%);
     color: #fff;
   }
-  font-family: $sportbodyfont;
-  font-weight: $sportbodyfontweight;
+    font-family: $sportbodyfont;
+    font-weight: $sportbodyfontweight;
+    &.single {
+      a {
+        color: green;
+      }
+    }
   .currenthover {
     background-image: url($sportiteicon);
   }  
@@ -66,9 +71,7 @@
         }
       }
       a {
-        &:not(.btn) {
-          color: $sportprimarycolour;
-        }
+        color: $sportprimarycolour;
         &:hover {
           color: $sportsecondarycolour;
         }
@@ -83,22 +86,22 @@
       }
     }
 }
+
   &.page-template-vacancies .log_interest {
     background: $sportsecondarycolour;
-  } 
-  
+  }  
     .text-section a {
-      &:not(.btn) {
-        color: $sportprimarycolour;
-      }
+      color:$sportprimarycolour;
     }
     .course{
       margin-bottom: 15px;
+
       .course-thumbnail{
         height: 260px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
+
       }
       .course-name {
       background: $sportprimarycolour;
@@ -138,7 +141,9 @@
         margin: 0 10px;
         color: #ffffff;
       }
+
     }
+
     #sidebar-menu {
         li {
             background: $sportprimarycolour;
@@ -146,6 +151,7 @@
                 background: $sportsecondarycolour;
                 transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
             }
+
             a {
                 background:$sportprimarycolour;
                 color: #fff;
@@ -162,6 +168,7 @@
                     transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
                 }
             }
+
             .sub-menu {
                 display:none;
                 transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -202,14 +209,12 @@
         }
 
     }
+    
     .heading-two {
         color:$sportprimarycolour;
     }
     .gradline {
         background-image: linear-gradient(to right, $sportprimarycolour, $sportsecondarycolour);
-    }
-    p a {
-      color: $sportprimarycolour;
     }
     .newseventtext {
       background-color: $sportprimarycolour;
@@ -264,14 +269,5 @@
     .footer-line {
       background-image: linear-gradient(to right, $sportfooter_icon_colour,#fff);
     }
-    .newsevents .newsevents-contact i {
-      color:$sportprimarycolour;
-    }
-    .special-underine{
-      &:after{
-        background: $sportprimarycolour;
-      }
-    }
-    
 
 }

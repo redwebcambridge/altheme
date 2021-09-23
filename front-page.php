@@ -18,8 +18,13 @@
                 <div class="gradline"></div>
                 <div class="tab-text">
                 <?php
-                   $shortened = substr(get_sub_field('content'), 0, strpos(wordwrap(get_sub_field('content'), 450), "\n"));
-                   echo $shortened.'...';
+                $string = strip_tags(get_sub_field('content'));
+                if (strlen($string) > 500) {
+                    $stringCut = substr($string, 0, 500);
+                    $endPoint = strrpos($stringCut, ' ');
+                    $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+                }
+                echo $string;
                 ?>
                 </div>
                 <a href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>

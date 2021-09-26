@@ -318,10 +318,13 @@ body{
   opacity: 1;
 }
 
-.informationitem {
-    img {
-        border-bottom:8px solid $primarycolour;
-    }
+.info_img {
+    border-bottom:8px solid $primarycolour;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 300px;
+    width: 100%;
 }
 
 .downloadtitlecontainer {

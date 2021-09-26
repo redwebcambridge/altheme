@@ -241,7 +241,7 @@
                 <div class="infodetails">
                     <h2><?php the_sub_field('title'); ?></h2>
                     <div class="gradline"></div>
-                    <img class="w-100 my-4" src="<?php the_sub_field('image'); ?>">
+                    <div class="info_img w-100 my-4" style="background-image:url(<?php the_sub_field('image'); ?>)"></div>
                     <span class="information-panel-body-text"><?php the_sub_field('body_text'); ?></span>
                     <a href="<?php echo get_sub_field('button_link'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
                 </div>

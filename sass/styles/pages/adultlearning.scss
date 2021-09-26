@@ -68,7 +68,15 @@
     font-weight: $adultbodyfontweight;
   .currenthover {
     background-image: url($adultsiteicon);
-  }  
+  }
+  .newsevents .newsevents-contact i {
+    color:$adultprimarycolour;
+  }
+  .special-underine{
+    &:after{
+        background: $adultprimarycolour;
+    }
+  }     
   .heading-two {
       color:$adultprimarycolour;
   }
@@ -92,11 +100,6 @@
   } 
   .newseventtext {
     background-color: $adultprimarycolour;
-  }
-  &.single {
-    a {
-      color: green;
-    }
   }
   header {
     #searchform {

@@ -41,7 +41,7 @@ get_header();
 
               <h3>Course Details</h3>
               <div class="row course_details">
-              <?php 
+              <?php
                   if(get_field('day') !== '--Please Select--') { ?>
                   <div class="col">
                    <strong class="table_head">Day</strong>

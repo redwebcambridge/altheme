@@ -7,10 +7,10 @@ get_header(); ?>
 <div class="container">
 
     <div class="row">
-          <div class="col-md-3 text-section">
+          <div class="col-lg-3 text-section">
             <div id="listview"></div>
           </div>
-          <div class="col-md-9 text-section">            
+          <div class="col-lg-9 text-section">
             <div id='calendar'></div>
           </div>
     </div>

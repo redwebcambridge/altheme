@@ -54,7 +54,7 @@ if (!class_exists('ACF')) {
   <div class="container">
     <div class="row align-items-center">
       <!-- logo -->
-      <div class="col-6 col-md-3 pt-2 ">
+      <div class="col-6 col-md-3 pt-2 logo-container">
             <?php if ( is_adult_ed_page() ) {  ?>
                 <?php $adultlogos = get_field('adultlearning_logo_and_icons','option'); ?>
                 <a href="<?php echo the_permalink(get_field('adult_learning_homepage','option')); ?>">

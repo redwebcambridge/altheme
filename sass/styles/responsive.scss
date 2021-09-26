@@ -1,4 +1,10 @@
-
+@media all and (max-width: 992px) {
+    #listview {
+        .fc-toolbar {
+            display:flex !important;
+        }
+    }
+}
 @media all and (max-width: 770px) {
     body {
         padding-top:0;
@@ -8,17 +14,17 @@
     }
 
     .searchtopbuttonholder {
-        display:none;
+        border-top: 1px solid $medium-grey;
+        margin:5px 0;
+        padding:0px!important;
+        .google_search {
+            display:none;
+        }
     }
-
-
     .navbar.fixed-top {
         left:auto;
     }
-    .navbar-toggler-icon {
-        width:2em;
-        height:1.8em;
-    }
+    
     body .front-page-header, body .partners .carousel-slide {
         margin-top:0 !important;
     }
@@ -70,6 +76,10 @@
         .header-images-slick-slider {
 
         }
+    }
+
+    #slider_nav {
+        display:none;
     }
 
     .container-white-laurel {
@@ -130,8 +140,8 @@
         padding:100px 0;
     }
     #sidebar-menu {
-        margin-left:-15px;
-        margin-right:-15px;
+        margin-left:-11px;
+        margin-right:-11px;
         display:flex;
         flex-flow: wrap;
         li {
@@ -192,8 +202,59 @@
 
 
     header {
-        margin-top:50px;
         z-index:1;
+        .al-logo {
+            order:-1;
+            width: 40%;
+        }
+        .logo-container {
+            order:-1;
+            margin-left: 70px;
+            width: 40%;
+        }
+        #top_buttons ul:first-child {
+            margin: 5px 0 0 0 ;
+            padding: 0;
+            li {
+                margin: 4px;
+                background-color:#fff ;
+                border: 1px solid $medium-grey;
+                font-weight: bolder;
+                flex-grow: 1;
+                    text-align: center;
+                a {
+                    color:$medium-grey;
+                    font-weight: $bold-weight;
+                    padding: 9px 10px 5px 10px;
+                }
+                &.hasdropdown {
+                    display: block;
+                    i {
+                        display: none;
+                    }
+                    .dropdown-menu {
+                        margin: 0;
+                        .double-sub {
+                            width: 100%;
+                        }
+                        li {
+                            border: none;
+                        }
+                    }
+                }
+            }
+           
+        }
+    }
+
+    #stickynav {
+        width: auto;
+        box-shadow:none!important;
+        display: flex;
+        padding:0;
+        right: unset;
+        border-radius: 10px;
+        margin: 10px;
     }
 
     body.home {
@@ -218,17 +279,19 @@
     }
 
     .homepage-tabs-nav {
+        padding:0;
+        margin-top:0;
         .tab_button {
             box-shadow: 0px 5px 16px -3px rgb(0 0 0 / 50%);
             -webkit-box-shadow: 0px 5px 16px -3px rgb(0 0 0 / 50%);
             -moz-box-shadow: 0px 5px 16px -3px rgba(0, 0, 0, 0.5);
         }
-        .col {
-            width: 49%;
-            max-width: 49%;
-            flex: auto;
-            margin-bottom:5px;
-        }
+        // .col {
+        //     width: 49%;
+        //     max-width: 49%;
+        //     flex: auto;
+        //     margin-bottom:5px;
+        // }
         #slider_nav {
             ul {
                 justify-content:left;
@@ -245,26 +308,121 @@
             padding:5px 12px 0 12px;
         }
     }
-}
 
+}
 @media all and (max-width: 426px) {
+    .video-section {
+        .container {
+            .row {
+                margin-left:388px !important;
+                padding:30px 0 !important;
+                iframe {
+                    height:200px !important;
+                }
+            }
+        }
+    }
+    .partner-slider {
+        a {
+            height:100px;
+        }
+    }
+    .adult-learning-page {
+        .contact-box {
+            width:100%;
+            margin:20px 0 0 !important;
+            padding: 15px 5px !important;
+            .contact-details {
+                p {
+                    width:100%;
+                    padding:10px 15px;
+                }
+            }
+        }
+    }
+    .page-template-vacancies {
+        .log_interest {
+            .cv_upload {
+                .upload {
+                    line-height:42px;
+                    input[type="file"] {
+                        line-height:40px;
+                    }
+                }
+            }
+        }
+    }
     .homepage-tabs-nav {
         .col {
-            margin:0 3px 3px 0;
+            width: 100%;
+            max-width: 100%;
+            flex: auto;
+            margin:0;
+        }
+    }
+    .tabcontent {
+        .container {
+            .image {
+                max-width:100% !important;
+                margin-bottom:20px;
+                padding:0;
+                img {
+                    width:100%;
+                }
+            }
+        }
+    }
+    .latestnews {
+        .newsholder {
+            .newsitem {
+                padding:0;
+                .newsitemdetails {
+                    padding:0 15px;
+                    width:100%;
+                }
+            }
+        }
+    }
+    .information-section {
+        .informationitem {
+            padding:0;
+        }
+        .infodetails {
+            padding:0 15px;
         }
     }
     .contact-info {
         margin:45px 0;
     }
+    .cookieconsent_msg {
+        line-height: 20px;
+    }
+    #listview {
+        .fc-toolbar {
+            padding:20px !important;
+            display: block !important;
+            justify-content: center;
+            align-items: center;
+            .fc-toolbar-chunk {
+                text-align: center;
+                margin-bottom: 10px;
+                .fc-toolbar-title {
+                    text-align:center;
+                    margin-bottom:10px;
+                }
+                .fc-today-button {
+                    margin-bottom:0;
+                    margin-left:0;
+                }
+                &:last-child {
+                    margin-bottom:0;
+                }
+            }
+        }
+    }
+
 }
 
 @media all and (max-width: 321px) {
-    .homepage-tabs-nav {
-        .col {
-            width: 48%;
-            max-width: 48%;
-            margin:0 3px 3px 0;
-            font-size:0.9em;
-        }
-    }
+
 }

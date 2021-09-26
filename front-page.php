@@ -112,10 +112,12 @@
 
                             <div class="col-md-<?php echo $newsitem; ?> newsitem <?php  if (in_category('newsletter')){echo 'newsletter';} ?>">
                                 <div onclick="window.location.href = '<?php echo $url; ?>' " class="thumbnail al-border-bottom" style="background-image:url('<?php echo $thumbnail; ?>')"></div>
-                                <h3><a href="<?php echo $url; ?>"><?php the_title(); ?></a></h3>
-                                <p class="post-date"><?php echo get_the_date('jS F Y'); ?> </p>
-                                <p><?php echo get_the_excerpt(); ?></p>
-                                <a class="btn btn-primary rounded-0" href="<?php echo $url; ?>">READ MORE</a>
+                                <div class="newsitemdetails">
+                                    <h3><a href="<?php echo $url; ?>"><?php the_title(); ?></a></h3>
+                                    <p class="post-date"><?php echo get_the_date('jS F Y'); ?> </p>
+                                    <p><?php echo get_the_excerpt(); ?></p>
+                                    <a class="btn btn-primary rounded-0" href="<?php echo $url; ?>">READ MORE</a>
+                                </div>
                             </div>
 
                         <?php endwhile;  wp_reset_query(); ?>
@@ -236,11 +238,13 @@
         <div class="row">
         <?php while( have_rows('information_panel') ) : the_row(); ?>
             <div class="informationitem col-12 col-md-6">
-                <h2><?php the_sub_field('title'); ?></h2>
-                <div class="gradline"></div>
-                <img class="w-100 my-4" src="<?php the_sub_field('image'); ?>">
-                <span class="information-panel-body-text"><?php the_sub_field('body_text'); ?></span>
-                <a href="<?php echo get_sub_field('button_link'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
+                <div class="infodetails">
+                    <h2><?php the_sub_field('title'); ?></h2>
+                    <div class="gradline"></div>
+                    <img class="w-100 my-4" src="<?php the_sub_field('image'); ?>">
+                    <span class="information-panel-body-text"><?php the_sub_field('body_text'); ?></span>
+                    <a href="<?php echo get_sub_field('button_link'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
+                </div>
             </div>
         <?php endwhile; ?>
         </div>

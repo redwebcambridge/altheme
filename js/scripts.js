@@ -8,7 +8,7 @@ jQuery( document ).ready(function() {
         document.querySelector('.cookieconsent_msg').style.display = 'none';
         localStorage.setItem('cookieconsent', true);
       };
-    } 
+    }
   })();
   //SCROLLING
   jQuery('body').scroll(function(){
@@ -42,12 +42,18 @@ jQuery( document ).ready(function() {
     autoplay: true,
     responsive: [
       {
-        breakpoint: 780, 
+        breakpoint: 780,
         settings: {
           slidesToShow: 3,
         }
       },
-    ]  
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+    ]
   });
   //Hide partner arrows if less than 6 slides
   if (!(jQuery('.slick-track .slick-slide').length > 6)) {
@@ -86,7 +92,7 @@ jQuery( document ).ready(function() {
       leftArrow: '<i class="fas fa-chevron-circle-left left"></i>',
       rightArrow: '<i class="fas fa-chevron-circle-right right"></i>',
     });
-  }); 
+  });
   //Menu hover
   //set to under current item
   if( jQuery(".navbar .navbar-nav li.active").length ){
@@ -156,12 +162,19 @@ jQuery( document ).ready(function() {
   jQuery('.read-more-button').on( "click", function() {
     jQuery(this).parent('.staff-text').find('.whitegrad').toggle();
     jQuery(this).parent('.staff-text').find('.desc').toggleClass('increaseheight');
-    jQuery(this).text(jQuery(this).text() == 'More' ? 'Less' : 'More'); 
-    
+    jQuery(this).text(jQuery(this).text() == 'More' ? 'Less' : 'More');
+
   });
-        
-});  
-    
+
+  if (jQuery(window).width() < 500) {
+      jQuery(".homepage-tabs-nav .tab_button").click(function() {
+          var target = jQuery(".tabcontent").offset().top;
+          jQuery('html, body').animate({scrollTop:target}, 500);
+      });
+  }
+
+});
+
 function hovericon(location){
   var newleft = jQuery(location).offset().left;
   var leftpadding = jQuery(location).width()/2-18;
@@ -176,4 +189,3 @@ function googleTranslateElementInit() {
     'google_translate_el'
   );
 }
-

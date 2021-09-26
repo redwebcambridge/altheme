@@ -50,7 +50,7 @@ add_role(
       'read' => true,
       'read_private_pages' => true,
       'read_private_posts' => true,
-      'unfiltered_html' => false,
+      'unfiltered_html' => true,
       'upload_files' => true,
       'list_users' => true,
       'create_users' => true,
@@ -60,6 +60,7 @@ add_role(
       'promote_users' => true,
       'edit_vacancy' => true,
       'edit_theme_options' => true,
+      'update_themes' => false,
     )
 );
 //Vacancy Manager
@@ -77,7 +78,7 @@ add_role(
 //Remove Admin Sections depending on user role
 add_action( 'admin_enqueue_scripts', 'custom_prevent_admin_access' );
 function custom_prevent_admin_access() {
-  if ( !current_user_can( 'unfiltered_html' ) ) {
+  if ( !current_user_can( 'update_themes' ) ) {
     remove_menu_page('tools.php');
     
   }

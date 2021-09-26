@@ -12,7 +12,12 @@ get_header(); ?>
 
       <div class="container">
         <div class="row">
-          <div class="col-12 text-section">
+
+        <div class="col-md-3 text-section">
+            <?php get_template_part('template-parts/sidebar-menu'); ?>
+          </div>
+
+          <div class="col-9 text-section">
             <p class="body-text">
             <?php 
                 $response = wp_remote_get( 'https://anglianlearning.org/wp-json/wp/v2/pages/?slug=about-anglian-learning' );

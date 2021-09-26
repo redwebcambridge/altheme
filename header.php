@@ -217,6 +217,9 @@ if (!class_exists('ACF')) {
                 } else {
                   if (is_category('newsletter')) {
                     $header_text = 'Newsletter';
+                  }
+                  elseif (is_category('the-fountain')) {
+                    $header_text = 'The Fountain';
                   } else {
                     $header_text = get_the_title();
                   }

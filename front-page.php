@@ -22,7 +22,6 @@
                 if (strlen($string) > 500) {
                     $stringCut = substr($string, 0, 500);
                     $endPoint = strrpos($stringCut, ' ');
-                    $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
                 }
                 echo $string;
                 ?>

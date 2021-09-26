@@ -21,6 +21,8 @@ get_header(); ?>
             <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
             <div class="gradline mb-3"></div>
           <?php endif; ?>
+          <p class="body-text"><?php the_field('intro_text') ?></p>
+
 
             <!---Table--->
             <table class="table">

@@ -22,6 +22,7 @@ get_header(); ?>
                 <div class="col">
                   <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
                   <div class="gradline"></div>
+                  <p class="body-text"><?php the_field('intro_text') ?></p>
                 </div>
               </div>
 

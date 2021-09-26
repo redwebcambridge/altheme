@@ -18,7 +18,7 @@
                 <div class="gradline"></div>
                 <div class="tab-text">
                 <?php
-                $string = strip_tags(get_sub_field('content'));
+                $string = get_sub_field('content');
                 if (strlen($string) > 500) {
                     $stringCut = substr($string, 0, 500);
                     $endPoint = strrpos($stringCut, ' ');

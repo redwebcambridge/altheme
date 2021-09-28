@@ -408,14 +408,11 @@ function is_adult_ed_page() {
       };
     }
     if( is_single() ) {
-      $categories = get_categories();
+      $categories = get_the_category(get_the_ID());
       foreach($categories as $category) {
         if (get_field('category_type',$category)=='adultlearning') {
-          $adultcat = $category;
+          return true;
         }
-      }
-      if ( has_category( $adultcat,get_the_ID()) ) {
-        return true;
       }
     }
   } else {
@@ -435,14 +432,11 @@ function is_sports_page() {
       };
     }
     if( is_single() ) {
-      $categories = get_categories();
+      $categories = wp_get_post_categories(get_the_ID());
       foreach($categories as $category) {
         if (get_field('category_type',$category)=='sportscentre') {
-          $sportscat = $category;
+          return true;
         }
-      }
-      if ( has_category( $sportscat,get_the_ID()) ) {
-        return true;
       }
     }
   } else {

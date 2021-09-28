@@ -28,7 +28,7 @@ get_header(); ?>
             <table class="table">
               <thead class="table-head">
                 <tr>
-                  <th scope="col"><p>Name</p></th>
+                  <th scope="col" class="name_col"><p>Name</p></th>
                   <th scope="col"><p>Role</p></th>
                   <th scope="col"><p>Form / Mentor Group</p></th>
                 </tr>

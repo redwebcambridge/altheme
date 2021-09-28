@@ -527,3 +527,15 @@ function login_logo() {
   </style>
    <?php 
   } add_action( 'login_enqueue_scripts', 'login_logo' );
+
+  add_action( 'phpmailer_init', 'wpse8170_phpmailer_init' );
+function wpse8170_phpmailer_init( PHPMailer $phpmailer ) {
+    $phpmailer->Host = 'smtp.office365.com';
+    $phpmailer->Port = 587; // could be different
+    $phpmailer->Username = 'websites@anglianlearning.org'; // if required
+    $phpmailer->Password = SMTP_PASS; // if required
+    $phpmailer->SMTPAuth = true; // if required
+    $phpmailer->SMTPSecure = 'tls'; // enable if required, 'tls' is another possible value
+
+    $phpmailer->IsSMTP();
+}

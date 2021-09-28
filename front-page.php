@@ -22,18 +22,24 @@
                 if (strlen($string) > 500) {
                     $stringCut = substr($string, 0, 500);
                     $endPoint = strrpos($stringCut, ' ');
-                    $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0).'...';
+                    if($endPoint) {
+                       $string = substr($stringCut, 0, $endPoint).'...';
+                    } else {
+                        $string = substr($stringCut, 0);
+                    }
                 }
                 echo $string
                 ?>
+                <p><a href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a></p>
                 </div>
-                <a href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
             </div>
             <?php $logos = get_field('logo_and_icons','option'); ?>
         </div>
     </div>
 <?php
         endwhile;
+        unset($string,$endPoint,$stringCut);
+
     endif; ?>
 </div><!-- .tabcontent -->
 

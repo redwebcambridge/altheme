@@ -22,8 +22,9 @@
                 if (strlen($string) > 500) {
                     $stringCut = substr($string, 0, 500);
                     $endPoint = strrpos($stringCut, ' ');
+                    $string = $endPoint? substr($stringCut, 0, $endPoint) : substr($stringCut, 0).'...';
                 }
-                echo $string;
+                echo $string
                 ?>
                 </div>
                 <a href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>

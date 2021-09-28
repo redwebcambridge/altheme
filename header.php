@@ -181,7 +181,10 @@ if (!class_exists('ACF')) {
         </button>
         <?php
               if ( is_sports_page() ) {
-                $header_text = get_the_archive_title();
+                if (is_archive()) {
+                  $term = get_queried_object();
+                  $header_text = single_cat_title('',false);
+                }
                 if(empty($header_text) || $header_text == 'Archives' ){
                   $header_text = get_the_title();
                 }
@@ -197,7 +200,10 @@ if (!class_exists('ACF')) {
                 ));
               }
               elseif ( is_adult_ed_page() ) {
-                $header_text = get_the_archive_title();
+                if (is_archive()) {
+                  $term = get_queried_object();
+                  $header_text = single_cat_title('',false);
+                }
                 if(empty($header_text) || $header_text == 'Archives' ){
                   $header_text = get_the_title();
                 }

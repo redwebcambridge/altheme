@@ -29,6 +29,13 @@ if (get_field('activate_sport_centre','option')) {
   $sport_logos = get_field('logo_and_icons','option');
 }
 
+//INCREASE FONT FOR 
+if (get_field('school_id','option') == "mpa") {
+  $fontsize = '1.1em';
+} else {
+  $fontsize = '1em';
+}
+
 $compiler = new ScssPhp\ScssPhp\Compiler();
 $compiler->setSourceMap(ScssPhp\ScssPhp\Compiler::SOURCE_MAP_INLINE);
 $source_scss = get_template_directory() . '/sass/style.scss';
@@ -57,7 +64,7 @@ $variables = [
   '$siteicon' => '"'.$logos['icon']['url'].'"',
   '$footerbgimage'=> '"'.get_field('footer_background_image', 'option').'"',
   //Font size - this will need an if statement depending on what font it is
-  '$bodyfontsize'=> '1em',
+  '$bodyfontsize'=> $fontsize,
   '$bodylineheight'=> '1.6em',
 
   //Adult colours

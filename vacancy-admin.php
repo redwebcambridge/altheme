@@ -18,9 +18,6 @@
 //IF ADDING OR UPDATING (not trashing)
 if($_POST) : 
     if ($_POST['publish']) :
-
-      echo 'starting publish';
-
       $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
       $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
 
@@ -55,11 +52,40 @@ if($_POST) :
       }
 
     elseif ($_POST['update']) :
-      
+
       try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
         $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
 
+      if (file_exists($_FILES['application']['tmp_name'])) {
+        $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
+        $update_data = [
+          'vac_title' => $_POST['post_title'],
+          'vac_sub_title' => $_POST['subtitle'],
+          'vac_salary' => $_POST['salary'],
+          'vac_closing_date' => $_POST['closing'],
+          'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
+          'live' => 1,
+          'id' => $_POST['updateid'],
+          'application_form' => $_FILES['application']['name'],
+          'listing_type' => $_POST['listing_type']
+        ];
+        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form,live=:live,listing_type=:listing_type WHERE id=:id");
+      } elseif (file_exists($_FILES['recruitment']['tmp_name'])) {
+        $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
+        $update_data = [
+          'vac_title' => $_POST['post_title'],
+          'vac_sub_title' => $_POST['subtitle'],
+          'vac_salary' => $_POST['salary'],
+          'vac_closing_date' => $_POST['closing'],
+          'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
+          'live' => 1,
+          'id' => $_POST['updateid'],
+          'recruitment_pack' => $_FILES['recruitment']['name'],
+          'listing_type' => $_POST['listing_type']
+        ];
+        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,recruitment_pack=:recruitment_pack,live=:live,listing_type=:listing_type WHERE id=:id");
+      } elseif (file_exists($_FILES['recruitment']['tmp_name']) && file_exists($_FILES['application']['tmp_name']))  {
         $update_data = [
           'vac_title' => $_POST['post_title'],
           'vac_sub_title' => $_POST['subtitle'],
@@ -72,15 +98,22 @@ if($_POST) :
           'recruitment_pack' => $_FILES['recruitment']['name'],
           'listing_type' => $_POST['listing_type']
         ];
-        $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
-        $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
-
-        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form,recruitment_pack=:recruitment_pack, live=:live,listing_type=:listing_type WHERE id=:id");
-      
+        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form,recruitment_pack=:recruitment_pack,live=:live,listing_type=:listing_type WHERE id=:id");
+      } else {
+        $update_data = [
+          'vac_title' => $_POST['post_title'],
+          'vac_sub_title' => $_POST['subtitle'],
+          'vac_salary' => $_POST['salary'],
+          'vac_closing_date' => $_POST['closing'],
+          'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
+          'live' => 1,
+          'id' => $_POST['updateid'],
+          'listing_type' => $_POST['listing_type']
+        ];
+        $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,live=:live,listing_type=:listing_type WHERE id=:id");
+      }
         $sql->execute($update_data);  
-
         $update_id = $_POST['updateid'];
-
       } catch(PDOException $e) {
         echo $sql . "<br>" . 'update' . $e->getMessage();
       }
@@ -133,8 +166,6 @@ if ( isset($_GET['action']) && $_GET['action']=='trash' ) :
     $sql->execute([
       'id' => $_GET['id'],
     ]); 
-    
-    
   } catch(PDOException $e) {
     echo $sql . "<br>" . 'update' . $e->getMessage();
   }
@@ -222,13 +253,13 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
 
       ?>
 
-      <div id="acf_after_title-sortables" >               
-        
+      <div id="acf_after_title-sortables" >
+
       <p><a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>" target="_blank"><?php if(isset($vacancy)){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?></a></p>
-   
+
         <div id="vacancy_fields" class="postbox acf-postbox">
 
-          <div class="acf-field" style="flex-grow:2" >
+          <div class="acf-field" style="width:40%" >
             <h2>Sub-Title</h2>
             <input type="text" name="subtitle" required value="<?php if(isset($vacancy)){echo $vacancy['vac_sub_title'];} ?>">
           </div>
@@ -240,9 +271,10 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
 
           <div class="acf-field">
             <h2>Closing Date</h2>
-            <input type="date" name="closing" required value="<?php if(isset($vacancy)){echo $vacancy['vac_closing_date'];} ?>" >
+            <input type="datetime-local" name="closing" required value="<?php if(isset($vacancy)){echo $vacancy['vac_closing_date'];} ?>" >
           </div>
-          <div class="acf-field listing_type" style="width:100%">
+
+          <div class="acf-field" >
             <h2>Listing Type</h2>
 
             <select name="listing_type">
@@ -250,9 +282,8 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
               <?php if (get_field('activate_adult_learning','option')) : ?><option value="adult_learning" <?php if(isset($vacancy) && $vacancy['listing_type'] == "adult_learning"){echo 'selected';} ?>>Adult Learning Listing</option><?php endif; ?>
               <?php if (get_field('activate_sport_centre','option')) : ?><option value="sports_center" <?php if(isset($vacancy) && $vacancy['listing_type'] == "sports_center"){echo 'selected';} ?>>Sports Center Listing</option><?php endif; ?>
             </select>
-
-
           </div>
+
           <div class="acf-field" style="width:100%">
            <h2>Job Description</h2>
 

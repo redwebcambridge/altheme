@@ -55,16 +55,7 @@
   #mainnav {
     border-top-color: $sportprimarycolour;
     li {
-      &:last-child {
-        a {
-          background-color: $sportprimarycolour;
-          color: #ffffff;
-          &:hover {
-            background-color: $sportsecondarycolour;
-            color: #fff;
-          }
-        }
-      }
+      
       a {
         &:not(.btn) {
           color: $sportprimarycolour;
@@ -81,13 +72,22 @@
           }
         }
       }
+      &:last-child {
+        a {
+          background-color: $sportprimarycolour;
+          color: #fff;
+          &:hover {
+            background-color: $sportsecondarycolour;
+            color: #fff;
+          }
+        }
+      }
     }
 }
   &.page-template-vacancies .log_interest {
     background: $sportsecondarycolour;
   } 
-  
-    .text-section a {
+    .text-section &:not(#mainnav) a {
       &:not(.btn) {
         color: $sportprimarycolour;
       }

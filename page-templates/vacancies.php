@@ -64,7 +64,7 @@ get_header(); ?>
             try {
               $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);
               $conn->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, PDO::ERRMODE_EXCEPTION);
-              $sql = $conn->prepare("SELECT * FROM live WHERE school=:school AND live=1 AND listing_type=:listing_type ORDER BY id DESC");
+              $sql = $conn->prepare("SELECT * FROM live WHERE school=:school AND live=1 AND listing_type=:listing_type ORDER BY vac_closing_date ASC");
               $sql->execute([
                 'school' => $school,
                 'listing_type' => $listing_type,
@@ -84,7 +84,8 @@ get_header(); ?>
               }
                echo '<div class="vacancy" id="vacancy_'.$vacancy['id'].'"><h3>'.$vacancy['vac_title'].'</h3>';
                echo '<h4>'.$vacancy['vac_sub_title'].'</h4>';
-               echo '<p class="closingdate">Closing Date: '.$closingdate->format('d/m/Y').'</p>';
+               echo '<p class="closingdate">Closing Date: '.$closingdate->format('d/m/Y G:i');
+               echo '<br>Salary: '.$vacancy['vac_salary'].'</p>';
                echo '<a class="btn btn-primary" data-toggle="collapse" href="#content'.$i.'" role="button" aria-expanded="false" aria-controls="content'.$i.'">View details</a>';
                echo '<div class="content collapse multi-collapse" id="content'.$i.'">';
                echo stripslashes($vacancy['vac_description']);
@@ -114,6 +115,8 @@ get_header(); ?>
 
           <!---Body section right - End--->
         </div>
+        <?php get_template_part('template-parts/downloads'); ?>
+
       </div>
 
 </section>

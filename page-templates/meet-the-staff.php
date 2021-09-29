@@ -30,7 +30,15 @@ get_header(); ?>
                 <tr>
                   <th scope="col" class="name_col"><p>Name</p></th>
                   <th scope="col"><p>Role</p></th>
-                  <th scope="col"><p>Form / Mentor Group</p></th>
+                  <th scope="col">
+                    <?php 
+                    if (get_field('school_id','option') == "svc") {
+                      echo '<p>Mentor Group</p>';
+                    } else {
+                      echo '<p>Form / Mentor Group</p>';
+                    }
+                    ?>
+                  </th>
                 </tr>
               </thead>
               <tbody>

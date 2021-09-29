@@ -3,34 +3,48 @@ jQuery( document ).ready(function() {
   (function() {
     if (!localStorage.getItem('cookieconsent')) {
       document.querySelector('.cookieconsent_msg').style.display = 'flex';
+      document.querySelector('.backtotop').classList.remove("cookieaccepted");
       document.querySelector('.allow-button').onclick = function(e) {
         e.preventDefault();
         document.querySelector('.cookieconsent_msg').style.display = 'none';
         localStorage.setItem('cookieconsent', true);
+        document.querySelector('.backtotop').classList.add("cookieaccepted");
       };
+    } else {
+      document.querySelector('.backtotop').classList.add("cookieaccepted");
     }
   })();
+  //BACK TO TOP
+  jQuery('.backtotop').on("click", function () {
+  //  jQuery("html, body").scrollTop(0,13000);
+    jQuery("html, body").animate({ scrollTop: 0 });
+
+  });
   //SCROLLING
   jQuery('body').scroll(function(){
     var windowtop = jQuery('body').scrollTop();
     jQuery('.container-white-laurel').css('background-position-y',950-(windowtop/5));
   });
   //WINDOW RESIZE
-  jQuery(window).resize(function(){
-    var current = jQuery(".navbar-nav  li.active");
-    hovericon(current);
-    jQuery('html').css('opacity','0');
-  });
-
-  jQuery(window).bind('resizeEnd', function() {
-    jQuery('html').css('opacity','1');
-  });
-  jQuery(window).resize(function() {
-      if(this.resizeTO) clearTimeout(this.resizeTO);
-      this.resizeTO = setTimeout(function() {
-        jQuery(this).trigger('resizeEnd');
-      }, 500);
-  });
+    jQuery(window).resize(function(){
+        if (jQuery('body').width() > 750) {
+          var current = jQuery(".navbar-nav  li.active");
+          hovericon(current);
+          jQuery('html').css('opacity','0');
+        }
+    });
+    jQuery(window).bind('resizeEnd', function() {
+      jQuery('html').css('opacity','1');
+    });
+    jQuery(window).resize(function() {
+      if (jQuery('body').width() > 750) {
+        if(this.resizeTO) clearTimeout(this.resizeTO);
+        this.resizeTO = setTimeout(function() {
+          jQuery(this).trigger('resizeEnd');
+        }, 500);
+      }
+    });
+  
   //Partners
   jQuery('.partner-slider').slick({
     speed: 1000,

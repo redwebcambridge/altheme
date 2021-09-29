@@ -30,7 +30,7 @@ get_header(); ?>
                 <tr>
                   <th scope="col" class="name_col"><p>Name</p></th>
                   <th scope="col"><p>Role</p></th>
-                  <th scope="col">
+                  <th scope="col" style="text-align:right" class="form">
                     <?php 
                     if (get_field('school_id','option') == "svc") {
                       echo '<p>Mentor Group</p>';
@@ -69,7 +69,7 @@ get_header(); ?>
                     <p><?php the_sub_field('role'); ?></p>
                 </td>
 
-                  <td>
+                  <td style="text-align:right">
                     <p><?php the_sub_field('form__mentor_group'); ?><p>
                   </td>
                 </tr>

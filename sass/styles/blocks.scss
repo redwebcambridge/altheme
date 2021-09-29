@@ -25,7 +25,26 @@ body{
       margin: 0 auto;
     }
    }
-   
+  .backtotop {
+    width: 54px;
+    height: 54px;
+    line-height: 58px;
+    text-align: center;
+    background:#fff;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 95px;
+    right:0;
+    font-size: 25px;
+    color: $medium-grey;
+    cursor: pointer;
+    box-shadow: 2px 1px 57px 0px rgba(0,0,0,0.21);
+    z-index:99999;
+    margin-right: 10px;
+    &.cookieaccepted {
+      bottom: 10px;
+    }
+  } 
   .spinner-grow {
     position:absolute;
     top:45vh;

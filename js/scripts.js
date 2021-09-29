@@ -164,7 +164,7 @@ jQuery( document ).ready(function() {
   });
 
   //Add search to burger menu
-    var search_html = jQuery('.google_search').html();
+    var search_html = jQuery('.google_search #searchform').html();
     search_html = '<div id="mobilesearch">'+search_html+'</div>';
     jQuery('#mainnav').prepend(search_html);
 

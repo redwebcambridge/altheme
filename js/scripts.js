@@ -92,10 +92,7 @@ jQuery( document ).ready(function() {
     adaptiveHeight: true,
     fade: true
   });
-  //Search Button
-  jQuery('#searchform button, #mobilesearch button').on("click", function () {
-    jQuery('#searchform').submit();
-  });
+    
   //Lightbox
    jQuery('body').on('click', '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();
@@ -164,9 +161,14 @@ jQuery( document ).ready(function() {
   });
 
   //Add search to burger menu
-    var search_html = jQuery('.google_search #searchform').html();
+    var search_html = jQuery('.google_search #searchform').parent().html();
     search_html = '<div id="mobilesearch">'+search_html+'</div>';
     jQuery('#mainnav').prepend(search_html);
+
+   //Search Button
+  jQuery('#searchform button').on("click", function () {
+    jQuery('#searchform').submit();
+  });
 
   //Remove top pixels when anchor link present
   function offsetAnchor() {

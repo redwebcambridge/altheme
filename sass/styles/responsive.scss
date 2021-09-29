@@ -48,11 +48,15 @@
     }
     .meet-the-staff2 {
         .staff-section {
-            max-width:100%;
+            width:100%;
             display:block;
             .thumbnail {
-                min-width:100%;
-                height:220px;
+                width:30%;
+                height:255px;
+            }
+            .member-block-image-ghost {
+                width: 35%;
+                height:235px;
             }
         }
     }
@@ -209,6 +213,15 @@
     .featured-top-image {
         margin-bottom:20px;
         padding:100px 0;
+        &.bottomleft {
+            padding: 100px 0 0 0;
+        }
+        &.center {
+            padding: 50px 0 50px 0;
+        }
+        h1 {
+            font-size:22px;
+        }
     }
     #sidebar-menu {
         margin-left:-11px;
@@ -324,7 +337,6 @@
 
         }
     }
-
     #stickynav {
         width: auto;
         display: flex;
@@ -333,7 +345,6 @@
         border-radius: 10px;
         margin: 10px;
     }
-
     body.home {
         .tabcontent {
             border-top:solid 20px white;

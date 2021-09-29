@@ -159,17 +159,28 @@ jQuery( document ).ready(function() {
   window.setTimeout(offsetAnchor, 0);
 
   //Staff With pics page read more
-
   jQuery('.read-more-button').on( "click", function() {
     jQuery(this).parent().find('.allcontent,.desc_short').toggle();
     jQuery(this).text(jQuery(this).text() == 'More' ? 'Less' : 'More');
   });
-
+  //Homepage tabs on mobile
   if (jQuery(window).width() < 500) {
       jQuery(".homepage-tabs-nav .tab_button").click(function() {
           var target = jQuery(".tabcontent").offset().top;
           jQuery('html, body').animate({scrollTop:target}, 500);
       });
+  }
+  //Register an Interest form on vacancies page
+  if (document.body.classList.contains('page-template-vacancies')) {
+    jQuery('input:file').change(function(e){
+      var file = '<p style="font-weight:700;"><i class="fas fa-file-alt"></i>&nbsp;'+e.target.files[0].name+'</p>';
+      jQuery('.cv_upload small').append(file);
+    });
+    jQuery('.vacancy .btn-primary').click(function(){ 
+      jQuery(this).text(function(i,old){
+        return old=='View details' ?  'Hide details' : 'View details';
+      });
+    });
   }
 
 });

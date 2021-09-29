@@ -120,18 +120,6 @@ get_header(); ?>
       </div>
 
 </section>
-<script>
-      $('input:file').change(function(e){
-      var file = '<p style="font-weight:700;">'+e.target.files[0].name+'</p>';
-      $('.cv_upload small').append(file)
-    });
-    $('.vacancy .btn-primary').click(function(){ //you can give id or class name here for $('button')
-    $(this).text(function(i,old){
-        return old=='View details' ?  'Hide details' : 'View details';
-    });
-});
-</script>
-
 
 <?php endwhile; endif; ?>
 

@@ -93,7 +93,7 @@ jQuery( document ).ready(function() {
     fade: true
   });
   //Search Button
-  jQuery('#searchform button').on("click", function () {
+  jQuery('#searchform button, #mobilesearch button').on("click", function () {
     jQuery('#searchform').submit();
   });
   //Lightbox

@@ -1,7 +1,7 @@
 .mobileviewtable {
     display:none;
 }
-.mobilesearch {
+.mobilesearch, #mobilesearch {
     display:none;
 }
 @media all and (max-width: 992px) {
@@ -20,6 +20,9 @@
             padding:0;
             z-index:9999999;
         }
+    }
+    #mobilesearch {
+        display: block;
     }
     .navbar {
         position: fixed;

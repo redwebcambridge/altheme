@@ -163,6 +163,11 @@ jQuery( document ).ready(function() {
     }
   });
 
+  //Add search to burger menu
+    var search_html = jQuery('.google_search').html();
+    search_html = '<div id="mobilesearch">'+search_html+'</div>';
+    jQuery('#mainnav').prepend(search_html);
+
   //Remove top pixels when anchor link present
   function offsetAnchor() {
     if (location.hash.length !== 0) {

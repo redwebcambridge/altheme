@@ -25,7 +25,7 @@ get_header(); ?>
 
 
             <!---Table--->
-            <table class="table">
+            <table class="table largetableview">
               <thead class="table-head">
                 <tr>
                   <th scope="col" class="name_col"><p>Name</p></th>
@@ -82,6 +82,41 @@ get_header(); ?>
 
             <!---Table end--->
 
+
+            <!---Mobile view Table--->
+
+            <?php if( get_field('table_of_staff') ): ?>
+            <?php while( the_repeater_field('table_of_staff') ): ?>
+
+                <table class="table mobileviewtable">
+                    <tbody>
+                        <tr>
+                            <td width="30%" class="mobileviewlabel"><p>Name</p></td>
+                            <td><p><?php the_sub_field('name'); ?><br><a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a></p></td>
+                        </tr>
+                        <tr>
+                            <td class="mobileviewlabel"><p>Role</p></td>
+                            <td><p><?php the_sub_field('role'); ?></p></td>
+                        </tr>
+                        <?php if (get_sub_field('form__mentor_group')) { ?>
+                        <tr>
+                            <td class="mobileviewlabel"><p>Form / Mentor Group</p></td>
+                            <td><p><?php the_sub_field('form__mentor_group'); ?><p></td>
+                        </tr>
+                        <?php } ?>
+                        <?php if (get_sub_field('department')) { ?>
+                        <tr>
+                            <td class="mobileviewlabel"><p>Department</p></td>
+                            <td><p><?php the_sub_field('department'); ?></p></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+            <?php endwhile; ?>
+            <?php endif; ?>
+
+            <!---Mobile view Table end--->
           </div>
 
           <!---Body section - End--->

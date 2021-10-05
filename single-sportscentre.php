@@ -41,38 +41,38 @@ get_header();
 
               <h3>Course Details</h3>
               <div class="row course_details">
-                  <?php 
+                  <?php
                   if(get_field('day') !== '--Please Select--') { ?>
-                  <div class="col">
+                  <div class="col-6 col-md-4 col-lg-2">
                    <strong class="table_head">Day</strong>
                    <span><?php the_field('day'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('time')) { ?>
-                  <div class="col">
+                  <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Time</strong>
                     <span><?php the_field('time'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('weeksterm')) { ?>
-                  <div class="col">
+                  <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Weeks/Term</strong>
                     <span><?php the_field('weeksterm'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('start_date')) { ?>
-                  <div class="col">
+                  <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Start Date</strong>
                     <span><?php the_field('start_date'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('course_cost')) { ?>
-                  <div class="col">
+                  <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Cost</strong>
                     <span><?php the_field('course_cost'); ?></span>
                   </div>
                   <?php } ?>
-                  <div class="col-12 col-md-2">
+                  <div class="col-6 col-md-4 col-lg-2">
                         <a class="btn btn-primary rounded-0" href="<?php the_field('wisepay_url'); ?>">Book now</a>
                   </div>
               </div>

@@ -73,10 +73,10 @@ if (!class_exists('ACF')) {
             <?php } ?>
         </div>
         <!-- grey buttons -->
-        <div class="col-12 col-md-7 pt-4 searchtopbuttonholder">
+        <div class="col-12 col-lg-7 pt-4 searchtopbuttonholder">
               <div class="row justify-content-end google_search">
-                <div class="col-4 px-0"><div id="google_translate_el"></div></div>
-                <div class="col-4 pl-0"><?php get_search_form(); ?></div>
+                <div class="col-md-6 col-lg-4 px-0"><div id="google_translate_el"></div></div>
+                <div class="col-md-6 col-lg-4 pl-0"><?php get_search_form(); ?></div>
               </div>
               <div class="row" id="top_buttons">
               <?php

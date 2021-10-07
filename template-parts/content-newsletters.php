@@ -9,9 +9,9 @@
 
 ?>
 
-<div class="col-12 col-md-2 newslettercontainer">
+<div class="col-12 col-md-4 col-lg-2 newslettercontainer">
 	<div class="col-12 newseventimage">
-		<?php 
+		<?php
 		$download = get_field('pdf_upload'); ?>
 		<a href="<?php echo $download['url']; ?>" target="_blank">
 			<div class="newseventimagecontainer newsletter" style="background-image:url(<?php echo $download['icon']; ?>);"></div>

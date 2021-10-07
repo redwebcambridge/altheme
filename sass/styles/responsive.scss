@@ -34,7 +34,7 @@
     }
     .navbar {
         position: fixed;
-        top: 8px;
+        top: 26px;
         bottom: 0;
         right: 0;
         width: 100%;
@@ -86,17 +86,17 @@
     .mobilesearch {
         display:block;
     }
-}
-@media all and (max-width: 770px) {
-    body {
-        padding-top:0;
-    }
-    body .line {
-        display:none;
-    }
 
-    .navbar {
-        top: 0;
+    .offcanvas-collapse.open {
+        display: block !important;
+        ul {
+            flex-direction: column !important;
+        }
+    }
+    .offcanvas-collapse {
+        top:0;
+        z-index:999999;
+        padding-top:90px;
     }
 
     .searchtopbuttonholder {
@@ -107,6 +107,96 @@
             display:none;
         }
     }
+    header {
+        z-index:1;
+        .al-logo {
+            order:-1;
+            width: 36%;
+            padding-top:8px;
+        }
+        .logo-container {
+            order:-1;
+            margin-left: 70px;
+            width: 40%;
+        }
+    }
+    #top_buttons ul:first-child {
+        margin: 5px 0 0 0 ;
+        padding: 0;
+        li {
+            margin:10px 0 10px 10px !important;
+            background-color:#fff !important;
+            border: 1px solid $medium-grey;
+            font-weight: bolder;
+            flex-grow: 1;
+            text-align: center;
+            &:first-child {
+                margin-left:0 !important;
+            }
+            a {
+                color:$medium-grey;
+                font-weight: $bold-weight;
+                padding: 9px 10px 5px 10px;
+            }
+            &.hasdropdown {
+                display: block;
+                justify-content: center !important;
+                a {
+                    padding: 9px 10px 5px 10px !important;
+                }
+                i {
+                    display: none;
+                }
+                .dropdown-menu {
+                    margin: 0;
+                    .double-sub {
+                        width: 100%;
+                    }
+                    li {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .name-position {
+        margin-bottom:15px;
+    }
+    .contact-details {
+        display:block !important;
+        justify-content:flex-start !important;
+        p {
+            margin:0 0 10px 0 !important;
+        }
+    }
+
+    #sidebar-menu {
+        li {
+            &:hover {
+                .sub-menu {
+                    li {
+                        a {
+                            font-size:16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media all and (max-width: 770px) {
+    body {
+        padding-top:0;
+    }
+    body .line {
+        display:none;
+    }
+
+    .navbar {
+        top: 26px;
+    }
+
     .navbar.fixed-top {
         left:auto;
     }
@@ -201,11 +291,6 @@
             padding:0 15px;
         }
     }
-    .offcanvas-collapse {
-        top:0;
-        z-index:999999;
-        padding-top:90px;
-    }
     .featured-top-image {
         margin-bottom:97px;
     }
@@ -235,25 +320,6 @@
             font-size:22px;
         }
     }
-    #sidebar-menu {
-        margin-left:-11px;
-        margin-right:-11px;
-        display:flex;
-        flex-flow: wrap;
-        li {
-            border:1px solid #fff;
-            background:$primarycolour;
-            font-size:0.85rem;
-            flex:0 0 50%;
-            max-width:50%;
-            .sub-menu {
-                li {
-                    width:100%;
-                    max-width:100%;
-                }
-            }
-        }
-    }
     .course_details {
         div {
             margin-bottom:20px;
@@ -262,38 +328,7 @@
     .slick-controls-lower {
         display:none !important;
     }
-    .contact-box {
-        width:95vw;
-        margin:30px 10px 0 !important;
-        .name-position {
-            margin-bottom:20px;
-        }
-        .contact-details {
-            justify-content:inherit !important;
-            display:block !important;
-            p {
-                margin:0 0 10px 0;
-                float: left;
-            }
-        }
-    }
-    .adult-learning-page {
-        .contact-box {
-            width:95vw;
-            margin:30px 10px 0 !important;
-            .name-position {
-                margin-bottom:20px;
-            }
-            .contact-details {
-                justify-content:inherit !important;
-                display:block !important;
-                p {
-                    margin:0 0 10px 0;
-                    float: left;
-                }
-            }
-        }
-    }
+
     .insta-gallery {
         .sbi_item {
             width:50% !important;
@@ -302,53 +337,6 @@
     }
 
 
-
-    header {
-        z-index:1;
-        .al-logo {
-            order:-1;
-            width: 36%;
-            padding-top:8px;
-        }
-        .logo-container {
-            order:-1;
-            margin-left: 70px;
-            width: 40%;
-        }
-        #top_buttons ul:first-child {
-            margin: 5px 0 0 0 ;
-            padding: 0;
-            li {
-                margin: 4px;
-                background-color:#fff ;
-                border: 1px solid $medium-grey;
-                font-weight: bolder;
-                flex-grow: 1;
-                    text-align: center;
-                a {
-                    color:$medium-grey;
-                    font-weight: $bold-weight;
-                    padding: 9px 10px 5px 10px;
-                }
-                &.hasdropdown {
-                    display: block;
-                    i {
-                        display: none;
-                    }
-                    .dropdown-menu {
-                        margin: 0;
-                        .double-sub {
-                            width: 100%;
-                        }
-                        li {
-                            border: none;
-                        }
-                    }
-                }
-            }
-
-        }
-    }
     #stickynav {
         width: auto;
         display: flex;
@@ -408,8 +396,61 @@
         }
     }
 
+    .newsevents {
+        margin-right:auto !important;
+        margin-left:auto !important;
+    }
+
 }
+
+@media all and (max-width: 767px) {
+    #sidebar-menu {
+        margin-left:-11px;
+        margin-right:-11px;
+        display:flex;
+        flex-flow: wrap;
+        li {
+            border:1px solid #fff;
+            background:$primarycolour;
+            font-size:0.85rem;
+            flex:0 0 50%;
+            max-width:50%;
+            .sub-menu {
+                li {
+                    width:100%;
+                    max-width:100%;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 600px) {
+    .navbar {
+        top:15px;
+    }
+    #menu-top-buttons {
+        padding:0 10px !important;
+    }
+}
+
+@media all and (max-width: 504px) {
+    #top_buttons ul:first-child {
+        li {
+            &.hasdropdown {
+                margin-top:0 !important;
+                margin-left:0 !important;
+            }
+        }
+    }
+}
+
 @media all and (max-width: 426px) {
+
+    .navbar {
+        top:6px;
+    }
+
     .video-section {
         .container {
             .row {
@@ -524,6 +565,32 @@
 
 }
 
-@media all and (max-width: 321px) {
+@media all and (max-width: 382px) {
+    #menu-top-buttons {
+        padding:0 20px 0 10px !important;
+    }
+    #top_buttons ul:first-child {
+        li {
+            &:first-child {
+                margin-left:10px !important;
+            }
+            &.hasdropdown {
+                margin:10px 0 10px 10px !important;
+            }
+        }
+    }
+}
 
+@media all and (max-width: 321px) {
+    .navbar {
+        top:0;
+    }
+}
+
+@media all and (max-width: 290px) {
+    header {
+        .logo-container {
+            margin-left:50px;
+        }
+    }
 }

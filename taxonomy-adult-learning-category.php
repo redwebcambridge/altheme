@@ -7,7 +7,7 @@
  * @package Anglian_Learning
  */
 
-get_header();  
+get_header();
 ?>
 <div class="adult-learning-page">
 	<div class="container">
@@ -29,7 +29,7 @@ get_header();
 	        <div class="gradline"></div>
 	        <p class="body-text"><?php echo term_description(); ?></p>
 
-			<?php 
+			<?php
 			$tax_ID = get_queried_object()->term_id;
 			$courses = get_posts(
 				array(
@@ -49,17 +49,17 @@ get_header();
 			<?php
 			foreach ($courses as $course) : 
 				$imageurl = get_the_post_thumbnail_url($course->ID);
-				echo '<div class="col-md-4 course"><a href="'.esc_url( get_permalink( $course->ID) ).'">';
+				echo '<div class="col-md-6 col-lg-4 course"><a href="'.esc_url( get_permalink( $course->ID) ).'">';
                 echo '<div class="course-thumbnail" style="background-image:url('.$imageurl.')"></div><p class="course-name">'.$course->post_title.'</p>';
                 echo '</a></div>';
-			endforeach; 
+			endforeach;
 			?>
 			</div>
-			<?php 
-			if (!$courses) : 
-				echo '<div class="alert alert-secondary" role="alert"><em>Sorry, there are currently no classes available</em></div>'; 
+			<?php
+			if (!$courses) :
+				echo '<div class="alert alert-secondary" role="alert"><em>Sorry, there are currently no classes available</em></div>';
 			endif; ?>
-			
+
 			<?php get_template_part('template-parts/adult-learning-contact'); ?>
 
 		</div>

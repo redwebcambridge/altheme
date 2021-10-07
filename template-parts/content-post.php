@@ -9,9 +9,9 @@
 
 ?>
 
-<div class="col-12 col-md-4 newseventcontainer">
+<div class="col-12 col-md-6 col-lg-4 newseventcontainer">
 	<div class="col-12 newseventimage">
-		<?php 
+		<?php
 		$imageurl = get_field('thumbnail')['url'];
 		if(empty($imageurl)){
 			$imageurl = get_the_post_thumbnail_url();

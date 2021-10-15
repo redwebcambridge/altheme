@@ -76,7 +76,6 @@ get_header(); ?>
 
             $i=0;
             foreach ($vacancies as $vacancy){
-              $i++;
               $closingdate = new DateTime($vacancy['vac_closing_date']);
               $now = new DateTime();
               if($closingdate < $now) {
@@ -94,6 +93,7 @@ get_header(); ?>
                //Recruitment Pack
                if ($vacancy['recruitment_pack']){echo '<a class="btn btn-secondary btn-sm" target="_blank" href="?download='.$vacancy['id'].'&type=recruitment_pack" >Download Recruitment Pack</a></p>';}
                echo '</div></div>';
+               $i++;
             }
             if ($i==0){
               echo '<p>There are currently no vacancies. Please log an interest with us for future opportunities.</p>';

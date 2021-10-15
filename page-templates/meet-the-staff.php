@@ -31,7 +31,7 @@ get_header(); ?>
                   <th scope="col" class="name_col"><p>Name</p></th>
                   <th scope="col"><p>Role</p></th>
                   <th scope="col" style="text-align:right" class="form">
-                    <?php 
+                    <?php
                     if (get_field('school_id','option') == "svc") {
                       echo '<p>Mentor Group</p>';
                     } else {
@@ -88,26 +88,26 @@ get_header(); ?>
             <?php if( get_field('table_of_staff') ): ?>
             <?php while( the_repeater_field('table_of_staff') ): ?>
 
-                <table class="table mobileviewtable">
-                    <tbody>
+                <table width="100%" class="table mobileviewtable">
+                    <tbody width="100%">
+                        <?php if (get_sub_field('department')) { ?>
+                        <tr>
+                            <td width="30%" class="mobileviewlabel departmentlabel"><p>Department</p></td>
+                            <td><p><?php the_sub_field('department'); ?></p></td>
+                        </tr>
+                        <?php } ?>
                         <tr>
                             <td width="30%" class="mobileviewlabel"><p>Name</p></td>
                             <td><p><?php the_sub_field('name'); ?><br><a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a></p></td>
                         </tr>
                         <tr>
-                            <td class="mobileviewlabel"><p>Role</p></td>
+                            <td width="30%" class="mobileviewlabel"><p>Role</p></td>
                             <td><p><?php the_sub_field('role'); ?></p></td>
                         </tr>
                         <?php if (get_sub_field('form__mentor_group')) { ?>
                         <tr>
-                            <td class="mobileviewlabel"><p>Form / Mentor Group</p></td>
+                            <td width="30%" class="mobileviewlabel"><p>Form / Mentor Group</p></td>
                             <td><p><?php the_sub_field('form__mentor_group'); ?><p></td>
-                        </tr>
-                        <?php } ?>
-                        <?php if (get_sub_field('department')) { ?>
-                        <tr>
-                            <td class="mobileviewlabel"><p>Department</p></td>
-                            <td><p><?php the_sub_field('department'); ?></p></td>
                         </tr>
                         <?php } ?>
                     </tbody>

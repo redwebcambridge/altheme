@@ -84,7 +84,7 @@ get_header(); ?>
               }
                echo '<div class="vacancy" id="vacancy_'.$vacancy['id'].'"><h3>'.$vacancy['vac_title'].'</h3>';
                echo '<h4>'.$vacancy['vac_sub_title'].'</h4>';
-               echo '<p class="closingdate">Closing Date: '.$closingdate->format('l dS F Y g:iA');
+               echo '<p class="closingdate">Closing Date: '.$closingdate->format('l j F Y g:i a');
                echo '<br>Salary: '.$vacancy['vac_salary'].'</p>';
                echo '<a class="btn btn-primary" data-toggle="collapse" href="#content'.$i.'" role="button" aria-expanded="false" aria-controls="content'.$i.'">View details</a>';
                echo '<div class="content collapse multi-collapse" id="content'.$i.'">';
@@ -96,7 +96,7 @@ get_header(); ?>
                echo '</div></div>';
             }
             if ($i==0){
-              echo '<p><em>There are currently no Vacancies</em></p>';
+              echo '<p>There are currently no vacancies. Please log an interest with us for future opportunities.</p>';
             }
             ?>
           </div>

@@ -14,7 +14,7 @@
     if (is_category()){
       $category = get_queried_object();
       $header_text = $category->name;
-      $featuredimg = get_field('header_image',$category);
+      $featuredimg = get_field('image', $category);
       if(empty($featuredimg)){
         $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
       }

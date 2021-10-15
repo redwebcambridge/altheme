@@ -224,7 +224,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                Registration Number: <?php the_field('company_registration_number','option'); ?>
+                                Company registration number: 07564749
                             </div>
                             <div class="col text-right">
                                 Designed & Developed by <a href="https://www.redgraphic.co.uk/">Red Graphic</a>

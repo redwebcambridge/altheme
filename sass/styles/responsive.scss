@@ -14,6 +14,32 @@ a[href^="tel"] {
     body {
         padding-top:0;
     }
+    .featured-top-image {
+        margin-bottom:20px;
+        padding:100px 0;
+        &.bottomleft {
+            padding: 150px 0 0 0;
+        }
+        &.center {
+            padding: 75px 0 75px 0;
+        }
+        h1 {
+            font-size:30px;
+        }
+    }
+    .featured-top-image {
+        margin-bottom:20px;
+        padding:100px 0;
+        &.bottomleft {
+            padding: 150px 0 0 0;
+        }
+        &.center {
+            padding: 75px 0 75px 0;
+        }
+        h1 {
+            font-size:30px;
+        }
+    }
     #currenthover, .currenthover {
         display: none!important;
     }
@@ -86,6 +112,10 @@ a[href^="tel"] {
             background-color:$primarycolour;
             font-weight:bold;
             color:#fff;
+        }
+        tbody {
+            display:inline-table;
+            width:100%;
         }
     }
     .mobilesearch {
@@ -189,6 +219,16 @@ a[href^="tel"] {
             }
         }
     }
+
+    .meet-the-staff2 {
+        .staff-section {
+            .staffimage {
+                max-height:235px;
+                min-height:235px;
+            }
+        }
+    }
+
 }
 @media all and (max-width: 770px) {
     body {
@@ -595,6 +635,12 @@ a[href^="tel"] {
 @media all and (max-width: 321px) {
     .navbar {
         top:0;
+    }
+    .departmentlabel {
+        p {
+            font-size:0.7em;
+            margin-top:3px;
+        }
     }
 }
 

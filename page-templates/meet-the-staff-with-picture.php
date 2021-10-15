@@ -55,15 +55,19 @@ get_header(); ?>
                                             if(get_sub_field('email')){echo '<br><a href="mailto:'.get_sub_field('email').'">'.get_sub_field('email')."</a>";}
                                             ?>
                                             </p>
-                                            <?php
-                                            $content = substr(get_sub_field('description'),0,80);
-                                            $content = substr($content,0,strrpos($content,' '));
-                                            $$content = preg_replace('/<span[^>]+\>/i', '', $content);
-                                            echo '<div class="desc_short">'.$content."...</div>";
-                                            ?>
 
-                                            <div class="allcontent"><?php echo get_sub_field('description'); ?></div>
-                                            <p class="read-more-button">More</p>
+                                            <?php if(get_sub_field('description')) : ?>
+                                                <?php
+                                                $content = substr(get_sub_field('description'),0,80);
+                                                $content = substr($content,0,strrpos($content,' '));
+                                                $$content = preg_replace('/<span[^>]+\>/i', '', $content);
+                                                echo '<div class="desc_short">'.$content."...</div>";
+                                                ?>
+
+                                                <div class="allcontent"><?php echo get_sub_field('description'); ?></div>
+                                                <p class="read-more-button">More</p>
+                                            <?php endif; ?>
+
                                         </div>
                                     </div>
 

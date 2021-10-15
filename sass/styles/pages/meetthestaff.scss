@@ -11,10 +11,6 @@
     border-right: 8px solid $secondarycolour;
     vertical-align: top;
     padding:0 12px;
-    height:100%;
-    .row {
-        height:100%;
-    }
     .allcontent {
       display: none;
     }
@@ -45,6 +41,8 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        max-height:275px;
+        min-height:275px;
     }
 
     .read-more-button {

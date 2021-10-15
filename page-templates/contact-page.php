@@ -52,7 +52,7 @@ get_header(); ?>
                       foreach ($social as $social_platform) :
                     ?>
                     <div class="d-flex socials row">
-                      <a href="<?php echo $social_platform['profile_url']; ?>" target="_blank">
+                      <a href="<?php echo $social_platform['platform_url']; ?>" target="_blank">
                         <i class="col-1 social fab fa-<?php echo $social_platform['platform']; if($social_platform['platform']=='facebook'){echo '-f';} ;?>"></i>
                         <?php if ($display_options['display_full_social_media_url']) : echo $social_platform['profile_url']; endif; ?>
                         <?php echo '<em>'.$social_platform['username'].'</em>'; ?>

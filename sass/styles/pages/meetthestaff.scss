@@ -4,14 +4,17 @@
     flex-wrap:wrap;
     justify-content: space-between;
     align-items: flex-start;
+    margin:10px 0;
   }
   .staff-section {
-    border: 1px solid #9c9c9c; 
+    border: 1px solid #9c9c9c;
     border-right: 8px solid $secondarycolour;
-    margin-top:20px;
-    width:49%;
     vertical-align: top;
-    padding:20px 20px 0 20px;
+    padding:0 12px;
+    height:100%;
+    .row {
+        height:100%;
+    }
     .allcontent {
       display: none;
     }
@@ -28,14 +31,22 @@
       margin:-20px;
     }
     .member-block-image-ghost {
-      display: block;      
+      display: block;
       height: 235px;
       width: 160px;
       z-index: 0;
       position: relative;
       float: left;
     }
-    
+    .staffdetails {
+        padding:20px 8px 0 8px;
+    }
+    .staffimage {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
     .read-more-button {
       font-weight: $bold-weight;
       cursor: pointer;

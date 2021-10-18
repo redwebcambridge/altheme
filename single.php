@@ -86,7 +86,8 @@ $thumbnail= get_field('thumbnail'); ?>
 
 	  	</div>
 
-		<?php get_template_part('downloads'); ?>
+		<?php get_template_part('template-parts/downloads'); ?>
+
 		
 	</div>
 

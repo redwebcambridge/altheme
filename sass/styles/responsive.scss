@@ -10,35 +10,40 @@ a[href^="tel"] {
   text-decoration: none;
 }
 
+//HEADER SCALING
+@media all and (max-width: 992px) {
+    .featured-top-image {
+        margin-bottom:20px;
+        padding:100px 0;
+        &.bottomleft {
+            padding: 150px 0 0 0;
+            @media all and (max-width: 768px) {
+                padding: 100px 0 0 0;
+            }
+            @media all and (max-width: 576px) {
+                padding: 75px 0 0 0;
+            }
+        }
+        &.center {
+            padding:75px 0 75px 0;
+            @media all and (max-width: 768px) {
+                padding: 50px 0 50px 0;
+            }
+            @media all and (max-width: 576px) {
+                padding: 37px 0 37px 0;
+            }
+        }
+        h1 {
+            font-size:30px;
+        }
+    }
+}
+
+
+
 @media all and (max-width: 992px) {
     body {
         padding-top:0;
-    }
-    .featured-top-image {
-        margin-bottom:20px;
-        padding:100px 0;
-        &.bottomleft {
-            padding: 150px 0 0 0;
-        }
-        &.center {
-            padding: 75px 0 75px 0;
-        }
-        h1 {
-            font-size:30px;
-        }
-    }
-    .featured-top-image {
-        margin-bottom:20px;
-        padding:100px 0;
-        &.bottomleft {
-            padding: 150px 0 0 0;
-        }
-        &.center {
-            padding: 75px 0 75px 0;
-        }
-        h1 {
-            font-size:30px;
-        }
     }
     #currenthover, .currenthover {
         display: none!important;
@@ -94,12 +99,11 @@ a[href^="tel"] {
             display:block;
             font-size: 0.8em;
             .thumbnail {
-                width:30%;
-                height:255px;
+                height:235px;
             }
             .member-block-image-ghost {
                 width: 35%;
-                height:235px;
+                height:215px;
             }
         }
     }
@@ -479,12 +483,49 @@ a[href^="tel"] {
     }
 }
 
+@media all and (max-width: 540px) {
+    .meet-the-staff2 {
+        .staff-section {
+            .member-block-image-ghost {
+                width: 36%;
+            }
+        }
+    }
+}
+
 @media all and (max-width: 504px) {
     #top_buttons ul:first-child {
         li {
             &.hasdropdown {
                 margin-top:0 !important;
                 margin-left:0 !important;
+            }
+        }
+    }
+    .meet-the-staff2 {
+        .staff-section {
+            .member-block-image-ghost {
+                width: 38%;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 486px) {
+    .meet-the-staff2 {
+        .staff-section {
+            .member-block-image-ghost {
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 450px) {
+    .meet-the-staff2 {
+        .staff-section {
+            .member-block-image-ghost {
+                width: 43%;
             }
         }
     }
@@ -612,6 +653,24 @@ a[href^="tel"] {
 
     .featured-top-image.bottomleft {
         padding: 150px 0 0 0;
+    }
+
+    .meet-the-staff2 {
+        .staff-section {
+            padding:0;
+            .thumbnail {
+                height: 200px;
+                width: 100%;
+                position: relative;
+                margin: 0;
+            }
+            .member-block-image-ghost {
+                display:none;
+            }
+            .staff-text {
+                padding:20px;
+            }
+        }
     }
 
 }

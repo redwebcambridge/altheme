@@ -4,6 +4,12 @@
 .mobilesearch, #mobilesearch {
     display:none;
 }
+.sidebarclose {
+    display:none;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
 
 a[href^="tel"] {
   color: inherit;

@@ -348,7 +348,23 @@ header {
 
 #sidebar-menu {
   padding-left: 0;
-
+  .mobilecontain {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .showall {
+      width: 100%;
+      position: relative;
+      margin-top:-55px;
+      background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+      text-align: center;
+      padding-top:20px;
+      font-size: 30px;
+      .sidebarclose {
+        transform: rotate(-90deg);
+      }
+    }
+  }
   a{
     color: white;
   }

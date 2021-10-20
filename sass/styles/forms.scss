@@ -24,6 +24,7 @@ input[type='email'], input[type='text'], input[type="tel"], input[type='textarea
     width: 100%;
     padding: 8px 15px;
     outline: none;
+    box-sizing: border-box;
 }
 header {
   input[type='text'] {

@@ -10,6 +10,7 @@
 get_header();
 ?>
 
+
 <div class="container newsevents">
 
 		<?php if ( have_posts() && $_GET['s']!=='') : ?>

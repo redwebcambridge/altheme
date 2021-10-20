@@ -408,8 +408,11 @@ a[href^="tel"] {
     #mainnav {
         ul {
             li {
+                width:45%;
+                display: inline-block;
                 .dropdown-menu {
                     width:90vw;
+                    top:5px;
                 }
             }
         }

@@ -1,4 +1,4 @@
-<form action="/" method="get" id="searchform">
+<form action="/" method="get" id="searchform" class="searchformcontain">
   <div class="input-group mb-2">
     <input class="form-control rounded-0 ml-2" placeholder="SEARCH" type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
     <div class="input-group-append">

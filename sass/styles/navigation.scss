@@ -162,11 +162,18 @@ header {
         z-index: 1050;
         padding: 0;
         margin:0;
+        @media all and (max-width: 992px) {
+          position: relative;
+        }
 
         li{
           display: block;
           width:50%;
           margin-top:0;
+          @media all and (max-width: 992px) {
+            display: inline-block;
+            width: 45%;
+          }
           a {
             font-size:0.9em;
             line-height:120%;
@@ -194,6 +201,9 @@ header {
     &:hover{
       .dropdown-menu {
           display:flex;
+          @media all and (max-width: 992px) {
+            display:block;
+          }
       }
   }
   }
@@ -215,6 +225,9 @@ header {
                           width:95vw !important;
                           position:relative !important;
                           top:10px !important;
+                          a {
+                            text-transform: uppercase;
+                          }
                       }
                   }
               }
@@ -227,7 +240,6 @@ header {
 #page {
   .sticky-top {
     box-shadow:0 4px 2px -2px rgba(0,0,0,0.2);
-    transition: all 4s ease-in;
   }
 }
 

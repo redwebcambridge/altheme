@@ -105,7 +105,7 @@ jQuery( document ).ready(function() {
     });
   });
   //Menu hover
-  //set to under current item
+  //set to under current item - school icon
   if( jQuery(".navbar .navbar-nav li.active").length ){
     var onloadleft = jQuery(".navbar .navbar-nav li.active").offset().left;
     var leftpadding = jQuery(".navbar .navbar-nav li.active").width()/2-18;
@@ -128,6 +128,22 @@ jQuery( document ).ready(function() {
       hovericon(this);
     }
   });
+  //MOBILE MENU - DONT LINK THROUGH TO PARENT PAGES 
+  if (jQuery(window).width() < 992) {
+    jQuery('.menu-item-has-children').children('a').click(function(e) {
+      e.preventDefault();
+    });
+    //Move parent into menu
+    jQuery( "#menu-main-menu li.menu-item-has-children" ).each(function( index ) {
+      var url = jQuery(this).children().attr('href');
+      var parent_item_html = jQuery(this).children('a').html();
+      jQuery(this).find('.dropdown-menu').prepend('<li><a class="dropdown-item" href="'+url+'">'+parent_item_html+'</a></li>');
+    });
+    
+    
+  }
+
+
   //add class if has submenu for top buttons
   jQuery('#menu-top-buttons li').has("i").addClass('hasdropdown');
 
@@ -165,11 +181,17 @@ jQuery( document ).ready(function() {
     search_html = '<div id="mobilesearch">'+search_html+'</div>';
     jQuery('#mainnav').prepend(search_html);
 
-   //Search Button
-  jQuery('#searchform button').on("click", function () {
-    jQuery('#searchform').submit();
+  //Clicking on search form button
+  jQuery(".searchformcontain .btn").on("click", function () {
+    jQuery(this).closest("form").submit();
   });
-
+   
+  //Search Form Submit
+  jQuery("input[name='s']").closest("form").on("submit", function () {
+    var searchvalue = jQuery(this).val();
+    location.href = 'https://'+document.location.hostname+'?s='+searchvalue;
+  });
+ 
   //Remove top pixels when anchor link present
   function offsetAnchor() {
     if (location.hash.length !== 0) {

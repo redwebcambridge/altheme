@@ -1,6 +1,6 @@
 <div class="staff-section">
     <?php if (get_sub_field('picture')): ?>
-        <div class="thumbnail" style="background-image:url('<?php the_sub_field('picture'); ?>')"></div>
+        <div class="thumbnail" style="background-image:url('<?php echo get_sub_field('picture')['sizes']['medium']; ?>')"></div>
         <div class="member-block-image-ghost"></div>
     <?php endif; ?>
     <div class="staff-text">

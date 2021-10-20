@@ -139,14 +139,16 @@ jQuery( document ).ready(function() {
       var parent_item_html = jQuery(this).children('a').html();
       jQuery(this).find('.dropdown-menu').prepend('<li><a class="dropdown-item" href="'+url+'">'+parent_item_html+'</a></li>');
     });
-    //SIDEBAR MENU
+    //SIDEBAR MENU ON MOBILE
     if (jQuery(window).width() < 992) {
       jQuery("#sidebar-menu li:lt(4)").wrapAll('<div class="mobilecontain"></div>');
       jQuery("#sidebar-menu .mobilecontain").append('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
-      jQuery("#sidebar-menu li:gt(5)").addClass("d-none");
+      jQuery("#sidebar-menu li:gt(4)").addClass("d-none");
+      jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
       jQuery(".showall,.sidebarclose").on("click", function () {
-        jQuery("#sidebar-menu li:gt(5)").toggleClass("d-none");
+        jQuery("#sidebar-menu li:gt(4)").toggleClass("d-none");
         jQuery(".sidebarclose,.showall").toggle();
+        jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
       });
     }
 

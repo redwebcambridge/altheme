@@ -419,6 +419,9 @@ a[href^="tel"] {
                 .dropdown-menu {
                     width:90vw;
                     top:5px;
+                   li a {
+                        text-transform: uppercase;
+                    }
                 }
             }
         }

@@ -133,17 +133,17 @@ jQuery( document ).ready(function() {
     jQuery('.menu-item-has-children').children('a').click(function(e) {
       e.preventDefault();
     });
-    //Move parent into menu
-    jQuery( "#menu-main-menu li.menu-item-has-children" ).each(function( index ) {
+    //copy parent into menu
+    jQuery( "#mainnav li.menu-item-has-children" ).each(function( index ) {
       var url = jQuery(this).children().attr('href');
       var parent_item_html = jQuery(this).children('a').html();
       jQuery(this).find('.dropdown-menu').prepend('<li><a class="dropdown-item" href="'+url+'">'+parent_item_html+'</a></li>');
     });
     //SIDEBAR MENU ON MOBILE
-    if (jQuery(window).width() < 992) {
+    if (jQuery('#sidebar-menu li').length > 4) {
       jQuery("#sidebar-menu li:lt(4)").wrapAll('<div class="mobilecontain"></div>');
       jQuery("#sidebar-menu .mobilecontain").append('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
-      jQuery("#sidebar-menu li:gt(4)").addClass("d-none");
+      jQuery("#sidebar-menu li").addClass("d-none");
       jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
       jQuery(".showall,.sidebarclose").on("click", function () {
         jQuery("#sidebar-menu li:gt(4)").toggleClass("d-none");

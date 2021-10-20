@@ -29,40 +29,35 @@ get_header(); ?>
               <div class="row mb-5">
                 <div class="col-12 staff-container">
 
-                    <?php if( have_rows('table_of_staff') ): while( have_rows('table_of_staff') ): the_row(); ?>
+                  <div class="col-12 col-md-6">
+                  <?php 
+                  $staffcount = 1;
+                  if( have_rows('table_of_staff') ): 
+                    while( have_rows('table_of_staff') ): the_row(); 
+                      if($staffcount % 2 !== 0): 
+                        get_template_part('template-parts/staff-block'); 
+                      endif;
+                    $staffcount++;
+                    endwhile;
+                  endif; 
+                  ?>  
+                </div>
 
-                        <div class="staff-section">
-
-                        <?php if (get_sub_field('picture')): ?>
-                          <div class="thumbnail" style="background-image:url('<?php the_sub_field('picture'); ?>')"></div>
-                          <div class="member-block-image-ghost"></div>
-                        <?php endif; ?>
-
-                        <div class="staff-text">
-                          <h3><?php the_sub_field('name'); ?></h3>
-                          <p>
-                          <?php
-                          if(get_sub_field('role')){echo '<strong>'.get_sub_field('role').'</strong>';}
-                          if(get_sub_field('department')){echo ', '.get_sub_field('department');}
-                          if(get_sub_field('form__mentor_group')){echo ', <em>'.get_sub_field('form__mentor_group').'</em>';}
-                          if(get_sub_field('email')){echo '<br><a href="mailto:'.get_sub_field('email').'">'.get_sub_field('email')."</a>";}
-                          ?>
-                          </p>
-                          <?php
-                          $content = substr(get_sub_field('description'),0,80);
-                          $content = substr($content,0,strrpos($content,' '));
-                          $$content = preg_replace('/<span[^>]+\>/i', '', $content);
-                          echo '<div class="desc_short">'.$content."...</div>";
-                          ?>
-
-                          <div class="allcontent"><?php echo get_sub_field('description'); ?></div>
-                          <p class="read-more-button">More</p>
-                      </div>
-
-                      </div>
-
-                  <?php endwhile; endif; ?>
-              </div>
+                <div class="col-12 col-md-6">
+                  <?php 
+                  $staffcount = 1;
+                  if( have_rows('table_of_staff') ): 
+                    while( have_rows('table_of_staff') ): the_row(); 
+                      if($staffcount % 2 == 0): 
+                        get_template_part('template-parts/staff-block'); 
+                      endif;
+                    $staffcount++;
+                    endwhile;
+                  endif; 
+                  ?>  
+                </div>
+                    
+                </div>
               </div>
 
         </div>

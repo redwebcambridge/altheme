@@ -34,7 +34,7 @@ get_header(); ?>
               }
               $display_options = get_field('display_options'); 
               ?>
-                <div class="col-12 col-md-4 contact-details">
+                <div class="col-12 col-md-6 contact-details">
                   <?php if ($display_options['phone_number']) : ?>
                      <h5>Phone</h5>
                      <a href="tel:<?php echo $phone_number; ?>"><p><?php echo $phone_number; ?></p></a>
@@ -45,7 +45,7 @@ get_header(); ?>
                   <?php endif; ?>
                 </div>
 
-                <div class="col-12 col-md-8 contact-details">
+                <div class="col-12 col-md-6 contact-details">
                 <?php if ($display_options['social_media_accounts']) : ?>
 
                   <?php if( $social ):

@@ -271,10 +271,14 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
               'exclude_tree' => array(get_field('adult_learning_homepage','option'),get_field('sports_homepage','option')),
             ) );
             endif;
-            //var_dump($pages);
-         //$vacancies_url = get_permalink($pages[0]->ID);
-        // $vacancies_url =  array_shift($pages->ID);
-        // $vacancies_url =  array_pop(array_reverse($pages));
+            if (empty($pages)) {
+              $pages = get_pages( array(
+                'post_type' => 'page',
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'page-templates/vacancies.php',
+                'hierarchical' => 0,
+              ) );
+            }
         foreach ($pages as $page){
           $vacancies_url = get_permalink($page->ID);
         }
@@ -506,8 +510,6 @@ else : //Not updating or adding so show list of vanancies and get trash
 
 </table>
 
-
 <?php endif; ?>
-
 
 </div>

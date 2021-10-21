@@ -6,6 +6,17 @@ body{
             }
         }
     }
+    .back-button {
+      margin-left: 20px;
+      display: none;
+      .navbar-toggler-icon {
+        background-image: none;
+      }
+      i {
+        line-height: 30px;
+      }
+      
+    }
     overflow: overlay;
    //image alignment fix
    img {

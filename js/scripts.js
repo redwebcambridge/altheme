@@ -24,6 +24,11 @@ jQuery( document ).ready(function() {
   jQuery('body').scroll(function(){
     var windowtop = jQuery('body').scrollTop();
     jQuery('.container-white-laurel').css('background-position-y',950-(windowtop/5));
+    if (windowtop > 100) {
+      jQuery('.back-button').fadeIn();
+    } else {
+      jQuery('.back-button').hide();
+    }
   });
   //WINDOW RESIZE
     jQuery(window).resize(function(){
@@ -34,7 +39,7 @@ jQuery( document ).ready(function() {
         }
     });
     jQuery(window).bind('resizeEnd', function() {
-      jQuery('html').css('opacity','1');
+      jQuery('html').css('opacity','1')
     });
     jQuery(window).resize(function() {
       if (jQuery('body').width() > 750) {

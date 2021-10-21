@@ -185,8 +185,11 @@ if (!class_exists('ACF')) {
 
 <div class="navbar navbar-expand-md navbar-light bg-light sticky-nav sticky-top" id="stickynav">
     <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
+        <button class="navbar-toggler menuicon" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="navbar-toggler back-button" type="button" data-bs-toggle="offcanvas" aria-label="Back">
+          <span class="navbar-toggler-icon"><i class="fas fa-arrow-left"></i></span>
         </button>
         <?php
               if ( is_sports_page() ) {

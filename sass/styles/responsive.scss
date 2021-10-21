@@ -60,8 +60,8 @@ a[href^="tel"] {
         }
     }
     .navbar-expand-md {
-        .navbar-toggler {
-            display:block !important;
+        .menuicon {
+            display:block;
             border:0;
             padding:0;
             z-index:9999999;
@@ -358,7 +358,7 @@ a[href^="tel"] {
     .twittercontainer {
         width:50%;
     }
-    .navbar-expand-md .navbar-toggler {
+    .navbar-expand-md .navbar-toggler .menuicon {
         display:block;
         float:right;
     }

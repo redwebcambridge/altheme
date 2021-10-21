@@ -562,3 +562,34 @@ function cf_search_distinct( $where ) {
 add_filter( 'posts_distinct', 'cf_search_distinct' );
 //end adding acf fields in searches
 
+//colour selections
+function al_colours($init) {
+    $colours = get_field('colours','option');
+    $custom_colours = '"'.ltrim($colours['primary_colour'], '#').'", "Primary",' ;
+    $custom_colours .= '"'.ltrim($colours['second_colour'], '#').'", "Secondary",' ;
+    if (get_field('activate_sport_centre','option')) {
+      $sportcolours = get_field('sports_colours','option');
+      $custom_colours .= '"'.ltrim($sportcolours['primary_colour'], '#').'", "Sports Center Primary Colour",' ;
+      $custom_colours .= '"'.ltrim($sportcolours['second_colour'], '#').'", "Sports Center Secondary Colour",' ;
+    }
+    if (get_field('activate_adult_learning','option')) {
+      $adultcolours = get_field('adult_colours','option');
+      $custom_colours .= '"'.ltrim($adultcolours['primary_colour'], '#').'", "Adult Learning Primary Colour",' ;
+      $custom_colours .= '"'.ltrim($adultcolours['second_colour'], '#').'", "Adult Learning Secondary Colour",' ;
+    }
+    $custom_colours .= '
+    "6263a6", "Purple",
+    "52a8db", "Light Blue",
+    "4f80bd", "Blue",
+    "459250", "Dark green",
+    "82a44f", "Green",
+    "f7db4b", "Yellow",
+    "eeb042", "Orange",
+    "3f3f3f", "Dark Grey",
+    "9c9c9c", "Grey",
+    ';
+    $init['textcolor_map'] = '['.$custom_colours.']';
+    $init['textcolor_rows'] = 2;
+    return $init;
+}
+add_filter('tiny_mce_before_init', 'al_colours');

@@ -68,7 +68,7 @@
 	$exclude = '-'.$newsletters->term_id;
     //exclude foundtain
     $fountain = get_category_by_slug('the-fountain');
-	$exclude .= '-'.$fountain->term_id;
+	$exclude .= ',-'.$fountain->term_id;
 	//exclude sports and adult ed categories
 	$categories = get_categories();
 	foreach($categories as $category) {

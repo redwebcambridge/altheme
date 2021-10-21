@@ -136,6 +136,7 @@ jQuery( document ).ready(function() {
     //copy parent into menu
     jQuery( "#mainnav li.menu-item-has-children" ).each(function( index ) {
       var url = jQuery(this).children().attr('href');
+      if (url == "#"){return;}
       var parent_item_html = jQuery(this).children('a').html();
       jQuery(this).find('.dropdown-menu').prepend('<li><a class="dropdown-item" href="'+url+'">'+parent_item_html+'</a></li>');
     });

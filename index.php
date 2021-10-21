@@ -29,6 +29,8 @@ get_header();
 			if (get_field('category_type',$category)=='adultlearning') {
 				$exclude .= ', -'.$category->term_id;
 			}
+			$fountain = get_category_by_slug('the-fountain');
+			$exclude .= ',-'.$fountain->term_id;
 		}
 		$the_query = new WP_Query( array(    'post_type'  => 'post','posts_per_page' => -1,'cat' => $exclude)  );
 		if ($the_query->have_posts()) : while ($the_query->have_posts() ) : $the_query->the_post(); 

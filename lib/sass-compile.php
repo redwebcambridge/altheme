@@ -30,7 +30,7 @@ if (get_field('activate_sport_centre','option')) {
 }
 
 //INCREASE FONT FOR 
-if (get_field('school_id','option') == "mpa") {
+if (get_field('school_id','option') == "mpa" || get_field('school_id','option') == "lhj") {
   $fontsize = '1.1em';
 } else {
   $fontsize = '1em';

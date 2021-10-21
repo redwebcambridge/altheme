@@ -53,35 +53,40 @@
     }
   }
   #mainnav {
-    border-top-color: $sportprimarycolour;
-    li {
-      
-      a {
-        &:not(.btn) {
-          color: $sportprimarycolour;
-        }
-        &:hover {
-          color: $sportsecondarycolour;
-        }
-        &.dropdown-item {
-          color: $sportprimarycolour;
-          background-color: #fff;
+    ul{
+      border-top-color: $sportprimarycolour;
+      li {
+        
+        a {
+          &:not(.btn) {
+            color: $sportprimarycolour;
+          }
           &:hover {
             color: $sportsecondarycolour;
+          }
+          &.dropdown-item {
+            color: $sportprimarycolour;
             background-color: #fff;
+            &:hover {
+              color: $sportsecondarycolour;
+              background-color: #fff;
+            }
           }
         }
-      }
-      &:last-child {
-        a {
-          background-color: $sportprimarycolour;
-          color: #fff;
-          &:hover {
-            background-color: $sportsecondarycolour;
+  
+        &:last-child {
+          a:not(.dropdown-item){
+            background-color: $sportprimarycolour;
             color: #fff;
+            &:hover {
+              background-color: $sportsecondarycolour;
+              color: #fff;
+            }
           }
         }
-      }
+    }
+   
+
     }
 }
   &.page-template-vacancies .log_interest {

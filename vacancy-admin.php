@@ -243,14 +243,44 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
 
       <?php 
       //get vacancy page
+      if(isset($vacancy['listing_type'])) :
+        if($vacancy['listing_type'] == 'sports_center' ) :
         $pages = get_pages( array(
           'post_type' => 'page',
           'meta_key' => '_wp_page_template',
           'meta_value' => 'page-templates/vacancies.php',
-          'hierarchical' => 0
+          'hierarchical' => 0,
+          'child_of' => get_field('sports_homepage','option'),
+        ) );
+        endif;
+        if($vacancy['listing_type'] == 'adult_learning' ) :
+          $pages = get_pages( array(
+            'post_type' => 'page',
+            'meta_key' => '_wp_page_template',
+            'meta_value' => 'page-templates/vacancies.php',
+            'hierarchical' => 0,
+            'child_of' => get_field('adult_learning_homepage','option'),
           ) );
-         $vacancies_url = get_permalink($pages[0]->ID);
+          endif;
+          if($vacancy['listing_type'] == 'school' ) :
+            $pages = get_pages( array(
+              'post_type' => 'page',
+              'meta_key' => '_wp_page_template',
+              'meta_value' => 'page-templates/vacancies.php',
+              'hierarchical' => 0,
+              'exclude_tree' => array(get_field('adult_learning_homepage','option'),get_field('sports_homepage','option')),
+            ) );
+            endif;
+            //var_dump($pages);
+         //$vacancies_url = get_permalink($pages[0]->ID);
+        // $vacancies_url =  array_shift($pages->ID);
+        // $vacancies_url =  array_pop(array_reverse($pages));
+        foreach ($pages as $page){
+          $vacancies_url = get_permalink($page->ID);
+        }
 
+
+      endif;
       ?>
 
       <div id="acf_after_title-sortables" >

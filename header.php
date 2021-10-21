@@ -3,24 +3,27 @@
 <head>
 <?php
     if (!is_adult_ed_page() || !is_sports_page()) {
-      $featuredimg = get_the_post_thumbnail_url();
-      if(empty($featuredimg)){
-        $featuredimg = get_field('header_image', $category);
-      }
+        $featuredimg = get_the_post_thumbnail_url();
     }
     if (is_home()) {
       $featuredimg = get_the_post_thumbnail_url(get_option( 'page_for_posts' ));
+    }
+    if(is_tax()){
+      $featuredimg = get_field('image',get_queried_object());
     }
     if (!isset($featuredimg) || empty($featuredimg)){
       $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
     }
     if (is_category()){
+      echo 'tax page';
+
       $category = get_queried_object();
       $header_text = $category->name;
       $featuredimg = get_field('image', $category);
       if(empty($featuredimg)){
         $featuredimg = get_field('header_image', $category);
       }
+     
       if(empty($featuredimg)){
         $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
       }

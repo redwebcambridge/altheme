@@ -77,6 +77,9 @@ body{
       border-top:solid 90px white;
       position: relative;
       height: 380px;
+      img {
+        max-height:400px;
+      }
       @media screen and (max-width:760px) {
         height: unset;
       }

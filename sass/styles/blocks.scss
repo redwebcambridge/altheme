@@ -269,6 +269,9 @@ body{
     }
   }
   .page-content{
+    iframe {
+      max-width: 100%;
+    }
     .wp-caption-text {
       background-color:#dee2e671;
       color: $darkgrey;

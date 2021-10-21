@@ -4,6 +4,9 @@
 <?php
     if (!is_adult_ed_page() || !is_sports_page()) {
       $featuredimg = get_the_post_thumbnail_url();
+      if(empty($featuredimg)){
+        $featuredimg = get_field('header_image', $category);
+      }
     }
     if (is_home()) {
       $featuredimg = get_the_post_thumbnail_url(get_option( 'page_for_posts' ));

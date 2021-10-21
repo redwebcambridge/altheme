@@ -165,12 +165,12 @@ a[href^="tel"] {
             width: 40%;
         }
     }
-    #top_buttons ul:first-child {
+    #top_buttons ul:first-child:not(.dropdown-menu) {
         margin: 5px 0 0 0 ;
         padding: 0;
         li {
             margin:10px 0 10px 10px !important;
-            background-color:#fff !important;
+            background-color:#fff;
             border: 1px solid $medium-grey;
             font-weight: bolder;
             flex-grow: 1;

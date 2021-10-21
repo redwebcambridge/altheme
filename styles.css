@@ -8378,43 +8378,43 @@ a[href^="tel"] {
     margin-left: 70px;
     width: 40%;
   }
-  #top_buttons ul:first-child {
+  #top_buttons ul:first-child:not(.dropdown-menu) {
     margin: 5px 0 0 0;
     padding: 0;
   }
-  #top_buttons ul:first-child li {
+  #top_buttons ul:first-child:not(.dropdown-menu) li {
     margin: 10px 0 10px 10px !important;
-    background-color: #fff !important;
+    background-color: #fff;
     border: 1px solid #9c9c9c;
     font-weight: bolder;
     flex-grow: 1;
     text-align: center;
   }
-  #top_buttons ul:first-child li:first-child {
+  #top_buttons ul:first-child:not(.dropdown-menu) li:first-child {
     margin-left: 0 !important;
   }
-  #top_buttons ul:first-child li a {
+  #top_buttons ul:first-child:not(.dropdown-menu) li a {
     color: #9c9c9c;
     font-weight: 600;
     padding: 9px 10px 5px 10px;
   }
-  #top_buttons ul:first-child li.hasdropdown {
+  #top_buttons ul:first-child:not(.dropdown-menu) li.hasdropdown {
     display: block;
     justify-content: center !important;
   }
-  #top_buttons ul:first-child li.hasdropdown a {
+  #top_buttons ul:first-child:not(.dropdown-menu) li.hasdropdown a {
     padding: 9px 10px 5px 10px !important;
   }
-  #top_buttons ul:first-child li.hasdropdown i {
+  #top_buttons ul:first-child:not(.dropdown-menu) li.hasdropdown i {
     display: none;
   }
-  #top_buttons ul:first-child li.hasdropdown .dropdown-menu {
+  #top_buttons ul:first-child:not(.dropdown-menu) li.hasdropdown .dropdown-menu {
     margin: 0;
   }
-  #top_buttons ul:first-child li.hasdropdown .dropdown-menu .double-sub {
+  #top_buttons ul:first-child:not(.dropdown-menu) li.hasdropdown .dropdown-menu .double-sub {
     width: 100%;
   }
-  #top_buttons ul:first-child li.hasdropdown .dropdown-menu li {
+  #top_buttons ul:first-child:not(.dropdown-menu) li.hasdropdown .dropdown-menu li {
     border: none;
   }
   .name-position {

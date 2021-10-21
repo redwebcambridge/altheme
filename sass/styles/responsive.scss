@@ -472,14 +472,16 @@ a[href^="tel"] {
         flex-flow: wrap;
         li {
             border:1px solid #fff;
-            background:$primarycolour;
             font-size:0.85rem;
             flex:0 0 50%;
-            max-width:50%;
+            max-width:100%;
+            a {
+                margin: 0;
+                font-weight: 300;
+            }
             .sub-menu {
                 li {
                     width:100%;
-                    max-width:100%;
                 }
             }
         }

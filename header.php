@@ -198,14 +198,27 @@ if (!class_exists('ACF')) {
           }
           if (is_sports_page()) {
             $back_url =  get_permalink(get_field('sports_homepage','option'));
+            //if single sports cat
+            if (is_single()) {
+              $term = get_the_terms($post->ID,'sports-centre-category');
+              foreach($term as $term_single) {
+                $back_url = get_term_link($term_single);
+              }
+            }
           }
           if (is_adult_ed_page()) {
             $back_url =  get_permalink(get_field('adult_learning_homepage','option'));
+            //if single adult cat
+            if (is_single()) {
+              $term = get_the_terms($post->ID,'adult-learning-category');
+              foreach($term as $term_single) {
+                $back_url = get_term_link($term_single);
+              }
+            }
           }
           if (empty($back_url)){
             $back_url = get_home_url();
           }
-
           ?>
           <button class="navbar-toggler back-button" type="button" data-bs-toggle="offcanvas" aria-label="Back" data-link="<?php echo $back_url; ?>">
             <span class="navbar-toggler-icon"><i class="fas fa-arrow-left"></i></span>

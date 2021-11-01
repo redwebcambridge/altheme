@@ -156,18 +156,19 @@ jQuery( document ).ready(function() {
       jQuery(this).find('.sub-menu').prepend('<li><a class="dropdown-item" href="'+url+'">'+parent_item_html+'</a></li>');
     });
     //SIDEBAR MENU ON MOBILE
-    if (jQuery('#sidebar-menu li:not(.sub-menu li)').length > 4) {
-        jQuery("#sidebar-menu li:not(.sub-menu li):lt(4)").wrapAll('<div class="mobilecontain"></div>');
-        jQuery("#sidebar-menu .mobilecontain").append('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
-        jQuery("#sidebar-menu li:not(.sub-menu li)").addClass("d-none");
-        jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
-        jQuery(".showall,.sidebarclose").on("click", function () {
-        jQuery("#sidebar-menu li:not(.sub-menu li):gt(4)").toggleClass("d-none");
-        jQuery(".sidebarclose,.showall").toggle();
-        jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
-      });
+    if (jQuery(window).width() < 780) {
+      if (jQuery('#sidebar-menu li:not(.sub-menu li)').length > 4) {
+          jQuery("#sidebar-menu li:not(.sub-menu li):lt(4)").wrapAll('<div class="mobilecontain"></div>');
+          jQuery("#sidebar-menu .mobilecontain").append('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
+          jQuery("#sidebar-menu li:not(.sub-menu li)").addClass("d-none");
+          jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
+          jQuery(".showall,.sidebarclose").on("click", function () {
+          jQuery("#sidebar-menu li:not(.sub-menu li):gt(4)").toggleClass("d-none");
+          jQuery(".sidebarclose,.showall").toggle();
+          jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
+        });
+      }
     }
-    
     
 
     

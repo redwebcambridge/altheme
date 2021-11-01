@@ -188,7 +188,6 @@
     </div>
 </div><!-- . end latestnews -->
 <!-- .video section-->
-<script src="//f.vimeocdn.com/js/froogaloop2.min.js"></script>
 <div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>;) ">
     <div class="container">
     <div class="siteicon" style="background-image:url(<?php echo get_field('background_image');  ?>)">

@@ -74,7 +74,7 @@
                                 <?php the_field('footer_left_side_text','option'); ?>
                                    <div class="social">
                                     <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
-                                    <a href="<?php echo get_sub_field('profile_url'); ?>" target="_blank"><i class="social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank"><i class="social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
                                      <?php endwhile; endif; ?>
                                     </div>
                             <?php endif; ?>

@@ -302,7 +302,7 @@ if (!class_exists('ACF')) {
           <div class="content_left">
               <div class="social">
                   <?php if( have_rows('platforms','option') ):  while( have_rows('platforms','option') ) : the_row(); ?>
-                        <a href="<?php echo get_sub_field('profile_url'); ?>" target="_blank">
+                        <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank">
                           <i class="fab fa-<?php echo get_sub_field('platform'); ?><?php if(get_sub_field('platform')=='facebook'){echo "-f";} ?> top-social-icon"></i>
                         </a>
                   <?php endwhile; endif; ?>

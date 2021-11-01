@@ -14,6 +14,20 @@ $roles_to_remove = array('author', 'editor', 'contributor', 'subscriber' );
 function add_new_admin_caps() {
   $role = get_role( 'administrator' );
   $role->add_cap( 'edit_vacancy' ); 
+  $role->add_cap( 'edit_sport' ); 
+  $role->add_cap( 'edit_sports' ); 
+  $role->add_cap( 'edit_other_sports' ); 
+  $role->add_cap( 'read_sports' ); 
+  $role->add_cap( 'read_private_sports' ); 
+  $role->add_cap( 'publish_sports' ); 
+  $role->add_cap( 'delete_sports' ); 
+  $role->add_cap( 'edit_adult_ed' ); 
+  $role->add_cap( 'edit_adult_eds' ); 
+  $role->add_cap( 'edit_other_adult_ed' ); 
+  $role->add_cap( 'publish_adult_ed' ); 
+  $role->add_cap( 'read_adult_ed' ); 
+  $role->add_cap( 'read_private_adult_ed' ); 
+  $role->add_cap( 'delete_adult_ed' ); 
 }
 add_action( 'admin_init', 'add_new_admin_caps');
 
@@ -61,8 +75,23 @@ add_role(
       'edit_vacancy' => true,
       'edit_theme_options' => true,
       'update_themes' => false,
+      'edit_sport' => true,
+      'edit_sports' => true,
+      'edit_other_sports' => true,
+      'read_sports' => true,
+      'read_private_sports' => true,
+      'delete_sports' => true,
+      'publish_sports' => true,
+      'edit_adult_ed' => true,
+      'edit_adult_eds' => true,
+      'edit_other_adult_ed' => true,
+      'publish_adult_ed' => true,
+      'read_adult_ed' => true,
+      'read_private_adult_ed' => true,
+      'delete_adult_ed' => true,
     )
 );
+
 //Vacancy Manager
 //remove_role('vacancy_manager');
 add_role(
@@ -74,13 +103,47 @@ add_role(
   )
 );
 
+//Sports User Role
+remove_role('sports_manager');
+add_role(
+  'sports_manager',
+  __( 'Sports Centre Manager', 'anglianlearning' ),
+  array(
+    'read' => true,
+    'edit_vacancy' => true,
+    'edit_sport' => true,
+    'edit_sports' => true,
+    'edit_other_sports' => true,
+    'read_sports' => true,
+    'read_private_sports' => true,
+    'delete_sports' => true,
+    'publish_sports' => true,
+  )
+);
+
+//Adult Ed User Role
+remove_role('adult_ed_manager');
+add_role(
+  'adult_ed_manager',
+  __( 'Adult Learning Manager', 'anglianlearning' ),
+  array(
+    'read' => true,
+    'edit_vacancy' => true,
+    'edit_adult_ed' => true,
+    'edit_adult_eds' => true,
+    'edit_other_adult_ed' => true,
+    'publish_adult_ed' => true,
+    'read_adult_ed' => true,
+    'read_private_adult_ed' => true,
+    'delete_adult_ed' => true,
+  )
+);
 
 //Remove Admin Sections depending on user role
 add_action( 'admin_enqueue_scripts', 'custom_prevent_admin_access' );
 function custom_prevent_admin_access() {
   if ( !current_user_can( 'update_themes' ) ) {
     remove_menu_page('tools.php');
-    
   }
   if ( !current_user_can( 'edit_posts' ) ) {
     remove_menu_page('edit.php');  

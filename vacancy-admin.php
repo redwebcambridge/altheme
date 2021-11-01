@@ -310,12 +310,33 @@ if (isset($_GET['action']) && $_GET['action']=='addvacancy'){
 
           <div class="acf-field" >
             <h2>Listing Type</h2>
-
-            <select name="listing_type">
-              <option value="school" <?php if(isset($vacancy) && $vacancy['listing_type'] == "school"){echo 'selected';} ?>>School Listing</option>
-              <?php if (get_field('activate_adult_learning','option')) : ?><option value="adult_learning" <?php if(isset($vacancy) && $vacancy['listing_type'] == "adult_learning"){echo 'selected';} ?>>Adult Learning Listing</option><?php endif; ?>
-              <?php if (get_field('activate_sport_centre','option')) : ?><option value="sports_center" <?php if(isset($vacancy) && $vacancy['listing_type'] == "sports_center"){echo 'selected';} ?>>Sports Center Listing</option><?php endif; ?>
-            </select>
+            <?php 
+             $user = wp_get_current_user();
+             $roles = ( array ) $user->roles;
+             if (in_array('sports_manager',$roles) ) :
+             ?>
+              <select name="listing_type">
+                <?php if (get_field('activate_sport_centre','option')) : ?>
+                  <option value="sports_center" <?php if(isset($vacancy) && $vacancy['listing_type'] == "sports_center"){echo 'selected';} ?>>Sports Center Listing</option>
+                <?php endif; ?>
+              </select>
+            <?php elseif (in_array('adult_ed_manager',$roles) ) :  ?>
+              <select name="listing_type">
+              <?php if (get_field('activate_adult_learning','option')) : ?>
+                  <option value="adult_learning" <?php if(isset($vacancy) && $vacancy['listing_type'] == "adult_learning"){echo 'selected';} ?>>Adult Learning Listing</option>
+                <?php endif; ?>
+              </select>
+              <?php else : ?>
+              <select name="listing_type">
+                <option value="school" <?php if(isset($vacancy) && $vacancy['listing_type'] == "school"){echo 'selected';} ?>>School Listing</option>
+                <?php if (get_field('activate_adult_learning','option')) : ?>
+                  <option value="adult_learning" <?php if(isset($vacancy) && $vacancy['listing_type'] == "adult_learning"){echo 'selected';} ?>>Adult Learning Listing</option>
+                <?php endif; ?>
+                <?php if (get_field('activate_sport_centre','option')) : ?>
+                  <option value="sports_center" <?php if(isset($vacancy) && $vacancy['listing_type'] == "sports_center"){echo 'selected';} ?>>Sports Center Listing</option>
+                <?php endif; ?>
+              </select>
+            <?php endif; ?>
           </div>
 
           <div class="acf-field" style="width:100%">
@@ -449,6 +470,19 @@ else : //Not updating or adding so show list of vanancies and get trash
   $i=0;
    foreach ($vacancies as $vacancy){
      $i++;
+
+     $user = wp_get_current_user();
+     $roles = ( array ) $user->roles;
+     if (in_array('sports_manager',$roles) ) :
+      if ($vacancy['listing_type'] !== 'sports_center'){continue;}
+     endif;
+     if (in_array('adult_ed_manager',$roles) ) :
+      if ($vacancy['listing_type'] !== 'adult_learning'){continue;}
+     endif;
+     
+      
+
+
      if ($vacancy['live']){
        $status = 'Published';
      } else {

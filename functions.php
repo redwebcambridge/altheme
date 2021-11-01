@@ -311,7 +311,25 @@ if (get_field('activate_adult_learning','option')) {
         );
     }
     add_action( 'init', 'build_taxonomies_adult_learning', 0 );
-}
+  }
+   //Create custom roles for Sports Center user
+   add_filter( 'register_post_type_args', 'change_capabilities_of_adult_ed' , 10, 2 );
+   function change_capabilities_of_adult_ed( $args, $post_type ){
+   // Do not filter any other post type
+   if ( 'adultlearning' !== $post_type ) {
+       return $args;
+   }
+   $args['capabilities'] = array(
+               'edit_post' => 'edit_adult_ed',
+               'edit_posts' => 'edit_adult_eds',
+               'edit_others_posts' => 'edit_other_adult_ed',
+               'publish_posts' => 'publish_adult_ed',
+               'read_post' => 'read_adult_ed',
+               'read_private_posts' => 'read_private_adult_ed',
+               'delete_post' => 'delete_adult_ed'
+           );
+     return $args;
+   }
 }
 
 //Sports Center
@@ -356,7 +374,25 @@ if (class_exists('ACF')) {
       }
       add_action( 'init', 'build_taxonomies_sports_centre', 0 );
   }
+  //Create custom roles for Sports Center user
+  add_filter( 'register_post_type_args', 'change_capabilities_of_sports_center' , 10, 2 );
+  function change_capabilities_of_sports_center( $args, $post_type ){
+  // Do not filter any other post type
+  if ( 'sportscentre' !== $post_type ) {
+      return $args;
   }
+  $args['capabilities'] = array(
+              'edit_post' => 'edit_sport',
+              'edit_posts' => 'edit_sports',
+              'edit_others_posts' => 'edit_other_sports',
+              'publish_posts' => 'publish_sports',
+              'read_post' => 'read_sports',
+              'read_private_posts' => 'read_private_sports',
+              'delete_post' => 'delete_sports'
+          );
+    return $args;
+  }
+}
 
 add_action('admin_menu', 'vacanciesmenu');
 function vacanciesmenu() {
@@ -480,6 +516,7 @@ add_filter( 'wp_mime_type_icon', 'acf_change_icon_on_files', 10, 3 );
 
 //User Roles
 require_once get_template_directory() . '/lib/user_roles.php';
+
 
 //Dashboard widget
 add_action( 'wp_dashboard_setup', 'register_dash_widgets' );

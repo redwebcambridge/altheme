@@ -15,8 +15,6 @@
       $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
     }
     if (is_category()){
-      echo 'tax page';
-
       $category = get_queried_object();
       $header_text = $category->name;
       $featuredimg = get_field('image', $category);

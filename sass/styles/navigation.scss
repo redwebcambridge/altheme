@@ -1,6 +1,5 @@
 
 header {
-  
   #top_buttons{
     width:100%;
     margin:0;
@@ -126,7 +125,6 @@ header {
   justify-content: space-between;
   font-size: 0.9rem;
   margin-bottom: -30px;
-
   li {
     margin-top:10px;
     position: relative;
@@ -341,6 +339,20 @@ header {
         z-index:99999999;
         transition: all 1s ease-in;
     }
+    .navbar-toggler {
+      padding:0;
+      border:0;
+      .menuicon {
+        .navbar-toggler-icon {
+          padding-right:20px;
+        }
+      }
+      &.back-button {
+        border-left:1px solid $lightgrey;
+        margin-left:0px;
+        padding-right:0px;
+      }
+  }
 }
 .bg-light {
     background-color:#fff !important;
@@ -392,7 +404,7 @@ header {
     height:50px;
     padding-bottom:0;
   }
-  .navbar-light .navbar-toggler {
+  .navbar-toggler {
       padding:0;
       border:0;
   }

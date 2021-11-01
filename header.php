@@ -186,9 +186,31 @@ if (!class_exists('ACF')) {
         <button class="navbar-toggler menuicon" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <button class="navbar-toggler back-button" type="button" data-bs-toggle="offcanvas" aria-label="Back">
-          <span class="navbar-toggler-icon"><i class="fas fa-arrow-left"></i></span>
-        </button>
+        <?php
+        //Get corrent page for back button
+        //Homepage wont need back button
+        if (!is_front_page()) :
+          if (has_post_parent()){
+            $back_url = get_permalink(get_post_parent());
+          }
+          if (is_category('newsletter') || is_category('the-fountain') || get_post_type() == 'post') {
+            $back_url = get_post_type_archive_link( 'post' );
+          }
+          if (is_sports_page()) {
+            $back_url =  get_permalink(get_field('sports_homepage','option'));
+          }
+          if (is_adult_ed_page()) {
+            $back_url =  get_permalink(get_field('adult_learning_homepage','option'));
+          }
+          if (empty($back_url)){
+            $back_url = get_home_url();
+          }
+
+          ?>
+          <button class="navbar-toggler back-button" type="button" data-bs-toggle="offcanvas" aria-label="Back" data-link="<?php echo $back_url; ?>">
+            <span class="navbar-toggler-icon"><i class="fas fa-arrow-left"></i></span>
+          </button>
+        <?php endif; ?>
         <?php
               if ( is_sports_page() ) {
                 if (is_archive()) {

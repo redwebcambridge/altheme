@@ -16,10 +16,13 @@ jQuery( document ).ready(function() {
   })();
   //BACK TO TOP
   jQuery('.backtotop').on("click", function () {
-  //  jQuery("html, body").scrollTop(0,13000);
     jQuery("html, body").animate({ scrollTop: 0 });
-
   });
+  //back button on mobile
+  jQuery('#stickynav .back-button').on("click",function() {
+    var target = jQuery(this).attr('data-link');
+    window.location.replace(target);
+  })
   //SCROLLING
   jQuery('body').scroll(function(){
     var windowtop = jQuery('body').scrollTop();
@@ -154,16 +157,18 @@ jQuery( document ).ready(function() {
     });
     //SIDEBAR MENU ON MOBILE
     if (jQuery('#sidebar-menu li:not(.sub-menu li)').length > 4) {
-      jQuery("#sidebar-menu li:not(.sub-menu li):lt(4)").wrapAll('<div class="mobilecontain"></div>');
-      jQuery("#sidebar-menu .mobilecontain").append('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
-      jQuery("#sidebar-menu li:not(.sub-menu li)").addClass("d-none");
-      jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
-      jQuery(".showall,.sidebarclose").on("click", function () {
+        jQuery("#sidebar-menu li:not(.sub-menu li):lt(4)").wrapAll('<div class="mobilecontain"></div>');
+        jQuery("#sidebar-menu .mobilecontain").append('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
+        jQuery("#sidebar-menu li:not(.sub-menu li)").addClass("d-none");
+        jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
+        jQuery(".showall,.sidebarclose").on("click", function () {
         jQuery("#sidebar-menu li:not(.sub-menu li):gt(4)").toggleClass("d-none");
         jQuery(".sidebarclose,.showall").toggle();
         jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
       });
     }
+    
+    
 
     
   }

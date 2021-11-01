@@ -349,8 +349,9 @@ header {
       }
       &.back-button {
         border-left:1px solid $lightgrey;
-        margin-left:0px;
+        margin-left:10px;
         padding-right:0px;
+        padding-left: 5px;
       }
   }
 }
@@ -390,7 +391,6 @@ header {
   }
 }
 
-
 @media all and (max-width: 812px) {
     body {
       padding-top: 50px;
@@ -409,7 +409,6 @@ header {
       border:0;
   }
 }
-
 #adult_ed {
   #mainnav ul {
     border-top-width: 2px;

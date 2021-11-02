@@ -3,7 +3,7 @@
 Template Name: Gallery 
 */
 get_header(); ?>
-<script src="node_modules/magic-grid/dist/magic-grid.min.js"></script>
+<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
 <script>
   jQuery(function() {  
     //gallery

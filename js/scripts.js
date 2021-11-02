@@ -27,8 +27,12 @@ jQuery( document ).ready(function() {
   jQuery('body').scroll(function(){
     var windowtop = jQuery('body').scrollTop();
     jQuery('.container-white-laurel').css('background-position-y',950-(windowtop/5));
-    if (windowtop > 100) {
-      jQuery('.back-button').fadeIn();
+    if (jQuery(window).width() < 992) {
+      if (windowtop > 100) {
+        jQuery('.back-button').fadeIn();
+      } else {
+        jQuery('.back-button').hide();
+      } 
     } else {
       jQuery('.back-button').hide();
     }
@@ -39,6 +43,7 @@ jQuery( document ).ready(function() {
           var current = jQuery(".navbar-nav  li.active");
           hovericon(current);
           jQuery('html').css('opacity','0');
+          jQuery('.back-button').hide();
         }
     });
     jQuery(window).bind('resizeEnd', function() {

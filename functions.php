@@ -276,9 +276,9 @@ if (get_field('activate_adult_learning','option')) {
     // Register Adult Learning Custom Post Type
     function register_adult_learning() {
       $labels = array(
-        'name' => __( 'Adult Learning Courses' ),
+        'name' => __( 'Adult Learning' ),
         'singular_name' => __( 'Course' ),
-        'add_new_item' => __( 'Add Course' ),
+        'add_new' => __( 'Add Course' ),
     );
       $args = array(
         'label' => __( 'Adult Learning', 'text_domain' ),

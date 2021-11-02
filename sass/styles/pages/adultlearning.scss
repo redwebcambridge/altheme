@@ -217,6 +217,11 @@
 }
     .course{
       margin-bottom: 15px;
+      a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
 
       .course-thumbnail{
         height: 260px;
@@ -232,6 +237,7 @@
         text-transform: uppercase;
         color: #ffffff;
         font-weight: $normal-weight;
+        flex-grow: 1;
       }
       .course-name:hover {
         background: $adultsecondarycolour;

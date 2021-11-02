@@ -142,6 +142,9 @@ add_role(
     'manage_links' => true,
     'publish_pages' => true,
     'publish_posts' => true,
+    'unfiltered_html' => true,
+    'upload_files' => true,
+    'edit_theme_options' => true,
   )
 );
 
@@ -183,6 +186,9 @@ add_role(
     'manage_links' => true,
     'publish_pages' => true,
     'publish_posts' => true,
+    'unfiltered_html' => true,
+    'upload_files' => true,
+    'edit_theme_options' => true,
   )
 );
 

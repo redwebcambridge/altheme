@@ -37,16 +37,7 @@ jQuery( document ).ready(function() {
       jQuery('.back-button').hide();
     }
   });
-  //gallery
-  let magicGrid = new MagicGrid({
-    container: document.querySelector('.gallery'),
-    animate: true,
-    gutter: 10,
-    static: true,
-    useMin: true
-  });
 
-  magicGrid.listen();
   //WINDOW RESIZE
     jQuery(window).resize(function(){
         if (jQuery('body').width() > 750) {

@@ -4,7 +4,22 @@ Template Name: Gallery
 */
 get_header(); ?>
 <script src="node_modules/magic-grid/dist/magic-grid.min.js"></script>
+<script>
+  jQuery(function() {  
+    //gallery
+    let magicGrid = new MagicGrid({
+    container: document.querySelector('.gallery'),
+    animate: true,
+    gutter: 10,
+    static: true,
+    useMin: true
+  });
 
+  magicGrid.listen();
+
+  });
+
+  </script>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <div class="container">

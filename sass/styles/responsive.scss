@@ -100,16 +100,25 @@ a[href^="tel"] {
         top:0;
     }
     .meet-the-staff2 {
-        .staff-section {
-            width:100%;
-            display:block;
-            font-size: 0.8em;
-            .thumbnail {
-                height:235px;
-            }
-            .member-block-image-ghost {
-                width: 35%;
-                height:215px;
+        .staff-container {
+            padding: 0;
+            .staff-section {
+                width:95%;
+                display:block;
+                font-size: 0.8em;
+                padding:0;
+                .thumbnail {
+                    height:235px;
+                    position: relative;
+                    width: 100%;
+                    margin: 0;
+                }
+                .member-block-image-ghost {
+                    display: none!important;
+                }
+                .staff-text {
+                    padding: 20px;
+                }
             }
         }
     }
@@ -308,7 +317,15 @@ a[href^="tel"] {
 
         }
     }
-
+    .meet-the-staff2 {
+        .staff-container {
+            flex-wrap: wrap;
+            padding: 10px;
+            .staff-section {
+                width: 100%;
+            }
+        }
+    }
     #slider_nav {
         display:none;
     }

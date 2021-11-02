@@ -32,7 +32,7 @@ function add_new_admin_caps() {
 add_action( 'admin_init', 'add_new_admin_caps');
 
 //Webmaster
-//remove_role('webmaster');
+remove_role('webmaster');
 add_role(
     'webmaster',
     __( 'Webmaster', 'anglianlearning' ),

@@ -125,7 +125,7 @@ function anglian_learning_scripts() {
   //Lightbox
 
   wp_enqueue_script( 'al-gallery-masonry', 'https://unpkg.com/magic-grid/dist/magic-grid.min.js');
-  wp_enqueue_script( 'al-gallery-js', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');
+  //wp_enqueue_script( 'al-gallery-js', 'https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js');
   wp_enqueue_style( 'al-gallery-style', get_template_directory_uri().'/lib/ekko-lightbox.css');
   //Custom scripts
   wp_enqueue_script( 'al-scripts', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ), '1.0.0', true );

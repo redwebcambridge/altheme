@@ -32,7 +32,7 @@ function add_new_admin_caps() {
 add_action( 'admin_init', 'add_new_admin_caps');
 
 //Webmaster
-remove_role('webmaster');
+//remove_role('webmaster');
 add_role(
     'webmaster',
     __( 'Webmaster', 'anglianlearning' ),
@@ -93,6 +93,7 @@ add_role(
 );
 
 //Vacancy Manager
+remove_role('adult_learning');
 //remove_role('vacancy_manager');
 add_role(
   'vacancy_manager',
@@ -104,7 +105,7 @@ add_role(
 );
 
 //Sports User Role
-remove_role('sports_manager');
+//remove_role('sports_manager');
 add_role(
   'sports_manager',
   __( 'Sports Centre Manager', 'anglianlearning' ),
@@ -118,11 +119,34 @@ add_role(
     'read_private_sports' => true,
     'delete_sports' => true,
     'publish_sports' => true,
+    'delete_others_pages' => true,
+    'delete_others_posts' => true,
+    'delete_pages' => true,
+    'delete_posts' => true,
+    'delete_private_pages' => true,
+    'delete_private_posts' => true,
+    'delete_published_pages' => true,
+    'delete_published_posts' => true,
+    'delete Reusable Blocks' => true,
+    'edit_others_pages' => true,
+    'edit_others_posts' => true,
+    'edit_pages' => true,
+    'edit_posts' => true,
+    'edit_private_pages' => true,
+    'edit_private_posts' => true,
+    'edit_published_pages' => true,
+    'edit_published_posts' => true,
+    'create Reusable Blocks' => true,
+    'edit Reusable Blocks' => true,
+    'manage_categories' => true,
+    'manage_links' => true,
+    'publish_pages' => true,
+    'publish_posts' => true,
   )
 );
 
 //Adult Ed User Role
-remove_role('adult_ed_manager');
+//remove_role('adult_ed_manager');
 add_role(
   'adult_ed_manager',
   __( 'Adult Learning Manager', 'anglianlearning' ),
@@ -136,6 +160,29 @@ add_role(
     'read_adult_ed' => true,
     'read_private_adult_ed' => true,
     'delete_adult_ed' => true,
+    'delete_others_pages' => true,
+    'delete_others_posts' => true,
+    'delete_pages' => true,
+    'delete_posts' => true,
+    'delete_private_pages' => true,
+    'delete_private_posts' => true,
+    'delete_published_pages' => true,
+    'delete_published_posts' => true,
+    'delete Reusable Blocks' => true,
+    'edit_others_pages' => true,
+    'edit_others_posts' => true,
+    'edit_pages' => true,
+    'edit_posts' => true,
+    'edit_private_pages' => true,
+    'edit_private_posts' => true,
+    'edit_published_pages' => true,
+    'edit_published_posts' => true,
+    'create Reusable Blocks' => true,
+    'edit Reusable Blocks' => true,
+    'manage_categories' => true,
+    'manage_links' => true,
+    'publish_pages' => true,
+    'publish_posts' => true,
   )
 );
 

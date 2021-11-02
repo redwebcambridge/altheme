@@ -169,9 +169,7 @@ jQuery( document ).ready(function() {
         });
       }
     }
-    
-
-    
+        
   }
 
 
@@ -273,5 +271,3 @@ function googleTranslateElementInit() {
     'google_translate_el'
   );
 }
-
-

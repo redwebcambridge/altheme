@@ -627,6 +627,11 @@ function al_colours($init) {
     ';
     $init['textcolor_map'] = '['.$custom_colours.']';
     $init['textcolor_rows'] = 2;
+    //IF MPA OR lhjs
+    if (get_field('school_id','option') == "mpa" || get_field('school_id','option') == "lhjs") {
+      $init['content_style'] = 'body { font-size: 14pt; }';
+    }
     return $init;
 }
 add_filter('tiny_mce_before_init', 'al_colours');
+

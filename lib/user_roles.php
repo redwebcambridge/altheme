@@ -105,7 +105,7 @@ add_role(
 );
 
 //Sports User Role
-//remove_role('sports_manager');
+remove_role('sports_manager');
 add_role(
   'sports_manager',
   __( 'Sports Centre Manager', 'anglianlearning' ),
@@ -146,7 +146,7 @@ add_role(
 );
 
 //Adult Ed User Role
-//remove_role('adult_ed_manager');
+remove_role('adult_ed_manager');
 add_role(
   'adult_ed_manager',
   __( 'Adult Learning Manager', 'anglianlearning' ),

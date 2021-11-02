@@ -222,7 +222,7 @@
                         'setVolume' => 0,
                         'color' => $primarycolour,
                         'portrait' => 0,
-
+                        'pip' => true,
                     );
                     $new_src = add_query_arg($params, $src);
                     $iframe = str_replace($src, $new_src, $iframe);

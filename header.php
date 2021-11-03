@@ -269,9 +269,14 @@ if (!class_exists('ACF')) {
                   if (is_category('newsletter')) {
                     $header_text = 'Newsletter';
                   }
-                  elseif (is_category('the-fountain')) {
+                  if (is_category('the-fountain')) {
                     $header_text = 'The Fountain';
-                  } else {
+                  }
+                  if (is_category()) {
+                    $term = get_queried_object();
+                    $header_text = single_cat_title('',false);
+                  }  
+                  else {
                     $header_text = get_the_title();
                   }
                 }

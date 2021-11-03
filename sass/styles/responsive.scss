@@ -54,6 +54,12 @@ a[href^="tel"] {
     #currenthover, .currenthover {
         display: none!important;
     }
+    .schooliconholder {
+        display:none;
+    }
+   .tabcontent {
+        height:500px ;
+    }
     #listview {
         .fc-toolbar {
             display:flex !important;

@@ -57,7 +57,7 @@ a[href^="tel"] {
     .schooliconholder {
         display:none;
     }
-   .tabcontent {
+    body.home .tabcontent {
         height:500px ;
     }
     #listview {

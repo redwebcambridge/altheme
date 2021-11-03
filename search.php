@@ -78,19 +78,20 @@ $servername = VAC_DB_SERVER;
 					endif;	
 					?>
 					<div class="col-12 col-md-4 newseventcontainer">
-					<span class="vacancy_tag">VACANCY</span>
-					<div class="col-12 newseventimage">
-						<a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>" target="_blank">
-							<div class="newseventimagecontainer" style="background-image:url(<?php echo get_field('logo_and_icons','option')['default_header_image']; ?>);">
-							</div>
-						</a>
+						<span class="vacancy_tag">VACANCY</span>
+						<div class="col-12 newseventimage">
+							<a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>" target="_blank">
+								<div class="newseventimagecontainer" style="background-image:url(<?php echo get_field('logo_and_icons','option')['default_header_image']; ?>);">
+								</div>
+							</a>
+						</div>
+						<div class="col-12 newseventtext">
+							<h4><a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>"><?php echo $vacancy['vac_title']; ?></a></h4>
+							<?php $desc = filter_var($vacancy['vac_description'], FILTER_SANITIZE_STRING); ?>
+							<p><?php echo implode(' ', array_slice(explode(' ', $desc ), 0, 10));  ?>...</p>
+							<a class="readmore" href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>">READ MORE</a>
+						</div>
 					</div>
-					<div class="col-12 newseventtext">
-						<h4><a href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>"><?php echo $vacancy['vac_title']; ?></a></h4>
-						<p><?php echo implode(' ', array_slice(explode(' ', $vacancy['vac_description']), 0, 20));  ?>...</p>
-						<a class="readmore" href="<?php if($vacancy){echo $vacancies_url.'#vacancy_'.$vacancy['id'];} ?>">READ MORE</a>
-					</div>
-				</div>
 			<?php
 				} 
 			} 

@@ -20,6 +20,7 @@ body {
   }
   footer {
     z-index: 0;
+    position: relative;
   }
   .container-white-laurel, .container-white, .slick-twitter, .slick-slide {
     z-index: 1;
@@ -44,6 +45,4 @@ html,body {
   transition: opacity 0.25s ease-out;
   height: 100%;
   width: 100%;
-  position: fixed;
-  overflow: hidden;
 }

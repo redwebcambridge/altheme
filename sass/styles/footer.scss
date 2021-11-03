@@ -26,7 +26,7 @@ footer {
   left: 0;
   line-height: $bodylineheight;
   font-weight: $bodyfontweight;
-  z-index:1;
+  z-index:0;
   display: block;
   .inner-footer {
     padding:50px 0;
@@ -120,6 +120,7 @@ footer {
 .footer-buffer-one {
   display:block;
   width: 100%;
+  margin-bottom: $footerheight;
 }
 
 .partners {
@@ -151,7 +152,6 @@ footer {
   }
   .prev-slide-lower {
     text-align: left;
-
     &:before {
         @extend %fa-icon;
         @extend .fas;

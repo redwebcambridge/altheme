@@ -32,6 +32,9 @@
 
             </div><!-- container-white -->
 
+            </div><!-- #page -->
+
+
             <div class="footer-buffer-one"></div>
 
             <footer>
@@ -237,7 +240,6 @@
 
             </footer>
 
-        </div><!-- #page -->
 
         
 

@@ -480,8 +480,6 @@ else : //Not updating or adding so show list of vanancies and get trash
       if ($vacancy['listing_type'] !== 'adult_learning'){continue;}
      endif;
      
-      
-
 
      if ($vacancy['live']){
        $status = 'Published';

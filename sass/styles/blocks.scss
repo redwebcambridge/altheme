@@ -321,7 +321,16 @@ body{
   }
 }
 
-
+.vacancy_tag {
+  color: #fff;
+  background: $primarycolour;
+  font-weight: $bold-weight;
+  padding:5px 20px;
+  margin:20px;
+  font-size: 11px;
+  position: absolute;
+  z-index: 2;
+}
 .about-us-image {
   display: flex;
   justify-content: center;

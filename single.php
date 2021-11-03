@@ -31,7 +31,7 @@ $thumbnail= get_field('thumbnail'); ?>
 					<div class="socialcontainer">
 						<div class="row no-gutters">
 			                <div class="col-4 social-share" id ="twitter">
-								<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>&amp;via=Anglian Learning" target="_blank"></a>
+								<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>" target="_blank"></a>
 			                </div>
 
 				            <?php $post = get_post(); ?>

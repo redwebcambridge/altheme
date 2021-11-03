@@ -262,7 +262,9 @@ a[href^="tel"] {
     body .line {
         display:none;
     }
-
+    .tabcontent .content h2 {
+        margin-top:20px
+    }
     .navbar {
         top: 26px;
     }

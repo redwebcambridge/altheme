@@ -36,7 +36,7 @@ get_header(); ?>
               <?php 
                 $image_ids = get_field('gallery');
                 foreach ($image_ids as $img_id) {
-                  echo '<div class="galleryimagecontianer"><img src="'.wp_get_attachment_url($img_id).'" data-toggle="lightbox" class="galleryimage" data-gallery="gallery" alt="'.get_post_meta($img_id, '_wp_attachment_image_alt', true).'" data-title="'.get_the_excerpt($img_id).'" data-remote="'.wp_get_attachment_url($img_id).'" /></div>';
+                  echo '<div class="galleryimagecontianer"><img src="'.wp_get_attachment_url($img_id,'thumbnail').'" data-toggle="lightbox" class="galleryimage" data-gallery="gallery" alt="'.get_post_meta($img_id, '_wp_attachment_image_alt', true).'" data-title="'.get_the_excerpt($img_id).'" data-remote="'.wp_get_attachment_url($img_id).'" /></div>';
                 }
               ?>
               </div>

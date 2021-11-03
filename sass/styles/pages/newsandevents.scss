@@ -36,6 +36,9 @@
         }
         .newseventtext {
             padding:22px 30px;
+            @media only screen and (max-width: 992px) {
+                padding:22px 22px;
+            }
             background-color:$primarycolour;
             height:100%;
             cursor: pointer;
@@ -48,10 +51,6 @@
                 margin:0 0 20px;
                 a {
                     color:#fff;
-
-                    @media only screen and (max-width: 992px) {
-                        font-size: 22px;
-                    }
                     &:hover {
                         text-decoration:none;
                     }

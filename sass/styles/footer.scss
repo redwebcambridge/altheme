@@ -26,9 +26,9 @@ footer {
   bottom: 0;
   line-height: $bodylineheight;
   font-weight: $bodyfontweight;
+  z-index:1;
 
   #sb_instagram {
-   
     #sbi_images {
       display: flex;
       flex-wrap: wrap;

@@ -113,7 +113,8 @@ footer {
 }
 
 .footer-buffer-one {
-  height: $footerheight;
+  display:block;
+  width: 100%;
 }
 
 .partners {

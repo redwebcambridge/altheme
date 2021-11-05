@@ -40,24 +40,16 @@ jQuery( document ).ready(function() {
 
   //WINDOW RESIZE
     jQuery(window).resize(function(){
+      jQuery('.header-images-slick-slider')[0].slick.refresh();
+
         if (jQuery('body').width() > 750) {
+          
           var current = jQuery(".navbar-nav  li.active");
           hovericon(current);
-          jQuery('html').css('opacity','0');
           jQuery('.back-button').hide();
         }
     });
-    jQuery(window).bind('resizeEnd', function() {
-      jQuery('html').css('opacity','1')
-    });
-    jQuery(window).resize(function() {
-      if (jQuery('body').width() > 750) {
-        if(this.resizeTO) clearTimeout(this.resizeTO);
-        this.resizeTO = setTimeout(function() {
-          jQuery(this).trigger('resizeEnd');
-        }, 500);
-      }
-    });
+   
   
   //Partners
   jQuery('.partner-slider').slick({
@@ -106,7 +98,6 @@ jQuery( document ).ready(function() {
     adaptiveHeight: true,
     fade: true
   });
-    
   //Lightbox
    jQuery('body').on('click', '[data-toggle="lightbox"]', function(event) {
     event.preventDefault();

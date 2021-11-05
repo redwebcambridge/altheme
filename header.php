@@ -331,7 +331,14 @@ if (!class_exists('ACF')) {
   <div class="header-images-slick-slider">
     <?php foreach ($backgroundimgs as $backgroundimage ): ?>
       <div class="image-slider" style="background-image:url(<?php echo $backgroundimage; ?>)">
-      <?php echo file_get_contents(get_template_directory_uri().'/img/al-shape.svg'); ?>
+      <?php 
+      $arrContextOptions=array(
+        "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+        ),
+    );
+    $response = file_get_contents(get_template_directory_uri().'/img/al-shape.svg', false, stream_context_create($arrContextOptions));echo $response; ?>
       </div>
     <?php endforeach ?>
   </div>

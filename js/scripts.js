@@ -62,7 +62,7 @@ jQuery( document ).ready(function() {
     autoplay: true,
     responsive: [
       {
-        breakpoint: 900,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 3,
         }

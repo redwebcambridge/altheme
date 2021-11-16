@@ -148,16 +148,10 @@ header {
               width: 70%;
               font-size: 1.5rem;
               h1 {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
               }
             }
-            
-            @media (min-width: 1000px) {
-              width: 73%;
-              h1 {
-                font-size: 2.7rem;
-              }
-            }
+
             @media (min-width: 1500px) {
               width: 90%;
               h1 {

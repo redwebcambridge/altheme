@@ -62,13 +62,13 @@ jQuery( document ).ready(function() {
     autoplay: true,
     responsive: [
       {
-        breakpoint: 780,
+        breakpoint: 900,
         settings: {
           slidesToShow: 3,
         }
       },
       {
-        breakpoint: 420,
+        breakpoint: 760,
         settings: {
           slidesToShow: 2,
         }

@@ -26,12 +26,12 @@ footer {
   left: 0;
   line-height: $bodylineheight;
   font-weight: $bodyfontweight;
-  z-index:-2;
+  z-index:1;
   display: block;
+  
 
   .inner-footer {
     padding:50px 0;
-    height:$footerheight;
     display: flex;
     align-items: flex-end;
     flex-wrap:wrap;
@@ -57,6 +57,9 @@ footer {
     color: $footer_title_colour;
     text-transform: uppercase;
     font-weight: $headingsfontweight;
+    @media all and (max-width: 992px) {
+      margin-top: 20px;
+    }
   }
   .footer-line {
     margin-bottom: 20px;
@@ -119,9 +122,7 @@ footer {
 }
 
 .footer-buffer-one {
-  display:block;
-  width: 100%;
-  margin-bottom: $footerheight;
+  height: $footerheight;
 }
 
 .partners {

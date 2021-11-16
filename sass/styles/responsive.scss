@@ -262,6 +262,9 @@ a[href^="tel"] {
     body {
         padding-top:0;
     }
+    .container, .container-md, .container-sm {
+        max-width: 100%;
+    }
     body .line {
         display:none;
     }

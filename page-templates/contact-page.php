@@ -9,7 +9,7 @@ get_header(); ?>
 
       <div class="container contact-page">
         <div class="row">
-          <div class="col-md-8 text-section">
+          <div class="col-lg-8 text-section">
             <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
             <div class="gradline"></div>
               <div class="row">
@@ -96,7 +96,7 @@ get_header(); ?>
           </div>
 
           <?php if ($display_options['contact_form']) : ?>
-          <div class="col-md-4 text-section">
+          <div class="col-lg-4 text-section">
             <h2 class="heading-two"><?php the_field('sub_heading_right'); ?></h2>
             <div class="gradline mb-4"></div>
             <?php echo do_shortcode( $display_options['shortcode_for_contact_form'] ); ?>

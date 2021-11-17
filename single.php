@@ -20,7 +20,7 @@ $thumbnail= get_field('thumbnail'); ?>
 					<div class="gradline"></div>
 					<p class="body-text"></p>
 		          	<?php the_content(); ?>
-					<?php if (has_category('newsletter')) : get_template_part('template-parts/content-newsletters'); endif; ?>
+					  <?php if (has_category('newsletter') || has_category('fountain')) : get_template_part('template-parts/content-newsletters'); endif; ?>
 		        </div>
 
 				<div class="col-12 col-md-4 mb-5">

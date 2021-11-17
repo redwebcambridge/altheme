@@ -86,6 +86,9 @@ body{
   &.home {
     .tabcontent {
       border-top:solid 90px white;
+      @media all and (max-width: 992px) {
+        border-top:solid 40px white;
+      }
       position: relative;
       height: 380px;
       img {

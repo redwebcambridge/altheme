@@ -45,7 +45,12 @@ get_header();
                   if(get_field('day') !== '--Please Select--') { ?>
                   <div class="col-6 col-md-4 col-lg-2">
                    <strong class="table_head">Day</strong>
-                   <span><?php the_field('day'); ?></span>
+                   <span><?php 
+                   if (get_field('day') == 'other') {
+                     the_field('other_text');
+                   } else {
+                     the_field('day');
+                   } ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('time')) { ?>

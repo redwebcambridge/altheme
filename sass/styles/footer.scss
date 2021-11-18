@@ -48,8 +48,12 @@ footer {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      justify-content: space-between;
       .sbi_item {
-        width: 31%!important;
+        width: 30%!important;
+        @media all and (max-width: 992px) {
+          max-height: 95px;
+        }
       }
     }
     #sbi_load {

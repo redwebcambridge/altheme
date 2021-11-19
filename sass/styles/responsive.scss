@@ -10,33 +10,32 @@
     text-align: center;
     font-size: 30px;
 }
-
 a[href^="tel"] {
   color: inherit;
   text-decoration: none;
 }
-
 //HEADER SCALING
 @media all and (max-width: 992px) {
     .featured-top-image {
-        margin-bottom:20px;
         padding:100px 0;
         &.bottomleft {
-            padding: 150px 0 0 0;
+            padding: 250px 0 0 0;
             @media all and (max-width: 768px) {
-                padding: 100px 0 0 0;
+                padding: 200px 0 0 0;
             }
             @media all and (max-width: 576px) {
                 padding: 75px 0 0 0;
+                font-size: 1rem
             }
         }
         &.center {
-            padding:75px 0 75px 0;
+            padding: 125px 0 125px 0;
             @media all and (max-width: 768px) {
-                padding: 50px 0 50px 0;
+                padding: 100px 0 100px 0;
             }
             @media all and (max-width: 576px) {
-                padding: 37px 0 37px 0;
+                padding: 55px 0 55px 0;
+                font-size: 1rem
             }
         }
         h1 {
@@ -44,9 +43,6 @@ a[href^="tel"] {
         }
     }
 }
-
-
-
 @media all and (max-width: 992px) {
     body {
         padding-top:0;
@@ -149,7 +145,6 @@ a[href^="tel"] {
     .mobilesearch {
         display:block;
     }
-
     .offcanvas-collapse.open {
         display: block !important;
         ul {
@@ -184,7 +179,7 @@ a[href^="tel"] {
         }
     }
     #top_buttons ul:first-child:not(.dropdown-menu) {
-        margin: 5px 0 0 0 ;
+        margin: 5px;
         padding: 0;
         li {
             margin:10px 0 10px 10px !important;
@@ -371,14 +366,10 @@ a[href^="tel"] {
             }
         }
     }
-
     footer {
         .footer-base {
             padding:0 15px;
         }
-    }
-    .featured-top-image {
-        margin-bottom:97px;
     }
     .slick-initialized .slick-slide {
         width:34%;
@@ -392,19 +383,6 @@ a[href^="tel"] {
     .navbar-expand-md .navbar-toggler .menuicon {
         display:block;
         float:right;
-    }
-    .featured-top-image {
-        margin-bottom:20px;
-        padding:100px 0;
-        &.bottomleft {
-            padding: 100px 0 0 0;
-        }
-        &.center {
-            padding: 50px 0 50px 0;
-        }
-        h1 {
-            font-size:22px;
-        }
     }
     .course_details {
         div {

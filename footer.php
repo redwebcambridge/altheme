@@ -236,7 +236,8 @@
             </div>
 
             <div class="cookieconsent_msg"> 
-                <span><?php the_field('cookie_notice_message','option'); ?> See <a href="<?php get_field('cookie_policy_page','option'); ?>" class="ml-1 text-decoration-none">Cookie policy</a> </span>
+            <?php $cookie_link = get_field('cookie_policy_page','option'); ?>
+                <span><?php the_field('cookie_notice_message','option'); ?> See <a href="<?PHP echo get_permalink($cookie_link->ID); ?>" class="ml-1 text-decoration-none">Cookie policy</a> </span>
                 <div class=" ml-2 d-flex align-items-center justify-content-center g-2 mx-2">
                     <button class="allow-button mr-1">Allow cookies</button>
                 </div>

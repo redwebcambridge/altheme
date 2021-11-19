@@ -635,3 +635,28 @@ function al_colours($init) {
 }
 add_filter('tiny_mce_before_init', 'al_colours');
 
+function sports_cats_shortcode() {
+  $categories = get_terms([
+    'taxonomy' => 'sports-centre-category',
+    'hide_empty' => false,
+  ]);
+  $sports_cat_html = '<div class="row">';
+  foreach ($categories as $category) { 
+    $sports_cat_html .= '<div class="col-md-4 course"><a href="'.esc_url( get_term_link( $category->term_id ) ).'"><div class="course-thumbnail" style="background-image:url('.get_field('image',$category).')"></div><p class="course-name">'.$category->name.'</p></a></div>';
+  } 
+  return $sports_cat_html.'</div>';
+}
+add_shortcode('sports_cats', 'sports_cats_shortcode');
+
+function adult_cats_shortcode() {
+  $categories = get_terms([
+    'taxonomy' => 'adult-learning-category',
+    'hide_empty' => false,
+  ]);
+  $adult_cat_html = '<div class="row">';
+  foreach ($categories as $category) { 
+    $adult_cat_html .= '<div class="col-md-4 course"><a href="'.esc_url( get_term_link( $category->term_id ) ).'"><div class="course-thumbnail" style="background-image:url('.get_field('image',$category).')"></div><p class="course-name">'.$category->name.'</p></a></div>';
+  } 
+  return $adult_cat_html.'</div>';
+}
+add_shortcode('adult_cats', 'adult_cats_shortcode');

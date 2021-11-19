@@ -97,7 +97,26 @@ $servername = VAC_DB_SERVER;
 			} 
 			/* Start the Loop */
 			while ( have_posts() ) : the_post() ?>
-
+			<?php 
+			//IF SEARCH COME FROM ACADEMY PAGE
+			if ($_GET['site_section'] == 'academy') {
+				if (is_adult_ed_page() || is_sports_page()) {
+					continue;
+				} 
+			}
+			//IF SEARCH COME FROM SPORTS PAGE
+			if ($_GET['site_section'] == 'sports') {
+				if (!is_sports_page()) {
+					continue;
+				} 
+			}
+			//IF SEARCH COME FROM ADULT ED PAGE
+			if ($_GET['site_section'] == 'adult_ed') {
+				if (!is_adult_ed_page()) {
+					continue;
+				} 
+			}
+			?>
 			<div class="col-12 col-md-4 newseventcontainer">
 				<div class="col-12 newseventimage">
 					<?php

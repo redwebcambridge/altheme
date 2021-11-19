@@ -201,8 +201,10 @@ if (!class_exists('ACF')) {
             //if single sports cat
             if (is_single()) {
               $term = get_the_terms($post->ID,'sports-centre-category');
-              foreach($term as $term_single) {
-                $back_url = get_term_link($term_single);
+              if ( is_array( $terms ) ) {
+                foreach($term as $term_single) {
+                  $back_url = get_term_link($term_single);
+                }
               }
             }
           }
@@ -211,8 +213,10 @@ if (!class_exists('ACF')) {
             //if single adult cat
             if (is_single()) {
               $term = get_the_terms($post->ID,'adult-learning-category');
-              foreach($term as $term_single) {
-                $back_url = get_term_link($term_single);
+              if ( is_array( $terms ) ) {
+                foreach($term as $term_single) {
+                  $back_url = get_term_link($term_single);
+                }
               }
             }
           }

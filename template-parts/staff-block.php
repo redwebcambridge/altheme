@@ -10,7 +10,7 @@
             if(get_sub_field('role')){echo '<strong>'.get_sub_field('role').'</strong>';}
             if(get_sub_field('department')){echo ', '.get_sub_field('department');}
             if(get_sub_field('form__mentor_group')){echo ', <em>'.get_sub_field('form__mentor_group').'</em>';}
-            if(get_sub_field('email')){echo '<br><a href="mailto:'.get_sub_field('email').'">'.get_sub_field('email')."</a>";}
+            if(get_sub_field('email')){echo '<br><a class="staff_emailaddress" href="mailto:'.get_sub_field('email').'">'.get_sub_field('email')."</a>";}
             ?>
         </p>
         <?php

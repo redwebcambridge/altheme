@@ -15,9 +15,24 @@ body{
       i {
         line-height: 30px;
       }
-      
     }
-
+    .images_table {
+      tr {
+        vertical-align: top;
+        td {
+          padding:10px 0;
+        }
+        a {
+          font-size: .9rem;
+          @media only screen and (max-width: 920px) {
+            font-size: .75rem;
+          }
+        }
+        img {
+          padding:5px;
+        }
+      }
+    }
     //image alignment fix
    img {
     &.alignleft {

@@ -27,8 +27,9 @@ get_header();
 		<div class="col-md-9 text-section">
 	        <h2 class="heading-two d-flex justify-content-between"><?php  echo single_term_title(); ?></h2>
 	        <div class="gradline"></div>
-	        <p class="body-text"><?php echo term_description(); ?></p>
-
+			<div class="row">
+				<?php echo term_description(); ?>
+			</div>
 			<?php
 			$tax_ID = get_queried_object()->term_id;
 			$courses = get_posts(

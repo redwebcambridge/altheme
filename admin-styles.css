@@ -161,3 +161,11 @@ p.josefinsans, p.raleway, p.roboto, p.rubik, p.lato, p.librefranklin, p.montserr
 .listing_type label{
   padding-right: 20px;
 }
+
+.taxonomy-category .term-description-wrap, .taxonomy-sports-centre-category .term-description-wrap, .taxonomy-adult-learning-category .term-description-wrap{
+  display: none;
+}
+.quicktags-toolbar input{
+  float:left !important; 
+  width:auto !important;
+}

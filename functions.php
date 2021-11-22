@@ -660,3 +660,66 @@ function adult_cats_shortcode() {
   return $adult_cat_html.'</div>';
 }
 add_shortcode('adult_cats', 'adult_cats_shortcode');
+
+//Make Category boxes wysiwyg
+//Edit
+add_filter('category_edit_form_fields', 'edit_cat_description');
+function edit_cat_description($category) { 
+  $tag_extra_fields = get_option('description1');?>
+  <table class="form-table">
+    <tr class="form-field">
+      <th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
+      <td>
+      <?php     
+      $settings = array('wpautop' => true, 'media_buttons' => true, 'quicktags' => true, 'textarea_rows' => '15', 'textarea_name' => 'description' );
+      wp_editor(html_entity_decode($category->description , ENT_QUOTES, 'UTF-8'), 'description1', $settings); ?>
+      </td>
+    </tr>
+  </table>
+  <?php
+  }
+  //NEW CATS
+  add_action('category_add_form_fields','add_cat_description');
+  function add_cat_description($tag) {
+  $tag_extra_fields = get_option('description1');?>
+  <table class="form-table">
+    <tr class="form-field">
+      <th scope="row" valign="top"><label for="description"><?php _ex('Description', 'Taxonomy Description'); ?></label></th>
+    </tr>
+    <tr class="form-field">
+      <td>
+      <?php     
+      $settings = array('wpautop' => true, 'media_buttons' => true, 'quicktags' => true, 'textarea_rows' => '15', 'textarea_name' => 'description' );
+      wp_editor(html_entity_decode($tag->description , ENT_QUOTES, 'UTF-8'), 'description1', $settings); ?>    <br />
+      </td>
+    </tr>
+  </table>
+<?php 
+} 
+//Run new cat boxes on sports and adult
+if (get_field('activate_adult_learning','option')) {
+  add_filter('adult-learning-category_edit_form_fields', 'edit_cat_description');
+  add_action('adult-learning-category_add_form_fields','add_cat_description');
+}
+if (get_field('activate_sport_centre','option')) {
+  add_filter('sports-centre-category_edit_form_fields', 'edit_cat_description');
+  add_action('sports-centre-category_add_form_fields','add_cat_description');
+}
+// Disables Kses only for textarea saves
+foreach (array('pre_term_description', 'pre_link_description', 'pre_link_notes', 'pre_user_description') as $filter) {
+	remove_filter($filter, 'wp_filter_kses');
+}
+// Disables Kses only for textarea admin displays
+foreach (array('term_description', 'link_description', 'link_notes', 'user_description') as $filter) {
+	remove_filter($filter, 'wp_kses_data');
+}
+
+//Adding additional filters to wpadmin pages page
+function pages_filters($views){
+  $views['academy'] = "<a href='?post_type=page&?pagetype=academy'>".__('Academy Pages','anglian')."</a>";
+  $views['sports'] = "<a href='?post_type=page&?pagetype=sports'>".__('Sports Pages','anglian')."</a>";
+  $views['adulted'] = "<a href='?post_type=page&?pagetype=adulteducation'>".__('Adult Learning Pages','anglian')."</a>";
+  return $views;
+}
+add_filter( 'views_edit-page', 'pages_filters');
+

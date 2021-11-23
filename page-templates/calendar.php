@@ -88,8 +88,7 @@ get_header(); ?>
       locale: 'en',
     });
     //Render Both
-    calendar.render();
-    listview.render();
+    //calendar.render();
     //Get the data from the generated XML file
     jQuery.ajax({
         type : "get",
@@ -129,6 +128,8 @@ get_header(); ?>
                 alert('Load data source error');
             }
             jQuery('#calendar,#listview,#spinner').toggle();
+            calendar.render();
+            listview.render();
         },
         error: function( jqXHR, textStatus, errorThrown ){
             console.log( 'The following error occured: ' + textStatus, errorThrown );

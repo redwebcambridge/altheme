@@ -398,10 +398,21 @@ add_action('admin_menu', 'vacanciesmenu');
 function vacanciesmenu() {
   add_menu_page( 'Vacancies Admin', 'Vacancies', 'edit_vacancy', 'vacancyadmin', 'vacancies_admin','dashicons-format-aside',5);
   add_submenu_page( 'vacancyadmin', 'Vacancies Admin', 'Add New', 'edit_vacancy', '?page=vacancyadmin&action=addvacancy');
+  if (get_field('activate_adult_learning','option') || get_field('activate_sport_centre','option')) {
+    add_submenu_page('edit.php?post_type=page','Academy Pages','Academy Pages','edit_posts','academy_pages','pages_admin_filter');
+  }
+  if (get_field('activate_sport_centre','option')) {
+    add_submenu_page('edit.php?post_type=page','Sport Center Pages','Sport Center Pages','edit_posts','sports_pages','pages_admin_filter');
+  }
+  if (get_field('activate_adult_learning','option')) {
+    add_submenu_page('edit.php?post_type=page','Adult Education Pages','Adult Education Pages','edit_posts','adult_pages','pages_admin_filter');
+  }
 }
-
 function vacancies_admin() {
-    require_once('vacancy-admin.php');
+  require_once('lib/vacancy-admin.php');
+}
+function pages_admin_filter() {
+  require_once('lib/pages_admin_filter.php');
 }
 
 //Display Menu options in menu dropdown on relevant pages
@@ -716,9 +727,13 @@ foreach (array('term_description', 'link_description', 'link_notes', 'user_descr
 
 //Adding additional filters to wpadmin pages page
 function pages_filters($views){
-  $views['academy'] = "<a href='?post_type=page&?pagetype=academy'>".__('Academy Pages','anglian')."</a>";
-  $views['sports'] = "<a href='?post_type=page&?pagetype=sports'>".__('Sports Pages','anglian')."</a>";
-  $views['adulted'] = "<a href='?post_type=page&?pagetype=adulteducation'>".__('Adult Learning Pages','anglian')."</a>";
+  $views['academy'] = "<a href='edit.php?post_type=page&page=academy_pages'>".__('Academy Pages','anglian')."</a>";
+  if (get_field('activate_sport_centre','option')) {
+    $views['sports'] = "<a href='edit.php?post_type=page&page=sports_pages'>".__('Sports Pages','anglian')."</a>";
+  }
+  if (get_field('activate_adult_learning','option')) {
+    $views['adulted'] = "<a href='edit.php?post_type=page&page=adult_pages'>".__('Adult Learning Pages','anglian')."</a>";
+  }
   return $views;
 }
 add_filter( 'views_edit-page', 'pages_filters');

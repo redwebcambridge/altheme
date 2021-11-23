@@ -33,6 +33,10 @@ body{
         }
       }
     }
+    .spinner-border {
+      border: 0.25em solid $primarycolour;
+      border-right-color: transparent
+    }
     //image alignment fix
    img {
     &.alignleft {

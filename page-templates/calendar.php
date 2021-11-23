@@ -13,12 +13,12 @@ get_header(); ?>
           </div>
           <div class="col-lg-9 text-section">
             <div id='calendar'></div>
-              <div class="spinner-border text-center" role="status">
-                <span class="sr-only">Loading...</span>
-              </div>
           </div>
-         
-          
+          <div class="col-12 text-center my-5" id="spinner">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>    
+          </div>
     </div>
     <?php get_template_part('template-parts/downloads'); ?>
 
@@ -27,7 +27,7 @@ get_header(); ?>
 </section>
 
 <script type="text/javascript">
-  jQuery('#calendar').hide();
+  jQuery('#calendar,#listview').hide();
   document.addEventListener('DOMContentLoaded', function() {
     let events = [];
     var calendarEl = document.getElementById('calendar');
@@ -128,7 +128,7 @@ get_header(); ?>
             else {
                 alert('Load data source error');
             }
-            jQuery('#calendar,.spinner-border').toggle();
+            jQuery('#calendar,#listview,#spinner').toggle();
         },
         error: function( jqXHR, textStatus, errorThrown ){
             console.log( 'The following error occured: ' + textStatus, errorThrown );

@@ -99,7 +99,7 @@ get_header(); ?>
               if (response.data) {
                   events = response.data.event;
                   for (var i = 0; i < events.length; i++) {
-                    if(events[i].school !== '<?php echo get_field('school_id','option'); ?>'){
+                    if(strtolower(events[i].school) !== '<?php echo get_field('school_id','option'); ?>'){
                       continue;
                     }
                     var startdate = calendar.formatIso(events[i].start);

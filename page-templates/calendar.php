@@ -128,7 +128,7 @@ get_header(); ?>
             else {
                 alert('Load data source error');
             }
-            jQuery('#calendar').show();
+            jQuery('#calendar,.spinner-border').toggle();
         },
         error: function( jqXHR, textStatus, errorThrown ){
             console.log( 'The following error occured: ' + textStatus, errorThrown );

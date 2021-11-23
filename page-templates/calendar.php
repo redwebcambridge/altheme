@@ -99,15 +99,10 @@ get_header(); ?>
               if (response.data) {
                   events = response.data.event;
                   for (var i = 0; i < events.length; i++) {
-                    <?php $schoolinitials = strtoupper(get_field('school_id','option')); ?> 
-                    if(events[i].school !== '<?php echo $schoolinitials; ?>'){
-                      continue;
-                    }
                     var startdate = calendar.formatIso(events[i].start);
                     var enddate = calendar.formatIso(events[i].end);                    
                     var item = {
                       title: events[i].title, 
-                      //start: new Date(events[i].start),
                       start: new Date(startdate),
                       end: new Date(enddate),
                       url: events[i].url

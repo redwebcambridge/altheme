@@ -263,7 +263,7 @@ function get_content($URL){
 }
 
 function calendar_xml_init() {
-    $xmlstr = get_content('https://anglianlearning.org/cal/calendar-xml.php');
+    $xmlstr = get_content(get_template_directory_uri().'/lib/calendar-xml.php?school='.get_field('school_id','option'));
     $xml = new SimpleXMLElement($xmlstr);
     $json = json_encode($xml);
     $array = json_decode($json,TRUE);

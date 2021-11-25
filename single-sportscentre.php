@@ -18,7 +18,7 @@ get_header();
 
           <div class="col-md-3 text-section">
           <?php
-            $menu_choice = get_field('top_navigation_menu','option');
+            $menu_choice = get_field('sports_top_navigation_menu','option');
             wp_nav_menu(
               array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
             );

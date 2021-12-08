@@ -11,7 +11,7 @@
                     <div class="partner-slider slider">
                         <?php if( have_rows('carousel','option') ):
                             while( have_rows('carousel','option') ) : the_row(); ?>
-                                  <a href="<?php the_sub_field('url'); ?>" target="_blank" style="background-image:url(<?php the_sub_field('image'); ?>)">
+                                  <a href="<?php the_sub_field('url'); ?>" class="<?php the_sub_field('class'); ?>" target="_blank" style="background-image:url(<?php the_sub_field('image'); ?>)">
                                   </a>
                         <?php endwhile; endif; ?>
                     </div>

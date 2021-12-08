@@ -160,10 +160,10 @@ jQuery( document ).ready(function() {
           jQuery("#sidebar-menu li:not(.sub-menu li)").addClass("d-none");
           jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
           jQuery(".showall,.sidebarclose").on("click", function () {
-          jQuery("#sidebar-menu li:not(.sub-menu li):gt(4)").toggleClass("d-none");
-          jQuery(".sidebarclose,.showall").toggle();
-          jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
-        });
+            jQuery("#sidebar-menu li:not(.sub-menu li):gt(3)").toggleClass("d-none");
+            jQuery(".sidebarclose,.showall").toggle();
+            jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
+          });
       }
     }
         

@@ -38,6 +38,10 @@
 //Responsive
 @import "./styles/responsive";
 
+//Individual School Styles
+@import "./styles/individual_styles";
+
+
 @media (min-width: 1140px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
     max-width: 1140px;

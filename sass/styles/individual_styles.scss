@@ -27,9 +27,28 @@
           td{
             writing-mode: vertical-rl;
             min-height: 150px;
+            max-height: 150px;
             text-align: right!important;
             padding:10px 0;
             background-color:$lightgrey;
+          }
+        }
+    }
+    .ks3_table_svc {
+        border-color: #fff!important;
+      thead {
+          td{
+            min-height: 150px;
+            max-height: 150px;
+            text-align: right!important;
+            padding:10px 0;
+            background-color:$lightgrey;
+            text-align: left!important;
+            @media only screen and (max-width: 992px) {
+                writing-mode: vertical-rl;
+                text-align: right!important;
+
+            }
           }
         }
     }

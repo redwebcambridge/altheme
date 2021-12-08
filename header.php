@@ -37,8 +37,8 @@
   <meta property="og:image" content="<?php echo $featuredimg; ?>" />
   <?php wp_head(); ?>
 </head>
-
-<body <?php body_class(); ?> <?php if ( is_adult_ed_page() ) { echo 'id="adult_ed"'; } ?><?php if ( is_sports_page() ) { echo 'id="sports"'; } ?>>
+<?php $school_initials = 'school_id_'.get_field('school_id','option'); ?>
+<body <?php body_class($school_initials); ?> <?php if ( is_adult_ed_page() ) { echo 'id="adult_ed"'; } ?><?php if ( is_sports_page() ) { echo 'id="sports"'; } ?>>
 
 <?php
 //ACF must be installed

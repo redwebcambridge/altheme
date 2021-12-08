@@ -242,7 +242,8 @@ jQuery( document ).ready(function() {
   //Register an Interest form on vacancies page
   if (document.body.classList.contains('page-template-vacancies')) {
     jQuery('input:file').change(function(e){
-      var file = '<p style="font-weight:700;"><i class="fas fa-file-alt"></i>&nbsp;'+e.target.files[0].name+'</p>';
+      var filename = new String(e.target.files[0].name);
+      var file = '<p class="fileuploadname"><i class="fas fa-file-alt"></i>&nbsp;<span>'+filename+'</span></p>';
       jQuery('.cv_upload small').append(file);
     });
     jQuery('.vacancy .btn-primary').click(function(){ 

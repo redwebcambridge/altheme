@@ -89,7 +89,7 @@ get_header(); ?>
                echo '<div class="content collapse multi-collapse" id="content'.$i.'">';
                echo stripslashes($vacancy['vac_description']);
                //application form
-               if ($vacancy['application_form']){echo '<p><a class="btn btn-secondary btn-sm" target="_blank" href="?download='.$vacancy['id'].'&type=application_form" >Download Application</a>&nbsp;';}
+               if ($vacancy['application_form']){echo '<p><a class="btn btn-secondary btn-sm" target="_blank" href="?download='.$vacancy['id'].'&type=application_form" >Download Application Form</a>&nbsp;';}
                //Recruitment Pack
                if ($vacancy['recruitment_pack']){echo '<a class="btn btn-secondary btn-sm" target="_blank" href="?download='.$vacancy['id'].'&type=recruitment_pack" >Download Recruitment Pack</a></p>';}
                echo '</div></div>';

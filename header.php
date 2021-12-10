@@ -35,6 +35,15 @@
   <meta property="og:title" content="<?php echo the_title(); ?>" />
   <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
   <meta property="og:image" content="<?php echo $featuredimg; ?>" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA_TAG; ?>"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '<?php echo GA_TAG; ?>');
+  </script>
   <?php wp_head(); ?>
 </head>
 <?php $school_initials = 'school_id_'.get_field('school_id','option'); ?>

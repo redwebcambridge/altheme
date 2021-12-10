@@ -218,6 +218,7 @@
                         'color' => $primarycolour,
                         'portrait' => 0,
                         'pip' => true,
+                        'rel' => 0,
                     );
                     $new_src = add_query_arg($params, $src);
                     $iframe = str_replace($src, $new_src, $iframe);

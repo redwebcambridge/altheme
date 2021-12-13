@@ -28,9 +28,9 @@
                         $string = substr($stringCut, 0);
                     }
                 }
-                echo $string
+                echo $string;
                 ?>
-                <p><a href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a></p>
+                <p><a target="<?php echo get_sub_field('button')['target']; ?>" href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a></p>
                 </div>
             </div>
             <?php $logos = get_field('logo_and_icons','option'); ?>

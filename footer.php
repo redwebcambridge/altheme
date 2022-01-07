@@ -26,7 +26,7 @@
             </div><!-- #page -->
 
 
-            <div class="footer-buffer-one"></div>
+            <!-- <div class="footer-buffer-one"></div> -->
 
             <footer>
                

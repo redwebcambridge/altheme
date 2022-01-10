@@ -190,7 +190,7 @@ function register_news_post_type() {
 }
 add_action( 'init', 'register_news_post_type', 0 );
 
-function twitterwp() {
+function twitterwp($user) {
   require_once( 'lib/TwitterWP.php' );
   $app = array(
     'consumer_key'        => TW_consumer_key,
@@ -200,12 +200,6 @@ function twitterwp() {
     );
   // initiate your app
   $tw = TwitterWP::start( $app );
-
-  if( have_rows('platforms','option') ):
-    while( have_rows('platforms','option') ) : the_row();
-      if(get_sub_field('platform')=='twitter'){$user = get_sub_field('username');} else {$user = 'AnglianLearning';}
-    endwhile;
-  endif;
   if ( ! $tw->user_exists( $user ) ) {
     return;
   }
@@ -445,7 +439,7 @@ add_filter('acf/load_field/name=sports_top_navigation_menu', 'get_menus_for_acf'
 function is_adult_ed_page() {
   if(get_field('activate_adult_learning','option')) {
     global $post;
-    if (is_page_template('page-templates/adult-learning.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') || $post->post_parent == get_field('adult_learning_homepage','option') || $_GET['site_section'] == 'adult_ed' ) :
+    if (is_page_template('page-templates/adult-learning.php') || is_page_template('page-templates/adult-learning-homepage.php') || 'adultlearning' == get_post_type() || is_singular( 'adultlearning' ) || is_tax('adult-learning-category') || $post->post_parent == get_field('adult_learning_homepage','option') || $_GET['site_section'] == 'adult_ed' ) :
       return true;
     endif;
     if (is_archive()) {
@@ -469,7 +463,7 @@ function is_adult_ed_page() {
 function is_sports_page() {
   if(get_field('activate_sport_centre','option')) {
     global $post;
-    if (is_page_template('page-templates/sports-centre.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') || $post->post_parent == get_field('sports_homepage','option') || $_GET['site_section'] == 'sports' ) :
+    if (is_page_template('page-templates/sports-centre.php') || is_page_template('page-templates/sports-homepage.php') || 'sportscentre' == get_post_type() || is_singular( 'sportscentre' ) || is_tax('sports-centre-category') || $post->post_parent == get_field('sports_homepage','option') || $_GET['site_section'] == 'sports' ) :
       return true;
     endif;
     if (is_archive()) {

@@ -1,4 +1,5 @@
 #sports {
+
   ::selection {
     background: darken($sportprimarycolour,10%);
     color: #fff;
@@ -52,6 +53,20 @@
       color: #fff;
     }
   }
+  .latestnews {
+    .newsitemdetails h3 {
+      a {
+        color: $sportprimarycolour;
+      }
+    }
+    .twitter-header {
+      background-color: $sportprimarycolour;
+    }
+  }
+  .al-border-bottom {
+    border-bottom: 7px solid $sportprimarycolour;
+  }
+  
   #mainnav {
     ul{
       border-top-color: $sportprimarycolour;

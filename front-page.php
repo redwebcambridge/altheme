@@ -61,7 +61,7 @@
 
 
 <!-- Latest news and twitter -->
-<div class="latestnews">
+<div class="latestnews my-5">
     <?php
     //exclude newsletters
 	$newsletters = get_category_by_slug('newsletter');
@@ -137,10 +137,15 @@
                 <?php if(get_field('display_twitter_feed')) : ?>
 
                 <div class="col-12 col-md-4 twittercontainer">
-                        <h2>Latest Tweets</h2>
-                        <div class="gradline"></div>
-
-                    <?php $tweets = twitterwp(); ?>
+                    <h2>Latest Tweets</h2>
+                    <div class="gradline"></div>
+                    <?php 
+                    if( have_rows('platforms','option') ):
+                        while( have_rows('platforms','option') ) : the_row();
+                        if(get_sub_field('platform')=='twitter'){$user = get_sub_field('username');} else {$user = 'AnglianLearning';}
+                        endwhile;
+                    endif;
+                    $tweets = twitterwp($user); ?>
                     <div class="twitter-box">
                         <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
                         <div class="twitter-header">

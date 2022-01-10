@@ -21,11 +21,11 @@
       if(empty($featuredimg)){
         $featuredimg = get_field('header_image', $category);
       }
-     
       if(empty($featuredimg)){
         $featuredimg = get_field('logo_and_icons','option')['default_header_image'];
       }
     }
+   
     ?>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -256,6 +256,9 @@ if (!class_exists('ACF')) {
                   'fallback_cb'		=> 'WP_Bootstrap_Navwalker::fallback',
                   'walker'			=> new WP_Bootstrap_Navwalker()
                 ));
+                if (is_page_template('page-templates/sports-homepage.php')){
+                  $header_text = get_field('header_title');
+                }
               }
               elseif ( is_adult_ed_page() ) {
                 if (is_archive()) {
@@ -264,6 +267,9 @@ if (!class_exists('ACF')) {
                 }
                 if(empty($header_text) || $header_text == 'Archives' ){
                   $header_text = get_the_title();
+                }
+                if (is_page_template('page-templates/adult-learning-homepage.php')){
+                  $header_text = get_field('header_title');
                 }
                 wp_nav_menu( array(
                   'menu'              =>  get_field('top_navigation_menu','option'),
@@ -304,6 +310,8 @@ if (!class_exists('ACF')) {
                   'walker'			=> new WP_Bootstrap_Navwalker()
                 ));
               }
+
+              
         ?>
     </div>
     <div id="currenthover" class="currenthover"></div>

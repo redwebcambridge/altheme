@@ -140,6 +140,19 @@
       color: #fff;
     }
   }
+  .latestnews {
+    .newsitemdetails h3 {
+      a {
+        color: $adultprimarycolour;
+      }
+    }
+    .twitter-header {
+      background-color: $adultprimarycolour;
+    }
+  }
+  .al-border-bottom {
+    border-bottom: 7px solid $adultprimarycolour;
+  }
   #mainnav {
       border-top-color: $adultprimarycolour;
       li {

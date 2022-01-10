@@ -78,6 +78,8 @@ get_header(); ?>
 
                     <?php 
                     $user = get_field('username'); 
+
+                    if (get_field('platform') == 'Twitter') :
                     $tweets = twitterwp($user); ?>
                     <div class="twitter-box">
                         <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
@@ -118,8 +120,25 @@ get_header(); ?>
 
                         <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
                     </div>
+                    <?php endif; //end twitter feed 
+                      
+                    if (get_field('platform') == 'Instagram') :
+                        echo '<div class="instagram-feed">';
+                        echo do_shortcode('[instagram-feed user="'.$user.'" num=9 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]');
+                        echo '</div>';
+                    endif;
+
+                    if (get_field('platform') == 'Facebook') :
+                        echo '<div class="facebook-feed">';
+                        echo do_shortcode('[custom-facebook-feed limit=1 num=1 showheader=false id='.$user.'  ]');
+                        echo '</div>';
+                    endif;
+                    
+                    ?>
+
+
                 </div>
-                <?php endif; //end twitter feed ?>
+                <?php endif; //end social feeds ?>
         </div>
         <div class="row">
           <div class="col-md-12 my-5">

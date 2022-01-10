@@ -62,6 +62,21 @@
     .twitter-header {
       background-color: $sportprimarycolour;
     }
+    .instagram-feed {
+      #sbi_load {
+        text-align: left;
+        .sbi_follow_btn {
+          margin-left: 0;
+          margin-top:5px;
+          a {
+            background-color: $sportprimarycolour;
+            &:hover {
+              background-color: $sportsecondarycolour;
+            }
+          }
+        }
+      }
+    }
   }
   .al-border-bottom {
     border-bottom: 7px solid $sportprimarycolour;

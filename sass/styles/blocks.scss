@@ -384,7 +384,9 @@ body{
       width:100%;
     }
   }
-
+  .facebook-feed {
+    margin: 45px 0 0 0;
+  }
   .twitter-box {
     border: 1px solid $lightgrey;
     margin: 45px 0 0 0;
@@ -448,4 +450,10 @@ body{
       }
     }
   }
+
+  .instagram-feed {
+    margin: 45px 0 0 0;
+    background-color: white;
+  }
 }
+

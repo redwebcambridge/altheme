@@ -78,48 +78,69 @@ get_header(); ?>
 
                     <?php 
                     $user = get_field('username'); 
-                    $tweets = twitterwp($user); ?>
-                    <div class="twitter-box">
-                        <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
-                        <div class="twitter-header">
-                            @<?php echo $tweets[0]->user->screen_name; ?>
+
+                    if (get_field('platform') == 'Twitter') :
+                        $tweets = twitterwp($user); ?>
+                        <div class="twitter-box">
+                            <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
+                            <div class="twitter-header">
+                                @<?php echo $tweets[0]->user->screen_name; ?>
+                            </div>
+
+                            </a>
+                            <div class="slick-controls">
+                                <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
+                                <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+
+                            <ul class="slick-twitter">
+                            <?php
+                            //Twitter loop
+                                foreach ($tweets as $tweet) {
+                                    if(isset($tweet->entities->media[0]->media_url)){
+                                        $tweet_img = $tweet->entities->media[0]->media_url;
+                                    } else {
+                                        $tweet_img = null;
+                                    }
+                                    $tweet_date = $tweet->created_at;
+                                    $tweet_date= date_create($tweet_date);
+                                    $tweet_date = date_format($tweet_date,"jS F Y");
+                                    if ($tweet_img){
+                                        echo '<li><p class="post-date">'.$tweet_date.'</p>';
+                                        echo '<img class="twitter-tweet-image" src="'.$tweet_img.'" alt="Twitter Image">';
+                                        $last_space_position = strrpos($tweet->full_text, ' ');
+                                        $text_without_last_word = substr($tweet->full_text, 0, $last_space_position);
+                                        echo $text_without_last_word.'</li>';
+                                    } else {
+                                        echo '<li><p class="post-date">'.$tweet_date.'</p>'.$tweet->full_text.'</li>';
+                                    }
+                                } //end foreach
+                                ?>
+                            </ul>
+                            <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
                         </div>
+                    <?php endif; //end twitter feed 
+                    
+                    if (get_field('platform') == 'Instagram') :
+                        echo '<div class="instagram-feed">';
+                        echo do_shortcode('[instagram-feed user="'.$user.'" num=9 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]');
+                        echo '</div>';
+                    endif;
+                    
+                    if (get_field('platform') == 'Facebook') :
+                        echo '<div class="facebook-feed">';
+                        echo do_shortcode( get_field('facebook_feed_shortcode') );
+                        echo '</div>';
+                    endif;
 
-                        </a>
-                        <div class="slick-controls">
-                            <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
-                            <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>
-                        </div>
+                    ?>
 
-                        <ul class="slick-twitter">
-                           <?php
-                           //Twitter loop
-                            foreach ($tweets as $tweet) {
-                                if(isset($tweet->entities->media[0]->media_url)){
-                                    $tweet_img = $tweet->entities->media[0]->media_url;
-                                } else {
-                                    $tweet_img = null;
-                                }
-                                $tweet_date = $tweet->created_at;
-                                $tweet_date= date_create($tweet_date);
-                                $tweet_date = date_format($tweet_date,"jS F Y");
-                                if ($tweet_img){
-                                    echo '<li><p class="post-date">'.$tweet_date.'</p>';
-                                    echo '<img class="twitter-tweet-image" src="'.$tweet_img.'" alt="Twitter Image">';
-                                    $last_space_position = strrpos($tweet->full_text, ' ');
-                                    $text_without_last_word = substr($tweet->full_text, 0, $last_space_position);
-                                    echo $text_without_last_word.'</li>';
-                                } else {
-                                    echo '<li><p class="post-date">'.$tweet_date.'</p>'.$tweet->full_text.'</li>';
-                                }
-                            } //end foreach
-                            ?>
-                        </ul>
 
-                        <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
-                    </div>
+
+
+
                 </div>
-                <?php endif; //end twitter feed ?>
+                <?php endif; //end social feed ?>
         </div>
         <div class="row">
           <div class="col-md-12 my-5">

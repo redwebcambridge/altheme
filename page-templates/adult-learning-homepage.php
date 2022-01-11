@@ -132,12 +132,7 @@ get_header(); ?>
                         echo do_shortcode( get_field('facebook_feed_shortcode') );
                         echo '</div>';
                     endif;
-
                     ?>
-
-
-
-
 
                 </div>
                 <?php endif; //end social feed ?>
@@ -154,24 +149,25 @@ get_header(); ?>
             <h2 class="heading-two"><?php the_field('content_block_title') ?></h2>
             <div class="gradline"></div>
             <p class="body-text"><?php the_field('content'); ?></p>
+            <?php if (get_field('enable_categories')) : ?>
+                <div class="row">
+                <?php 
+                $categories = get_terms([
+                    'taxonomy' => 'adult-learning-category',
+                    'hide_empty' => false,
+                ]);
 
-            <div class="row">
-            <?php 
-            $categories = get_terms([
-                'taxonomy' => 'adult-learning-category',
-                'hide_empty' => false,
-             ]);
-
-            if(!empty($categories) ):
-                foreach ($categories as $category) { 
-                     echo '<div class="col-md-4 course"><a href="'.esc_url( get_term_link( $category->term_id ) ).'">';
-                     echo '<div class="course-thumbnail" style="background-image:url('.get_field('image',$category).')"></div><p class="course-name">'.$category->name.'</p>';
-                     echo '</a></div>';
-                } 
-            ?> 
-            <?php endif; ?>      
-            </div>                    
-            <?php if (get_field('display_contact_information_under_categories')) { get_template_part('template-parts/adult-learning-contact');} ?>
+                if(!empty($categories) ):
+                    foreach ($categories as $category) { 
+                        echo '<div class="col-md-4 course"><a href="'.esc_url( get_term_link( $category->term_id ) ).'">';
+                        echo '<div class="course-thumbnail" style="background-image:url('.get_field('image',$category).')"></div><p class="course-name">'.$category->name.'</p>';
+                        echo '</a></div>';
+                    } 
+                ?> 
+                <?php endif; ?>      
+                </div>                    
+                <?php if (get_field('display_contact_information_under_categories')) { get_template_part('template-parts/adult-learning-contact');} ?>
+            <?php endif; ?>
         </div>
 
         <!-- partner slider -->

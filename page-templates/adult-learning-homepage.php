@@ -166,8 +166,9 @@ get_header(); ?>
                 ?> 
                 <?php endif; ?>      
                 </div>                    
-                <?php if (get_field('display_contact_information_under_categories')) { get_template_part('template-parts/adult-learning-contact');} ?>
             <?php endif; ?>
+                <?php if (get_field('display_contact_information_under_categories')) { get_template_part('template-parts/adult-learning-contact');} ?>
+            
         </div>
 
         <!-- partner slider -->

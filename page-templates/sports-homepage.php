@@ -168,9 +168,10 @@ get_header(); ?>
                     } 
                 ?> 
                 <?php endif; ?>      
-                </div>                    
+                </div>  
+            <?php endif; ?>                      
                 <?php if (get_field('display_contact_information_under_categories')) { get_template_part('template-parts/sports-contact');} ?>
-            <?php endif; ?>
+                
         </div>
 
         <!-- partner slider -->

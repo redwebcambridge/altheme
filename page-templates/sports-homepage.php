@@ -169,7 +169,7 @@ get_header(); ?>
             ?> 
             <?php endif; ?>      
             </div>                    
-            <?php if (get_field('display_contact_information_under_categories')) { get_template_part('template-parts/adult-learning-contact');} ?>
+            <?php if (get_field('display_contact_information_under_categories')) { get_template_part('template-parts/sports-contact');} ?>
         </div>
 
         <!-- partner slider -->

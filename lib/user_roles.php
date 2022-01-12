@@ -89,6 +89,7 @@ add_role(
       'read_adult_ed' => true,
       'read_private_adult_ed' => true,
       'delete_adult_ed' => true,
+      'manage_custom_facebook_feed_options' => true
     )
 );
 
@@ -145,6 +146,7 @@ add_role(
     'unfiltered_html' => true,
     'upload_files' => true,
     'edit_theme_options' => true,
+    'manage_custom_facebook_feed_options' => true
   )
 );
 
@@ -189,6 +191,7 @@ add_role(
     'unfiltered_html' => true,
     'upload_files' => true,
     'edit_theme_options' => true,
+    'manage_custom_facebook_feed_options' => true
   )
 );
 
@@ -215,3 +218,10 @@ function wdm_user_role_dropdown($all_roles) {
   return $all_roles;
 }
 add_filter('editable_roles','wdm_user_role_dropdown');
+
+//Smash balloon role
+function sb_custom_capability( $cap ) {
+  return 'edit_vacancy';
+}
+add_filter( 'sbi_settings_pages_capability', 'sb_custom_capability', 10, 1 );
+//add_filter( 'sbf_settings_pages_capability', 'sb_custom_capability', 10, 1 );

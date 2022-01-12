@@ -85,23 +85,57 @@ public function wp_list_table_data() {
         if ($_GET['page'] == 'academy_pages') {
             if(is_sports_page()){continue;}
             if(is_adult_ed_page()){continue;}
+            $single_data = array(
+                'id'    => get_the_id(),
+                'title'  => '<strong><a href="'.get_edit_post_link().'">'.get_the_title().'</a></strong>',
+                'author' => get_the_author(),
+                'date' => get_post_status().'<br>'.get_the_date(),
+            );
         }
         //Sports Pages
         if ($_GET['page'] == 'sports_pages') {
             if(!is_sports_page()){continue;}
+            $single_data = array(
+                'id'    => get_the_id(),
+                'title'  => '<strong><a href="'.get_edit_post_link().'">'.get_the_title().'</a></strong>',
+                'author' => get_the_author(),
+                'date' => get_post_status().'<br>'.get_the_date(),
+            );
         }
         //Adult Ed Pages
         if ($_GET['page'] == 'adult_pages') {
             if(!is_adult_ed_page()){continue;}
+            $single_data = array(
+                'id'    => get_the_id(),
+                'title'  => '<strong><a href="'.get_edit_post_link().'">'.get_the_title().'</a></strong>',
+                'author' => get_the_author(),
+                'date' => get_post_status().'<br>'.get_the_date(),
+            );
         }
-        $single_data = array(
-            'id'    => get_the_id(),
-            'title'  => '<strong><a href="'.get_edit_post_link().'">'.get_the_title().'</a></strong>',
-            'author' => get_the_author(),
-            'date' => get_post_status().'<br>'.get_the_date(),
-        );
         array_push($page_data,$single_data);
     endwhile;
+    //Add homepages for Adult ed and sports
+    if ($_GET['page'] == 'adult_pages') {
+        $adult_home = get_field('adult_learning_homepage','option');
+        $single_data = array(
+            'id'    => $adult_home,
+            'title'  => '<strong><a href="'.get_edit_post_link($adult_home).'">'.get_the_title($adult_home).'</a> <em> - Homepage</em></strong>',
+            'author' => get_the_author($adult_home),
+            'date' => get_post_status($adult_home).'<br>'.get_the_date($adult_home),
+        );
+        array_push($page_data,$single_data);
+    }
+    if ($_GET['page'] == 'sports_pages') {
+        $sports_home = get_field('sports_homepage','option');
+        $single_data = array(
+            'id'    => $sports_home,
+            'title'  => '<strong><a href="'.get_edit_post_link($sports_home).'">'.get_the_title($sports_home).'</a> <em> - Homepage</em></strong>',
+            'author' => get_the_author($sports_home),
+            'date' => get_post_status($sports_home).'<br>'.get_the_date($sports_home),
+        );
+        array_push($page_data,$single_data);
+    }
+
     return $page_data;
 }
 

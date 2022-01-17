@@ -130,7 +130,7 @@ get_header(); ?>
 
                     if (get_field('platform') == 'Facebook') :
                         echo '<div class="facebook-feed">';
-                        echo do_shortcode('[custom-facebook-feed limit=1 num=1 showheader=false id='.$user.'  ]');
+                        echo do_shortcode( get_field('facebook_feed_shortcode') );
                         echo '</div>';
                     endif;
                     

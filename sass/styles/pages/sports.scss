@@ -292,6 +292,12 @@
         font-weight: $sportheadingsfontweight;
         color: $sportfooter_title_colour;
       }
+      .sbi_follow_btn a {
+        background: $sportprimarycolour;
+        &:hover {
+         background: $sportsecondarycolour;
+        }
+      }
     }
     .footer-base {
       background: $sportprimarycolour;

@@ -234,6 +234,12 @@
       font-family: $adultheadingsfont;
       font-weight: $adultheadingsfontweight;
     }
+    .sbi_follow_btn a {
+      background: $adultprimarycolour;
+      &:hover {
+       background: $adultsecondarycolour;
+      }
+    }
   }
   .footer-base {
     background: $adultprimarycolour;

@@ -63,7 +63,12 @@
                             <p><?php echo $adult_footer['col1_content']; ?></p>
                             <?php $socialmedia = $adult_footer['social_media']; ?>
                                 <div class="social">
-                                <?php foreach ($socialmedia as $platform) : ?>
+                                <?php foreach ($socialmedia as $platform) :
+                                    //save instagram user in case they wish to have a footer feed - adult
+                                    if($platform['platform']=='instagram'){
+                                        $instauser_adult = str_replace('@','',$platform['username']);
+                                     }
+                                ?>
                                     <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
@@ -75,7 +80,12 @@
                             <p><?php echo $sports_footer['col1_content']; ?></p>
                             <?php $socialmedia = $sports_footer['social_media']; ?>
                                 <div class="social">
-                                <?php foreach ($socialmedia as $platform) : ?>
+                                <?php foreach ($socialmedia as $platform) :
+                                    //save instagram user in case they wish to have a footer feed - sports
+                                    if($platform['platform']=='instagram'){
+                                       $instauser_sport = str_replace('@','',$platform['username']);
+                                    }
+                                ?>
                                     <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
@@ -86,8 +96,8 @@
                             <?php the_field('footer_left_side_text','option'); ?>
                                 <div class="social">
                                 <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
-                                <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank"><i class="social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
-                                    <?php endwhile; endif; ?>
+                                    <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank"><i class="social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
+                                <?php endwhile; endif; ?>
                                 </div>
                         <?php endif; ?>
                         </div>
@@ -165,12 +175,14 @@
 
                         <div class="col-md-4">
                         <?php if (is_sports_page()) : ?>
-                                <h5><?php echo $sports_footer['column_3_title']; ?></h5>
-                                <div class="footer-line"></div>
-                                <?php
+                            <h5><?php echo $sports_footer['column_3_title']; ?></h5>
+                            <div class="footer-line"></div>
+
+                            <?php 
+                            if ($sports_footer['map_or_insta'] == 'Map') : 
                                 $longitude = $sports_footer['longatude']; 
                                 $latitude = $sports_footer['latitude']; 
-                                ?>
+                            ?>
                                 <div id="map"></div>
                                 <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
                                 <script>
@@ -180,12 +192,20 @@
                                     L.control.scale().addTo(map);
                                 </script>
                                 <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                            <?php endif; ?>
+                            <?php if ($sports_footer['map_or_insta'] == 'Instagram') : ?>             
+                                <div class="insta-gallery">
+                                    <?php echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_sport.'" ]'); ?>
+                                </div>
+                            <?php endif; ?>
+
                             <?php elseif (is_adult_ed_page()) : ?>
                                 <h5><?php echo $adult_footer['column_3_title']; ?></h5>
                                 <div class="footer-line"></div>
                                 <?php
-                                $longitude = $adult_footer['longatude']; 
-                                $latitude = $adult_footer['latitude']; 
+                                if ($adult_footer['map_or_insta'] == 'Map') : 
+                                    $longitude = $adult_footer['longatude']; 
+                                    $latitude = $adult_footer['latitude']; 
                                 ?>
                                 <div id="map"></div>
                                 <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
@@ -196,6 +216,14 @@
                                     L.control.scale().addTo(map);
                                 </script>
                                 <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                                <?php endif; ?>
+                                <?php if ($adult_footer['map_or_insta'] == 'Instagram') : ?>             
+                                <div class="insta-gallery">
+                                    <?php 
+                                    echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_adult.'" ]'); ?>
+                                </div>
+                                <?php endif; ?>
+
                             <?php else : ?>
 
                             <?php
@@ -245,8 +273,6 @@
                 </div>
             </div>
 
-            
-
         </footer>
 
         <div class="backtotop"> 
@@ -261,7 +287,6 @@
             </div>
         </div>
     
-
     <?php wp_footer(); ?>
 
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/offcanvas.js"></script>

@@ -15,14 +15,13 @@ get_header();
 
 	   <!---Sidebar--->
 	   <div class="col-md-3 text-section">
-         	<?php
-			 	$main_adultlearning_page = get_field('adult_learning_homepage','option');
-				$adult_menu = get_field('menu_select',$main_adultlearning_page);
+          <?php
+				$menu_choice = get_field('top_navigation_menu','option');
 				wp_nav_menu(
-					array('menu'=>$adult_menu, 'menu_id' => 'sidebar-menu')
+					array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
 				);
 			?>
-        </div>
+          </div>
 
 		<div class="col-md-9 text-section">
 	        <h2 class="heading-two d-flex justify-content-between"><?php  echo single_term_title(); ?></h2>

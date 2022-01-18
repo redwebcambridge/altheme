@@ -15,14 +15,13 @@ get_header();
 
 	   <!---Sidebar--->
 	   <div class="col-md-3 text-section">
-	 		  <?php
-			 	$main_sportlearning_page = get_field('sports_homepage','option');
-				$sports_menu = get_field('menu_select',$main_sportlearning_page);
-				wp_nav_menu(
-					array('menu'=>$sports_menu, 'menu_id' => 'sidebar-menu')
-				);
-			?>
-        </div>
+          <?php
+            $menu_choice = get_field('sports_top_navigation_menu','option');
+            wp_nav_menu(
+              array('menu'=>$menu_choice, 'menu_id' => 'sidebar-menu')
+            );
+          ?>
+          </div>
 
 		<div class="col-md-9 text-section">
 	        <h2 class="heading-two d-flex justify-content-between"><?php  echo single_term_title(); ?></h2>

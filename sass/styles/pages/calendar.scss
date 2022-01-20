@@ -519,7 +519,9 @@
     font-weight:700
 }
 .fc-daygrid-block-event .fc-event-time,.fc-daygrid-block-event .fc-event-title{
-    padding:1px
+    padding:1px 5px 1px 5px;
+    white-space: normal;
+    text-align: left;
 }
 .fc-daygrid-dot-event{
     display:flex;

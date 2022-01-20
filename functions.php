@@ -732,3 +732,9 @@ function pages_filters($views){
 }
 add_filter( 'views_edit-page', 'pages_filters');
 
+//Gallery
+add_action('wp_enqueue_scripts', 'magicgrid');
+function magicgrid() {
+	wp_register_script('magicgrid', 'https://unpkg.com/magic-grid/dist/magic-grid.min.js', array('jquery'),'1.1', true);
+ 	wp_enqueue_script('magicgrid');
+}

@@ -2,8 +2,8 @@
 /*
 Template Name: Gallery 
 */
-get_header(); ?>
-<script src="https://unpkg.com/magic-grid/dist/magic-grid.min.js"></script>
+get_header(); 
+?>
 <script>
   jQuery(function() {  
     //gallery
@@ -14,24 +14,32 @@ get_header(); ?>
     static: true,
     useMin: true
   });
-
   magicGrid.listen();
-
+	  
+	  setTimeout(function() {
+		  jQuery('.gallery.col-12').addClass('visible');
+		  jQuery('.col-md-9.text-section').height(jQuery('.gallery').height() + 58);
+	  }, 2000);
   });
-
   </script>
+<style>
+	.gallery.col-12 {
+		opacity: 0;
+		transition: opacity 2s ease;
+	}
+	.gallery.col-12.visible {
+		opacity: 1;
+	}
+</style>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
         <div class="container">
         <div class="row">
           <div class="col-md-3 text-section">
             <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
-
             <div class="col-md-9 text-section">
               <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
               <div class="gradline"></div>
-
               <div class="gallery col-12">
               <?php 
                 $image_ids = get_field('gallery');
@@ -40,14 +48,8 @@ get_header(); ?>
                 }
               ?>
               </div>
-
           </div>
-
         </div>
-
 </section>
-
-
 <?php endwhile; endif; ?>
-
 <?php get_footer(); ?>

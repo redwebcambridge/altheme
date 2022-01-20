@@ -473,7 +473,7 @@ function is_sports_page() {
       };
     }
     if( is_single() ) {
-      $categories = wp_get_post_categories(get_the_ID());
+      $categories = get_the_category(get_the_ID());
       foreach($categories as $category) {
         if (get_field('category_type',$category)=='sportscentre') {
           return true;

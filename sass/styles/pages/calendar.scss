@@ -298,7 +298,8 @@
 .fc-h-event .fc-event-title-container{
     flex-grow:1;
     flex-shrink:1;
-    min-width:0
+    min-width:0;
+    text-align: left;
 }
 .fc-h-event .fc-event-title{
     display:inline-block;

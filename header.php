@@ -352,72 +352,14 @@ if (!class_exists('ACF')) {
   <div class="header-images-slick-slider">
     <?php foreach ($backgroundimgs as $backgroundimage ): ?>
       <div class="image-slider" style="background-image:url(<?php echo $backgroundimage; ?>)">
-
-        <?xml version="1.0" encoding="utf-8"?>
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 412.2 547" style="enable-background:new 0 0 412.2 547;" xml:space="preserve">
-        <style type="text/css">
-          .st0{fill:#911553;}
-          .st1{display:none;clip-path:url(#SVGID_2_);}
-          .st2{display:inline;}
-          .st3{clip-path:url(#SVGID_4_);}
-          .st4{opacity:0.8;fill:#FFFFFF;enable-background:new    ;}
-          .st5{opacity:0.65;fill:#FFFFFF;enable-background:new    ;}
-          .st6{opacity:0.55;fill:#FFFFFF;enable-background:new    ;}
-        </style>
-        <path class="st0" d="M186.4,146c10.8-51.6,32.3-101.4,64.3-145.7L0,0.8v546.9l90.3,0.2c-16.8-10.9-32.7-23.2-47.8-36.7
-          c-10.7-9.4-21.1-19.4-31.2-30.1c0,0,50.6-17.7,110-25.3c0.1,0.1,0.3,0.2,0.4,0.3c0,0,0.1,0,0.2,0c2.8-0.4,5.6-0.7,8.5-1
-          c-2.8,0.3-5.7,0.6-8.5,1c-0.1-0.1-0.2-0.2-0.4-0.3c0,0-0.1,0-0.2,0C65,405.4,23,338,4.1,259c0,0,52.6,10,107.9,33.1c0,0,0,0,0,0.1
-          c0.2,0.1,0.3,0.1,0.5,0.2l0,0c0,0,0,0,0-0.1c-0.2-0.1-0.3-0.1-0.5-0.2c-23.6-71.8-26.3-151.1-3.1-229c0,0,0.2,0.1,0.5,0.4
-          c0-0.1,0-0.1,0-0.2C109.5,63.4,150.1,98.3,186.4,146"/>
-        <path class="st0" d="M186.4,146"/>
-        <g>
-          <g>
-            <g>
-              <defs>
-                <path id="SVGID_1_" d="M186.4,146c-36.3-47.7-77-82.6-77-82.6c-23.2,77.8-20.4,157.2,3.1,229l0,0c-55.3-23.1-108-33.1-108-33.1
-                  c18.9,79,60.9,146.4,117.2,196.8c2.8-0.4,5.6-0.7,8.5-1c-2.8,0.3-5.7,0.6-8.5,1c-59.5,7.6-110,25.3-110,25.3
-                  c72.8,76.9,162.6,127.1,286.8,120.1l712.2-0.1l-0.2-655.2H297.9v0.3C239.1,2.2,201.9,72.2,186.4,146
-                  c7.5,9.8,14.7,20.1,21.4,30.7C201.1,166.1,193.9,155.8,186.4,146"/>
-              </defs>
-              <clipPath id="SVGID_2_">
-                <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-              </clipPath>
-              <g id="cooking.tif_2_" class="st1">
-                <g class="st2">
-                  <g>
-                    <defs>
-                      <rect id="SVGID_3_" x="-22" y="-53.7" width="1049.1" height="742.2"/>
-                    </defs>
-                    <clipPath id="SVGID_4_">
-                      <use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
-                    </clipPath>
-                    <g transform="matrix(1 0 0 1 0 0)" class="st3">
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </g>
-        </g>
-        <g>
-          <g>
-            <path class="st4" d="M282.6,488.6c-38.2-40.6-47.3-87.4-47.3-87.4c-42.8-45.7-52.7-114.6-52.7-114.6
-              c-11.3-76.8,3.3-140.8,3.3-140.8C163.3,113.2,109,63.2,109,63.2c-38.4,122.7,3.1,229,3.1,229s16.4,62.2,71.9,128.9
-              C184,421,231.1,482.7,282.6,488.6z"/>
-            <path class="st5" d="M230.9,341.1c0.6-15.8,9-46.3,9-46.3c4.1-16.2,0.9-35.9,0.9-35.9c-3.8-46.8-54.9-113.2-54.9-113.2
-              s-14.6,64-3.3,140.8c0,0,9.9,68.9,52.7,114.6C227.9,367.4,230.9,341.1,230.9,341.1z"/>
-          </g>
-          <g>
-            <path class="st6" d="M87.5,547h219.7c-116.4-22.2-185.9-91.3-185.9-91.3c-72.6,10.9-110,25.3-110,25.3
-              C35.8,508.4,61.5,530.1,87.5,547z"/>
-            <path class="st5" d="M121.3,455.7c0,0,69.5,69.1,186.1,91.3h91.5c-72.5-8.4-116.3-58.4-116.3-58.4c-51.6-5.9-98.7-67.6-98.7-67.6
-              C128.4,354.3,112,292.1,112,292.1C74,274.3,4.1,259,4.1,259C33.4,384.2,121.3,455.7,121.3,455.7z"/>
-          </g>
-        </g>
-        </svg>
-
-
+      <?php 
+      $arrContextOptions=array(
+        "ssl"=>array(
+            "verify_peer"=>false,
+            "verify_peer_name"=>false,
+        ),
+    );
+    $response = file_get_contents(get_template_directory_uri().'/img/al-shape.svg', false, stream_context_create($arrContextOptions));echo $response; ?>
       </div>
     <?php endforeach ?>
   </div>

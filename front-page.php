@@ -110,7 +110,7 @@
                     <div class="row">
                         <?php while (have_posts()) : the_post();
                         $thumbnail= get_field('thumbnail');
-                        $thumbnail = $thumbnail['sizes']['medium'];
+                        $thumbnail = $thumbnail['sizes']['large'];
                         $url = get_permalink();
                         if (in_category('newsletter')){
                             $download = get_field('pdf_upload');

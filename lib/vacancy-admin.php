@@ -29,9 +29,9 @@ if($_POST) :
         $sql = $conn->prepare(" INSERT INTO live (vac_title,vac_sub_title,vac_salary,vac_closing_date,vac_description,school,live,school_name,recruitment_pack,application_form,listing_type) VALUES (:vac_title,:vac_sub_title,:vac_salary,:vac_closing_date,:vac_description,:school,:live,:schoolname,:recruitment_pack,:application_form,:listing_type)");
 
         $sql->execute([
-          'vac_title' =>  $_POST['post_title'],
-          'vac_sub_title' => $_POST['subtitle'],
-          'vac_salary' => $_POST['salary'],
+          'vac_title' => stripslashes($_POST['post_title']),
+          'vac_sub_title' => stripslashes($_POST['subtitle']),
+          'vac_salary' => stripslashes($_POST['salary']),
           'vac_closing_date' => $_POST['closing'],
           'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
           'school' => $school,
@@ -60,9 +60,9 @@ if($_POST) :
       if (file_exists($_FILES['application']['tmp_name'])) {
         $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
         $update_data = [
-          'vac_title' => $_POST['post_title'],
-          'vac_sub_title' => $_POST['subtitle'],
-          'vac_salary' => $_POST['salary'],
+          'vac_title' => stripslashes($_POST['post_title']),
+          'vac_sub_title' => stripslashes($_POST['subtitle']),
+          'vac_salary' => stripslashes($_POST['salary']),
           'vac_closing_date' => $_POST['closing'],
           'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
           'live' => 1,
@@ -74,9 +74,9 @@ if($_POST) :
       } elseif (file_exists($_FILES['recruitment']['tmp_name'])) {
         $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
         $update_data = [
-          'vac_title' => $_POST['post_title'],
-          'vac_sub_title' => $_POST['subtitle'],
-          'vac_salary' => $_POST['salary'],
+          'vac_title' => stripslashes($_POST['post_title']),
+          'vac_sub_title' => stripslashes($_POST['subtitle']),
+          'vac_salary' => stripslashes($_POST['salary']),
           'vac_closing_date' => $_POST['closing'],
           'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
           'live' => 1,
@@ -87,9 +87,9 @@ if($_POST) :
         $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,recruitment_pack=:recruitment_pack,live=:live,listing_type=:listing_type WHERE id=:id");
       } elseif (file_exists($_FILES['recruitment']['tmp_name']) && file_exists($_FILES['application']['tmp_name']))  {
         $update_data = [
-          'vac_title' => $_POST['post_title'],
-          'vac_sub_title' => $_POST['subtitle'],
-          'vac_salary' => $_POST['salary'],
+          'vac_title' => stripslashes($_POST['post_title']),
+          'vac_sub_title' => stripslashes($_POST['subtitle']),
+          'vac_salary' => stripslashes($_POST['salary']),
           'vac_closing_date' => $_POST['closing'],
           'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
           'live' => 1,
@@ -101,9 +101,9 @@ if($_POST) :
         $sql = $conn->prepare("UPDATE live SET vac_title=:vac_title,vac_sub_title=:vac_sub_title,vac_salary=:vac_salary,vac_closing_date=:vac_closing_date,vac_description=:vac_description,application_form=:application_form,recruitment_pack=:recruitment_pack,live=:live,listing_type=:listing_type WHERE id=:id");
       } else {
         $update_data = [
-          'vac_title' => $_POST['post_title'],
-          'vac_sub_title' => $_POST['subtitle'],
-          'vac_salary' => $_POST['salary'],
+          'vac_title' => stripslashes($_POST['post_title']),
+          'vac_sub_title' => stripslashes($_POST['subtitle']),
+          'vac_salary' => stripslashes($_POST['salary']),
           'vac_closing_date' => $_POST['closing'],
           'vac_description' => stripslashes( wpautop( $_POST['jobdesc'] ) ),
           'live' => 1,

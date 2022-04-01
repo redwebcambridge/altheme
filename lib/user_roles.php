@@ -209,7 +209,7 @@ function custom_prevent_admin_access() {
 //Remove administrator role as an options for all but main admin
 function wdm_user_role_dropdown($all_roles) {
   global $pagenow;
-  if( $pagenow == 'user-new.php' ) {
+  if( $pagenow == 'user-new.php' && !current_user_can('administrator') ) {
     echo 'Function run';
       // if current user is editor AND current page is edit user page
       unset($all_roles['administrator']);

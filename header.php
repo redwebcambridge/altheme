@@ -31,10 +31,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
   <meta property="og:url" content="<?php echo the_permalink(); ?>" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="<?php echo the_title(); ?>" />
-  <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
-  <meta property="og:image" content="<?php echo $featuredimg; ?>" />
+  <?php if (is_single()) : ?>
+    <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
+    <meta property="og:image" content="<?php echo $featuredimg; ?>" />
+  <?php endif; ?>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA_TAG; ?>"></script>
   <script>

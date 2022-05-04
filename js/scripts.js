@@ -196,7 +196,7 @@ jQuery( document ).ready(function() {
   jQuery(".newslettercontainer").slice(0, 6).show();
   jQuery("#loadMore").on("click", function(e){
     e.preventDefault();
-    jQuery(".newslettercontainer:hidden").slice(0, 6).slideDown();
+    jQuery(".newslettercontainer:hidden").slice(0, 600).slideDown();
     if(jQuery(".newslettercontainer:hidden").length == 0) {
       jQuery("#loadMore").text("No More Posts").addClass("disabled");
     }

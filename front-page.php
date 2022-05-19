@@ -142,7 +142,7 @@
                     <?php 
                     if( have_rows('platforms','option') ):
                         while( have_rows('platforms','option') ) : the_row();
-                        if(get_sub_field('platform')=='twitter'){$user = get_sub_field('username');} else {$user = 'AnglianLearning';}
+                        if(get_sub_field('platform')=='twitter'){$user = get_sub_field('username');} 
                         endwhile;
                     endif;
                     $tweets = twitterwp($user); ?>

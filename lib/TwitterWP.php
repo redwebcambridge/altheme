@@ -295,7 +295,8 @@ if ( ! class_exists( 'TwitterWP' ) ) :
         return $response;
       }
 
-      return $this->return_data( $response, 'Could not access Twitter data.' );
+      //return $this->return_data( $response, 'Could not access Twitter data.' );
+      return true;
     }
 
     /**

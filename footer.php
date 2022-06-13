@@ -195,7 +195,7 @@
                             <?php endif; ?>
                             <?php if ($sports_footer['map_or_insta'] == 'Instagram') : ?>             
                                 <div class="insta-gallery">
-                                    <?php echo do_shortcode('[instagram-feed feed=1 num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_sport.'" ]'); ?>
+                                    <?php echo do_shortcode('[instagram-feed feed=1 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_sport.'" ]'); ?>
                                 </div>
                             <?php endif; ?>
 
@@ -220,7 +220,7 @@
                                 <?php if ($adult_footer['map_or_insta'] == 'Instagram') : ?>             
                                 <div class="insta-gallery">
                                     <?php 
-                                    echo do_shortcode('[instagram-feed feed=1 num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_adult.'" ]'); ?>
+                                    echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_adult.'" ]'); ?>
                                 </div>
                                 <?php endif; ?>
 
@@ -237,7 +237,7 @@
 
                                 <?php if( get_field('instagram_map','option') == 'Instagram' ) { ?>
                                     <div class="insta-gallery">
-                                    <?php echo do_shortcode('[instagram-feed feed=1 num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]'); ?>
+                                    <?php echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]'); ?>
                                     </div>
                                 <?php } else { ?>
                                     <?php

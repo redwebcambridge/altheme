@@ -738,3 +738,25 @@ function magicgrid() {
 	wp_register_script('magicgrid', 'https://unpkg.com/magic-grid/dist/magic-grid.min.js', array('jquery'),'1.1', true);
  	wp_enqueue_script('magicgrid');
 }
+
+//website settings
+add_action('acf/init', 'site_settings');
+function site_settings() {
+    if( function_exists('acf_add_options_page') ) {
+      $option_page = acf_add_options_page(
+      array(
+        'page_title'    => __('Website Settings'),
+        'menu_title'    => __('Site Settings'),
+        'menu_slug'     => 'site-settings',
+        'capability'    => 'activate_plugins',
+        'redirect'      => false,
+        'position' => '1'
+          )
+    );
+  }
+};
+
+// ACF Fields
+if( function_exists('acf_add_local_field_group') ):
+  get_template_part('inc/acf_fields/acf');
+endif;

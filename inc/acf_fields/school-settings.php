@@ -45,7 +45,7 @@ acf_add_local_field_group(array(
 				'jfa' => 'jfa',
 				'bvc' => 'bvc',
 				'lvc' => 'lvc',
-				'oakes' => 'oakes',
+				'oak' => 'oakes',
 			),
 			'default_value' => false,
 			'allow_null' => 0,

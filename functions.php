@@ -760,3 +760,20 @@ function site_settings() {
 if( function_exists('acf_add_local_field_group') ):
   get_template_part('inc/acf_fields/acf');
 endif;
+
+//LVC Check mental health contact form is from school address
+if (get_field('school_id','option') == "lvc") {
+  add_filter( 'wpcf7_validate_email*', 'lvc_check_email_domain', 20, 2 );
+}
+  
+function lvc_check_email_domain( $result, $tag ) {
+  if ( 'your-email' == $tag->name && isset($_POST['_wpcf7']) && $_POST['_wpcf7'] == 1705) {
+    $email = isset( $_POST['your-email'] ) ? trim( $_POST['your-email'] ) : '';
+    $domain = array_pop(explode('@', $email));
+    $allowed_domains = array("lvc.org","lintonvc.org", "lvcstudents.org");
+    if ( !in_array($domain,$allowed_domains) ){
+      $result->invalidate( $tag, "You must enter your school email" );
+    }
+  }
+  return $result;
+} 

@@ -124,7 +124,7 @@ if ( ! class_exists( 'WP_Bootstrap_Mega_Navwalker' ) ) {
 		 * @param mixed $args Arguments.
 		 * @param mixed &$output Output.
 		 */
-		public function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, $output ) {
+		public function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
 
 			if ( ! $element ) {
 				return;

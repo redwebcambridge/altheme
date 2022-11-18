@@ -30,7 +30,7 @@
                 }
                 echo $string;
                 ?>
-                <p><a target="<?php echo get_sub_field('button')['target']; ?>" href="<?php echo get_sub_field('button')['url']; ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a></p>
+                <p><a target="<?php echo get_sub_field('button')['target'] ?? 'blank'; ?>" href="<?php echo get_sub_field('button')['url'] ?? get_bloginfo('url'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a></p>
                 </div>
             </div>
             <?php $logos = get_field('logo_and_icons','option'); ?>
@@ -68,7 +68,9 @@
 	$exclude = '-'.$newsletters->term_id;
     //exclude foundtain
     $fountain = get_category_by_slug('the-fountain');
-	$exclude .= ',-'.$fountain->term_id;
+    if ($fountain){
+        $exclude .= ',-'.$fountain->term_id;
+    }
 	//exclude sports and adult ed categories
 	$categories = get_categories();
 	foreach($categories as $category) {

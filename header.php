@@ -157,14 +157,14 @@ if (!class_exists('ACF')) {
                         <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
                             <a href="<?php echo $item->url ?>" class="title" alt="<?php echo $item->title; ?>" target="<?php echo $item->target; ?>"><span itemprop="name"><?php echo $item->title; ?></span></a>
                         </li>
-                      <?php if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id && $submenu ): ?>
+                      <?php if ( $menuitems[ $count + 1 ]->menu_item_parent  != $parent_id && $submenu ): ?>
                       </div>
                     </div>
                     </ul>
                     <?php $submenu = false; endif;
                   endif;
 
-                  if ( $menuitems[ $count + 1 ]->menu_item_parent != $parent_id ):
+                  if ( isset($menuitems[ $count + 1 ]) && $menuitems[ $count + 1 ]->menu_item_parent != $parent_id ):
                     echo '</li>';
                     $submenu = false;
                   endif;

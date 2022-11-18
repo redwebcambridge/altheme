@@ -44,6 +44,18 @@ $import_path = get_template_directory() . '/sass';
 $compiler->addImportPath($import_path);
 $target_css = get_template_directory() . '/styles.css';
 
+//Check empty values
+if (isset($ad_logos['icon'])) {
+  $ad_icon_url = $ad_logos['icon']['url'];
+} else {
+  $ad_icon_url = null;
+}
+if (isset($sport_logos['icon']['url'])) {
+  $sport_logo_url = $sport_logos['icon']['url'];
+} else {
+  $sport_logo_url = null;
+}
+
 $variables = [
   //colours 
   '$primarycolour' => $colours['primary_colour'],
@@ -80,7 +92,7 @@ $variables = [
   '$adultbodyfont' => $adultfonts['body_font'],
   '$adultbodyfontweight' => $adultfonts['body_font_weight'],
   //Adult site Icon
-  '$adultsiteicon' => '"'.$ad_logos['icon']['url'].'"',
+  '$adultsiteicon' => '"'.$ad_icon_url.'"',
   '$adultfooterbg_img' => '"'.get_field('adult_footer_background_image', 'option').'"',
 
   //Sports colours
@@ -96,7 +108,7 @@ $variables = [
   '$sportbodyfont' => $sportfonts['body_font'],
   '$sportbodyfontweight' => $sportfonts['body_font_weight'],
    //Sport site Icon
-   '$sportiteicon' => '"'.$sport_logos['icon']['url'].'"',
+   '$sportiteicon' => '"'.$sport_logo_url.'"',
    '$sportsfooterbg_img' => '"'.get_field('sports_footer_background_image', 'option').'"',
 ];
 

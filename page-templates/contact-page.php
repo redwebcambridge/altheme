@@ -103,15 +103,34 @@ get_header(); ?>
           </div>
           <?php endif; ?>
 
+          <div class="col-12">
+            <div class="alfooterdetails">
+              <div class="row">
+                <div class="col-lg-3">
+                  <img src="https://anglianlearning.org/wp-content/themes/Anglian-Learning-Live/images/logo.png" alt="Anglian Learning Logo" />
+                </div>
+                <div class="col-lg-9">
+                  <p>
+                    <strong>Part of Anglian Learning</strong><br>
+                    <?php 
+                      $response = wp_remote_get( 'https://anglianlearning.org/wp-json/wp/v2/pages/?slug=about-anglian-learning' );
+                      $content = json_decode( wp_remote_retrieve_body( $response ) );
+                      echo $content[0]->acf->al_address . '<br>';
+                      echo $content[0]->acf->al_phone_number . ' ' . $content[0]->acf->al_web_url;
+                    ?>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
         <?php get_template_part('template-parts/downloads'); ?>
 
       </div>
 
-
-
 </section>
-
 
 <?php endwhile; endif; ?>
 

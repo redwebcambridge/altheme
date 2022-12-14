@@ -5,7 +5,7 @@
  $schoolname = get_field('school_name','option'); 
 
  require_once("spaces/spaces.php");
- $spaces = Spaces("U4W5DLNFLZSNZRRPJWK2", "aoipt2I/bUwfhot1UzA3rWnQOI7nSDUk2F6viP0FCJ8");
+ $spaces = Spaces(VAC_SPACE_KEY, VAC_SPACE_SECRET);
  $my_space = $spaces->space("anglianlearning", "fra1");
 
  if(isset($_GET['action'])) {

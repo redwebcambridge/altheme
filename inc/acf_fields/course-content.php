@@ -203,6 +203,13 @@ acf_add_local_field_group(array(
 				'value' => 'adultlearning',
 			),
 		),
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'sportscentre',
+			),
+		),
 	),
 	'menu_order' => 0,
 	'position' => 'acf_after_title',

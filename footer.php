@@ -179,7 +179,7 @@
                             <div class="footer-line"></div>
 
                             <?php 
-                            if ($sports_footer['map_or_insta'] == 'Map') : 
+                            if (isset($sports_footer['map_or_insta']) && $sports_footer['map_or_insta'] == 'Map') : 
                                 $longitude = $sports_footer['longatude']; 
                                 $latitude = $sports_footer['latitude']; 
                             ?>

@@ -193,7 +193,7 @@
                                 </script>
                                 <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
                             <?php endif; ?>
-                            <?php if ($sports_footer['map_or_insta'] == 'Instagram') : ?>             
+                            <?php if (isset($sports_footer['map_or_insta']) && $sports_footer['map_or_insta'] == 'Instagram') : ?>             
                                 <div class="insta-gallery">
                                     <?php echo do_shortcode('[instagram-feed feed=1 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_sport.'" ]'); ?>
                                 </div>

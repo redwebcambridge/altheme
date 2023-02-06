@@ -18,7 +18,7 @@ get_header(); ?>
         $cats = array();
         foreach($categories as $category) {
           if (get_field('category_type',$category)=='sportscentre') {
-            $cats .= ','.$category->term_id;
+            $cats .= ','.$category->term_id ?? NULL;
           }
         }
         if(get_field('enable_social_media_feed')){

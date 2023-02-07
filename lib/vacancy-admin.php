@@ -18,8 +18,12 @@
 //IF ADDING OR UPDATING (not trashing)
 if($_POST) : 
     if ($_POST['publish']) :
-      $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
-      $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
+      if (!empty($_FILES['application']["tmp_name"])) {
+        $my_space->uploadFile( $_FILES['application']["tmp_name"], $school.'/'.$_FILES['application']['name']);
+      }
+      if (!empty($_FILES['recruitment']["tmp_name"])) {
+        $my_space->uploadFile( $_FILES['recruitment']["tmp_name"], $school.'/'.$_FILES['recruitment']['name']);
+      }
 
       try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", VAC_DB_USER, VAC_DB_PASSWORD);

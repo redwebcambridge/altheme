@@ -777,5 +777,3 @@ function lvc_check_email_domain( $result, $tag ) {
   }
   return $result;
 } 
-
-error_log('PHP Version: '.phpversion());

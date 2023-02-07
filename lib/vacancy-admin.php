@@ -167,7 +167,7 @@ if ( isset($_GET['action']) && $_GET['action']=='trash' ) :
       'id' => $_GET['id'],
     ]); 
   } catch(PDOException $e) {
-    echo $sql . "<br>" . 'update' . $e->getMessage();
+     echo $e->getMessage();
   }
 endif;
 
@@ -186,7 +186,7 @@ if ( isset($_GET['action']) && $_GET['action']=='restore' ) :
     ]); 
     
   } catch(PDOException $e) {
-    echo $sql . "<br>" . 'update' . $e->getMessage();
+    echo $e->getMessage();
   }
 endif;
 
@@ -201,7 +201,7 @@ if ( isset($_GET['action']) && $_GET['action']=='permdelete' ) :
     ]); 
     
   } catch(PDOException $e) {
-    echo $sql . "<br>" . 'update' . $e->getMessage();
+    echo $e->getMessage();
   }
 endif;
 

@@ -203,7 +203,7 @@
                                 <h5><?php echo $adult_footer['column_3_title']; ?></h5>
                                 <div class="footer-line"></div>
                                 <?php
-                                if ($adult_footer['map_or_insta'] == 'Map') : 
+                                if (isset($adult_footer['map_or_insta']) && $adult_footer['map_or_insta'] == 'Map') : 
                                     $longitude = $adult_footer['longatude']; 
                                     $latitude = $adult_footer['latitude']; 
                                 ?>
@@ -217,7 +217,7 @@
                                 </script>
                                 <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
                                 <?php endif; ?>
-                                <?php if ($adult_footer['map_or_insta'] == 'Instagram') : ?>             
+                                <?php if (isset($adult_footer['map_or_insta']) && $adult_footer['map_or_insta'] == 'Instagram') : ?>             
                                 <div class="insta-gallery">
                                     <?php 
                                     echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_adult.'" ]'); ?>

@@ -210,9 +210,9 @@ if (!class_exists('ACF')) {
           if (is_sports_page()) {
             $back_url =  get_permalink(get_field('sports_homepage','option'));
             //if single sports cat
-            if (is_single()) {
+            if (is_singular('sportscentre')) {
               $term = get_the_terms($post->ID,'sports-centre-category');
-              if ( is_array( $terms ) ) {
+              if ( isset($term) && is_array( $term ) ) {
                 foreach($term as $term_single) {
                   $back_url = get_term_link($term_single);
                 }
@@ -222,9 +222,9 @@ if (!class_exists('ACF')) {
           if (is_adult_ed_page()) {
             $back_url =  get_permalink(get_field('adult_learning_homepage','option'));
             //if single adult cat
-            if (is_single()) {
+            if (is_singular('adultlearning')) {
               $term = get_the_terms($post->ID,'adult-learning-category');
-              if ( is_array( $terms ) ) {
+              if ( isset($term) && is_array( $term ) ) {
                 foreach($term as $term_single) {
                   $back_url = get_term_link($term_single);
                 }

@@ -13,25 +13,30 @@ get_header(); ?>
         <?php if (get_field('enable_latest news')) : ?>
         <div class="col-12 latestnews">
         <?php
-        //get relevant category
-        $categories = get_categories();
-        $cats = array();
-        foreach($categories as $category) {
-          if (get_field('category_type',$category)=='adultlearning') {
-            $cats .= ','.$category->term_id ?? NULL;
-          }
+        //Retreive categories which are set to be Sports Center
+        $args = array(
+            'hide_empty' => 1,
+            'meta_key' => 'category_type',
+            'meta_value' => 'adultlearning'
+        );
+        $cats = get_terms($args);
+        $cats_array = [];
+
+        foreach($cats as $cat){
+            array_push($cats_array,$cat->term_id);
         }
+
         if(get_field('enable_social_media_feed')){
             query_posts(array(
                 'showposts' => 2,
-                'cat' => $cats
+                'cat' => $cats_array
             ) );
             $newscol = 8;
             $newsitem = 6;
         } else {
             query_posts(array(
                 'showposts' => 3,
-                'cat' => $cats
+                'cat' => $cats_array
             ) );
             $newscol = 12;
             $newsitem = 4;

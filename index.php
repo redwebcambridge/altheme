@@ -15,32 +15,38 @@
 get_header();
 ?>
 <div class="container newsevents mb-5">
-	<div class="row row-flex">
+
+
+<div class="row">
+
 		<?php 
-		//exclude newsletters
-		$newsletters = get_category_by_slug('newsletter');
-		$exclude = '-'.$newsletters->term_id;
-		//exclude sports and adult ed categories
-		$categories = get_categories();
-		foreach($categories as $category) {
-			if (get_field('category_type',$category)=='sportscentre') {
-				$exclude .= ', -'.$category->term_id ?? NULL;
-			}
-			if (get_field('category_type',$category)=='adultlearning') {
-				$exclude .= ', -'.$category->term_id ?? NULL;
-			}
-			$fountain = get_category_by_slug('the-fountain');
-			$exclude .= ',-'.$fountain->term_id ?? NULL;
-		}
-		$the_query = new WP_Query( array(    'post_type'  => 'post','posts_per_page' => -1,'cat' => $exclude)  );
-		if ($the_query->have_posts()) : while ($the_query->have_posts() ) : $the_query->the_post(); 
-			 get_template_part('template-parts/content-post');
-			endwhile; else : echo '<div class="alert alert-secondary text-center" role="alert"><em>Sorry! There are no posts found</em></div>'; endif;
-		?>
-	</div>
-	<?php if ($the_query->post_count >= 6) : ?>
-		<?php get_template_part('template-parts/loadmore'); ?>
-	<?php endif; ?></div>
+		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+		$args = array('post_status' => 'publish','paged' => $paged, 'posts_per_page' => 6, 'cat'=>-18) ;
+		$wp_query = new WP_Query($args);
+		$big = 99999999999999;
+
+		if($wp_query->have_posts()) :
+		while ( $wp_query->have_posts() ) : $wp_query->the_post();
+
+		get_template_part('template-parts/content-post');?>
+
+		<?php endwhile; ?>
+
+		<div class="pagination col-12">
+			<?php echo paginate_links( array(
+				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $wp_query->max_num_pages
+			) );
+			?>
+		</div>
+		
+		<?php endif; ?>
+
+
+</div>
+
 	
 <?php
 get_footer();

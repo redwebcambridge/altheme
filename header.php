@@ -37,6 +37,11 @@
     <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
     <meta property="og:image" content="<?php echo $featuredimg; ?>" />
   <?php endif; ?>
+    
+    <!-- BEGIN MYNEWTERM API META: PLACE THIS IN THE HEAD TAG FOR RESPONSIVE VIEW OF THE VACANCIES!!! -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- END MYNEWTERM API META -->
+   
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA_TAG; ?>"></script>
   <script>
@@ -46,6 +51,9 @@
 
     gtag('config', '<?php echo GA_TAG; ?>');
   </script>
+    
+   
+    
   <?php wp_head(); ?>
 </head>
 <?php $school_initials = 'school_id_'.get_field('school_id','option'); ?>

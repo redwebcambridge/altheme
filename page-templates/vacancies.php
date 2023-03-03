@@ -25,6 +25,23 @@ get_header(); ?>
 </div>
 
 
+<!-- BEGIN MYNEWTERM API SCRIPT: PLACE BEFORE CLOSING BODY TAG. PLEASE DO NOT ALTER THIS CODE!!! -->
+<script>
+    var mntInitCounter = 0, mntApiScript = document.createElement("script");
+    mntApiScript.type = "text/javascript";
+    mntApiScript.src = "<?php echo SCRIPT_URL; ?>" + (new Date().getTime());
+    document.body.appendChild(mntApiScript);
+
+    window.onload = function () {
+    if(document.readyState == 'complete' && mntInitCounter === 0) {
+        mntInitCounter = 1;
+        mntSchoolVacancies('<?php echo MNT_API_KEY; ?>', 1);
+    }
+    };
+</script>
+<!-- END MYNEWTERM API SCRIPT -->
+
+
 
 
 <?php get_footer(); ?>

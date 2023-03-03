@@ -96,3 +96,38 @@
   }
 
 }
+
+
+/* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for button properties */
+html a.orange-btn-hover {
+  background-color: $primarycolour!important;
+  color: #ffffff !important;
+}
+html a.orange-btn-hover:hover {
+    background-color: $primarycolour !important;
+    border-color: $primarycolour!important;
+}
+html span.orange-btn-hover {
+  background-color: $primarycolour!important;
+  color: #ffffff !important;
+}
+
+/* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for vacancy title properties */
+html a.orange-link-wrapper .orange-vacancy-title {
+  color: $primarycolour!important;
+}
+
+/* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for icon properties */
+html a.orange-link-wrapper .orange-vacancy-icon {
+  color: $primarycolour!important;
+}
+
+/* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for miles / distance text properties */
+html .orange-vacancy-link {
+  color: $primarycolour!important;
+}
+
+/* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for talent pool more text background properties */
+html .orange-vacancy-div-bg {
+  background-color: $primarycolour!important;
+}

@@ -10,7 +10,10 @@ get_header(); ?>
     <div class="row">
 
     <div class="col-12 ">
-        <?php echo the_content(); ?>
+        <h2 class="heading-two"><?php the_field('sub_heading'); ?></h2>
+        <p class="body-text"><?php the_field('body_text'); ?></p>
+
+        <?php //echo the_content(); ?>
     </div>
     <div class="col-12 mb-5">
         <!-- BEGIN MYNEWTERM API HTML: PLACE INSIDE PAGE BODY WHERE YOU WANT VACANCIES TO DISPLAY. PLEASE DO NOT CHANGE DIV ID (id="mnt-parent-container") !!! -->

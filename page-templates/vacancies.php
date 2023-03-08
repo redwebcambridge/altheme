@@ -22,7 +22,7 @@ get_header(); ?>
     </div>
     <div class="col-12 mb-5">
         <!-- BEGIN MYNEWTERM API HTML: PLACE INSIDE PAGE BODY WHERE YOU WANT VACANCIES TO DISPLAY. PLEASE DO NOT CHANGE DIV ID (id="mnt-parent-container") !!! -->
-        <div class="mt-5" id="mnt-parent-container" style="width: 96.7%; margin: 0 auto; background-color: transparent;"></div>
+        <div id="mnt-parent-container" style="width: 96.7%; margin: 0 auto; background-color: transparent;"></div>
         <!-- END MYNEWTERM API HTML -->
     </div>
 

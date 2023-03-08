@@ -21,7 +21,19 @@ get_header();
 
 		<?php 
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-		$args = array('post_status' => 'publish','paged' => $paged, 'posts_per_page' => 6, 'cat'=>-18) ;
+		$args = array(
+			'post_status' => 'publish', // I have a custom post type, 'news'
+			'paged' => $paged,
+			'posts_per_page' => 6,
+			'tax_query' => [
+				[
+					'taxonomy' => 'category',
+					'field'    => 'slug',
+					'terms'    => [ 'newsletter' ],
+					'operator' => 'NOT IN'
+				],
+			],
+		);
 		$wp_query = new WP_Query($args);
 		$big = 99999999999999;
 

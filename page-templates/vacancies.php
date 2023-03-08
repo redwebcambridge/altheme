@@ -11,9 +11,14 @@ get_header(); ?>
 
     <div class="col-12 ">
         <h2 class="heading-two"><?php the_field('sub_heading'); ?></h2>
+        <div class="gradline"></div>
         <p class="body-text"><?php the_field('body_text'); ?></p>
 
         <?php //echo the_content(); ?>
+    </div>
+    <div class="col-12">
+        <h2 class="heading-two mt-5">Current Vacancies</h2>
+        <div class="gradline mb-5"></div>   
     </div>
     <div class="col-12 mb-5">
         <!-- BEGIN MYNEWTERM API HTML: PLACE INSIDE PAGE BODY WHERE YOU WANT VACANCIES TO DISPLAY. PLEASE DO NOT CHANGE DIV ID (id="mnt-parent-container") !!! -->

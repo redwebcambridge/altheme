@@ -543,9 +543,9 @@ acf_add_local_field_group(array(
 	'location' => array(
 		array(
 			array(
-				'param' => 'page',
+				'param' => 'page_type',
 				'operator' => '==',
-				'value' => '2',
+				'value' => 'front_page',
 			),
 		),
 	),

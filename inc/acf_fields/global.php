@@ -951,8 +951,6 @@ acf_add_local_field_group(array(
 	'show_in_rest' => false,
 ));
 
-<?php
-
 acf_add_local_field_group(array(
 	'key' => 'group_60e44734c61ca',
 	'title' => 'Menu Sidebar',

@@ -324,7 +324,12 @@ if (!class_exists('ACF')) {
               
         ?>
     </div>
-    <div id="currenthover" class="currenthover"></div>
+
+    <?php if (get_field('Nav_Hover_Option','option') ) : ?>
+      <div id="currenthover" class="currenthover"></div>
+    <?php endif ; ?>
+
+
 </div>
 
 

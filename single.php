@@ -12,12 +12,18 @@ $thumbnail= get_field('thumbnail'); ?>
 
 	<div class="container newsevents">
 	  	<div class="row">
-
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		        <div class="col-12 col-md-8 single-content standard-content">
-					<h2 class="heading-two"><?php the_title(); ?></h2>
-					<div class="gradline"></div>
+
+					<?php if( get_field('subheaderarticle') ): ?>
+						<h2 class="heading-two"><?php the_field('subheaderarticle'); ?></h2>
+						<div class="gradline"></div>
+					<?php else: ?>
+						<div class="gradline mt-0"></div>
+					<?php endif; ?>
+
+
 					<p class="body-text"></p>
 		          	<?php the_content(); ?>
 					  <?php if (has_category('newsletter') || has_category('the-fountain')) : get_template_part('template-parts/content-newsletters'); endif; ?>

@@ -1,5 +1,8 @@
 <?php 
 
+
+
+
 acf_add_local_field_group(array(
 	'key' => 'group_60f6d79326a5a',
 	'title' => 'News',
@@ -181,6 +184,52 @@ acf_add_local_field_group(array(
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+));
+
+
+acf_add_local_field_group(array(
+	'key' => 'group_641c24f6b037e',
+	'title' => 'News sub header',
+	'fields' => array(
+		array(
+			'key' => 'subheaderarticle',
+			'label' => 'Article sub header',
+			'name' => 'subheaderarticle',
+			'aria-label' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'maxlength' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'acf_after_title',
 	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',

@@ -491,3 +491,9 @@ body{
     }
   }
 }
+
+.custom_colour_block {
+  background-color: $primarycolour;
+  color: white;
+  padding: 2em 2em 2em 2em;
+}

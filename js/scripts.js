@@ -292,4 +292,22 @@ function googleTranslateElementInit() {
         }
      });
   });
+
+
+  tinymce.PluginManager.add('colour_block', function(editor, url) {
+    editor.addButton('colour_block', {
+       title: 'Add Colour block',
+       icon: 'icon dashicons-before dashicons-format-aside',
+       onclick: function() {
+          // Add your custom button functionality here
+
+          editor.insertContent('<div class="custom_colour_block">Add Content Here</div>');
+
+       }
+    });
+ });
+
+
+
+
 })();

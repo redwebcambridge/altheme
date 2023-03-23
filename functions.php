@@ -787,13 +787,18 @@ function add_custom_button() {
 }
 function register_custom_button($buttons) {
   array_push($buttons, "custom_button");
+  array_push($buttons, "colour_block");
   return $buttons;
 }
 function add_custom_plugin($plugin_array) {
   $plugin_array['custom_button'] = get_template_directory_uri().'/js/scripts.js';
+  $plugin_array['colour_block'] = get_template_directory_uri().'/js/scripts.js';
   return $plugin_array;
 }
 add_action('init', 'add_custom_button');
 
 
-//sass_compile();
+sass_compile();
+
+
+

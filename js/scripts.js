@@ -270,3 +270,26 @@ function googleTranslateElementInit() {
     'google_translate_el'
   );
 }
+
+(function() {
+  tinymce.PluginManager.add('custom_button', function(editor, url) {
+     editor.addButton('custom_button', {
+        title: 'Add Button',
+        icon: 'icon dashicons-before dashicons-format-aside',
+        onclick: function() {
+           // Add your custom button functionality here
+
+          let button_url = prompt("Please enter your url", "");
+          let button_text = prompt("Please enter your button text", "");
+          let button_target = prompt("Would you like your page to open in a new window? enter Yes or No.", "");
+
+          if(button_target == 'Yes' || button_target == 'yes'){
+            editor.insertContent('<a target="_blank" href="'+ button_url +'" class="custom_button"><button class="btn">' + button_text + '</button></a>');
+          } else {
+            editor.insertContent('<a href="'+ button_url +'" class="custom_button"><button class="btn">' + button_text + '</button></a>');
+          }
+
+        }
+     });
+  });
+})();

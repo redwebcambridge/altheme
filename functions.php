@@ -777,3 +777,23 @@ function lvc_check_email_domain( $result, $tag ) {
   }
   return $result;
 } 
+
+
+function add_custom_button() {
+  if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ) {
+     add_filter('mce_buttons', 'register_custom_button');
+     add_filter('mce_external_plugins', 'add_custom_plugin');
+  }
+}
+function register_custom_button($buttons) {
+  array_push($buttons, "custom_button");
+  return $buttons;
+}
+function add_custom_plugin($plugin_array) {
+  $plugin_array['custom_button'] = get_template_directory_uri().'/js/scripts.js';
+  return $plugin_array;
+}
+add_action('init', 'add_custom_button');
+
+
+//sass_compile();

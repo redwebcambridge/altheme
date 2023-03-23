@@ -495,5 +495,18 @@ body{
 .custom_colour_block {
   background-color: $primarycolour;
   color: white;
-  padding: 2em 2em 2em 2em;
+  border: none;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: 100%!important;
+  font-size: 1.1em;
+  p {
+    margin-bottom: 5px;
+  }
+  td {
+    padding: 20px;
+  }
+  tbody td, body table tbody th {
+    border-top: none!important;
+  }
 }

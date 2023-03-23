@@ -301,7 +301,7 @@ function googleTranslateElementInit() {
        onclick: function() {
           // Add your custom button functionality here
 
-          editor.insertContent('<div class="custom_colour_block">Add Content Here</div>');
+          editor.insertContent('<table class="custom_colour_block"><tbody><tr><td>Add content here</td></tr></tbody></table>');
 
        }
     });

@@ -19,8 +19,6 @@ $thumbnail= get_field('thumbnail'); ?>
 					<?php if( get_field('subheaderarticle') ): ?>
 						<h2 class="heading-two"><?php the_field('subheaderarticle'); ?></h2>
 						<div class="gradline"></div>
-					<?php else: ?>
-						<div class="gradline mt-0"></div>
 					<?php endif; ?>
 
 

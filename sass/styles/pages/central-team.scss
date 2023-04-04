@@ -1,0 +1,91 @@
+.central-team-page {
+    .central-team-tabs-nav {
+        padding-left: 12px;
+        padding-right: 12px;
+        border-bottom: 3px solid $primarycolour;
+        .executive_btn, .departments_btn {
+            color: white;
+            font-size: 20px;
+            background-color: #eceef0;
+            color: $primarycolour;
+            padding-top: 15px;
+            @media(max-width:458px){
+                font-size: 15px;
+
+            }
+        }
+        .active {
+            background-color: $primarycolour;
+            color: white;
+        }
+    }
+    .department_team {
+        display: none;
+        columns: 2;
+        @media(max-width:1000px){
+            columns: 2;
+        }
+        @media(max-width:500px){
+            columns: 1;
+        }
+        .department_block {
+            break-inside: avoid-column;
+
+            background-color: #eceef0;
+            padding: 20px;
+            h5 {
+                color: $primarycolour;
+            }
+            .depatments_members {
+                display: flex;
+                justify-content: space-between;
+                .job_role, .central_team_name {
+                    font-size: 13px;
+                    margin-bottom: 5px;
+                    line-height: 1.1rem;
+                }
+                .central_team_name {
+                }
+                .job_role {
+                    color: $secondarycolour;
+                    text-align: right;
+                }
+            }
+
+        } 
+    }
+}
+
+.executive_team {
+    .central_team_row {
+        padding-left: 12px;
+    }
+    .executive_team_block {
+        background-color: #eceef0;
+        margin-right: 5px;
+        height: 100%;
+        .executive_team_image_cont {
+            padding: 0px;
+            .executive_team_image {
+                height: 100%;
+                width: 100%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+       .executive_content_cont {
+            padding: 20px 15px 20px 15px;
+            h5 {
+                color: $primarycolour;
+                font-size: 18px;
+
+            }
+            h6 {
+                font-size: 12px;
+                color: $secondarycolour;
+            }
+       }
+    }
+
+}

@@ -777,3 +777,5 @@ function lvc_check_email_domain( $result, $tag ) {
   }
   return $result;
 } 
+
+sass_compile();

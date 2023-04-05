@@ -33,6 +33,37 @@
   <meta property="og:url" content="<?php echo the_permalink(); ?>" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="<?php echo the_title(); ?>" />
+  <meta property="twitter:title" content="<?php echo the_title(); ?>" />
+  <meta name="twitter:card" content="summary_large_image">
+  <?php
+    if (is_front_page()) {
+    
+        if( have_rows('header_image') ):
+          while( have_rows('header_image') ) : the_row();
+            ?>
+              <meta property="og:image" content="<?php echo get_sub_field('image'); ?>" />
+              <meta property="twitter:image" content="<?php echo get_sub_field('image'); ?>" />
+            <?php
+
+              break;
+
+          endwhile;
+
+        endif;
+
+
+      } else {
+
+        ?>
+
+        <meta property="og:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>" />
+        <meta property="twitter:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>" />
+
+          <?php
+      }
+  ?>
+
+
   <?php if (is_single()) : ?>
     <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
     <meta property="og:image" content="<?php echo $featuredimg; ?>" />

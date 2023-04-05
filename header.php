@@ -37,29 +37,20 @@
   <meta name="twitter:card" content="summary_large_image">
   <?php
     if (is_front_page()) {
-    
         if( have_rows('header_image') ):
           while( have_rows('header_image') ) : the_row();
             ?>
               <meta property="og:image" content="<?php echo get_sub_field('image'); ?>" />
               <meta property="twitter:image" content="<?php echo get_sub_field('image'); ?>" />
             <?php
-
-              break;
-
+            break;
           endwhile;
-
         endif;
-
-
       } else {
-
         ?>
-
         <meta property="og:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>" />
         <meta property="twitter:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>" />
-
-          <?php
+        <?php
       }
   ?>
 

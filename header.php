@@ -37,28 +37,36 @@
   <meta name="twitter:card" content="summary_large_image">
   <?php
     if (is_front_page()) {
+
         if( have_rows('header_image') ):
           while( have_rows('header_image') ) : the_row();
             ?>
+              <!--Front page-->
               <meta property="og:image" content="<?php echo get_sub_field('image'); ?>" />
               <meta property="twitter:image" content="<?php echo get_sub_field('image'); ?>" />
             <?php
             break;
           endwhile;
         endif;
-      } else {
+
+      } elseif(is_single()) {
         ?>
-        <meta property="og:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>" />
-        <meta property="twitter:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID)); ?>" />
+
+        <!--News page-->
+        <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
+        <meta property="og:image" content="<?php echo $featuredimg; ?>" />
+
+        <?php
+      } else { ?>
+
+        <!--All pages-->
+
+        <meta property="og:image" content="<?php echo $featuredimg; ?>" /> 
+        <meta property="twitter:image" content="<?php echo $featuredimg; ?>">
+
         <?php
       }
   ?>
-
-
-  <?php if (is_single()) : ?>
-    <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
-    <meta property="og:image" content="<?php echo $featuredimg; ?>" />
-  <?php endif; ?>
     
     <!-- BEGIN MYNEWTERM API META: PLACE THIS IN THE HEAD TAG FOR RESPONSIVE VIEW OF THE VACANCIES!!! -->
         <meta name="viewport" content="width=device-width, initial-scale=1">

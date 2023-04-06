@@ -33,10 +33,40 @@
   <meta property="og:url" content="<?php echo the_permalink(); ?>" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="<?php echo the_title(); ?>" />
-  <?php if (is_single()) : ?>
-    <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
-    <meta property="og:image" content="<?php echo $featuredimg; ?>" />
-  <?php endif; ?>
+  <meta property="twitter:title" content="<?php echo the_title(); ?>" />
+  <meta name="twitter:card" content="summary_large_image">
+  <?php
+    if (is_front_page()) {
+
+        if( have_rows('header_image') ):
+          while( have_rows('header_image') ) : the_row();
+            ?>
+              <!--Front page-->
+              <meta property="og:image" content="<?php echo get_sub_field('image'); ?>" />
+              <meta property="twitter:image" content="<?php echo get_sub_field('image'); ?>" />
+            <?php
+            break;
+          endwhile;
+        endif;
+
+      } elseif(is_single()) {
+        ?>
+
+        <!--News page-->
+        <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
+        <meta property="og:image" content="<?php echo $featuredimg; ?>" />
+
+        <?php
+      } else { ?>
+
+        <!--All pages-->
+
+        <meta property="og:image" content="<?php echo $featuredimg; ?>" /> 
+        <meta property="twitter:image" content="<?php echo $featuredimg; ?>">
+
+        <?php
+      }
+  ?>
     
     <!-- BEGIN MYNEWTERM API META: PLACE THIS IN THE HEAD TAG FOR RESPONSIVE VIEW OF THE VACANCIES!!! -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -324,7 +354,12 @@ if (!class_exists('ACF')) {
               
         ?>
     </div>
-    <div id="currenthover" class="currenthover"></div>
+
+    <?php if (get_field('Nav_Hover_Option','option') ) : ?>
+      <div id="currenthover" class="currenthover"></div>
+    <?php endif ; ?>
+
+
 </div>
 
 

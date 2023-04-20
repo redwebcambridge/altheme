@@ -11,7 +11,7 @@
     <div class="container <?php if ($index==1){echo 'active';} ?>" id="<?php echo 'tab' . '-' . $index;?>">
         <div class="row">
             <div class="col-12 col-md-4 image">
-                <img class="img-fluid img-<?php echo $image["id"];?> al-border-bottom" src="<?php echo $image["sizes"]["medium"];?>" alt="<?php echo $image["alt"];?>">
+                <img class="img-fluid img-<?php echo $image["id"];?> al-border-bottom" src="<?php echo $image["sizes"]["medium_large"];?>" alt="<?php echo $image["alt"];?>">
             </div>
             <div class="col-12 col-md-8 content">
                 <h2><?php echo get_sub_field('heading'); ?></h2>

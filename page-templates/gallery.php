@@ -18,7 +18,7 @@ get_header();
 	  
 	  setTimeout(function() {
 		  jQuery('.gallery.col-12').addClass('visible');
-		  jQuery('.col-md-9.text-section').height(jQuery('.gallery').height() + 58);
+		  // jQuery('.col-md-9.text-section').height(jQuery('.gallery').height() + 58);
 	  }, 2000);
   });
   </script>

@@ -232,13 +232,6 @@ jQuery( document ).ready(function() {
     jQuery(this).parent().find('.allcontent,.desc_short').toggle();
     jQuery(this).text(jQuery(this).text() == 'More' ? 'Less' : 'More');
   });
-  //Homepage tabs on mobile
-  if (jQuery(window).width() < 500) {
-      jQuery(".homepage-tabs-nav .tab_button").click(function() {
-          var target = jQuery(".tabcontent").offset().top;
-          jQuery('html, body').animate({scrollTop:target}, 500);
-      });
-  }
   //Register an Interest form on vacancies page
   if (document.body.classList.contains('page-template-vacancies')) {
     jQuery('input:file').change(function(e){

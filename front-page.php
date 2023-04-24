@@ -249,7 +249,7 @@
                     <div class="gradline"></div>
                     <div class="info_img w-100 my-4" style="background-image:url(<?php the_sub_field('image'); ?>)"></div>
                     <span class="information-panel-body-text"><?php the_sub_field('body_text'); ?></span>
-                    <a href="<?php echo get_sub_field('button_link'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a>
+                    <p><a target="<?php echo get_sub_field('button_link')['target'] ?? 'blank'; ?>" href="<?php echo get_sub_field('button_link'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a></p>
                 </div>
             </div>
         <?php endwhile; ?>

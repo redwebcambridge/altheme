@@ -76,7 +76,7 @@ $query = new WP_Query($args);
 
     <?php else : ?>
         <div class="row">
-            <?php echo '<div class="col-6 mx-auto mb-5 pb-5"><h4 align="center" class="my-5 pt-5">Sorry! There are no results for that search term. Please try again.</h4>'.get_search_form(false).'</div>'; ?>
+            <?php //echo '<div class="col-6 mx-auto mb-5 pb-5"><h4 align="center" class="my-5 pt-5">Sorry! There are no results for that search term. Please try again.</h4>'.get_search_form(false).'</div>'; ?>
         </div>
     <?php endif; ?>
 

@@ -779,6 +779,7 @@ function lvc_check_email_domain( $result, $tag ) {
 } 
 
 
+
 function add_custom_button() {
   if ( current_user_can('edit_posts') &&  current_user_can('edit_pages') ) {
      add_filter('mce_buttons', 'register_custom_button');

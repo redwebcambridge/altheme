@@ -15,10 +15,14 @@ get_header();
     useMin: true
   });
   magicGrid.listen();
+
+
 	  
 	  setTimeout(function() {
 		  jQuery('.gallery.col-12').addClass('visible');
-		  jQuery('.col-md-9.text-section').height(jQuery('.gallery').height() + 58);
+		  // jQuery('.col-md-9.text-section').height(jQuery('.gallery').height() + 58);
+      magicGrid.positionItems();
+
 	  }, 2000);
   });
   </script>

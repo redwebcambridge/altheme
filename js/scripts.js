@@ -232,13 +232,6 @@ jQuery( document ).ready(function() {
     jQuery(this).parent().find('.allcontent,.desc_short').toggle();
     jQuery(this).text(jQuery(this).text() == 'More' ? 'Less' : 'More');
   });
-  //Homepage tabs on mobile
-  if (jQuery(window).width() < 500) {
-      jQuery(".homepage-tabs-nav .tab_button").click(function() {
-          var target = jQuery(".tabcontent").offset().top;
-          jQuery('html, body').animate({scrollTop:target}, 500);
-      });
-  }
   //Register an Interest form on vacancies page
   if (document.body.classList.contains('page-template-vacancies')) {
     jQuery('input:file').change(function(e){
@@ -270,3 +263,44 @@ function googleTranslateElementInit() {
     'google_translate_el'
   );
 }
+
+(function() {
+  tinymce.PluginManager.add('custom_button', function(editor, url) {
+     editor.addButton('custom_button', {
+        title: 'Add Button',
+        icon: 'icon dashicons-before dashicons-format-aside',
+        onclick: function() {
+           // Add your custom button functionality here
+
+          let button_url = prompt("Please enter your url", "");
+          let button_text = prompt("Please enter your button text", "");
+          let button_target = prompt("Would you like your page to open in a new window? enter Yes or No.", "");
+
+          if(button_target == 'Yes' || button_target == 'yes'){
+            editor.insertContent('<a target="_blank" href="'+ button_url +'" class="custom_button"><button class="btn">' + button_text + '</button></a>');
+          } else {
+            editor.insertContent('<a href="'+ button_url +'" class="custom_button"><button class="btn">' + button_text + '</button></a>');
+          }
+
+        }
+     });
+  });
+
+
+  tinymce.PluginManager.add('colour_block', function(editor, url) {
+    editor.addButton('colour_block', {
+       title: 'Add Colour block',
+       icon: 'icon dashicons-before dashicons-format-aside',
+       onclick: function() {
+          // Add your custom button functionality here
+
+          editor.insertContent('<table class="custom_colour_block"><tbody><tr><td>Add content here</td></tr></tbody></table>');
+
+       }
+    });
+ });
+
+
+
+
+})();

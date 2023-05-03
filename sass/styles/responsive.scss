@@ -182,7 +182,7 @@ a[href^="tel"] {
         margin: 5px;
         padding: 0;
         li {
-            margin:10px 0 10px 10px !important;
+            margin:0px !important;
             background-color:#fff;
             border: 1px solid $medium-grey;
             font-weight: bolder;
@@ -213,6 +213,19 @@ a[href^="tel"] {
                     li {
                         border: none;
                     }
+                }
+            }
+        }
+    }
+    #top_buttons {
+        #menu-top-buttons {
+            padding: 5px!important;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 10px;
+            li {
+                &:last-child:nth-child(odd) {
+                    grid-column-end: span 2;
                 }
             }
         }
@@ -708,6 +721,16 @@ a[href^="tel"] {
         p {
             font-size:0.7em;
             margin-top:3px;
+        }
+    }
+    #top_buttons {
+        #menu-top-buttons {
+            grid-template-columns: repeat(1, 1fr)!important;
+            li {
+                &:last-child:nth-child(odd) {
+                    grid-column-end: span 1!important;
+                }
+            }
         }
     }
 }

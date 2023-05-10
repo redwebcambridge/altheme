@@ -799,7 +799,7 @@ function add_custom_plugin($plugin_array) {
 add_action('init', 'add_custom_button');
 
 
-//sass_compile();
+sass_compile();
 
 
 

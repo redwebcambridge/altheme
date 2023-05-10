@@ -228,3 +228,34 @@
         }
     }
 }
+
+
+//Anglian learning news page uses all 4 colours 
+.anglianlearning-news {
+    .row {
+        .newseventcontainer {
+            &:nth-child(4n + 1){
+                .newseventtext {
+                    background-color:#6461ab;
+                }
+            }
+            &:nth-child(4n + 2){
+                .newseventtext {
+                    background-color:#2ca9e0;
+                }
+            }
+            &:nth-child(4n + 3){
+                .newseventtext {
+                    background-color:#73ac45;;
+                }
+            }
+            &:nth-child(4n + 4){
+                .newseventtext {
+                    background-color:#fbad1f;
+
+                }
+            }
+        }
+
+    }
+}

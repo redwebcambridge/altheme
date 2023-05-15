@@ -388,23 +388,25 @@ if (class_exists('ACF')) {
   }
 }
 
-add_action('admin_menu', 'vacanciesmenu');
-function vacanciesmenu() {
-  add_menu_page( 'Vacancies Admin', 'Vacancies', 'edit_vacancy', 'vacancyadmin', 'vacancies_admin','dashicons-format-aside',5);
-  add_submenu_page( 'vacancyadmin', 'Vacancies Admin', 'Add New', 'edit_vacancy', '?page=vacancyadmin&action=addvacancy');
-  if (get_field('activate_adult_learning','option') || get_field('activate_sport_centre','option')) {
-    add_submenu_page('edit.php?post_type=page','Academy Pages','Academy Pages','edit_posts','academy_pages','pages_admin_filter');
-  }
-  if (get_field('activate_sport_centre','option')) {
-    add_submenu_page('edit.php?post_type=page','Sport Center Pages','Sport Center Pages','edit_posts','sports_pages','pages_admin_filter');
-  }
-  if (get_field('activate_adult_learning','option')) {
-    add_submenu_page('edit.php?post_type=page','Adult Education Pages','Adult Education Pages','edit_posts','adult_pages','pages_admin_filter');
-  }
-}
-function vacancies_admin() {
-  require_once('lib/vacancy-admin.php');
-}
+// add_action('admin_menu', 'vacanciesmenu');
+// function vacanciesmenu() {
+//   add_menu_page( 'Vacancies Admin', 'Vacancies', 'edit_vacancy', 'vacancyadmin', 'vacancies_admin','dashicons-format-aside',5);
+//   add_submenu_page( 'vacancyadmin', 'Vacancies Admin', 'Add New', 'edit_vacancy', '?page=vacancyadmin&action=addvacancy');
+//   if (get_field('activate_adult_learning','option') || get_field('activate_sport_centre','option')) {
+//     add_submenu_page('edit.php?post_type=page','Academy Pages','Academy Pages','edit_posts','academy_pages','pages_admin_filter');
+//   }
+//   if (get_field('activate_sport_centre','option')) {
+//     add_submenu_page('edit.php?post_type=page','Sport Center Pages','Sport Center Pages','edit_posts','sports_pages','pages_admin_filter');
+//   }
+//   if (get_field('activate_adult_learning','option')) {
+//     add_submenu_page('edit.php?post_type=page','Adult Education Pages','Adult Education Pages','edit_posts','adult_pages','pages_admin_filter');
+//   }
+// }
+// function vacancies_admin() {
+//   require_once('lib/vacancy-admin.php');
+// }
+
+
 function pages_admin_filter() {
   require_once('lib/pages_admin_filter.php');
 }

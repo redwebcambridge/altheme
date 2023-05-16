@@ -35,6 +35,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'al' => 'al',
+				'basvc' => 'basvc',
 				'bcps' => 'bcps',
 				'bvc' => 'bvc',
 				'dpa' => 'dpa',
@@ -72,6 +73,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'Anglian Learning' => 'Anglian Learning',
+				'Bassingbourn Village College' => 'Bassingbourn Village College',
 				'Bottisham Community Primary School' => 'Bottisham Community Primary School',
 				'Bottisham Village College' => 'Bottisham Village College',
 				'Deneia Primary Academy' => 'Deneia Primary Academy',

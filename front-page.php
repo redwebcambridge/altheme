@@ -148,7 +148,7 @@
                         endwhile;
                     endif;
                     $tweets = twitterwp($user);
-			if ($tweets[0]) : ?>
+			if (!is_wp_error($tweets[0])) : ?>
                     <div class="twitter-box">
                         <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
                         <div class="twitter-header">

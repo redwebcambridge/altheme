@@ -150,8 +150,7 @@
                     $tweets = twitterwp($user);
 			if (is_wp_error($tweets)) : ?>
 			
-				<?php $error_message = $your_error->get_error_message();
-    				echo "Error: " . $error_message; ?>
+				
 			
 			<?php else: ?> 
                     <div class="twitter-box">

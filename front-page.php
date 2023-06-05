@@ -147,7 +147,8 @@
                         if(get_sub_field('platform')=='twitter'){$user = get_sub_field('username');} 
                         endwhile;
                     endif;
-                    $tweets = twitterwp($user); ?>
+                    $tweets = twitterwp($user);
+			if ($tweets) : ?>
                     <div class="twitter-box">
                         <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
                         <div class="twitter-header">
@@ -187,6 +188,7 @@
 
                         <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
                     </div>
+			<?php endif; ?>
                 </div>
                 <?php endif; //end twitter feed ?>
 

@@ -85,6 +85,7 @@ acf_add_local_field_group(array(
 				'Linton Village College' => 'Linton Village College',
 				'Marleigh Primary Academy' => 'Marleigh Primary Academy',
 				'Oakes College' => 'Oakes College',
+				'Pines Primary' => 'Pines Primary',
 				'Sawston Village College' => 'Sawston Village College',
 				'Stapleford Community Primary School' => 'Stapleford Community Primary School',
 				'The Netherhall School' => 'The Netherhall School',

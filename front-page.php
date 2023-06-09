@@ -81,21 +81,46 @@
 			$exclude .= ', -'.$category->term_id;
 		}
 	}
-    if(get_field('display_twitter_feed')){
-        query_posts(array(
-            'showposts' => 2,
-            'cat' => $exclude
-        ) );
-        $newscol = 8;
-        $newsitem = 6;
-    } else {
+
+
+    // if(get_field('display_twitter_feed')){
+    //     query_posts(array(
+    //         'showposts' => 2,
+    //         'cat' => $exclude
+    //     ) );
+    //     $newscol = 8;
+    //     $newsitem = 6;
+    // } else {
+    //     query_posts(array(
+    //         'showposts' => 3,
+    //         'cat' => $exclude
+    //     ) );
+    //     $newscol = 12;
+    //     $newsitem = 4;
+    // }
+
+
+    if(get_field('homepage_feed_option') == 'No_Feed'){
         query_posts(array(
             'showposts' => 3,
             'cat' => $exclude
         ) );
         $newscol = 12;
         $newsitem = 4;
+    } else {
+        query_posts(array(
+            'showposts' => 2,
+            'cat' => $exclude
+        ) );
+        $newscol = 8;
+        $newsitem = 6;
     }
+    
+
+
+
+
+
     ?>
     <!-- Titles (Latest news and twitter if applicable) -->
     <div class="container">
@@ -135,8 +160,10 @@
                     </div>
                 </div>
 
+
+
                 <!-- Twitter column -->
-                <?php if(get_field('display_twitter_feed')) : ?>
+                <?php if(get_field('homepage_feed_option') == 'Twitter') : ?>
 
                 <div class="col-12 col-md-4 twittercontainer">
                     <h2>Latest Tweets</h2>
@@ -148,52 +175,70 @@
                         endwhile;
                     endif;
                     $tweets = twitterwp($user);
-			if (is_wp_error($tweets)) : ?>
+
+			        if (is_wp_error($tweets)) : ?>
 			
-				
 			
-			<?php else: ?> 
-                    <div class="twitter-box">
-                        <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
-                        <div class="twitter-header">
-                            @<?php echo $tweets[0]->user->screen_name; ?>
-                        </div>
+                    <?php else: ?> 
+                            <div class="twitter-box">
+                                <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
+                                <div class="twitter-header">
+                                    @<?php echo $tweets[0]->user->screen_name; ?>
+                                </div>
 
-                        </a>
-                        <div class="slick-controls">
-                            <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
-                            <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>
-                        </div>
+                                </a>
+                                <div class="slick-controls">
+                                    <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
+                                    <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>
+                                </div>
 
-                        <ul class="slick-twitter">
-                           <?php
-                           //Twitter loop
-                            foreach ($tweets as $tweet) {
-                                if(isset($tweet->entities->media[0]->media_url)){
-                                    $tweet_img = $tweet->entities->media[0]->media_url;
-                                } else {
-                                    $tweet_img = null;
-                                }
-                                $tweet_date = $tweet->created_at;
-                                $tweet_date= date_create($tweet_date);
-                                $tweet_date = date_format($tweet_date,"jS F Y");
-                                if ($tweet_img){
-                                    echo '<li><p class="post-date">'.$tweet_date.'</p>';
-                                    echo '<img class="twitter-tweet-image" src="'.$tweet_img.'" alt="Twitter Image">';
-                                    $last_space_position = strrpos($tweet->full_text, ' ');
-                                    $text_without_last_word = substr($tweet->full_text, 0, $last_space_position);
-                                    echo $text_without_last_word.'</li>';
-                                } else {
-                                    echo '<li><p class="post-date">'.$tweet_date.'</p>'.$tweet->full_text.'</li>';
-                                }
-                            } //end foreach
-                            ?>
-                        </ul>
+                                <ul class="slick-twitter">
+                                <?php
+                                //Twitter loop
+                                    foreach ($tweets as $tweet) {
+                                        if(isset($tweet->entities->media[0]->media_url)){
+                                            $tweet_img = $tweet->entities->media[0]->media_url;
+                                        } else {
+                                            $tweet_img = null;
+                                        }
+                                        $tweet_date = $tweet->created_at;
+                                        $tweet_date= date_create($tweet_date);
+                                        $tweet_date = date_format($tweet_date,"jS F Y");
+                                        if ($tweet_img){
+                                            echo '<li><p class="post-date">'.$tweet_date.'</p>';
+                                            echo '<img class="twitter-tweet-image" src="'.$tweet_img.'" alt="Twitter Image">';
+                                            $last_space_position = strrpos($tweet->full_text, ' ');
+                                            $text_without_last_word = substr($tweet->full_text, 0, $last_space_position);
+                                            echo $text_without_last_word.'</li>';
+                                        } else {
+                                            echo '<li><p class="post-date">'.$tweet_date.'</p>'.$tweet->full_text.'</li>';
+                                        }
+                                    } //end foreach
+                                    ?>
+                                </ul>
 
-                        <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
-                    </div>
-			<?php endif; ?>
+                                <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
+                            </div>
+                    <?php endif; ?>
+
                 </div>
+
+
+                <?php elseif(get_field('homepage_feed_option') == 'Facebook'): ?>
+
+                    <div class="col-12 col-md-4 twittercontainer">
+                        <h2>Latest Facebook Posts</h2>
+                        <div class="gradline"></div>
+
+                        <?php
+                            echo '<div class="facebook-feed">';
+                            echo do_shortcode( get_field('facebook_feed_shortcode_home') );
+                            echo '</div>';
+                        ?>
+                        
+
+                    </div>
+
                 <?php endif; //end twitter feed ?>
 
 

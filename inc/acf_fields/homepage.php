@@ -276,25 +276,74 @@ acf_add_local_field_group(array(
 			'append' => '',
 			'maxlength' => '',
 		),
+
+		// array(
+		// 	'key' => 'field_605b5108161ff',
+		// 	'label' => 'Display Twitter Feed',
+		// 	'name' => 'display_twitter_feed',
+		// 	'type' => 'true_false',
+		// 	'instructions' => 'You must had entered your twitter account in the <a href="/wp-admin/admin.php?page=school-settings">School Settings</a>',
+		// 	'required' => 0,
+		// 	'conditional_logic' => 0,
+		// 	'wrapper' => array(
+		// 		'width' => '50',
+		// 		'class' => '',
+		// 		'id' => '',
+		// 	),
+		// 	'message' => '',
+		// 	'default_value' => 0,
+		// 	'ui' => 0,
+		// 	'ui_on_text' => '',
+		// 	'ui_off_text' => '',
+		// ),
+
 		array(
-			'key' => 'field_605b5108161ff',
-			'label' => 'Display Twitter Feed',
-			'name' => 'display_twitter_feed',
-			'type' => 'true_false',
-			'instructions' => 'You must had entered your twitter account in the <a href="/wp-admin/admin.php?page=school-settings">School Settings</a>',
+			'key' => 'homepage_feed_option',
+			'label' => 'Display Twitter or Facebook Feed',
+			'name' => 'homepage_feed_option',
+			'type' => 'select',
+			'instructions' => 'Please select whether you would like to display a Facebook, Twitter or No feed. You must had entered your social media account in the <a href="/wp-admin/admin.php?page=school-settings">School Settings</a>',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '50',
+				'width' => '25',
 				'class' => '',
 				'id' => '',
 			),
-			'message' => '',
-			'default_value' => 0,
-			'ui' => 0,
-			'ui_on_text' => '',
-			'ui_off_text' => '',
+			'choices' => array(
+				'No_Feed' => 'No Feed',
+				'Twitter' => 'Twitter',
+				'Facebook' => 'Facebook',
+			),
 		),
+
+
+
+		array(
+			'key' => 'facebook_feed_shortcode_home',
+			'label' => 'Facebook feed shortcode',
+			'name' => 'facebook_feed_shortcode_home',
+			'type' => 'text',
+			'instructions' => 'Please enter the shortcode for the Facebook feed you would like to use e.g. [custom-facebook-feed feed=1]',
+
+			'wrapper' => array('width' => '25'),
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'homepage_feed_option',
+						'operator' => '==',
+						'value' => 'Facebook',
+					),
+				),
+			),
+		),
+
+
+
+
+
+
+
 		array(
 			'key' => 'field_605b50f1161fe',
 			'label' => 'Video Section',

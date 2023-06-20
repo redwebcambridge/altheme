@@ -50,6 +50,7 @@ acf_add_local_field_group(array(
 				'pps' => 'pps',
 				'scps' => 'scps',
 				'svc' => 'svc',
+				'wpa' => 'wpa',
 			),
 			'default_value' => false,
 			'allow_null' => 0,
@@ -89,6 +90,8 @@ acf_add_local_field_group(array(
 				'Sawston Village College' => 'Sawston Village College',
 				'Stapleford Community Primary School' => 'Stapleford Community Primary School',
 				'The Netherhall School' => 'The Netherhall School',
+				'Wimbish Primary Academy' => 'Wimbish Primary Academy',
+
 			),
 			'default_value' => false,
 			'allow_null' => 0,

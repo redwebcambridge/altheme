@@ -289,6 +289,10 @@
     </div>
 </div><!-- . end latestnews -->
 <!-- .video section-->
+
+<?php if(!empty(get_field('file'))) : ?>
+
+
 <div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>;) ">
     <div class="container">
     <div class="siteicon" style="background-image:url(<?php echo get_field('background_image');  ?>)">
@@ -301,7 +305,6 @@
               </div>
 
 
-              <?php if(!empty(get_field('file'))) : ?>
 
                 <div class="col-md-6">
                 <?php
@@ -332,11 +335,15 @@
                         ?>
                 </div>
 
-              <?php endif; ?>
       </div>
       </div>
       </div>
 </div>
+
+<?php endif; ?>
+
+
+
 <?php if( have_rows('information_panel') ):   ?>
 <div class="container">
     <div class="information-section">

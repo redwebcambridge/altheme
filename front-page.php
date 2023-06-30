@@ -289,6 +289,10 @@
     </div>
 </div><!-- . end latestnews -->
 <!-- .video section-->
+
+<?php if(!empty(get_field('file'))) : ?>
+
+
 <div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>;) ">
     <div class="container">
     <div class="siteicon" style="background-image:url(<?php echo get_field('background_image');  ?>)">
@@ -300,38 +304,46 @@
                 <?php the_field('text_with_file_body'); ?>
               </div>
 
-              <div class="col-md-6">
-              <?php
-                    $iframe = get_field('file');
-                    $primarycolour = str_replace('#', '', get_field('colours','option')['primary_colour']);
-                    preg_match('/src="(.+?)"/', $iframe, $matches);
-                    $src = $matches[1];
-                    $params = array(
-                        'title' => 0,
-                        'showinfo' => 0,
-                        'modestbranding' => 0,
-                        'controls'  => 1,
-                        'badge' => 0,
-                        'byline' => 0,
-                        'buttons' => 0,
-                        'autoplay'  => get_field('autoplay_video'),
-                        'setVolume' => 0,
-                        'color' => $primarycolour,
-                        'portrait' => 0,
-                        'pip' => true,
-                        'rel' => 0,
-                    );
-                    $new_src = add_query_arg($params, $src);
-                    $iframe = str_replace($src, $new_src, $iframe);
-                    $attributes = 'frameborder="0"';
-                    $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-                    echo $iframe;
-                    ?>
-              </div>
+
+
+                <div class="col-md-6">
+                <?php
+                        $iframe = get_field('file');
+                        $primarycolour = str_replace('#', '', get_field('colours','option')['primary_colour']);
+                        preg_match('/src="(.+?)"/', $iframe, $matches);
+                        $src = $matches[1];
+                        $params = array(
+                            'title' => 0,
+                            'showinfo' => 0,
+                            'modestbranding' => 0,
+                            'controls'  => 1,
+                            'badge' => 0,
+                            'byline' => 0,
+                            'buttons' => 0,
+                            'autoplay'  => get_field('autoplay_video'),
+                            'setVolume' => 0,
+                            'color' => $primarycolour,
+                            'portrait' => 0,
+                            'pip' => true,
+                            'rel' => 0,
+                        );
+                        $new_src = add_query_arg($params, $src);
+                        $iframe = str_replace($src, $new_src, $iframe);
+                        $attributes = 'frameborder="0"';
+                        $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+                        echo $iframe;
+                        ?>
+                </div>
+
       </div>
       </div>
       </div>
 </div>
+
+<?php endif; ?>
+
+
+
 <?php if( have_rows('information_panel') ):   ?>
 <div class="container">
     <div class="information-section">

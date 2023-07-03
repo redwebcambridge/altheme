@@ -47,9 +47,14 @@ get_header();
               <div class="gallery col-12">
               <?php 
                 $image_ids = get_field('gallery');
-                foreach ($image_ids as $img_id) {
-                  echo '<div class="galleryimagecontianer"><img src="'.wp_get_attachment_image_src($img_id,'medium')[0].'" data-toggle="lightbox" class="galleryimage" data-gallery="gallery" alt="'.get_post_meta($img_id, '_wp_attachment_image_alt', true).'" data-title="'.get_the_excerpt($img_id).'" data-remote="'.wp_get_attachment_url($img_id).'" /></div>';
+
+                if(!empty($image_ids)){
+                  foreach ($image_ids as $img_id) {
+                    echo '<div class="galleryimagecontianer"><img src="'.wp_get_attachment_image_src($img_id,'medium')[0].'" data-toggle="lightbox" class="galleryimage" data-gallery="gallery" alt="'.get_post_meta($img_id, '_wp_attachment_image_alt', true).'" data-title="'.get_the_excerpt($img_id).'" data-remote="'.wp_get_attachment_url($img_id).'" /></div>';
+                  }
                 }
+
+                
               ?>
               </div>
           </div>

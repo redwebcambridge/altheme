@@ -66,9 +66,7 @@
     <?php
     //exclude newsletters
 	$newsletters = get_category_by_slug('newsletter');
-    if($newsletters) {
-        $exclude = '-'.$newsletters->term_id;
-    }
+	$exclude = '-'.$newsletters->term_id;
     //exclude foundtain
     $fountain = get_category_by_slug('the-fountain');
     if ($fountain){

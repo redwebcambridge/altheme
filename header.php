@@ -153,7 +153,7 @@ if (!class_exists('ACF')) {
                   'menu_class'        => 'd-md-flex justify-content-end',
                   'container_class'   => 'col-12',
                 ));
-              } else {
+              } elseif(has_nav_menu('top-buttons')) {
                 $menu_name = 'top-buttons';
                 $locations = get_nav_menu_locations();
                 $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );

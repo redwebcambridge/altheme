@@ -28,8 +28,8 @@ $thumbnail= get_field('thumbnail'); ?>
 		        </div>
 
 				<div class="col-12 col-md-4 mb-5">
-					<?php if ($thumbnail['url']) : ?><img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" title="<?php echo $thumbnail['title']; ?>"><?php endif; ?>
-					<?php if ($thumbnail['caption']) : echo '<div class="wp-caption-text">'.$thumbnail['caption'].'</div>'; endif; ?>
+					<?php if (!empty($thumbnail['url'])) : ?><img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" title="<?php echo $thumbnail['title']; ?>"><?php endif; ?>
+					<?php if (!empty($thumbnail['caption'])) : echo '<div class="wp-caption-text">'.$thumbnail['caption'].'</div>'; endif; ?>
 			        <h3 class="section-header ceo-right-header special-underine"><strong>SHARE</strong></h3>
 
 					<div class="socialcontainer">

@@ -158,6 +158,12 @@ if (!class_exists('ACF')) {
                 $locations = get_nav_menu_locations();
                 $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
                 $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+
+
+      
+                        
+
+              
                 ?>
                 <nav>
                 <ul class="d-md-flex justify-content-end" id="menu-top-buttons" itemscope>
@@ -195,7 +201,7 @@ if (!class_exists('ACF')) {
                         <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
                             <a href="<?php echo $item->url ?>" class="title" alt="<?php echo $item->title; ?>" target="<?php echo $item->target; ?>"><span itemprop="name"><?php echo $item->title; ?></span></a>
                         </li>
-                      <?php if ( $menuitems[ $count + 1 ]->menu_item_parent  != $parent_id && $submenu ): ?>
+                      <?php if ( isset($menuitems[ $count + 1 ]) && $menuitems[ $count + 1 ]->menu_item_parent  != $parent_id && $submenu ): ?>
                       </div>
                     </div>
                     </ul>

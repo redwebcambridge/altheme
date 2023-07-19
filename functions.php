@@ -127,6 +127,9 @@ function anglian_learning_scripts() {
   wp_enqueue_style( 'al-gallery-style', get_template_directory_uri().'/lib/ekko-lightbox.css');
   //Custom scripts
   wp_enqueue_script( 'al-scripts', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+
+  wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/a6cf3f2e48.js' );
+
 }
 add_action( 'wp_enqueue_scripts', 'anglian_learning_scripts' );
 
@@ -725,6 +728,8 @@ function magicgrid() {
  	wp_enqueue_script('magicgrid');
 }
 
+
+
 //website settings
 add_action('acf/init', 'site_settings');
 function site_settings() {
@@ -784,7 +789,7 @@ function add_custom_plugin($plugin_array) {
 add_action('init', 'add_custom_button');
 
 
-//sass_compile();
+// sass_compile();
 
 
 

@@ -239,7 +239,9 @@ if (!class_exists('ACF')) {
 <div class="navbar navbar-expand-md navbar-light bg-light sticky-nav sticky-top" id="stickynav">
     <div class="container">
         <button class="navbar-toggler menuicon" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <!-- <span class="navbar-toggler-icon" ></span> -->
+          <span class=""><i class="fa-solid fa-bars navbar-icon"></i></span>
+
         </button>
         <?php
         //Get corrent page for back button

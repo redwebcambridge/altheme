@@ -342,10 +342,15 @@ header {
     .navbar-toggler {
       padding:0;
       border:0;
+      .navbar-icon {
+        font-size: 30px;
+        padding: 2px;
+      }
       .menuicon {
-        .navbar-toggler-icon {
+        .navbar-toggler-icon, .navbar-icon {
           padding-right:20px;
         }
+        
       }
       &.back-button {
         border-left:1px solid $lightgrey;
@@ -358,6 +363,9 @@ header {
 .bg-light {
     background-color:#fff !important;
 }
+
+
+
 
 #sidebar-menu {
   padding-left: 0;

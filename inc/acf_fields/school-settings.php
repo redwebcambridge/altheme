@@ -1127,7 +1127,7 @@ acf_add_local_field_group(array(
 			'label' => 'Footer Left Side Text',
 			'name' => 'footer_left_side_text',
 			'type' => 'textarea',
-			'instructions' => '',
+			'instructions' => 'Please note the character limit for this field is 370.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(

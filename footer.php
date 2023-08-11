@@ -69,7 +69,15 @@
                                         $instauser_adult = str_replace('@','',$platform['username']);
                                      }
                                 ?>
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+
+                                    <?php if($platform['platform'] == 'twitter') {
+                                        $platform_icon = 'x-twitter';
+                                    } else {
+                                        $platform_icon = $platform['platform'];
+                                    } 
+                                    ?>
+
+                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
                         <?php elseif (is_sports_page()) : ?>
@@ -86,7 +94,17 @@
                                        $instauser_sport = str_replace('@','',$platform['username']);
                                     }
                                 ?>
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform['platform']; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+
+                                    <?php if($platform['platform'] == 'twitter') {
+                                        $platform_icon = 'x-twitter';
+                                    } else {
+                                        $platform_icon = $platform['platform'];
+                                    } 
+                                    ?>
+
+
+
+                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
                         <?php else : ?>    
@@ -96,7 +114,13 @@
                             <?php the_field('footer_left_side_text','option'); ?>
                                 <div class="social">
                                 <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
-                                    <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank"><i class="social fab fa-<?php echo get_sub_field('platform'); if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <?php if(get_sub_field('platform') == 'twitter') {
+                                        $platform = 'x-twitter';
+                                        } else {
+                                            $platform = get_sub_field('platform');
+                                        } 
+                                    ?>
+                                    <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank"><i class="social fab fa-<?php echo $platform; if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endwhile; endif; ?>
                                 </div>
                         <?php endif; ?>

@@ -38,7 +38,7 @@
                 font-size: 17px;
                 border: none;
                 &:hover {
-                    background-color: $secondarycolour;
+                    background-color: #605E5E;
                 }
                 i {
                     margin-right: 8px;
@@ -46,6 +46,10 @@
             }
             .active {
                 background-color: #605E5E;
+                &:hover {
+                    background-color: #605E5E;
+                    cursor: default;
+                }
             }
         }
         .ages {

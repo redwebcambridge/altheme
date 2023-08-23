@@ -254,5 +254,11 @@
      .leaflet-popup-tip-container {
         display:none
      }
+     .labels {
+        a {
+            white-space: nowrap;
+            line-height: 2;
+        }
+     }
 }
 

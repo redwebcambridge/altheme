@@ -103,6 +103,7 @@ function anglian_learning_scripts() {
   wp_enqueue_script('jqueryscript');
   //Leaflet for maps
   wp_enqueue_script( 'leafletjs', get_template_directory_uri().'/js/leaflet.js');
+  wp_enqueue_script( 'leafletjsproviders', get_template_directory_uri().'/js/leaflet-providers.js');
   wp_enqueue_style( 'leafletcss', get_template_directory_uri().'/sass/styles/leaflet.css');
   //Calendar
   wp_enqueue_script( 'fullcalendar', get_template_directory_uri().'/js/calendar.min.js');

@@ -7819,8 +7819,8 @@ textarea:focus, input:focus, select:focus {
 }
 .newsevents #twitter, .search #twitter {
   background-color: #F2AD0E;
-  background-image: url(img/twitter-header.png);
-  background-size: 20px;
+  background-image: url(img/twitter-x.png);
+  background-size: 23px;
 }
 .newsevents #facebook, .search #facebook {
   background-color: #79A12D;
@@ -8535,7 +8535,7 @@ html .orange-vacancy-div-bg {
   background-color: #003260;
 }
 #sports footer {
-  background-color: #3f3f3f;
+  background-color: #b2b2b2;
   background-image: url("");
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;

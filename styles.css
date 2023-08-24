@@ -4792,7 +4792,7 @@ button {
 }
 .btn, .page-template-vacancies .log_interest .wpcf7-submit, #sb_instagram .sbi_follow_btn a {
   padding: 10px 20px;
-  background: #004c93;
+  background: #2ca9e0;
   border: none;
   border-radius: 0;
 }
@@ -4801,12 +4801,12 @@ button {
   opacity: 0.4;
 }
 .btn:hover, .page-template-vacancies .log_interest .wpcf7-submit:hover, #sb_instagram .sbi_follow_btn a:hover {
-  background-color: #f7b100;
+  background-color: #6461ab;
   box-shadow: none;
 }
 .btn:focus, .page-template-vacancies .log_interest .wpcf7-submit:focus, #sb_instagram .sbi_follow_btn a:focus {
   outline: none !important;
-  background-color: #f7b100;
+  background-color: #6461ab;
   box-shadow: none !important;
 }
 .btn.btn-secondary, .page-template-vacancies .log_interest .btn-secondary.wpcf7-submit, #sb_instagram .sbi_follow_btn a.btn-secondary {
@@ -4818,24 +4818,24 @@ button {
   margin: 15px 0;
 }
 .btn.btn-sm:hover, .page-template-vacancies .log_interest .btn-sm.wpcf7-submit:hover, #sb_instagram .sbi_follow_btn a.btn-sm:hover {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 .read-more-button {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #searchform button, #mobilesearch button {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: #fff;
 }
 #searchform button:before, #mobilesearch button:before {
   content: "";
 }
 #searchform button:hover, #mobilesearch button:hover {
-  background-color: #f7b100;
+  background-color: #6461ab;
 }
 .close {
   background: white;
-  color: #004c93;
+  color: #2ca9e0;
   border: none;
   outline: none;
 }
@@ -4844,7 +4844,7 @@ button {
   font-size: 1.5rem;
 }
 .close:hover {
-  color: #f7b100;
+  color: #6461ab;
 }
 @keyframes gradanimate {
   0% {
@@ -4894,7 +4894,7 @@ button {
   }
 }
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 1em;
   font-weight: 300;
   color: #3f3f3f;
@@ -4903,14 +4903,14 @@ body {
 }
 body a {
   text-decoration: none;
-  color: #004c93;
+  color: #2ca9e0;
 }
 body a:hover {
-  color: #003260;
+  color: #1c8cbd;
   text-decoration: none;
 }
 body h1, body h2, body h3, body h4 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
 }
 body strong {
@@ -4918,7 +4918,7 @@ body strong {
 }
 body h2 {
   text-transform: uppercase;
-  color: #004c93;
+  color: #2ca9e0;
   font-size: 1.75rem;
 }
 body h3 {
@@ -4929,7 +4929,7 @@ body p, body ul, body ol {
   line-height: 1.6em;
 }
 body ::selection {
-  background: #003260;
+  background: #1c8cbd;
   color: #fff;
 }
 header #top_buttons {
@@ -4976,7 +4976,7 @@ header #top_buttons ul:first-child li i {
   color: #9c9c9c;
 }
 header #top_buttons ul:first-child li:hover {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 header #top_buttons ul:first-child li:hover .dropdown-menu {
   transition: all 0.5s ease-out !important;
@@ -4996,13 +4996,13 @@ header #top_buttons ul:first-child li a {
 header #top_buttons ul.dropdown-menu {
   transition: all 0.5s ease-out !important;
   opacity: 0;
-  background-color: #004c93;
+  background-color: #2ca9e0;
   border-radius: 0px;
   border: none;
   padding: 0;
   font-size: 0.85rem;
-  border-left: 1px solid #004484;
-  border-bottom: 1px solid #004484;
+  border-left: 1px solid #20a3dc;
+  border-bottom: 1px solid #20a3dc;
   margin-top: 34px;
 }
 header #top_buttons ul.dropdown-menu .double-sub {
@@ -5011,7 +5011,7 @@ header #top_buttons ul.dropdown-menu .double-sub {
 header #top_buttons ul.dropdown-menu .double-sub .submenu-left {
   text-transform: none;
   margin: 20px 0 20px 20px;
-  border-right: 2px solid #004484;
+  border-right: 2px solid #20a3dc;
   padding-right: 20px;
   color: white;
   min-width: 150px;
@@ -5030,7 +5030,7 @@ header #top_buttons ul.dropdown-menu .double-sub .submenu-right {
   margin: 20px 0 20px 0;
 }
 header #top_buttons ul.dropdown-menu .double-sub li {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   text-transform: none;
   transition: all 1s ease-in-out;
   margin: 0;
@@ -5043,14 +5043,14 @@ header #top_buttons ul.dropdown-menu .double-sub li a {
   max-width: 250px;
 }
 header #top_buttons ul.dropdown-menu .double-sub li:hover {
-  background-color: #003260;
+  background-color: #1c8cbd;
   cursor: pointer;
 }
 #mainnav ul {
   width: 100%;
   font-weight: 500;
   border-top-width: 2px;
-  border-top: 2px solid #004c93;
+  border-top: 2px solid #2ca9e0;
   border-radius: 0;
   justify-content: space-between;
   font-size: 0.9rem;
@@ -5063,21 +5063,21 @@ header #top_buttons ul.dropdown-menu .double-sub li:hover {
   line-height: 1.6em;
 }
 #mainnav ul li a {
-  color: #004c93;
+  color: #2ca9e0;
   padding: 10px 0 0 0;
   text-transform: uppercase;
 }
 #mainnav ul li a:hover {
-  color: #003260;
+  color: #1c8cbd;
 }
 #mainnav ul li:last-child a {
   color: white;
-  background-color: #004c93;
+  background-color: #2ca9e0;
   padding: 10px 20px;
   text-transform: uppercase;
 }
 #mainnav ul li:last-child a:hover {
-  background-color: #f7b100;
+  background-color: #6461ab;
 }
 #mainnav ul li .dropdown-menu {
   width: 25vw;
@@ -5117,16 +5117,16 @@ header #top_buttons ul.dropdown-menu .double-sub li:hover {
   white-space: unset;
 }
 #mainnav ul li .dropdown-menu li a:active {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: white;
 }
 #mainnav ul li .dropdown-menu li:last-child a {
   background-color: transparent;
-  color: #004c93;
+  color: #2ca9e0;
 }
 #mainnav ul li .dropdown-menu li:last-child a:hover {
   background-color: #e9ecef;
-  color: #003260;
+  color: #1c8cbd;
 }
 #mainnav ul li:hover .dropdown-menu {
   display: flex;
@@ -5170,19 +5170,19 @@ header #top_buttons ul.dropdown-menu .double-sub li:hover {
   position: relative;
 }
 #sidebar-menu li.current_page_item a {
-  background: #f7b100;
+  background: #6461ab;
 }
 #sidebar-menu li a {
   list-style-type: none;
   padding: 12px;
   text-transform: uppercase;
-  background: #004c93;
+  background: #2ca9e0;
   display: block;
   margin: 5px 0;
   transition: all 0.5s linear;
 }
 #sidebar-menu li a:hover {
-  background: #003260;
+  background: #1c8cbd;
 }
 #sidebar-menu li .sub-menu {
   display: none;
@@ -5215,19 +5215,19 @@ header #top_buttons ul.dropdown-menu .double-sub li:hover {
   margin: 0;
   background: #d6d7d9;
   color: #000;
-  border-bottom: 2px solid #004c93;
+  border-bottom: 2px solid #2ca9e0;
 }
 #sidebar-menu li:hover .sub-menu li a:hover {
-  color: #004c93;
-  border-bottom: 2px solid #f7b100;
+  color: #2ca9e0;
+  border-bottom: 2px solid #6461ab;
 }
 #sidebar-menu li:hover .sub-menu li.current_page_item a {
-  color: #004c93;
-  border-bottom: 2px solid #f7b100;
+  color: #2ca9e0;
+  border-bottom: 2px solid #6461ab;
 }
 .currenthover {
   display: none;
-  background-image: url("https://lvc.local/wp-content/uploads/2021/08/LVC-Icon.jpg");
+  background-image: url("http://anglianlearningtrust.local/wp-content/uploads/2023/03/logo.png");
   background-repeat: no-repeat;
   background-size: contain;
   width: 36px;
@@ -5297,7 +5297,7 @@ header #top_buttons ul.dropdown-menu .double-sub li:hover {
   color: white;
 }
 #sidebar-menu .current_page_item {
-  background: #f7b100;
+  background: #6461ab;
   cursor: pointer;
 }
 #sidebar-menu .current_page_item > a {
@@ -5323,12 +5323,12 @@ header #top_buttons ul.dropdown-menu .double-sub li:hover {
 }
 #adult_ed #mainnav ul {
   border-top-width: 2px;
-  border-top: 2px solid #004c93;
+  border-top: 2px solid #2ca9e0;
   border-radius: 0;
 }
 #sports #mainnav ul {
   border-top-width: 2px;
-  border-top: 2px solid #004c93;
+  border-top: 2px solid #2ca9e0;
   border-radius: 0;
 }
 header {
@@ -5359,7 +5359,7 @@ header input[type='text'] {
 }
 .front-page-header {
   height: 540px;
-  background-color: #004c93;
+  background-color: #2ca9e0;
   width: 100%;
   overflow: hidden;
 }
@@ -5387,7 +5387,7 @@ header input[type='text'] {
   }
 }
 .front-page-header a i {
-  color: #f7b100;
+  color: #6461ab;
 }
 .front-page-header .slick-list {
   height: 542px;
@@ -5439,13 +5439,13 @@ header input[type='text'] {
   width: auto;
 }
 .front-page-header .slick-list .image-slider svg .st0 {
-  fill: #004c93;
+  fill: #2ca9e0;
 }
 .front-page-header .left {
   width: 30%;
 }
 .front-page-header .left .siteicon {
-  background-image: url("https://lvc.local/wp-content/uploads/2021/08/LVC-Icon.jpg");
+  background-image: url("http://anglianlearningtrust.local/wp-content/uploads/2023/03/logo.png");
   background-repeat: no-repeat;
   background-size: contain;
   height: 540px;
@@ -5468,14 +5468,14 @@ header input[type='text'] {
   padding: 30px 0px 15px 0px;
 }
 .front-page-header .left .siteicon .content_left .social a {
-  color: #f7b100;
+  color: #6461ab;
   font-size: 1.9rem;
   padding: 0 15px 0 0;
   transition: all 0.5 ease;
   text-decoration: none;
 }
 .front-page-header .left .siteicon .content_left .social a:hover {
-  color: #c48c00;
+  color: #4e4b8e;
   text-decoration: none;
 }
 .front-page-header .left .siteicon .content_left p {
@@ -5483,7 +5483,7 @@ header input[type='text'] {
 }
 .front-page-header .left .siteicon .content_left .intro {
   margin-top: 20px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 2rem;
 }
 .front-page-header .left .siteicon .content_left .intro h1 {
@@ -5583,17 +5583,17 @@ header input[type='text'] {
 }
 .homepage-tabs-nav #slider_nav li button {
   border: none;
-  background: #004c93;
+  background: #2ca9e0;
   width: 30px;
   height: 8px;
   cursor: pointer;
 }
 .homepage-tabs-nav #slider_nav li.slick-active button {
-  background: #f7b100;
+  background: #6461ab;
 }
 .homepage-tabs-nav .tab_button {
-  background: #f7b100;
-  border-top: 8px solid #f7b100;
+  background: #6461ab;
+  border-top: 8px solid #6461ab;
   margin-right: 5px;
   cursor: pointer;
   padding: 15px 30px;
@@ -5637,11 +5637,11 @@ header input[type='text'] {
 }
 .homepage-tabs-nav .tab_button.active {
   background: #fff;
-  color: #004c93;
+  color: #2ca9e0;
 }
 .homepage-tabs-nav .tab_button:hover:not(.active) {
   background: #fff;
-  color: #004c93;
+  color: #2ca9e0;
 }
 .featured-top-image {
   width: 100%;
@@ -5650,7 +5650,7 @@ header input[type='text'] {
   background-position: center;
 }
 .featured-top-image .main-heading h1 {
-  background: #004c93;
+  background: #2ca9e0;
   padding: 10px 20px;
   margin: 0;
   color: #fff;
@@ -5686,8 +5686,8 @@ header input[type='text'] {
   background-size: 100%;
 }
 footer {
-  background-color: #3f3f3f;
-  background-image: url("https://lvc.local/wp-content/uploads/2021/08/Footer-Icon.png");
+  background-color: #00ad79;
+  background-image: url("");
   background-repeat: no-repeat;
   background-position: -150px top;
   background-size: 90%;
@@ -5741,7 +5741,7 @@ footer #sb_instagram #sbi_load {
 }
 footer h5 {
   font-size: 20px;
-  color: #FFFFFF;
+  color: #2ca9e0;
   text-transform: uppercase;
   font-weight: 400;
 }
@@ -5752,7 +5752,7 @@ footer h5 {
 }
 footer .footer-line {
   margin-bottom: 20px;
-  background-image: linear-gradient(to right, #f7b100, #fff);
+  background-image: linear-gradient(to right, #2ca9e0, #fff);
   height: 2px;
 }
 footer a {
@@ -5770,7 +5770,7 @@ footer a i:hover {
   cursor: pointer;
 }
 footer i {
-  color: #f7b100;
+  color: #2ca9e0;
   font-size: 1.25rem;
   width: auto;
   padding: 15px 15px 0 0;
@@ -5794,7 +5794,7 @@ footer .contact-info .row i {
   min-width: 35px;
 }
 footer .footer-base {
-  background: #004c93;
+  background: #2ca9e0;
   font-size: 0.9rem;
 }
 footer .footer-base .col {
@@ -5876,13 +5876,13 @@ footer #map {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 18px;
-  background: #004c93;
+  background: #2ca9e0;
   z-index: 120;
   cursor: pointer;
   border-radius: 0px;
   align-items: center;
   justify-content: center;
-  border-top: 2px solid #003260;
+  border-top: 2px solid #1c8cbd;
 }
 .cookieconsent_msg a {
   color: #fff;
@@ -5894,8 +5894,8 @@ footer #map {
   color: #fff;
   font-size: 12px;
   line-height: 10px;
-  border: 1px solid #f7b100;
-  background-color: #f7b100;
+  border: 1px solid #6461ab;
+  background-color: #6461ab;
 }
 body.admin-bar .navbar.fixed-top {
   top: 30px;
@@ -5928,7 +5928,7 @@ body .images_table tr img {
   padding: 5px;
 }
 body .spinner-border {
-  border: 0.25em solid #004c93;
+  border: 0.25em solid #2ca9e0;
   border-right-color: transparent;
 }
 body img.alignleft {
@@ -5982,16 +5982,16 @@ body .line {
   background-size: 200% 100%;
 }
 body .al-border-bottom {
-  border-bottom: 7px solid #f7b100;
+  border-bottom: 7px solid #6461ab;
 }
 body .gradline, body .gradline-secondwhite {
   height: 2px;
   width: 100%;
-  background-image: linear-gradient(to right, #004c93, #f7b100);
+  background-image: linear-gradient(to right, #2ca9e0, #6461ab);
   margin: 10px 0;
 }
 body .gradline-secondwhite {
-  background-image: linear-gradient(to right, #f7b100, white);
+  background-image: linear-gradient(to right, #6461ab, white);
 }
 body.home .tabcontent {
   border-top: solid 90px white;
@@ -6078,7 +6078,7 @@ body.home .information-section {
   padding: 75px 0;
 }
 body.home .information-section .information-panel-image {
-  border-bottom: 4px solid #004c93;
+  border-bottom: 4px solid #2ca9e0;
   margin-top: 20px;
 }
 body .page-content iframe {
@@ -6113,11 +6113,11 @@ body table tbody td, body table tbody th {
   border-top: 1px dashed #dee2e6 !important;
 }
 body table tbody th {
-  color: #004c93;
+  color: #2ca9e0;
 }
 .vacancy_tag {
   color: #fff;
-  background: #004c93;
+  background: #2ca9e0;
   font-weight: 600;
   padding: 5px 20px;
   margin: 20px;
@@ -6155,7 +6155,7 @@ body table tbody th {
   opacity: 1;
 }
 .info_img {
-  border-bottom: 8px solid #004c93;
+  border-bottom: 8px solid #2ca9e0;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -6166,7 +6166,7 @@ body table tbody th {
   margin: 0 0 15px;
 }
 .downloadtitlecontainer .downloadstitle {
-  color: #004c93;
+  color: #2ca9e0;
 }
 .downloadlist .col {
   flex: unset;
@@ -6179,7 +6179,7 @@ body table tbody th {
   align-items: center;
 }
 .downloadcontainer .fas, .downloadcontainer #searchform button, #searchform .downloadcontainer button, .downloadcontainer #mobilesearch button, #mobilesearch .downloadcontainer button, .downloadcontainer .close, .downloadcontainer .partners .slick-controls-lower .next-slide-lower:before, .partners .slick-controls-lower .downloadcontainer .next-slide-lower:before, .downloadcontainer .partners .slick-controls-lower .prev-slide-lower:before, .partners .slick-controls-lower .downloadcontainer .prev-slide-lower:before, .downloadcontainer .page-template-vacancies .log_interest .cv_upload .upload, .page-template-vacancies .log_interest .cv_upload .downloadcontainer .upload {
-  color: #f7b100;
+  color: #6461ab;
   margin-right: 15px;
   font-size: 30px;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -6194,8 +6194,8 @@ body table tbody th {
   line-height: 20px;
 }
 .downloadcontainer:hover {
-  background-color: #004c93;
-  border-color: #004c93;
+  background-color: #2ca9e0;
+  border-color: #2ca9e0;
 }
 .downloadcontainer:hover .fas, .downloadcontainer:hover #searchform button, #searchform .downloadcontainer:hover button, .downloadcontainer:hover #mobilesearch button, #mobilesearch .downloadcontainer:hover button, .downloadcontainer:hover .close, .downloadcontainer:hover .partners .slick-controls-lower .next-slide-lower:before, .partners .slick-controls-lower .downloadcontainer:hover .next-slide-lower:before, .downloadcontainer:hover .partners .slick-controls-lower .prev-slide-lower:before, .partners .slick-controls-lower .downloadcontainer:hover .prev-slide-lower:before, .downloadcontainer:hover .page-template-vacancies .log_interest .cv_upload .upload, .page-template-vacancies .log_interest .cv_upload .downloadcontainer:hover .upload {
   color: #fff;
@@ -6264,7 +6264,7 @@ body table tbody th {
   margin: 5px 0 40px 20px;
 }
 .latestnews .twitter-box .twitter-header {
-  background-color: #f7b100;
+  background-color: #6461ab;
   line-height: 3.5rem;
   font-weight: 600;
   display: flex;
@@ -6302,7 +6302,7 @@ body table tbody th {
   outline: none;
 }
 .latestnews .twitter-box .slick-controls button:hover {
-  color: #004c93;
+  color: #2ca9e0;
 }
 .latestnews .twitter-box .slick-twitter {
   padding: 0px 20px 20px 20px;
@@ -6338,7 +6338,7 @@ body table tbody th {
   }
 }
 .custom_button button {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   border: none;
   font-size: 15px;
   color: white;
@@ -6347,11 +6347,11 @@ body table tbody th {
   transition: 0.4s;
 }
 .custom_button button:hover {
-  background-color: #f7b100;
+  background-color: #6461ab;
   box-shadow: none;
 }
 .custom_colour_block {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: white;
   border: none;
   margin-bottom: 15px;
@@ -6367,6 +6367,42 @@ body table tbody th {
 }
 .custom_colour_block tbody td, .custom_colour_block body table tbody th {
   border-top: none !important;
+}
+.stats_strip {
+  background-color: #2ca9e0;
+}
+.stats_strip .counter {
+  color: white;
+}
+.stats_strip .counter .number {
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+@media (max-width: 500px) {
+  .stats_strip .counter .number {
+    font-size: 40px;
+  }
+}
+@media (max-width: 290px) {
+  .stats_strip .counter .number {
+    font-size: 35px;
+  }
+}
+.stats_strip .counter .label {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+@media (max-width: 500px) {
+  .stats_strip .counter .label {
+    font-size: 20px;
+  }
+}
+@media (max-width: 290px) {
+  .stats_strip .counter .label {
+    font-size: 15px;
+  }
 }
 input[type='email'], input[type='text'], input[type="tel"], input[type='textarea'], textarea {
   color: #9c9c9c;
@@ -6441,7 +6477,7 @@ textarea:focus, input:focus, select:focus {
 .form-control:focus {
   color: #3f3f3f;
   background-color: #fff;
-  border-color: #004c93;
+  border-color: #2ca9e0;
   outline: 0;
   box-shadow: none;
   box-sizing: border-box;
@@ -6500,15 +6536,15 @@ textarea:focus, input:focus, select:focus {
   border-style: none;
 }
 .fc .fc-button .fc .fc-button-primary:focus, .fc .fc-button-primary:not(:disabled).fc-button-active:focus, .fc .fc-button-primary:not(:disabled):active:focus {
-  box-shadow: 0 0 0 0.2rem #004c93;
+  box-shadow: 0 0 0 0.2rem #2ca9e0;
 }
 .fc .fc-button-primary {
   color: #fff;
   color: var(--fc-button-text-color, #fff);
-  background-color: #004c93;
-  background-color: var(--fc-button-bg-color, #004c93);
-  border-color: #004c93;
-  border-color: var(--fc-button-border-color, #004c93);
+  background-color: #2ca9e0;
+  background-color: var(--fc-button-bg-color, #2ca9e0);
+  border-color: #2ca9e0;
+  border-color: var(--fc-button-border-color, #2ca9e0);
 }
 .fc .fc-button-primary:hover {
   color: #fff;
@@ -6754,10 +6790,10 @@ textarea:focus, input:focus, select:focus {
   bottom: -1px;
 }
 .fc-h-event {
-  border: 1px solid #004c93;
-  border: 1px solid var(--fc-event-border-color, #004c93);
-  background-color: #004c93;
-  background-color: var(--fc-event-bg-color, #004c93);
+  border: 1px solid #2ca9e0;
+  border: 1px solid var(--fc-event-border-color, #2ca9e0);
+  background-color: #2ca9e0;
+  background-color: var(--fc-event-bg-color, #2ca9e0);
 }
 .fc-h-event .fc-event-main {
   color: #fff;
@@ -6871,8 +6907,8 @@ textarea:focus, input:focus, select:focus {
   z-index: 1;
 }
 .fc .fc-daygrid-day.fc-day-today {
-  background-color: #e0f0ff;
-  background-color: var(--fc-today-bg-color, #e0f0ff);
+  background-color: white;
+  background-color: var(--fc-today-bg-color, white);
 }
 .fc .fc-daygrid-day-frame {
   position: relative;
@@ -7022,8 +7058,8 @@ textarea:focus, input:focus, select:focus {
   box-sizing: content-box;
   width: 0;
   height: 0;
-  border: 4px solid #004c93;
-  border: calc(var(--fc-daygrid-event-dot-width,8px)/ 2) solid var(--fc-event-border-color, #004c93);
+  border: 4px solid #2ca9e0;
+  border: calc(var(--fc-daygrid-event-dot-width,8px)/ 2) solid var(--fc-event-border-color, #2ca9e0);
   border-radius: 4px;
   border-radius: calc(var(--fc-daygrid-event-dot-width,8px)/ 2);
 }
@@ -7035,10 +7071,10 @@ textarea:focus, input:focus, select:focus {
 }
 .fc-v-event {
   display: block;
-  border: 1px solid #004c93;
-  border: 1px solid var(--fc-event-border-color, #004c93);
-  background-color: #004c93;
-  background-color: var(--fc-event-bg-color, #004c93);
+  border: 1px solid #2ca9e0;
+  border: 1px solid var(--fc-event-border-color, #2ca9e0);
+  background-color: #2ca9e0;
+  background-color: var(--fc-event-bg-color, #2ca9e0);
 }
 .fc-v-event .fc-event-main {
   color: #fff;
@@ -7374,8 +7410,8 @@ textarea:focus, input:focus, select:focus {
   box-sizing: content-box;
   width: 0;
   height: 0;
-  border: 5px solid #004c93;
-  border: calc(var(--fc-list-event-dot-width,10px)/ 2) solid var(--fc-event-border-color, #004c93);
+  border: 5px solid #2ca9e0;
+  border: calc(var(--fc-list-event-dot-width,10px)/ 2) solid var(--fc-event-border-color, #2ca9e0);
   border-radius: 5px;
   border-radius: calc(var(--fc-list-event-dot-width,10px)/ 2);
 }
@@ -7448,26 +7484,26 @@ textarea:focus, input:focus, select:focus {
 }
 .fc .btn.fc-dayGridMonth-button, .fc .page-template-vacancies .log_interest .fc-dayGridMonth-button.wpcf7-submit, .page-template-vacancies .log_interest .fc .fc-dayGridMonth-button.wpcf7-submit {
   margin-right: 3px;
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 .fc .btn.btn-primary, .fc .page-template-vacancies .log_interest .btn-primary.wpcf7-submit, .page-template-vacancies .log_interest .fc .btn-primary.wpcf7-submit {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 .fc .btn.btn-primary.active, .fc .page-template-vacancies .log_interest .btn-primary.active.wpcf7-submit, .page-template-vacancies .log_interest .fc .btn-primary.active.wpcf7-submit {
-  background-color: #f7b100;
+  background-color: #6461ab;
 }
 .fc .btn.fc-next-button, .fc .page-template-vacancies .log_interest .fc-next-button.wpcf7-submit, .page-template-vacancies .log_interest .fc .fc-next-button.wpcf7-submit {
   margin-left: 2px;
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 .fc .btn.fc-prev-button, .fc .page-template-vacancies .log_interest .fc-prev-button.wpcf7-submit, .page-template-vacancies .log_interest .fc .fc-prev-button.wpcf7-submit {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 .fc .btn:disabled, .fc .page-template-vacancies .log_interest .wpcf7-submit:disabled, .page-template-vacancies .log_interest .fc .wpcf7-submit:disabled {
   opacity: 0.2;
 }
 .fc .btn.fc-today-button, .fc .page-template-vacancies .log_interest .fc-today-button.wpcf7-submit, .page-template-vacancies .log_interest .fc .fc-today-button.wpcf7-submit {
-  background-color: #f7b100;
+  background-color: #6461ab;
   margin-left: 20px;
 }
 .fc .fc-icon {
@@ -7486,8 +7522,8 @@ textarea:focus, input:focus, select:focus {
   box-sizing: border-box;
 }
 .fc .fc-toolbar.fc-header-toolbar {
-  border-top: 5px solid #f7b100;
-  border-bottom: 1px solid #f7b100;
+  border-top: 5px solid #6461ab;
+  border-bottom: 1px solid #6461ab;
   padding: 30px 20px 30px 20px;
   margin-bottom: 0px;
 }
@@ -7509,8 +7545,8 @@ textarea:focus, input:focus, select:focus {
   font-size: 0.75em;
 }
 #listview .fc-toolbar.fc-header-toolbar {
-  border-top: 5px solid #f7b100;
-  border-bottom: 1px solid #f7b100;
+  border-top: 5px solid #6461ab;
+  border-bottom: 1px solid #6461ab;
   padding: 30px 10px 30px 10px;
   margin-bottom: 0px;
 }
@@ -7575,7 +7611,7 @@ textarea:focus, input:focus, select:focus {
 }
 .meet-the-staff2 .staff-container .staff-section {
   border: 1px solid #9c9c9c;
-  border-right: 8px solid #f7b100;
+  border-right: 8px solid #6461ab;
   margin-top: 20px;
   width: 95%;
   vertical-align: top;
@@ -7632,7 +7668,7 @@ textarea:focus, input:focus, select:focus {
   width: 27%;
 }
 .meet-the-staff1 table .table-head {
-  background: #004c93;
+  background: #2ca9e0;
   color: #fff;
 }
 .meet-the-staff1 table .table-head tr {
@@ -7649,26 +7685,26 @@ textarea:focus, input:focus, select:focus {
   vertical-align: center;
 }
 .meet-the-staff1 table tbody th {
-  color: #004c93;
+  color: #2ca9e0;
   border: none;
 }
 .contact-page .contact-details {
   padding: 35px 12px 0 12px;
 }
 .contact-page h5 {
-  color: #004c93;
+  color: #2ca9e0;
   padding-top: 10px;
 }
 .contact-page a {
   color: #3f3f3f;
 }
 .contact-page em {
-  color: #004c93;
+  color: #2ca9e0;
   font-weight: 400;
 }
 .contact-page .fab, .contact-page .latestnews .twitter-box .twitter-header:after, .latestnews .twitter-box .contact-page .twitter-header:after {
   font-size: 25px;
-  color: #004c93;
+  color: #2ca9e0;
   line-height: 30px;
 }
 .contact-page .socials {
@@ -7681,18 +7717,18 @@ textarea:focus, input:focus, select:focus {
 .contact-page input[type='submit'] {
   border: none;
   float: right;
-  background: #004c93;
+  background: #2ca9e0;
   padding: 10px 40px;
   color: #ffffff;
 }
 .contact-page #contactmap {
   height: 366px;
   margin-top: 47px;
-  border-top: 8px solid #004c93;
+  border-top: 8px solid #2ca9e0;
   z-index: 9;
 }
 .about-page .about-image-one {
-  border-bottom: 6px solid #f7b100;
+  border-bottom: 6px solid #6461ab;
 }
 .about-page .about-image-two {
   margin-top: 20px;
@@ -7734,7 +7770,7 @@ textarea:focus, input:focus, select:focus {
 }
 .newsevents .newseventcontainer .newseventtext, .newsevents .newslettercontainer .newseventtext, .search .newseventcontainer .newseventtext, .search .newslettercontainer .newseventtext {
   padding: 22px 30px;
-  background-color: #004c93;
+  background-color: #2ca9e0;
   height: 100%;
   cursor: pointer;
   transition: all 1s ease;
@@ -7746,7 +7782,7 @@ textarea:focus, input:focus, select:focus {
   }
 }
 .newsevents .newseventcontainer .newseventtext:hover, .newsevents .newslettercontainer .newseventtext:hover, .search .newseventcontainer .newseventtext:hover, .search .newslettercontainer .newseventtext:hover {
-  background-color: #003260;
+  background-color: #1c8cbd;
 }
 .newsevents .newseventcontainer .newseventtext h4, .newsevents .newslettercontainer .newseventtext h4, .search .newseventcontainer .newseventtext h4, .search .newslettercontainer .newseventtext h4 {
   margin: 0 0 20px;
@@ -7782,8 +7818,8 @@ textarea:focus, input:focus, select:focus {
   font-weight: bold;
 }
 .newsevents .newseventspagination .current, .newsevents .newslettercontainer .current, .search .newseventspagination .current, .search .newslettercontainer .current {
-  border: 1px solid #004c93;
-  background-color: #004c93;
+  border: 1px solid #2ca9e0;
+  background-color: #2ca9e0;
   color: #fff;
 }
 .newsevents .newslettercontainer .newseventtext a, .search .newslettercontainer .newseventtext a {
@@ -7793,7 +7829,7 @@ textarea:focus, input:focus, select:focus {
   margin-bottom: 10px;
 }
 .newsevents .ceo-right-header, .search .ceo-right-header {
-  color: #004c93;
+  color: #2ca9e0;
   font-size: 1em;
   margin: 1.2em 0 1em 0;
 }
@@ -7845,10 +7881,10 @@ textarea:focus, input:focus, select:focus {
   color: inherit;
 }
 .newsevents .newsevents-contact a:hover, .search .newsevents-contact a:hover {
-  color: #004c93;
+  color: #2ca9e0;
 }
 .newsevents .newsevents-contact i, .search .newsevents-contact i {
-  color: #004c93;
+  color: #2ca9e0;
   min-width: 30px;
 }
 .newsevents .newsevents-phone, .search .newsevents-phone {
@@ -7861,7 +7897,7 @@ textarea:focus, input:focus, select:focus {
   display: block;
   height: 2px;
   width: 60px;
-  background: #004c93;
+  background: #2ca9e0;
   content: '';
   position: absolute;
   top: 100%;
@@ -7884,62 +7920,74 @@ textarea:focus, input:focus, select:focus {
   justify-content: center;
 }
 .newsevents .pagination .current {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: white;
 }
 .newsevents .pagination a {
   margin: 0px 10px;
   padding: 10px 15px;
   text-decoration: none;
-  color: #004c93;
-  border: 1px solid #004c93;
+  color: #2ca9e0;
+  border: 1px solid #2ca9e0;
 }
 .newsevents .pagination a:hover {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: white;
 }
 .newsevents .pagination span {
   margin: 0px 10px;
   padding: 10px 15px;
   text-decoration: none;
-  color: #004c93;
-  border: 1px solid #004c93;
+  color: #2ca9e0;
+  border: 1px solid #2ca9e0;
 }
 .newsevents .pagination span:hover {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: white;
 }
 .newsevents .pagination .prev, .newsevents .pagination .next {
   display: none;
 }
+.anglianlearning-news .row .newseventcontainer:nth-child(4n + 1) .newseventtext {
+  background-color: #6461ab;
+}
+.anglianlearning-news .row .newseventcontainer:nth-child(4n + 2) .newseventtext {
+  background-color: #2ca9e0;
+}
+.anglianlearning-news .row .newseventcontainer:nth-child(4n + 3) .newseventtext {
+  background-color: #73ac45;
+}
+.anglianlearning-news .row .newseventcontainer:nth-child(4n + 4) .newseventtext {
+  background-color: #fbad1f;
+}
 #adult_ed {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
 #adult_ed ::selection {
-  background: #003260;
+  background: #1c8cbd;
   color: #fff;
 }
 #adult_ed #sidebar-menu li {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #adult_ed #sidebar-menu li:hover {
-  background: #8ec644;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #adult_ed #sidebar-menu li a {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #adult_ed #sidebar-menu li a:hover {
-  background: #8ec644;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #adult_ed #sidebar-menu li.current_page_item {
-  background: #8ec644;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #adult_ed #sidebar-menu li.current_page_item a {
-  background: #8ec644;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #adult_ed #sidebar-menu li .sub-menu {
@@ -7965,61 +8013,61 @@ textarea:focus, input:focus, select:focus {
   margin: 0;
   background: #d6d7d9;
   color: #000;
-  border-bottom: 2px solid #004c93;
+  border-bottom: 2px solid #2ca9e0;
 }
 #adult_ed #sidebar-menu li:hover .sub-menu li a:hover {
-  color: #004c93;
-  border-bottom: 2px solid #8ec644;
+  color: #2ca9e0;
+  border-bottom: 2px solid #6461ab;
 }
 #adult_ed #sidebar-menu li:hover .sub-menu li.current_page_item a {
-  color: #004c93;
-  border-bottom: 2px solid #8ec644;
+  color: #2ca9e0;
+  border-bottom: 2px solid #6461ab;
 }
 #adult_ed .currenthover {
-  background-image: url("");
+  background-image: url("http://anglianlearningtrust.local/wp-content/uploads/2023/03/logo.png");
 }
 #adult_ed .newsevents .newsevents-contact i {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #adult_ed .special-underine:after {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #adult_ed .heading-two {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #adult_ed .btn, #adult_ed .page-template-vacancies .log_interest .wpcf7-submit, .page-template-vacancies .log_interest #adult_ed .wpcf7-submit {
-  background: #004c93;
+  background: #2ca9e0;
   color: #fff;
 }
 #adult_ed .btn:hover, #adult_ed .page-template-vacancies .log_interest .wpcf7-submit:hover, .page-template-vacancies .log_interest #adult_ed .wpcf7-submit:hover {
-  background: #8ec644;
+  background: #6461ab;
 }
 #adult_ed h1, #adult_ed h2, #adult_ed h3, #adult_ed h4, #adult_ed h5 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  color: #004c93;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  color: #2ca9e0;
 }
 #adult_ed p a {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #adult_ed .gradline {
-  background-image: linear-gradient(to right, #004c93, #8ec644);
+  background-image: linear-gradient(to right, #2ca9e0, #6461ab);
 }
 #adult_ed .newseventtext {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #adult_ed header #searchform button {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #adult_ed header #searchform button:hover {
-  background-color: #8ec644;
+  background-color: #6461ab;
 }
 #adult_ed header #top_buttons li:hover {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #adult_ed header #top_buttons li .dropdown-menu {
   margin-top: 0;
-  background-color: #004c93;
+  background-color: #2ca9e0;
   border: none;
 }
 #adult_ed header #top_buttons li .dropdown-menu li {
@@ -8027,17 +8075,17 @@ textarea:focus, input:focus, select:focus {
   margin: 0;
 }
 #adult_ed header #top_buttons li .dropdown-menu li a:hover {
-  background-color: #8ec644;
+  background-color: #6461ab;
 }
 #adult_ed .featured-top-image h1 {
-  background: #004c93;
+  background: #2ca9e0;
   color: #fff;
 }
 #adult_ed .latestnews .newsitemdetails h3 a {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #adult_ed .latestnews .twitter-header {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #adult_ed .latestnews .instagram-feed #sbi_load {
   text-align: left;
@@ -8047,49 +8095,49 @@ textarea:focus, input:focus, select:focus {
   margin-top: 5px;
 }
 #adult_ed .latestnews .instagram-feed #sbi_load .sbi_follow_btn a {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #adult_ed .latestnews .instagram-feed #sbi_load .sbi_follow_btn a:hover {
-  background-color: #8ec644;
+  background-color: #6461ab;
 }
 #adult_ed .al-border-bottom {
-  border-bottom: 7px solid #004c93;
+  border-bottom: 7px solid #2ca9e0;
 }
 #adult_ed #mainnav {
-  border-top-color: #004c93;
+  border-top-color: #2ca9e0;
 }
 #adult_ed #mainnav li:last-child a {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: #ffffff;
 }
 #adult_ed #mainnav li:last-child a:hover {
-  background-color: #8ec644;
+  background-color: #6461ab;
   color: #fff;
 }
 #adult_ed #mainnav li a {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #adult_ed #mainnav li a:hover {
-  color: #8ec644;
+  color: #6461ab;
 }
 #adult_ed #mainnav li a.dropdown-item {
-  color: #004c93;
+  color: #2ca9e0;
   background-color: #fff;
 }
 #adult_ed #mainnav li a.dropdown-item:hover {
-  color: #8ec644;
+  color: #6461ab;
   background-color: #fff;
 }
 #adult_ed .cookieconsent_msg {
-  background: #004c93;
-  border-top: 2px solid #003260;
+  background: #2ca9e0;
+  border-top: 2px solid #1c8cbd;
 }
 #adult_ed .cookieconsent_msg .allow-button {
-  background-color: #8ec644;
-  border-color: #8ec644;
+  background-color: #6461ab;
+  border-color: #6461ab;
 }
 #adult_ed .log_interest {
-  background: #8ec644;
+  background: #6461ab;
 }
 #adult_ed .log_interest h2, #adult_ed .log_interest h3, #adult_ed .log_interest h4, #adult_ed .log_interest h5 {
   color: #fff;
@@ -8099,36 +8147,35 @@ textarea:focus, input:focus, select:focus {
   font-weight: bolder;
 }
 #adult_ed .log_interest .wpcf7-submit, #adult_ed .log_interest .upload {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #adult_ed .log_interest .wpcf7-submit:hover, #adult_ed .log_interest .upload:hover {
-  background-color: #003260;
+  background-color: #1c8cbd;
 }
 #adult_ed footer {
-  background-color: #3f3f3f;
-  font-family: 'Raleway', sans-serif;
-  background-image: url("https://lvc.local/wp-content/uploads/2021/08/Foot.png");
+  font-family: 'Josefin Sans', sans-serif;
+  background-image: url("");
   font-weight: 400;
 }
 #adult_ed footer i {
-  color: #FFFFFF;
+  color: #2ca9e0;
 }
 #adult_ed footer h5 {
-  color: #FFFFFF;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
+  color: #2ca9e0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
 }
 #adult_ed footer .sbi_follow_btn a {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #adult_ed footer .sbi_follow_btn a:hover {
-  background: #8ec644;
+  background: #6461ab;
 }
 #adult_ed .footer-base {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #adult_ed .footer-line {
-  background-image: linear-gradient(to right, #FFFFFF, #fff);
+  background-image: linear-gradient(to right, #2ca9e0, #fff);
 }
 .course {
   margin-bottom: 15px;
@@ -8145,7 +8192,7 @@ textarea:focus, input:focus, select:focus {
   background-position: center;
 }
 .course .course-name {
-  background: #004c93;
+  background: #2ca9e0;
   padding: 10px 22px;
   text-align: center;
   text-transform: uppercase;
@@ -8154,7 +8201,7 @@ textarea:focus, input:focus, select:focus {
   flex-grow: 1;
 }
 .course .course-name:hover {
-  background: #8ec644;
+  background: #6461ab;
 }
 .contact-box {
   border: 1px solid grey;
@@ -8164,11 +8211,11 @@ textarea:focus, input:focus, select:focus {
   margin-bottom: 0;
 }
 .contact-box strong {
-  color: #004c93;
+  color: #2ca9e0;
   font-weight: 400;
 }
 .contact-box .email {
-  background: #8ec644;
+  background: #6461ab;
   padding: 10px 30px;
   margin: 0 10px;
   color: #ffffff;
@@ -8177,13 +8224,13 @@ textarea:focus, input:focus, select:focus {
   color: #ffffff;
 }
 .contact-box .number {
-  background: #004c93;
+  background: #2ca9e0;
   padding: 10px 30px;
   margin: 0 10px;
   color: #ffffff;
 }
 .page-template-vacancies .log_interest {
-  background: #f7b100;
+  background: #6461ab;
   padding: 20px;
 }
 .page-template-vacancies .log_interest h3 {
@@ -8214,7 +8261,7 @@ textarea:focus, input:focus, select:focus {
   transition: all 1s ease;
 }
 .page-template-vacancies .log_interest .wpcf7-submit:hover {
-  background-color: #003260;
+  background-color: #1c8cbd;
 }
 .page-template-vacancies .log_interest .cv_upload {
   display: flex;
@@ -8229,7 +8276,7 @@ textarea:focus, input:focus, select:focus {
 .page-template-vacancies .log_interest .cv_upload .upload {
   width: 40px;
   height: 40px;
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: #fff;
   line-height: 40px;
   text-align: center;
@@ -8249,10 +8296,10 @@ textarea:focus, input:focus, select:focus {
   z-index: 1;
 }
 .page-template-vacancies .log_interest .cv_upload .upload:hover {
-  background-color: #003260;
+  background-color: #1c8cbd;
 }
 .page-template-vacancies .current_vacancies h3 {
-  color: #004c93;
+  color: #2ca9e0;
   font-size: 1.5rem;
 }
 .page-template-vacancies .current_vacancies h4 {
@@ -8269,61 +8316,61 @@ textarea:focus, input:focus, select:focus {
 }
 /* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for button properties */
 html a.orange-btn-hover {
-  background-color: #004c93 !important;
+  background-color: #2ca9e0 !important;
   color: #ffffff !important;
 }
 html a.orange-btn-hover:hover {
-  background-color: #004c93 !important;
-  border-color: #004c93 !important;
+  background-color: #2ca9e0 !important;
+  border-color: #2ca9e0 !important;
 }
 html span.orange-btn-hover {
-  background-color: #004c93 !important;
+  background-color: #2ca9e0 !important;
   color: #ffffff !important;
 }
 /* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for vacancy title properties */
 html a.orange-link-wrapper .orange-vacancy-title {
-  color: #004c93 !important;
+  color: #2ca9e0 !important;
 }
 /* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for icon properties */
 html a.orange-link-wrapper .orange-vacancy-icon {
-  color: #004c93 !important;
+  color: #2ca9e0 !important;
 }
 /* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for miles / distance text properties */
 html .orange-vacancy-link {
-  color: #004c93 !important;
+  color: #2ca9e0 !important;
 }
 /* ONLY USE IF YOU KNOW CSS - Replace hexadecimal color code for talent pool more text background properties */
 html .orange-vacancy-div-bg {
-  background-color: #004c93 !important;
+  background-color: #2ca9e0 !important;
 }
 #sports {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
 #sports ::selection {
-  background: #003260;
+  background: #1c8cbd;
   color: #fff;
 }
 #sports .currenthover {
-  background-image: url("");
+  background-image: url("http://anglianlearningtrust.local/wp-content/uploads/2023/03/logo.png");
 }
 #sports h1, #sports h2, #sports h3, #sports h4, #sports h5 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  color: #004c93;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  color: #2ca9e0;
 }
 #sports header #searchform button {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #sports header #searchform button:hover {
-  background-color: #c1bc02;
+  background-color: #6461ab;
 }
 #sports header #top_buttons li:hover {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #sports header #top_buttons li .dropdown-menu {
   margin-top: 0;
-  background-color: #004c93;
+  background-color: #2ca9e0;
   border: none;
 }
 #sports header #top_buttons li .dropdown-menu li {
@@ -8331,17 +8378,17 @@ html .orange-vacancy-div-bg {
   margin: 0;
 }
 #sports header #top_buttons li .dropdown-menu li a:hover {
-  background-color: #c1bc02;
+  background-color: #6461ab;
 }
 #sports .featured-top-image h1 {
-  background: #004c93;
+  background: #2ca9e0;
   color: #fff;
 }
 #sports .latestnews .newsitemdetails h3 a {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #sports .latestnews .twitter-header {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #sports .latestnews .instagram-feed #sbi_load {
   text-align: left;
@@ -8351,44 +8398,44 @@ html .orange-vacancy-div-bg {
   margin-top: 5px;
 }
 #sports .latestnews .instagram-feed #sbi_load .sbi_follow_btn a {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #sports .latestnews .instagram-feed #sbi_load .sbi_follow_btn a:hover {
-  background-color: #c1bc02;
+  background-color: #6461ab;
 }
 #sports .al-border-bottom {
-  border-bottom: 7px solid #004c93;
+  border-bottom: 7px solid #2ca9e0;
 }
 #sports #mainnav ul {
-  border-top-color: #004c93;
+  border-top-color: #2ca9e0;
 }
 #sports #mainnav ul li a:not(.btn) {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #sports #mainnav ul li a:hover {
-  color: #c1bc02;
+  color: #6461ab;
 }
 #sports #mainnav ul li a.dropdown-item {
-  color: #004c93;
+  color: #2ca9e0;
   background-color: #fff;
 }
 #sports #mainnav ul li a.dropdown-item:hover {
-  color: #c1bc02;
+  color: #6461ab;
   background-color: #fff;
 }
 #sports #mainnav ul li:last-child a:not(.dropdown-item) {
-  background-color: #004c93;
+  background-color: #2ca9e0;
   color: #fff;
 }
 #sports #mainnav ul li:last-child a:not(.dropdown-item):hover {
-  background-color: #c1bc02;
+  background-color: #6461ab;
   color: #fff;
 }
 #sports.page-template-vacancies .log_interest {
-  background: #c1bc02;
+  background: #6461ab;
 }
 .text-section #sports:not(#mainnav) a:not(.btn) {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #sports .course {
   margin-bottom: 15px;
@@ -8400,7 +8447,7 @@ html .orange-vacancy-div-bg {
   background-position: center;
 }
 #sports .course .course-name {
-  background: #004c93;
+  background: #2ca9e0;
   padding: 10px 22px;
   text-align: center;
   text-transform: uppercase;
@@ -8408,7 +8455,7 @@ html .orange-vacancy-div-bg {
   font-weight: 400;
 }
 #sports .course .course-name:hover {
-  background: #c1bc02;
+  background: #6461ab;
 }
 #sports .contact-box {
   border: 1px solid grey;
@@ -8418,11 +8465,11 @@ html .orange-vacancy-div-bg {
   margin-bottom: 0;
 }
 #sports .contact-box strong {
-  color: #004c93;
+  color: #2ca9e0;
   font-weight: 400;
 }
 #sports .contact-box .email {
-  background: #c1bc02;
+  background: #6461ab;
   padding: 10px 30px;
   margin: 0 10px;
   color: #ffffff;
@@ -8431,32 +8478,32 @@ html .orange-vacancy-div-bg {
   color: #ffffff;
 }
 #sports .contact-box .number {
-  background: #004c93;
+  background: #2ca9e0;
   padding: 10px 30px;
   margin: 0 10px;
   color: #ffffff;
 }
 #sports #sidebar-menu li {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #sports #sidebar-menu li:hover {
-  background: #c1bc02;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #sports #sidebar-menu li a {
-  background: #004c93;
+  background: #2ca9e0;
   color: #fff;
 }
 #sports #sidebar-menu li a:hover {
-  background: #c1bc02;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #sports #sidebar-menu li.current_page_item {
-  background: #c1bc02;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #sports #sidebar-menu li.current_page_item a {
-  background: #c1bc02;
+  background: #6461ab;
   transition: all 350ms cubic-bezier(0.19, 1, 0.22, 1);
 }
 #sports #sidebar-menu li .sub-menu {
@@ -8482,44 +8529,44 @@ html .orange-vacancy-div-bg {
   margin: 0;
   background: #d6d7d9;
   color: #000;
-  border-bottom: 2px solid #004c93;
+  border-bottom: 2px solid #2ca9e0;
 }
 #sports #sidebar-menu li:hover .sub-menu li a:hover {
-  color: #004c93;
-  border-bottom: 2px solid #c1bc02;
+  color: #2ca9e0;
+  border-bottom: 2px solid #6461ab;
 }
 #sports #sidebar-menu li:hover .sub-menu li.current_page_item a {
-  color: #004c93;
-  border-bottom: 2px solid #c1bc02;
+  color: #2ca9e0;
+  border-bottom: 2px solid #6461ab;
 }
 #sports .heading-two {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #sports .gradline {
-  background-image: linear-gradient(to right, #004c93, #c1bc02);
+  background-image: linear-gradient(to right, #2ca9e0, #6461ab);
 }
 #sports p a {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #sports .newseventtext {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #sports .btn, #sports .page-template-vacancies .log_interest .wpcf7-submit, .page-template-vacancies .log_interest #sports .wpcf7-submit {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #sports .btn:hover, #sports .page-template-vacancies .log_interest .wpcf7-submit:hover, .page-template-vacancies .log_interest #sports .wpcf7-submit:hover {
-  background: #c1bc02;
+  background: #6461ab;
 }
 #sports .cookieconsent_msg {
-  background: #004c93;
-  border-top: 2px solid #003260;
+  background: #2ca9e0;
+  border-top: 2px solid #1c8cbd;
 }
 #sports .cookieconsent_msg .allow-button {
-  background-color: #c1bc02;
-  border-color: #c1bc02;
+  background-color: #6461ab;
+  border-color: #6461ab;
 }
 #sports .log_interest {
-  background: #c1bc02;
+  background: #6461ab;
 }
 #sports .log_interest h2, #sports .log_interest h3, #sports .log_interest h4, #sports .log_interest h5 {
   color: #fff;
@@ -8529,42 +8576,364 @@ html .orange-vacancy-div-bg {
   font-weight: bolder;
 }
 #sports .log_interest .wpcf7-submit, #sports .log_interest .upload {
-  background-color: #004c93;
+  background-color: #2ca9e0;
 }
 #sports .log_interest .wpcf7-submit:hover, #sports .log_interest .upload:hover {
-  background-color: #003260;
+  background-color: #1c8cbd;
 }
 #sports footer {
   background-color: #b2b2b2;
   background-image: url("");
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
 }
 #sports footer i {
-  color: #FFFFFF;
+  color: #2ca9e0;
 }
 #sports footer h5 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  color: #FFFFFF;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  color: #2ca9e0;
 }
 #sports footer .sbi_follow_btn a {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #sports footer .sbi_follow_btn a:hover {
-  background: #c1bc02;
+  background: #6461ab;
 }
 #sports .footer-base {
-  background: #004c93;
+  background: #2ca9e0;
 }
 #sports .footer-line {
-  background-image: linear-gradient(to right, #FFFFFF, #fff);
+  background-image: linear-gradient(to right, #2ca9e0, #fff);
 }
 #sports .newsevents .newsevents-contact i {
-  color: #004c93;
+  color: #2ca9e0;
 }
 #sports .special-underine:after {
-  background: #004c93;
+  background: #2ca9e0;
+}
+.central-team-page .central-team-tabs-nav {
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: 3px solid #2ca9e0;
+}
+.central-team-page .central-team-tabs-nav .executive_btn, .central-team-page .central-team-tabs-nav .departments_btn {
+  color: white;
+  font-size: 20px;
+  background-color: #eceef0;
+  color: #2ca9e0;
+  padding-top: 15px;
+}
+@media (max-width: 458px) {
+  .central-team-page .central-team-tabs-nav .executive_btn, .central-team-page .central-team-tabs-nav .departments_btn {
+    font-size: 15px;
+  }
+}
+.central-team-page .central-team-tabs-nav .active {
+  background-color: #2ca9e0;
+  color: white;
+}
+.central-team-page .department_team {
+  display: none;
+  columns: 2;
+}
+@media (max-width: 1000px) {
+  .central-team-page .department_team {
+    columns: 2;
+  }
+}
+@media (max-width: 500px) {
+  .central-team-page .department_team {
+    columns: 1;
+  }
+}
+.central-team-page .department_team .department_block {
+  break-inside: avoid-column;
+  background-color: #eceef0;
+  padding: 20px;
+}
+.central-team-page .department_team .department_block h5 {
+  color: #2ca9e0;
+}
+.central-team-page .department_team .department_block .depatments_members {
+  display: flex;
+  justify-content: space-between;
+}
+.central-team-page .department_team .department_block .depatments_members .job_role, .central-team-page .department_team .department_block .depatments_members .central_team_name {
+  font-size: 13px;
+  margin-bottom: 5px;
+  line-height: 1.1rem;
+}
+.central-team-page .department_team .department_block .depatments_members .job_role {
+  color: #6461ab;
+  text-align: right;
+}
+.executive_team .central_team_row {
+  padding-left: 12px;
+}
+.executive_team .executive_team_block {
+  background-color: #eceef0;
+  margin-right: 5px;
+  height: 100%;
+}
+.executive_team .executive_team_block .executive_team_image_cont {
+  padding: 0px;
+}
+.executive_team .executive_team_block .executive_team_image_cont .executive_team_image {
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.executive_team .executive_team_block .executive_content_cont {
+  padding: 20px 15px 20px 15px;
+}
+.executive_team .executive_team_block .executive_content_cont h5 {
+  color: #2ca9e0;
+  font-size: 18px;
+}
+.executive_team .executive_team_block .executive_content_cont h6 {
+  font-size: 12px;
+  color: #6461ab;
+}
+.academies_search .row {
+  background-color: rgba(142, 142, 142, 0.15);
+  border-bottom: 3px solid #6461ab;
+}
+.academies_search .row h4 {
+  color: #2ca9e0;
+}
+.academies_search .row .search-field .form-control {
+  margin: 0px;
+  background-color: white;
+  height: 50px;
+}
+.academies_search .row .search-field .input-group-text {
+  height: 100%;
+  border-radius: 0px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  outline: none;
+  width: 100%;
+  padding: 8px 15px;
+  outline: none;
+  box-sizing: border-box;
+  background-color: #2ca9e0;
+  color: white;
+}
+.academies_search .row .search-field .input-group-text i {
+  font-size: 22px;
+}
+.academies_search .row .view_buttons button {
+  height: 50px;
+  width: 100%;
+  background-color: #6461ab;
+  color: white;
+  font-size: 17px;
+  border: none;
+}
+.academies_search .row .view_buttons button:hover {
+  background-color: #605E5E;
+}
+.academies_search .row .view_buttons button i {
+  margin-right: 8px;
+}
+.academies_search .row .view_buttons .active {
+  background-color: #605E5E;
+}
+.academies_search .row .view_buttons .active:hover {
+  background-color: #605E5E;
+  cursor: default;
+}
+.academies_search .row .ages {
+  border-right: 1px solid #707070;
+}
+@media (max-width: 767px) {
+  .academies_search .row .ages {
+    border-right: none;
+  }
+}
+.academies_search .row .checkboxes [type=checkbox] {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
+  background: none;
+  border: 0;
+  outline: 0;
+  flex-grow: 0;
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+@media (max-width: 400px) {
+  .academies_search .row .checkboxes [type=checkbox] {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+.academies_search .row .checkboxes label {
+  color: black;
+  font-weight: 400;
+  margin-left: 5px;
+}
+@media (max-width: 400px) {
+  .academies_search .row .checkboxes label {
+    font-size: 13px;
+  }
+}
+.academies-page .academies-row {
+  background-color: rgba(142, 142, 142, 0.15);
+}
+@media (max-width: 767px) {
+  .academies-page .academies-row .school-icon {
+    display: none;
+  }
+}
+.academies-page .academies-row .school-icon div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  height: 100%;
+}
+.academies-page .academies-row .school-icon div img {
+  padding: 15px;
+}
+.academies-page .academies-row .taxonomies a {
+  border: 1px solid #605E5E;
+  border-radius: 3px;
+  color: #605E5E;
+  padding: 3px 6px 3px 4px;
+  margin: 10px 0px 10px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-top: 6px;
+}
+.academies-page .academies-row .school_name strong {
+  font-weight: 500;
+  font-size: 23px;
+}
+.academies-page .academies-row .school_address p {
+  line-height: 1.1;
+  color: #605E5E;
+  font-weight: 400;
+}
+.academies-page .academies-row .chair_of_gov .title_chair_of_gov {
+  font-weight: 500;
+}
+.academies-page .academies-row .chair_of_gov .governors {
+  color: #605E5E;
+  font-weight: 400;
+}
+.academies-page .academies-row .tel-email {
+  display: flex;
+  font-weight: 400;
+}
+.academies-page .academies-row .tel-email a {
+  font-size: 15px;
+}
+.academies-page .academies-row .academies_buttons a {
+  color: white;
+  padding: 10px;
+}
+.academies-page .academies-row .academies_buttons a i {
+  margin-right: 5px;
+}
+.academies-page .academies-row .head-teacher-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-direction: column;
+  display: flex;
+}
+@media (max-width: 575px) {
+  .academies-page .academies-row .head-teacher-image {
+    display: none;
+  }
+}
+.academies-page .academies-row .head-teacher-image .headteacher-text-cont {
+  margin-top: auto;
+}
+.academies-page .academies-row .head-teacher-image .headteacher-text-cont .headteacher_name {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  width: 100%;
+  font-weight: 400;
+}
+.academies-page .academies-row .head-teacher-image .headteacher-text-cont .headteacher_title {
+  color: white;
+  display: inline-block;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 7px 10px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+}
+.academies-map .map-icon .marker_inner {
+  mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z" /></svg>');
+  -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z" /></svg>');
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  transition: all 1s ease;
+  width: 50px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.academies-map .map-icon .marker_inner:hover {
+  transform: scale(0.85);
+}
+.academies-map .map-icon img {
+  width: 100%;
+  padding: 0px 7px 20px 7px;
+}
+.academies-map .map-popup img {
+  width: 55%;
+  padding: 10px 0 20px 0;
+}
+.academies-map .map-popup h3 {
+  font-size: 17px;
+}
+.academies-map .map-popup a.email, .academies-map .map-popup a.tel {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+}
+.academies-map .map-popup a.label {
+  border: 1px solid #605E5E;
+  border-radius: 3px;
+  color: #605E5E;
+  padding: 2px 3px;
+  margin: 10px 4px 10px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.academies-map .map-popup .labels {
+  padding: 20px 0;
+}
+.academies-map .map-popup .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.academies-map .map-popup .btn, .academies-map .map-popup .page-template-vacancies .log_interest .wpcf7-submit, .page-template-vacancies .log_interest .academies-map .map-popup .wpcf7-submit {
+  color: #fff;
+  padding: 4px 7px;
+  margin: 0 0 15px 0;
+  font-size: 12px;
+  width: 48%;
+}
+.academies-map .leaflet-container a.leaflet-popup-close-button {
+  padding: 15px 25px 0 0;
+  font-size: 20px;
+}
+.academies-map .leaflet-popup-tip-container {
+  display: none;
+}
+.academies-map .labels a {
+  white-space: nowrap;
+  line-height: 2;
 }
 .mobileviewtable {
   display: none;
@@ -8703,7 +9072,7 @@ a[href^="tel"] {
     display: block;
   }
   .mobileviewtable .mobileviewlabel {
-    background-color: #004c93;
+    background-color: #2ca9e0;
     font-weight: bold;
     color: #fff;
   }
@@ -9212,4 +9581,5 @@ a[href^="tel"] {
     max-width: 1140px;
   }
 }
+
 /*# sourceMappingURL=data:application/json,%7B%22version%22%3A3%2C%22sources%22%3A%5B%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Flayout.scss%22%2C%22(stdin)%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fslick.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Foffcanvas.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fcore.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Flarger.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Ffixed-width.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Flist.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fbordered-pulled.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fanimated.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Frotated-flipped.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fstacked.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Ficons.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fscreen-reader.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fmixins.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fsolid.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fbrands.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffontawesome%2Fregular.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fbuttons.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fanimations.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ftypography.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fnavigation.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fheader.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Ffooter.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fblocks.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fforms.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fgallery.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fcalendar.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fmeetthestaff.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fcontact.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fabout.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fnewsandevents.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fadultlearning.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fvacancies.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fpages%2Fsports.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Fresponsive.scss%22%2C%22Users%2Frg2022%2Fodrive%2FDigital%20Ocean%2FWebBackups%2FLocal%20Sites%2FAndy%2Flvc%2Fapp%2Fpublic%2Fwp-content%2Fthemes%2Faltheme%2Fsass%2F.%2Fstyles%2Findividual_styles.scss%22%5D%2C%22names%22%3A%5B%5D%2C%22mappings%22%3A%22%3BAACE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAC7CA%3BACEA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAcA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOI%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQI%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUJ%3BAAAA%3BAAAA%3BAClGA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAcE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAFtDJ%3BAAAA%3BAAAA%3BAAAA%3BAGGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAeA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BACdA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BACjBF%3BAAAA%3BAAAA%3BAAAA%3BACCA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAGF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BACRA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BACfF%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAACE%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BACbF%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAAEA%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAAME%3BAAAA%3BAAAA%3BACZF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAV5BA%3BAAAA%3BAWGA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BACl7CA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAC2CE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAb9CF%3BAAAA%3BAAAA%3BAAAA%3BAcMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaA%3BAAAA%3BAAAA%3BAAAA%3BAdnBA%3BAAAA%3BAAAA%3BAAAA%3BAeMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaA%3BAAAA%3BAAAA%3BAAAA%3BAfnBA%3BAAAA%3BAAAA%3BAAAA%3BAgBMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaA%3BAAAA%3BAAAA%3BAAAA%3BACnBA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAMI%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAKN%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOM%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAC%2FDN%3BAACI%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAAEJ%3BAACI%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAAEJ%3BAACI%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGJ%3BAACI%3BAAAA%3BAAAA%3BAAAA%3BAACA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BACjBF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BACjCF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAME%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAUV%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAASR%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMR%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAGQ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAaxB%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAcpB%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQN%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAMJ%3BAACI%3BAAAA%3BAAAA%3BAAGF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAC3aF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUF%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUF%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAACE%3BAAAA%3BAAAA%3BAASE%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAOR%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAME%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAIF%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAUd%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGM%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMR%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKQ%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAMd%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAMN%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAgBE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAOJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWF%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BACrUF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAeE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAME%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAEG%3BAAAA%3BAAAA%3BAAAA%3BAAML%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAME%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWF%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASJ%3BAACI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAiBE%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BACnOU%3BAAAA%3BAAAA%3BAAKR%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAgBE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMN%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAMN%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAOF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAON%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAQZ%3BAACI%3BAAAA%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAOM%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAQN%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAAA%3BAAOJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAC7eF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAdI%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAmBF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAA5BE%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAA0BJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAC1DA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAOF%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAC3BN%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAYA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAaI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAiBI%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOJ%3BAACI%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASR%3BAACI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAKZ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAACI%3BAAAA%3BAAAA%3BAAAA%3BAC7kCF%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAYA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAQJ%3BAAAA%3BAAAA%3BAAEM%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGJ%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAClFF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAChCF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BACHC%3BAAAA%3BAAAA%3BAAGC%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAACI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQR%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAKR%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAQR%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAMR%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAEF%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAcF%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMI%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMI%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BACjOR%3BAAAA%3BAAAA%3BAAAA%3BAACE%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAAA%3BAAMF%3BAAAA%3BAAAA%3BAAAA%3BAAYhB%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAYV%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAQV%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIQ%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAQV%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BACvSJ%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAQJ%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAhC1FJ%3BAgCqGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAhC7GA%3BAgCmHA%3BAAAA%3BAAAA%3BAhCnHA%3BAgCwHA%3BAAAA%3BAAAA%3BAhCxHA%3BAgC6HA%3BAAAA%3BAAAA%3BAhC7HA%3BAgCkIA%3BAAAA%3BAAAA%3BAClIA%3BAAAA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOI%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAYV%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAQV%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAKM%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAQF%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAWV%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAIF%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQE%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAWxB%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAAA%3BAAGE%3BAAAA%3BAAAA%3BAAAA%3BAAKF%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKE%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAEE%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIE%3BAAAA%3BAAAA%3BACvTN%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAACI%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAAA%3BAAlBI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUZ%3BAACI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOJ%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAMZ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAQZ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMQ%3BAAAA%3BAAAA%3BAAOZ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAUgB%3BAAAA%3BAAAA%3BAAWZ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAQZ%3BAACI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMI%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAOhB%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAKR%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAKR%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAMJ%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAOJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAWY%3BAAAA%3BAAAA%3BAASJ%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAGG%3BAAAA%3BAAAA%3BAAQf%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAYI%3BAAAA%3BAAAA%3BAAMR%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOJ%3BAACI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAQhB%3BAACI%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAGY%3BAAAA%3BAAAA%3BAAAA%3BAAOZ%3BAAGY%3BAAAA%3BAAAA%3BAAAA%3BAAQA%3BAAAA%3BAAAA%3BAAAA%3BAAOZ%3BAAGY%3BAAAA%3BAAAA%3BAAAA%3BAAOZ%3BAAGY%3BAAAA%3BAAAA%3BAAAA%3BAAOZ%3BAAGQ%3BAAAA%3BAAAA%3BAAAA%3BAAKJ%3BAAAA%3BAAAA%3BAAMQ%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAOR%3BAAAA%3BAAAA%3BAAKA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKQ%3BAAAA%3BAAAA%3BAAAA%3BAAUA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAASR%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASA%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAQR%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAIJ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAKI%3BAAAA%3BAAAA%3BAAAA%3BAAGI%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAQR%3BAAAA%3BAAAA%3BAAEI%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAQZ%3BAACI%3BAAAA%3BAAAA%3BAAKQ%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAOZ%3BAACI%3BAAAA%3BAAAA%3BAAII%3BAAAA%3BAAAA%3BAAAA%3BAAMA%3BAAAA%3BAAAA%3BAAGQ%3BAAAA%3BAAAA%3BAAAA%3BAAQhB%3BAAEQ%3BAAAA%3BAAAA%3BAAAA%3BAChuBA%3BAAAA%3BAAAA%3BAAGA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAIA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAASJ%3BAAAA%3BAAAA%3BAAGM%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAUN%3BAAAA%3BAAAA%3BAAGM%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAOE%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAAAA%3BAnCFZ%3BAACE%3BAAAA%3BAAAA%3BAAAA%22%7D */

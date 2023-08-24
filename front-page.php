@@ -68,6 +68,52 @@
 
 
 
+<?php
+if( have_rows('counters_repeater') ): ?>
+    <div class="stats_strip my-5 py-5">
+        <div class="container">
+            <div class="row"> 
+                <?php $i=1; while( have_rows('counters_repeater') ) : the_row(); ?>
+
+                <?php $rows = count(get_field('counters_repeater')); 
+
+                switch ($rows) {
+                    case 1:
+                        $col = 'col-12';
+                        break;
+                    case 2:
+                        $col = 'col-6';
+                        break;
+                    case 3:
+                        $col = 'col-sm-4 col-6 ';
+                        break;
+                    case 4:
+                        $col = 'col-md-3 col-6';
+                        break;
+                    default:
+                        $col = 'col';
+                    };
+                ?>
+
+                <div class="<?php echo $col; ?> text-center counters my-3">                 
+                    <div class="counter">
+                        <div class="number number<?php echo $i; ?>" data-counter="<?php echo get_sub_field('counter_number');  ?>">0</div>
+                        <div class="label"><?php echo get_sub_field('counter_title'); ?></div>
+                    </div>
+                </div>
+
+                <?php $i++; ?>
+
+                <?php endwhile; ?>
+            </div>
+        </div>
+    </div>
+<?php endif;
+?>
+
+
+
+
 <!-- Latest news and twitter -->
 <div class="latestnews my-5">
     <?php

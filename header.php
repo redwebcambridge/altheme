@@ -153,11 +153,17 @@ if (!class_exists('ACF')) {
                   'menu_class'        => 'd-md-flex justify-content-end',
                   'container_class'   => 'col-12',
                 ));
-              } else {
+              } elseif(has_nav_menu('top-buttons')) {
                 $menu_name = 'top-buttons';
                 $locations = get_nav_menu_locations();
                 $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
                 $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+
+
+      
+                        
+
+              
                 ?>
                 <nav>
                 <ul class="d-md-flex justify-content-end" id="menu-top-buttons" itemscope>
@@ -195,7 +201,7 @@ if (!class_exists('ACF')) {
                         <li class="menu-item menu-item-type-custom menu-item-object-custom nav-item">
                             <a href="<?php echo $item->url ?>" class="title" alt="<?php echo $item->title; ?>" target="<?php echo $item->target; ?>"><span itemprop="name"><?php echo $item->title; ?></span></a>
                         </li>
-                      <?php if ( $menuitems[ $count + 1 ]->menu_item_parent  != $parent_id && $submenu ): ?>
+                      <?php if ( isset($menuitems[ $count + 1 ]) && $menuitems[ $count + 1 ]->menu_item_parent  != $parent_id && $submenu ): ?>
                       </div>
                     </div>
                     </ul>
@@ -233,7 +239,9 @@ if (!class_exists('ACF')) {
 <div class="navbar navbar-expand-md navbar-light bg-light sticky-nav sticky-top" id="stickynav">
     <div class="container">
         <button class="navbar-toggler menuicon" type="button" data-bs-toggle="offcanvas" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <!-- <span class="navbar-toggler-icon" ></span> -->
+          <span class=""><i class="fa-solid fa-bars navbar-icon"></i></span>
+
         </button>
         <?php
         //Get corrent page for back button
@@ -374,7 +382,14 @@ if (!class_exists('ACF')) {
               <div class="social">
                   <?php if( have_rows('platforms','option') ):  while( have_rows('platforms','option') ) : the_row(); ?>
                         <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank">
-                          <i class="fab fa-<?php echo get_sub_field('platform'); ?><?php if(get_sub_field('platform')=='facebook'){echo "-f";} ?> top-social-icon"></i>
+                            <?php if(get_sub_field('platform') == 'twitter') {
+                                $platform = 'x-twitter';
+                            } else {
+                                $platform = get_sub_field('platform');
+                            } 
+                            ?>
+
+                          <i class="fab fa-<?php echo $platform; ?><?php if(get_sub_field('platform')=='facebook'){echo "-f";} ?> top-social-icon"></i>
                         </a>
                   <?php endwhile; endif; ?>
                 </div><!-- social -->

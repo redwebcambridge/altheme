@@ -12,10 +12,13 @@
 <div class="col-12 col-md-6 col-lg-4 newseventcontainer">
 	<div class="col-12 newseventimage">
 		<?php
-		$imageurl = get_field('thumbnail')['url'];
-		if(empty($imageurl)){
+
+		if(!empty(get_field('thumbnail')['url'])){
+			$imageurl = get_field('thumbnail')['url'];
+		} elseif(empty($imageurl)) {
 			$imageurl = get_the_post_thumbnail_url();
 		}
+		
 		 ?>
 		<a href="<?php the_permalink(); ?>">
 			<div class="newseventimagecontainer" style="background-image:url(<?php echo $imageurl; ?>);"></div>

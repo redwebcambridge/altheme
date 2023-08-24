@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <div class="tabcontent">
 <?php
     $index = 0;
@@ -11,7 +12,14 @@
     <div class="container <?php if ($index==1){echo 'active';} ?>" id="<?php echo 'tab' . '-' . $index;?>">
         <div class="row">
             <div class="col-12 col-md-4 image">
-                <img class="img-fluid img-<?php echo $image["id"];?> al-border-bottom" src="<?php echo $image["sizes"]["medium_large"];?>" alt="<?php echo $image["alt"];?>">
+
+                <?php 
+                if(!empty($image)) : ?>
+                    <img class="img-fluid img-<?php echo $image["id"];?> al-border-bottom" src="<?php echo $image["sizes"]["medium_large"];?>" alt="<?php echo $image["alt"];?>">
+                <?php endif;
+                
+                ?>
+
             </div>
             <div class="col-12 col-md-8 content">
                 <h2><?php echo get_sub_field('heading'); ?></h2>
@@ -127,14 +135,36 @@ if( have_rows('counters_repeater') ): ?>
 			$exclude .= ', -'.$category->term_id;
 		}
 	}
-    if(get_field('display_twitter_feed')){
+
+
+    // if(get_field('display_twitter_feed')){
+    //     query_posts(array(
+    //         'showposts' => 2,
+    //         'cat' => $exclude
+    //     ) );
+    //     $newscol = 8;
+    //     $newsitem = 6;
+    // } else {
+    //     query_posts(array(
+    //         'showposts' => 3,
+    //         'cat' => $exclude
+    //     ) );
+    //     $newscol = 12;
+    //     $newsitem = 4;
+    // }
+
+
+    if(get_field('homepage_feed_option') == 'Twitter' || get_field('homepage_feed_option') == 'Facebook'){
+
         query_posts(array(
             'showposts' => 2,
             'cat' => $exclude
         ) );
         $newscol = 8;
         $newsitem = 6;
+       
     } else {
+       
         query_posts(array(
             'showposts' => 3,
             'cat' => $exclude
@@ -142,6 +172,12 @@ if( have_rows('counters_repeater') ): ?>
         $newscol = 12;
         $newsitem = 4;
     }
+    
+
+
+
+
+
     ?>
     <!-- Titles (Latest news and twitter if applicable) -->
     <div class="container">
@@ -181,59 +217,124 @@ if( have_rows('counters_repeater') ): ?>
                     </div>
                 </div>
 
-                <!-- Twitter column -->
-                <?php if(get_field('display_twitter_feed')) : ?>
 
-                <div class="col-12 col-md-4 twittercontainer">
-                    <h2>Latest Tweets</h2>
-                    <div class="gradline"></div>
-                    <?php 
+                <!-- Twitter column -->
+                <?php if(get_field('homepage_feed_option') == 'Twitter') : ?>
+
+                    <?php
                     if( have_rows('platforms','option') ):
                         while( have_rows('platforms','option') ) : the_row();
-                        if(get_sub_field('platform')=='twitter'){$user = get_sub_field('username');} 
+                        if(get_sub_field('platform')=='twitter'){$twitter_username = get_sub_field('username');} 
                         endwhile;
                     endif;
-                    $tweets = twitterwp($user); ?>
-                    <div class="twitter-box">
-                        <a target="_blank" href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>">
-                        <div class="twitter-header">
-                            @<?php echo $tweets[0]->user->screen_name; ?>
-                        </div>
 
-                        </a>
-                        <div class="slick-controls">
-                            <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
-                            <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>
-                        </div>
+                    // API endpoint URL
+                    $apiUrl = 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name='.$twitter_username.'&tweet_mode=extended&count=5';
 
-                        <ul class="slick-twitter">
-                           <?php
-                           //Twitter loop
-                            foreach ($tweets as $tweet) {
-                                if(isset($tweet->entities->media[0]->media_url)){
-                                    $tweet_img = $tweet->entities->media[0]->media_url;
-                                } else {
-                                    $tweet_img = null;
+                    // API request data
+                    $data = array();
+
+                    // Convert data to JSON format
+                    $jsonData = json_encode($data);
+
+                    // Bearer token
+                    $bearerToken = TW_bearer_token;
+
+                    // Create a stream context with headers for the API request
+                    $context = stream_context_create(array(
+                        'http' => array(
+                            'method' => 'GET',
+                            'header' => "Content-Type: application/json\r\n" .
+                                        "Authorization: Bearer " . $bearerToken . "\r\n",
+                            'content' => $jsonData
+                        )
+                    ));
+
+                    // Send the API request and get the response
+                    $response = file_get_contents($apiUrl, false, $context);
+
+                    // Check if the request was successful
+                    if ($response !== false) {
+                        // Decode the JSON response
+                        $responseData = json_decode($response, true);
+                        ?>
+
+                        <div class="col-12 col-md-4 twittercontainer">
+                        <h2>Latest Tweets</h2>
+                        <div class="gradline"></div>
+                        <div class="twitter-box">
+                            <a target="_blank" href="https://twitter.com/<?php echo $responseData[0]['user']['screen_name'];  ?>">
+                            <div class="twitter-header">
+                                @<?php echo $responseData[0]['user']['screen_name']; ?>
+                            </div>
+
+                            </a>
+                            <div class="slick-controls">
+                                <button class="prev-tweet"><i class="fas fa-chevron-left"></i></button>
+                                <button class="next-tweet"><i class="fas fa-chevron-right"></i></button>
+                            </div>
+
+                            <ul class="slick-twitter">
+                            <?php
+                            
+                                if(isset($responseData)){
+                                    foreach ($responseData as $item) {
+                                        $twitter_date = date("jS F Y", strtotime($item['created_at']));
+
+                                        if(isset($item['entities']['media'][0]['media_url'])){
+                                            $tweet_img = $item['entities']['media'][0]['media_url'];
+                                        } else {
+                                            $tweet_img = null;
+                                        }
+
+                                        if ($tweet_img){
+                                            echo '<li><p class="post-date">'.$twitter_date.'</p>';
+                                            echo '<img class="twitter-tweet-image" src="'.$tweet_img.'" alt="Twitter Image">';
+                                            $last_space_position = strrpos($item['full_text'], ' ');
+                                            $text_without_last_word = substr($item['full_text'], 0, $last_space_position);
+                                            echo $text_without_last_word.'</li>';
+                                        } else {
+                                            echo '<li><p class="post-date">'.$twitter_date.'</p>'.$item['full_text'].'</li>';
+                                        }
+                                    }
                                 }
-                                $tweet_date = $tweet->created_at;
-                                $tweet_date= date_create($tweet_date);
-                                $tweet_date = date_format($tweet_date,"jS F Y");
-                                if ($tweet_img){
-                                    echo '<li><p class="post-date">'.$tweet_date.'</p>';
-                                    echo '<img class="twitter-tweet-image" src="'.$tweet_img.'" alt="Twitter Image">';
-                                    $last_space_position = strrpos($tweet->full_text, ' ');
-                                    $text_without_last_word = substr($tweet->full_text, 0, $last_space_position);
-                                    echo $text_without_last_word.'</li>';
-                                } else {
-                                    echo '<li><p class="post-date">'.$tweet_date.'</p>'.$tweet->full_text.'</li>';
-                                }
-                            } //end foreach
-                            ?>
-                        </ul>
-
-                        <a href="https://twitter.com/<?php echo $tweets[0]->user->screen_name; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
+                            
+                                ?>
+                            </ul>
+                            <a href="https://twitter.com/<?php echo $responseData[0]['user']['screen_name']; ?>" target="_blank" class="btn btn-primary rounded-0">VIEW ALL</a>
+                        </div>
                     </div>
-                </div>
+
+                    <?php
+                    } else { ?>
+
+                        <div class="col-12 col-md-4 twittercontainer">
+                            Something went wrong. 
+                        </div>
+
+                    <?php
+                    }
+                    ?>
+
+
+                    
+
+
+                <?php elseif(get_field('homepage_feed_option') == 'Facebook'): ?>
+
+                    <div class="col-12 col-md-4 twittercontainer">
+                        <h2>Latest Facebook Posts</h2>
+                        <div class="gradline"></div>
+
+                        <?php
+                            echo '<div class="facebook-feed">';
+                            echo do_shortcode( get_field('facebook_feed_shortcode_home') );
+                            echo '</div>';
+                        ?>
+                        
+
+                    </div>
+
                 <?php endif; //end twitter feed ?>
 
 
@@ -241,6 +342,10 @@ if( have_rows('counters_repeater') ): ?>
     </div>
 </div><!-- . end latestnews -->
 <!-- .video section-->
+
+<?php if(!empty(get_field('file'))) : ?>
+
+
 <div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>;) ">
     <div class="container">
     <div class="siteicon" style="background-image:url(<?php echo get_field('background_image');  ?>)">
@@ -252,38 +357,46 @@ if( have_rows('counters_repeater') ): ?>
                 <?php the_field('text_with_file_body'); ?>
               </div>
 
-              <div class="col-md-6">
-              <?php
-                    $iframe = get_field('file');
-                    $primarycolour = str_replace('#', '', get_field('colours','option')['primary_colour']);
-                    preg_match('/src="(.+?)"/', $iframe, $matches);
-                    $src = $matches[1];
-                    $params = array(
-                        'title' => 0,
-                        'showinfo' => 0,
-                        'modestbranding' => 0,
-                        'controls'  => 1,
-                        'badge' => 0,
-                        'byline' => 0,
-                        'buttons' => 0,
-                        'autoplay'  => get_field('autoplay_video'),
-                        'setVolume' => 0,
-                        'color' => $primarycolour,
-                        'portrait' => 0,
-                        'pip' => true,
-                        'rel' => 0,
-                    );
-                    $new_src = add_query_arg($params, $src);
-                    $iframe = str_replace($src, $new_src, $iframe);
-                    $attributes = 'frameborder="0"';
-                    $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-                    echo $iframe;
-                    ?>
-              </div>
+
+
+                <div class="col-md-6">
+                <?php
+                        $iframe = get_field('file');
+                        $primarycolour = str_replace('#', '', get_field('colours','option')['primary_colour']);
+                        preg_match('/src="(.+?)"/', $iframe, $matches);
+                        $src = $matches[1];
+                        $params = array(
+                            'title' => 0,
+                            'showinfo' => 0,
+                            'modestbranding' => 0,
+                            'controls'  => 1,
+                            'badge' => 0,
+                            'byline' => 0,
+                            'buttons' => 0,
+                            'autoplay'  => get_field('autoplay_video'),
+                            'setVolume' => 0,
+                            'color' => $primarycolour,
+                            'portrait' => 0,
+                            'pip' => true,
+                            'rel' => 0,
+                        );
+                        $new_src = add_query_arg($params, $src);
+                        $iframe = str_replace($src, $new_src, $iframe);
+                        $attributes = 'frameborder="0"';
+                        $iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+                        echo $iframe;
+                        ?>
+                </div>
+
       </div>
       </div>
       </div>
 </div>
+
+<?php endif; ?>
+
+
+
 <?php if( have_rows('information_panel') ):   ?>
 <div class="container">
     <div class="information-section">

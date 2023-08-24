@@ -35,6 +35,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'al' => 'al',
+				'basvc' => 'basvc',
 				'bcps' => 'bcps',
 				'bvc' => 'bvc',
 				'dpa' => 'dpa',
@@ -46,8 +47,10 @@ acf_add_local_field_group(array(
 				'mpa' => 'mpa',
 				'nhs' => 'nhs',
 				'oak' => 'oakes',
+				'pps' => 'pps',
 				'scps' => 'scps',
 				'svc' => 'svc',
+				'wpa' => 'wpa',
 			),
 			'default_value' => false,
 			'allow_null' => 0,
@@ -72,6 +75,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'Anglian Learning' => 'Anglian Learning',
+				'Bassingbourn Village College' => 'Bassingbourn Village College',
 				'Bottisham Community Primary School' => 'Bottisham Community Primary School',
 				'Bottisham Village College' => 'Bottisham Village College',
 				'Deneia Primary Academy' => 'Deneia Primary Academy',
@@ -82,9 +86,12 @@ acf_add_local_field_group(array(
 				'Linton Village College' => 'Linton Village College',
 				'Marleigh Primary Academy' => 'Marleigh Primary Academy',
 				'Oakes College' => 'Oakes College',
+				'Pines Primary' => 'Pines Primary',
 				'Sawston Village College' => 'Sawston Village College',
 				'Stapleford Community Primary School' => 'Stapleford Community Primary School',
 				'The Netherhall School' => 'The Netherhall School',
+				'Wimbish Primary Academy' => 'Wimbish Primary Academy',
+
 			),
 			'default_value' => false,
 			'allow_null' => 0,
@@ -1120,7 +1127,7 @@ acf_add_local_field_group(array(
 			'label' => 'Footer Left Side Text',
 			'name' => 'footer_left_side_text',
 			'type' => 'textarea',
-			'instructions' => '',
+			'instructions' => 'Please note the character limit for this field is 370.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(

@@ -127,6 +127,9 @@ function anglian_learning_scripts() {
   wp_enqueue_style( 'al-gallery-style', get_template_directory_uri().'/lib/ekko-lightbox.css');
   //Custom scripts
   wp_enqueue_script( 'al-scripts', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+
+  wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/a6cf3f2e48.js' );
+
 }
 add_action( 'wp_enqueue_scripts', 'anglian_learning_scripts' );
 
@@ -388,23 +391,9 @@ if (class_exists('ACF')) {
   }
 }
 
-add_action('admin_menu', 'vacanciesmenu');
-function vacanciesmenu() {
-  add_menu_page( 'Vacancies Admin', 'Vacancies', 'edit_vacancy', 'vacancyadmin', 'vacancies_admin','dashicons-format-aside',5);
-  add_submenu_page( 'vacancyadmin', 'Vacancies Admin', 'Add New', 'edit_vacancy', '?page=vacancyadmin&action=addvacancy');
-  if (get_field('activate_adult_learning','option') || get_field('activate_sport_centre','option')) {
-    add_submenu_page('edit.php?post_type=page','Academy Pages','Academy Pages','edit_posts','academy_pages','pages_admin_filter');
-  }
-  if (get_field('activate_sport_centre','option')) {
-    add_submenu_page('edit.php?post_type=page','Sport Center Pages','Sport Center Pages','edit_posts','sports_pages','pages_admin_filter');
-  }
-  if (get_field('activate_adult_learning','option')) {
-    add_submenu_page('edit.php?post_type=page','Adult Education Pages','Adult Education Pages','edit_posts','adult_pages','pages_admin_filter');
-  }
-}
-function vacancies_admin() {
-  require_once('lib/vacancy-admin.php');
-}
+
+
+
 function pages_admin_filter() {
   require_once('lib/pages_admin_filter.php');
 }
@@ -739,6 +728,8 @@ function magicgrid() {
  	wp_enqueue_script('magicgrid');
 }
 
+
+
 //website settings
 add_action('acf/init', 'site_settings');
 function site_settings() {
@@ -799,7 +790,7 @@ function add_custom_plugin($plugin_array) {
 add_action('init', 'add_custom_button');
 
 
-//sass_compile();
+// sass_compile();
 
 
 

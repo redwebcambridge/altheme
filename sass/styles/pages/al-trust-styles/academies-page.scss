@@ -1,7 +1,10 @@
+$light_grey_background : rgba((142,142,142), 0.15);
+$dark_grey_btn : #605E5E;
+
 .academies_search {
+    background-color: $light_grey_background;
+    border-bottom: 3px solid $secondarycolour;
     .row {
-        background-color: rgba((142,142,142), 0.15);
-        border-bottom: 3px solid $secondarycolour;
         h4 {
             color: $primarycolour;
         }
@@ -9,7 +12,7 @@
             .form-control {
                 margin: 0px;
                 background-color: white;
-                height: 50px;
+                height: 45px;
 
             }
             .input-group-text {
@@ -31,67 +34,83 @@
         }
         .view_buttons {
             button {
-                height: 50px;
+                height: 45px;
                 width: 100%;
-                background-color: $secondarycolour;
+                background-color: lighten($dark_grey_btn, 10%);
                 color: white;
                 font-size: 17px;
                 border: none;
                 &:hover {
-                    background-color: #605E5E;
+                    background-color: $secondarycolour;
                 }
                 i {
                     margin-right: 8px;
                 }
             }
             .active {
-                background-color: #605E5E;
+                background-color: $secondarycolour;
                 &:hover {
-                    background-color: #605E5E;
+                    background-color: $secondarycolour;
                     cursor: default;
                 }
             }
         }
-        .ages {
-            border-right: 1px solid #707070;
-            @media(max-width:767px){
-                border-right: none;
-            }
-        }
         .checkboxes {
-            [type=checkbox] {
-                width: 1.5rem;
-                height: 1.5rem;
-                vertical-align: middle;
-                // -webkit-appearance: none;
-                background: none;
-                border: 0;
-                outline: 0;
-                flex-grow: 0;
-                background-color: #FFFFFF;
-                cursor: pointer;
-                @media(max-width:400px){
-                    width: 1rem;
-                    height: 1rem;
+            button {
+                background-color: $secondarycolour;
+                border-radius: 30px;
+                font-size: 13px;
+                padding: 5px 15px;
+                margin-right: 15px;
+                &:hover {
+                    span {
+                        background-color: lighten($dark_grey_btn, 10%);
+                    }
+                }
+                span {
+                    background-color: lighten($dark_grey_btn, 10%);
+                    border: 1px solid white;
+                    margin-top: 5px;
+                    margin-left: -1px;
+                    transition: 0.75s;
                 }
             }
-              label {
-                color: black;
-                font-weight: 400;
-                margin-left: 5px;
-                @media(max-width:400px){
-                    font-size: 13px;
+            .deactive {
+                background-color: lighten($dark_grey_btn, 10%);
+                &:hover {
+                    background-color: lighten($dark_grey_btn, 10%);
+                }
+                span {
+                    display: none;
+                }
+            }
+
+        }
+        .search-results {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            button {
+                background-color: lighten($dark_grey_btn, 10%);
+                border-radius: 30px;
+                font-size: 13px;
+                padding: 8px 15px;
+                border: none;
+                color: white;
+                @media(max-width:767px){
+                    margin-bottom: -37px;
                 }
             }
         }
     }
-
-    
 }
 
-.academies-page {
     .academies-row {
-        background-color: rgba((142,142,142), 0.15);
+        background-color: $light_grey_background;
+        @media(max-width:991px){
+            margin-left: 0px;
+            margin-right: 0px;
+        }
         .school-icon {
             @media(max-width:767px){
                 display: none;
@@ -109,7 +128,7 @@
         }
         .taxonomies {
             a {
-                border:1px solid #605E5E;
+                border:1px solid $dark_grey_btn;
                 border-radius:3px;
                 color: #605E5E;
                 padding:3px 6px 3px 4px;
@@ -122,13 +141,13 @@
         .school_name {
             strong {
                 font-weight: 500;
-                font-size: 23px;
+                font-size: 25px;
             }
         }
         .school_address {
             p {
                 line-height: 1.1;
-                color: #605E5E;
+                color: $dark_grey_btn;
                 font-weight: 400;
             }
         }
@@ -137,7 +156,7 @@
                 font-weight: 500;
             }
             .governors {
-                color: #605E5E;
+                color: $dark_grey_btn;
                 font-weight: 400;
             }
         }
@@ -149,11 +168,13 @@
             }
         }
         .academies_buttons {
+            display: flex;
+            justify-content: space-between;
             a {
                 color: white;
                 padding: 10px;
-                &:hover {
-                }
+                width: 49%;
+                text-align: center;
                 i {
                     margin-right: 5px;
                 }
@@ -184,81 +205,108 @@
                     border-top-left-radius: 5px;
                     padding: 7px 10px;
                     text-transform: uppercase;
-                    font-size: 11px;
+                    font-size: 10px;
                     font-weight: 500;
                 }
             }
         }
     }
-}
+
 
 
 .academies-map {
-    .map-icon .marker_inner { 
-        mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z" /></svg>');
-        -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z" /></svg>');
-        mask-repeat: no-repeat;
-        -webkit-mask-repeat: no-repeat;
-        transition:all 1s ease;
-        width:50px;
-        height:70px;
-        display:flex;
-        align-items: center;
+    #academies_map {
+        // display: none;
+
+        height: 700px;
+        @media(max-width:500px){
+            height: 400px;
+        }
     }
-     .map-icon .marker_inner:hover {
+    .map-icon {
+        .marker_inner { 
+            mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z" /></svg>');
+            -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" ><path d="M384 192c0 87.4-117 243-168.3 307.2c-12.3 15.3-35.1 15.3-47.4 0C117 435 0 279.4 0 192C0 86 86 0 192 0S384 86 384 192z" /></svg>');
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            transition:all 1s ease;
+            width:50px;
+            height:70px;
+            display:flex;
+            align-items: center;
+        }
+        img {
+            width:100%;
+            padding:0px 7px 20px 7px;
+         }
+    }
+    .marker_inner:hover {
         transform:scale(0.85);
-     }
-     .map-icon img {
-        width:100%;
-        padding:0px 7px 20px 7px;
-     }
-     .map-popup img{
-        width: 55%;
-        padding: 10px 0 20px 0;
-     }
-     .map-popup h3 {
-        font-size: 17px;
-     }
-     .map-popup a.email ,  .map-popup a.tel {
-        width:100%;
-        display:block;
-        font-size:14px;
-     }
-     .map-popup a.label {
-        border:1px solid #605E5E;
-        border-radius:3px;
-        color: #605E5E;
-        padding:2px 3px;
-        margin:10px 4px 10px 0;
-        text-transform:uppercase;
-        font-size:12px;
-     }
-    .map-popup .labels {
-        padding:20px 0;
-     }
-     .map-popup .buttons {
-        display:flex;
-        justify-content: space-between;
-     }
-     .map-popup .btn {
-        color:#fff;
-        padding:4px 7px;
-        margin:0 0 15px 0;
-        font-size:12px;
-        width:48%;
-     }
-     .leaflet-container a.leaflet-popup-close-button {
+    }
+    .map-popup {
+        img{
+            width: 55%;
+            padding: 10px 0 20px 0;
+            @media(max-width:500px){
+                padding: 10px 0 10px 0;
+                width: 40%;
+            }
+        }
+        p {
+            @media(max-width:500px){
+                margin: 8px 0px;
+            }
+        }
+        h3 {
+            font-size: 17px;
+        }
+        a.email ,  .map-popup a.tel {
+            width:100%;
+            display:block;
+            font-size:14px;
+        }
+         a.label {
+            border:1px solid $dark_grey_btn;
+            border-radius:3px;
+            color: $dark_grey_btn;
+            padding:2px 3px;
+            margin:10px 4px 10px 0;
+            text-transform:uppercase;
+            font-size:12px;
+        }
+         .labels {
+            padding:20px 0;
+            @media(max-width:500px){
+                padding: 10px 0;
+            }
+        }
+         .buttons {
+            display:flex;
+            justify-content: space-between;
+        }
+         .btn {
+            color:#fff;
+            padding:4px 7px;
+            margin:0 0 15px 0;
+            font-size:12px;
+            width:48%;
+            @media(max-width:500px){
+                margin:0 0 8px 0;
+            }
+        }
+    }
+    .leaflet-container a.leaflet-popup-close-button {
         padding:15px 25px 0 0;
         font-size:20px;
-     }
-     .leaflet-popup-tip-container {
+    }
+    .leaflet-popup-tip-container {
         display:none
-     }
-     .labels {
+    }
+    .labels {
         a {
             white-space: nowrap;
             line-height: 2;
         }
-     }
+    }
 }
 

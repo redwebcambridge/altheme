@@ -86,10 +86,25 @@ $dark_grey_btn : #605E5E;
             }
 
         }
+        .search-results {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            button {
+                background-color: lighten($dark_grey_btn, 10%);
+                border-radius: 30px;
+                font-size: 13px;
+                padding: 8px 15px;
+                border: none;
+                color: white;
+                @media(max-width:767px){
+                    margin-bottom: -37px;
+                }
+            }
+        }
     }
 }
 
-.academies-page {
     .academies-row {
         background-color: $light_grey_background;
         @media(max-width:991px){
@@ -196,11 +211,13 @@ $dark_grey_btn : #605E5E;
             }
         }
     }
-}
+
 
 
 .academies-map {
     #academies_map {
+        display: none;
+
         height: 700px;
         @media(max-width:500px){
             height: 400px;
@@ -293,12 +310,3 @@ $dark_grey_btn : #605E5E;
     }
 }
 
-
-
-
-.sticky-container {
-    position: sticky;
-    top: 0; 
-    background-color: #ffffff; 
-    z-index: 100;
-}

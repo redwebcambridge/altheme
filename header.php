@@ -462,5 +462,5 @@ if (!class_exists('ACF')) {
       </div>
     </div>
 
-  <?php endif;  var_dump($backgroundimgs);
+  <?php endif;  
  ?>

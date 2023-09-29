@@ -401,11 +401,17 @@ if (!class_exists('ACF')) {
       </div><!-- left -->
     </div><!-- container -->
 
-    <?php
+  <?php
   $backgroundimgs = array();
-  if( have_rows('header_image') ):
+  //issue with skipping first image so we need to loop through them twice
+  if( have_rows('header_image') ): 
     while( have_rows('header_image') ) : the_row();
-          array_push($backgroundimgs,get_sub_field('image'));
+        //array_push($backgroundimgs,get_sub_field('image'));
+    endwhile;
+  endif;
+  if( have_rows('header_image') ): 
+    while( have_rows('header_image') ) : the_row();
+        array_push($backgroundimgs,get_sub_field('image'));
     endwhile;
   endif;
   ?>
@@ -456,4 +462,5 @@ if (!class_exists('ACF')) {
       </div>
     </div>
 
-  <?php endif; ?>
+  <?php endif;  var_dump($backgroundimgs);
+ ?>

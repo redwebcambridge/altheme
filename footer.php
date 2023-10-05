@@ -227,7 +227,7 @@
                                 <h5><?php echo $adult_footer['column_3_title']; ?></h5>
                                 <div class="footer-line"></div>
                                 <?php
-                                if (isset($adult_footer['map_or_insta']) && $adult_footer['map_or_insta'] == 'Map') : 
+                                if (isset($adult_footer['adult_instagram_map_option']) && $adult_footer['adult_instagram_map_option'] == 'Map') : 
                                     $longitude = $adult_footer['longatude']; 
                                     $latitude = $adult_footer['latitude']; 
                                 ?>

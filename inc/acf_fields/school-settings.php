@@ -2191,6 +2191,21 @@ acf_add_local_field_group(array(
 					'maxlength' => '',
 				),
 				array(
+					'key' => 'adult_instagram_map_option',
+					'label' => 'Instagram / Map',
+					'name' => 'adult_instagram_map_option',
+					'type' => 'select',
+					'instructions' => 'Would you like to display a map or an Instagram feed',
+					'required' => 0,
+	
+
+					'choices' => array(
+						'Instagram' => 'Instagram',
+						'Map' => 'Map',
+					),
+
+				),
+				array(
 					'key' => 'field_60f8087c5e753',
 					'label' => 'Map Longatude',
 					'name' => 'longatude',

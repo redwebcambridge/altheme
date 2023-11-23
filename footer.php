@@ -303,20 +303,46 @@
             <i class="fas fa-chevron-up"></i>
         </div>
 
+        
+        <?php if(get_field('cookie_policy_page','option')) : $cookie_link = get_field('cookie_policy_page','option'); ?>
+
+
         <div class="cookieconsent_msg"> 
-        <?php $cookie_link = get_field('cookie_policy_page','option'); ?>
-            <span><?php the_field('cookie_notice_message','option'); ?> See <a href="<?PHP echo get_permalink($cookie_link->ID); ?>" target="_blank" class="ml-1 text-decoration-none">Cookie policy</a> </span>
-            <div class=" ml-2 d-flex align-items-center justify-content-center g-2 mx-2">
-                <button class="allow-button mr-1">Allow cookies</button>
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-9">
+                        <?php the_field('cookie_notice_message','option'); ?>  
+                        <a href="<?PHP echo get_permalink($cookie_link->ID); ?>" target="_blank" class="ml-1 text-decoration-none">Learn More</a> 
+                    </div>
+                    <div class="col-3 text-end">
+                        <button class="allow-button mr-1 mb-1">Accept</button>
+                        <button class="decline-button mr-1 mb-1">Decline</button>
+                    </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            
+
+            <?php endif; ?>
     
     <?php wp_footer(); ?>
 
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/offcanvas.js"></script>
 
 
-
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA_TAG; ?>"></script>
+  <script>
+    var cookiesAccepted = getCookie("cookiesAccepted");
+    if (cookiesAccepted === "true") {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '<?php echo GA_TAG; ?>');
+    } else {
+        clearCookies();
+    }
+  </script>
 
 </body>
 </html>

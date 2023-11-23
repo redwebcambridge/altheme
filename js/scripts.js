@@ -1,19 +1,4 @@
 jQuery( document ).ready(function() {
-  //Cookie consent
-  (function() {
-    if (!localStorage.getItem('cookieconsent')) {
-      document.querySelector('.cookieconsent_msg').style.display = 'flex';
-      document.querySelector('.backtotop').classList.remove("cookieaccepted");
-      document.querySelector('.allow-button').onclick = function(e) {
-        e.preventDefault();
-        document.querySelector('.cookieconsent_msg').style.display = 'none';
-        localStorage.setItem('cookieconsent', true);
-        document.querySelector('.backtotop').classList.add("cookieaccepted");
-      };
-    } else {
-      document.querySelector('.backtotop').classList.add("cookieaccepted");
-    }
-  })();
   //BACK TO TOP
   jQuery('.backtotop').on("click", function () {
     jQuery("html, body").animate({ scrollTop: 0 });

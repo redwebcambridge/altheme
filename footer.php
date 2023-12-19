@@ -310,11 +310,11 @@
         <div class="cookieconsent_msg"> 
             <div class="container">
                 <div class="row py-5">
-                    <div class="col-9">
+                    <div class="col-lg-9">
                         <?php the_field('cookie_notice_message','option'); ?>  
                         <a href="<?PHP echo get_permalink($cookie_link->ID); ?>" target="_blank" class="ml-1 text-decoration-none">Learn More</a> 
                     </div>
-                    <div class="col-3 text-end">
+                    <div class="col-lg-3 text-lg-end pt-4 pt-lg-0">
                         <button class="allow-button mr-1 mb-1">Accept</button>
                         <button class="decline-button mr-1 mb-1">Decline</button>
                     </div>

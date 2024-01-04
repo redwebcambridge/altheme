@@ -64,6 +64,9 @@ body{
     border-radius: 10px;
     position: fixed;
     bottom: 145px;
+    @media only screen and (max-width: 768px) {
+      bottom: 245px;
+    }
     right:0;
     font-size: 25px;
     color: $medium-grey;

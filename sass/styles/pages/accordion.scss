@@ -1,0 +1,20 @@
+#accordions {
+    .card {
+        border-radius: 0;
+        border-top: none;
+        border-bottom: 1px;
+        &:nth-of-type(1) {
+            border-top: 1px solid rgba(0, 0, 0, 0.125);
+        }
+        .card-header {
+            padding: 0;
+            button {
+                display: block;
+                width: 100%;
+                text-align: left;
+                background-color:rgba(0, 0, 0, 0.02);
+                color: rgba(0, 0, 0, 0.75);
+            }
+        }
+    }
+}

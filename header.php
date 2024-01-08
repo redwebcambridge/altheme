@@ -463,4 +463,13 @@ if (!class_exists('ACF')) {
     </div>
 
   <?php endif;  
- ?>
+
+// Check if the page is password protected
+if ( post_password_required() ) {
+    // Display the password form
+    echo '<div class="container p-5">'.get_the_password_form().'</div>';
+    get_footer( );
+    die;
+} 
+?>
+

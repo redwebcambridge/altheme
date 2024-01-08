@@ -21,5 +21,7 @@ include_once('news.php');
 include_once('school-settings.php');
 // //Settings
 include_once('vacancies.php');
-
+//accordian
+// //Settings
+include_once('accordion.php');
 

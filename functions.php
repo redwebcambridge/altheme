@@ -128,6 +128,8 @@ function anglian_learning_scripts() {
   wp_enqueue_style( 'al-gallery-style', get_template_directory_uri().'/lib/ekko-lightbox.css');
   //Custom scripts
   wp_enqueue_script( 'al-scripts', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ), '1.0.0', true );
+  //cookies
+  wp_enqueue_script( 'al-cookies', get_template_directory_uri().'/js/cookie.js' );
 
   wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/a6cf3f2e48.js' );
 

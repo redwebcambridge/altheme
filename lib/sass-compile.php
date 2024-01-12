@@ -55,65 +55,68 @@ if (isset($sport_logos['icon']['url'])) {
 } else {
   $sport_logo_url = null;
 }
+if($colours) :
+  $variables = [
+    //colours 
+    '$primarycolour' => $colours['primary_colour'],
+    '$secondarycolour' =>  $colours['second_colour'],
+    //'$thirdcolour' =>  $colours['third_colour'],
+    '$bordercolour' =>  $colours['border_colour'],
+    '$footerbgcolour' => get_field('footer_background_colour','option'),
+    '$footer_icon_colour' => $all_colours['footer_icon_colour'],
+    '$footer_title_colour' => $all_colours['footer_title_colour'],
+    //fonts
+    '$headingsfont' => $fonts['heading_font'],
+    '$headingsfontweight' => $fonts['heading_font_weight'],
+    '$bodyfont' => $fonts['body_font'],
+    '$bodyfontweight' => $fonts['body_font_weight'],
+    //header
+    '$header_social_icon_colour' => $all_colours['header_social_icon_colour'],
+    //images
+    '$siteicon' => '"'.$logos['icon']['url'].'"',
+    '$footerbgimage'=> '"'.get_field('footer_background_image', 'option').'"',
+    //Font size - this will need an if statement depending on what font it is
+    '$bodyfontsize'=> $fontsize,
+    '$bodylineheight'=> '1.6em',
+  
+    //Adult colours
+    '$adultprimarycolour' => $adultcolours['primary_colour'],
+    '$adultsecondarycolour' =>  $adultcolours['second_colour'],
+    '$adultbordercolour' =>  $adultcolours['border_colour'],
+    '$adultfooter_icon_colour' => $adultcolours['footer_icon_colour'],
+    '$adultfooter_title_colour' => $adultcolours['footer_title_colour'],
+    '$adultfooter_bg_colour' => $adultcolours['footer_background_colour'],
+    //Adult fonts
+    '$adultheadingsfont' => $adultfonts['heading_font'],
+    '$adultheadingsfontweight' => $adultfonts['heading_font_weight'],
+    '$adultbodyfont' => $adultfonts['body_font'],
+    '$adultbodyfontweight' => $adultfonts['body_font_weight'],
+    //Adult site Icon
+    '$adultsiteicon' => '"'.$ad_icon_url.'"',
+    '$adultfooterbg_img' => '"'.get_field('adult_footer_background_image', 'option').'"',
+  
+    //Sports colours
+    '$sportprimarycolour' => $sportcolours['primary_colour'],
+    '$sportsecondarycolour' =>  $sportcolours['second_colour'],
+    '$sportbordercolour' =>  $sportcolours['border_colour'],
+    '$sportfooter_bg_colour' => $sportcolours['footer_background_colour'],
+    '$sportfooter_icon_colour' => $sportcolours['footer_icon_colour'],
+    '$sportfooter_title_colour' => $sportcolours['footer_title_colour'],
+    //Sport fonts
+    '$sportheadingsfont' => $sportfonts['heading_font'],
+    '$sportheadingsfontweight' => $sportfonts['heading_font_weight'],
+    '$sportbodyfont' => $sportfonts['body_font'],
+    '$sportbodyfontweight' => $sportfonts['body_font_weight'],
+     //Sport site Icon
+     '$sportiteicon' => '"'.$sport_logo_url.'"',
+     '$sportsfooterbg_img' => '"'.get_field('sports_footer_background_image', 'option').'"',
+  ];
+  $compiler->setVariables($variables);
+  $css = $compiler->compile($scssContents);
+  if (!empty($css) && is_string($css)) {
+    file_put_contents($target_css, $css);
+  }
+endif;
 
-$variables = [
-  //colours 
-  '$primarycolour' => $colours['primary_colour'],
-  '$secondarycolour' =>  $colours['second_colour'],
-  //'$thirdcolour' =>  $colours['third_colour'],
-  '$bordercolour' =>  $colours['border_colour'],
-  '$footerbgcolour' => get_field('footer_background_colour','option'),
-  '$footer_icon_colour' => $all_colours['footer_icon_colour'],
-  '$footer_title_colour' => $all_colours['footer_title_colour'],
-  //fonts
-  '$headingsfont' => $fonts['heading_font'],
-  '$headingsfontweight' => $fonts['heading_font_weight'],
-  '$bodyfont' => $fonts['body_font'],
-  '$bodyfontweight' => $fonts['body_font_weight'],
-  //header
-  '$header_social_icon_colour' => $all_colours['header_social_icon_colour'],
-  //images
-  '$siteicon' => '"'.$logos['icon']['url'].'"',
-  '$footerbgimage'=> '"'.get_field('footer_background_image', 'option').'"',
-  //Font size - this will need an if statement depending on what font it is
-  '$bodyfontsize'=> $fontsize,
-  '$bodylineheight'=> '1.6em',
 
-  //Adult colours
-  '$adultprimarycolour' => $adultcolours['primary_colour'],
-  '$adultsecondarycolour' =>  $adultcolours['second_colour'],
-  '$adultbordercolour' =>  $adultcolours['border_colour'],
-  '$adultfooter_icon_colour' => $adultcolours['footer_icon_colour'],
-  '$adultfooter_title_colour' => $adultcolours['footer_title_colour'],
-  '$adultfooter_bg_colour' => $adultcolours['footer_background_colour'],
-  //Adult fonts
-  '$adultheadingsfont' => $adultfonts['heading_font'],
-  '$adultheadingsfontweight' => $adultfonts['heading_font_weight'],
-  '$adultbodyfont' => $adultfonts['body_font'],
-  '$adultbodyfontweight' => $adultfonts['body_font_weight'],
-  //Adult site Icon
-  '$adultsiteicon' => '"'.$ad_icon_url.'"',
-  '$adultfooterbg_img' => '"'.get_field('adult_footer_background_image', 'option').'"',
 
-  //Sports colours
-  '$sportprimarycolour' => $sportcolours['primary_colour'],
-  '$sportsecondarycolour' =>  $sportcolours['second_colour'],
-  '$sportbordercolour' =>  $sportcolours['border_colour'],
-  '$sportfooter_bg_colour' => $sportcolours['footer_background_colour'],
-  '$sportfooter_icon_colour' => $sportcolours['footer_icon_colour'],
-  '$sportfooter_title_colour' => $sportcolours['footer_title_colour'],
-  //Sport fonts
-  '$sportheadingsfont' => $sportfonts['heading_font'],
-  '$sportheadingsfontweight' => $sportfonts['heading_font_weight'],
-  '$sportbodyfont' => $sportfonts['body_font'],
-  '$sportbodyfontweight' => $sportfonts['body_font_weight'],
-   //Sport site Icon
-   '$sportiteicon' => '"'.$sport_logo_url.'"',
-   '$sportsfooterbg_img' => '"'.get_field('sports_footer_background_image', 'option').'"',
-];
-
-$compiler->setVariables($variables);
-$css = $compiler->compile($scssContents);
-if (!empty($css) && is_string($css)) {
-  file_put_contents($target_css, $css);
-}

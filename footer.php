@@ -291,7 +291,7 @@
                             Company registration number: 07564749
                         </div>
                         <div class="col text-right">
-                            Designed & Developed by <a href="https://www.redgraphic.co.uk/">Red Graphic</a>
+                            Managed by: <a href="https://redwebcambridge.com">Red Web</a>
                         </div>
                     </div>
                 </div>

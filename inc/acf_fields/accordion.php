@@ -49,6 +49,13 @@ acf_add_local_field_group(array(
             ),
         ),
         array(
+            'key' => 'bottom_text',
+            'label' => 'Bottom Content',
+            'name' => 'bottom_text',
+            'type' => 'wysiwyg',
+            'instructions' => 'Can be left blank, otherwise it will appear after the accordions',
+        ),
+        array(
             'key' => 'show_side_menu',
             'label' => 'Include a side menu?',
             'name' => 'show_side_menu',

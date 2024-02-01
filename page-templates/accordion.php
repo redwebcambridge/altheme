@@ -28,7 +28,7 @@ get_header(); ?>
             <?php the_field('body_text') ?>
           <?php endif; ?>
           <?php if( have_rows('accordions') ): $i = 1; ?>
-            <div class="accordion" id="accordions">
+            <div class="accordion mb-4" id="accordions">
 
               <?php
                 while( have_rows('accordions') ) : the_row();
@@ -56,6 +56,10 @@ get_header(); ?>
               <?php $i++; endwhile; ?>
             </div>
 
+            <?php endif; ?>
+
+            <?php if (get_field('bottom_text')) : ?>
+              <?php the_field('bottom_text') ?>
             <?php endif; ?>
           </div>
         </div>

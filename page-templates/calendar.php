@@ -8,7 +8,7 @@ get_header(); ?>
 
     <div class="row">
       <div class="col-12 text-end">
-        <a href="https://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics" class="btn btn-primary mb-4"><i class="fa-solid fa-calendar-days"></i> Subscribe</a>
+        <a href="webcal://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics" class="btn btn-primary mb-4"><i class="fa-solid fa-calendar-days"></i> Subscribe</a>
       </div>
     </div>
     <div class="row">

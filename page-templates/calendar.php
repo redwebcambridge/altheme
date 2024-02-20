@@ -9,25 +9,24 @@ get_header(); ?>
     <div class="row">
       <div class="col-12 text-end">
 
-        <a href="#" id="subscribeLink" class="btn btn-primary mb-4"><i class="fa-solid fa-calendar-days"></i> Subscribe</a>
+      <a href="#" id="subscribeLink" class="btn btn-primary mb-4"><i class="fa-solid fa-calendar-days"></i> Subscribe</a>
 
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var ua = navigator.userAgent.toLowerCase();
-            var isAndroid = ua.indexOf("android") > -1;
-            var link = document.getElementById('subscribeLink');
-            
-            if(isAndroid) {
-                // For Android, change to http
-                //link.href = "http://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics";
-                link.href = "http://google.com";
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var ua = navigator.userAgent.toLowerCase();
+          var isAndroid = ua.indexOf("android") > -1;
+          var link = document.getElementById('subscribeLink');
+          
+          if(isAndroid) {
+              // Hide the button for Android users
+              link.style.display = 'none';
+          } else {
+              // For iOS and others, keep webcal
+              link.href = "webcal://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics";
+          }
+      });
+      </script>
 
-            } else {
-                // For iOS and others, keep webcal
-                link.href = "webcal://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics";
-            }
-        });
-        </script>
 
       </div>
     </div>

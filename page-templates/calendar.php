@@ -19,7 +19,9 @@ get_header(); ?>
             
             if(isAndroid) {
                 // For Android, change to http
-                link.href = "http://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics";
+                //link.href = "http://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics";
+                link.href = "http://google.com";
+
             } else {
                 // For iOS and others, keep webcal
                 link.href = "webcal://docs.anglianlearning.org/csv/calendars/<?php echo strtoupper(get_field('school_id','option')); ?>.ics";

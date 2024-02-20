@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Enable cookies
         document.cookie = "cookiesAccepted=true; path=/";
         document.querySelector('.cookieconsent_msg').style.display = 'none';
-        // Set other necessary cookies
+        document.querySelector('.backtotop').classList.add('cookieaccepted');
+
     });
 
     declineButton.addEventListener('click', function() {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearCookies();
         document.querySelector('.cookieconsent_msg').style.display = 'none';
         localStorage.setItem('cookieConsent', 'declined');
+        document.querySelector('.backtotop').classList.add('cookieaccepted');
     });
 
     // Check cookie settings on page load
@@ -22,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cookiesAccepted === "true") {
         // User has accepted cookies
         document.querySelector('.cookieconsent_msg').style.display = 'none';
-        // Set necessary cookies here
+        document.querySelector('.backtotop').classList.add('cookieaccepted');
     } else {
         clearCookies();
     }
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (cookieConsent === 'declined') {
         clearCookies();
         document.querySelector('.cookieconsent_msg').style.display = 'none';
+        document.querySelector('.backtotop').classList.add('cookieaccepted');
     }
     // If cookiesAccepted is false or undefined, do not set cookies
 });

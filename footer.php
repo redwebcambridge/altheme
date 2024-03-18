@@ -291,7 +291,19 @@
                             Company registration number: 07564749
                         </div>
                         <div class="col text-right">
-                        Design: <a href="https://redgraphic.co.uk" target="_blank">Red Graphic</a>&nbsp; &nbsp; Development: <a href="https://redwebcambridge.com" target="_blank">Red Web</a>
+                            <div id="rwdevlink"></div> 
+                            <script>
+                            (async () => {
+                                const contentDiv = document.getElementById('rwdevlink');
+                            try {
+                                const response = await fetch('https://rgrw-footer-link.redwebcambridge.workers.dev/');
+                                const data = await response.text();
+                                contentDiv.innerHTML = data;
+                            } catch (error) {
+                                console.error('Failed to load footer content:', error);
+                            }
+                            })();
+                            </script>
                         </div>
                     </div>
                 </div>

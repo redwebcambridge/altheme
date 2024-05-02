@@ -21,13 +21,13 @@ get_header(); ?>
 
           <!---Body section centre--->
           <div class="col-md-12">
-            <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+            <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
             <div class="gradline"></div>
           </div>
 
           <div class="row">
             <div class="col-md-9 text-section">
-              <p class="body-text"><?php the_field('body_text') ?></p>
+              <p class="body-text"><?php echo get_field('body_text') ?></p>
             </div>
             <!---Body section Centre - End--->
             <!---Body section right--->

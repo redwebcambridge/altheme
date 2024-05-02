@@ -18,10 +18,10 @@ get_header(); ?>
           <!---Body section--->
           <div class="col-md-9 text-section">
           <?php if (get_field('sub_heading')) : ?>
-            <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+            <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
             <div class="gradline mb-3"></div>
           <?php endif; ?>
-          <p class="body-text"><?php the_field('intro_text') ?></p>
+          <p class="body-text"><?php echo get_field('intro_text') ?></p>
 
 
             <!---Table--->

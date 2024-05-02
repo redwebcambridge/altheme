@@ -172,7 +172,7 @@ if (!class_exists('ACF')) {
                     if (get_field('include_left_column',$parent_id)) : ?>
                       <div class="submenu-left">
                         <?php
-                          echo the_field('content',$parent_id);
+                          echo get_field('content',$parent_id);
                           if (get_field('show_button',$parent_id)){
                             echo '<a class="btn" href="'.get_field('button_url',$parent_id).'">'.get_field('button_text',$parent_id).'</a>';
                           }
@@ -361,7 +361,7 @@ if (!class_exists('ACF')) {
 
     <div class="container">
       <div class="left">
-        <div class="siteicon" style="background-image:url(<?php the_field('header_watermark'); ?> )">
+        <div class="siteicon" style="background-image:url(<?php echo get_field('header_watermark'); ?> )">
           <div class="content_left">
               <div class="social">
                   <?php if( have_rows('platforms','option') ):  while( have_rows('platforms','option') ) : the_row(); ?>
@@ -378,7 +378,7 @@ if (!class_exists('ACF')) {
                   <?php endwhile; endif; ?>
                 </div><!-- social -->
                 <div class="intro">
-                  <?php the_field('header_text'); ?>
+                  <?php echo get_field('header_text'); ?>
                 </div><!-- intro -->
             </div><!-- content_left -->
           </div><!-- siteicon -->

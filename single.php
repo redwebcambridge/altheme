@@ -17,7 +17,7 @@ $thumbnail= get_field('thumbnail'); ?>
 		        <div class="col-12 col-md-8 single-content standard-content">
 
 					<?php if( get_field('subheaderarticle') ): ?>
-						<h2 class="heading-two"><?php the_field('subheaderarticle'); ?></h2>
+						<h2 class="heading-two"><?php echo get_field('subheaderarticle'); ?></h2>
 						<div class="gradline"></div>
 					<?php endif; ?>
 

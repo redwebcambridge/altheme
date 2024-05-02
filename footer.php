@@ -109,9 +109,9 @@
                                 </div>
                         <?php else : ?>    
                             <!-- School Footer -->
-                            <h5><?php the_field('left_footer_title','option') ?></h5>
+                            <h5><?php echo get_field('left_footer_title','option') ?></h5>
                             <div class="footer-line"></div>
-                            <?php the_field('footer_left_side_text','option'); ?>
+                            <?php echo get_field('footer_left_side_text','option'); ?>
                                 <div class="social">
                                 <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
                                     <?php if(get_sub_field('platform') == 'twitter') {

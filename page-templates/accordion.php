@@ -21,11 +21,11 @@ get_header(); ?>
 
           <div class="<?php if (get_field('menu_select')) {echo 'col-md-9';} else {echo 'col-12';} ?> text-section">
           <?php if (get_field('sub_heading')) : ?>
-            <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+            <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
             <div class="gradline"></div>
           <?php endif; ?>
           <?php if (get_field('body_text')) : ?>
-            <?php the_field('body_text') ?>
+            <?php echo get_field('body_text') ?>
           <?php endif; ?>
           <?php if( have_rows('accordions') ): $i = 1; ?>
             <div class="accordion mb-4" id="accordions">
@@ -59,7 +59,7 @@ get_header(); ?>
             <?php endif; ?>
 
             <?php if (get_field('bottom_text')) : ?>
-              <?php the_field('bottom_text') ?>
+              <?php echo get_field('bottom_text') ?>
             <?php endif; ?>
           </div>
         </div>

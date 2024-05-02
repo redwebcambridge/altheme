@@ -31,11 +31,11 @@ get_header();
           <!---Body section--->
 
           <div class="col-md-9 text-section">
-              <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+              <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
 
               <div class="gradline"></div>
 
-              <p class="body-text"><?php the_field('body_text') ?></p>
+              <p class="body-text"><?php echo get_field('body_text') ?></p>
               <div class="gradline my-5"></div>
 
 
@@ -56,29 +56,29 @@ get_header();
                   <?php if(get_field('time')) { ?>
                   <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Time</strong>
-                    <span><?php the_field('time'); ?></span>
+                    <span><?php echo get_field('time'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('weeksterm')) { ?>
                   <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Weeks/Term</strong>
-                    <span><?php the_field('weeksterm'); ?></span>
+                    <span><?php echo get_field('weeksterm'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('start_date')) { ?>
                   <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Start Date</strong>
-                    <span><?php the_field('start_date'); ?></span>
+                    <span><?php echo get_field('start_date'); ?></span>
                   </div>
                   <?php } ?>
                   <?php if(get_field('course_cost')) { ?>
                   <div class="col-6 col-md-4 col-lg-2">
                     <strong class="table_head">Cost</strong>
-                    <span><?php the_field('course_cost'); ?></span>
+                    <span><?php echo get_field('course_cost'); ?></span>
                   </div>
                   <?php } ?>
                   <div class="col-6 col-md-4 col-lg-2">
-                        <a class="btn btn-primary rounded-0" href="<?php the_field('wisepay_url'); ?>">Book now</a>
+                        <a class="btn btn-primary rounded-0" href="<?php echo get_field('wisepay_url'); ?>">Book now</a>
                   </div>
               </div>
 

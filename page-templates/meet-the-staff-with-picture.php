@@ -20,9 +20,9 @@ get_header(); ?>
 
               <div class="row">
                 <div class="col">
-                  <h2 class="heading-two"><?php the_field('sub_heading') ?></h2>
+                  <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
                   <div class="gradline"></div>
-                  <p class="body-text"><?php the_field('intro_text') ?></p>
+                  <p class="body-text"><?php echo get_field('intro_text') ?></p>
                 </div>
               </div>
 

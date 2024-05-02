@@ -187,7 +187,7 @@ if( have_rows('counters_repeater') ): ?>
                 <div class="col-12 col-md-<?php echo $newscol; ?> newsholder">
                     <div class="row">
                         <div class="col-12">
-                            <h2><?php the_field('title_left'); ?></h2>
+                            <h2><?php echo get_field('title_left'); ?></h2>
                             <div class="gradline"></div>
                         </div>
                     </div>
@@ -352,9 +352,9 @@ if( have_rows('counters_repeater') ): ?>
 
       <div class="row d-flex align-items-center">
               <div class="col-md-6">
-                <h2><?php the_field('text_with_file_title'); ?></h2>
+                <h2><?php echo get_field('text_with_file_title'); ?></h2>
                 <div class="gradline-secondwhite"></div>
-                <?php the_field('text_with_file_body'); ?>
+                <?php echo get_field('text_with_file_body'); ?>
               </div>
 
 

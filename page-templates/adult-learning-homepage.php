@@ -49,7 +49,7 @@ get_header(); ?>
               <div class="latestnews col-12 col-md-<?php echo $newscol; ?> newsholder">
                     <div class="row">
                         <div class="col-12">
-                            <h2><?php the_field('title_left'); ?></h2>
+                            <h2><?php echo get_field('title_left'); ?></h2>
                             <div class="gradline"></div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@ get_header(); ?>
                 <?php if(get_field('enable_social_media_feed')) : ?>
 
                 <div class="col-12 col-md-4 twittercontainer">
-                <h2><?php the_field('social_media_feed_title'); ?></h2>
+                <h2><?php echo get_field('social_media_feed_title'); ?></h2>
                     <div class="gradline"></div>
 
                     <?php 
@@ -151,9 +151,9 @@ get_header(); ?>
 
         <!---Content and category  section--->
         <div class="col-12 text-section">
-            <h2 class="heading-two"><?php the_field('content_block_title') ?></h2>
+            <h2 class="heading-two"><?php echo get_field('content_block_title') ?></h2>
             <div class="gradline"></div>
-            <p class="body-text"><?php the_field('content'); ?></p>
+            <p class="body-text"><?php echo get_field('content'); ?></p>
             <?php if (get_field('enable_categories')) : ?>
                 <div class="row">
                 <?php 

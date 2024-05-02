@@ -54,7 +54,7 @@ get_header(); ?>
                 <tr>
 
                   <th scope="row" colspan="4" class="table-subheading">
-                    <p><?php the_sub_field('department'); ?></p>
+                    <p><?php echo get_sub_field('department'); ?></p>
                   </th>
 
                 </tr>
@@ -62,15 +62,15 @@ get_header(); ?>
 
                 <tr>
                   <td scope="row">
-                    <p><?php the_sub_field('name'); ?><br><a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a></p>
+                    <p><?php echo get_sub_field('name'); ?><br><a href="mailto:<?php echo get_sub_field('email'); ?>"><?php echo get_sub_field('email'); ?></a></p>
                   </td>
 
                   <td>
-                    <p><?php the_sub_field('role'); ?></p>
+                    <p><?php echo get_sub_field('role'); ?></p>
                 </td>
 
                   <td style="text-align:right">
-                    <p><?php the_sub_field('form__mentor_group'); ?><p>
+                    <p><?php echo get_sub_field('form__mentor_group'); ?><p>
                   </td>
                 </tr>
 
@@ -93,21 +93,21 @@ get_header(); ?>
                         <?php if (get_sub_field('department')) { ?>
                         <tr>
                             <td width="30%" class="mobileviewlabel departmentlabel"><p>Department</p></td>
-                            <td><p><?php the_sub_field('department'); ?></p></td>
+                            <td><p><?php echo get_sub_field('department'); ?></p></td>
                         </tr>
                         <?php } ?>
                         <tr>
                             <td width="30%" class="mobileviewlabel"><p>Name</p></td>
-                            <td><p><?php the_sub_field('name'); ?><br><a href="mailto:<?php the_sub_field('email'); ?>"><?php the_sub_field('email'); ?></a></p></td>
+                            <td><p><?php echo get_sub_field('name'); ?><br><a href="mailto:<?php echo get_sub_field('email'); ?>"><?php echo get_sub_field('email'); ?></a></p></td>
                         </tr>
                         <tr>
                             <td width="30%" class="mobileviewlabel"><p>Role</p></td>
-                            <td><p><?php the_sub_field('role'); ?></p></td>
+                            <td><p><?php echo get_sub_field('role'); ?></p></td>
                         </tr>
                         <?php if (get_sub_field('form__mentor_group')) { ?>
                         <tr>
                             <td width="30%" class="mobileviewlabel"><p>Form / Mentor Group</p></td>
-                            <td><p><?php the_sub_field('form__mentor_group'); ?><p></td>
+                            <td><p><?php echo get_sub_field('form__mentor_group'); ?><p></td>
                         </tr>
                         <?php } ?>
                     </tbody>

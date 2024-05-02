@@ -4,7 +4,7 @@
         <div class="member-block-image-ghost"></div>
     <?php endif; ?>
     <div class="staff-text">
-    <h3><?php the_sub_field('name'); ?></h3>
+    <h3><?php echo get_sub_field('name'); ?></h3>
         <p>
             <?php
             if(get_sub_field('role')){echo '<strong>'.get_sub_field('role').'</strong>';}

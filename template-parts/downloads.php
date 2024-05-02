@@ -9,15 +9,15 @@
             <?php while( have_rows('download') ): the_row(); ?>
 
                 <?php if(get_sub_field('upload_file_or_enter_url')=='Enter URL') { ?>
-                    <a href="<?php the_sub_field('url'); ?>" target="_blank" class="col-12 col-md-6 col-lg-4 p-1">
+                    <a href="<?php echo get_sub_field('url'); ?>" target="_blank" class="col-12 col-md-6 col-lg-4 p-1">
                         <div class="downloadcontainer">
-                            <i class="fas fa-link"></i><p><?php the_sub_field('download_title'); ?></p>
+                            <i class="fas fa-link"></i><p><?php echo get_sub_field('download_title'); ?></p>
                         </div>
                     </a>
                 <?php } else { ?>
-                    <a href="<?php the_sub_field('file_upload'); ?>" target="_blank" class="col-12 col-md-6 col-lg-4 p-1">
+                    <a href="<?php echo get_sub_field('file_upload'); ?>" target="_blank" class="col-12 col-md-6 col-lg-4 p-1">
                         <div class="downloadcontainer">
-                            <i class="fas fa-download"></i><p><?php the_sub_field('download_title'); ?></p>
+                            <i class="fas fa-download"></i><p><?php echo get_sub_field('download_title'); ?></p>
                         </div>
                     </a>
                 <?php } ?>

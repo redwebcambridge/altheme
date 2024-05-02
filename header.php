@@ -422,7 +422,7 @@ if (!class_exists('ACF')) {
         if( have_rows('tab_content') ):
           while( have_rows('tab_content') ) : the_row(); $i++;
       ?>
-          <div class="tab_button btn ml-3 col <?php if ($i==1){echo 'active';} ?>"><?php the_sub_field('tab_name'); ?></div>
+          <div class="tab_button btn ml-3 col <?php if ($i==1){echo 'active';} ?>"><?php echo get_sub_field('tab_name'); ?></div>
       <?php
           endwhile;
         endif;

@@ -87,9 +87,9 @@ if($colours) :
     '$adultprimarycolour' => $adultcolours['primary_colour'],
     '$adultsecondarycolour' =>  $adultcolours['second_colour'],
     '$adultbordercolour' =>  $adultcolours['border_colour'],
-    '$adultfooter_icon_colour' => $adult_bg_footer,
+    '$adultfooter_icon_colour' => $adultcolours['footer_icon_colour'],
     '$adultfooter_title_colour' => $adultcolours['footer_title_colour'],
-    '$adultfooter_bg_colour' => $adultcolours['footer_background_colour'],
+    '$adultfooter_bg_colour' => $adult_bg_footer,
     //Adult fonts
     '$adultheadingsfont' => $adultfonts['heading_font'],
     '$adultheadingsfontweight' => $adultfonts['heading_font_weight'],

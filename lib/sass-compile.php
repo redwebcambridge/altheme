@@ -10,11 +10,13 @@ if (get_field('activate_adult_learning','option')) {
   $adultcolours = get_field('adult_colours','option');
   $adultfonts = get_field('adult_fonts','option');
   $ad_logos = get_field('adultlearning_logo_and_icons','option');
+  $adult_bg_footer = $adultcolours['footer_icon_colour'];
 } else {
   $adultlogos = get_field('logo_and_icons','option');
   $adultcolours = get_field('colours','option');
   $adultfonts = get_field('fonts','option');
   $ad_logos = get_field('logo_and_icons','option');
+  $adult_bg_footer = get_field('colours','option');
 }
 //Sports
 if (get_field('activate_sport_centre','option')) {
@@ -22,11 +24,13 @@ if (get_field('activate_sport_centre','option')) {
   $sportcolours = get_field('sports_colours','option');
   $sportfonts = get_field('sports_fonts','option');
   $sport_logos = get_field('sports_logo_and_icons','option');
+  $sports_bg_footer = $sportcolours['footer_background_colour'];
 } else {
   $sportlogos = get_field('logo_and_icons','option');
   $sportcolours = get_field('colours','option');
   $sportfonts = get_field('fonts','option');
   $sport_logos = get_field('logo_and_icons','option');
+  $sports_bg_footer =  get_field('colours','option');
 }
 
 //INCREASE FONT FOR 
@@ -83,7 +87,7 @@ if($colours) :
     '$adultprimarycolour' => $adultcolours['primary_colour'],
     '$adultsecondarycolour' =>  $adultcolours['second_colour'],
     '$adultbordercolour' =>  $adultcolours['border_colour'],
-    '$adultfooter_icon_colour' => $adultcolours['footer_icon_colour'],
+    '$adultfooter_icon_colour' => $adult_bg_footer,
     '$adultfooter_title_colour' => $adultcolours['footer_title_colour'],
     '$adultfooter_bg_colour' => $adultcolours['footer_background_colour'],
     //Adult fonts
@@ -99,7 +103,7 @@ if($colours) :
     '$sportprimarycolour' => $sportcolours['primary_colour'],
     '$sportsecondarycolour' =>  $sportcolours['second_colour'],
     '$sportbordercolour' =>  $sportcolours['border_colour'],
-    '$sportfooter_bg_colour' => $sportcolours['footer_background_colour'],
+    '$sportfooter_bg_colour' => $sports_bg_footer,
     '$sportfooter_icon_colour' => $sportcolours['footer_icon_colour'],
     '$sportfooter_title_colour' => $sportcolours['footer_title_colour'],
     //Sport fonts

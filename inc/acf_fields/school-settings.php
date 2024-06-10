@@ -1042,7 +1042,6 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
 			'enable_opacity' => false,
 			'return_format' => 'string',
 		),

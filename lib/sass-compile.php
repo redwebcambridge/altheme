@@ -16,7 +16,7 @@ if (get_field('activate_adult_learning','option')) {
   $adultcolours = get_field('colours','option');
   $adultfonts = get_field('fonts','option');
   $ad_logos = get_field('logo_and_icons','option');
-  $adult_bg_footer = array();
+  $adult_bg_footer = NULL;
 }
 //Sports
 if (get_field('activate_sport_centre','option')) {
@@ -30,7 +30,7 @@ if (get_field('activate_sport_centre','option')) {
   $sportcolours = get_field('colours','option');
   $sportfonts = get_field('fonts','option');
   $sport_logos = get_field('logo_and_icons','option');
-  $sports_bg_footer =  array();
+  $sports_bg_footer = NULL;
 }
 
 //INCREASE FONT FOR 

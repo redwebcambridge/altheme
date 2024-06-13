@@ -39,8 +39,9 @@ get_header(); ?>
             ?> 
             <?php endif; ?>
             </div>                    
+            <?php get_template_part('template-parts/downloads'); ?>
             <?php get_template_part('template-parts/sports-contact'); ?>
-        
+
     </div>
 </div>
 

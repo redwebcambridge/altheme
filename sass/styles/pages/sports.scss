@@ -78,6 +78,22 @@
       }
     }
   }
+  .downloadlist {
+    a {
+      .downloadcontainer {
+        i {
+          color: $sportprimarycolour;
+        }
+        &:hover {
+          background-color: $sportprimarycolour;
+          i {
+            color: #fff;
+          }
+        }
+      }
+      
+    }
+  }
   .al-border-bottom {
     border-bottom: 7px solid $sportprimarycolour;
   }

@@ -10,7 +10,7 @@ if (get_field('activate_adult_learning','option')) {
   $adultcolours = get_field('adult_colours','option');
   $adultfonts = get_field('adult_fonts','option');
   $ad_logos = get_field('adultlearning_logo_and_icons','option');
-  $adult_bg_footer = $adultcolours['footer_icon_colour'];
+  $adult_bg_footer = $adultcolours['footer_background_colour'];
 } else {
   $adultlogos = get_field('logo_and_icons','option');
   $adultcolours = get_field('colours','option');

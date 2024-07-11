@@ -284,10 +284,10 @@ acf_add_local_field_group(array(
 
 		array(
 			'key' => 'homepage_feed_option',
-			'label' => 'Display Twitter or Facebook Feed',
+			'label' => 'Display Facebook Feed',
 			'name' => 'homepage_feed_option',
 			'type' => 'select',
-			'instructions' => 'Please select whether you would like to display a Facebook, Twitter or No feed. You must had entered your social media account in the <a href="/wp-admin/admin.php?page=school-settings">School Settings</a>',
+			'instructions' => 'Please select whether you would like to display a Facebook feed. You must had entered your social media account in the <a href="/wp-admin/admin.php?page=school-settings">School Settings</a>',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -297,7 +297,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'No_Feed' => 'No Feed',
-				'Twitter' => 'Twitter',
+				//'Twitter' => 'Twitter',
 				'Facebook' => 'Facebook',
 			),
 		),

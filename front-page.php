@@ -97,8 +97,9 @@ if( have_rows('counters_repeater') ): ?>
 
                 <div class="<?php echo $col; ?> text-center counters my-3">                 
                     <div class="counter">
+                        <div class="icon"><?php if(get_sub_field('counter_icon')) : echo '<img class="img-fluid" src="'.get_sub_field('counter_icon')['url'].'" />'; endif; ?></div>
                         <div class="number number<?php echo $i; ?>" data-counter="<?php echo get_sub_field('counter_number');  ?>">0</div>
-                        <div class="label"><?php echo get_sub_field('counter_title'); ?></div>
+                        <div class="label"><?php if(get_sub_field('counter_title')) : echo get_sub_field('counter_title'); endif; ?></div>
                     </div>
                 </div>
 

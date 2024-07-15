@@ -67,6 +67,7 @@ if($colours) :
     //'$thirdcolour' =>  $colours['third_colour'],
     '$bordercolour' =>  $colours['border_colour'],
     '$footerbgcolour' => get_field('footer_background_colour','option'),
+    '$statsbgcolour' => get_field('stats_background_colour', get_option('page_on_front')),
     '$footer_icon_colour' => $all_colours['footer_icon_colour'],
     '$footer_title_colour' => $all_colours['footer_title_colour'],
     //fonts

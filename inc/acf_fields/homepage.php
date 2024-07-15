@@ -462,18 +462,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_611f6d6e07f35',
 			'label' => 'Information Panel',
-			'name' => '',
 			'type' => 'tab',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'placement' => 'top',
-			'endpoint' => 0,
 		),
 		array(
 			'key' => 'field_60507e893a9cf',
@@ -572,6 +561,47 @@ acf_add_local_field_group(array(
 					'return_format' => 'array',
 				),
 			),
+			
+		),
+		array(
+			'key' => 'stats_tab',
+			'label' => 'Stats',
+			'name' => 'stats_tab',
+			'type' => 'tab',
+		),
+		array(
+			'key' => 'counters_repeater',
+			'label' => 'Stat Counters',
+			'name' => 'counters_repeater',
+			'type' => 'repeater',
+			'button_label' => 'Add Counter',
+			'max' => 4,
+			'sub_fields' => array(
+				array(
+					'key' => 'counter_icon',
+					'label' => 'Icon',
+					'name' => 'counter_icon',
+					'type' => 'image',
+				),
+				array(
+					'key' => 'counter_title',
+					'label' => 'Title',
+					'name' => 'counter_title',
+					'type' => 'text',
+				),
+				array(
+					'key' => 'counter_number',
+					'label' => 'Count',
+					'name' => 'counter_number',
+					'type' => 'text',
+				),
+			),
+		),
+		array(
+			'key' => 'stats_background_colour',
+			'label' => 'Stats BG colour',
+			'name' => 'stats_background_colour',
+			'type' => 'color_picker',
 		),
 	),
 	'location' => array(

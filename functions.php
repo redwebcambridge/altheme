@@ -19,6 +19,8 @@ if ( ! function_exists( 'anglian_learning_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'anglian_learning_setup' );
 
+add_theme_support( 'post-thumbnails' );
+
 //updater
 require 'theme-updates/theme-update-checker.php';
 $example_update_checker = new ThemeUpdateChecker(
@@ -87,7 +89,6 @@ function school_settings() {
     );
   }
 };
-add_theme_support( 'post-thumbnails' );
 
 //get fonts
 require_once get_template_directory() . '/lib/fonts/fontsetting.php';
@@ -792,7 +793,37 @@ function add_custom_plugin($plugin_array) {
 }
 add_action('init', 'add_custom_button');
 
+//GET STATS FOR COUNTERS
+function fetch_json_value($json_key) {
 
+  $json_url = 'https://docs.anglianlearning.org/json/al_facts.json';
+  $response = wp_remote_get($json_url);
+
+  if (is_wp_error($response)) {
+      return null;
+  }
+
+  $json_data = wp_remote_retrieve_body($response);
+  $data = json_decode($json_data, true);
+
+  if (json_last_error() !== JSON_ERROR_NONE) {
+      return null;
+  }
+
+  if (isset($data[$json_key])) {
+      return $data[$json_key];
+  } else {
+      return null;
+  }
+}
+
+//Scripts for main AL site only
+if(get_field('school_id','option') == 'al') :
+  require_once( get_template_directory() .'/al-functions.php' );
+endif;
+
+
+//TESTING ONLY TURN OFF ON LIVE
 sass_compile();
 
 

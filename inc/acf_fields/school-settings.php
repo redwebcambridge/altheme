@@ -1,4 +1,16 @@
 <?php
+
+$socials = [
+    'facebook',
+	'twitter',
+	'instagram',
+	'linkedin',
+];
+//Add TikTok option for Anglian Learning
+if(get_field('school_id','option') == 'al') {
+    array_push($socials, 'tiktok');
+}
+
 acf_add_local_field_group(array(
 	'key' => 'group_603f77d000084',
 	'title' => 'School Settings',
@@ -25,13 +37,9 @@ acf_add_local_field_group(array(
 			'label' => 'School ID',
 			'name' => 'school_id',
 			'type' => 'select',
-			'instructions' => '',
 			'required' => 1,
-			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '20',
-				'class' => '',
-				'id' => '',
 			),
 			'choices' => array(
 				'al' => 'al',
@@ -55,25 +63,17 @@ acf_add_local_field_group(array(
 				'wpa' => 'wpa',
 			),
 			'default_value' => false,
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
 			'return_format' => 'value',
-			'ajax' => 0,
-			'placeholder' => '',
 		),
 		array(
 			'key' => 'field_60ae5ecb5a98f',
 			'label' => 'School Name',
 			'name' => 'school_name',
 			'type' => 'select',
-			'instructions' => '',
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '33',
-				'class' => '',
-				'id' => '',
 			),
 			'choices' => array(
 				'Anglian Learning' => 'Anglian Learning',
@@ -98,36 +98,24 @@ acf_add_local_field_group(array(
 
 			),
 			'default_value' => false,
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
 			'return_format' => 'value',
-			'ajax' => 0,
-			'placeholder' => '',
 		),
 		array(
 			'key' => 'field_609a4fb3e2a03',
 			'label' => 'Activate Adult Learning?',
 			'name' => 'activate_adult_learning',
 			'type' => 'checkbox',
-			'instructions' => '',
-			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
 				'width' => '20',
-				'class' => '',
-				'id' => '',
 			),
 			'choices' => array(
 				'Activate' => 'Activate',
 			),
-			'allow_custom' => 0,
 			'default_value' => array(
 			),
 			'layout' => 'vertical',
-			'toggle' => 0,
 			'return_format' => 'value',
-			'save_custom' => 0,
 		),
 		array(
 			'key' => 'field_60f80d0efb949',
@@ -286,14 +274,6 @@ acf_add_local_field_group(array(
 					),
 					'return_format' => 'array',
 					'preview_size' => 'thumbnail',
-					'library' => 'all',
-					'min_width' => '',
-					'min_height' => '',
-					'min_size' => '',
-					'max_width' => '',
-					'max_height' => '',
-					'max_size' => '',
-					'mime_types' => '',
 				),
 				array(
 					'key' => 'field_60d1ffa924565',
@@ -310,14 +290,6 @@ acf_add_local_field_group(array(
 					),
 					'return_format' => 'url',
 					'preview_size' => 'medium',
-					'library' => 'all',
-					'min_width' => '',
-					'min_height' => '',
-					'min_size' => '',
-					'max_width' => '',
-					'max_height' => '',
-					'max_size' => '',
-					'mime_types' => '',
 				),
 			),
 		),
@@ -838,18 +810,6 @@ acf_add_local_field_group(array(
 			'label' => 'Platforms',
 			'name' => 'platforms',
 			'type' => 'repeater',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '100',
-				'class' => '',
-				'id' => '',
-			),
-			'collapsed' => '',
-			'min' => 0,
-			'max' => 0,
-			'layout' => 'table',
 			'button_label' => 'Add Social Media Platform',
 			'sub_fields' => array(
 				array(
@@ -859,18 +819,13 @@ acf_add_local_field_group(array(
 					'type' => 'select',
 					'instructions' => '',
 					'required' => 1,
-					'conditional_logic' => 0,
 					'wrapper' => array(
 						'width' => '',
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array(
-						'facebook' => 'Facebook',
-						'twitter' => 'Twitter',
-						'instagram' => 'Instagram',
-						'linkedin' => 'LinkedIn',
-					),
+					'choices' => array_combine($socials, $socials),
+
 					'default_value' => false,
 					'allow_null' => 0,
 					'multiple' => 0,

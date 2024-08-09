@@ -1,0 +1,16 @@
+#academy-single {
+    .top-details {
+        background: $lightgrey;
+        .logo {
+            background-color: #fff;
+            border: 2px solid $lightgrey;
+            img {
+                width: 80%;
+            }
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+}

@@ -66,10 +66,29 @@
     </div>
 </div>
 
+<?php if ( get_field('announcement_banner_show') ) : ?>
+    <div class="container my-5" >
+        <div class="row">
+            <div class="col p-4 text-white d-flex" id="announcement">
+                <div>
+                    <i class="fa-solid fa-bullhorn px-3 h1"></i>
+                </div>
+                <div>
+                <?php if ( get_field('announcement_banner_message_content') ) : ?>
+                    <?php echo get_field('announcement_banner_message_content'); ?>
+                <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 
 
 <?php
 if( have_rows('counters_repeater') ): ?>
+
+
+
     <div class="stats_strip my-5 py-5">
         <div class="container">
             <div class="row"> 
@@ -85,7 +104,7 @@ if( have_rows('counters_repeater') ): ?>
                         $col = 'col-6';
                         break;
                     case 3:
-                        $col = 'col-sm-4 col-6 ';
+                        $col = 'col-sm-4 col-12 ';
                         break;
                     case 4:
                         $col = 'col-md-3 col-6';
@@ -93,12 +112,29 @@ if( have_rows('counters_repeater') ): ?>
                     default:
                         $col = 'col';
                     };
+
+                    //Counter JSON or manual
+                    if ( get_sub_field('counter_type') == 'manual') : 
+                        if ( get_sub_field('counter_number') ) {
+                            $counter_number = intval(get_sub_field('counter_number'));
+                        } else {
+                            $counter_number = 0;
+                        }
+                    else:
+
+                        $counter_number = fetch_json_value(get_sub_field('counter_json_label'));
+
+                    endif; 
+                    
+
                 ?>
 
                 <div class="<?php echo $col; ?> text-center counters my-3">                 
                     <div class="counter">
                         <div class="icon"><?php if(get_sub_field('counter_icon')) : echo '<img class="img-fluid" src="'.get_sub_field('counter_icon')['url'].'" />'; endif; ?></div>
-                        <div class="number number<?php echo $i; ?>" data-counter="<?php echo get_sub_field('counter_number');  ?>">0</div>
+
+                        <div class="number number<?php echo $i; ?>" data-counter="<?php echo $counter_number;  ?>">0</div>
+
                         <div class="label"><?php if(get_sub_field('counter_title')) : echo get_sub_field('counter_title'); endif; ?></div>
                     </div>
                 </div>

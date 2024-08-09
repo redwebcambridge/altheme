@@ -1,5 +1,4 @@
 <?php 
-
 acf_add_local_field_group(array(
 	'key' => 'group_6047a7bb409a1',
 	'title' => 'Homepage',
@@ -7,18 +6,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_6058cb3bc5708',
 			'label' => 'Header',
-			'name' => '',
 			'type' => 'tab',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'placement' => 'top',
-			'endpoint' => 0,
 		),
 		array(
 			'key' => 'field_6047ac97fdde0',
@@ -582,6 +570,18 @@ acf_add_local_field_group(array(
 					'label' => 'Icon',
 					'name' => 'counter_icon',
 					'type' => 'image',
+					'wrapper' => array('width' => '15'),
+				),
+				array(
+					'key' => 'counter_type',
+					'label' => 'Type',
+					'name' => 'counter_type',
+					'type' => 'select',
+					'choices' => array(
+						'json' => 'JSON',
+						'manual' => 'Manual',
+					),
+					'wrapper' => array('width' => '15'),
 				),
 				array(
 					'key' => 'counter_title',
@@ -589,11 +589,39 @@ acf_add_local_field_group(array(
 					'name' => 'counter_title',
 					'type' => 'text',
 				),
+
 				array(
 					'key' => 'counter_number',
 					'label' => 'Count',
 					'name' => 'counter_number',
+					'type' => 'number',
+					'wrapper' => array('width' => '15'),
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'counter_type',
+								'operator' => '==',
+								'value' => 'manual',
+							),
+						),
+					),
+				),
+				array(
+					'key' => 'counter_json_label',
+					'label' => 'JSON Label',
+					'instructions' => 'This must be included in the JSON provided by Anglian Learning',
+					'name' => 'counter_json_label',
 					'type' => 'text',
+					'wrapper' => array('width' => '15'),
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'counter_type',
+								'operator' => '==',
+								'value' => 'json',
+							),
+						),
+					),
 				),
 			),
 		),

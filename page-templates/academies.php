@@ -188,6 +188,17 @@ $academies = new WP_Query($args);
     function updatesearchresults(){
         jQuery('.search-results').css('display', 'flex');
         jQuery('#search_results').html('Academies found: ' + jQuery('.academies-page').find('.academies-row:not([style*="display: none"])').length);
+        
+        document.querySelectorAll('.academies-row').forEach(function(row) {
+            let parentContainer = row.closest('.academies-row-cont');
+            
+            if (window.getComputedStyle(row).display === 'none') {
+                parentContainer.style.display = 'none';
+            } else {
+                parentContainer.style.display = ''; // Removes the inline display:none style
+            }
+        });
+
     }
 
     for (var checkbox of checkboxes) {
@@ -323,14 +334,14 @@ $academies = new WP_Query($args);
 
         jQuery( "#view_map" ).on( "click", function() {
             jQuery("#academies_map").show();
-            jQuery(".academies-row-cont").hide();
+            jQuery(".academies-row").hide();
             jQuery(".search_buttons").removeClass('active');
             jQuery(this).addClass('active');            
         });
 
         jQuery( "#view_list" ).on( "click", function() {
             jQuery("#academies_map").hide();
-            jQuery(".academies-row-cont").show();
+            jQuery(".academies-row").show();
             jQuery(".search_buttons").removeClass('active');
             jQuery(this).addClass('active');
         });
@@ -342,7 +353,7 @@ $academies = new WP_Query($args);
      jQuery(".view-on-map-button").on("click", function(event) {
 
         jQuery("#academies_map").show();
-        jQuery(".academies-row-cont").hide();
+        jQuery(".academies-row").hide();
         jQuery(".search_buttons").removeClass('active');
         jQuery('.map_view').addClass('active');  
 

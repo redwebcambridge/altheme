@@ -112,7 +112,19 @@
       <div class="acad_downloads">
         <?php if ( have_rows('academy_downloads') ) : ?>
           <?php while( have_rows('academy_downloads') ) : the_row(); ?>
-            <a href="<?php echo get_sub_field('acad_download_file')['url']; ?>" title="<?php echo get_sub_field('acad_download_file')['title']; ?>" class="mt-3 w-100 text-start download_button btn bg_school_col text-white" target="_blank"><i class="fa-solid fa-download"></i> <?php the_sub_field('acad_download_title'); ?></a>
+
+            <?php if ( get_sub_field('acad_download_type') === 'file' ) : ?>
+              <a href="<?php echo get_sub_field('acad_download_file')['url']; ?>" title="<?php echo get_sub_field('acad_download_file')['title']; ?>" class="mt-3 w-100 text-start download_button btn bg_school_col text-white" target="_blank"><i class="fa-solid fa-download pe-2"></i> <?php the_sub_field('acad_download_title'); ?></a>
+            <?php endif; ?>
+
+            <?php if ( get_sub_field('acad_download_type') === 'url' ) : ?>
+              <a href="<?php echo get_sub_field('acad_download_url'); ?>" title="<?php echo get_sub_field('acad_download_url'); ?>" class="mt-3 w-100 text-start download_button btn bg_school_col text-white" target="_blank"><i class="fa-solid fa-link pe-2"></i> <?php the_sub_field('acad_download_title'); ?></a>
+            <?php endif; ?>
+            
+
+            
+
+
           <?php endwhile; ?>
         <?php endif; ?>
       </div>

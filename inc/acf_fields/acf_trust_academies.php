@@ -182,19 +182,56 @@ acf_add_local_field_group(array(
             'button_label' => 'Add Download',
             'sub_fields' => array(
                 array(
+                    'key' => 'acad_download_type',
+                    'label' => 'Type',
+                    'name' => 'acad_download_type',
+                    'type' => 'select',
+                    'wrapper' => array('width' => '20'),
+                    'choices' => array(
+                        'url' => 'URL',
+                        'file' => 'File',
+                    ),
+                ),
+                array(
                     'key' => 'acad_download_title',
                     'label' => 'Button Title',
                     'name' => 'acad_download_title',
                     'type' => 'text',
-                    'wrapper' => array('width' => '50'),
+                    'wrapper' => array('width' => '30'),
                 ),
                 array(
                     'key' => 'acad_download_file',
                     'label' => 'File',
                     'name' => 'acad_download_file',
                     'type' => 'file',
-                    'wrapper' => array('width' => '50'),
+                    'wrapper' => array('width' => '25'),
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field'    => 'acad_download_type', 
+                                'operator' => '==',
+                                'value'    => 'file',
+                            ),
+                        ),
+                    ),
                 ),
+                array(
+                    'key' => 'acad_download_url',
+                    'label' => 'URL',
+                    'name' => 'acad_download_url',
+                    'type' => 'url',
+                    'wrapper' => array('width' => '25'),
+                    'conditional_logic' => array(
+                        array(
+                            array(
+                                'field'    => 'acad_download_type', 
+                                'operator' => '==',
+                                'value'    => 'url',
+                            ),
+                        ),
+                    ),
+                ),
+                
             ),
         ),
 

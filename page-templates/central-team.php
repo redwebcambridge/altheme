@@ -17,7 +17,6 @@ get_header(); ?>
                         <div class="col-12">
                             <img src="<?php echo get_field('organogram')['url']; ?>" alt="Anglian Learning Organogram" class="img-fluid" />
                         </div>
-
                     </div>
                 </div>
             <?php endif; ?>

@@ -227,9 +227,9 @@ acf_add_local_field_group(array(
 	'title' => 'Sidebar Menu',
 	'fields' => array(
 		array(
-			'key' => 'ct_menu_select',
+			'key' => 'menu_select',
 			'label' => 'Menu Select',
-			'name' => 'ct_menu_select',
+			'name' => 'menu_select',
 			'type' => 'select',
 			'instructions' => '',
 			'required' => 1,

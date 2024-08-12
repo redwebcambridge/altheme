@@ -108,7 +108,7 @@ $academies = new WP_Query($args);
                             <strong style="color:<?php echo get_field('school_color');?>;"><?php echo the_title(); ?></strong>
                         </div>
                         <div class="col-12 pb-3">
-                            <div class="row bg-white m-1">
+                            <div class="row bg-white m-1 align-items-center">
                                 <div class="col-5 head-teacher-image" style="background-image:url('<?php echo get_field('image_of_head')['url']; ?>')">
                                 </div>
                                 <div class="col-7 py-4 head-name">

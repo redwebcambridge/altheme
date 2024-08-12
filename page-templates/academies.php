@@ -177,7 +177,7 @@ $academies = new WP_Query($args);
 
             
 
-            <div class="academies-row-cont col-lg-3 mb-2">
+            <div class="academies-row-cont col-lg-3 mb-4">
                 <style type="text/css">
                         .map-icon-<?php echo get_the_ID(); ?> .marker_inner{
                             background-color:<?php echo get_field('school_color');?>;  

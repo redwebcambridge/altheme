@@ -1,6 +1,8 @@
 <?php
 // all fields
 include_once('global.php');
+//Grid of icons
+include_once('icon-grid.php');
 //about us 
 include_once('about-us.php');
 //contact

@@ -244,7 +244,8 @@ acf_add_local_field_group(array(
 ));
 
 
-acf_add_local_field_group(array(
+acf_add_local_field_group(
+	array(
 	'key' => 'group_60ae136001684',
 	'title' => 'Sidebar Menu',
 	'fields' => array(
@@ -253,14 +254,6 @@ acf_add_local_field_group(array(
 			'label' => 'Menu Select',
 			'name' => 'menu_select',
 			'type' => 'select',
-			'instructions' => '',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
 			'choices' => array(
 				'About Us' => 'About Us',
 				'Adult Learning' => 'Adult Learning',
@@ -289,13 +282,6 @@ acf_add_local_field_group(array(
 				'Trips' => 'Trips',
 				'' => '',
 			),
-			'default_value' => false,
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'return_format' => 'value',
-			'ajax' => 0,
-			'placeholder' => '',
 		),
 	),
 	'location' => array(
@@ -306,6 +292,13 @@ acf_add_local_field_group(array(
 				'value' => 'page-templates/sidebar-with-one-column.php',
 			),
 		),
+		// array(
+		// 	array(
+		// 		'param' => 'page_template',
+		// 		'operator' => '==',
+		// 		'value' => 'page-templates/icon-grid.php',
+		// 	),
+		// ),
 		array(
 			array(
 				'param' => 'page_template',

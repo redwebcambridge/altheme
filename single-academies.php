@@ -109,7 +109,7 @@
         <?php endif; ?>
       </div>
 
-      <div class="acad_downloads">
+      <div class="acad_downloads mb-4">
         <?php if ( have_rows('academy_downloads') ) : ?>
           <?php while( have_rows('academy_downloads') ) : the_row(); ?>
 

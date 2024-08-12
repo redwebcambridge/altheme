@@ -168,7 +168,7 @@ get_header(); ?>
                                 while( have_rows('department_repeater') ) : the_row();?>
 
                                     <div class="depatments_members ">
-                                        <div class="central_team_name"><?php echo get_sub_field('members_name') ?></div>
+                                        <div class="central_team_name"><?php echo get_sub_field('name') ?></div>
                                         <div class="job_role"><?php echo get_sub_field('role') ?></div>
                                     </div>
 

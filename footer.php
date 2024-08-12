@@ -11,11 +11,40 @@
             <?php if (!is_adult_ed_page() && !is_sports_page() ) : ?>   
             <div class="container partners">
                 <div class="partner-slider slider">
+                    <!-- sliders from school settings -->
                     <?php if( have_rows('carousel','option') ):
                         while( have_rows('carousel','option') ) : the_row(); ?>
-                                <a href="<?php echo get_sub_field('url'); ?>" class="<?php echo get_sub_field('class'); ?>" target="_blank" style="background-image:url(<?php echo get_sub_field('image'); ?>)">
-                                </a>
+                            <a href="<?php echo get_sub_field('url'); ?>" class="<?php echo get_sub_field('class'); ?>" target="_blank" style="background-image:url(<?php echo get_sub_field('image'); ?>)">
+                            </a>
                     <?php endwhile; endif; ?>
+
+                    <!-- Anglian learning site only - get all school icons -->
+                    <?php
+                    if(get_field('school_id','option') == 'al') :
+                        $args = array(
+                            'post_type' => 'academies',
+                            'posts_per_page' => 1,
+                            'orderby' => 'post_name',
+                            'order' => 'ASC',
+                        );
+                        $query = new WP_Query( $args );
+                        
+                        // The Loop
+                        if ( $query->have_posts() ) {
+                            while ( $query->have_posts() ) {
+                                $query->the_post();
+                                $logo = get_field('logo'); ?>
+                                <a href="<?php echo the_permalink(); ?>" class="<?php echo get_sub_field('class'); ?>" target="_blank" style="background-image:url(<?php echo get_field('logo')['url']; ?>)">
+                                </a>
+
+                            <?php
+                                
+                            }
+                        }
+                        // Restore original Post Data
+                        wp_reset_postdata();
+
+                    endif; ?>
                 </div>
                 <div class="slick-controls-lower">
                     <button class="prev-slide-lower"></button>

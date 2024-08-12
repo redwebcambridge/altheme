@@ -104,14 +104,14 @@ $academies = new WP_Query($args);
                         <div class="col-12 p-5 bg-white school-icon-container text-center" >
                             <div class="school-icon" style="background-image:url(<?php echo get_field('logo')['url']; ?>)"></div>
                         </div>
-                        <div class="col-12 school_name my-3">
+                        <div class="col-12 school_name my-3 px-3">
                             <strong style="color:<?php echo get_field('school_color');?>;"><?php echo the_title(); ?></strong>
                         </div>
                         <div class="col-12 pb-3">
                             <div class="row bg-white m-1">
                                 <div class="col-5 head-teacher-image" style="background-image:url('<?php echo get_field('image_of_head')['url']; ?>')">
                                 </div>
-                                <div class="col-7 py-4">
+                                <div class="col-7 py-4 head-name">
                                     <?php echo get_field('head_name'); ?>
                                     <span style="color:<?php echo get_field('school_color');?>;">
                                     <?php echo get_field('head_title'); ?>
@@ -125,7 +125,7 @@ $academies = new WP_Query($args);
                         </div>
 
                         <div class="col-12 tel-email  px-3" >
-                            <div class="w-100">
+                            <div class="w-100 email pb-1">
                                 <a target="_blank" style="color:<?php echo get_field('school_color');?>;" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a>
                             </div>
                             <div class="w-100">

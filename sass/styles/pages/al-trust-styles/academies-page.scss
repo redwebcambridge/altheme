@@ -139,12 +139,14 @@ $dark_grey_btn : #605E5E;
             }
         }
         .school_name {
+            min-height: 78px;
             strong {
                 font-weight: 500;
                 font-size: 22px;
             }
         }
         .school_address {
+            min-height: 140px;
             p {
                 line-height: 1.2;
                 color: $dark_grey_btn;
@@ -157,6 +159,14 @@ $dark_grey_btn : #605E5E;
         }
         .tel-email {
              font-weight: 500;
+             .email {
+                a {
+                    font-size: 0.9rem;
+                }
+             }
+        }
+        .head-name {
+            font-size: 0.9rem;
         }
         .academies_buttons {
             display: flex;

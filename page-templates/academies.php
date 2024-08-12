@@ -16,119 +16,7 @@ $academies = new WP_Query($args);
 
 ?>
 
-<script>
-                var checkboxes = document.querySelectorAll(".checkboxes button");
 
-                //toggle class to clicked button KEEP ABOVE SCRIPT OTHERWISE CHECKING THE CLASS HAS DEACTIVE WONT WORK
-                jQuery( ".filter_button" ).on( "click", function() {
-                    jQuery(this).toggleClass('deactive'); 
-                }); 
-
-
-                function checkifempty() {
-                    if (jQuery('.academies-page').length > 0 && jQuery('.academies-page').find('.academies-row:not([style*="display: none"])').length === 0) {
-                        jQuery('.academies-page #message').show();
-                    } else {
-                        jQuery('.academies-page #message').hide(); 
-                    } 
-                }
-
-                function updatesearchresults(){
-                    jQuery('.search-results').css('display', 'flex');
-                    jQuery('#search_results').html('Academies found: ' + jQuery('.academies-page').find('.academies-row:not([style*="display: none"])').length);
-                }
-
-                for (var checkbox of checkboxes) {
-                    checkbox.addEventListener("click", function(event) {
-                        academies_filter(event.target);
-                        const searchInput = document.getElementById('academies_search');
-                        searchInput.value = '';
-                        checkifempty();
-                    });
-                }
-
-                function academies_filter(checkbox) {
-                
-                var value = !checkbox.classList.contains('deactive') ? checkbox.getAttribute('data-filter-value') : "";
-
-                var markers = document.querySelectorAll("#academies_map .marker");
-                var academies_rows = document.querySelectorAll(".academies-page .academies-row");
-
-                var checked_checkboxes_age = [];
-                var checked_checkboxes_local = [];
-
-                for (var checkbox of checkboxes) {
-                    if (!checkbox.classList.contains('deactive')) {
-                        if(checkbox.getAttribute('data-filter-type') == 'local'){
-                            checked_checkboxes_local.push(checkbox.getAttribute('data-filter-value'));                           
-                        } else if(checkbox.getAttribute('data-filter-type') == 'age') {
-                            checked_checkboxes_age.push(checkbox.getAttribute('data-filter-value'));
-                        }
-                    }
-                }
-
-                for (var academies_row of academies_rows) {
-                    var academies_filters_age = academies_row.getAttribute("data-filters-age").split(" ");
-                    var academies_filters_local = academies_row.getAttribute("data-filters-local").split(" ");
-                    let show = true;
-                    for (var filter of academies_filters_age) {
-                        if (checked_checkboxes_age.includes(filter) && filter.length > 1) {
-                            show = true;
-                            break;
-                        } else {
-                            show = false;
-                        } 
-                    }
-
-                    if(show === true){
-                        for (var filter of academies_filters_local) {
-                            if (checked_checkboxes_local.includes(filter) && filter.length > 1) {
-                                show = true;
-                                break;
-                            } else {
-                                show = false;
-                            } 
-                        }
-                    }
-
-                    if(show === true){
-                        jQuery(academies_row).show();
-                    } else {
-                        jQuery(academies_row).hide();
-                    }
-                }
-
-                for (var marker of markers) {
-                    var filters_age = marker.getAttribute("data-filters-age").split(" ");
-                    var filters_local = marker.getAttribute("data-filters-local").split(" ");
-                    let show = true;
-                    for (var filter of filters_age) {
-                        if (checked_checkboxes_age.includes(filter) && filter.length > 1) {
-                            show = true;
-                            break;
-                        } else {
-                            show = false;
-                        } 
-                    }
-                    if(show === true){
-                        for (var filter of filters_local) {
-                            if (checked_checkboxes_local.includes(filter) && filter.length > 1) {
-                                show = true;
-                                break;
-                            } else {
-                                show = false;
-                            } 
-                        }
-                    }
-                    if(show === true){
-                        marker.style.display = "block";
-                    } else {
-                        marker.style.display = "none";
-                    }
-                }
-                updatesearchresults();     
-            }
-            </script>
 
 
 
@@ -280,7 +168,119 @@ $academies = new WP_Query($args);
 
 
 </div>
+<script>
+    var checkboxes = document.querySelectorAll(".checkboxes button");
 
+    //toggle class to clicked button KEEP ABOVE SCRIPT OTHERWISE CHECKING THE CLASS HAS DEACTIVE WONT WORK
+    jQuery( ".filter_button" ).on( "click", function() {
+        jQuery(this).toggleClass('deactive'); 
+    }); 
+
+
+    function checkifempty() {
+        if (jQuery('.academies-page').length > 0 && jQuery('.academies-page').find('.academies-row:not([style*="display: none"])').length === 0) {
+            jQuery('.academies-page #message').show();
+        } else {
+            jQuery('.academies-page #message').hide(); 
+        } 
+    }
+
+    function updatesearchresults(){
+        jQuery('.search-results').css('display', 'flex');
+        jQuery('#search_results').html('Academies found: ' + jQuery('.academies-page').find('.academies-row:not([style*="display: none"])').length);
+    }
+
+    for (var checkbox of checkboxes) {
+        checkbox.addEventListener("click", function(event) {
+            academies_filter(event.target);
+            const searchInput = document.getElementById('academies_search');
+            searchInput.value = '';
+            checkifempty();
+        });
+    }
+
+    function academies_filter(checkbox) {
+    
+    var value = !checkbox.classList.contains('deactive') ? checkbox.getAttribute('data-filter-value') : "";
+
+    var markers = document.querySelectorAll("#academies_map .marker");
+    var academies_rows = document.querySelectorAll(".academies-page .academies-row");
+
+    var checked_checkboxes_age = [];
+    var checked_checkboxes_local = [];
+
+    for (var checkbox of checkboxes) {
+        if (!checkbox.classList.contains('deactive')) {
+            if(checkbox.getAttribute('data-filter-type') == 'local'){
+                checked_checkboxes_local.push(checkbox.getAttribute('data-filter-value'));                           
+            } else if(checkbox.getAttribute('data-filter-type') == 'age') {
+                checked_checkboxes_age.push(checkbox.getAttribute('data-filter-value'));
+            }
+        }
+    }
+
+    for (var academies_row of academies_rows) {
+        var academies_filters_age = academies_row.getAttribute("data-filters-age").split(" ");
+        var academies_filters_local = academies_row.getAttribute("data-filters-local").split(" ");
+        let show = true;
+        for (var filter of academies_filters_age) {
+            if (checked_checkboxes_age.includes(filter) && filter.length > 1) {
+                show = true;
+                break;
+            } else {
+                show = false;
+            } 
+        }
+
+        if(show === true){
+            for (var filter of academies_filters_local) {
+                if (checked_checkboxes_local.includes(filter) && filter.length > 1) {
+                    show = true;
+                    break;
+                } else {
+                    show = false;
+                } 
+            }
+        }
+
+        if(show === true){
+            jQuery(academies_row).show();
+        } else {
+            jQuery(academies_row).hide();
+        }
+    }
+
+    for (var marker of markers) {
+        var filters_age = marker.getAttribute("data-filters-age").split(" ");
+        var filters_local = marker.getAttribute("data-filters-local").split(" ");
+        let show = true;
+        for (var filter of filters_age) {
+            if (checked_checkboxes_age.includes(filter) && filter.length > 1) {
+                show = true;
+                break;
+            } else {
+                show = false;
+            } 
+        }
+        if(show === true){
+            for (var filter of filters_local) {
+                if (checked_checkboxes_local.includes(filter) && filter.length > 1) {
+                    show = true;
+                    break;
+                } else {
+                    show = false;
+                } 
+            }
+        }
+        if(show === true){
+            marker.style.display = "block";
+        } else {
+            marker.style.display = "none";
+        }
+    }
+    updatesearchresults();     
+}
+</script>
 
 <script>
     jQuery(document).ready(function() {

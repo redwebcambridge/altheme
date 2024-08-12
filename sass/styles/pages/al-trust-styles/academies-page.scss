@@ -160,11 +160,12 @@ $dark_grey_btn : #605E5E;
             justify-content: space-between;
             a {
                 color: white;
-                padding: 10px 5px;
+                padding: 10px 0px;
                 width: 49%;
                 text-align: center;
+                font-size: 0.9rem;
                 i {
-                    margin-right: 5px;
+                    margin-right: 3px;
                 }
             }
         }

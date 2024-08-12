@@ -25,7 +25,7 @@ $academies = new WP_Query($args);
     </div>
 
     <div class="row">
-        <div class="academies-map col-12 p-lg-0">
+        <div class="academies-map row px-0">
             <script>
                 var checkboxes = document.querySelectorAll(".checkboxes button");
 
@@ -141,15 +141,13 @@ $academies = new WP_Query($args);
             </script>
 
                             
-            <div id="academies_map">
+            <div id="academies_map" class="p-0 m-0">
             </div>
 
             <script>
                 var academies_map = L.map('academies_map').setView([52.15,0.20], 10);
                 L.tileLayer.provider('Stadia.AlidadeSmooth').addTo(academies_map);
-
                 // academies_map.scrollWheelZoom.disable();
-
             </script>
 
             <?php
@@ -211,69 +209,62 @@ $academies = new WP_Query($args);
             
             </script>
 
-                <div class="academies-row-cont">
+                <div class="academies-row-cont col-md-3 mx-2">
                     <div class="academies-row row mb-4" data-field-visibility="visible" data-filters-local="<?php echo $local_authority_data; ?>" data-filters-age="<?php echo $school_age_data; ?>" data-school-name="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '', get_the_title()); ?>">
-                        <div class="col-md-2 p-1 school-icon">
-                            <div>
-                                <img src="<?php echo get_field('logo')['url']; ?>">
-                            </div>
+                        <div class="col-12 p-5 school-icon  bg-white text-center">
+                            <img src="<?php echo get_field('logo')['url']; ?>">
                         </div>
-                        <div class="col-sm-8 py-4 px-4">
-                            <div class="row">
-                                <div class="col-12 taxonomies mb-3">
-                                    <?php
-                                        $school_age = get_the_terms(get_the_ID(), 'school_age');
-                                        $local_authority = get_the_terms(get_the_ID(), 'local_authority');
-                                        if ($school_age && !is_wp_error($school_age)) {
-                                            foreach ($school_age as $term) : ?>
-                                                <a href="#"><?php echo $term->name; ?></a>
-                                            <?php endforeach; 
-                                        }
-                                        if ($local_authority && !is_wp_error($local_authority)) {
-                                            foreach ($local_authority as $authority) : ?>
-                                                <a href="#"><?php echo $authority->name; ?></a>
-                                            <?php endforeach; 
-                                        }
-                                    ?>
-                                </div>
-                                <div class="col-12 school_name  mt-2 mb-xl-1 mb-3">
-                                    <strong style="color:<?php echo get_field('school_color');?>;"><?php echo the_title(); ?></strong>
-                                </div>
-                                <div class="col-md-7 school_address my-xl-3">
-                                    <?php echo get_field('full_address'); ?>
-                                </div>
-                                <?php if( have_rows('governors') ): ?>
-                                    <div class="col-md-5 my-xl-3 chair_of_gov">
-                                        <div class="title_chair_of_gov mb-2" style="color:<?php echo get_field('school_color');?>;">Chair Of Governors</div>
-                                        <?php while( have_rows('governors') ) : the_row(); ?>
-                                            <div class="governors"><?php echo get_sub_field('name'); ?></div>
-                                        <?php endwhile; ?>
-                                    </div>
-                                <?php endif; ?>
-                                <div class="col-xl-7 mt-md-0 mt-3 align-items-lg-end tel-email" >
-                                    <div>
-                                        <a target="_blank" style="color:<?php echo get_field('school_color');?>;" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a>
-                                    </div>
-                                    <div class="ms-3">
-                                        <a target="_blank" style="color:<?php echo get_field('school_color');?>;" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a>
-                                    </div>
-                                </div>
-                                <div class="col-xl-5 col-md-6 mt-xl-0 mt-4 academies_buttons">
-                                    <a class="view-on-map-button" style="background-color:<?php echo get_field('school_color');?>;" href="#"><i class="fa-solid fa-location-dot"></i>View on Map</a>
-                                    <a target="_blank" style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_field('website'); ?>"><i class="fa-solid fa-globe"></i>Visit Website</a>
-                                </div>
-                            </div>
+                        <div class="col-12 school_name my-3">
+                            <strong style="color:<?php echo get_field('school_color');?>;"><?php echo the_title(); ?></strong>
                         </div>
-                        <div class="col-md-2 col-4 head-teacher-image pb-3" style="background-image:url('<?php echo get_field('image_of_head')['url']; ?>')">
-                            <div class="headteacher-text-cont">
-                                <span class="headteacher_title" style="background-color:<?php echo get_field('school_color');?>;">
+                        <div class="col-12 pb-3">
+                            <div class="row bg-white m-1">
+                                <div class="col-5 head-teacher-image" style="background-image:url('<?php echo get_field('image_of_head')['url']; ?>')">
+                                </div>
+                                <div class="col-7 py-4">
+                                    <?php echo get_field('head_name'); ?>
+                                    <span style="color:<?php echo get_field('school_color');?>;">
                                     <?php echo get_field('head_title'); ?>
                                 </span>
-                                <div class="headteacher_name">
-                                    <?php echo get_field('head_name'); ?>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-12 school_address py-1 px-3">
+                            <?php echo get_field('full_address'); ?>
+                        </div>
+
+                        <div class="col-12 tel-email  px-3" >
+                            <div class="w-100">
+                                <a target="_blank" style="color:<?php echo get_field('school_color');?>;" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a>
+                            </div>
+                            <div class="w-100">
+                                <a target="_blank" style="color:<?php echo get_field('school_color');?>;" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a>
+                            </div>
+                        </div>
+
+                        <div class="col-12 taxonomies mb-0 p-3">
+                            <?php
+                                $school_age = get_the_terms(get_the_ID(), 'school_age');
+                                $local_authority = get_the_terms(get_the_ID(), 'local_authority');
+                                if ($school_age && !is_wp_error($school_age)) {
+                                    foreach ($school_age as $term) : ?>
+                                        <a><?php echo $term->name; ?></a>
+                                    <?php endforeach; 
+                                }
+                                if ($local_authority && !is_wp_error($local_authority)) {
+                                    foreach ($local_authority as $authority) : ?>
+                                        <a><?php echo $authority->name; ?></a>
+                                    <?php endforeach; 
+                                }
+                            ?>
+                        </div>
+
+                        <div class="col-12 academies_buttons p-3">
+                            <a class="view-on-map-button" style="background-color:<?php echo get_field('school_color');?>;" href="#"><i class="fa-solid fa-location-dot"></i>View on Map</a>
+                            <a target="_blank" style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_field('website'); ?>"><i class="fa-solid fa-globe"></i>Visit Website</a>
+                        </div>
+                        
                     </div>
                 </div>
 

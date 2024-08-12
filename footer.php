@@ -23,7 +23,7 @@
                     if(get_field('school_id','option') == 'al') :
                         $args = array(
                             'post_type' => 'academies',
-                            'posts_per_page' => 1,
+                            'posts_per_page' => -1,
                             'orderby' => 'post_name',
                             'order' => 'ASC',
                         );

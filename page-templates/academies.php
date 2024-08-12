@@ -16,17 +16,7 @@ $academies = new WP_Query($args);
 
 ?>
 
-
-<div class="container academies-page">
-    <div class="row">
-        <div class="seach-filters col-12 mb-4 p-lg-0">
-            <?php get_template_part('template-parts/academies-search'); ?>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="academies-map row px-0">
-            <script>
+<script>
                 var checkboxes = document.querySelectorAll(".checkboxes button");
 
                 //toggle class to clicked button KEEP ABOVE SCRIPT OTHERWISE CHECKING THE CLASS HAS DEACTIVE WONT WORK
@@ -140,16 +130,26 @@ $academies = new WP_Query($args);
             }
             </script>
 
-                            
-            <div id="academies_map" class="p-0 m-0">
-            </div>
 
-            <script>
-                var academies_map = L.map('academies_map').setView([52.15,0.20], 10);
-                L.tileLayer.provider('Stadia.AlidadeSmooth').addTo(academies_map);
-                // academies_map.scrollWheelZoom.disable();
-            </script>
 
+<div class="container academies-page">
+    <div class="row">
+        <div class="seach-filters col-12 mb-4 p-lg-0">
+            <?php get_template_part('template-parts/academies-search'); ?>
+        </div>
+    </div>
+
+    <div class="container academies-map p-0 m-0">
+        <div id="academies_map" class="p-0 m-0">
+        </div>   
+        <script>
+            var academies_map = L.map('academies_map').setView([52.15,0.20], 10);
+            L.tileLayer.provider('Stadia.AlidadeSmooth').addTo(academies_map);
+        </script>
+    </div>
+
+        <div class="row gx-5">
+                    
             <?php
                 if ($academies->have_posts()) {
                     while ($academies->have_posts()) {
@@ -175,41 +175,43 @@ $academies = new WP_Query($args);
                         }
             ?>
 
-            <style type="text/css">
-                .map-icon-<?php echo get_the_ID(); ?> .marker_inner{
-                    background-color:<?php echo get_field('school_color');?>;  
-                }
-                .map-popup<?php echo get_the_ID(); ?> h3, .map-popup<?php echo get_the_ID(); ?> a {
-                    color:<?php echo get_field('school_color');?>;
-                }
-                a.btn<?php echo get_the_ID(); ?> {
-                    background-color:<?php echo get_field('school_color');?>;
-                }
-            </style>
-
-            <script>
-                let mapicon<?php echo get_the_ID(); ?> = L.divIcon({
-                    html: '<div class="academies_marker marker" data-filters-age="<?php echo $school_age_data; ?>" data-filters-local="<?php echo $local_authority_data; ?>" data-school-name="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '', get_the_title()); ?>"><div class="marker_inner"><img src="<?php echo get_field('icon')['url'];?>" alt="<?php echo get_the_title(); ?>"></div></div>',
-                    iconSize: [24, 40],
-                    iconAnchor: [12, 40],
-                    className: 'map-icon map-icon-<?php echo get_the_ID(); ?>',
-                });
-                let address<?php echo get_the_ID(); ?>  = `<?php echo addslashes(get_field('full_address'));?>`;
-
-                let popupcontent<?php echo get_the_ID(); ?> = '<div class="map-popup map-popup<?php echo get_the_ID(); ?>"><img src="<?php echo get_field('logo')['url'];?>" alt="<?php echo get_the_title(); ?>" /><h3><?php echo get_the_title(); ?></h3>'+address<?php echo get_the_ID(); ?> +'<a class="email" title="Email" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a><a class="tel" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a><div class="labels"><?php echo $school_age_html.$local_authority_html ?></div><div class="buttons"><a class="btn btn<?php echo get_the_ID(); ?>" href="<?php echo get_field('website'); ?>">Visit Website</a><a class="btn btn<?php echo get_the_ID(); ?>" href="#">Read More</a></div></div>';
-                
-                L.marker([<?php echo get_field('map_lng');?>,<?php echo get_field('map_lat');?>], { icon: mapicon<?php echo get_the_ID(); ?>, className:'map-icon-<?php echo get_the_ID(); ?>' }).addTo(academies_map).bindPopup(popupcontent<?php echo get_the_ID(); ?>, {
-                    autoPan: true,
-                    minWidth: 250,
-                    maxWidth: 250,
-                    offset: [-195, 50],
-                });
-
-
             
-            </script>
 
-                <div class="academies-row-cont col-md-3 mx-2">
+            <div class="academies-row-cont col-lg-3 mb-2">
+                <style type="text/css">
+                        .map-icon-<?php echo get_the_ID(); ?> .marker_inner{
+                            background-color:<?php echo get_field('school_color');?>;  
+                        }
+                        .map-popup<?php echo get_the_ID(); ?> h3, .map-popup<?php echo get_the_ID(); ?> a {
+                            color:<?php echo get_field('school_color');?>;
+                        }
+                        a.btn<?php echo get_the_ID(); ?> {
+                            background-color:<?php echo get_field('school_color');?>;
+                        }
+                    </style>
+
+                    <script>
+                        let mapicon<?php echo get_the_ID(); ?> = L.divIcon({
+                            html: '<div class="academies_marker marker" data-filters-age="<?php echo $school_age_data; ?>" data-filters-local="<?php echo $local_authority_data; ?>" data-school-name="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '', get_the_title()); ?>"><div class="marker_inner"><img src="<?php echo get_field('icon')['url'];?>" alt="<?php echo get_the_title(); ?>"></div></div>',
+                            iconSize: [24, 40],
+                            iconAnchor: [12, 40],
+                            className: 'map-icon map-icon-<?php echo get_the_ID(); ?>',
+                        });
+                        let address<?php echo get_the_ID(); ?>  = `<?php echo addslashes(get_field('full_address'));?>`;
+
+                        let popupcontent<?php echo get_the_ID(); ?> = '<div class="map-popup map-popup<?php echo get_the_ID(); ?>"><img src="<?php echo get_field('logo')['url'];?>" alt="<?php echo get_the_title(); ?>" /><h3><?php echo get_the_title(); ?></h3>'+address<?php echo get_the_ID(); ?> +'<a class="email" title="Email" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a><a class="tel" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a><div class="labels"><?php echo $school_age_html.$local_authority_html ?></div><div class="buttons"><a class="btn btn<?php echo get_the_ID(); ?>" href="<?php echo get_field('website'); ?>">Visit Website</a><a class="btn btn<?php echo get_the_ID(); ?>" href="#">Read More</a></div></div>';
+                        
+                        L.marker([<?php echo get_field('map_lng');?>,<?php echo get_field('map_lat');?>], { icon: mapicon<?php echo get_the_ID(); ?>, className:'map-icon-<?php echo get_the_ID(); ?>' }).addTo(academies_map).bindPopup(popupcontent<?php echo get_the_ID(); ?>, {
+                            autoPan: true,
+                            minWidth: 250,
+                            maxWidth: 250,
+                            offset: [-195, 50],
+                        });
+
+
+                    
+                    </script>
+
                     <div class="academies-row flex-column justify-content-start h-100 row mb-4" data-field-visibility="visible" data-filters-local="<?php echo $local_authority_data; ?>" data-filters-age="<?php echo $school_age_data; ?>" data-school-name="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '', get_the_title()); ?>">
                         <div class="col-12 p-5 school-icon  bg-white text-center">
                             <img src="<?php echo get_field('logo')['url']; ?>">
@@ -267,8 +269,6 @@ $academies = new WP_Query($args);
                         
                     </div>
                 </div>
-
-            
 
                 <?php
                 }

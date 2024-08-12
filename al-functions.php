@@ -32,7 +32,7 @@ function register_academies_post_type() {
             'with_front' => false // Optional: this removes the front base if you have one
         ),
         'supports' => array(
-            'thumbnail',    // Add support for featured images
+            'thumbnail', 'title',
         ),
 
     );

@@ -214,7 +214,7 @@ $academies = new WP_Query($args);
 
                     <div class="academies-row flex-column justify-content-start h-100 row mb-4" data-field-visibility="visible" data-filters-local="<?php echo $local_authority_data; ?>" data-filters-age="<?php echo $school_age_data; ?>" data-school-name="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '', get_the_title()); ?>">
                         <div class="col-12 p-5 school-icon  bg-white text-center">
-                            <img src="<?php echo get_field('logo')['url']; ?>">
+                            <img class="img-fluid" src="<?php echo get_field('logo')['url']; ?>">
                         </div>
                         <div class="col-12 school_name my-3">
                             <strong style="color:<?php echo get_field('school_color');?>;"><?php echo the_title(); ?></strong>

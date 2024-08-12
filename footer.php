@@ -34,7 +34,7 @@
                             while ( $query->have_posts() ) {
                                 $query->the_post();
                                 $logo = get_field('logo'); ?>
-                                <a href="<?php echo the_permalink(); ?>" class="<?php echo get_sub_field('class'); ?>" target="_blank" style="background-image:url(<?php echo get_field('logo')['url']; ?>)">
+                                <a href="<?php echo the_permalink(); ?>" class="al_acad_<?php echo get_the_id(); ?>" target="_blank" style="background-image:url(<?php echo get_field('logo')['url']; ?>)">
                                 </a>
 
                             <?php

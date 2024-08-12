@@ -11,12 +11,22 @@ get_header(); ?>
             <?php get_template_part('template-parts/sidebar-menu'); ?>
         </div>
         <div class="col-md-9 text-section">
+            <?php if ( get_field('organogram') ) : ?>
+                <div class="container px-0">
+                    <div class="row py-3">
+                        <div class="col-12">
+                            <img src="<?php echo get_field('organogram')['url']; ?>" alt="Anglian Learning Organogram" class="img-fluid" />
+                        </div>
+
+                    </div>
+                </div>
+            <?php endif; ?>
+            
+            
             <div class="container central-team-tabs-nav">
                 <div class="row ">
-                
                     <div class="tab_button btn ml-3 col-xl-4 col-md-5 col-6 active executive_btn">CENTRAL LEADERSHIP TEAM </div>
                     <div class="tab_button btn ml-3 col-xl-4 col-md-5 col-6 departments_btn">DEPARTMENTS</div>
- 
                 </div>
             </div>
 

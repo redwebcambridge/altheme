@@ -15,6 +15,12 @@ acf_add_local_field_group(array(
 	),
     'fields' => array(
         array(
+            'key' => 'organogram',
+            'label' => 'Organogram Image',
+            'name' => 'organogram',
+            'type' => 'image',
+        ),
+        array(
             'key' => 'EXECUTIVE_TEAM',
             'label' => 'CENTERAL LEADERSHIP TEAM',
             'name' => 'EXECUTIVE_TEAM',

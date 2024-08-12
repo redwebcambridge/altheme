@@ -111,13 +111,18 @@ $dark_grey_btn : #605E5E;
             margin-left: 0px;
             margin-right: 0px;
         }
-        .school-icon {
-           border: 2px solid $light_grey_background;
-           height: 170px;
-           background-size: contain;
-           background-repeat: no-repeat;
-           background-position: center;
+        .school-icon-container {
+            border: 2px solid $light_grey_background;
+            height: 170px;
+            .school-icon {
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 100%;
+             }
         }
+        
         .taxonomies {
             a {
                 border:1px solid $dark_grey_btn;

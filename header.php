@@ -92,7 +92,7 @@ if (!class_exists('ACF')) {
 
 <header>
   <div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center main-head-elements">
       <!-- logo -->
       <div class="col-6 col-md-3 pt-2 logo-container">
             <?php if ( is_adult_ed_page() ) {  ?>

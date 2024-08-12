@@ -43,6 +43,19 @@ get_header(); ?>
                     <h5>Email</h5>
                     <a href="mailto:<?php echo $email; ?>"><p><?php echo $email; ?></p></a>
                   <?php endif; ?>
+                  <?php if ($display_options['address']) : ?>
+                      <h5>Address</h5>
+                    <p>
+                      <?php 
+                        if(!empty($address['address_line_1'])) : echo $address['address_line_1'].', '; endif; 
+                        if(!empty($address['street'])) : echo $address['street'].', '; endif; 
+                        if(!empty($address['town'])) : echo $address['town'].', '; endif; 
+                        if(!empty($address['city'])) : echo $address['city'].', '; endif; 
+                        if(!empty($address['county'])) : echo $address['county'].', '; endif; 
+                        if(!empty($address['postal_code'])) : echo $address['postal_code']; endif;                                     
+                        ?>  
+                    </p>
+                  <?php endif; ?>
                 </div>
 
                 <div class="col-12 col-md-6 contact-details">
@@ -72,19 +85,7 @@ get_header(); ?>
                 </div>
 
               </div>
-              <?php if ($display_options['address']) : ?>
-                  <h5>Address</h5>
-                <p>
-                  <?php 
-                    if(!empty($address['address_line_1'])) : echo $address['address_line_1'].', '; endif; 
-                    if(!empty($address['street'])) : echo $address['street'].', '; endif; 
-                    if(!empty($address['town'])) : echo $address['town'].', '; endif; 
-                    if(!empty($address['city'])) : echo $address['city'].', '; endif; 
-                    if(!empty($address['county'])) : echo $address['county'].', '; endif; 
-                    if(!empty($address['postal_code'])) : echo $address['postal_code']; endif;                                     
-                    ?>  
-                </p>
-               <?php endif; ?>
+              
               <!--map-->
 
               <?php if ($display_options['map']) :

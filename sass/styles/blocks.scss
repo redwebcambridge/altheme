@@ -517,10 +517,15 @@ body{
 
 
 .stats_strip {
-  background-color: $primarycolour;
+  background-color: $statsbgcolour;
   .counter {
     color: white;
-
+    text-align: center;
+    .icon {
+      padding: 10px;
+      max-width: 80px;
+      display: inline-flex;
+    }
     .number {
       font-size: 60px;
       font-weight: 500;
@@ -547,3 +552,7 @@ body{
 
 }
 
+.home #announcement {
+  background-color: #4281c3;
+  margin: 0 15px;
+}

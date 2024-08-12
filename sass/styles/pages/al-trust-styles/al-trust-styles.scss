@@ -1,0 +1,36 @@
+
+body.school_id_al {
+
+    // Hide repeated anglian learning logo
+    header {
+        .al-logo {
+            display: none;
+        }
+        .main-head-elements {
+            justify-content: space-between;
+        }
+    }
+    .front-page-header {
+        .intro {
+            h1 {
+                font-size: 3rem!important;
+            }
+        }
+    }
+    .schooliconholder {
+        margin-top: 100px;
+    }
+
+    &.home {
+        .newsitem:nth-of-type(2) {
+            .al-border-bottom {
+                border-bottom-color: $al_blue;
+            }
+        }
+        .schooliconholder {
+            .schoolicon {
+                width: 200px;
+            }
+        }
+    }
+}

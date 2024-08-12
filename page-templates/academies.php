@@ -13,6 +13,7 @@ $args = array(
 );
 
 $academies = new WP_Query($args);
+
 ?>
 
 
@@ -48,15 +49,12 @@ $academies = new WP_Query($args);
                 }
 
                 for (var checkbox of checkboxes) {
-                checkbox.addEventListener("click", function(event) {
-                    academies_filter(event.target);
-
-                    const searchInput = document.getElementById('academies_search');
-                    searchInput.value = '';
-
-                    checkifempty();
-
-                });
+                    checkbox.addEventListener("click", function(event) {
+                        academies_filter(event.target);
+                        const searchInput = document.getElementById('academies_search');
+                        searchInput.value = '';
+                        checkifempty();
+                    });
                 }
 
                 function academies_filter(checkbox) {
@@ -202,7 +200,7 @@ $academies = new WP_Query($args);
 
                 let popupcontent<?php echo get_the_ID(); ?> = '<div class="map-popup map-popup<?php echo get_the_ID(); ?>"><img src="<?php echo get_field('logo')['url'];?>" alt="<?php echo get_the_title(); ?>" /><h3><?php echo get_the_title(); ?></h3>'+address<?php echo get_the_ID(); ?> +'<a class="email" title="Email" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a><a class="tel" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a><div class="labels"><?php echo $school_age_html.$local_authority_html ?></div><div class="buttons"><a class="btn btn<?php echo get_the_ID(); ?>" href="<?php echo get_field('website'); ?>">Visit Website</a><a class="btn btn<?php echo get_the_ID(); ?>" href="#">Read More</a></div></div>';
                 
-                L.marker([<?php echo get_field('map_location')['lat'];?>,<?php echo get_field('map_location')['lng'];?>], { icon: mapicon<?php echo get_the_ID(); ?>, className:'map-icon-<?php echo get_the_ID(); ?>' }).addTo(academies_map).bindPopup(popupcontent<?php echo get_the_ID(); ?>, {
+                L.marker([<?php echo get_field('map_lng');?>,<?php echo get_field('map_lat');?>], { icon: mapicon<?php echo get_the_ID(); ?>, className:'map-icon-<?php echo get_the_ID(); ?>' }).addTo(academies_map).bindPopup(popupcontent<?php echo get_the_ID(); ?>, {
                     autoPan: true,
                     minWidth: 250,
                     maxWidth: 250,

@@ -823,6 +823,30 @@ if(get_field('school_id','option') == 'al') :
 endif;
 
 
+//Deregister page templates which are only meant for Anglian learning main website
+function deregister_page_templates_based_on_school_id() {
+  // Get the value of the school_id option
+  $school_id = get_field('school_id', 'option');
+
+  // Check if the school_id is not equal to 'al'
+  if ($school_id !== 'al') {
+      // Templates to deregister
+      $templates_to_remove = array(
+          'page-templates/central-team.php', // Replace with your template file name
+          //'template-example2.php', // Replace with your template file name
+      );
+
+      // Remove the templates
+      foreach ($templates_to_remove as $template) {
+          add_filter('theme_page_templates', function($templates) use ($template) {
+              unset($templates[$template]);
+              return $templates;
+          });
+      }
+  }
+}
+add_action('init', 'deregister_page_templates_based_on_school_id');
+
 //TESTING ONLY TURN OFF ON LIVE
 sass_compile();
 

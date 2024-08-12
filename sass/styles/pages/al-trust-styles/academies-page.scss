@@ -140,6 +140,9 @@ $dark_grey_btn : #605E5E;
         }
         .school_name {
             min-height: 78px;
+            @media only screen and (max-width: 768px) {
+                min-height: unset;
+            }
             strong {
                 font-weight: 500;
                 font-size: 22px;
@@ -147,6 +150,9 @@ $dark_grey_btn : #605E5E;
         }
         .school_address {
             min-height: 140px;
+            @media only screen and (max-width: 768px) {
+                min-height: unset;
+            }
             p {
                 line-height: 1.2;
                 color: $dark_grey_btn;

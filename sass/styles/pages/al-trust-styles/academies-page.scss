@@ -124,12 +124,15 @@ $dark_grey_btn : #605E5E;
         }
         
         .taxonomies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
             a {
                 border:1px solid $dark_grey_btn;
                 border-radius:3px;
                 color: #605E5E;
                 padding:3px 6px 3px 4px;
-                margin:10px 0px 10px 0;
+                margin:6px 6px 0px 0;
                 text-transform:uppercase;
                 font-size:12px;
                 padding-top: 6px;

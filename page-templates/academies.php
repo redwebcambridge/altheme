@@ -11,13 +11,8 @@ $terms = get_terms(array(
     'include'  => $term_ids,
     'orderby'  => 'include',  
 ));
-
  
 ?>
-
-
-
-
 
 <div class="container academies-page">
     <div class="row">
@@ -173,7 +168,7 @@ $terms = get_terms(array(
 
                         <div class="col-12 academies_buttons p-3">
                             <a class="view-on-map-button" style="background-color:<?php echo get_field('school_color');?>;" href="#"><i class="fa-solid fa-location-dot"></i>View on Map</a>
-                            <a target="_blank" style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_field('website'); ?>"><i class="fa-solid fa-globe"></i>Visit Website</a>
+                            <a target="_blank" style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_permalink(); ?>"><i class="fa-solid fa-building"></i>View Profile</a>
                         </div>
                         
                     </div>

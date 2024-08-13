@@ -850,5 +850,3 @@ add_action('init', 'deregister_page_templates_based_on_school_id');
 //TESTING ONLY TURN OFF ON LIVE
 sass_compile();
 
-
-

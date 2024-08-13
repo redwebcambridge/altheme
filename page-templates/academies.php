@@ -4,16 +4,15 @@ Template Name: Academies
 */
 get_header();
 
-//Loop through all the academies
-$args = array(
-    'post_type' => 'academies',
-    'posts_per_page' => -1,
-    'orderby' => 'post_name',
-    'order' => 'ASC',
-);
+$term_ids = array(12,11,10);   //desired order
 
-$academies = new WP_Query($args);
+$terms = get_terms(array(
+    'taxonomy' => 'school_age',
+    'include'  => $term_ids,
+    'orderby'  => 'include',  
+));
 
+ 
 ?>
 
 
@@ -38,10 +37,33 @@ $academies = new WP_Query($args);
 
         <div class="row gx-5">
                     
-            <?php
-                if ($academies->have_posts()) {
+    <?php
+    $displayed_posts = array();
+    
+    if ($terms && !is_wp_error($terms)) {
+        foreach ($terms as $term) {
+            $args = array(
+                'post_type' => 'academies',
+                'posts_per_page' => -1,
+                'orderby' => 'post_name',
+                'order' => 'ASC',
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'school_age',
+                        'field' => 'term_id',
+                        'terms' => $term->term_id,
+                    ),
+                ),
+                'post__not_in' => $displayed_posts, 
+            );
+    
+            $academies = new WP_Query($args);
+
+            if ($academies->have_posts()) {
                     while ($academies->have_posts()) {
+
                         $academies->the_post();
+                        $displayed_posts[] = get_the_ID();
 
                         $school_age = get_the_terms(get_the_ID(), 'school_age');
                         $local_authority = get_the_terms(get_the_ID(), 'local_authority');
@@ -62,9 +84,6 @@ $academies = new WP_Query($args);
                             }
                         }
             ?>
-
-            
-
             <div class="academies-row-cont col-lg-3 mb-4">
                 <style type="text/css">
                         .map-icon-<?php echo get_the_ID(); ?> .marker_inner{
@@ -161,9 +180,15 @@ $academies = new WP_Query($args);
                 </div>
 
                 <?php
-                }
-            }
-        ?>
+
+                } //end while
+           
+                wp_reset_postdata();
+            } // end if academies
+        } // end for each term 'category'
+    }//if terms found ?>
+
+
 
         <div id="message" class="pt-4 mb-5" style="display: none;"><h1>No academies found.</h1></div>
 

@@ -49,6 +49,7 @@ function register_school_age_taxonomy() {
         'hierarchical' => true,
         'show_ui' => true,
         'show_in_rest' => true,
+        'query_var' => true,
         'taxonomies' => array('academies'),
     );
 
@@ -63,6 +64,7 @@ function register_local_authority_taxonomy() {
         'hierarchical' => true,
         'show_ui' => true,
         'show_in_rest' => true,
+        'query_var' => true,
         'taxonomies' => array('academies'),
     );
 
@@ -80,3 +82,4 @@ function my_acf_google_map_api( $api ){
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/a6cf3f2e48.js' );
+

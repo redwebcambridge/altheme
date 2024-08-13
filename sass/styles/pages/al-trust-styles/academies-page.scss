@@ -216,10 +216,15 @@ $dark_grey_btn : #605E5E;
             height:70px;
             display:flex;
             align-items: center;
+            justify-content: start;
+            flex-direction: column;
         }
         img {
-            width:100%;
-            padding:0px 7px 20px 7px;
+            width:83%;
+            padding:2px;
+            background-color: #fff;
+            border-radius: 100%;
+            margin-top: 5px;
          }
     }
     .marker_inner:hover {

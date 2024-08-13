@@ -67,7 +67,7 @@
 </div>
 
 <?php if ( get_field('announcement_banner_show') ) : ?>
-    <div class="container my-5" >
+    <div class="container my-5">
         <div class="row">
             <div class="col p-4 text-white d-flex" id="announcement">
                 <div>
@@ -89,7 +89,7 @@ if( have_rows('counters_repeater') ): ?>
 
 
 
-    <div class="stats_strip my-5 py-5">
+    <div class="stats_strip my-5 py-5" style="<?php if(get_field('stats_background_colour')){echo get_field('stats_background_colour');} ?>">
         <div class="container">
             <div class="row"> 
                 <?php $i=1; while( have_rows('counters_repeater') ) : the_row(); ?>

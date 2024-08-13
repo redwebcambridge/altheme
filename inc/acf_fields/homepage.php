@@ -631,6 +631,42 @@ acf_add_local_field_group(array(
 			'name' => 'stats_background_colour',
 			'type' => 'color_picker',
 		),
+		array(
+			'key' => 'announcement_banner',
+			'label' => 'Announcement Banner',
+			'name' => 'announcement_banner',
+			'type' => 'tab',
+		),
+		array(
+			'key' => 'announcement_banner_show',
+			'label' => 'Show/Hide',
+			'name' => 'announcement_banner_show',
+			'type' => 'true_false',
+			'ui_on_text' => 'Show', // Custom label for the ON state
+			'ui_off_text' => 'Hide',
+			'ui' => 1,
+			'wrapper' => array(
+				'width' => '20',
+			),
+		),
+		array(
+			'key' => 'announcement_banner_message_content',
+			'label' => 'Content',
+			'name' => 'announcement_banner_message_content',
+			'type' => 'wysiwyg',
+			'wrapper' => array(
+				'width' => '80',
+			),
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'announcement_banner_show',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
+		),
 	),
 	'location' => array(
 		array(

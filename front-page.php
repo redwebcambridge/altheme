@@ -89,7 +89,7 @@ if( have_rows('counters_repeater') ): ?>
 
 
 
-    <div class="stats_strip my-5 py-5" style="<?php if(get_field('stats_background_colour')){echo get_field('stats_background_colour');} ?>">
+    <div class="stats_strip my-5 py-5" style="<?php if(get_field('stats_background_colour')){echo 'background-color: '.get_field('stats_background_colour');} ?>">
         <div class="container">
             <div class="row"> 
                 <?php $i=1; while( have_rows('counters_repeater') ) : the_row(); ?>

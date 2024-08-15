@@ -646,7 +646,16 @@ acf_add_local_field_group(array(
 			'ui_off_text' => 'Hide',
 			'ui' => 1,
 			'wrapper' => array(
-				'width' => '20',
+				'width' => '50',
+			),
+		),
+		array(
+			'key' => 'announcement_banner_bg',
+			'label' => 'Background Colour',
+			'name' => 'announcement_banner_bg',
+			'type' => 'color_picker',
+			'wrapper' => array(
+				'width' => '50',
 			),
 		),
 		array(
@@ -655,7 +664,7 @@ acf_add_local_field_group(array(
 			'name' => 'announcement_banner_message_content',
 			'type' => 'wysiwyg',
 			'wrapper' => array(
-				'width' => '80',
+				'width' => '100',
 			),
 			'conditional_logic' => array(
 				array(

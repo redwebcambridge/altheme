@@ -69,7 +69,8 @@
 <?php if ( get_field('announcement_banner_show') ) : ?>
     <div class="container my-5">
         <div class="row">
-            <div class="col p-4 text-white d-flex" id="announcement">
+            
+            <div class="col p-4 text-white d-flex" id="announcement" style="background-color:<?php if ( get_field('announcement_banner_bg') ) : echo get_field('announcement_banner_bg'); endif; ?>">
                 <div>
                     <i class="fa-solid fa-bullhorn px-3 h1"></i>
                 </div>

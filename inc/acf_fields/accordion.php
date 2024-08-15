@@ -60,15 +60,17 @@ acf_add_local_field_group(array(
             'label' => 'Include a side menu?',
             'name' => 'show_side_menu',
             'type' => 'true_false',
+            'ui' => 1
         ),
         array(
-            'key' => 'menu_select',
+            'key' => 'menu_select2',
             'label' => 'Side menu',
             'name' => 'menu_select',
             'type' => 'select',
             'choices' => array(
 				'' => '',
 			),
+            'required' => 0,
             'conditional_logic' => array(
                 array(
                     array(

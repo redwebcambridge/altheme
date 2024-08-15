@@ -13,13 +13,13 @@ get_header(); ?>
       <div class="container">
         <div class="row">
 
-          <?php if (get_field('menu_select')) : ?>
+          <?php if (get_field('show_side_menu') ) : ?>
             <div class="col-md-3 text-section">
               <?php get_template_part('template-parts/sidebar-menu'); ?>
             </div>
           <?php endif; ?>
 
-          <div class="<?php if (get_field('menu_select')) {echo 'col-md-9';} else {echo 'col-12';} ?> text-section">
+          <div class="<?php if (get_field('show_side_menu')) {echo 'col-md-9';} else {echo 'col-12';} ?> text-section">
           <?php if (get_field('sub_heading')) : ?>
             <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
             <div class="gradline"></div>

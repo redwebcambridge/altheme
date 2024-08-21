@@ -18,7 +18,7 @@ $category = get_queried_object();
 
 <div class="container newsevents mb-5 newsletters">
 	<div class="row">
-		<div class="col">
+		<div class="col py-4">
 			<?php
 			if (!empty($category->description)) {
 				echo '<div class="category-description">' . $category->description . '</div>';

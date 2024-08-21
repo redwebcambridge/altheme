@@ -17,6 +17,15 @@ $category = get_queried_object();
 ?>
 
 <div class="container newsevents mb-5 newsletters">
+	<div class="row">
+		<div class="col">
+			<?php
+			if (!empty($category->description)) {
+				echo '<div class="category-description">' . $category->description . '</div>';
+			}
+			?>
+		</div>
+	</div>
 	<div class="row row-flex">
 		<?php 
 		$the_query = new WP_Query( array('post_type'  => 'post','posts_per_page' => -1,'cat' => $category->term_id )  );

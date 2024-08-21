@@ -217,6 +217,7 @@ acf_add_local_field_group(array(
 				'value' => 'page-templates/sports-centre.php',
 			),
 		),
+		
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
@@ -280,13 +281,13 @@ acf_add_local_field_group(
 				'value' => 'page-templates/sidebar-with-one-column.php',
 			),
 		),
-		// array(
-		// 	array(
-		// 		'param' => 'page_template',
-		// 		'operator' => '==',
-		// 		'value' => 'page-templates/icon-grid.php',
-		// 	),
-		// ),
+		array(
+			array(
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'page-templates/members-trustees.php',
+			),
+		),
 		array(
 			array(
 				'param' => 'page_template',

@@ -19,6 +19,8 @@ include_once('meet-the-staff.php');
 include_once('adult-learning-sports-categories.php');
 //news
 include_once('news.php');
+//members trustees
+include_once('members-trustees.php');
 //settings
 include_once('school-settings.php');
 // //Settings

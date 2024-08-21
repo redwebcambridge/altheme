@@ -1,0 +1,29 @@
+#members-trustees {
+    .members {
+        h2 {
+            color: $al_green;
+        }
+        .gradline {
+            background-image: none;
+            background-color: $al_green;
+        }
+        .staff-section {
+            border-right-color: $al_green;
+        }
+    }
+    .trustees {
+        h2 {
+            color: $al_blue;
+        }
+        .gradline {
+            background-image: none;
+            background-color: $al_blue;
+        }
+        .staff-section {
+            border-right-color: $al_blue;
+        }
+    }
+    .staff-section {
+       width: 100%;
+    }
+}

@@ -832,8 +832,8 @@ function deregister_page_templates_based_on_school_id() {
   if ($school_id !== 'al') {
       // Templates to deregister
       $templates_to_remove = array(
-          'page-templates/central-team.php', // Replace with your template file name
-          //'template-example2.php', // Replace with your template file name
+          'page-templates/central-team.php',
+          'members-trustees.php', 
       );
 
       // Remove the templates
@@ -848,5 +848,5 @@ function deregister_page_templates_based_on_school_id() {
 add_action('init', 'deregister_page_templates_based_on_school_id');
 
 //TESTING ONLY TURN OFF ON LIVE
-//sass_compile();
+sass_compile();
 

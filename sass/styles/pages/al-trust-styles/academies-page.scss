@@ -56,12 +56,18 @@ $dark_grey_btn : #605E5E;
             }
         }
         .checkboxes {
+            flex-wrap: wrap;
             button {
                 background-color: $secondarycolour;
                 border-radius: 30px;
                 font-size: 13px;
                 padding: 5px 15px;
-                margin-right: 15px;
+                margin: 10px 15px 0 0;
+                @media only screen and (max-width: 380px) {
+                    font-size: 10px;
+                    margin: 10px 10px 0 0;
+
+                }
                 &:hover {
                     span {
                         background-color: lighten($dark_grey_btn, 10%);

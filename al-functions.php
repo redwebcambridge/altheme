@@ -168,7 +168,24 @@ function create_remote_post(WP_REST_Request $request) {
         return new WP_Error('error_creating_post', 'There was an error creating the post', array('status' => 500));
     }
 
-    error_log('Post created successfully with ID: ' . $post_id);
+    // Retrieve email addresses from the ACF option field
+    $email_addresses = get_field('academy_news_emails', 'option'); // Emails separated by commas
+
+    if ($email_addresses) {
+        // Prepare the email content
+        $subject = 'New Post from ' . $school_name . ' to approve';
+        $post_title = get_the_title($post_id);
+        $post_edit_url = admin_url('post.php?post=' . $post_id . '&action=edit'); // WP admin post link
+
+        $message = "A new news post titled '$post_title' has been created from '$school_name'.\n\n";
+        $message .= "You can review and publish it here: $post_edit_url";
+
+        // Convert the emails string to an array
+        $recipients = explode(',', $email_addresses);
+
+        // Send the email to all recipients
+        wp_mail($recipients, $subject, $message);
+    }
 
     return new WP_REST_Response('Post created successfully', 200);
 }

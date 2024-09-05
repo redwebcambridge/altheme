@@ -93,22 +93,30 @@ add_action('rest_api_init', function () {
 });
 
 function verify_request(WP_REST_Request $request) {
+    // Log the IPs to see what's coming in
     error_log('verifying request');
-    // Allowed IP addresses
-    $allowed_ips = explode(',', IP_ADDRESSES); // Convert the string of IPs into an array
-    // Get the IP of the incoming request
-    $request_ip = $request->get_header('X-Forwarded-For') ? $request->get_header('X-Forwarded-For') : $request->get_header('REMOTE_ADDR');
-    // Check if the IP is in the allowed list
-    if (!in_array($request_ip, $allowed_ips)) {
-        error_log('not a valid IP address '.$request_ip. ' Allowed are: '. var_dump($allowed_ips) );
 
-        return new WP_Error('invalid_ip', 'Your IP address is not allowed to access this endpoint.', array('status' => 403));
-        
-    } else {
-        error_log('valid IP address '.$request_ip);
+    // Get the correct IP address of the client
+    $client_ip = $_SERVER['REMOTE_ADDR'];
+
+    // If the server is behind a proxy, check 'X-Forwarded-For'
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $client_ip = trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]); // First IP in the list
     }
-    // Check if the request is authenticated with an application password
-    return current_user_can('edit_posts');
+
+    error_log('Client IP: ' . $client_ip);
+
+    // Allowed IP addresses from wp-config.php
+    $allowed_ips = explode(',', IP_ADDRESSES); // Convert the string into an array
+
+    // Check if the client's IP is in the list of allowed IPs
+    if (!in_array($client_ip, $allowed_ips)) {
+        error_log('not a valid IP address');
+        return new WP_Error('invalid_ip', 'Your IP address is not allowed to access this endpoint.', array('status' => 403));
+    }
+
+    // If the IP is valid, continue processing the request
+    return true;
 }
 
 function create_remote_post(WP_REST_Request $request) {

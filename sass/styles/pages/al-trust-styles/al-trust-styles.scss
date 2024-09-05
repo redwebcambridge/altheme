@@ -33,4 +33,43 @@ body.school_id_al {
             }
         }
     }
+
+    &.blog, &.category-academy-news {
+    
+        .newseventcontainer {
+            .newseventtext {
+                background-color: $al_purple;
+            }
+            &:nth-of-type(2) {
+                .newseventtext {
+                    background-color: $al_blue;
+                }
+            }
+            &:nth-of-type(3) {
+                .newseventtext {
+                    background-color: $al_green;
+                }
+            }
+            &:nth-of-type(4) {
+                .newseventtext {
+                    background-color: $al_orange;
+                }
+            }
+            &:nth-of-type(6) {
+                .newseventtext {
+                    background-color: $al_blue;
+                }
+            }
+            &:nth-of-type(7) {
+                .newseventtext {
+                    background-color: $al_green;
+                }
+            }
+            &:nth-of-type(8) {
+                .newseventtext {
+                    background-color: $al_orange;
+                }
+            }
+        }
+    }
 }

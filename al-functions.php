@@ -120,17 +120,43 @@ function verify_request(WP_REST_Request $request) {
 }
 
 function create_remote_post(WP_REST_Request $request) {
+
     // Log the incoming request for debugging
-    error_log('Incoming API request to create post:');
-    error_log(print_r($request->get_params(), true));
+    $school_name = sanitize_text_field($request['school_name']);
+
+    // Check if the subcategory exists on the main site
+    $subcategory = get_term_by('name', $school_name, 'category');
+
+    // If the subcategory doesn't exist, create it under the parent category (ID 22)
+    if (!$subcategory) {
+        $subcategory = wp_insert_term(
+            $school_name,   
+            'category',    y
+            array(
+                'parent' => 22, 
+            )
+        );
+
+        // Handle error if term creation fails
+        if (is_wp_error($subcategory)) {
+            error_log('Error creating subcategory: ' . $subcategory->get_error_message());
+            return new WP_Error('error_creating_subcategory', 'There was an error creating the subcategory', array('status' => 500));
+        }
+
+        // Get the new term's ID from the result
+        $subcategory_id = $subcategory['term_id'];
+    } else {
+        // If the subcategory exists, get its ID
+        $subcategory_id = $subcategory->term_id;
+    }
 
     // Extract post data from the request
     $post_data = array(
         'post_title'   => sanitize_text_field($request['title']),
         'post_content' => sanitize_textarea_field($request['content']),
-        'post_status'  => 'draft', // Save as draft or change to 'publish' if needed
-        'post_author'  => 1, // Set to the desired author ID
-        'post_category' => array(22), // Assign the post to category ID 22
+        'post_status'  => 'draft', 
+        'post_author'  => 9, 
+        'post_category' => array(22, $subcategory_id), 
     );
 
     // Attempt to create the post

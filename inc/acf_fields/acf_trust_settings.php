@@ -17,6 +17,7 @@ acf_add_local_field_group(array(
 				'param' => 'options_page',
 				'operator' => '==',
 				'value' => 'school-settings',
+                'instructions' => 'Enter the email address to receive alerts when a new academy news post is published. Seperated by commas.',
 			),
 		),
 	),

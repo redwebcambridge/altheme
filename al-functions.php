@@ -93,23 +93,20 @@ add_action('rest_api_init', function () {
 });
 
 function verify_request(WP_REST_Request $request) {
-
     error_log('verifying request');
-
     // Allowed IP addresses
     $allowed_ips = explode(',', IP_ADDRESSES); // Convert the string of IPs into an array
-
     // Get the IP of the incoming request
     $request_ip = $request->get_header('X-Forwarded-For') ? $request->get_header('X-Forwarded-For') : $request->get_header('REMOTE_ADDR');
-
     // Check if the IP is in the allowed list
     if (!in_array($request_ip, $allowed_ips)) {
         error_log('not a valid IP address '.$request_ip);
 
         return new WP_Error('invalid_ip', 'Your IP address is not allowed to access this endpoint.', array('status' => 403));
         
+    } else {
+        error_log('valid IP address '.$request_ip);
     }
-
     // Check if the request is authenticated with an application password
     return current_user_can('edit_posts');
 }

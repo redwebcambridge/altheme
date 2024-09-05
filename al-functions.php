@@ -153,7 +153,7 @@ function create_remote_post(WP_REST_Request $request) {
     // Extract post data from the request
     $post_data = array(
         'post_title'   => sanitize_text_field($request['title']),
-        'post_content' => sanitize_textarea_field($request['content']),
+        'post_content' => wp_kses_post($request['content']), // Allows safe HTML tags and attributes
         'post_status'  => 'draft', 
         'post_author'  => 9, 
         'post_category' => array(22, $subcategory_id), 

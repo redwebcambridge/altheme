@@ -174,6 +174,10 @@ function create_remote_post(WP_REST_Request $request) {
     error_log('Received Featured Image URL: ' . $featured_image_url);
     error_log('Received ACF Thumbnail Value: ' . $acf_thumbnail_value);
 
+    require_once(ABSPATH . 'wp-admin/includes/media.php');
+        require_once(ABSPATH . 'wp-admin/includes/file.php');
+        require_once(ABSPATH . 'wp-admin/includes/image.php');
+
     // Set the ACF 'thumbnail' field
     $acf_thumbnail_value = sanitize_text_field($request['acf_thumbnail']);
     if ($acf_thumbnail_value) {
@@ -183,6 +187,7 @@ function create_remote_post(WP_REST_Request $request) {
     // Set the featured image (if the image URL is passed)
     $featured_image_url = esc_url($request['featured_image']);
     if ($featured_image_url) {
+        
         // Download the image and set it as the featured image
         $image_id = media_sideload_image($featured_image_url, $post_id, '', 'id');
         if (!is_wp_error($image_id)) {

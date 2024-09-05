@@ -356,7 +356,7 @@ if (!class_exists('ACF')) {
 
 
 <!-- Front Page header -->
-  <?php if (is_front_page()) : echo get_field('academy_news_emails', 'option'); ?>
+  <?php if (is_front_page()) : ?>
   <div class="front-page-header">
 
     <div class="container">

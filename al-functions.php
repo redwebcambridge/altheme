@@ -168,6 +168,12 @@ function create_remote_post(WP_REST_Request $request) {
         return new WP_Error('error_creating_post', 'There was an error creating the post', array('status' => 500));
     }
 
+    $featured_image_url = esc_url($request['featured_image']);
+    $acf_thumbnail_value = sanitize_text_field($request['acf_thumbnail']);
+    
+    error_log('Received Featured Image URL: ' . $featured_image_url);
+    error_log('Received ACF Thumbnail Value: ' . $acf_thumbnail_value);
+
     // Set the ACF 'thumbnail' field
     $acf_thumbnail_value = sanitize_text_field($request['acf_thumbnail']);
     if ($acf_thumbnail_value) {

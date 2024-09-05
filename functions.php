@@ -862,8 +862,9 @@ if(get_field('school_id','option') == 'oak') :
               $post_title = $post->post_title;
               $post_content = $post->post_content;
   
-              // Get the school name from ACF option field
               $school_name = get_field('school_name', 'option');
+              $featured_image_url = wp_get_attachment_url(get_post_thumbnail_id($post_id));
+              $acf_thumbnail = get_field('thumbnail', $post_id);
   
               // Send the post data to the main site
               $response = wp_remote_post($url, array(
@@ -874,7 +875,9 @@ if(get_field('school_id','option') == 'oak') :
                   'body'    => array(
                       'title'   => $post_title,
                       'content' => $post_content,
-                      'school_name' => $school_name, // Send school name to the main site
+                      'school_name' => $school_name,
+                      'featured_image'=> $featured_image_url, 
+                      'acf_thumbnail' => $acf_thumbnail, 
                   ),
               ));
   

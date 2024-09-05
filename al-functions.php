@@ -168,6 +168,22 @@ function create_remote_post(WP_REST_Request $request) {
         return new WP_Error('error_creating_post', 'There was an error creating the post', array('status' => 500));
     }
 
+    // Set the ACF 'thumbnail' field
+    $acf_thumbnail_value = sanitize_text_field($request['acf_thumbnail']);
+    if ($acf_thumbnail_value) {
+        update_field('thumbnail', $acf_thumbnail_value, $post_id);
+    }
+
+    // Set the featured image (if the image URL is passed)
+    $featured_image_url = esc_url($request['featured_image']);
+    if ($featured_image_url) {
+        // Download the image and set it as the featured image
+        $image_id = media_sideload_image($featured_image_url, $post_id, '', 'id');
+        if (!is_wp_error($image_id)) {
+            set_post_thumbnail($post_id, $image_id);
+        }
+    }
+
     // Retrieve email addresses from the ACF option field
     $email_addresses = get_field('academy_news_emails', 'option'); // Emails separated by commas
 

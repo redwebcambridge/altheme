@@ -130,10 +130,10 @@ function create_remote_post(WP_REST_Request $request) {
     // If the subcategory doesn't exist, create it under the parent category (ID 22)
     if (!$subcategory) {
         $subcategory = wp_insert_term(
-            $school_name,   
-            'category',    y
+            $school_name,   // The term name (school name)
+            'category',     // The taxonomy
             array(
-                'parent' => 22, 
+                'parent' => 22, // ID of the parent category
             )
         );
 

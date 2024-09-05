@@ -93,6 +93,9 @@ add_action('rest_api_init', function () {
 });
 
 function verify_request(WP_REST_Request $request) {
+
+    error_log('verifying request');
+
     // Allowed IP addresses
     $allowed_ips = explode(',', IP_ADDRESSES); // Convert the string of IPs into an array
 

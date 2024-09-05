@@ -866,6 +866,9 @@ if(get_field('school_id','option') == 'oak') :
               $featured_image_url = wp_get_attachment_url(get_post_thumbnail_id($post_id));
               $acf_thumbnail = get_field('thumbnail', $post_id);
               $acf_thumbnail_url = !empty($acf_thumbnail) && isset($acf_thumbnail['url']) ? $acf_thumbnail['url'] : '';
+
+              error_log('ACF Thumbnail URL: ' . $acf_thumbnail_url);
+
   
               // Send the post data to the main site
               $response = wp_remote_post($url, array(

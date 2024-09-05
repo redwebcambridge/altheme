@@ -93,20 +93,13 @@ add_action('rest_api_init', function () {
 });
 
 function verify_request(WP_REST_Request $request) {
-    // Log the IPs to see what's coming in
-    error_log('verifying request');
 
-    // Get the correct IP address of the client
     $client_ip = $_SERVER['REMOTE_ADDR'];
 
-    // If the server is behind a proxy, check 'X-Forwarded-For'
     if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
         $client_ip = trim(explode(',', $_SERVER['HTTP_X_FORWARDED_FOR'])[0]); // First IP in the list
     }
 
-    error_log('Client IP: ' . $client_ip);
-
-    // Allowed IP addresses from wp-config.php
     $allowed_ips = explode(',', IP_ADDRESSES); // Convert the string into an array
 
     // Check if the client's IP is in the list of allowed IPs
@@ -115,7 +108,6 @@ function verify_request(WP_REST_Request $request) {
         return new WP_Error('invalid_ip', 'Your IP address is not allowed to access this endpoint.', array('status' => 403));
     }
 
-    // If the IP is valid, continue processing the request
     return true;
 }
 

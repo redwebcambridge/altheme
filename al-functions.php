@@ -182,14 +182,18 @@ function create_remote_post(WP_REST_Request $request) {
 
         // Convert the emails string to an array
         $recipients = explode(',', $email_addresses);
-
+    
+        error_log('Sending email to: ' . implode(', ', $recipients)); // Log recipients
+    
         // Send the email to all recipients
-        wp_mail($recipients, $subject, $message);
+        $mail_sent = wp_mail($recipients, $subject, $message);
+    
+        if (!$mail_sent) {
+            error_log('Email not sent. There was an issue.');
+        } else {
+            error_log('Email sent successfully.');
+        }
     }
 
     return new WP_REST_Response('Post created successfully', 200);
 }
-$email_addresses = get_field('academy_news_emails', 'option'); // Emails separated by commas
-$recipients = explode(',', $email_addresses);
-
-wp_mail($recipients, 'Test Email', 'This is a test email to check if wp_mail is working.');

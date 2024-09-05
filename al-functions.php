@@ -83,3 +83,45 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
 wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/a6cf3f2e48.js' );
 
+//ACCEPT POSTS FROM OTHERS
+add_action('rest_api_init', function () {
+    register_rest_route('custom/v1', '/create_post', array(
+        'methods' => 'POST',
+        'callback' => 'create_remote_post',
+        'permission_callback' => 'verify_request',
+    ));
+});
+
+function verify_request(WP_REST_Request $request) {
+    // Allowed IP addresses
+    $allowed_ips = array('178.62.44.225', '167.172.61.75'); 
+
+    // Get the IP of the incoming request
+    $request_ip = $request->get_header('X-Forwarded-For') ? $request->get_header('X-Forwarded-For') : $request->get_header('REMOTE_ADDR');
+
+    // Check if the IP is in the allowed list
+    if (!in_array($request_ip, $allowed_ips)) {
+        return new WP_Error('invalid_ip', 'Your IP address is not allowed to access this endpoint.', array('status' => 403));
+    }
+
+    // Check if the request is authenticated with an application password
+    return current_user_can('edit_posts');
+}
+
+function create_remote_post(WP_REST_Request $request) {
+    $post_data = array(
+        'post_title'   => sanitize_text_field($request['title']),
+        'post_content' => sanitize_textarea_field($request['content']),
+        'post_status'  => 'draft',
+        'post_author'  => 1, // Set to the desired author ID
+        'post_category' => array(22), // Pass category ID if needed
+    );
+
+    $post_id = wp_insert_post($post_data);
+
+    if (is_wp_error($post_id)) {
+        return new WP_Error('error_creating_post', 'There was an error creating the post', array('status' => 500));
+    }
+
+    return new WP_REST_Response('Post created successfully', 200);
+}

@@ -100,7 +100,7 @@ function verify_request(WP_REST_Request $request) {
     $request_ip = $request->get_header('X-Forwarded-For') ? $request->get_header('X-Forwarded-For') : $request->get_header('REMOTE_ADDR');
     // Check if the IP is in the allowed list
     if (!in_array($request_ip, $allowed_ips)) {
-        error_log('not a valid IP address '.$request_ip. ' Allowed are: '.$allowed_ips );
+        error_log('not a valid IP address '.$request_ip. ' Allowed are: '. var_dump($allowed_ips) );
 
         return new WP_Error('invalid_ip', 'Your IP address is not allowed to access this endpoint.', array('status' => 403));
         

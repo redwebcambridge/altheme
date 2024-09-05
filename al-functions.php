@@ -189,3 +189,5 @@ function create_remote_post(WP_REST_Request $request) {
 
     return new WP_REST_Response('Post created successfully', 200);
 }
+
+wp_mail('lewis@redwebcambridge.com', 'Test Email', 'This is a test email to check if wp_mail is working.');

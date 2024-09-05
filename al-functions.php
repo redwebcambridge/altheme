@@ -94,7 +94,7 @@ add_action('rest_api_init', function () {
 
 function verify_request(WP_REST_Request $request) {
     // Allowed IP addresses
-    $allowed_ips = array('178.62.44.225', '167.172.61.75'); 
+    $allowed_ips = explode(',', IP_ADDRESSES); // Convert the string of IPs into an array
 
     // Get the IP of the incoming request
     $request_ip = $request->get_header('X-Forwarded-For') ? $request->get_header('X-Forwarded-For') : $request->get_header('REMOTE_ADDR');

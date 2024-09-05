@@ -104,7 +104,10 @@ function verify_request(WP_REST_Request $request) {
 
     // Check if the IP is in the allowed list
     if (!in_array($request_ip, $allowed_ips)) {
+        error_log('not a valid IP address '.$request_ip);
+
         return new WP_Error('invalid_ip', 'Your IP address is not allowed to access this endpoint.', array('status' => 403));
+        
     }
 
     // Check if the request is authenticated with an application password

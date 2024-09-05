@@ -847,6 +847,39 @@ function deregister_page_templates_based_on_school_id() {
 }
 add_action('init', 'deregister_page_templates_based_on_school_id');
 
+
+//POST NEWS TO ANGLIAN LEARNING SITE
+if(get_field('school_id','option') == 'oak') :
+
+add_action('publish_post', 'copy_post_to_main_website', 10, 2);
+
+function copy_post_to_main_website($post_id, $post) {
+    $url = 'https://alnew.redweb.dev/wp-json/custom/v1/create_post';
+    $post_title = $post->post_title;
+    $post_content = $post->post_content;
+
+    $school_name = get_field('school_name', 'option');
+
+    $response = wp_remote_post($url, array(
+        'method'  => 'POST',
+        'headers' => array(
+          'Authorization' => 'Basic ' . base64_encode(API_USERNAME . ':' . API_PASSWORD), 
+        ),
+        'body'    => array(
+            'title'   => $post_title,
+            'content' => $post_content,
+            'school_name' => $school_name, 
+        ),
+    ));
+
+    if (is_wp_error($response)) {
+        error_log('Error posting to main website: ' . $response->get_error_message());
+    } else {
+        error_log('Post successfully sent to main website.');
+    }
+}
+endif; 
+
 //TESTING ONLY TURN OFF ON LIVE
-sass_compile();
+//sass_compile();
 

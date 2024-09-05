@@ -169,29 +169,36 @@ function create_remote_post(WP_REST_Request $request) {
     }
 
     $featured_image_url = esc_url($request['featured_image']);
-    $acf_thumbnail_value = sanitize_text_field($request['acf_thumbnail']);
+    $acf_thumbnail_url = esc_url($request['acf_thumbnail']);  // URL for the ACF image field
     
     error_log('Received Featured Image URL: ' . $featured_image_url);
-    error_log('Received ACF Thumbnail Value: ' . $acf_thumbnail_value);
+    error_log('Received ACF Thumbnail Value: ' . $acf_thumbnail_url);
 
     require_once(ABSPATH . 'wp-admin/includes/media.php');
-        require_once(ABSPATH . 'wp-admin/includes/file.php');
-        require_once(ABSPATH . 'wp-admin/includes/image.php');
+    require_once(ABSPATH . 'wp-admin/includes/file.php');
+    require_once(ABSPATH . 'wp-admin/includes/image.php');
 
     // Set the ACF 'thumbnail' field
-    $acf_thumbnail_value = sanitize_text_field($request['acf_thumbnail']);
-    if ($acf_thumbnail_value) {
-        update_field('thumbnail', $acf_thumbnail_value, $post_id);
+    if ($acf_thumbnail_url) {
+        $acf_image_id = media_sideload_image($acf_thumbnail_url, $post_id, '', 'id');
+        
+        if (!is_wp_error($acf_image_id)) {
+            update_field('thumbnail', $acf_image_id, $post_id); // Update ACF field with attachment ID
+            error_log('ACF thumbnail set successfully with ID: ' . $acf_image_id);
+        } else {
+            error_log('Error setting ACF thumbnail: ' . $acf_image_id->get_error_message());
+        }
     }
 
     // Set the featured image (if the image URL is passed)
-    $featured_image_url = esc_url($request['featured_image']);
     if ($featured_image_url) {
-        
-        // Download the image and set it as the featured image
         $image_id = media_sideload_image($featured_image_url, $post_id, '', 'id');
+        
         if (!is_wp_error($image_id)) {
             set_post_thumbnail($post_id, $image_id);
+            error_log('Featured image set successfully with ID: ' . $image_id);
+        } else {
+            error_log('Error setting featured image: ' . $image_id->get_error_message());
         }
     }
 

@@ -851,33 +851,40 @@ add_action('init', 'deregister_page_templates_based_on_school_id');
 //POST NEWS TO ANGLIAN LEARNING SITE
 if(get_field('school_id','option') == 'oak') :
 
-add_action('publish_post', 'copy_post_to_main_website', 10, 2);
+  add_action('transition_post_status', 'copy_post_to_main_website_on_publish', 10, 3);
 
-function copy_post_to_main_website($post_id, $post) {
-    $url = 'https://alnew.redweb.dev/wp-json/custom/v1/create_post';
-    $post_title = $post->post_title;
-    $post_content = $post->post_content;
-
-    $school_name = get_field('school_name', 'option');
-
-    $response = wp_remote_post($url, array(
-        'method'  => 'POST',
-        'headers' => array(
-          'Authorization' => 'Basic ' . base64_encode(API_USERNAME . ':' . API_PASSWORD), 
-        ),
-        'body'    => array(
-            'title'   => $post_title,
-            'content' => $post_content,
-            'school_name' => $school_name, 
-        ),
-    ));
-
-    if (is_wp_error($response)) {
-        error_log('Error posting to main website: ' . $response->get_error_message());
-    } else {
-        error_log('Post successfully sent to main website.');
-    }
-}
+  function copy_post_to_main_website_on_publish($new_status, $old_status, $post) {
+      // Only trigger if the post is transitioning to 'publish' for the first time
+      if ($old_status != 'publish' && $new_status == 'publish' && $post->post_type == 'post') {
+          // Set the correct URL for the main website API
+          $url = 'https://alnew.redweb.dev/wp-json/custom/v1/create_post';
+          $post_title = $post->post_title;
+          $post_content = $post->post_content;
+  
+          // Get the school name from ACF option field
+          $school_name = get_field('school_name', 'option');
+  
+          // Send the post data to the main site
+          $response = wp_remote_post($url, array(
+              'method'  => 'POST',
+              'headers' => array(
+                  'Authorization' => 'Basic ' . base64_encode(API_USERNAME . ':' . API_PASSWORD), // Use defined constants
+              ),
+              'body'    => array(
+                  'title'   => $post_title,
+                  'content' => $post_content,
+                  'school_name' => $school_name, // Send school name to the main site
+              ),
+          ));
+  
+          // Check for WP_Error first
+          if (is_wp_error($response)) {
+              error_log('Error posting to main website: ' . $response->get_error_message());
+          } else {
+              error_log('Post successfully sent to main website.');
+          }
+      }
+  }
 endif; 
 
 //TESTING ONLY TURN OFF ON LIVE

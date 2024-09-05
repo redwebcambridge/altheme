@@ -109,19 +109,29 @@ function verify_request(WP_REST_Request $request) {
 }
 
 function create_remote_post(WP_REST_Request $request) {
+    // Log the incoming request for debugging
+    error_log('Incoming API request to create post:');
+    error_log(print_r($request->get_params(), true));
+
+    // Extract post data from the request
     $post_data = array(
         'post_title'   => sanitize_text_field($request['title']),
         'post_content' => sanitize_textarea_field($request['content']),
-        'post_status'  => 'draft',
+        'post_status'  => 'draft', // Save as draft or change to 'publish' if needed
         'post_author'  => 1, // Set to the desired author ID
-        'post_category' => array(22), // Pass category ID if needed
+        'post_category' => array(22), // Assign the post to category ID 22
     );
 
+    // Attempt to create the post
     $post_id = wp_insert_post($post_data);
 
+    // Check for errors in post creation
     if (is_wp_error($post_id)) {
+        error_log('Error creating post: ' . $post_id->get_error_message());
         return new WP_Error('error_creating_post', 'There was an error creating the post', array('status' => 500));
     }
+
+    error_log('Post created successfully with ID: ' . $post_id);
 
     return new WP_REST_Response('Post created successfully', 200);
 }

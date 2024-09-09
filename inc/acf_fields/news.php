@@ -12,6 +12,7 @@ acf_add_local_field_group(array(
 			'label' => 'Thumbnail',
 			'name' => 'thumbnail',
 			'type' => 'image',
+			
 			'return_format' => 'array',
 			'preview_size' => 'medium',
 			'library' => 'all',

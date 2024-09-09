@@ -101,7 +101,7 @@ $terms = get_terms(array(
                         });
                         let address<?php echo get_the_ID(); ?>  = `<?php echo addslashes(get_field('full_address'));?>`;
 
-                        let popupcontent<?php echo get_the_ID(); ?> = '<div class="map-popup map-popup<?php echo get_the_ID(); ?>"><img src="<?php echo get_field('logo')['url'];?>" alt="<?php echo get_the_title(); ?>" /><h3><?php echo get_the_title(); ?></h3>'+address<?php echo get_the_ID(); ?> +'<a class="email" title="Email" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a><a class="tel" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a><div class="labels"><?php echo $school_age_html.$local_authority_html ?></div><div class="buttons"><a class="btn btn<?php echo get_the_ID(); ?>" href="<?php echo get_field('website'); ?>">Visit Website</a><a class="btn btn<?php echo get_the_ID(); ?>" href="<?php echo the_permalink(); ?>">View Profile</a></div></div>';
+                        let popupcontent<?php echo get_the_ID(); ?> = '<div class="map-popup map-popup<?php echo get_the_ID(); ?>"><img src="<?php echo get_field('logo')['url'];?>" alt="<?php echo get_the_title(); ?>" /><h3><?php echo get_the_title(); ?></h3>'+address<?php echo get_the_ID(); ?> +'<a class="email" title="Email" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a><a class="tel" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a><div class="labels"><?php echo $school_age_html.$local_authority_html ?></div><div class="buttons"><a class="btn btn<?php echo get_the_ID(); ?>" href="<?php echo get_field('website'); ?>">Visit Website</a><a class="btn btn<?php echo get_the_ID(); ?>" target="_blank" href="<?php echo the_permalink(); ?>">View Profile</a></div></div>';
                         
                         L.marker([<?php echo get_field('map_lng');?>,<?php echo get_field('map_lat');?>], { icon: mapicon<?php echo get_the_ID(); ?>, className:'map-icon-<?php echo get_the_ID(); ?>' }).addTo(academies_map).bindPopup(popupcontent<?php echo get_the_ID(); ?>, {
                             autoPan: true,
@@ -168,7 +168,7 @@ $terms = get_terms(array(
 
                         <div class="col-12 academies_buttons p-3">
                             <a class="view-on-map-button" style="background-color:<?php echo get_field('school_color');?>;" href="#"><i class="fa-solid fa-location-dot"></i>View on Map</a>
-                            <a style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_permalink(); ?>"><i class="fa-solid fa-building"></i>View Profile</a>
+                            <a style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_permalink(); ?>" target="_blank"><i class="fa-solid fa-building"></i>View Profile</a>
                         </div>
                         
                     </div>

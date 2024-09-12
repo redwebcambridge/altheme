@@ -30,6 +30,7 @@ get_header(); ?>
                     echo $content[0]->acf->body_text; // Output the ACF field 'body_text'
                 } else {
                     echo 'ACF field not found'; // Fallback if the ACF field is missing
+                   
                 }
 
               else :

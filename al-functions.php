@@ -223,3 +223,21 @@ function create_remote_post(WP_REST_Request $request) {
 
     return new WP_REST_Response('Post created successfully', 200);
 }
+
+
+//expose ACAD post type to REST API
+function add_acf_to_rest_api( $data, $post, $context ) {
+    // Check if ACF is active and has fields for this post
+    if ( function_exists('get_fields') ) {
+        $acf_fields = get_fields( $post->ID );
+        if ( $acf_fields ) {
+            // Add ACF fields to the API response
+            $data->data['acf'] = $acf_fields;
+        }
+    }
+
+    return $data;
+}
+
+// Apply the function to all pages (you can adjust this for other post types if needed)
+add_filter( 'rest_prepare_page', 'add_acf_to_rest_api', 10, 3 );

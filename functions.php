@@ -849,7 +849,7 @@ add_action('init', 'deregister_page_templates_based_on_school_id');
 
 
 //POST NEWS TO ANGLIAN LEARNING SITE
-if(get_field('school_id','option') == 'oak') :
+if(get_field('school_id','option') == 'ips') :
   add_action('acf/save_post', 'copy_post_to_main_website_after_acf_save', 20);
 
 function copy_post_to_main_website_after_acf_save($post_id) {

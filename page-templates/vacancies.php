@@ -16,6 +16,9 @@ get_header(); ?>
 
         <?php //echo the_content(); ?>
     </div>
+
+<?php if(get_field('school_id','option') != 'jfa') : ?>
+
     <div class="col-12">
         <h2 class="heading-two mt-5">Current Vacancies</h2>
         <div class="gradline mb-5"></div>   
@@ -25,6 +28,9 @@ get_header(); ?>
         <div id="mnt-parent-container" style="width: 96.7%; margin: 0 auto; background-color: transparent;"></div>
         <!-- END MYNEWTERM API HTML -->
     </div>
+
+
+<?php endif; ?>
 
     <?php get_template_part('template-parts/downloads'); ?>
 

@@ -79,7 +79,7 @@
           </div>
           <div class="col-6 col-md-12 pt-md-5">
             <?php if ( get_field('website') ) : ?>
-              <a href="<?php echo get_field('website'); ?>" class="ms-2 visit_website btn bg_school_col text-white">Visit Website</a>
+              <a target="_blank" href="<?php echo get_field('website'); ?>" class="ms-2 visit_website btn bg_school_col text-white">Visit Website</a>
             <?php endif; ?>
           </div>
           <div class="col-6 col-md-12 pt-md-2"> 

@@ -904,5 +904,5 @@ function copy_post_to_main_website_after_acf_save($post_id) {
 endif; 
 
 //TESTING ONLY TURN OFF ON LIVE
-//sass_compile();
+sass_compile();
 

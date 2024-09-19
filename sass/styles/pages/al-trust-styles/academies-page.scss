@@ -132,17 +132,21 @@ $dark_grey_btn : #605E5E;
         .taxonomies {
             display: flex;
             flex-wrap: wrap;
-            justify-content: start;
+            justify-content: flex-start; // Changed 'start' to 'flex-start' for proper alignment
             min-height: 95px;
+        
             a {
-                border:1px solid $dark_grey_btn;
-                border-radius:3px;
+                border: 1px solid $dark_grey_btn;
+                border-radius: 3px;
                 color: #605E5E;
-                padding:3px 6px 3px 4px;
-                margin:6px 6px 0px 0;
-                text-transform:uppercase;
-                font-size:12px;
+                padding: 3px 6px;
+                margin: 6px 6px 0 0;
+                text-transform: uppercase;
+                font-size: 12px;
                 padding-top: 6px;
+                
+                // Ensure the anchor tags are not stretched
+                align-self: flex-start; // This prevents stretching to full height of the container
             }
         }
         .school_name {

@@ -11,7 +11,24 @@ $terms = get_terms(array(
     'include'  => $term_ids,
     'orderby'  => 'include',  
 ));
- 
+$ageArray = array();
+foreach ($terms as $term) : 
+    array_push($ageArray,preg_replace('/[^a-zA-Z0-9]+/', '', $term->name));
+endforeach;
+
+$termArray = array();
+foreach ($terms as $term) : 
+    array_push($termArray,($term->term_id));
+endforeach;
+
+$local_authority_terms = get_terms(array(
+    'taxonomy' => 'local_authority',
+    'hide_empty' => false,
+));
+$localArray = array();
+foreach ($local_authority_terms as $termLocal) : 
+    array_push($localArray,preg_replace('/[^a-zA-Z0-9]+/', '', $termLocal->name));
+endforeach;
 ?>
 
 <div class="container academies-page">
@@ -36,7 +53,6 @@ $terms = get_terms(array(
     $displayed_posts = array();
     
     if ($terms && !is_wp_error($terms)) {
-        foreach ($terms as $term) {
             $args = array(
                 'post_type' => 'academies',
                 'posts_per_page' => -1,
@@ -46,14 +62,12 @@ $terms = get_terms(array(
                     array(
                         'taxonomy' => 'school_age',
                         'field' => 'term_id',
-                        'terms' => $term->term_id,
+                        'terms' => $termArray,
                     ),
                 ),
                 'post__not_in' => $displayed_posts, 
             );
-    
             $academies = new WP_Query($args);
-
             if ($academies->have_posts()) {
                     while ($academies->have_posts()) {
 
@@ -101,6 +115,7 @@ $terms = get_terms(array(
                         });
                         let address<?php echo get_the_ID(); ?>  = `<?php echo addslashes(get_field('full_address'));?>`;
 
+
                         let popupcontent<?php echo get_the_ID(); ?> = '<div class="map-popup map-popup<?php echo get_the_ID(); ?>"><img src="<?php echo get_field('logo')['url'];?>" alt="<?php echo get_the_title(); ?>" /><h3><?php echo get_the_title(); ?></h3>'+address<?php echo get_the_ID(); ?> +'<a class="email" title="Email" href="mailto:<?php echo get_field('email'); ?>"><?php echo get_field('email'); ?></a><a class="tel" href="tel:<?php echo get_field('telephone'); ?>"><?php echo get_field('telephone'); ?></a><div class="labels"><?php echo $school_age_html.$local_authority_html ?></div><div class="buttons"><a class="btn btn<?php echo get_the_ID(); ?>" href="<?php echo get_field('website'); ?>" target="_blank">Visit Website</a><a class="btn btn<?php echo get_the_ID(); ?>" target="_blank" href="<?php echo the_permalink(); ?>">View Profile</a></div></div>';
                         
                         L.marker([<?php echo get_field('map_lng');?>,<?php echo get_field('map_lat');?>], { icon: mapicon<?php echo get_the_ID(); ?>, className:'map-icon-<?php echo get_the_ID(); ?>' }).addTo(academies_map).bindPopup(popupcontent<?php echo get_the_ID(); ?>, {
@@ -116,14 +131,14 @@ $terms = get_terms(array(
 
                     <div class="academies-row flex-column justify-content-start h-100 row mb-4" data-field-visibility="visible" data-filters-local="<?php echo $local_authority_data; ?>" data-filters-age="<?php echo $school_age_data; ?>" data-school-name="<?php echo preg_replace('/[^a-zA-Z0-9]+/', '', get_the_title()); ?>">
                         <div class="col-12 p-5 bg-white school-icon-container text-center" >
-                            <div class="school-icon" style="background-image:url(<?php echo get_field('logo')['url']; ?>)"></div>
+                            <div class="school-icon" style="background-image:url(<?php //echo get_field('logo')['url']; ?>)"></div>
                         </div>
                         <div class="col-12 school_name my-3 px-3">
                             <strong style="color:<?php echo get_field('school_color');?>;"><?php echo the_title(); ?></strong>
                         </div>
                         <div class="col-12 pb-3">
                             <div class="row bg-white h-100 m-1 align-items-center">
-                                <div class="col-5 h-100 head-teacher-image" style="background-image:url('<?php echo get_field('image_of_head')['url']; ?>')">
+                                <div class="col-5 h-100 head-teacher-image" style="background-image:url('<?php //echo get_field('image_of_head')['url']; ?>')">
                                 </div>
                                 <div class="col-7 py-4 head-name">
                                     <div class="w-100">
@@ -168,7 +183,7 @@ $terms = get_terms(array(
 
                         <div class="col-12 academies_buttons p-3">
                             <a class="view-on-map-button" style="background-color:<?php echo get_field('school_color');?>;" href="#"><i class="fa-solid fa-location-dot"></i>View on Map</a>
-                            <a style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_permalink(); ?>" target="_blank"><i class="fa-solid fa-building"></i>View Profile</a>
+                            <a style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_permalink(); ?>"><i class="fa-solid fa-building"></i>View Profile</a>
                         </div>
                         
                     </div>
@@ -180,8 +195,8 @@ $terms = get_terms(array(
            
                 wp_reset_postdata();
             } // end if academies
-        } // end for each term 'category'
-    }//if terms found ?>
+    }//if terms found 
+    ?>
 
 
 
@@ -192,13 +207,103 @@ $terms = get_terms(array(
 </div>
 <script>
     var checkboxes = document.querySelectorAll(".checkboxes button");
-
+    var checked_checkboxes_age_all = [];
+    var checked_checkboxes_local_all = [];
+    <?php foreach ($ageArray as $ageItem) : ?>
+        checked_checkboxes_age_all.push('<?php echo $ageItem?>');
+    <?php endforeach; ?>
+    <?php foreach ($localArray as $localItem) : ?>
+        checked_checkboxes_local_all.push('<?php echo $localItem?>');
+    <?php endforeach; ?>
     //toggle class to clicked button KEEP ABOVE SCRIPT OTHERWISE CHECKING THE CLASS HAS DEACTIVE WONT WORK
     jQuery( ".filter_button" ).on( "click", function() {
-        jQuery(this).toggleClass('deactive'); 
+        var filterValue = jQuery(this).data('filterValue');
+       if(filterValue === 'allAge')
+       {
+            var allAgeBtnClass = jQuery('#allAge').attr('class');
+            if(allAgeBtnClass.includes('deactive'))
+            {
+                jQuery(this).toggleClass('deactive');
+                addRemoveAgeClass(true);
+            }
+            else if(!allAgeBtnClass.includes('deactive'))
+            {
+                jQuery(this).toggleClass('deactive');
+                addRemoveAgeClass(false);
+            }
+       }
+       else if(jQuery.inArray(filterValue, checked_checkboxes_age_all) != -1)
+       {
+            jQuery('#allAge').addClass('deactive');
+            for(var agAllItem of checked_checkboxes_age_all)
+            {
+                if(agAllItem === filterValue)
+                {
+                    jQuery('#'+agAllItem).removeClass('deactive');
+                }
+                else{
+                    jQuery('#'+agAllItem).addClass('deactive');
+                }
+            }
+       }
+
+       if(filterValue === 'allLocal')
+       {
+            var allLocalBtnClass = jQuery('#allLocal').attr('class');
+            if(allLocalBtnClass.includes('deactive'))
+            {
+                jQuery(this).toggleClass('deactive');
+                addRemoveLocalClass(true);
+            }
+            else if(!allLocalBtnClass.includes('deactive'))
+            {
+                jQuery(this).toggleClass('deactive');
+                addRemoveLocalClass(false);
+            }
+       }
+       else if(jQuery.inArray(filterValue, checked_checkboxes_local_all) != -1)
+       {
+            jQuery('#allLocal').addClass('deactive');
+            for(var localAllItem of checked_checkboxes_local_all)
+            {
+                if(localAllItem === filterValue)
+                {
+                    jQuery('#'+localAllItem).removeClass('deactive');
+                }
+                else{
+                    jQuery('#'+localAllItem).addClass('deactive');
+                }
+            }
+       }
+        
     }); 
 
-
+    function addRemoveAgeClass(state)
+    {
+        for(var ageItem of checked_checkboxes_age_all)
+        {
+            if(state)
+            {
+                jQuery('#'+ageItem).addClass('deactive');
+            }
+            else{
+                jQuery('#'+ageItem).removeClass('deactive');
+            }
+        }
+    }
+    function addRemoveLocalClass(state)
+    {
+        for(var localItem of checked_checkboxes_local_all)
+        {
+            if(state)
+            {
+                jQuery('#'+localItem).addClass('deactive');
+            }
+            else{
+                jQuery('#'+localItem).removeClass('deactive');
+            }
+        }
+    }
     function checkifempty() {
         if (jQuery('.academies-page').length > 0 && jQuery('.academies-page').find('.academies-row:not([style*="display: none"])').length === 0) {
             jQuery('.academies-page #message').show();
@@ -231,7 +336,6 @@ $terms = get_terms(array(
             checkifempty();
         });
     }
-
     function academies_filter(checkbox) {
     
     var value = !checkbox.classList.contains('deactive') ? checkbox.getAttribute('data-filter-value') : "";
@@ -240,18 +344,38 @@ $terms = get_terms(array(
     var academies_rows = document.querySelectorAll(".academies-page .academies-row");
 
     var checked_checkboxes_age = [];
+    
     var checked_checkboxes_local = [];
-
     for (var checkbox of checkboxes) {
-        if (!checkbox.classList.contains('deactive')) {
+        if (!checkbox.classList.contains('deactive')) { 
             if(checkbox.getAttribute('data-filter-type') == 'local'){
-                checked_checkboxes_local.push(checkbox.getAttribute('data-filter-value'));                           
+                if(checkbox.getAttribute('data-filter-value')==='allLocal')
+                {
+                    checked_checkboxes_local = [];
+                    for(var localItem of checked_checkboxes_local_all)
+                    {
+                        checked_checkboxes_local.push(localItem);
+                    }
+                }
+                else{
+                    checked_checkboxes_local.push(checkbox.getAttribute('data-filter-value'));
+                }                         
             } else if(checkbox.getAttribute('data-filter-type') == 'age') {
-                checked_checkboxes_age.push(checkbox.getAttribute('data-filter-value'));
+                if(checkbox.getAttribute('data-filter-value')==='allAge')
+                {
+                    for(var ageItem of checked_checkboxes_age_all)
+                    {
+                        checked_checkboxes_age.push(ageItem);
+                    }
+                }
+                else{
+                    checked_checkboxes_age.push(checkbox.getAttribute('data-filter-value'));
+                }
+                    
             }
         }
     }
-
+    
     for (var academies_row of academies_rows) {
         var academies_filters_age = academies_row.getAttribute("data-filters-age").split(" ");
         var academies_filters_local = academies_row.getAttribute("data-filters-local").split(" ");

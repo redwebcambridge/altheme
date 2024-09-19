@@ -133,6 +133,7 @@ $dark_grey_btn : #605E5E;
             display: flex;
             flex-wrap: wrap;
             justify-content: start;
+            min-height: 95px;
             a {
                 border:1px solid $dark_grey_btn;
                 border-radius:3px;

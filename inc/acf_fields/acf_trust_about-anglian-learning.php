@@ -3,13 +3,12 @@
 acf_add_local_field_group(array(
     'key' => 'about_al_page',
     'title' => 'AL Contact Details',
-    'hide_on_screen' => array('the_content','slug','format','featured_image'),
     'location' => array(
 		array(
 			array(
-				'param' => 'post_id',
-            'operator' => '==',
-            'value' => '1385',
+				'param' => 'page',
+                'operator' => '==',
+                'value' => '1385',
 			),
 		),
 	),

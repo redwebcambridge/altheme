@@ -3,7 +3,7 @@
 acf_add_local_field_group(array(
     'key' => 'icon_grid',
     'title' => 'Icon Grid',
-    'hide_on_screen' => array('slug','format','featured_image'),
+    'hide_on_screen' => array('slug','format'),
     'location' => array(
 		array(
 			array(

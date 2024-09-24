@@ -2,7 +2,7 @@
 acf_add_local_field_group(array(
     'key' => 'accordion',
     'title' => 'Accordion Template',
-    'hide_on_screen' => array('the_content','slug','format','featured_image'),
+    'hide_on_screen' => array('the_content','slug','format'),
     'location' => array(
         array(
             array(

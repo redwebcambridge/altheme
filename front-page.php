@@ -229,24 +229,6 @@ function animateCounter(element, targetValue) {
 		}
 	}
 
-
-    // if(get_field('display_twitter_feed')){
-    //     query_posts(array(
-    //         'showposts' => 2,
-    //         'cat' => $exclude
-    //     ) );
-    //     $newscol = 8;
-    //     $newsitem = 6;
-    // } else {
-    //     query_posts(array(
-    //         'showposts' => 3,
-    //         'cat' => $exclude
-    //     ) );
-    //     $newscol = 12;
-    //     $newsitem = 4;
-    // }
-
-
     if(get_field('homepage_feed_option') == 'Twitter' || get_field('homepage_feed_option') == 'Facebook'){
 
         query_posts(array(
@@ -266,7 +248,15 @@ function animateCounter(element, targetValue) {
         $newsitem = 4;
     }
     
-
+    //Anglian Learning main site just use trust news
+    if(get_field('school_id','option') == 'al') :
+        query_posts(array(
+            'showposts' => 2,
+            'cat' => 25
+        ) );
+        $newscol = 8;
+        $newsitem = 6;
+    endif;
 
 
 

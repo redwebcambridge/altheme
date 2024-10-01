@@ -8965,7 +8965,7 @@ body.school_id_al.blog .newseventcontainer:nth-of-type(8) .newseventtext, body.s
 }
 @media only screen and (max-width: 768px) {
   .academies-row .head-teacher-image {
-    min-height: 100px;
+    min-height: 170px;
   }
 }
 .academies-row .tel-email {

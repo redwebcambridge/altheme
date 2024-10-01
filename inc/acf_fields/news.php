@@ -1,8 +1,5 @@
 <?php 
-
-
-
-
+// all news
 acf_add_local_field_group(array(
 	'key' => 'group_60f6d79326a5a',
 	'title' => 'News',
@@ -38,6 +35,7 @@ acf_add_local_field_group(array(
 	'show_in_rest' => false,
 ));
 
+//single newsletter
 acf_add_local_field_group(array(
 	'key' => 'group_60f17ca439421',
 	'title' => 'Newsletter',
@@ -47,7 +45,7 @@ acf_add_local_field_group(array(
 			'label' => 'PDF Upload',
 			'name' => 'pdf_upload',
 			'type' => 'file',
-			'instructions' => '',
+			'instructions' => 'This will only be displayed on the if the category you select has been set to Newsletter Display',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
@@ -65,18 +63,18 @@ acf_add_local_field_group(array(
 	'location' => array(
 		array(
 			array(
-				'param' => 'post_category',
+				'param' => 'post_type',
 				'operator' => '==',
-				'value' => 'category:newsletter',
+				'value' => 'post',
 			),
 		),
-		array(
-			array(
-				'param' => 'post_category',
-				'operator' => '==',
-				'value' => 'category:the-fountain',
-			),
-		),
+		// array(
+		// 	array(
+		// 		'param' => 'post_category',
+		// 		'operator' => '==',
+		// 		'value' => 'category:the-fountain',
+		// 	),
+		// ),
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
@@ -113,50 +111,33 @@ acf_add_local_field_group(array(
 			'label' => 'Header Image',
 			'name' => 'header_image',
 			'type' => 'image',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
 			'return_format' => 'url',
 			'preview_size' => 'medium',
 			'library' => 'all',
-			'min_width' => '',
-			'min_height' => '',
-			'min_size' => '',
-			'max_width' => '',
-			'max_height' => '',
-			'max_size' => '',
-			'mime_types' => '',
 		),
 		array(
 			'key' => 'field_6141d7a2cf5df',
 			'label' => 'Category Type',
 			'name' => 'category_type',
 			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
 			'choices' => array(
 				'school' => 'School',
 				'adultlearning' => 'Adult Learning',
 				'sportscentre' => 'Sports Centre',
 			),
 			'default_value' => 'school',
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
 			'return_format' => 'value',
-			'ajax' => 0,
-			'placeholder' => '',
+		),
+		array(
+			'key' => 'category_display',
+			'label' => 'Category Display',
+			'name' => 'category_display',
+			'type' => 'select',
+			'choices' => array(
+				'default' => 'Default',
+				'newsletter_display' => 'Newsletter Display',
+			),
+			'default_value' => 'default',
 		),
 	),
 	'location' => array(

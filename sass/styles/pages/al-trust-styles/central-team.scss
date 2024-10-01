@@ -64,6 +64,9 @@
         background-color: #eceef0;
         margin-right: 5px;
         height: 100%;
+        @include media-breakpoint-down(md) {
+            min-height: 200px;
+        }
         .executive_team_image_cont {
             padding: 0px;
             .executive_team_image {

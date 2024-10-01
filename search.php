@@ -13,7 +13,9 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_status' => 'publish',
     's' => get_search_query(),
-    'paged' => $paged
+    'paged' => $paged,
+    'post__not_in' => array(1385) // Exclude the page with ID 1385
+
 );
 $query = new WP_Query($args);
 ?>

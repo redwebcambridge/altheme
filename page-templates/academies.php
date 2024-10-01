@@ -42,8 +42,8 @@ endforeach;
         <div id="academies_map" class="p-0 m-0">
         </div>   
         <script>
-            var zoomLevel = window.innerWidth <= 768 ? 9 : 10; // Set zoom to 9 for mobile, 10 for desktop
-            var academies_map = L.map('academies_map').setView([52.15, 0.20], zoomLevel);
+            var zoomLevel = window.innerWidth <= 768 ? 9 : 10; 
+            var academies_map = L.map('academies_map').setView([52.15, 0.33], zoomLevel);
             L.tileLayer.provider('Stadia.AlidadeSmooth').addTo(academies_map);
         </script>
     </div>

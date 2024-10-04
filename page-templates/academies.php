@@ -183,8 +183,8 @@ endforeach;
                         </div>
 
                         <div class="col-12 academies_buttons p-3">
-                            <a class="view-on-map-button" style="background-color:<?php echo get_field('school_color');?>;" href="#"><i class="fa-solid fa-location-dot"></i>View on Map</a>
-                            <a style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_permalink(); ?>"><i class="fa-solid fa-building"></i>View Profile</a>
+                            <a class="view-on-map-button" style="background-color:<?php echo get_field('school_color');?>;" href="#"><i class="fa-solid fa-location-dot"></i> View on Map</a>
+                            <a style="background-color:<?php echo get_field('school_color');?>;" href="<?php echo get_permalink(); ?>"><i class="fa-solid fa-building"></i> View Profile</a>
                         </div>
                         
                     </div>

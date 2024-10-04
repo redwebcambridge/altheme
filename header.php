@@ -35,6 +35,7 @@
   <meta property="og:title" content="<?php echo the_title(); ?>" />
   <meta property="twitter:title" content="<?php echo the_title(); ?>" />
   <meta name="twitter:card" content="summary_large_image">
+  <script src="https://kit.fontawesome.com/d869724fe5.js" crossorigin="anonymous"></script>
   <?php
     if (is_front_page()) {
 

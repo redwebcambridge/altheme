@@ -10,8 +10,8 @@
             <p class="px-2"><small>Search by school name or filter by selecting an age group and local authority.</small></p>
         </div>
         <div class="col-md-4 view_buttons d-flex justify-content-end">
-            <button id="view_list" class="active search_buttons"><i class="fa-solid fa-table-list"></i>View List</button>
-            <button id="view_map" class="search_buttons map_view" ><i class="fa-solid fa-location-dot"></i>View Map</button>
+            <button id="view_list" class="active search_buttons"><i class="fa-solid fa-table-list"></i> View List</button>
+            <button id="view_map" class="search_buttons map_view" ><i class="fa-solid fa-location-dot"></i> View Map</button>
         </div>
         <div class="col-xl-5 col-lg-5 col-md-6 ages my-2">
             <h4 class="mt-1">Ages</h4>

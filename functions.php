@@ -97,6 +97,9 @@ require_once get_template_directory() . '/lib/fonts/fontsetting.php';
  * Enqueue scripts and styles.
  */
 function anglian_learning_scripts() {
+
+  
+
   //Google Translate
   wp_enqueue_script( 'google-translate', 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit');
   //jQuery
@@ -115,6 +118,7 @@ function anglian_learning_scripts() {
   wp_enqueue_style( 'adultlearningbodyfont', getbodyfont_adultlearning(), array(), '1.0' );
   wp_enqueue_style( 'sportsheadingfont', getheadingfont_sports(), array(), '1.0' );
   wp_enqueue_style( 'sportsbodyfont', getbodyfont_sports(), array(), '1.0' );
+
   //bootstrap
   wp_enqueue_script( 'popper', get_template_directory_uri().'/js/popper.min.js');
   wp_enqueue_script( 'al-bootstrap', get_template_directory_uri().'/js/bootstrap.js');
@@ -132,7 +136,7 @@ function anglian_learning_scripts() {
   //cookies
   wp_enqueue_script( 'al-cookies', get_template_directory_uri().'/js/cookie.js' );
 
-  wp_enqueue_script( 'fontawesome', 'https://kit.fontawesome.com/a6cf3f2e48.js' );
+  
 
 }
 add_action( 'wp_enqueue_scripts', 'anglian_learning_scripts' );

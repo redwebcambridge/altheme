@@ -83,7 +83,7 @@
             <?php endif; ?>
           </div>
           <div class="col-6 col-md-12 pt-md-2"> 
-            <a href="/our-academies/" title="Back to our Academies" class="back_acad align-items-center d-flex justify-content-end"> <i class="pe-1 text_school_col fa-solid fa-caret-left"></i> <small>Back to our Academies</small></a>
+            <a title="Back to our Academies" href="/our-academies/" class="ms-2 visit_website btn bg_school_col text-white">Back to our Academies</a>
           </div>
       </div>
        

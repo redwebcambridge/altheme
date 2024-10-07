@@ -11,13 +11,15 @@
   &.anglianlearning {
     background-size: 120%;
   }
-  &.al_acad_299 {
-    background-size: 45%;
-  }
   &:hover {
     background-size: 100%;
   }
-
+  &.al_acad_299 {
+    background-size: 45%;
+    &:hover{
+      background-size: 55%;
+    }
+  }
 }
 
 footer {

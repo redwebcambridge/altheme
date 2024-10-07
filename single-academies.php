@@ -77,12 +77,12 @@
                 <a href="<?php echo get_sub_field('acad_social_url'); ?>" target="_blank"><i class="h4 pe-2 text_school_col social fab fa-<?php echo $platform; if(get_sub_field('acad_social_platform')=='facebook'){echo '-f';}?>"></i></a>
             <?php endwhile; endif; ?>
           </div>
-          <div class="col-6 col-md-12 pt-md-5">
+          <div class="col-md-12 pt-md-5">
             <?php if ( get_field('website') ) : ?>
               <a target="_blank" href="<?php echo get_field('website'); ?>" class="ms-2 visit_website btn bg_school_col text-white">Visit Website</a>
             <?php endif; ?>
           </div>
-          <div class="col-6 col-md-12 pt-md-2"> 
+          <div class="col-md-12 pt-md-2 mt-3 mt-md-0"> 
             <a title="Back to our Academies" href="/our-academies/" class="ms-2 visit_website btn bg_school_col text-white">Back to our Academies</a>
           </div>
       </div>

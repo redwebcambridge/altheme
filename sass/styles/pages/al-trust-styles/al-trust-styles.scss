@@ -13,7 +13,16 @@ body.school_id_al {
     .front-page-header {
         .intro {
             h1 {
-                font-size: 3rem!important;
+                font-size: 4rem!important;
+                @media only screen and (max-width: 1500px) {
+                    font-size: 3.3rem!important;
+                }
+                @media only screen and (max-width: 1140px) {
+                    font-size: 3rem!important;
+                }
+            }
+            p {
+                font-size: 2rem;
             }
         }
     }

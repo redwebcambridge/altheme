@@ -45,7 +45,7 @@ acf_add_local_field_group(array(
 			'label' => 'PDF Upload',
 			'name' => 'pdf_upload',
 			'type' => 'file',
-			'instructions' => 'This will only be displayed on the if the category you select has been set to Newsletter Display',
+			'instructions' => 'The uploaded newsletter will display on the relevant Newsletter category which you must select on the ‘Categories’ panel. If you wish to add a download to your news article instead, please upload this via the ‘Downloads’ box below',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(

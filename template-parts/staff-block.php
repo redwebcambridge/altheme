@@ -14,7 +14,11 @@
             ?>
         </p>
         <?php
-        $content = substr(get_sub_field('description'),0,80);
+        $content = get_sub_field('description');
+        if (get_field('school_id','option') == "al") {
+            $content = strip_tags($content);
+        }
+        $content = substr($content,0,80);
         $content = substr($content,0,strrpos($content,' '));
         $content = preg_replace('/<span[^>]+\>/i', '', $content);
         echo '<div class="desc_short">'.$content."...</div>";

@@ -20,24 +20,11 @@ get_header(); ?>
           <div class="col-md-9 text-section">
             <p class="body-text">
             <?php 
-              if(get_field('school_id','option') == 'ips') :
-
-
-                
-                $response = wp_remote_get( 'https://alnew.redweb.dev/wp-json/wp/v2/pages/?slug=about-anglian-learning' );
-                $content = json_decode( wp_remote_retrieve_body( $response ) );
-                if ( isset( $content[0]->acf->body_text ) ) {
-                    echo $content[0]->acf->body_text; // Output the ACF field 'body_text'
-                } else {
-                    echo 'ACF field not found'; // Fallback if the ACF field is missing
-                   
-                }
-
-              else :
                 $response = wp_remote_get( 'https://anglianlearning.org/wp-json/wp/v2/pages/?slug=about-anglian-learning' );
                 $content = json_decode( wp_remote_retrieve_body( $response ) );
-                echo $content[0]->content->rendered;
-              endif;
+                if ( isset( $content[0]->acf->body_text ) ) {
+                    echo $content[0]->acf->body_text; 
+                }
             ?>
 
             </p>

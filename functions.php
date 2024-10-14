@@ -853,16 +853,14 @@ add_action('init', 'deregister_page_templates_based_on_school_id');
 
 
 //POST NEWS TO ANGLIAN LEARNING SITE
-if(get_field('school_id','option') == 'ips') :
-  add_action('acf/save_post', 'copy_post_to_main_website_after_acf_save', 20);
-
+add_action('acf/save_post', 'copy_post_to_main_website_after_acf_save', 20);
 function copy_post_to_main_website_after_acf_save($post_id) {
     // Only run for posts and check if it's the first publish
     if (get_post_type($post_id) == 'post' && get_post_status($post_id) == 'publish') {
         // Check if it's the first time the post is being published
         if (get_post_meta($post_id, '_first_publish', true) != 'done') {
             // Set the correct URL for the main website API
-            $url = 'https://alnew.redweb.dev/wp-json/custom/v1/create_post';
+            $url = 'https://anglianlearning.org/wp-json/custom/v1/create_post';
             $post = get_post($post_id);  // Get the post object
             $post_title = $post->post_title;
             $post_content = $post->post_content;
@@ -905,7 +903,6 @@ function copy_post_to_main_website_after_acf_save($post_id) {
         }
     }
 }
-endif; 
 
 //TESTING ONLY TURN OFF ON LIVE
 sass_compile();

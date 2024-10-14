@@ -116,7 +116,7 @@ get_header(); ?>
             <div class="alfooterdetails">
               <div class="row">
                 <div class="col-lg-3">
-                  <img src="https://anglianlearning.org/wp-content/themes/Anglian-Learning-Live/images/logo.png" alt="Anglian Learning Logo" />
+                  <img src="https://anglianlearning.org/logo.png" alt="Anglian Learning Logo" />
                 </div>
                 <div class="col-lg-9">
                   <p>

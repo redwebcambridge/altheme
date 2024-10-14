@@ -904,6 +904,10 @@ function copy_post_to_main_website_after_acf_save($post_id) {
     }
 }
 
-//TESTING ONLY TURN OFF ON LIVE
-// sass_compile();
-
+add_action('upgrader_process_complete', 'after_theme_update', 10, 2);
+function after_theme_update($upgrader_object, $options) {
+    // Check if a theme was updated
+    if ($options['action'] == 'update' && $options['type'] == 'theme') {
+        sass_compile();
+    }
+}

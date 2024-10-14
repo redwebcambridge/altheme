@@ -213,7 +213,7 @@ if (!class_exists('ACF')) {
         <!-- Anglian learning logo -->
         <div class="col-6 col-md-2 al-logo">
           <a href="https://anglianlearning.org/" title="Anglian Learning" target="_blank">
-            <img class="image-right img-fluid pt-2" src="https://anglianlearning.org/wp-content/themes/Anglian-Learning-Live/images/logo.png" alt="Anglian Learning" />
+            <img class="image-right img-fluid pt-2" src="https://anglianlearning.org/logo.png" alt="Anglian Learning" />
           </a>
         </div>
       </div><!-- row -->

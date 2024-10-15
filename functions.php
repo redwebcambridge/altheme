@@ -853,61 +853,61 @@ add_action('init', 'deregister_page_templates_based_on_school_id');
 
 
 //POST NEWS TO ANGLIAN LEARNING SITE
-add_action('acf/save_post', 'copy_post_to_main_website_after_acf_save', 20);
-function copy_post_to_main_website_after_acf_save($post_id) {
-    // Only run for posts and check if it's the first publish
-    if (get_post_type($post_id) == 'post' && get_post_status($post_id) == 'publish') {
-        // Check if it's the first time the post is being published
-        if (get_post_meta($post_id, '_first_publish', true) != 'done') {
-            // Set the correct URL for the main website API
-            $url = 'https://anglianlearning.org/wp-json/custom/v1/create_post';
-            $post = get_post($post_id);  // Get the post object
-            $post_title = $post->post_title;
-            $post_content = $post->post_content;
+if(get_field('school_id','option') != 'al') :
+  add_action('acf/save_post', 'copy_post_to_main_website_after_acf_save', 20);
+  function copy_post_to_main_website_after_acf_save($post_id) {
+      // Only run for posts and check if it's the first publish
+      if (get_post_type($post_id) == 'post' && get_post_status($post_id) == 'publish') {
+          // Check if it's the first time the post is being published
+          if (get_post_meta($post_id, '_first_publish', true) != 'done') {
+              // Set the correct URL for the main website API
+              $url = 'https://anglianlearning.org/wp-json/custom/v1/create_post';
+              $post = get_post($post_id);  // Get the post object
+              $post_title = $post->post_title;
+              $post_content = $post->post_content;
 
-            // Get ACF and other fields
-            $school_name = get_field('school_name', 'option');
-            $featured_image_url = wp_get_attachment_url(get_post_thumbnail_id($post_id)); // Get featured image
+              // Get ACF and other fields
+              $school_name = get_field('school_name', 'option');
+              $featured_image_url = wp_get_attachment_url(get_post_thumbnail_id($post_id)); // Get featured image
 
-            // Get the ACF 'thumbnail' field and retrieve the image URL
-            $acf_thumbnail = get_field('thumbnail', $post_id);
-            $acf_thumbnail_url = !empty($acf_thumbnail) && isset($acf_thumbnail['url']) ? $acf_thumbnail['url'] : '';
+              // Get the ACF 'thumbnail' field and retrieve the image URL
+              $acf_thumbnail = get_field('thumbnail', $post_id);
+              $acf_thumbnail_url = !empty($acf_thumbnail) && isset($acf_thumbnail['url']) ? $acf_thumbnail['url'] : '';
 
-            // Log the ACF thumbnail URL
-            error_log('ACF Thumbnail URL: ' . $acf_thumbnail_url);
+              // Log the ACF thumbnail URL
+              error_log('ACF Thumbnail URL: ' . $acf_thumbnail_url);
 
-            // Send the post data to the main site
-            $response = wp_remote_post($url, array(
-                'method'  => 'POST',
-                'headers' => array(
-                    'Authorization' => 'Basic ' . base64_encode(API_USERNAME . ':' . API_PASSWORD), // Use defined constants
-                ),
-                'body'    => http_build_query(array( // Correctly format data for POST request
-                    'title'   => $post_title,
-                    'content' => $post_content,
-                    'school_name' => $school_name,
-                    'featured_image'=> $featured_image_url,
-                    'acf_thumbnail' => $acf_thumbnail_url,
-                )),
-            ));
+              // Send the post data to the main site
+              $response = wp_remote_post($url, array(
+                  'method'  => 'POST',
+                  'headers' => array(
+                      'Authorization' => 'Basic ' . base64_encode(API_USERNAME . ':' . API_PASSWORD), // Use defined constants
+                  ),
+                  'body'    => http_build_query(array( // Correctly format data for POST request
+                      'title'   => $post_title,
+                      'content' => $post_content,
+                      'school_name' => $school_name,
+                      'featured_image'=> $featured_image_url,
+                      'acf_thumbnail' => $acf_thumbnail_url,
+                  )),
+              ));
 
-            // Check for WP_Error first
-            if (is_wp_error($response)) {
-                error_log('Error posting to main website: ' . $response->get_error_message());
-            } else {
-                error_log('Post successfully sent to main website.');
-            }
+              // Check for WP_Error first
+              if (is_wp_error($response)) {
+                  error_log('Error posting to main website: ' . $response->get_error_message());
+              } else {
+                  error_log('Post successfully sent to main website.');
+              }
 
-            // Mark that the post has been sent so it doesn't happen again
-            update_post_meta($post_id, '_first_publish', 'done');
-        }
-    }
-}
+              // Mark that the post has been sent so it doesn't happen again
+              update_post_meta($post_id, '_first_publish', 'done');
+          }
+      }
+  }
+endif;
 
+//Update sass on theme update to replace the original style.css file
 add_action('upgrader_process_complete', 'after_theme_update', 10, 2);
 function after_theme_update($upgrader_object, $options) {
-    // Check if a theme was updated
-    if ($options['action'] == 'update' && $options['type'] == 'theme') {
         sass_compile();
-    }
 }

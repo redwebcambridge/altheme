@@ -112,6 +112,8 @@ get_header(); ?>
           </div>
           <?php endif; ?>
 
+
+          <?php if(get_field('school_id','option') != 'al') : ?>  
           <div class="col-12">
             <div class="alfooterdetails">
               <div class="row">
@@ -132,8 +134,14 @@ get_header(); ?>
               </div>
             </div>
           </div>
+          <?php endif; ?>
+
+
 
         </div>
+
+
+
 
         <?php get_template_part('template-parts/downloads'); ?>
 

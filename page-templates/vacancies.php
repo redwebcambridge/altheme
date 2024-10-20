@@ -21,8 +21,6 @@ get_header(); ?>
     <div class="col-12">
         <p class="mt-3">For current vacancies advertised prior to 21 October 2024 please see below.</p>
 
-        <h2 class="heading-two mt-5">Current Vacancies</h2>
-        <div class="gradline mb-5"></div>   
         
     </div>
     <div class="col-12 mb-5">

@@ -26,16 +26,25 @@
                 <div class="gradline"></div>
                 <div class="tab-text">
                 <?php
-                $string = get_sub_field('content');
-                if (strlen($string) > 500) {
-                    $stringCut = substr($string, 0, 500);
+                $content = get_sub_field('content');
+                $text_only = wp_strip_all_tags($content); // Remove HTML tags for counting
+                
+                if (strlen($text_only) > 500) {
+                    $stringCut = substr($text_only, 0, 500);
                     $endPoint = strrpos($stringCut, ' ');
-                    if($endPoint) {
-                       $string = substr($stringCut, 0, $endPoint).'...';
+                
+                    if ($endPoint) {
+                        $text_only = substr($stringCut, 0, $endPoint) . '...';
                     } else {
-                        $string = substr($stringCut, 0);
+                        $text_only = substr($stringCut, 0);
                     }
+                
+                    // Combine truncated text with original HTML
+                    $string = wp_trim_words($content, count(explode(' ', $text_only)), '...');
+                } else {
+                    $string = $content;
                 }
+                
                 echo $string;
                 ?>
                 <p><a target="<?php echo get_sub_field('button')['target'] ?? 'blank'; ?>" href="<?php echo get_sub_field('button')['url'] ?? get_bloginfo('url'); ?>"><button class="btn btn-primary rounded-0">READ MORE</button></a></p>

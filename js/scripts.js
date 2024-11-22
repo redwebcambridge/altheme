@@ -250,40 +250,43 @@ function googleTranslateElementInit() {
 }
 
 (function() {
-  tinymce.PluginManager.add('custom_button', function(editor, url) {
-     editor.addButton('custom_button', {
+  // Check if the body has the class "wp-admin"
+  if (document.body.classList.contains('wp-admin')) {
+
+    tinymce.PluginManager.add('custom_button', function(editor, url) {
+      editor.addButton('custom_button', {
         title: 'Add Button',
         icon: 'icon dashicons-before dashicons-format-aside',
         onclick: function() {
-           // Add your custom button functionality here
-
-          let button_url = prompt("Please enter your url", "");
-          let button_text = prompt("Please enter your button text", "");
-          let button_target = prompt("Would you like your page to open in a new window? enter Yes or No.", "");
-
-          if(button_target == 'Yes' || button_target == 'yes'){
-            editor.insertContent('<a target="_blank" href="'+ button_url +'" class="custom_button"><button class="btn">' + button_text + '</button></a>');
-          } else {
-            editor.insertContent('<a href="'+ button_url +'" class="custom_button"><button class="btn">' + button_text + '</button></a>');
-          }
-
-        }
-     });
-  });
-
-
-  tinymce.PluginManager.add('colour_block', function(editor, url) {
-    editor.addButton('colour_block', {
-       title: 'Add Colour block',
-       icon: 'icon dashicons-before dashicons-format-aside',
-       onclick: function() {
           // Add your custom button functionality here
 
-          editor.insertContent('<table class="custom_colour_block"><tbody><tr><td>Add content here</td></tr></tbody></table>');
+          let button_url = prompt("Please enter your URL", "");
+          let button_text = prompt("Please enter your button text", "");
+          let button_target = prompt("Would you like your page to open in a new window? Enter Yes or No.", "");
 
-       }
+          if (button_target.toLowerCase() === 'yes') {
+            editor.insertContent('<a target="_blank" href="' + button_url + '" class="custom_button"><button class="btn">' + button_text + '</button></a>');
+          } else {
+            editor.insertContent('<a href="' + button_url + '" class="custom_button"><button class="btn">' + button_text + '</button></a>');
+          }
+        }
+      });
     });
- });
+
+    tinymce.PluginManager.add('colour_block', function(editor, url) {
+      editor.addButton('colour_block', {
+         title: 'Add Colour block',
+         icon: 'icon dashicons-before dashicons-format-aside',
+         onclick: function() {
+            // Add your custom button functionality here
+  
+            editor.insertContent('<table class="custom_colour_block"><tbody><tr><td>Add content here</td></tr></tbody></table>');
+  
+         }
+      });
+    });
 
 
+  }
 })();
+

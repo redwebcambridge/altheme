@@ -1,5 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
+
   //Google Translate
   function googleTranslateElementInit() {
     new google.translate.TranslateElement(
@@ -7,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
       'google_translate_el'
     );
   }
+  googleTranslateElementInit();
+
 
 });
 

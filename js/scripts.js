@@ -5,7 +5,10 @@ function googleTranslateElementInit() {
     'google_translate_el'
   );
 }
-googleTranslateElementInit();
+
+function googleTranslateElementInit() {
+  googleTranslateElementInit();
+}
 
 jQuery( document ).ready(function() {
   //BACK TO TOP

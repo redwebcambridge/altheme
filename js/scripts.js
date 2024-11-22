@@ -1,14 +1,14 @@
-//Google Translate
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'en'},
-    'google_translate_el'
-  );
-}
 
-function googleTranslateElementInit() {
-  googleTranslateElementInit();
-}
+document.addEventListener('DOMContentLoaded', function () {
+  //Google Translate
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {pageLanguage: 'en'},
+      'google_translate_el'
+    );
+  }
+
+});
 
 jQuery( document ).ready(function() {
   //BACK TO TOP

@@ -1,3 +1,12 @@
+//Google Translate
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    {pageLanguage: 'en'},
+    'google_translate_el'
+  );
+}
+googleTranslateElementInit();
+
 jQuery( document ).ready(function() {
   //BACK TO TOP
   jQuery('.backtotop').on("click", function () {
@@ -239,14 +248,6 @@ function hovericon(location){
   var leftpadding = jQuery(location).width()/2-18;
   jQuery(".navbar .currenthover").css("left",newleft+leftpadding);
   jQuery(".navbar .currenthover").css("display","block");
-}
-
-//Google Translate
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-    {pageLanguage: 'en'},
-    'google_translate_el'
-  );
 }
 
 (function() {

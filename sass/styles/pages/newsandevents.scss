@@ -124,24 +124,31 @@
         display: block;
     }
 
-    #twitter {
-    	background-color: #F2AD0E;
-    	background-image: url(img/twitter-x.png);
-    	background-size: 23px;
-    }
     #facebook {
-    	background-color: #79A12D;
+    	background-color: #0766fe;
     	background-image: url(img/facebook-header.png);
     	background-size: 10px;
+        &:hover {
+            background-color:darken(#0766fe,10);
+        }
     }
     #linkedin {
-    	background-color: #6563AE;
+    	background-color: #0b66c3;
     	background-image: url(img/linkedin-header.png);
     	background-size: 17px;
+        &:hover {
+            background-color:darken(#0b66c3,10);
+        }
     }
-    #twitter:hover, #facebook:hover, #linkedin:hover {
-    	background-color: #23A8E0;
+    #email {
+    	background-color: #79A12D;
+    	background-image: url(img/email-share.png);
+    	background-size: 20px;
+        &:hover {
+            background-color:darken(#79A12D,10);
+        }
     }
+   
 
     .newsevents-contact{
       display: flex;

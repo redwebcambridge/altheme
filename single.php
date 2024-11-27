@@ -33,20 +33,16 @@ $thumbnail= get_field('thumbnail'); ?>
 			        <h3 class="section-header ceo-right-header special-underine"><strong>SHARE</strong></h3>
 
 					<div class="socialcontainer">
-						<div class="row no-gutters">
-			                <div class="col-4 social-share" id ="twitter">
-								<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&amp;url=<?php the_permalink(); ?>" target="_blank"></a>
-			                </div>
+						<div class="row no-gutters d-flex">
 
 				            <?php $post = get_post(); ?>
 
-			                <div class="col-4 social-share" id ="facebook">
-			                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank"></a>
-			                </div>
+							<a id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" class="w-auto social-share me-2 px-3"></a>
 
-			                <div class="col-4 social-share" id ="linkedin">
-			                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=LinkedIn" target="_blank"></a>
-			                </div>
+							<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=LinkedIn" target="_blank" id="linkedin" class="w-auto social-share me-2 px-3"></a>
+
+							<a id="email" href="mailto:?subject=<?php echo get_the_title(); ?>&body=View <?php echo get_the_title(); ?>: <?php echo get_permalink(); ?>" class="px-3 w-auto social-share me-2"></a>
+
 						</div>
 					</div>
 

@@ -2,7 +2,6 @@
 
 $socials = [
     'facebook',
-	'twitter',
 	'instagram',
 	'linkedin',
 ];
@@ -1890,7 +1889,6 @@ acf_add_local_field_group(array(
 							),
 							'choices' => array(
 								'facebook' => 'Facebook',
-								'twitter' => 'Twitter',
 								'instagram' => 'Instagram',
 								'linkedin' => 'LinkedIn',
 
@@ -2918,7 +2916,6 @@ acf_add_local_field_group(array(
 							),
 							'choices' => array(
 								'facebook' => 'Facebook',
-								'twitter' => 'Twitter',
 								'instagram' => 'Instagram',
 								'linkedin' => 'LinkedIn',
 							),

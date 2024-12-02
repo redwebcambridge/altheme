@@ -9,7 +9,7 @@ get_header(); ?>
 <div class="container">
     <div class="row">
 
-    <div class="col-12 ">
+    <div class="col-12 mb-5">
         <h2 class="heading-two"><?php echo get_field('sub_heading'); ?></h2>
         <div class="gradline"></div>
         <p class="body-text"><?php echo get_field('body_text'); ?></p>

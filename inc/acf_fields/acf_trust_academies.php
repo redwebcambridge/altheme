@@ -1,7 +1,6 @@
 <?php 
 $socials = [
     'facebook',
-	'twitter',
 	'instagram',
 	'linkedin',
 ];

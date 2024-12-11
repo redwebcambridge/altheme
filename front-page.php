@@ -81,7 +81,7 @@
             
             <div class="col p-4 text-white d-flex" id="announcement" style="background-color:<?php if ( get_field('announcement_banner_bg') ) : echo get_field('announcement_banner_bg'); endif; ?>">
                 <div>
-                    <i class="fa-solid fa-bullhorn px-3 h1"></i>
+                    <i class="fas fa-solid fa-bullhorn px-3 h1"></i>
                 </div>
                 <div>
                 <?php if ( get_field('announcement_banner_message_content') ) : ?>

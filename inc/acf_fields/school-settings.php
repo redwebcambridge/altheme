@@ -42,7 +42,7 @@ acf_add_local_field_group(array(
 			),
 			'choices' => array(
 				'al' => 'al',
-				'basvc' => 'basvc',
+				'bas' => 'bas',
 				'bcps' => 'bcps',
 				'bvc' => 'bvc',
 				'dpa' => 'dpa',

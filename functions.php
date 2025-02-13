@@ -911,3 +911,5 @@ add_action('upgrader_process_complete', 'after_theme_update', 10, 2);
 function after_theme_update($upgrader_object, $options) {
         sass_compile();
 }
+
+include_once __DIR__ . "/inc/util/html-trim.php";

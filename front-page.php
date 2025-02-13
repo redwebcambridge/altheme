@@ -30,17 +30,7 @@
                 $text_only = wp_strip_all_tags($content); // Remove HTML tags for counting
                 
                 if (strlen($text_only) > 500) {
-                    $stringCut = substr($text_only, 0, 500);
-                    $endPoint = strrpos($stringCut, ' ');
-                
-                    if ($endPoint) {
-                        $text_only = substr($stringCut, 0, $endPoint) . '...';
-                    } else {
-                        $text_only = substr($stringCut, 0);
-                    }
-                
-                    // Combine truncated text with original HTML
-                    $string = wp_trim_words($content, count(explode(' ', $text_only)), '...');
+                    $string = truncateHtml($content, 500);
                 } else {
                     $string = $content;
                 }

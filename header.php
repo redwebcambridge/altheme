@@ -98,17 +98,17 @@ if (!class_exists('ACF')) {
       <div class="col-6 col-md-3 pt-2 logo-container">
             <?php if ( is_adult_ed_page() ) {  ?>
                 <?php $adultlogos = get_field('adultlearning_logo_and_icons','option'); ?>
-                <a href="<?php echo the_permalink(get_field('adult_learning_homepage','option')); ?>">
+                <a href="<?php echo the_permalink(get_field('adult_learning_homepage','option')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
                   <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $adultlogos['adult_logo']['url']; ?>" alt="<?php echo $adultlogos['adult_icon']['alt']; ?>">
                 </a>
             <?php } elseif (is_sports_page()) { ?>
                 <?php $sportlogos = get_field('sports_logo_and_icons','option'); ?>
-                <a href="<?php echo the_permalink(get_field('sports_homepage','option')); ?>">
+                <a href="<?php echo the_permalink(get_field('sports_homepage','option')); ?>" title="<?php echo esc_attr(get_bloginfo('name')); ?>" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
                   <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $sportlogos['sports_logo']['url']; ?>" alt="<?php echo $sportlogos['sports_logo']['alt']; ?>">
                 </a>
             <?php } else { ?>
               <?php $logos = get_field('logo_and_icons','option'); ?>
-                <a href="/">
+                <a href="/" title="<?php echo esc_attr(get_bloginfo('name')); ?>" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?>">
                   <img class="img-fluid py-2 pr-5" id="logo" src="<?php echo $logos['logo']['url']; ?>" alt="<?php echo $logos['logo']['alt']; ?>">
                 </a>
             <?php } ?>

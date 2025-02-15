@@ -186,7 +186,7 @@ function animateCounter(element, targetValue) {
 
                 <div class="<?php echo $col; ?> text-center counters my-3">                 
                     <div class="counter">
-                        <div class="icon"><?php if(get_sub_field('counter_icon')) : echo '<img class="img-fluid" src="'.get_sub_field('counter_icon')['url'].'" />'; endif; ?></div>
+                        <div class="icon"><?php if(get_sub_field('counter_icon')) : echo '<img class="img-fluid" alt="" src="'.get_sub_field('counter_icon')['url'].'" />'; endif; ?></div>
 
                         <div class="number number<?php echo $i; ?>" data-counter="<?php echo $counter_number;  ?>">0</div>
 

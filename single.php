@@ -30,18 +30,18 @@ $thumbnail= get_field('thumbnail'); ?>
 				<div class="col-12 col-md-4 mb-5">
 					<?php if (!empty($thumbnail['url'])) : ?><img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" title="<?php echo $thumbnail['title']; ?>"><?php endif; ?>
 					<?php if (!empty($thumbnail['caption'])) : echo '<div class="wp-caption-text">'.$thumbnail['caption'].'</div>'; endif; ?>
-			        <h3 class="section-header ceo-right-header special-underine"><strong>SHARE</strong></h3>
+			        <div class="h3 section-header ceo-right-header special-underine"><strong>SHARE</strong></div>
 
 					<div class="socialcontainer">
 						<div class="row no-gutters d-flex">
 
 				            <?php $post = get_post(); ?>
 
-							<a id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" class="w-auto social-share me-2 px-3"></a>
+							<a id="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" target="_blank" title="Share to Facebook" aria-label="Share to Facebook" class="w-auto social-share me-2 px-3"></a>
 
-							<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=LinkedIn" target="_blank" id="linkedin" class="w-auto social-share me-2 px-3"></a>
+							<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&source=LinkedIn" title="Share to LinkedIn" aria-label="Share to LinkedIn" target="_blank" id="linkedin" class="w-auto social-share me-2 px-3"></a>
 
-							<a id="email" href="mailto:?subject=<?php echo get_the_title(); ?>&body=View <?php echo get_the_title(); ?>: <?php echo get_permalink(); ?>" class="px-3 w-auto social-share me-2"></a>
+							<a id="email" href="mailto:?subject=<?php echo get_the_title(); ?>&body=View <?php echo get_the_title(); ?>: <?php echo get_permalink(); ?>" title="Email" aria-label="Email" class="px-3 w-auto social-share me-2"></a>
 
 						</div>
 					</div>
@@ -69,9 +69,9 @@ $thumbnail= get_field('thumbnail'); ?>
 					?>
 
 
-			        <h3 class="section-header ceo-right-header special-underine"><strong>CONTACT</strong> DETAILS</h3>
+			        <div class="h3 section-header ceo-right-header special-underine"><strong>CONTACT</strong> DETAILS</div>
 					<p class="newsevents-contact newsevents-phone"><i class="fas fa-phone"></i><?php echo $phone_number; ?></p>
-			        <p class="newsevents-contact newsevents-email"><i class="fas fa-envelope"></i><a href="mailto:<?php echo $email; ?>"></a><?php echo $email; ?></a></p>
+			        <p class="newsevents-contact newsevents-email"><i class="fas fa-envelope"></i><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
 			        <p class="newsevents-contact newsevents-address"><i class="fas fa-map-marker-alt"></i><?php 
                     if(!empty($address['address_line_1'])) : echo $address['address_line_1'].', '; endif; 
                     if(!empty($address['street'])) : echo $address['street'].', '; endif; 

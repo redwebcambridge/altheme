@@ -14,7 +14,14 @@
                     <!-- sliders from school settings -->
                     <?php if( have_rows('carousel','option') ):
                         while( have_rows('carousel','option') ) : the_row(); ?>
-                            <a href="<?php echo get_sub_field('url'); ?>" class="<?php echo get_sub_field('class'); ?>" target="_blank" style="background-image:url(<?php echo get_sub_field('image'); ?>)">
+                            <a 
+                            href="<?php echo get_sub_field('url'); ?>" 
+                            class="<?php echo get_sub_field('class'); ?>" 
+                            target="_blank" 
+                            style="background-image:url(<?php echo get_sub_field('image'); ?>)"
+                            title="<?php echo esc_attr(get_the_title(get_sub_field('image', false))); ?>"
+                            aria-label="<?php echo esc_attr(get_the_title(get_sub_field('image', false))); ?>"
+                            >
                             </a>
                     <?php endwhile; endif; ?>
 
@@ -87,7 +94,7 @@
                         <?php if (is_adult_ed_page()) : ?>
                             <!-- Adult Learning Footer -->
                             <?php $adult_footer = get_field('footer_options','option'); ?>
-                            <h5><?php echo $adult_footer['column_1_title']; ?></h5>
+                            <div class='h5'><?php echo $adult_footer['column_1_title']; ?></div>
                             <div class="footer-line"></div>
                             <p><?php echo $adult_footer['col1_content']; ?></p>
                             <?php $socialmedia = $adult_footer['social_media']; ?>
@@ -106,13 +113,13 @@
                                     } 
                                     ?>
 
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank" title="<?php echo esc_attr($platform['platform']);?>" aria-label="<?php echo esc_attr($platform['platform']);?>"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
                         <?php elseif (is_sports_page()) : ?>
                             <!-- Sports Footer -->
                             <?php $sports_footer = get_field('sports_footer_options','option'); ?>
-                            <h5><?php echo $sports_footer['column_1_title']; ?></h5>
+                            <div class='h5'><?php echo $sports_footer['column_1_title']; ?></div>
                             <div class="footer-line"></div>
                             <p><?php echo $sports_footer['col1_content']; ?></p>
                             <?php $socialmedia = $sports_footer['social_media']; ?>
@@ -133,12 +140,12 @@
 
 
 
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank" title="<?php echo esc_attr($platform['platform']);?>" aria-label="<?php echo esc_attr($platform['platform']);?>"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
                         <?php else : ?>    
                             <!-- School Footer -->
-                            <h5><?php echo get_field('left_footer_title','option') ?></h5>
+                            <div class='h5'><?php echo get_field('left_footer_title','option') ?></div>
                             <div class="footer-line"></div>
                             <?php echo get_field('footer_left_side_text','option'); ?>
                                 <div class="social">
@@ -149,7 +156,7 @@
                                             $platform = get_sub_field('platform');
                                         } 
                                     ?>
-                                    <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank"><i class="social fab fa-<?php echo $platform; if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank" title="<?php echo esc_attr(get_sub_field('platform'));?>" aria-label="<?php echo esc_attr(get_sub_field('platform'));?>"><i class="social fab fa-<?php echo $platform; if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endwhile; endif; ?>
                                 </div>
                         <?php endif; ?>
@@ -157,7 +164,7 @@
 
                         <div class="col-md-4 contact-info">
                         <?php if (is_adult_ed_page()) : ?>
-                            <h5><?php echo $adult_footer['column_2_header']; ?></h5>
+                            <div class="h5"><?php echo $adult_footer['column_2_header']; ?></div>
                             <div class="footer-line"></div>
                             <div class="row">
                                 <i class="fas fa-phone-alt"></i>
@@ -179,7 +186,7 @@
                                 ?>
                             </div>
                         <?php elseif (is_sports_page()) : ?>
-                            <h5><?php echo $sports_footer['column_2_header']; ?></h5>
+                            <div class='h5'><?php echo $sports_footer['column_2_header']; ?></div>
                             <div class="footer-line"></div>
                             <div class="row">
                                 <i class="fas fa-phone-alt"></i>
@@ -202,7 +209,7 @@
                             </div>
                         <?php else : ?>
                             <?php the_field('footer_icon_title','option'); ?>
-                            <h5><?php the_field('middle_footer_title','option') ?></h5>
+                            <div class='h5'><?php the_field('middle_footer_title','option') ?></div>
                             <div class="footer-line"></div>
                             <div class="row">
                                 <i class="fas fa-phone-alt"></i>
@@ -228,7 +235,7 @@
 
                         <div class="col-md-4">
                         <?php if (is_sports_page()) : ?>
-                            <h5><?php echo $sports_footer['column_3_title']; ?></h5>
+                            <div class='h5'><?php echo $sports_footer['column_3_title']; ?></div>
                             <div class="footer-line"></div>
 
                             <?php 
@@ -253,7 +260,7 @@
                             <?php endif; ?>
 
                             <?php elseif (is_adult_ed_page()) : ?>
-                                <h5><?php echo $adult_footer['column_3_title']; ?></h5>
+                                <div class='h5'><?php echo $adult_footer['column_3_title']; ?></div>
                                 <div class="footer-line"></div>
                                 <?php
                                 if (isset($adult_footer['adult_instagram_map_option']) && $adult_footer['adult_instagram_map_option'] == 'Map') : 
@@ -282,9 +289,9 @@
                             <?php
                             $selection = get_field('instagram_map','option');
                             if ($selection == "Map") {
-                                echo '<h5>LOCATION</h5>';
+                                echo '<div class="h5">LOCATION</div>';
                             } elseif ($selection == "Instagram") {
-                                echo '<h5>INSTAGRAM GALLERY</h5>';
+                                echo '<div class="h5">INSTAGRAM GALLERY</div>';
                             }; ?>
                             <div class="footer-line"></div>
 

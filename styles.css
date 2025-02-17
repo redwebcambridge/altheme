@@ -5748,14 +5748,14 @@ footer #sb_instagram #sbi_load {
   width: 100%;
   justify-content: flex-end;
 }
-footer h5 {
+footer .h5 {
   font-size: 20px;
   color: #FFFFFF;
   text-transform: uppercase;
   font-weight: 300;
 }
 @media (max-width: 992px) {
-  footer h5 {
+  footer .h5 {
     margin-top: 20px;
   }
 }
@@ -7858,7 +7858,7 @@ textarea:focus, input:focus, select:focus {
   margin: 1.2em 0 1em 0;
 }
 .newsevents .ceo-right-header strong, .search .ceo-right-header strong {
-  font-size: 400;
+  font-weight: 400;
 }
 .newsevents .socialcontainer, .search .socialcontainer {
   width: 100%;

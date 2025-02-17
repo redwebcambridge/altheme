@@ -40,6 +40,7 @@ jQuery( document ).ready(function() {
 
   //WINDOW RESIZE
     jQuery(window).resize(function(){
+      if(jQuery('.header-images-slick-slider')[0] === undefined) return;
       jQuery('.header-images-slick-slider')[0].slick.refresh();
 
         if (jQuery('body').width() > 750) {
@@ -151,23 +152,37 @@ jQuery( document ).ready(function() {
       if (url == "#"){return;}
       var parent_item_html = jQuery(this).children('a').html();
       jQuery(this).find('.sub-menu').prepend('<li><a class="dropdown-item" href="'+url+'">'+parent_item_html+'</a></li>');
-    });
-    //SIDEBAR MENU ON MOBILE
-    if (jQuery(window).width() < 780) {
-      if (jQuery('#sidebar-menu li:not(.sub-menu li)').length > 4) {
-          jQuery("#sidebar-menu li:not(.sub-menu li):lt(4)").wrapAll('<div class="mobilecontain"></div>');
-          jQuery("#sidebar-menu .mobilecontain").append('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
-          jQuery("#sidebar-menu li:not(.sub-menu li)").addClass("d-none");
-          jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
-          jQuery(".showall,.sidebarclose").on("click", function () {
-            jQuery("#sidebar-menu li:not(.sub-menu li):gt(3)").toggleClass("d-none");
-            jQuery(".sidebarclose,.showall").toggle();
-            jQuery("#sidebar-menu .mobilecontain li").removeClass("d-none");
-          });
-      }
-    }
-        
+    }); 
   }
+
+  //SIDEBAR MENU ON MOBILE
+  jQuery("#sidebar-menu").each(function (i, el) {
+    var isWrapped = false;
+    var $parent = jQuery(el).parent();
+    var $el = jQuery(el);
+
+    var check = function() {
+      if (jQuery(window).width() < 780 && !isWrapped) {
+        if (jQuery('#sidebar-menu li:not(.sub-menu li)').length > 4) {
+          $wrap = jQuery('<div class="mobile-sidebarnav-contain"></div>')
+          $down = jQuery('<div class="showall"><i class="fas fa-chevron-circle-down"></i></div>');
+    
+          $el.wrapAll($wrap);
+          $el.parent().append($down);
+          isWrapped = true;
+          $down.click(function (e) {
+            $el.parent().toggleClass("open");
+          });
+        }
+      } else if(jQuery(window).width() >= 780 && isWrapped) {
+        $parent.append($el);
+        $parent.find(".mobile-sidebarnav-contain").remove();
+        isWrapped = false;
+      }
+    };
+    jQuery(window).resize(check);
+    check();
+  });
 
 
   //add class if has submenu for top buttons

@@ -5306,6 +5306,35 @@ header #top_buttons ul.dropdown-menu .double-sub li:hover {
 #sidebar-menu .current_page_item > a {
   color: white;
 }
+
+.mobile-sidebarnav-contain {
+  width: 100%;
+  position: relative;
+}
+.mobile-sidebarnav-contain #sidebar-menu {
+  height: 125px;
+  overflow: hidden;
+}
+.mobile-sidebarnav-contain.open #sidebar-menu {
+  height: fit-content;
+}
+.mobile-sidebarnav-contain .showall {
+  width: 106%;
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+  text-align: center;
+  padding-top:20px;
+  font-size: 30px;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.mobile-sidebarnav-contain.open .showall {
+  position: static;
+}
+.mobile-sidebarnav-contain.open .showall .fas {
+  transform: rotate(180deg);
+}
 @media (max-width: 812px) {
   body {
     padding-top: 50px;

@@ -51,8 +51,8 @@ get_header(); ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-8 executive_content_cont">
-                                                    <h5><?php the_sub_field('members_name'); ?></h5>
-                                                    <h6><?php the_sub_field('title'); ?></h6>
+                                                    <div class="h5"><?php the_sub_field('members_name'); ?></div>
+                                                    <div class="h6"><?php the_sub_field('title'); ?></div>
                                                 </div>
                                             </div>
                                         </div>

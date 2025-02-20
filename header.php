@@ -366,7 +366,7 @@ if (!class_exists('ACF')) {
           <div class="content_left">
               <div class="social">
                   <?php if( have_rows('platforms','option') ):  while( have_rows('platforms','option') ) : the_row(); ?>
-                        <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank">
+                        <a href="<?php echo get_sub_field('platform_url'); ?>" title="<?php echo esc_attr(get_sub_field('platform')); ?>" aria-label="<?php echo esc_attr(get_sub_field('platform')); ?>" target="_blank">
                             <?php if(get_sub_field('platform') == 'twitter') {
                                 $platform = 'x-twitter';
                             } else {

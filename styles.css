@@ -7837,13 +7837,13 @@ textarea:focus, input:focus, select:focus {
 .newsevents .newseventcontainer .newseventtext:hover, .newsevents .newslettercontainer .newseventtext:hover, .search .newseventcontainer .newseventtext:hover, .search .newslettercontainer .newseventtext:hover {
   background-color: #1c8cbd;
 }
-.newsevents .newseventcontainer .newseventtext h4, .newsevents .newslettercontainer .newseventtext h4, .search .newseventcontainer .newseventtext h4, .search .newslettercontainer .newseventtext h4 {
+.newsevents .newseventcontainer .newseventtext .h4, .newsevents .newslettercontainer .newseventtext .h4, .search .newseventcontainer .newseventtext .h4, .search .newslettercontainer .newseventtext .h4 {
   margin: 0 0 20px;
 }
-.newsevents .newseventcontainer .newseventtext h4 a, .newsevents .newslettercontainer .newseventtext h4 a, .search .newseventcontainer .newseventtext h4 a, .search .newslettercontainer .newseventtext h4 a {
+.newsevents .newseventcontainer .newseventtext .h4 a, .newsevents .newslettercontainer .newseventtext .h4 a, .search .newseventcontainer .newseventtext .h4 a, .search .newslettercontainer .newseventtext .h4 a {
   color: #fff;
 }
-.newsevents .newseventcontainer .newseventtext h4 a:hover, .newsevents .newslettercontainer .newseventtext h4 a:hover, .search .newseventcontainer .newseventtext h4 a:hover, .search .newslettercontainer .newseventtext h4 a:hover {
+.newsevents .newseventcontainer .newseventtext .h4 a:hover, .newsevents .newslettercontainer .newseventtext .h4 a:hover, .search .newseventcontainer .newseventtext .h4 a:hover, .search .newslettercontainer .newseventtext .h4 a:hover {
   text-decoration: none;
 }
 .newsevents .newseventcontainer .newseventtext p, .newsevents .newslettercontainer .newseventtext p, .search .newseventcontainer .newseventtext p, .search .newslettercontainer .newseventtext p {
@@ -7859,7 +7859,7 @@ textarea:focus, input:focus, select:focus {
   padding: 15px 20px 10px 20px;
   min-height: 71px;
 }
-.newsevents .newslettercontainer .newseventtext h4, .search .newslettercontainer .newseventtext h4 {
+.newsevents .newslettercontainer .newseventtext .h4, .search .newslettercontainer .newseventtext .h4 {
   line-height: 15px;
 }
 .newsevents .newseventspagination, .newsevents .newslettercontainer, .search .newseventspagination, .search .newslettercontainer {
@@ -7878,7 +7878,7 @@ textarea:focus, input:focus, select:focus {
 .newsevents .newslettercontainer .newseventtext a, .search .newslettercontainer .newseventtext a {
   font-size: 1rem;
 }
-.newsevents .newslettercontainer .newseventtext h4, .search .newslettercontainer .newseventtext h4 {
+.newsevents .newslettercontainer .newseventtext .h4, .search .newslettercontainer .newseventtext .h4 {
   margin-bottom: 10px;
 }
 .newsevents .ceo-right-header, .search .ceo-right-header {
@@ -8704,7 +8704,7 @@ html .orange-vacancy-div-bg {
   margin: 10px;
   transition: all 0.5s ease-in-out;
 }
-#grid_layout .single_icon h5 {
+#grid_layout .single_icon .h5 {
   color: #2ca9e0;
 }
 #grid_layout .single_icon img {
@@ -9165,7 +9165,7 @@ body.school_id_al.blog .newseventcontainer:nth-of-type(8) .newseventtext, body.s
 #academy-single .top-details .logo img {
   width: 80%;
 }
-#academy-single .top-details h3 {
+#academy-single .top-details .h3 {
   font-size: 1rem;
   font-weight: 500;
 }

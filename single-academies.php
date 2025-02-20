@@ -36,18 +36,18 @@
 
     <div class="col-6 col-md-3 py-3 mt-2 ps-4">
       <?php if ( get_field('full_address') ) : ?>
-        <h3 class="text_school_col m-0">Address</h3>
+        <div class="h3 text_school_col m-0">Address</div>
         <?php echo get_field('full_address'); ?>
       <?php endif; ?>
     </div>
 
     <div class="col-6 col-md-3 py-3  mt-2">
       <?php if ( get_field('telephone') ) : ?>
-        <h3 class="text_school_col m-0">Telephone</h3>
+        <div class="h3 text_school_col m-0">Telephone</div>
         <?php echo get_field('telephone'); ?>
       <?php endif; ?>
       <?php if ( get_field('email') ) : ?>
-        <h3 class="mt-4 text_school_col m-0">Email</h3>
+        <div class="mt-4 h3 text_school_col m-0">Email</div>
         <?php echo get_field('email'); ?>
       <?php endif; ?>
 
@@ -59,7 +59,7 @@
                         $platform = get_sub_field('acad_social_platform');
                     } 
                 ?>
-                <a href="<?php echo get_sub_field('acad_social_url'); ?>" target="_blank"><i class="h4 pe-2 text_school_col social fab fa-<?php echo $platform; if(get_sub_field('acad_social_platform')=='facebook'){echo '-f';}?>"></i></a>
+                <a href="<?php echo get_sub_field('acad_social_url'); ?>" title="<?php echo esc_attr(get_sub_field('acad_social_platform')); ?>" aria-label="<?php echo esc_attr(get_sub_field('acad_social_platform')); ?>" target="_blank"><i class="h4 pe-2 text_school_col social fab fa-<?php echo $platform; if(get_sub_field('acad_social_platform')=='facebook'){echo '-f';}?>"></i></a>
             <?php endwhile; endif; ?>
       </div>
     </div>
@@ -143,7 +143,7 @@ if( $gallery ):
     echo '<div class="acf-gallery mb-5">';
     foreach( $gallery as $index => $image ):
         echo '<div class="acf-gallery-item">';
-        echo '<a href="#" data-toggle="modal" data-target="#galleryModal' . $index . '">';
+        echo '<a href="#" data-toggle="modal" title="Open Gallery" aria-label="Open Gallery" data-target="#galleryModal' . $index . '">';
         echo '<img src="' . esc_url($image['sizes']['medium']) . '" alt="' . esc_attr($image['alt']) . '" />';
         echo '</a>';
         echo '</div>';

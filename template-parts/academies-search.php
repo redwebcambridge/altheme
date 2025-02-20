@@ -4,7 +4,7 @@
             <div class="input-group mb-1">
                 <input id="academies_search" type="text" class="form-control" placeholder="SEARCH BY SCHOOL NAME" aria-label="School Search" >
                 <div class="input-group-append">
-                    <button class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="input-group-text" title="Search academies" aria-label="Search academies"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div> 
             <p class="px-2"><small>Search by school name or filter by selecting an age group and local authority.</small></p>
@@ -14,7 +14,7 @@
             <button id="view_map" class="search_buttons map_view" ><i class="fa-solid fa-location-dot"></i> View Map</button>
         </div>
         <div class="col-xl-5 col-lg-5 col-md-6 ages my-2">
-            <h4 class="mt-1">Ages</h4>
+            <div class="h4 mt-1">Ages</div>
             <?php
                 $all_school_age_terms = get_terms(array(
                     'taxonomy' => 'school_age',
@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="col-xl-5 col-lg-5 col-md-6 my-2">
-            <h4 class="mt-1" >Local Authority</h4>
+            <div class="h4 mt-1">Local Authority</div>
             <?php
                 $all_local_authority_terms = get_terms(array(
                     'taxonomy' => 'local_authority',

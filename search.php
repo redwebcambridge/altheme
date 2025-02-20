@@ -53,12 +53,12 @@ $query = new WP_Query($args);
                                 $imageurl = get_field('logo_and_icons','option')['default_header_image'];
                             }
                             ?>
-                        <a href="<?php the_permalink(); ?>">
+                        <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr(get_the_title()); ?>" aria-label="<?php echo esc_attr(get_the_title()); ?>">
                             <div class="newseventimagecontainer" style="background-image:url(<?php echo $imageurl; ?>);"></div>
                         </a>
                     </div>
                     <div class="col-12 newseventtext">
-                        <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                        <div class="h4"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
                         <?php the_excerpt(); ?>
                         <a class="readmore" href="<?php the_permalink(); ?>">READ MORE</a>
                     </div>

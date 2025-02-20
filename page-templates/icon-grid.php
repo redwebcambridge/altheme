@@ -38,7 +38,7 @@ get_header(); ?>
 
                 <div class="col-12 col-md-6 col-lg-4 text-center p-2">
                   <div class="single_icon">
-                    <h5 class="pt-4 px-2"><?php the_sub_field('icon_grid_title'); ?></h5>
+                    <div class="h5 pt-4 px-2"><?php the_sub_field('icon_grid_title'); ?></div>
                     <div class="pb-2 w-100"><?php the_sub_field('icon_grid_sub_title'); ?></div>
                     <img src="<?php echo get_sub_field('icon_grid_icon')['url']; ?>" alt="<?php echo get_sub_field('icon_grid_icon')['alt']; ?>">
                   </div>

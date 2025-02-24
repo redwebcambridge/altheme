@@ -8846,11 +8846,11 @@ body.school_id_al.blog .newseventcontainer:nth-of-type(8) .newseventtext, body.s
 .executive_team .executive_team_block .executive_content_cont {
   padding: 20px 15px 20px 15px;
 }
-.executive_team .executive_team_block .executive_content_cont h5 {
+.executive_team .executive_team_block .executive_content_cont .h5 {
   color: #2ca9e0;
   font-size: 18px;
 }
-.executive_team .executive_team_block .executive_content_cont h6 {
+.executive_team .executive_team_block .executive_content_cont .h6 {
   font-size: 12px;
   color: #6461ab;
 }

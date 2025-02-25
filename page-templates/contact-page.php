@@ -36,15 +36,15 @@ get_header(); ?>
               ?>
                 <div class="col-12 col-md-6 contact-details">
                   <?php if ($display_options['phone_number']) : ?>
-                     <h5>Phone</h5>
+                     <div class="h5">Phone</div>
                      <a href="tel:<?php echo $phone_number; ?>"><p><?php echo $phone_number; ?></p></a>
                   <?php endif; ?>
                   <?php if ($display_options['show_email_address']) : ?>
-                    <h5>Email</h5>
+                    <div class="h5">Email</div>
                     <a href="mailto:<?php echo $email; ?>"><p><?php echo $email; ?></p></a>
                   <?php endif; ?>
                   <?php if ($display_options['address']) : ?>
-                      <h5>Address</h5>
+                      <div class="h5">Address</div>
                     <p>
                       <?php 
                         if(!empty($address['address_line_1'])) : echo $address['address_line_1'].', '; endif; 

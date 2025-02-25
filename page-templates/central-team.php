@@ -82,7 +82,7 @@ get_header(); ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-8 executive_content_cont">
-                                                    <h5><?php the_sub_field('members_name'); ?></h5>
+                                                    <div class="h5"><?php the_sub_field('members_name'); ?></div>
                                                     <h6><?php the_sub_field('title'); ?></h6>
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@ get_header(); ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-8 executive_content_cont">
-                                                    <h5><?php the_sub_field('members_name'); ?></h5>
+                                                    <div class="h5"><?php the_sub_field('members_name'); ?></div>
                                                     <h6><?php the_sub_field('title'); ?></h6>
                                                 </div>
                                             </div>
@@ -144,7 +144,7 @@ get_header(); ?>
                                                     </div>
                                                 </div>
                                                 <div class="col-8 executive_content_cont">
-                                                    <h5><?php the_sub_field('members_name'); ?></h5>
+                                                    <div class="h5"><?php the_sub_field('members_name'); ?></div>
                                                     <h6><?php the_sub_field('title'); ?></h6>
                                                 </div>
                                             </div>

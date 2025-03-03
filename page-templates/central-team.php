@@ -83,7 +83,7 @@ get_header(); ?>
                                                 </div>
                                                 <div class="col-8 executive_content_cont">
                                                     <div class="h5"><?php the_sub_field('members_name'); ?></div>
-                                                    <h6><?php the_sub_field('title'); ?></h6>
+                                                    <div class="h6"><?php the_sub_field('title'); ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -114,7 +114,7 @@ get_header(); ?>
                                                 </div>
                                                 <div class="col-8 executive_content_cont">
                                                     <div class="h5"><?php the_sub_field('members_name'); ?></div>
-                                                    <h6><?php the_sub_field('title'); ?></h6>
+                                                    <div class="h6"><?php the_sub_field('title'); ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -145,7 +145,7 @@ get_header(); ?>
                                                 </div>
                                                 <div class="col-8 executive_content_cont">
                                                     <div class="h5"><?php the_sub_field('members_name'); ?></div>
-                                                    <h6><?php the_sub_field('title'); ?></h6>
+                                                    <div class="h6"><?php the_sub_field('title'); ?></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -191,18 +191,6 @@ get_header(); ?>
 
 
 
-
-        <!---Body section centre--->
-        <!-- <div class="col-md-12">
-        <h2 class="heading-two"><?php //the_field('sub_heading') ?></h2>
-        <div class="gradline"></div>
-        </div> -->
-
-        <!-- <div class="row">
-            <div class="col-md-9 text-section">
-                <p class="body-text"><?php //the_field('body_text') ?></p>
-            </div>
-        </div> -->
 
         </div>
     </div>

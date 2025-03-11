@@ -67,7 +67,14 @@
                 <div class="partner-slider slider">
                     <?php if( have_rows('icons',$page_id)):
                         while( have_rows('icons',$page_id) ) : the_row(); ?>
-                            <a href="<?php echo get_sub_field('link'); ?>" class="<?php echo get_sub_field('class'); ?>" target="_blank" style="background-image:url(<?php echo get_sub_field('icon_image'); ?>)">
+                            <a 
+                                href="<?php echo get_sub_field('link'); ?>" 
+                                class="<?php echo get_sub_field('class'); ?>" 
+                                target="_blank" 
+                                style="background-image:url(<?php echo get_sub_field('icon_image'); ?>)"
+                                title="Partner Logo"
+                                aria-label="Partner Logo"
+                            >
                             </a>
                     <?php endwhile; endif; ?>
                 </div>

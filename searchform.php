@@ -11,7 +11,9 @@ if (is_sports_page()){$site_section = 'sports';}
     <input class="form-control rounded-0 ml-2" placeholder="SEARCH" type="text" name="s" id="search" value="<?php the_search_query(); ?>" />
     <input type="hidden" name="site_section" value="<?php echo $site_section; ?>" /> 
     <div class="input-group-append">
-      <button class="rounded-0 btn" type="button" id="button-addon2"></button>
+      <button class="rounded-0 btn" type="button" id="button-addon2">
+        <span class="visually-hidden">Search</span>                           
+      </button>
     </div>
   </div>
 </form>

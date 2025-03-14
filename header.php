@@ -44,27 +44,18 @@
             ?>
               <!--Front page-->
               <meta property="og:image" content="<?php echo get_sub_field('image'); ?>" />
-              <meta property="twitter:image" content="<?php echo get_sub_field('image'); ?>" />
             <?php
             break;
           endwhile;
         endif;
 
-      } elseif(is_single()) {
-        ?>
-
+      } elseif(is_single()) {  ?>
         <!--News page-->
-        <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
-        <meta property="og:image" content="<?php echo $featuredimg; ?>" />
-
-        <?php
-      } else { ?>
-
+          <meta property="og:description" content="<?php echo the_excerpt(); ?>" />
+          <meta property="og:image" content="<?php echo $featuredimg; ?>" />
+        <?php } else { ?>
         <!--All pages-->
-
-        <meta property="og:image" content="<?php echo $featuredimg; ?>" /> 
-        <meta property="twitter:image" content="<?php echo $featuredimg; ?>">
-
+          <meta property="og:image" content="<?php echo $featuredimg; ?>" /> 
         <?php
       }
   ?>

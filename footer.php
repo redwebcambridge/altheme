@@ -15,13 +15,13 @@
                     <?php if( have_rows('carousel','option') ):
                         while( have_rows('carousel','option') ) : the_row(); ?>
                             <a 
-                            href="<?php echo get_sub_field('url'); ?>" 
-                            class="<?php echo get_sub_field('class'); ?>" 
+                            href="<?= get_sub_field('url'); ?>" 
+                            class="<?= get_sub_field('class'); ?>" 
                             target="_blank" 
-                            style="background-image:url(<?php echo get_sub_field('image'); ?>)"
-                            title="<?php echo esc_attr(get_the_title(get_sub_field('image', false))); ?>"
-                            aria-label="<?php echo esc_attr(get_the_title(get_sub_field('image', false))); ?>"
+                            style="background-image:url(<?= get_sub_field('image'); ?>)"
+                            title="<?= esc_attr(get_the_title(get_sub_field('image', false))); ?>"
                             >
+                                <span class="visually-hidden"><?= get_sub_field('alt_text') ?></span>                           
                             </a>
                     <?php endwhile; endif; ?>
 
@@ -41,7 +41,12 @@
                             while ( $query->have_posts() ) {
                                 $query->the_post();
                                 $logo = get_field('logo'); ?>
-                                <a href="<?php echo the_permalink(); ?>" class="al_acad_<?php echo get_the_id(); ?>" target="_blank" style="background-image:url(<?php echo get_field('logo')['url']; ?>)">
+
+                                <a href="<?= the_permalink(); ?>" 
+                                class="al_acad_<?= get_the_id(); ?>" 
+                                target="_blank" 
+                                style="background-image:url(<?= get_field('logo')['url']; ?>)">
+                                    <span class="visually-hidden"><?= the_title();?></span>                           
                                 </a>
 
                             <?php
@@ -54,8 +59,8 @@
                     endif; ?>
                 </div>
                 <div class="slick-controls-lower">
-                    <button class="prev-slide-lower"></button>
-                    <button class="next-slide-lower"></button>
+                    <button class="prev-slide-lower"><span class="visually-hidden">Previous</span></button>
+                    <button class="next-slide-lower"><span class="visually-hidden">Next</span></button>
                 </div>
             </div>
             <?php else : 
@@ -68,19 +73,19 @@
                     <?php if( have_rows('icons',$page_id)):
                         while( have_rows('icons',$page_id) ) : the_row(); ?>
                             <a 
-                                href="<?php echo get_sub_field('link'); ?>" 
-                                class="<?php echo get_sub_field('class'); ?>" 
+                                href="<?= get_sub_field('link'); ?>" 
+                                class="<?= get_sub_field('class'); ?>" 
                                 target="_blank" 
-                                style="background-image:url(<?php echo get_sub_field('icon_image'); ?>)"
+                                style="background-image:url(<?= get_sub_field('icon_image'); ?>)"
                                 title="Partner Logo"
-                                aria-label="Partner Logo"
                             >
+                                <span class="visually-hidden"><?= get_sub_field('link'); ?></span>                           
                             </a>
                     <?php endwhile; endif; ?>
                 </div>
                 <div class="slick-controls-lower">
-                    <button class="prev-slide-lower"></button>
-                    <button class="next-slide-lower"></button>
+                    <button class="prev-slide-lower"><span class="visually-hidden">Previous</span></button>
+                    <button class="next-slide-lower"><span class="visually-hidden">Next</span></button>
                 </div>
             </div>
             <?php endif; ?>
@@ -101,9 +106,9 @@
                         <?php if (is_adult_ed_page()) : ?>
                             <!-- Adult Learning Footer -->
                             <?php $adult_footer = get_field('footer_options','option'); ?>
-                            <div class='h5'><?php echo $adult_footer['column_1_title']; ?></div>
+                            <div class='h5'><?= $adult_footer['column_1_title']; ?></div>
                             <div class="footer-line"></div>
-                            <p><?php echo $adult_footer['col1_content']; ?></p>
+                            <p><?= $adult_footer['col1_content']; ?></p>
                             <?php $socialmedia = $adult_footer['social_media']; ?>
                                 <div class="social">
                                 <?php foreach ($socialmedia as $platform) :
@@ -120,15 +125,15 @@
                                     } 
                                     ?>
 
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank" title="<?php echo esc_attr($platform['platform']);?>" aria-label="<?php echo esc_attr($platform['platform']);?>"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?= $platform['platform_url']; ?>" target="_blank" title="<?= esc_attr($platform['platform']);?>" aria-label="<?= esc_attr($platform['platform']);?>"><i class="social fab fa-<?= $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
                         <?php elseif (is_sports_page()) : ?>
                             <!-- Sports Footer -->
                             <?php $sports_footer = get_field('sports_footer_options','option'); ?>
-                            <div class='h5'><?php echo $sports_footer['column_1_title']; ?></div>
+                            <div class='h5'><?= $sports_footer['column_1_title']; ?></div>
                             <div class="footer-line"></div>
-                            <p><?php echo $sports_footer['col1_content']; ?></p>
+                            <p><?= $sports_footer['col1_content']; ?></p>
                             <?php $socialmedia = $sports_footer['social_media']; ?>
                                 <div class="social">
                                 <?php foreach ($socialmedia as $platform) :
@@ -147,14 +152,14 @@
 
 
 
-                                    <a href="<?php echo $platform['platform_url']; ?>" target="_blank" title="<?php echo esc_attr($platform['platform']);?>" aria-label="<?php echo esc_attr($platform['platform']);?>"><i class="social fab fa-<?php echo $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?= $platform['platform_url']; ?>" target="_blank" title="<?= esc_attr($platform['platform']);?>" aria-label="<?= esc_attr($platform['platform']);?>"><i class="social fab fa-<?= $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
                         <?php else : ?>    
                             <!-- School Footer -->
-                            <div class='h5'><?php echo get_field('left_footer_title','option') ?></div>
+                            <div class='h5'><?= get_field('left_footer_title','option') ?></div>
                             <div class="footer-line"></div>
-                            <?php echo get_field('footer_left_side_text','option'); ?>
+                            <?= get_field('footer_left_side_text','option'); ?>
                                 <div class="social">
                                 <?php if( have_rows('platforms' , 'option') ): while( have_rows('platforms' , 'option') ) : the_row();  ?>
                                     <?php if(get_sub_field('platform') == 'twitter') {
@@ -163,7 +168,7 @@
                                             $platform = get_sub_field('platform');
                                         } 
                                     ?>
-                                    <a href="<?php echo get_sub_field('platform_url'); ?>" target="_blank" title="<?php echo esc_attr(get_sub_field('platform'));?>" aria-label="<?php echo esc_attr(get_sub_field('platform'));?>"><i class="social fab fa-<?php echo $platform; if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?= get_sub_field('platform_url'); ?>" target="_blank" title="<?= esc_attr(get_sub_field('platform'));?>" aria-label="<?= esc_attr(get_sub_field('platform'));?>"><i class="social fab fa-<?= $platform; if(get_sub_field('platform')=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endwhile; endif; ?>
                                 </div>
                         <?php endif; ?>
@@ -171,15 +176,15 @@
 
                         <div class="col-md-4 contact-info">
                         <?php if (is_adult_ed_page()) : ?>
-                            <div class="h5"><?php echo $adult_footer['column_2_header']; ?></div>
+                            <div class="h5"><?= $adult_footer['column_2_header']; ?></div>
                             <div class="footer-line"></div>
                             <div class="row">
                                 <i class="fas fa-phone-alt"></i>
-                                <a class="text-white" href="tel:<?php echo $adult_footer['telephone']; ?>"><?php echo $adult_footer['telephone']; ?></a>
+                                <a class="text-white" href="tel:<?= $adult_footer['telephone']; ?>"><?= $adult_footer['telephone']; ?></a>
                             </div>
                             <div class="row">
                                 <i class="fas fa-envelope"></i>
-                                <a class="text-white" href="mailto:<?php echo $adult_footer['email_address']; ?>"><?php echo $adult_footer['email_address']; ?></a>
+                                <a class="text-white" href="mailto:<?= $adult_footer['email_address']; ?>"><?= $adult_footer['email_address']; ?></a>
                             </div>
                             <div class="row">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -193,15 +198,15 @@
                                 ?>
                             </div>
                         <?php elseif (is_sports_page()) : ?>
-                            <div class='h5'><?php echo $sports_footer['column_2_header']; ?></div>
+                            <div class='h5'><?= $sports_footer['column_2_header']; ?></div>
                             <div class="footer-line"></div>
                             <div class="row">
                                 <i class="fas fa-phone-alt"></i>
-                                <a class="text-white" href="tel:<?php echo $sports_footer['telephone']; ?>"><?php echo $sports_footer['telephone']; ?></a>
+                                <a class="text-white" href="tel:<?= $sports_footer['telephone']; ?>"><?= $sports_footer['telephone']; ?></a>
                             </div>
                             <div class="row">
                                 <i class="fas fa-envelope"></i>
-                                <a class="text-white" href="mailto:<?php echo $sports_footer['email_address']; ?>"><?php echo $sports_footer['email_address']; ?></a>
+                                <a class="text-white" href="mailto:<?= $sports_footer['email_address']; ?>"><?= $sports_footer['email_address']; ?></a>
                             </div>
                             <div class="row">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -242,7 +247,7 @@
 
                         <div class="col-md-4">
                         <?php if (is_sports_page()) : ?>
-                            <div class='h5'><?php echo $sports_footer['column_3_title']; ?></div>
+                            <div class='h5'><?= $sports_footer['column_3_title']; ?></div>
                             <div class="footer-line"></div>
 
                             <?php 
@@ -251,23 +256,23 @@
                                 $latitude = $sports_footer['latitude']; 
                             ?>
                                 <div id="map"></div>
-                                <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
+                                <?=  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
                                 <script>
                                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                         maxZoom: 19,
                                     }).addTo(map);
                                     L.control.scale().addTo(map);
                                 </script>
-                                <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                                <?=  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
                             <?php endif; ?>
                             <?php if (isset($sports_footer['map_or_insta']) && $sports_footer['map_or_insta'] == 'Instagram') : ?>             
                                 <div class="insta-gallery">
-                                    <?php echo do_shortcode('[instagram-feed feed=1 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_sport.'" ]'); ?>
+                                    <?= do_shortcode('[instagram-feed feed=1 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true user="'.$instauser_sport.'" ]'); ?>
                                 </div>
                             <?php endif; ?>
 
                             <?php elseif (is_adult_ed_page()) : ?>
-                                <div class='h5'><?php echo $adult_footer['column_3_title']; ?></div>
+                                <div class='h5'><?= $adult_footer['column_3_title']; ?></div>
                                 <div class="footer-line"></div>
                                 <?php
                                 if (isset($adult_footer['adult_instagram_map_option']) && $adult_footer['adult_instagram_map_option'] == 'Map') : 
@@ -275,14 +280,14 @@
                                     $latitude = $adult_footer['latitude']; 
                                 ?>
                                 <div id="map"></div>
-                                <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
+                                <?=  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
                                 <script>
                                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                         maxZoom: 19,
                                     }).addTo(map);
                                     L.control.scale().addTo(map);
                                 </script>
-                                <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                                <?=  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
                                 <?php endif; ?>
                                 <?php if (isset($adult_footer['map_or_insta']) && $adult_footer['map_or_insta'] == 'Instagram') : ?>             
                                 <div class="insta-gallery">
@@ -304,7 +309,7 @@
 
                                 <?php if( get_field('instagram_map','option') == 'Instagram' ) { ?>
                                     <div class="insta-gallery">
-                                    <?php echo do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]'); ?>
+                                    <?= do_shortcode('[instagram-feed num=6 cols=3 showbutton=false showheader=false imagepadding=0 followtext=Follow customtemplate=true]'); ?>
                                     </div>
                                 <?php } else { ?>
                                     <?php
@@ -312,14 +317,14 @@
                                     $latitude = get_field('latitude','option');
                                     ?>
                                     <div id="map"></div>
-                                    <?php echo  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
+                                    <?=  "<script> var map = L.map('map').setView({lon:$longitude, lat:$latitude}, 15); </script>"; ?>
                                     <script>
                                         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                         maxZoom: 19,
                                         }).addTo(map);
                                         L.control.scale().addTo(map);
                                     </script>
-                                    <?php echo  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
+                                    <?=  "<script> L.marker({lon: $longitude, lat: $latitude}).addTo(map); </script>"; ?>
                                 <?php } ?>
                             <?php endif; ?>
                         </div>
@@ -367,7 +372,7 @@
                 <div class="row py-5">
                     <div class="col-lg-9">
                         <?php the_field('cookie_notice_message','option'); ?>  
-                        <a href="<?PHP echo get_permalink($cookie_link->ID); ?>" target="_blank" class="ml-1 text-decoration-none">Learn More</a> 
+                        <a href="<?= get_permalink($cookie_link->ID); ?>" target="_blank" class="ml-1 text-decoration-none">Learn More</a> 
                     </div>
                     <div class="col-lg-3 text-lg-end pt-4 pt-lg-0">
                         <button class="allow-button mr-1 mb-1">Accept</button>
@@ -382,18 +387,18 @@
     
     <?php wp_footer(); ?>
 
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/offcanvas.js"></script>
+    <script src="<?= get_stylesheet_directory_uri(); ?>/js/offcanvas.js"></script>
 
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo GA_TAG; ?>"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=<?= GA_TAG; ?>"></script>
   <script>
     var cookiesAccepted = getCookie("cookiesAccepted");
     if (cookiesAccepted === "true") {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '<?php echo GA_TAG; ?>');
+      gtag('config', '<?= GA_TAG; ?>');
     } else {
         clearCookies();
     }

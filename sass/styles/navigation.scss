@@ -57,6 +57,7 @@ header {
           color: $darkgrey;
           display: inline-block;
           padding:8px 15px;
+          font-weight: 500;
         }
       }
     }
@@ -118,7 +119,7 @@ header {
 
 #mainnav ul{
   width: 100%;
-  font-weight: 500;
+  font-weight:500;
   border-top-width: 2px;
   border-top: 2px solid $primarycolour,;
   border-radius: 0;
@@ -144,6 +145,7 @@ header {
         background-color: $primarycolour;
         padding: 10px 20px;
         text-transform: uppercase;
+        font-weight: bolder;
         &:hover {
           background-color: $secondarycolour;
         }
@@ -159,6 +161,7 @@ header {
         position: absolute;
         z-index: 1050;
         padding: 0;
+        font-weight: 500;
         margin:0;
         @media all and (max-width: 992px) {
           position: relative;

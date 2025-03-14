@@ -7,10 +7,10 @@ function getheadingfont() {
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap';
       break;
     case "'Roboto Slab', sans-serif":
-      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap';
+      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&display=swap';
       break;
     case "'Roboto', sans-serif":
-      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap';
       break;        
     case "'Open Sans', sans-serif":
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap';
@@ -19,7 +19,7 @@ function getheadingfont() {
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap';
       break;
     case "'Lato', sans-serif":
-      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap';
+      $headingfonturl = 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap';
       break;  
     case "'Libre Franklin ', sans-serif":
       $headingfonturl = 'https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&display=swap';
@@ -36,25 +36,25 @@ function getbodyfont() {
   $fonts = get_field('fonts','option');
   switch ($fonts['body_font']) {
     case "'Raleway', sans-serif":
-      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap';
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap';
       break;
     case "'Roboto', sans-serif":
-      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap';
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;500;700&display=swap';
       break;   
     case "'Open Sans', sans-serif":
-      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap';
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap';
       break;
     case "'Josefin Sans', sans-serif":
-      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap';
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap';
       break;
     case "'Lato', sans-serif":
-      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap';
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap';
       break;  
     case "'Libre Franklin ', sans-serif":
-      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&display=swap';
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600&display=swap';
       break; 
     case "'Montserrat ', sans-serif":
-      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap';
+      $bodyfonturl = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap';
       break;     
   }
   return $bodyfonturl;

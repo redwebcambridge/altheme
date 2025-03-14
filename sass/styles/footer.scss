@@ -220,6 +220,7 @@ footer {
   color: #fff;
 
   font-size: 18px;
+  font-weight: 500;
   background: $primarycolour;
   z-index: 120;
   cursor: pointer;
@@ -235,11 +236,12 @@ footer {
     height: 40px;
     width: 104px;
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 10px;
     border: 1px solid $secondarycolour;
     background-color: $secondarycolour;
     cursor: pointer;
+    font-weight: 600;
   }
   .decline-button {
     background-color:darken($primarycolour,10%);

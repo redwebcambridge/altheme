@@ -1,4 +1,5 @@
 @mixin placeholder-color($color) {
+  font-weight: 600;
     &::-webkit-input-placeholder { /* WebKit browsers */
         color: $color;
     }
@@ -11,12 +12,15 @@
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
         color: $color;
     }
+    &::placeholder {
+      color: $color;
+    }
   }
 
 input[type='email'], input[type='text'], input[type="tel"], input[type='textarea'], textarea {
     color:$medium-grey;
     border: 1px solid transparent;
-    @include placeholder-color($medium-grey);
+    @include placeholder-color($darkgrey);
     font-size: 1em;
     background-color: lighten($lightgrey,10%);
     font-weight: $light-weight;
@@ -26,22 +30,24 @@ input[type='email'], input[type='text'], input[type="tel"], input[type='textarea
     outline: none;
     box-sizing: border-box;
 }
+
 header {
   input[type='text'] {
     background-color: white;
     border: 1px solid $lightgrey;
     font-size: .75rem;
-    @include placeholder-color($lightgrey);
+    @include placeholder-color($darkgrey);
   }
 }
 select.goog-te-combo {
     border:1px solid $lightgrey;
     text-transform: uppercase;
     margin: 0 !important;
-    color:$lightgrey;
+    color:$darkgrey;
     height: 3.25em;
-    font-size: .7rem;
+    font-size: .70rem;
     text-indent: 10px;
+    font-weight: 600;
   }
   .skiptranslate {
     text-align: right;

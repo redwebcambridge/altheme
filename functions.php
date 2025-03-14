@@ -201,27 +201,6 @@ function register_news_post_type() {
 }
 add_action( 'init', 'register_news_post_type', 0 );
 
-function twitterwp($user) {
-  require_once( 'lib/TwitterWP.php' );
-  $app = array(
-    'consumer_key'        => TW_consumer_key,
-    'consumer_secret'     => TW_consumer_secret,
-    'access_token'        => TW_access_token,
-    'access_token_secret' => TW_access_token_secret,
-    );
-  // initiate your app
-  $tw = TwitterWP::start( $app );
-  if ( ! $tw->user_exists( $user ) ) {
-    return;
-  }
-  $tweets = $tw->get_tweets( $user, 5 );
-  $rate_status = $tw->rate_limit_status();
-  if ( is_wp_error( $rate_status ) ) {
-    $tw->show_wp_error( $rate_status );
-  }
-  return $tweets;
-}
-
 //SASS COMPILE
 function sass_compile() {
   require_once get_template_directory() . '/lib/scssphp/scss.inc.php';

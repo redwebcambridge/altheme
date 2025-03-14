@@ -21,7 +21,6 @@ header {
       }
       li {
         margin:10px 0px 0px 10px;
-        background-color: $lightgrey;
         text-transform: uppercase;
         word-wrap: normal;
         &.hasdropdown{ 
@@ -41,23 +40,25 @@ header {
           color: $medium-grey;
         }
         &:hover {
-          background-color: $primarycolour;
           .dropdown-menu {
             transition: all 0.5s ease-out!important;
             opacity: 1;
           }
           a,i {
             color: #fff;
+            background-color: $primarycolour;
+
           }
           .dropdown-menu {
             transition: opacity 1s ease-in-out;
           }
         }
         a {
+          background-color: lighten($lightgrey,10);
           color: $darkgrey;
           display: inline-block;
           padding:8px 15px;
-          font-weight: 500;
+          font-weight: 600;
         }
       }
     }

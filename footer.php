@@ -20,6 +20,7 @@
                             target="_blank" 
                             style="background-image:url(<?= get_sub_field('image'); ?>)"
                             title="<?= esc_attr(get_the_title(get_sub_field('image', false))); ?>"
+                            aria-label="<?= esc_attr(get_the_title(get_sub_field('image', false))); ?>"
                             >
                                 <span class="visually-hidden"><?= get_sub_field('alt_text') ?></span>                           
                             </a>
@@ -44,7 +45,9 @@
 
                                 <a href="<?= the_permalink(); ?>" 
                                 class="al_acad_<?= get_the_id(); ?>" 
-                                target="_blank" 
+                                target="_blank"
+                                title="<?= the_title(); ?>"
+                                aria-label="<?= the_title(); ?>"
                                 style="background-image:url(<?= get_field('logo')['url']; ?>)">
                                     <span class="visually-hidden"><?= the_title();?></span>                           
                                 </a>
@@ -78,6 +81,7 @@
                                 target="_blank" 
                                 style="background-image:url(<?= get_sub_field('icon_image'); ?>)"
                                 title="Partner Logo"
+                                aria-label="Partner Logo"
                             >
                                 <span class="visually-hidden"><?= get_sub_field('link'); ?></span>                           
                             </a>
@@ -125,7 +129,11 @@
                                     } 
                                     ?>
 
-                                    <a href="<?= $platform['platform_url']; ?>" target="_blank" title="<?= esc_attr($platform['platform']);?>" aria-label="<?= esc_attr($platform['platform']);?>"><i class="social fab fa-<?= $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
+                                    <a href="<?= $platform['platform_url']; ?>" 
+                                    target="_blank" 
+                                    title="<?= esc_attr($platform['platform']);?>" 
+                                    aria-label="<?= esc_attr($platform['platform']);?>">
+                                    <i class="social fab fa-<?= $platform_icon; if($platform['platform']=='facebook'){echo '-f';} ;?>"></i></a>
                                 <?php endforeach; ?>
                                 </div>
                         <?php elseif (is_sports_page()) : ?>

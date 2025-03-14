@@ -76,6 +76,8 @@ jQuery( document ).ready(function() {
       },
     ]
   });
+  //remove aria hidden
+  jQuery('.partner-slider').parents('[aria-hidden="true"]').removeAttr('aria-hidden');
   //Hide partner arrows if less than 6 slides
   if (!(jQuery('.slick-track .slick-slide').length > 6)) {
     jQuery('.slick-controls-lower').hide();

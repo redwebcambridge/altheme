@@ -5705,6 +5705,12 @@ header input[type='text'] {
 .partner-slider a.al_acad_299:hover {
   background-size: 55%;
 }
+.partner-slider a.al_acad_33094 {
+  background-size: 40%;
+}
+.partner-slider a.al_acad_33094:hover {
+  background-size: 50%;
+}
 footer {
   background-color: #213037;
   background-image: url("http://anglian-learning.local/wp-content/uploads/2024/10/footer_bg-darker6.png");

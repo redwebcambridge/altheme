@@ -37,8 +37,10 @@
   <meta name="twitter:card" content="summary_large_image">
   <script src="https://kit.fontawesome.com/d869724fe5.js" crossorigin="anonymous"></script>
   <?php
-    if (is_front_page()) {
-
+    if (is_front_page()) { ?>
+      <title><?php bloginfo('name'); ?></title>
+      <meta name="description" content="<?php bloginfo('description'); ?>">
+  <?php
         if( have_rows('header_image') ):
           while( have_rows('header_image') ) : the_row();
             ?>

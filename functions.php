@@ -892,3 +892,5 @@ function after_theme_update($upgrader_object, $options) {
 }
 
 include_once __DIR__ . "/inc/util/html-trim.php";
+
+sass_compile();

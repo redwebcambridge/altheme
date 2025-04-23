@@ -184,17 +184,26 @@ a[href^="tel"] {
         li {
             margin:0px !important;
             background-color:#fff;
-            border: 1px solid $medium-grey;
+            border: 1px solid $darkgrey;
             font-weight: bolder;
             flex-grow: 1;
             text-align: center;
             &:first-child {
                 margin-left:0 !important;
             }
+            &:hover {
+               a {
+                    color: $darkgrey;
+                }
+            }
             a {
-                color:$medium-grey;
+                color: $darkgrey;
                 font-weight: $bold-weight;
                 padding: 9px 10px 5px 10px;
+                background-color: #fff!important;
+                &:hover {
+                    color: $darkgrey;
+                }
             }
             &.hasdropdown {
                 display: block;

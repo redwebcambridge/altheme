@@ -192,6 +192,7 @@ header {
           &:last-child a {
               background-color:transparent;
               color:$primarycolour;
+              font-weight: 500;
               &:hover {
                 background-color: #e9ecef;
                 color: darken($primarycolour,10%);

@@ -15,7 +15,7 @@
 
                 <?php 
                 if(!empty($image)) : ?>
-                    <img class="img-fluid img-<?php echo $image["id"];?> al-border-bottom" src="<?php echo $image["sizes"]["medium_large"];?>" alt="<?php echo $image["alt"];?>">
+                    <img class="img-fluid img-<?php echo $image["id"];?> al-border-bottom" src="<?php echo $image["sizes"]["medium_large"];?>" alt="<?php echo $image["alt"];?>" data-nosnippet>
                 <?php endif;
                 
                 ?>

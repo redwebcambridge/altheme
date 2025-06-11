@@ -345,7 +345,7 @@
                     <div class="row">
                         <div class="col">
                             Company registration number: 07564749
-                            <div class="w-100 pb-2 trust_footer_text">
+                            <div class="w-100 pb-4 trust_footer_text">
                                     <?php if ( get_field('school_id','option') != 'al' ) : ?>
                                         <?php if ( get_field('school_name','option') ) : echo get_field('school_name','option'); endif; ?>
                                         is operated by Anglian Learning, an exempt charitable company limited by guarantee and registered in England and Wales with company number 07564749. The registered office is at Bottisham Village College, Lode Road, Bottisham, Cambridge, CB25 9DL

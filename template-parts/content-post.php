@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="col-12 col-md-6 col-lg-4 newseventcontainer">
+<div class="col-12 col-md-6 col-lg-4 newseventcontainer" role="listitem">
 	<div class="col-12 newseventimage">
 		<?php
 

@@ -14,7 +14,7 @@ $thumbnail= get_field('thumbnail'); ?>
 	  	<div class="row">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		        <div class="col-12 col-md-8 single-content standard-content">
+		        <article class="col-12 col-md-8 single-content standard-content">
 
 					<?php if( get_field('subheaderarticle') ): ?>
 						<h2 class="heading-two"><?php echo get_field('subheaderarticle'); ?></h2>
@@ -25,12 +25,12 @@ $thumbnail= get_field('thumbnail'); ?>
 					<p class="body-text"></p>
 		          	<?php the_content(); ?>
 					  <?php if (has_category('newsletter') || has_category('the-fountain')) : get_template_part('template-parts/content-newsletters'); endif; ?>
-		        </div>
+		        </article>
 
 				<div class="col-12 col-md-4 mb-5">
 					<?php if (!empty($thumbnail['url'])) : ?><img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" title="<?php echo $thumbnail['title']; ?>"><?php endif; ?>
 					<?php if (!empty($thumbnail['caption'])) : echo '<div class="wp-caption-text">'.$thumbnail['caption'].'</div>'; endif; ?>
-			        <div class="h3 section-header ceo-right-header special-underine"><strong>SHARE</strong></div>
+			        <div class="h3 section-header ceo-right-header special-underine" role="heading"><strong>SHARE</strong></div>
 
 					<div class="socialcontainer">
 						<div class="row no-gutters d-flex">
@@ -69,10 +69,10 @@ $thumbnail= get_field('thumbnail'); ?>
 					?>
 
 
-			        <div class="h3 section-header ceo-right-header special-underine"><strong>CONTACT</strong> DETAILS</div>
-					<p class="newsevents-contact newsevents-phone"><i class="fas fa-phone"></i><?php echo $phone_number; ?></p>
-			        <p class="newsevents-contact newsevents-email"><i class="fas fa-envelope"></i><a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>
-			        <p class="newsevents-contact newsevents-address"><i class="fas fa-map-marker-alt"></i><?php 
+			        <div class="h3 section-header ceo-right-header special-underine" role="heading"><strong>CONTACT</strong> DETAILS</div>
+					<p class="newsevents-contact newsevents-phone" role="text"><i class="fas fa-phone"></i><?php echo $phone_number; ?></p>
+			        <p class="newsevents-contact newsevents-email" role="text"><i class="fas fa-envelope"></i><a href="mailto:<?php echo $email; ?>" role="link"><?php echo $email; ?></a></p>
+			        <p class="newsevents-contact newsevents-address" role="text"><i class="fas fa-map-marker-alt"></i><?php 
                     if(!empty($address['address_line_1'])) : echo $address['address_line_1'].', '; endif; 
                     if(!empty($address['street'])) : echo $address['street'].', '; endif; 
                     if(!empty($address['town'])) : echo $address['town'].', '; endif; 

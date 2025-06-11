@@ -427,8 +427,8 @@ if (!class_exists('ACF')) {
     </div><!-- homepage-tabs-nav-->
   <?php else : //Internal header?>
 
-<section class="page-content">
-    <div class="featured-top-image  <?php echo get_field('header_title_location','option'); ?>" style="background-image: url( <?php echo $featuredimg; ?> )">
+<section class="page-content" role="main">
+    <div class="featured-top-image  <?php echo get_field('header_title_location','option'); ?>" role="banner" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">
         <div class="row main-heading">
         <h1><?php

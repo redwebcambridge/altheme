@@ -41,7 +41,7 @@ get_header();
           <div class="col-md-3 text-section">
             <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
-            <div class="col-md-9 text-section">
+            <div class="col-md-9 text-section" role="article">
               <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
               <div class="gradline"></div>
               <div class="gallery col-12">

@@ -16,7 +16,7 @@ get_header(); ?>
 
 
           <!---Body section--->
-          <div class="col-md-9 text-section">
+          <div class="col-md-9 text-section" role="article">
           <?php if (get_field('sub_heading')) : ?>
             <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
             <div class="gradline mb-3"></div>

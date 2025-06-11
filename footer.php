@@ -345,7 +345,7 @@
                     <div class="row">
                         <div class="col">
                             Company registration number: 07564749
-                            <div class="w-100">
+                            <div class="w-100 pb-4">
                                 <small>
                                     <?php if ( get_field('school_id','option') != 'al' ) : ?>
                                         <?php if ( get_field('school_name','option') ) : echo get_field('school_name','option'); endif; ?>

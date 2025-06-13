@@ -14,7 +14,7 @@ get_header(); ?>
             <?php get_template_part('template-parts/sidebar-menu'); ?>
           </div>
 
-          <div class="col-md-9 text-section">
+          <div class="col-md-9 text-section" role="article">
             <?php if (get_field('sub_heading')) : ?>
               <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
               <div class="gradline"></div>

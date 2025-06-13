@@ -30,7 +30,7 @@ get_header();
 
           <!---Body section--->
 
-          <div class="col-md-9 text-section">
+          <div class="col-md-9 text-section" role="article">
               <h2 class="heading-two"><?php echo get_field('sub_heading') ?></h2>
 
               <div class="gradline"></div>
@@ -81,11 +81,6 @@ get_header();
                         <a class="btn btn-primary rounded-0" href="<?php echo get_field('wisepay_url'); ?>">Book now</a>
                   </div>
               </div>
-
-
-
-
-
           <!---Body section - End--->
         </div>
     </div>

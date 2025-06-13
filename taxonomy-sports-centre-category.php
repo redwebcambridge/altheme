@@ -23,7 +23,7 @@ get_header();
           ?>
           </div>
 
-		<div class="col-md-9 text-section">
+		<div class="col-md-9 text-section" role="article">
 	        <h2 class="heading-two d-flex justify-content-between"><?php  echo single_term_title(); ?></h2>
 	        <div class="gradline"></div>
 			<div class="row">

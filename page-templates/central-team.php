@@ -10,7 +10,7 @@ get_header(); ?>
         <div class="col-md-3 text-section">
             <?php get_template_part('template-parts/sidebar-menu'); ?>
         </div>
-        <div class="col-md-9 text-section">
+        <div class="col-md-9 text-section" role="article">
             <?php if ( get_field('organogram') ) : ?>
                 <div class="container px-0">
                     <div class="row py-1 mb-3">

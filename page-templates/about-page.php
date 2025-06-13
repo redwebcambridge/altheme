@@ -16,7 +16,7 @@ get_header(); ?>
           </div>
 
           <!---Body section left - End--->
-        <div class="col-md-9 text-section">
+        <div class="col-md-9 text-section" role="article">
 
 
           <!---Body section centre--->
@@ -26,7 +26,7 @@ get_header(); ?>
           </div>
 
           <div class="row">
-            <div class="col-md-9 text-section">
+            <div class="col-md-9 text-section" role="article">
               <p class="body-text"><?php echo get_field('body_text') ?></p>
             </div>
             <!---Body section Centre - End--->

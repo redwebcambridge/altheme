@@ -144,7 +144,7 @@ function animateCounter(element, targetValue) {
 });
 </script>
 
-    <div class="stats_strip my-5 py-5" style="<?php if(get_field('stats_background_colour')){echo 'background-color: '.get_field('stats_background_colour');} ?>">
+    <div class="stats_strip my-5 py-5" role="none" style="<?php if(get_field('stats_background_colour')){echo 'background-color: '.get_field('stats_background_colour');} ?>">
         <div class="container">
             <div class="row"> 
                 <?php $i=1; while( have_rows('counters_repeater') ) : the_row(); ?>
@@ -266,7 +266,7 @@ function animateCounter(element, targetValue) {
         <div class="row">
 
                 <!-- News posts -->
-                <div class="col-12 col-md-<?php echo $newscol; ?> newsholder">
+                <div class="col-12 col-md-<?php echo $newscol; ?> newsholder" role="list">
                     <div class="row">
                         <div class="col-12">
                             <h2><?php echo get_field('title_left'); ?></h2>
@@ -342,7 +342,7 @@ function animateCounter(element, targetValue) {
                         ?>
 
                         <div class="col-12 col-md-4 twittercontainer">
-                        <h2>Latest Tweets</h2>
+                        <h2 role="heading">Latest Tweets</h2>
                         <div class="gradline"></div>
                         <div class="twitter-box">
                             <a target="_blank" href="https://twitter.com/<?php echo $responseData[0]['user']['screen_name'];  ?>">
@@ -428,7 +428,7 @@ function animateCounter(element, targetValue) {
 <?php if(!empty(get_field('file'))) : ?>
 
 
-<div class="video-section" style="background-color:<?php echo get_field('section_background_colour'); ?>;) ">
+<div class="video-section" role="complementary" style="background-color:<?php echo get_field('section_background_colour'); ?>;) ">
     <div class="container">
     <div class="siteicon" style="background-image:url(<?php echo get_field('background_image');  ?>)">
 
@@ -489,7 +489,7 @@ function animateCounter(element, targetValue) {
                     <h2><?php echo get_sub_field('title'); ?></h2>
                     <div class="gradline"></div>
                     <div class="info_img w-100 my-4" style="background-image:url(<?php echo get_sub_field('image'); ?>)"></div>
-                    <span class="information-panel-body-text"><?php echo get_sub_field('body_text'); ?></span>
+                    <span class="information-panel-body-text" role="article"><?php echo get_sub_field('body_text'); ?></span>
 
                     <p><a target="<?php echo get_sub_field('button_link')['target'] ?? 'blank'; ?>" href="<?php echo get_sub_field('button_link')['url']; ?>"><button class="btn btn-primary rounded-0"><?php echo get_sub_field('button_link')['title']; ?></button></a></p>
                 </div>

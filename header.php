@@ -411,19 +411,19 @@ if (!class_exists('ACF')) {
 
   </div><!-- front-page-header -->
   <div class="container homepage-tabs-nav">
-      <div class="row ">
+      <ul class="row mb-0">
       <?php
         $i=0;
         if( have_rows('tab_content') ):
           while( have_rows('tab_content') ) : the_row(); $i++;
       ?>
-          <div class="tab_button btn ml-3 col <?php if ($i==1){echo 'active';} ?>"><?php echo get_sub_field('tab_name'); ?></div>
+          <li class="tab_button btn ml-3 col <?php if ($i==1){echo 'active';} ?>"><?php echo get_sub_field('tab_name'); ?></li>
       <?php
           endwhile;
         endif;
         ?>
-        <div id="slider_nav" class="col"></div>
-      </div>
+        <li id="slider_nav" class="col"></li>
+      </ul>
     </div><!-- homepage-tabs-nav-->
   <?php else : //Internal header?>
 

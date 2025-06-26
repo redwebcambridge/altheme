@@ -378,7 +378,7 @@
         <div class="cookieconsent_msg"> 
             <div class="container">
                 <div class="row py-5">
-                    <div class="col-lg-9">
+                    <div class="col-lg-9" role='alert'>
                         <?php the_field('cookie_notice_message','option'); ?>  
                         <a href="<?= get_permalink($cookie_link->ID); ?>" target="_blank" class="ml-1 text-decoration-none">Learn More</a> 
                     </div>

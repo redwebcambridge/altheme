@@ -518,7 +518,7 @@ function dashboard_wiki_display() {
 }
 
 function dashboard_support_display() {
-  echo '<p>Need Support? Contact <a href="https://redgraphic.co.uk">Red Graphic</a> using the button below</p><p><a class="button" href="mailto:lewis@redgraphic.co.uk?cc=lorraine@redgraphic.co.uk,david@redgraphic.co.uk&subject=Website%20Support%20'.site_url().'">Email Red Graphic</a></p>';
+  echo '<p>Need Support? Contact <a href="https://redwebcambridge.com">Red Web</a> using the button below</p><p><a class="button" href="mailto:lewis@redwebcambridge.com&subject=Website%20Support%20'.site_url().'">Email Red Web</a></p>';
 }
 
 //Featured image change to header image

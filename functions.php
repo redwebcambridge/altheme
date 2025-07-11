@@ -141,6 +141,8 @@ function anglian_learning_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'anglian_learning_scripts' );
 
+
+
 // Update CSS within in Admin
 function admin_style() {
   wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin-styles.css');
@@ -885,14 +887,6 @@ if(get_field('school_id','option') != 'al') :
   }
 endif;
 
-//Update sass on theme update to replace the original style.css file
-add_action('upgrader_process_complete', 'after_theme_update', 10, 2);
-function after_theme_update($upgrader_object, $options) {
-        sass_compile();
-}
-
-include_once __DIR__ . "/inc/util/html-trim.php";
-
 
 //MS GRAPH MAIL API
 function get_ms_token() {
@@ -965,23 +959,33 @@ function send_ms_email($to, $subject, $bodyContent) {
 
     // echo 'HTTP Code: ' . $httpCode . '<br>';
     // echo 'Response: ' . $response . '<br>';
+    // error_log('MS GRAPH: HTTP ' . $httpCode . ' response: ' . $response);
 
     return $httpCode === 202 ? 'Email sent!' : 'Failed: ' . $response;
 }
 
-add_filter('wp_mail', function($args) {
-    $to = $args['to'];
-    $subject = $args['subject'];
-    $message = $args['message'];
+add_action('phpmailer_init', function($phpmailer) {
+    $to = implode(', ', array_column($phpmailer->getToAddresses(), 0));
+    $subject = $phpmailer->Subject;
+    $body = $phpmailer->Body;
 
-    $result = send_ms_email($to, $subject, $message);
+    $result = send_ms_email($to, $subject, $body);
 
     if (stripos($result, 'Failed') !== false) {
         error_log('MS Graph mail ERROR to ' . $to . ': ' . $result);
+        throw new Exception('MS Graph mail failed');
     }
 
-    // Prevent WordPress from running its own mail function
-    return false;
+    $phpmailer->preSend();
+    $phpmailer->postSend();
+    $phpmailer->set('SentMIMEMessage', $phpmailer->getSentMIMEMessage());
 });
 
-// sass_compile();
+
+//Update sass on theme update to replace the original style.css file
+add_action('upgrader_process_complete', 'after_theme_update', 10, 2);
+function after_theme_update($upgrader_object, $options) {
+        sass_compile();
+}
+
+include_once __DIR__ . "/inc/util/html-trim.php";

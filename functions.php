@@ -893,4 +893,95 @@ function after_theme_update($upgrader_object, $options) {
 
 include_once __DIR__ . "/inc/util/html-trim.php";
 
+
+//MS GRAPH MAIL API
+function get_ms_token() {
+    $tenantId = MS_GRAPH_TENANT_ID;
+    $clientId = MS_GRAPH_CLIENT_ID;
+    $clientSecret = MS_GRAPH_CLIENT_SECRET;
+
+    $url = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token";
+
+    $data = http_build_query([
+        'grant_type' => 'client_credentials',
+        'client_id' => $clientId,
+        'client_secret' => $clientSecret,
+        'scope' => 'https://graph.microsoft.com/.default'
+    ]);
+
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $data,
+        CURLOPT_RETURNTRANSFER => true,
+    ]);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $result = json_decode($response, true);
+
+    return $result['access_token'] ?? null;
+}
+
+function send_ms_email($to, $subject, $bodyContent) {
+
+    $token = get_ms_token();
+    if (!$token) {
+        return 'Failed to get token';
+    } 
+
+    $sendAs = MS_GRAPH_SEND_AS;
+
+    $emailData = [
+        'message' => [
+            'subject' => $subject,
+            'body' => [
+                'contentType' => 'HTML',
+                'content' => $bodyContent,
+            ],
+            'toRecipients' => [
+                ['emailAddress' => ['address' => $to]]
+            ],
+        ],
+        'saveToSentItems' => 'false'
+    ];
+
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => "https://graph.microsoft.com/v1.0/users/$sendAs/sendMail",
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer $token",
+            "Content-Type: application/json"
+        ],
+        CURLOPT_POSTFIELDS => json_encode($emailData),
+        CURLOPT_RETURNTRANSFER => true,
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    // echo 'HTTP Code: ' . $httpCode . '<br>';
+    // echo 'Response: ' . $response . '<br>';
+
+    return $httpCode === 202 ? 'Email sent!' : 'Failed: ' . $response;
+}
+
+add_filter('wp_mail', function($args) {
+    $to = $args['to'];
+    $subject = $args['subject'];
+    $message = $args['message'];
+
+    $result = send_ms_email($to, $subject, $message);
+
+    if (stripos($result, 'Failed') !== false) {
+        error_log('MS Graph mail ERROR to ' . $to . ': ' . $result);
+    }
+
+    // Prevent WordPress from running its own mail function
+    return false;
+});
+
 // sass_compile();

@@ -141,6 +141,8 @@ function anglian_learning_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'anglian_learning_scripts' );
 
+
+
 // Update CSS within in Admin
 function admin_style() {
   wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin-styles.css');
@@ -885,6 +887,101 @@ if(get_field('school_id','option') != 'al') :
   }
 endif;
 
+
+//MS GRAPH MAIL API
+function get_ms_token() {
+    $tenantId = MS_GRAPH_TENANT_ID;
+    $clientId = MS_GRAPH_CLIENT_ID;
+    $clientSecret = MS_GRAPH_CLIENT_SECRET;
+
+    $url = "https://login.microsoftonline.com/$tenantId/oauth2/v2.0/token";
+
+    $data = http_build_query([
+        'grant_type' => 'client_credentials',
+        'client_id' => $clientId,
+        'client_secret' => $clientSecret,
+        'scope' => 'https://graph.microsoft.com/.default'
+    ]);
+
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => $url,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => $data,
+        CURLOPT_RETURNTRANSFER => true,
+    ]);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $result = json_decode($response, true);
+
+    return $result['access_token'] ?? null;
+}
+
+function send_ms_email($to, $subject, $bodyContent) {
+
+    $token = get_ms_token();
+    if (!$token) {
+        return 'Failed to get token';
+    } 
+
+    $sendAs = MS_GRAPH_SEND_AS;
+
+    $emailData = [
+        'message' => [
+            'subject' => $subject,
+            'body' => [
+                'contentType' => 'HTML',
+                'content' => $bodyContent,
+            ],
+            'toRecipients' => [
+                ['emailAddress' => ['address' => $to]]
+            ],
+        ],
+        'saveToSentItems' => 'false'
+    ];
+
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => "https://graph.microsoft.com/v1.0/users/$sendAs/sendMail",
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer $token",
+            "Content-Type: application/json"
+        ],
+        CURLOPT_POSTFIELDS => json_encode($emailData),
+        CURLOPT_RETURNTRANSFER => true,
+    ]);
+
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    // echo 'HTTP Code: ' . $httpCode . '<br>';
+    // echo 'Response: ' . $response . '<br>';
+    // error_log('MS GRAPH: HTTP ' . $httpCode . ' response: ' . $response);
+
+    return $httpCode === 202 ? 'Email sent!' : 'Failed: ' . $response;
+}
+
+add_action('phpmailer_init', function($phpmailer) {
+    $to = implode(', ', array_column($phpmailer->getToAddresses(), 0));
+    $subject = $phpmailer->Subject;
+    $body = $phpmailer->Body;
+
+    $result = send_ms_email($to, $subject, $body);
+
+    if (stripos($result, 'Failed') !== false) {
+        error_log('MS Graph mail ERROR to ' . $to . ': ' . $result);
+        throw new Exception('MS Graph mail failed');
+    }
+
+    $phpmailer->preSend();
+    $phpmailer->postSend();
+    $phpmailer->set('SentMIMEMessage', $phpmailer->getSentMIMEMessage());
+});
+
+
 //Update sass on theme update to replace the original style.css file
 add_action('upgrader_process_complete', 'after_theme_update', 10, 2);
 function after_theme_update($upgrader_object, $options) {
@@ -892,5 +989,3 @@ function after_theme_update($upgrader_object, $options) {
 }
 
 include_once __DIR__ . "/inc/util/html-trim.php";
-
-// sass_compile();

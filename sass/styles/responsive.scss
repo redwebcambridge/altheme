@@ -161,10 +161,11 @@ a[href^="tel"] {
         border-top: 1px solid $medium-grey;
         margin:5px 0;
         padding:0px!important;
-        .google_search {
+        .translate, .search_container {
             display:none;
         }
     }
+    
     header {
         z-index:1;
         .al-logo {

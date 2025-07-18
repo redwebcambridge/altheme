@@ -1,5 +1,58 @@
+  const toggleSwitch = document.getElementById('high_contrast_toggle');
+  const highContrastBtn = document.getElementById('high_contrast');
+  const overlay = document.getElementById('site-overlay');
+  // Check URL for ?high_contrast=1 or ?high_contrast=0
+  const urlParams = new URLSearchParams(window.location.search);
+  const highContrastParam = urlParams.get('high_contrast');
+
+  if (highContrastParam === '1') {
+      document.documentElement.classList.add('high-contrast');
+      toggleSwitch.classList.add('active');
+      localStorage.setItem('highContrast', 'true');
+  }
+
+  if (highContrastParam === '0') {
+      document.documentElement.classList.remove('high-contrast');
+      toggleSwitch.classList.remove('active');
+      localStorage.removeItem('highContrast');
+  }
+
+  if (localStorage.getItem('highContrast') === 'true') {
+    document.documentElement.classList.add('high-contrast');
+    toggleSwitch.classList.add('active');
+  } 
+
+  setTimeout(() => {
+        overlay.classList.add('hidden');
+  }, 50);
+
+  toggleSwitch.addEventListener('click', toggleHighContrast);
+
+  highContrastBtn.addEventListener('click', function(e) {
+      if (e.target.id !== 'high_contrast_toggle') {
+          toggleHighContrast();
+      }
+  });
+
+function toggleHighContrast() {
+    toggleSwitch.classList.toggle('active');
+    document.documentElement.classList.toggle('high-contrast');
+
+    // Save state
+    if (document.documentElement.classList.contains('high-contrast')) {
+        localStorage.setItem('highContrast', 'true');
+    } else {
+        localStorage.removeItem('highContrast');
+    }
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
+
+
+
+ 
+
 
   //Google Translate
   function googleTranslateElementInit() {
@@ -312,5 +365,9 @@ function hovericon(location){
 
 
   }
+
+  
+
+  
 })();
 

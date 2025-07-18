@@ -1,0 +1,197 @@
+.high-contrast header #searchform button, .high-contrast header #mobilesearch button {
+  background-color: #000;
+}
+.high-contrast header #top_buttons ul a.nav-link {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+@media only screen and (max-width: 992px) {
+  .high-contrast header #top_buttons ul:first-child:not(.dropdown-menu) li {
+    background-color: #000 !important;
+  }
+  .high-contrast header #top_buttons ul:first-child:not(.dropdown-menu) li a {
+    color: #fff !important;
+    background-color: #000 !important;
+  }
+}
+.high-contrast #stickynav ul#menu-main-navigation a {
+  color: #000 !important;
+}
+.high-contrast #stickynav #mainnav ul li:last-child a {
+  color: white !important;
+  background-color: #000;
+}
+.high-contrast #stickynav #mainnav ul li ul li:last-child a {
+  color: #000;
+  background-color: #fff;
+}
+.high-contrast #high_contrast {
+  background-color: #000;
+  color: #fff;
+}
+.high-contrast #high_contrast:hover {
+  background-color: #000;
+  color: #fff;
+}
+.high-contrast #high_contrast .toggle_switch {
+  border: 1px solid #fff;
+}
+.high-contrast #high_contrast .toggle_switch.active {
+  border-color: #fff;
+}
+.high-contrast #high_contrast .toggle_switch.active::before {
+  background-color: #fff;
+}
+.high-contrast .front-page-header {
+  background-color: #000;
+}
+.high-contrast .slick-list .image-slider svg .st0 {
+  fill: #000 !important;
+}
+.high-contrast .homepage-tabs-nav .tab_button {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+.high-contrast .homepage-tabs-nav .tab_button.active {
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+}
+.high-contrast h2, .high-contrast a {
+  color: #000;
+}
+.high-contrast .btn, .high-contrast .custom_button {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.high-contrast .downloadcontainer {
+  color: #000 !important;
+}
+.high-contrast .downloadcontainer p {
+  color: #000 !important;
+}
+.high-contrast .stats_strip {
+  background-color: #000 !important;
+}
+.high-contrast .video-section {
+  background-color: #000 !important;
+}
+.high-contrast footer, .high-contrast .cookieconsent_msg, .high-contrast .footer-base {
+  background-color: #000 !important;
+}
+.high-contrast footer .allow-button, .high-contrast footer .decline-button, .high-contrast .cookieconsent_msg .allow-button, .high-contrast .cookieconsent_msg .decline-button, .high-contrast .footer-base .allow-button, .high-contrast .footer-base .decline-button {
+  background-color: #000 !important;
+  border: 1px solid #fff;
+}
+.high-contrast footer a, .high-contrast .cookieconsent_msg a, .high-contrast .footer-base a {
+  color: #fff;
+}
+.high-contrast .row.main-heading h1 {
+  background-color: #000 !important;
+}
+.high-contrast #sidebar-menu li a {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.high-contrast #sidebar-menu li.current_page_item a {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: 1px solid #000;
+}
+.high-contrast .custom_colour_block {
+  background-color: #000 !important;
+}
+.high-contrast .executive_team_block {
+  background-color: #000 !important;
+}
+.high-contrast .executive_team_block .executive_content_cont .h5, .high-contrast .executive_team_block .executive_content_cont .h6 {
+  color: #fff !important;
+}
+.high-contrast .tab_button {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.high-contrast .tab_button.active {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.high-contrast .department_block {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.high-contrast .department_block h5, .high-contrast .department_block .job_role {
+  color: #fff !important;
+}
+.high-contrast .academies_search {
+  background-color: #000 !important;
+}
+.high-contrast .academies_search small, .high-contrast .academies_search .h4 {
+  color: #fff;
+}
+.high-contrast .academies_search .btn {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.high-contrast .academies_search .search_buttons {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+.high-contrast .academies_search .search_buttons.active {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 1px solid #fff !important;
+}
+.high-contrast .academies_search .input-group-text {
+  background-color: #000 !important;
+  border: 1px solid #fff !important;
+}
+.high-contrast .academies-row {
+  background-color: #fff !important;
+  border: 1px solid #000;
+  color: #000 !important;
+}
+.high-contrast .academies-row .school-icon-container {
+  border-bottom: 1px solid #000;
+}
+.high-contrast .academies-row .school_name strong {
+  color: #000 !important;
+}
+.high-contrast .academies-row .head-name span {
+  color: #000 !important;
+}
+.high-contrast .academies-row a {
+  color: #000 !important;
+}
+.high-contrast .academies-row .academies_buttons a {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.high-contrast #grid_layout .h5 {
+  color: #000 !important;
+}
+.high-contrast .newsletters .newseventtext, .high-contrast .newsevents .newseventtext {
+  background-color: #000 !important;
+}
+.high-contrast .pagination .page-numbers {
+  color: #000 !important;
+  border: 1px solid #000 !important;
+}
+.high-contrast .pagination .page-numbers.current, .high-contrast .pagination .page-numbers:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+.high-contrast .contact-details a, .high-contrast .contact-details i, .high-contrast .contact-details em {
+  color: #000 !important;
+}
+.high-contrast .wpcf7-form-control-wrap input, .high-contrast .wpcf7-form-control-wrap textarea {
+  color: #000 !important;
+  border: 1px solid #000 !important;
+  background-color: #fff;
+  font-weight: 700;
+}
+.high-contrast .wpcf7-submit {
+  background-color: #000 !important;
+}
+
+/*# sourceMappingURL=high-contrast.css.map */

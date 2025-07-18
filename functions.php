@@ -135,7 +135,8 @@ function anglian_learning_scripts() {
   wp_enqueue_script( 'al-scripts', get_template_directory_uri().'/js/scripts.js', array( 'jquery' ), '1.0.0', true );
   //cookies
   wp_enqueue_script( 'al-cookies', get_template_directory_uri().'/js/cookie.js' );
-
+  //High Contrast
+  wp_enqueue_style('high-contrast', get_stylesheet_directory_uri() . '/high-contrast.css', array(), '1.0');
   
 
 }
@@ -989,3 +990,22 @@ function after_theme_update($upgrader_object, $options) {
 }
 
 include_once __DIR__ . "/inc/util/html-trim.php";
+
+
+//high contrast toggle
+function add_high_contrast_stylesheet() {
+    $toggle_on = true; // manually force ON for development
+
+    if ( $toggle_on ) {
+        wp_enqueue_style(
+            'high-contrast',
+            get_stylesheet_directory_uri() . '/high-contrast.css',
+            array(), // dependencies, if any
+            '1.0'    // version
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'add_high_contrast_stylesheet');
+
+
+// sass_compile();

@@ -62,12 +62,11 @@
   ?>
   <script src="https://kit.fontawesome.com/d869724fe5.js" crossorigin="anonymous"></script>
  
-    
   <?php wp_head(); ?>
 </head>
 <?php $school_initials = 'school_id_'.get_field('school_id','option'); ?>
 <body <?php body_class($school_initials); ?> <?php if ( is_adult_ed_page() ) { echo 'id="adult_ed"'; } ?><?php if ( is_sports_page() ) { echo 'id="sports"'; } ?>>
-
+<div id="site-overlay"></div>
 <?php
 //ACF must be installed
 if (!class_exists('ACF')) {
@@ -110,8 +109,16 @@ if (!class_exists('ACF')) {
         <!-- grey buttons -->
         <div class="col-12 col-lg-7 pt-4 searchtopbuttonholder">
               <div class="row justify-content-end google_search">
-                <div class="col-md-6 col-lg-4 px-0"><div id="google_translate_el"></div></div>
-                <div class="col-md-6 col-lg-4 pl-0"><?php get_search_form(); ?></div>
+                <div class="col-md-6 col-lg-4 px-0 text-end justify-content-end">
+                    <div class="form-check form-switch d-flex align-items-center w-fit-content justify-content-end">
+                      <div id="high_contrast">
+                        HIGH CONTRAST
+                          <div class="toggle_switch" id="high_contrast_toggle"></div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 px-0 translate"><div id="google_translate_el"></div></div>
+                <div class="col-md-6 col-lg-4 pl-0 search_container"><?php get_search_form(); ?></div>
               </div>
               <div class="row" id="top_buttons">
               <?php

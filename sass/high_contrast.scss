@@ -1,0 +1,268 @@
+$contrast_color: #000 !default;
+
+.high-contrast {
+    header {
+        #searchform button, #mobilesearch button {
+            background-color: $contrast_color;
+        }
+        #top_buttons {
+            ul {
+                a.nav-link {
+                    background-color: $contrast_color!important;
+                    color: #fff!important;
+                }
+            }
+            @media only screen and (max-width: 992px) {
+                ul:first-child:not(.dropdown-menu) li {
+                    background-color: $contrast_color!important;
+                    a {
+                        color: #fff!important;
+                        background-color: $contrast_color!important;
+                    }
+                } 
+            }
+        }
+    }
+
+    #stickynav {
+        ul#menu-main-navigation {
+            a {
+                color: $contrast_color!important;
+            }
+        }
+        #mainnav ul li:last-child a {
+            color: white!important;
+            background-color: $contrast_color;
+        }
+        #mainnav ul li ul li:last-child a {
+            color: $contrast_color;
+            background-color: #fff;
+        }
+    }
+
+    #high_contrast {
+        background-color: $contrast_color;
+        color: #fff;
+        &:hover {
+            background-color: $contrast_color;
+            color: #fff;
+        }
+        .toggle_switch {
+            border: 1px solid #fff;
+            &.active {
+                border-color: #fff;
+                &::before {
+                    background-color: #fff  // dot ON color
+                }
+            }
+        }
+    }
+
+    .front-page-header {
+        background-color: $contrast_color;
+    }
+
+    .slick-list {
+        .image-slider {
+            svg {
+                .st0 {
+                    fill:$contrast_color!important;
+                }
+            }
+        }
+    }
+
+    .homepage-tabs-nav .tab_button {
+        background: #000;
+        color: #fff;
+        border: 1px solid #fff;
+        &.active {
+            background: #fff;
+            color: $contrast_color;
+            border: 1px solid #fff;
+        }
+
+    }
+
+    h2, a {
+        color: $contrast_color;
+    }
+
+    .btn, .custom_button {
+        background-color: $contrast_color!important;
+        color: #fff!important;
+    }
+
+    .downloadcontainer {
+        color: #000!important;
+        p {
+            color: #000!important;
+        }
+    }
+
+    .stats_strip {
+        background-color: $contrast_color!important;
+    }
+
+
+    .video-section {
+        background-color: $contrast_color!important;
+    }
+
+    footer, .cookieconsent_msg, .footer-base {
+        background-color: $contrast_color!important;
+        .allow-button, .decline-button {
+            background-color: $contrast_color!important;
+            border: 1px solid #fff;
+        }
+        a {
+            color: #fff;
+        }
+    }
+
+    .row.main-heading h1 {
+        background-color: $contrast_color!important;
+    }
+
+    #sidebar-menu li {
+        a {
+            background-color: $contrast_color!important;
+            color: #fff!important;
+        }
+        &.current_page_item {
+            a {
+                background-color: #fff!important;
+                color: #000!important;
+                border: 1px solid #000;
+            }
+
+        }
+    }
+
+    .custom_colour_block {
+        background-color: $contrast_color!important;
+    }
+
+    .executive_team_block {
+        background-color: $contrast_color!important;
+        .executive_content_cont {
+            .h5,.h6 {
+                color: #fff!important;
+            }
+        }
+    }
+
+    .tab_button {
+        background-color: #fff!important;
+        color: #000!important;
+        &.active {
+            background-color: $contrast_color!important;
+            color: #fff!important;
+        }
+    }
+
+    .department_block  {
+        background-color: $contrast_color!important;
+        color: #fff!important;
+        h5, .job_role {
+            color: #fff!important;
+        }
+    }
+
+    .academies_search {
+        background-color: $contrast_color!important;
+        small, .h4 {
+            color: #fff;
+        }
+        .btn {
+            background-color: #fff!important;
+            color: $contrast_color!important;
+        }
+        .search_buttons {
+            background-color: #fff!important;
+            color: $contrast_color!important;
+            &.active {
+                background-color: $contrast_color!important;
+                color: #fff!important;
+                border: 1px solid #fff!important;
+            }
+        }
+        .input-group-text {
+            background-color: $contrast_color!important;
+            border: 1px solid #fff!important;
+        }
+    }
+
+    .academies-row {
+        background-color: #fff!important;
+        border: 1px solid $contrast_color;
+        color: $contrast_color!important;
+        .school-icon-container {
+            border-bottom: 1px solid $contrast_color;
+        }
+        .school_name {
+            strong {
+                color: $contrast_color!important;
+            }
+        }
+        .head-name {
+            span {
+                color: $contrast_color!important;
+            }
+        }
+        a {
+            color: $contrast_color!important;
+        }
+        .academies_buttons {
+            a {
+                background-color: $contrast_color!important;
+                color: #fff!important;
+            }
+        }
+
+    }
+
+    #grid_layout {
+        .h5 {
+            color: $contrast_color!important;
+        }
+
+    }
+
+    .newsletters, .newsevents {
+        .newseventtext {
+            background-color: $contrast_color!important;
+        }
+    }
+
+
+    .pagination {
+        .page-numbers {
+            color: $contrast_color!important;
+            border: 1px solid $contrast_color!important;
+            &.current, &:hover {
+                background-color: $contrast_color!important;
+                color: #fff!important;
+            }
+        }
+    }
+
+
+    .contact-details {
+        a, i, em {
+            color: $contrast_color!important;
+
+        }
+    }
+
+    .wpcf7-form-control-wrap input, .wpcf7-form-control-wrap textarea {
+        color: $contrast_color!important;
+        border: 1px solid $contrast_color!important;
+        background-color: #fff;
+        font-weight: 700;
+    }
+
+    .wpcf7-submit {
+        background-color: $contrast_color!important;
+    }
+}

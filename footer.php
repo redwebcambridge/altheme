@@ -355,19 +355,7 @@
                             </div>
                         </div>
                         <div class="col text-right">
-                            <div id="rwdevlink"></div> 
-                            <script>
-                            (async () => {
-                                const contentDiv = document.getElementById('rwdevlink');
-                            try {
-                                const response = await fetch('https://rgrw-footer-link.redwebcambridge.workers.dev/');
-                                const data = await response.text();
-                                contentDiv.innerHTML = data;
-                            } catch (error) {
-                                console.error('Failed to load footer content:', error);
-                            }
-                            })();
-                            </script>
+                                <a href="https://yourwebsite.co.uk">Website design Cambridge</a>
                         </div>
                     </div>
                 </div>

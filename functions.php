@@ -932,7 +932,7 @@ function send_ms_email($to, $subject, $bodyContent) {
             'subject' => $subject,
             'body' => [
                 'contentType' => 'HTML',
-                'content' => $bodyContent,
+                'content' => nl2br($bodyContent),
             ],
             'toRecipients' => [
                 ['emailAddress' => ['address' => $to]]

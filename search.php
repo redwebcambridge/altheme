@@ -18,31 +18,33 @@ $args = array(
 
 );
 $query = new WP_Query($args);
+// Determine which section initiated the search to filter results accordingly
+$site_section = isset($_GET['site_section']) ? sanitize_text_field($_GET['site_section']) : '';
 ?>
 
 <div class="container newsevents">
 
     <?php if ($query->have_posts()) : ?>
-        <div class="row row-flex">  
+        <div class="row row-flex">
             <?php while ($query->have_posts()) : $query->the_post(); ?>
-                <?php 
+                <?php
                 //IF SEARCH COME FROM ACADEMY PAGE
-                if ($_GET['site_section'] == 'academy') {
+                if ($site_section == 'academy') {
                     if (is_adult_ed_page() || is_sports_page()) {
                         continue;
-                    } 
+                    }
                 }
                 //IF SEARCH COME FROM SPORTS PAGE
-                if ($_GET['site_section'] == 'sports') {
+                if ($site_section == 'sports') {
                     if (!is_sports_page()) {
                         continue;
-                    } 
+                    }
                 }
                 //IF SEARCH COME FROM ADULT ED PAGE
-                if ($_GET['site_section'] == 'adult_ed') {
+                if ($site_section == 'adult_ed') {
                     if (!is_adult_ed_page()) {
                         continue;
-                    } 
+                    }
                 }
                 ?>
                 <div class="col-12 col-md-4 newseventcontainer">

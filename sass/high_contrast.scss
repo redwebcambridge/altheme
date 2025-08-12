@@ -98,8 +98,8 @@ $contrast_color: #000 !default;
         color: $contrast_color!important;
     }
     
-    h3 {
-        color: $contrast_color;
+    h3, .h3 {
+        color: $contrast_color!important;
         span {
             color: $contrast_color!important;
         }

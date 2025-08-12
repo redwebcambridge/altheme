@@ -71,10 +71,10 @@
 .high-contrast h2 span {
   color: #000 !important;
 }
-.high-contrast h3 {
-  color: #000;
+.high-contrast h3, .high-contrast .h3 {
+  color: #000 !important;
 }
-.high-contrast h3 span {
+.high-contrast h3 span, .high-contrast .h3 span {
   color: #000 !important;
 }
 .high-contrast strong span {

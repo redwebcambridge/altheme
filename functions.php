@@ -149,7 +149,7 @@ function admin_style() {
 }
 add_action('admin_enqueue_scripts', 'admin_style');
 
-//Change posts admin label to news in admin meny
+//Change posts admin label to news in admin menu
 function al_change_label() {
     global $menu;
     global $submenu;

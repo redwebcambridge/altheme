@@ -56,6 +56,11 @@ $contrast_color: #000 !default;
                 }
             }
         }
+        @media only screen and (max-width: 992px) {
+            margin: 15px 25px 0 25px;
+            width: 100%;
+            justify-content: center;
+        }
     }
 
     .front-page-header {
@@ -86,6 +91,28 @@ $contrast_color: #000 !default;
 
     h2, a {
         color: $contrast_color;
+
+    }
+    
+    h2 span {
+        color: $contrast_color!important;
+    }
+    
+    h3 {
+        color: $contrast_color;
+        span {
+            color: $contrast_color!important;
+        }
+    }
+
+    strong {
+        span {
+            color: $contrast_color!important;
+        }
+    }
+
+    .text-section span strong {
+            color: $contrast_color!important;
     }
 
     .btn, .custom_button {

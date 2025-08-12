@@ -42,6 +42,13 @@
 .high-contrast #high_contrast .toggle_switch.active::before {
   background-color: #fff;
 }
+@media only screen and (max-width: 992px) {
+  .high-contrast #high_contrast {
+    margin: 15px 25px 0 25px;
+    width: 100%;
+    justify-content: center;
+  }
+}
 .high-contrast .front-page-header {
   background-color: #000;
 }
@@ -60,6 +67,21 @@
 }
 .high-contrast h2, .high-contrast a {
   color: #000;
+}
+.high-contrast h2 span {
+  color: #000 !important;
+}
+.high-contrast h3 {
+  color: #000;
+}
+.high-contrast h3 span {
+  color: #000 !important;
+}
+.high-contrast strong span {
+  color: #000 !important;
+}
+.high-contrast .text-section span strong {
+  color: #000 !important;
 }
 .high-contrast .btn, .high-contrast .custom_button {
   background-color: #000 !important;

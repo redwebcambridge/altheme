@@ -110,7 +110,7 @@ if (!class_exists('ACF')) {
         <div class="col-12 col-lg-7 pt-4 searchtopbuttonholder">
               <div class="row justify-content-end google_search">
                 <div class="col-md-6 col-lg-4 px-0 text-end justify-content-end">
-                    <div class="form-check form-switch d-flex align-items-center w-fit-content justify-content-end">
+                    <div class="form-check form-switch d-flex align-items-center w-fit-content justify-content-end p-0">
                       <div id="high_contrast">
                         HIGH CONTRAST
                           <div class="toggle_switch" id="high_contrast_toggle"></div>

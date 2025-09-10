@@ -994,7 +994,10 @@ include_once __DIR__ . "/inc/util/html-trim.php";
 
 //high contrast toggle
 function add_high_contrast_stylesheet() {
-    $toggle_on = true; // manually force ON for development
+
+    // Forces on for dev or checks for the high_contrast query param
+    // Or checks for an X-High-Contrast-Preferred Header.
+    $toggle_on = get_high_contrast_active();
 
     if ( $toggle_on ) {
         wp_enqueue_style(
@@ -1007,5 +1010,14 @@ function add_high_contrast_stylesheet() {
 }
 add_action('wp_enqueue_scripts', 'add_high_contrast_stylesheet');
 
+function get_high_contrast_active()
+{
+  return (
+    (defined("WP_DEBUG") && WP_DEBUG) 
+    || isset($_GET["high_contrast"]) 
+    || isset($_SERVER["HTTP_X_HIGH_CONTRAST_PREFERRED"])
+    || isset($_COOKIE["high_contrast_mode"])
+  );
+}
 
 // sass_compile();

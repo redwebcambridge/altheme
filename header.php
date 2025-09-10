@@ -113,7 +113,7 @@ if (!class_exists('ACF')) {
                     <div class="form-check form-switch d-flex align-items-center w-fit-content justify-content-end p-0">
                       <div id="high_contrast">
                         HIGH CONTRAST
-                          <div class="toggle_switch" id="high_contrast_toggle"></div>
+                          <div class="toggle_switch<?php echo get_high_contrast_active() ? " active" : ""; ?>" id="high_contrast_toggle"></div>
                       </div>
                     </div>
                 </div>

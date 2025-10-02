@@ -40,7 +40,6 @@
       <title><?php bloginfo('name'); ?></title>
       <meta name="description" content="<?php bloginfo('description'); ?>">
   <?php
-  trigger_error("Sentry test from " . $_SERVER['HTTP_HOST'], E_USER_ERROR);
         if( have_rows('header_image') ):
           while( have_rows('header_image') ) : the_row();
             ?>

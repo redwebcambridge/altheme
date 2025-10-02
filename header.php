@@ -450,5 +450,12 @@ if ( post_password_required() ) {
     get_footer( );
     die;
 } 
+
+try {
+  $this->functionFailsForSure();
+} catch (\Throwable $exception) {
+  \Sentry\captureException($exception);
+}
+
 ?>
 

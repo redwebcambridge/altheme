@@ -45,43 +45,51 @@ if (get_field('category_display', $category) === 'newsletter_display') { ?>
 <?php } else { //NORMAL DISPLAY ?>
 
 	<div class="container newsevents mb-5">
-		<div class="row row-flex">
+		<?php 
+		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+		$the_query = new WP_Query( 
+		array(
+			'post_type'  => 'post',
+			'posts_per_page' => 6,
+			'post_status' => 'publish',
+			'cat' => $category->term_id,
+			'paged' => $paged
+			)  
+		);
+
+		if ($the_query->have_posts()) : ?>
+			<div class="row row-flex" role="list">
 			<?php 
-			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+				while ($the_query->have_posts() ) : $the_query->the_post(); 
+					get_template_part('template-parts/content-post');
+				endwhile; 
+			?>
+			</div>
 
-			$the_query = new WP_Query( 
-			array(
-				'post_type'  => 'post',
-				'posts_per_page' => 6,
-				'post_status' => 'publish',
-				'cat' => $category->term_id,
-				'paged' => $paged
-				)  
-			);
-
-			if ($the_query->have_posts()) : while ($the_query->have_posts() ) : $the_query->the_post(); 
-				get_template_part('template-parts/content-post');
-			endwhile; 
-			wp_reset_postdata(); ?>
-
-			<div class="pagination col-12">
-			<?php 
-				echo paginate_links( array(
-					'base' => esc_url( get_pagenum_link( 1 ) ).'%_%', 
-					'format' => 'page/%#%/', 
-					'current' => max( 1, $paged ),
-					'total' => $the_query->max_num_pages,
-					'prev_text' => __('« Previous'),
-					'next_text' => __('Next »'),
-				) );
-				?>
+			<div class="row">
+				<div class="pagination col-12">
+				<?php 
+					echo paginate_links( array(
+						'base' => esc_url( get_pagenum_link( 1 ) ).'%_%', 
+						'format' => 'page/%#%/', 
+						'current' => max( 1, $paged ),
+						'total' => $the_query->max_num_pages,
+						'prev_text' => __('« Previous'),
+						'next_text' => __('Next »'),
+					) );
+					?>
+				</div>
 			</div>
 
 		<?php
-			else : echo '<div class="alert alert-secondary text-center" role="alert"><em>Sorry! There are no posts found</em></div>'; endif;
-			?>
-		</div>
-	
+			wp_reset_postdata();
+		else : ?>
+			<div class="row">
+				<div class="alert alert-secondary text-center" role="alert"><em>Sorry! There are no posts found</em></div>
+			</div>
+		<?php endif; ?>
+
 	</div>
 	
 <?php } ?>

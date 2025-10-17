@@ -17,35 +17,36 @@ get_header();
 <div class="container newsevents mb-5">
 
 
-<div class="row">
-
-	<?php 
-	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-	$args = array(
-		'post_type' => 'post', // Default post type
-		'post_status' => 'publish',
-		'paged' => $paged,
-		'posts_per_page' => 6,
-		'tax_query' => [
-			[
-				'taxonomy' => 'category',
-				'field'    => 'slug',
-				'terms'    => [ 'newsletter' ],
-				'operator' => 'NOT IN'
-			],
+<?php 
+$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+$args = array(
+	'post_type' => 'post', // Default post type
+	'post_status' => 'publish',
+	'paged' => $paged,
+	'posts_per_page' => 6,
+	'tax_query' => [
+		[
+			'taxonomy' => 'category',
+			'field'    => 'slug',
+			'terms'    => [ 'newsletter' ],
+			'operator' => 'NOT IN'
 		],
-	);
+	],
+);
 
-	// Custom query
-	$wp_query = new WP_Query($args);
+// Custom query
+$wp_query = new WP_Query($args);
 
-	if($wp_query->have_posts()) :
+if($wp_query->have_posts()) : ?>
+	<div class="row" role="list">
+		<?php
 		while ( $wp_query->have_posts() ) : $wp_query->the_post();
-
 			get_template_part('template-parts/content-post'); // Your post content template
+		endwhile;
+		?>
+	</div>
 
-		endwhile; ?>
-
+	<div class="row">
 		<div class="pagination col-12">
 			<?php 
 			echo paginate_links( array(
@@ -58,13 +59,15 @@ get_header();
 			) );
 			?>
 		</div>
+	</div>
 
-		<?php wp_reset_postdata(); ?>
+	<?php wp_reset_postdata(); ?>
 
-	<?php else : ?>
+<?php else : ?>
+	<div class="row">
 		<p><?php _e('No posts found'); ?></p>
-	<?php endif; ?>
-</div>
+	</div>
+<?php endif; ?>
 
 	
 <?php

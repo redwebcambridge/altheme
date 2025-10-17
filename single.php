@@ -30,7 +30,7 @@ $thumbnail= get_field('thumbnail'); ?>
 				<div class="col-12 col-md-4 mb-5">
 					<?php if (!empty($thumbnail['url'])) : ?><img src="<?php echo $thumbnail['url']; ?>" alt="<?php echo $thumbnail['alt']; ?>" title="<?php echo $thumbnail['title']; ?>"><?php endif; ?>
 					<?php if (!empty($thumbnail['caption'])) : echo '<div class="wp-caption-text">'.$thumbnail['caption'].'</div>'; endif; ?>
-			        <div class="h3 section-header ceo-right-header special-underine" role="heading"><strong>SHARE</strong></div>
+			        <h3 class="h3 section-header ceo-right-header special-underine"><strong>SHARE</strong></h3>
 
 					<div class="socialcontainer">
 						<div class="row no-gutters d-flex">
@@ -69,7 +69,7 @@ $thumbnail= get_field('thumbnail'); ?>
 					?>
 
 
-			        <div class="h3 section-header ceo-right-header special-underine" role="heading"><strong>CONTACT</strong> DETAILS</div>
+			        <h3 class="h3 section-header ceo-right-header special-underine"><strong>CONTACT</strong> DETAILS</h3>
 					<p class="newsevents-contact newsevents-phone" role="text"><i class="fas fa-phone"></i><?php echo $phone_number; ?></p>
 			        <p class="newsevents-contact newsevents-email" role="text"><i class="fas fa-envelope"></i><a href="mailto:<?php echo $email; ?>" role="link"><?php echo $email; ?></a></p>
 			        <p class="newsevents-contact newsevents-address" role="text"><i class="fas fa-map-marker-alt"></i><?php 

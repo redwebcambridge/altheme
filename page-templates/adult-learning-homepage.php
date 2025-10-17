@@ -53,14 +53,14 @@ get_header(); ?>
                             <div class="gradline"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" role="list">
                         <?php while (have_posts()) : the_post();
                         $thumbnail= get_field('thumbnail');
                         $thumbnail = $thumbnail['sizes']['medium'];
                         $url = get_permalink();
                         ?>
 
-                        <div class="col-md-<?php echo $newsitem; ?> newsitem">
+                        <div class="col-md-<?php echo $newsitem; ?> newsitem" role="listitem">
                             <div onclick="window.location.href = '<?php echo $url; ?>' " class="thumbnail al-border-bottom" style="background-image:url('<?php echo $thumbnail; ?>')"></div>
                             <div class="newsitemdetails">
                                 <h3><a href="<?php echo $url; ?>"><?php the_title(); ?></a></h3>

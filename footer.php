@@ -94,6 +94,8 @@
             </div>
             <?php endif; ?>
 
+        </main>
+
         </div><!-- container-white -->
 
         </div><!-- #page -->

@@ -1,3 +1,17 @@
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select,
+.high-contrast .form-control {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-color: #000 !important;
+}
+.high-contrast input::placeholder,
+.high-contrast textarea::placeholder,
+.high-contrast .form-control::placeholder {
+  color: #000 !important;
+  opacity: 1;
+}
 .high-contrast header #searchform button, .high-contrast header #mobilesearch button {
   background-color: #000;
 }
@@ -214,6 +228,10 @@
 }
 .high-contrast .wpcf7-submit {
   background-color: #000 !important;
+}
+.high-contrast #__bs_notify__ {
+  background-color: #0b3a24 !important;
+  color: #fff !important;
 }
 
 /*# sourceMappingURL=high-contrast.css.map */

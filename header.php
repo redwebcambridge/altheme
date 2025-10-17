@@ -120,7 +120,7 @@ if (!class_exists('ACF')) {
                 <div class="col-md-6 col-lg-4 px-0 translate"><div id="google_translate_el"></div></div>
                 <div class="col-md-6 col-lg-4 pl-0 search_container"><?php get_search_form(); ?></div>
               </div>
-              <div class="row" id="top_buttons">
+              <nav class="row" id="top_buttons" aria-label="Top utility links">
               <?php
               if ( is_sports_page()) {
                 wp_nav_menu( array(
@@ -144,14 +144,8 @@ if (!class_exists('ACF')) {
                 $locations = get_nav_menu_locations();
                 $menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
                 $menuitems = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
-
-
-      
-                        
-
-              
                 ?>
-                <nav>
+                <div class="utility-menu-list">
                 <ul class="d-md-flex justify-content-end" id="menu-top-buttons" itemscope>
                 <?php
                 $count = 0;
@@ -204,12 +198,12 @@ if (!class_exists('ACF')) {
                 ?>
 
                   </ul>
-                </nav>
+                </div>
               <?php
               //top grey buttons
               }
               ?>
-              </div>
+              </nav>
         </div>
         <!-- Anglian learning logo -->
         <div class="col-6 col-md-2 al-logo">
@@ -271,6 +265,7 @@ if (!class_exists('ACF')) {
             <span class="navbar-toggler-icon"><i class="fas fa-arrow-left"></i></span>
           </button>
         <?php endif; ?>
+        <nav role="navigation" aria-label="Main Menu">
         <?php
               if ( is_sports_page() ) {
                 if (is_archive()) {
@@ -347,14 +342,17 @@ if (!class_exists('ACF')) {
 
               
         ?>
+        </nav>
     </div>
 
-    <?php if (get_field('Nav_Hover_Option','option') ) : ?>
+<?php if (get_field('Nav_Hover_Option','option') ) : ?>
       <div id="currenthover" class="currenthover"></div>
     <?php endif ; ?>
 
 
 </div>
+
+<main id="site-content" class="site-content" role="main">
 
 
 <!-- Front Page header -->
@@ -417,7 +415,7 @@ if (!class_exists('ACF')) {
   </div>
 
   </div><!-- front-page-header -->
-  <div class="container homepage-tabs-nav">
+  <div class="container homepage-tabs-nav" role="navigation">
       <ul class="row mb-0">
       <?php
         $i=0;
@@ -435,7 +433,8 @@ if (!class_exists('ACF')) {
   <?php else : //Internal header?>
 
 <section class="page-content" role="main">
-    <div class="featured-top-image  <?php echo get_field('header_title_location','option'); ?>" role="banner" style="background-image: url( <?php echo $featuredimg; ?> )">
+    <?php $hero_label = !empty($header_text) ? $header_text : get_bloginfo('name'); ?>
+    <div class="featured-top-image  <?php echo get_field('header_title_location','option'); ?>" role="img" aria-label="<?php echo esc_attr($hero_label); ?>" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">
         <div class="row main-heading">
         <h1><?php
@@ -458,4 +457,3 @@ if ( post_password_required() ) {
     die;
 } 
 ?>
-

@@ -1020,4 +1020,4 @@ function get_high_contrast_active()
   );
 }
 
-// sass_compile();
+sass_compile();

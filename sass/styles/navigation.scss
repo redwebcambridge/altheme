@@ -165,8 +165,9 @@ header {
     }
   }
 }
-
-#mainnav ul{
+nav {
+  width: 100%;
+  #mainnav ul{
   width: 100%;
   font-weight:500;
   border-top-width: 2px;
@@ -287,6 +288,8 @@ header {
   }
   }
 }
+}
+
 
 #page {
   .sticky-top {

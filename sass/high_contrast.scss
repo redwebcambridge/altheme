@@ -1,6 +1,22 @@
 $contrast_color: #000 !default;
 
 .high-contrast {
+    input,
+    textarea,
+    select,
+    .form-control {
+        background-color: #fff!important;
+        color: #000!important;
+        border-color: #000!important;
+    }
+
+    input::placeholder,
+    textarea::placeholder,
+    .form-control::placeholder {
+        color: #000!important;
+        opacity: 1;
+    }
+
     header {
         #searchform button, #mobilesearch button {
             background-color: $contrast_color;
@@ -291,5 +307,10 @@ $contrast_color: #000 !default;
 
     .wpcf7-submit {
         background-color: $contrast_color!important;
+    }
+
+    #__bs_notify__ {
+        background-color: #0b3a24!important;
+        color: #fff!important;
     }
 }

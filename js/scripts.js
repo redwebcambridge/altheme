@@ -1,6 +1,25 @@
   const toggleSwitch = document.getElementById('high_contrast_toggle');
   const highContrastBtn = document.getElementById('high_contrast');
   const overlay = document.getElementById('site-overlay');
+  const bsNotifyEnhancer = () => {
+    const notify = document.getElementById('__bs_notify__');
+    if (!notify) {
+      return false;
+    }
+    notify.setAttribute('role', 'region');
+    if (!notify.hasAttribute('aria-label') && !notify.hasAttribute('aria-labelledby')) {
+      notify.setAttribute('aria-label', 'BrowserSync connection status');
+    }
+    return true;
+  };
+  if (!bsNotifyEnhancer()) {
+    const observer = new MutationObserver((mutations, obs) => {
+      if (bsNotifyEnhancer()) {
+        obs.disconnect();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
   // Check URL for ?high_contrast=1 or ?high_contrast=0
   const urlParams = new URLSearchParams(window.location.search);
   const highContrastParam = urlParams.get('high_contrast');
@@ -370,4 +389,3 @@ function hovericon(location){
 
   
 })();
-

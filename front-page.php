@@ -266,14 +266,14 @@ function animateCounter(element, targetValue) {
         <div class="row">
 
                 <!-- News posts -->
-                <div class="col-12 col-md-<?php echo $newscol; ?> newsholder" role="list">
+                <div class="col-12 col-md-<?php echo $newscol; ?> newsholder">
                     <div class="row">
                         <div class="col-12">
                             <h2><?php echo get_field('title_left'); ?></h2>
                             <div class="gradline"></div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" role="list">
                         <?php while (have_posts()) : the_post();
                         $thumbnail= get_field('thumbnail');
                         $thumbnail = $thumbnail['sizes']['large'];
@@ -285,7 +285,7 @@ function animateCounter(element, targetValue) {
                         }
                         ?>
 
-                            <div class="col-md-<?php echo $newsitem; ?> newsitem <?php  if (in_category('newsletter')){echo 'newsletter';} ?>">
+                            <div class="col-md-<?php echo $newsitem; ?> newsitem <?php  if (in_category('newsletter')){echo 'newsletter';} ?>" role="listitem">
                                 <div onclick="window.location.href = '<?php echo $url; ?>' " class="thumbnail al-border-bottom" style="background-image:url('<?php echo $thumbnail; ?>')"></div>
                                 <div class="newsitemdetails">
                                     <h3><a href="<?php echo $url; ?>"><?php the_title(); ?></a></h3>

@@ -432,7 +432,7 @@ if (!class_exists('ACF')) {
     </div><!-- homepage-tabs-nav-->
   <?php else : //Internal header?>
 
-<section class="page-content" role="main">
+<section class="page-content">
     <?php $hero_label = !empty($header_text) ? $header_text : get_bloginfo('name'); ?>
     <div class="featured-top-image  <?php echo get_field('header_title_location','option'); ?>" role="img" aria-label="<?php echo esc_attr($hero_label); ?>" style="background-image: url( <?php echo $featuredimg; ?> )">
       <div class="container">

@@ -42,17 +42,43 @@ $contrast_color: #000 !default;
 
     #stickynav {
         ul#menu-main-navigation {
-            a {
+            > li > a {
+                background-color: $contrast_color!important;
+                color: #fff!important;
+                border: 2px solid #fff!important;
+                padding: 10px 18px!important;
+            }
+            > li > a:hover,
+            > li > a:focus {
+                background-color: #fff!important;
                 color: $contrast_color!important;
             }
         }
         #mainnav ul li:last-child a {
-            color: white!important;
-            background-color: $contrast_color;
+            background-color: #fff!important;
+            color: $contrast_color!important;
+            border-color: $contrast_color!important;
+        }
+        #mainnav ul li:last-child a:hover,
+        #mainnav ul li:last-child a:focus {
+            background-color: $contrast_color!important;
+            color: #fff!important;
         }
         #mainnav ul li ul li:last-child a {
             color: $contrast_color;
             background-color: #fff;
+        }
+        #mainnav ul li .dropdown-menu {
+            background-color: $contrast_color!important;
+            border-color: #fff!important;
+        }
+        #mainnav ul li .dropdown-menu a {
+            color: #fff!important;
+        }
+        #mainnav ul li .dropdown-menu a:hover,
+        #mainnav ul li .dropdown-menu a:focus {
+            background-color: #fff!important;
+            color: $contrast_color!important;
         }
     }
 
@@ -152,14 +178,30 @@ $contrast_color: #000 !default;
         background-color: $contrast_color!important;
     }
 
-    footer, .cookieconsent_msg, .footer-base {
+    footer, .footer-base {
         background-color: $contrast_color!important;
-        .allow-button, .decline-button {
-            background-color: $contrast_color!important;
-            border: 1px solid #fff;
-        }
         a {
-            color: #fff;
+            color: #fff!important;
+        }
+    }
+
+    .cookieconsent_msg {
+        background-color: $contrast_color!important;
+        color: #fff!important;
+        border-top: 3px solid #fff!important;
+        a {
+            color: #fff!important;
+            text-decoration: underline;
+        }
+        .allow-button {
+            background-color: #fff!important;
+            color: $contrast_color!important;
+            border: 2px solid #fff!important;
+        }
+        .decline-button {
+            background-color: transparent!important;
+            color: #fff!important;
+            border: 2px solid #fff!important;
         }
     }
 
@@ -312,5 +354,11 @@ $contrast_color: #000 !default;
     #__bs_notify__ {
         background-color: #0b3a24!important;
         color: #fff!important;
+    }
+
+    [role="alert"] {
+        background-color: #fff!important;
+        color: $contrast_color!important;
+        border: 2px solid $contrast_color!important;
     }
 }
